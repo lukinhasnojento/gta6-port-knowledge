@@ -1,0 +1,10 @@
+# Normaliza fim de linha para LF em todos os arquivos de texto.
+# Necessário porque LICENSE é cópia verbatim da FSF: qualquer conversão para CRLF
+# altera os bytes do documento original.
+
+* text=auto eol=lf
+
+LICENSE    text eol=lf
+*.md       text eol=lf
+*.txt      text eol=lf
+*.csv      text eol=lf
