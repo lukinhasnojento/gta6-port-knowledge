@@ -1,0 +1,853 @@
+﻿8e87fc7|2026-11-25|Ray|Merge pull request #1898 from emirduran707/dxil-round-denorm-inf-nan
+332122d|2026-11-25|Ray|Merge pull request #1869 from emirduran707/dxil-setreg-mode-bit3-underflow
+fc14fab|2026-11-25|Ray|Merge pull request #1864 from emirduran707/recomp-per-lane-const-mask-operands
+36ac23d|2026-11-25|Ray|Merge pull request #1930 from AlpPesen/fix/dxil-cse-invalidate-across-discard
+62265d3|2026-11-25|Ray|Merge pull request #1866 from Kalmarv/per-lane-mixed-mask
+95ae589|2026-11-25|Ray|Merge pull request #1876 from gefydev/per-lane-cmpx-exec
+f5136a6|2026-11-25|Ray|Merge pull request #1053 from raylitebull/bringup/skip-intro-fast-boot
+a713101|2026-11-25|Ray|Merge pull request #1005 from raylitebull/pr/vq-coherent-window
+50228bb|2026-11-25|Alp Pesen|Recompiler: invalidate block-local DXIL CSE wave/quad cache across dx.op.discard
+20cf130|2026-11-25|Ray|Merge pull request #1900 from raylitebull/fix/amd-msaa-and-driver-crashes
+438d420|2026-11-24|Kalmarv|Recompiler: track the SCC of mixed mask and number operations
+425b869|2026-11-24|raylitebull|DXIL: emit MSAA textureLoad before getDimensions to avoid amdxc64 crash
+e1217e7|2026-11-25|emirduran707|Direct DXIL: truncate `s` instead of returning `native` on special values in `round_exact`
+fe78c81|2026-11-24|gefydev|Recompiler: a float v_cmpx through #1426's lowering keeps lanes outside EXEC out
+ecb7547|2026-11-25|emirduran707|Direct DXIL: avoid `2 - off` underflow in `s_setreg_b32` targeting `HW_REG_MODE` bit 3
+689f2db|2026-11-24|Ray|Merge pull request #1679 from bmjask/shaders/direct-dxil-followup
+15fff3b|2026-11-25|emirduran707|Recompiler: allow inline-constant and NULL mask operands in the per-lane form
+e9ac9f0|2026-11-24|bmjask|Merge origin/main (CI stale workflow)
+1d027e5|2026-11-24|ivall|CI: mark PRs idle for 3 days stale and close them after a week
+281fc7d|2026-11-24|bmjask|Merge origin/main into shaders/direct-dxil-followup
+c4d37be|2026-11-24|Ray|Merge pull request #1747 from raylitebull/fix/world-freeze-180s
+4e3515e|2026-11-24|Ray|Merge pull request #1791 from wondercrash/pr/ei-arg-order
+177cd40|2026-11-24|Ray|Merge pull request #605 from 0x6461726B/d3d12x-r9g9b9e5-target
+266b845|2026-11-24|Ray|Merge pull request #1806 from bmjask/dxil/coverage-full
+3bc7143|2026-11-24|raylitebull|D3D12.X: keep vram::Pages tile mappings contiguous per heap
+7f7e768|2026-11-24|Ray|Merge pull request #1745 from gefydev/direct-on-1426
+bfb8133|2026-11-24|gefydev|Recompiler: per-lane cache entries change when the per-lane sources do
+9dcf2f6|2026-11-24|gefydev|Recompiler: a mask op's SCC carried around a loop stays a lane's
+66879ef|2026-11-24|gefydev|Recompiler: the per-lane form refuses whole-wave mask decisions and modes it drops
+9e27370|2026-11-24|gefydev|Tests: the per-lane GPU tests skip on adapters without 32-lane waves
+4e057cb|2026-11-24|Miguel Machado|Tests: cover split wave64 coalesced runs on the GPU
+f251762|2026-11-24|gefydev|Recompiler: the per-lane form takes heap memory windows
+29eccc0|2026-11-24|Itsmetibo|Recompiler: replace the per-lane form's trivial phis in one pass
+14e367e|2026-11-24|teidenzero|Recompiler: a VS starts with every lane in EXEC in the per-lane form
+e40ac38|2026-11-24|gefydev|Recompiler: the runtime's split compute programs ask for 32-lane waves
+fdb4c10|2026-11-24|gefydev|Recompiler: --lanes runs the per-lane form under the sweep's timeout
+dd566c0|2026-11-24|gefydev|Recompiler: no r - 1 for s0 in the mask-pair check of cross-lane ops
+a23b6ff|2026-11-24|gefydev|Recompiler: a value copied where some lanes are elsewhere is that block's write
+e9e94ce|2026-11-24|ivall|Merge PR #1321
+3827fb5|2026-11-24|Miguel Machado|Recompiler: coalesce straight-line guarded runs in the per-lane lowering
+27751a0|2026-11-24|Vlad Bondarenko|Tests: f16 and packed programs for the per-lane lowering, on the HLSL path and per lane
+fe8dc84|2026-11-24|gefydev|Recompiler: f16 products stay on the fallback until #1426 rounds them
+188ee17|2026-11-24|gefydev|Recompiler: carry-ins and v_cndmask through #1426 read the right lane bit
+82c875d|2026-11-24|Vlad Bondarenko|Tests: integer programs for the per-lane lowering, on the HLSL path and per lane
+3aea7a9|2026-11-24|Vlad Bondarenko|Tests: f64 programs for the per-lane lowering, on the HLSL path and per lane
+b1bfd1e|2026-11-24|gefydev|Tests: the f32 reference keeps signed zeros on every driver
+5d2d65c|2026-11-24|gefydev|Recompiler: s_wqm in a VS / PS keeps the launch-EXEC rule
+a24899e|2026-11-24|teidenzero|Recompiler: VS / PS stages in the per-lane lowering
+27d28ce|2026-11-24|teidenzero|Recompiler: lane masks follow s_wqm of the launch EXEC
+d2cc6ff|2026-11-24|teidenzero|Recompiler: the lane-mask analysis can start from an unknown EXEC
+77a5eee|2026-11-24|upipibi|Recompiler: the split wave64 form in the direct lowering, through #1426's Lw
+372be9d|2026-11-24|gefydev|Recompiler: s_cselect, s_wqm and v_cmpx in the per-lane form
+bc0d77c|2026-11-24|gefydev|Recompiler: xcl shaders --direct --lanes measures the per-lane form
+5963c26|2026-11-24|gefydev|Recompiler: far jumps in the per-lane form
+ddfbf39|2026-11-24|gefydev|Recompiler: the per-lane form in the runtime behind XCL_PER_LANE=1
+878afda|2026-11-24|gefydev|Recompiler: the per-lane form lowers unknown instructions with #1426's semantics
+77db49c|2026-11-24|Robin Snyders|Recompiler: the DXIL adapter holds #1426's Lw; 2-D / 3-D compute groups
+ad39e4d|2026-11-24|Robin Snyders|Direct DXIL: Lw::new and Lw::finish out of the kernel translator
+ea683a0|2026-11-24|Ray|Merge pull request #689 from grahamster2/scripts-smoke-title-hash
+9231d48|2026-11-24|Vlad Bondarenko|Tests: f32 programs for the per-lane lowering, on the HLSL path and per lane
+acdf922|2026-11-24|upipibi|Recompiler: whole-wave mask reads need every lane where an Ir meets another wave
+f9be7cc|2026-11-24|gefydev|Recompiler: an unsupported VALU opcode is refused before its sources are read
+8593700|2026-11-24|Kalmarv|Recompiler: survey every per-lane refusal, and the mesh pass both ways
+6bdef80|2026-11-24|gefydev|Tests: the IR assemble test skips without dxil.dll; survey sizes in KB
+9816a85|2026-11-24|gefydev|Recompiler: drop trivial phis through Module::replace_all_uses in the DXIL adapter
+a5311f7|2026-11-24|Robin Snyders|Recompiler: thread ids of any compute group shape in the lowering's Ir
+fbb3a7b|2026-11-24|gefydev|Recompiler: name the hardware register of a refused s_setreg in the coverage survey
+45025eb|2026-11-24|Robin Snyders|Recompiler: half-local wave operations in the lowering's Ir
+f5d3e05|2026-11-24|gefydev|Recompiler: per-lane coverage survey and the first coverage gaps
+ac8f8b6|2026-11-24|gefydev|Recompiler: lane reads and bit counts through gpu::dxil in the direct lowering
+f90033c|2026-11-24|Robin Snyders|Recompiler: cross-lane operations in the lowering
+13ac196|2026-11-24|Frtuchinno|Recompiler: report both halves of a stale wave64 mask in the lowering
+ac34cb6|2026-11-24|gefydev|Recompiler: refuse scalar values a lane kept from before a write it skipped
+511eadd|2026-11-24|gefydev|Recompiler: write the direct lowering through gpu::dxil's module builder
+f33f640|2026-11-24|gefydev|Recompiler: compute mode in the direct lowering
+430f0a3|2026-11-24|gefydev|Recompiler: scalar and vector memory in the direct lowering
+b3c0b37|2026-11-24|gefydev|Recompiler: lower kernel programs to DXIL-shaped IR on the lane masks
+9b8db83|2026-11-24|Robin Snyders|Recompiler: assemble and sign a DXIL module from LLVM IR text
+1bab757|2026-11-24|gefydev|Recompiler: per-lane lane-mask analysis for a direct DXIL backend
+9486494|2026-11-24|wondercrash|D3D12.X: an ExecuteIndirect reads the arguments written before it
+758e341|2026-11-24|bmjask|Merge origin/main (#1748, #819); TRANSLATOR_VERSION 7
+7a84e7a|2026-11-24|bmjask|Direct DXIL: image_get_lod with a static sampler; slowest programs in the sweep report
+4178e88|2026-11-24|Ray|Merge pull request #1748 from raylitebull/fix/direct-dxil-size-oom
+2a2d54b|2026-11-24|bmjask|dxil: geometry record test also compares the HLSL split form (fixed by #1689)
+0b64aa0|2026-11-24|raylitebull|dxil: eliminate giant-shader IR and CFG blowup in FormatLoad and multi-window memory
+4c64cc4|2026-11-24|bmjask|Merge remote-tracking branch 'origin/main' into shaders/direct-dxil-followup
+b9b6ea6|2026-11-24|Ray|Merge pull request #819 from ZekkJJ/codex/dstorage-parallel-decompression
+f3242b2|2026-11-24|Ray|Merge pull request #1689 from bmjask/recomp/split-geometry-fix
+85e3826|2026-11-24|Ray|Merge pull request #1524 from bmjask/perf/pso-runtime-eval
+6c89285|2026-11-24|Ray|Merge pull request #1195 from ofc0urse/fix/execute-indirect-untranslated-compute
+7ccf774|2026-11-24|Ray|Merge pull request #1288 from imnicho/kernelx-sleep-hold
+fa78c6f|2026-11-24|bmjask|Merge origin/main (heap windows) into the direct DXIL follow-up; TRANSLATOR_VERSION 6
+9039900|2026-11-24|Ray|Merge pull request #1693 from bmjask/dxil/heap-windows
+69a892c|2026-11-24|Thierry|Recompiler: oversized structured code falls back to pc blocks (#1307)
+b5d6322|2026-11-24|bmjask|Direct DXIL: memory windows through the descriptor heap (XCL_HEAP_WINDOWS)
+4143a09|2026-11-24|bmjask|Shaders: fix --export-hlsl / --measure-pso review findings
+051d2c8|2026-11-24|bmjask|D3D12.X: log the record hash and time only the driver's compile
+5329d45|2026-11-24|bmjask|Merge origin/main (direct DXIL, #1426) into perf/pso-runtime-eval
+87d421b|2026-11-24|bmjask|Recompiler: split-form geometry keeps the ES and GS phases apart with branches
+1495e6d|2026-11-24|Bloxive|DirectStorage: decode eligible file requests in parallel
+ee85bc2|2026-11-24|bmjask|dxil: geometry GPU record test (loops, cuts), CfgBlock::pc for split copies, TRANSLATOR_VERSION 5
+210f773|2026-11-24|bmjask|dxil fuzz: amd_reduced_seeds (ignored) for seeds 722 / 1599; debug_seed FUZZ_WATCH
+f458b55|2026-11-24|bmjask|dxil: fuzz tests (random programs, direct vs HLSL on the GPU)
+65154b3|2026-11-24|bmjask|dxil: directed f32 rounding (MODE round toward +inf / -inf / zero)
+2dcc926|2026-11-24|bmjask|dxil: Texture2DMS / Texture2DMSArray ops, MSAA image loads in the direct translator
+b07fbab|2026-11-24|bmjask|dxil: geometry mode (ES+GS) in the direct translator
+c160d86|2026-11-24|Ray|Merge pull request #1426 from bmjask/shaders/direct-dxil-main
+81d2ad5|2026-11-24|bmjask|docs: drop the coverage write-up from this PR (diff size limit)
+76c527b|2026-11-24|bmjask|dxil: guarded regions merge only what they write (SSA region joins)
+ac4799f|2026-11-24|bmjask|dxil: XCL_DXIL_DUMP=<hash> and xcl shaders --direct --hash/--dump
+6976bc4|2026-11-24|bmjask|dxil: split nodes to make irreducible guest CFGs reducible; Countbits.i64 per half
+d24db9f|2026-11-24|bmjask|dxil: keep this PR under GitHub's 20 000-line diff limit
+def2134|2026-11-24|bmjask|dxil validate: refuse input shorter than a container header
+ee7f2f3|2026-11-24|bmjask|README: describe the numbered driver compile log lines
+4e31065|2026-11-24|bmjask|D3D12.X: identify driver compiles in the PSO log
+2851585|2026-11-24|bmjask|Merge origin/main into shaders/direct-dxil-main
+424d315|2026-11-24|bmjask|docs: direct DXIL coverage after the sweep fixes
+76e6c29|2026-11-24|bmjask|Merge branch 'shaders/direct-dxil-main' into dxil/sweep-fixes
+223311f|2026-11-24|bmjask|dxil: fix VS/PS block order panics, translation time, output size, validator errors
+3a06645|2026-11-24|bmjask|Shaders: export and measure exact compute pipelines
+724b9e2|2026-11-24|bmjask|D3D12.X: limit concurrent huge pipeline compiles
+9f65f95|2026-11-24|bmjask|Recompiler: avoid dynamic vector indices in format helpers
+dc2d8f1|2026-11-24|bmjask|gpu/dxil: work around AMD driver faults; check dx.op attributes against DXC
+7d24e97|2026-11-24|bmjask|gpu/dxil: write blocks in reverse post-order; Module::replace_all_uses
+469d8b4|2026-11-24|Kalmarv|Recompiler: direct DXIL translator version 2
+f372cfb|2026-11-24|Kalmarv|Recompiler: direct DXIL declares waveGetLaneIndex readonly
+34acfbf|2026-11-24|Kalmarv|Recompiler: direct DXIL stages may branch before their exports
+9e3831e|2026-11-24|ivall|Merge PR #680
+deb4b92|2026-11-24|imnicho|Recompiler: a heap window's view ends 32 bytes below 4 GiB
+927adcc|2026-11-23|Remington Wilcox|D3D12.X: a pipeline the driver refuses with heap windows is built in the switch form
+cad94a2|2026-11-23|Remington Wilcox|D3D12.X: SetDescriptorHeaps(0, NULL) clears the list's record of bound heaps
+fe7d70b|2026-11-23|Remington Wilcox|Recompiler: memory windows from the descriptor heap, no per-access switch
+bc93a3a|2026-11-24|bmjask|Merge branch 'dxil/cache-errors' into shaders/direct-dxil-main
+9cdae10|2026-11-24|imnicho|kernelx: Sleep does not count the time a bind waits for a pipeline build
+185810f|2026-11-24|bmjask|dxil: coverage sweep (xcl shaders --direct) and live fallback stats
+b6239db|2026-11-24|bmjask|dxil validate: skip the validation step with a validator older than 1.8
+ac9328f|2026-11-24|bmjask|dxil: emit !llvm.ident like DXC
+55e9c3b|2026-11-24|bmjask|dxil fuzz: emit atomicrmw sub as add of the negation
+3c01233|2026-11-24|bmjask|dxil tests: skip runner draws where wave64 programs cannot run
+02ec584|2026-11-24|bmjask|dxil: move DXC reference containers to tests/data/dxil
+942b6c7|2026-11-24|bmjask|dxil: builder misuse recorded as an error instead of panicking
+86ab4cd|2026-11-24|bmjask|gpu/dxil: lower an instruction under a caller-chosen guard (Lw::inst_guarded)
+b7aa9f3|2026-11-24|Austin Ayers|Merge pull request #1211 from ksanjeev284/pr-1108-shader-cache-session
+c85ce8d|2026-11-24|Austin Ayers|Merge pull request #1099 from ofc0urse/fix/map-cpu-invisible
+fc0462b|2026-11-24|Austin Ayers|Merge pull request #1265 from emirduran707/d3d12x-default-srv-msaa-depth
+b9789a1|2026-11-24|Austin Ayers|Merge pull request #1150 from emirduran707/placed-clear-value
+345661b|2026-11-24|Austin Ayers|Merge pull request #1353 from emirduran707/d3d12x-depth-uav-initial-state
+53657c6|2026-11-24|Austin Ayers|Merge pull request #1354 from emirduran707/d3d12x-allocation-info-alignment
+f538b86|2026-11-24|Austin Ayers|Merge pull request #1290 from emirduran707/d3d12x-root-constants-overflow
+6dd40de|2026-11-24|Austin Ayers|Merge pull request #1289 from emirduran707/d3d12x-fallback-stream-bounds
+17216a1|2026-11-24|Austin Ayers|Merge pull request #1127 from emirduran707/dstorage-cancel-refused
+cc1af70|2026-11-24|Austin Ayers|Merge pull request #1223 from emirduran707/dstorage-error-record-fields
+43e6ca5|2026-11-24|Austin Ayers|Merge pull request #1224 from emirduran707/dstorage-status-slots-start-complete
+b45a6c9|2026-11-24|bmjask|dxil: test byte-identical translation across runs and threads
+f09ac4c|2026-11-24|Austin Ayers|Merge pull request #1330 from CallMeBrado/pr/dred-active-lists
+cbea872|2026-11-24|Austin Ayers|Merge pull request #968 from imnicho/late-release-sparse-queue
+97d5259|2026-11-24|bmjask|dxil: disk-cache direct DXIL translations under their own identity
+037aecd|2026-11-24|Austin Ayers|Merge pull request #959 from certified-retart/tests/shaders-e2e
+1d4549e|2026-11-24|Austin Ayers|Merge pull request #1079 from anakatt/scripts/root-descriptor-registers
+a97e66c|2026-11-24|Austin Ayers|Merge pull request #1084 from anakatt/scripts/pe-export-aliases
+769c7c2|2026-11-24|Austin Ayers|Merge pull request #1091 from anakatt/scripts/record-writer-branch-addresses
+797dda1|2026-11-24|Austin Ayers|Merge pull request #1133 from emirduran707/pr-check-smoke-fields
+2008399|2026-11-24|Austin Ayers|Merge pull request #1137 from emirduran707/pr-check-model-names
+065aef3|2026-11-24|bmjask|docs: direct DXIL main-based port status
+746f7dd|2026-11-24|bmjask|gpu/dxil: direct RDNA2 -> DXIL translator and XCL_DIRECT_DXIL routing
+6b1170b|2026-11-24|bmjask|dxil: mask float constant bits to the type width
+7c672cd|2026-11-24|bmjask|dxil: validate.rs FFI hardening
+9230fbc|2026-11-24|bmjask|dxil: randomised differential tests of the emitter
+2815b2a|2026-11-24|bmjask|dxil: derive Int64Ops / Doubles / DoubleExtensions from instruction types
+cbde110|2026-11-24|bmjask|dxil: encode atomic orderings with bitcode codes (seq_cst = 6, not 7)
+a8569bf|2026-11-24|bmjask|gpu: direct DXIL emitter (bitcode, container, op library, graphics stages)
+40c81c1|2026-11-24|CallMeBrado|D3D12.X: prioritize partially executed lists in DRED reports
+60e7603|2026-11-24|emirduran707|D3D12.X: allocation info of several resources is padded to their alignment
+5383506|2026-11-24|emirduran707|D3D12.X: depth+UAV buffers on the PC fallback paths start as depth writes
+930e8b4|2026-11-24|ivall|D3D12.X: a new command list takes no copy scratch of an earlier one
+010e1ec|2026-11-24|ivall|Merge PR #993
+b8b1f49|2026-11-24|ivall|Recompiler: jumps to outer loop heads and into loops are structured
+9a272d4|2026-11-24|ivall|Recompiler: a DXC compile the title waits for does not queue for memory
+25c6f7e|2026-11-24|ivall|D3D12.X: a big pipeline build the title waits for does not wait for its turn
+6cef69f|2026-11-24|ivall|Merge PR #744
+d6ff44c|2026-11-24|ofc0urse|D3D12.X: an ExecuteIndirect dispatch of an untranslated compute pipeline is skipped, as Dispatch is
+35665aa|2026-11-24|emirduran707|D3D12.X: a root signature with a huge constant count gets no layout
+615cb20|2026-11-24|emirduran707|D3D12.X: default SRVs of multisampled depth buffers are Texture2DMS views
+365d7c8|2026-11-24|emirduran707|D3D12.X: a pipeline stream cut inside a subobject payload is not rewritten
+560216b|2026-11-24|Local Test|D3D12.X: fall back to an in-memory shader cache session (#1108)
+5bd7cd8|2026-11-24|emirduran707|DirectStorage: a new status array's slots start complete with S_OK
+2e17d3d|2026-11-24|emirduran707|DirectStorage: the error record keeps the request's offset, size and tag
+392dc0c|2026-11-24|Zohaib|D3D12.X: cap and retire same-window copy scratch buffers
+21bc548|2026-11-24|Zohaib|D3D12.X: a copy within one memory window reads through a scratch buffer
+38283a8|2026-11-24|emirduran707|Scripts: pr_check refuses Code Llama, Codestral, QwQ and the like
+1d83fd1|2026-11-24|emirduran707|Scripts: pr_check refuses smoke blocks without a title, time or frames
+f4bbf26|2026-11-24|emirduran707|D3D12.X: CreatePlacedResource converts the clear value of a console format
+66660bd|2026-11-24|emirduran707|DirectStorage: a refused request that is cancelled is not a failure
+de85f97|2026-11-24|Afonso Pereia|Scripts: accept unprefixed command-writer branch addresses
+7d834d4|2026-11-24|ofc0urse|D3D12.X: a reserved resource is known by its address and description
+3b6e9ea|2026-11-24|Afonso Pereia|Scripts: retain every name for a PE export ordinal
+8f66b3b|2026-11-24|Afonso Pereia|Scripts: print the right register class for root descriptors
+cf244b0|2026-11-24|ofc0urse|D3D12.X: reserved resources are known from their creation, not asked for a heap
+21de1a8|2026-11-24|ofc0urse|D3D12.X: a title's Map of a resource the PC cannot map does not reach the PC's Map
+47efa2e|2026-11-24|Afonso Pereia|VFS: reject removal of non-empty virtual directories
+d78597d|2026-11-24|ivall|Tests: truncate_existing_validation_errors reads the last error before under_wine()
+24d8b92|2026-11-24|ivall|D3D12.X: a format without tiled support is not reservable, whatever the MSAA query says
+6828e07|2026-11-24|ivall|Merge PR #951
+dc6a283|2026-11-24|ivall|Merge PR #1037
+a610eb5|2026-11-24|ivall|Merge PR #990
+4f4db64|2026-11-24|raylitebull|Fast-boot: opt-in Bink intro skip, frame interval override, device type and TTS mute env vars
+384f7f7|2026-11-24|ivall|Merge PRs #1009, #1012, #1023 (allocator pool: failed Resets, released lists)
+9a19d7e|2026-11-24|Local Test|PR checks: reject untouched PR template placeholders (#965)
+01d4c77|2026-11-24|nova-aryan|D3D12.X: move allocator recordings only after successful Reset
+b55c478|2026-11-24|nova-aryan|D3D12.X: stop released lists holding allocator recordings
+f52ec36|2026-11-24|nova-aryan|D3D12.X: keep reusable allocators after a failed Reset
+67a3735|2026-11-24|ivall|Merge PR #905
+e74dda2|2026-11-24|ivall|Merge PR #995
+10915eb|2026-11-24|ivall|Tests: BCPack lanes against independent synthetic fixtures, models against the patent
+8add9a3|2026-11-24|ivall|DirectStorage: BCPack provenance, README row, one Request::check again
+8cad517|2026-11-23|Brandon Strong|DirectStorage: unpack BCPack BC1, BC3, BC4, BC5, BC6H and BC7 streams
+c1a9b52|2026-11-24|raylitebull|Memory: skip VirtualQuery on committed coherent UMA windows in cpu_writes and kernelx
+6efdabc|2026-11-24|ivall|Merge PR #988
+ef48a18|2026-11-24|aarushkha|PR checks: build inputs outside src need a regression run
+02bfd1d|2026-11-24|13hourstilliland|Memory: link xcl.exe without high-entropy ASLR so title memory stays under 2^40 (PR #631)
+afe4226|2026-11-24|ivall|Merge PR #551
+de1809c|2026-11-24|ivall|Merge PR #693
+9e80056|2026-11-24|ivall|Merge PR #891
+87fae1f|2026-11-24|emirduran707|D3D12.X: GFX10 image format 134 (1_5_5_5) is B5G5R5A1, not 135 (#946)
+6522c24|2026-11-24|aarushkha|PR checks: two xcl-smoke blocks in one code fence are read as two
+9aec53d|2026-11-24|ivall|Merge fix: a lazy page's move keeps map_pages' runs (#556 with #849)
+3ca8566|2026-11-24|ivall|Merge PR #556
+236e1a3|2026-11-24|ivall|Merge PR #532
+e1c4020|2026-11-24|unknown|Tests: cover xcl shaders across files, folders, and RPF9 packs
+6bac4b4|2026-11-24|ivall|Merge PR #849
+6922eaf|2026-11-24|ivall|Merge PR #923
+38ea451|2026-11-24|artor410|D3D12.X: ask for tiled support before making a GPU-owned texture reserved (#940)
+9beaa73|2026-11-24|imnicho|D3D12.X: the late-release drain gets the sparse queue without the sparse state's lock
+077ce40|2026-11-24|ivall|Update README.md
+71bda93|2026-11-24|Maxime Cambou|D3D12.X: a sparse pool retired a moment ago is taken back (#913)
+8cada26|2026-11-24|Robin Snyders|D3D12.X: XCL_PSO_WAIT_MS=0 waits until the pipeline is built, as unset
+5b693e6|2026-11-24|Robin Snyders|KernelX: a page whose move cannot be committed stays mapped where it was
+09940bb|2026-11-24|Austin Ayers|Merge pull request #907 from theaustinayers/alloc-release
+5c3ff31|2026-11-24|theaustinayers|D3D12.X: a released allocator leaves nothing behind in alloc_pool
+1c87b1d|2026-11-24|Austin Ayers|Merge pull request #897 from theaustinayers/alloc-swap
+11920b5|2026-11-24|theaustinayers|D3D12.X: an allocator Reset keeps the recordings the title still submits
+5fab112|2026-11-24|Robin Snyders|D3D12.X: XCL_PSO_WAIT_MS bounds how long a bind waits for a pipeline being built
+03912e8|2026-11-24|Enrique Villa|D3D12.X: a buffer with a mirror is bound again without VirtualQuery
+1ec4c98|2026-11-24|Austin Ayers|Merge pull request #873 from theaustinayers/queue-wait-diagnostics
+dbe9324|2026-11-24|theaustinayers|D3D12.X: name XCL's own tile-mapping lists and say when a wait for a queue gives up
+a1672ef|2026-11-24|Austin Ayers|Merge pull request #866 from theaustinayers/late-release
+e7da8a1|2026-11-24|theaustinayers|D3D12.X: a resource's last Release waits for the queues to pass the work in flight
+f1e2113|2026-11-24|Robin Snyders|KernelX: a page mapped away moves to its next address directly, not by way of its home
+beaa245|2026-11-24|Austin Ayers|Merge pull request #797 from gsucristo/d3d12x/wait64-midlist-split
+78cc0f6|2026-11-24|Austin Ayers|Merge pull request #795 from gsucristo/d3d12x/wait64-gpu-bridge-and-cycles
+6c98f92|2026-11-24|Austin Ayers|Merge pull request #798 from gsucristo/recomp/safe-s-barrier-and-x64-spin
+aaa00b2|2026-11-24|Austin Ayers|Merge pull request #792 from gsucristo/recomp/uma-window-bounds-and-carry
+e50836b|2026-11-24|ivall|Update README.md
+285560f|2026-11-24|gsucristo|D3D12.X: split title_list command lists around mid-list Wait64 after Write64
+8a5643f|2026-11-24|gsucristo|D3D12.X: bridge Wait64BitValueX to GPU fences with exact cycle breaking
+0c02b87|2026-11-24|gsucristo|Recompiler: make multi-warp Compute and Mesh s_barrier early-exit-safe
+f9e5ee9|2026-11-24|gsucristo|Recompiler: range-check UMA memory windows and propagate 64-bit carry/borrow
+066ae5b|2026-11-24|gsucristo|Recompiler: default split-wave64 exchange to bounded spin
+d208e14|2026-11-23|Mavix|Update README.md
+6025201|2026-11-24|Austin Ayers|Merge pull request #771 from gefydev/readme/discord-invite
+3f54f4d|2026-11-24|gefydev|README: point the Discord invite at discord.gg/xcl
+d5442d2|2026-11-23|Austin Ayers|Merge pull request #762 from bmjask/shaders/semantic-translated-cache
+242a6ea|2026-11-23|bmjask|Shaders: preserve translated cache across unrelated rebuilds
+07c535d|2026-11-23|CallMeBrado|Shaders: keep offline compute pipelines in the runtime driver cache
+64b3f35|2026-11-23|Austin Ayers|Merge pull request #713 from bmjask/build/full-release-symbols
+4e0acbd|2026-11-23|bmjask|CI: keep full symbols in release builds
+2cc79fb|2026-11-23|Prime1997|D3D12.X: publish driver cache blobs from private staging files
+f4ce27c|2026-11-23|Austin Ayers|Merge pull request #347 from Kalmarv/fix/write-watch-resume
+72a97d8|2026-11-23|Austin Ayers|Merge pull request #490 from imnicho/vram-idle-sweep
+d852f9a|2026-11-23|Austin Ayers|Merge pull request #443 from Kalmarv/fix/sparse-state-replace-outside-lock
+1387b4b|2026-11-23|Austin Ayers|Merge pull request #348 from Kalmarv/fix/sparse-free-decommit-first
+82c233d|2026-11-23|Austin Ayers|Merge pull request #484 from XaviFortes/title-textures-safe-read-committed
+a8db4b0|2026-11-23|Austin Ayers|Merge pull request #690 from theaustinayers/pso-preload
+9683e7a|2026-11-23|grahamster2|Scripts: smoke blocks name the game folder by a hash, not its name
+7296a8b|2026-11-23|theaustinayers|D3D12.X: pipelines an earlier run used are built ahead of their first use
+91f9a5e|2026-11-23|Mavix|Update README.md
+63cdc25|2026-11-23|Austin Ayers|Merge pull request #634 from theaustinayers/driver-pso-cache
+9182f27|2026-11-23|theaustinayers|D3D12.X: the driver's blob of a compute program is kept on disk
+dd2ae9a|2026-11-23|Mavix|Merge pull request #636 from ofc0urse/perf/compute-pso-driver-blob
+18c105a|2026-11-23|Mavix|Merge pull request #507 from ZekkJJ/codex/test-only-pr-checks
+372f3ab|2026-11-23|Mavix|Merge pull request #302 from ZekkJJ/codex/ps-flat-integer-inputs
+cedf8ce|2026-11-23|Austin Ayers|Merge pull request #574 from ryosen0/ei-test
+bdab194|2026-11-23|Mavix|Merge pull request #602 from dns54/perf/title-bytes-in-place
+3db536e|2026-11-23|Austin Ayers|Merge pull request #435 from Cattn/tiling-swizzle-table-size
+cb868b2|2026-11-23|Austin Ayers|Merge pull request #300 from AAigars/kernelx-timer-resolution
+c3d350a|2026-11-24|0x6461726B|D3D12.X: promote R9G9B9E5_SHAREDEXP render/UAV targets to R11G11B10_FLOAT
+b9f3d0f|2026-11-24|ofc0urse|D3D12.X: a translated compute program built again gets the driver's blob of its first build
+3984bf1|2026-11-24|Deividas Nastajus|Title textures: detile and hash the title's memory in place, not a copy
+9ce2070|2026-11-23|Austin Ayers|Merge pull request #451 from 1984742628/perf/reuse-upload-memory
+b74867b|2026-11-23|Bloxive|CI: allow reviewed test-only diffs without retail smoke (#452)
+86a5d0b|2026-11-24|ryosen0|Tests: ExecuteIndirect's pending-pipeline skip gate
+2d9a9fe|2026-11-23|theaustinayers|D3D12.X: ExecuteIndirect with a pipeline still being built is skipped
+38e58e1|2026-11-24|frozht|Memory: map_pages asks VirtualQuery once per run of fresh pages
+d96812a|2026-11-23|Kalmarv|D3D12.X: the sparse state is replaced outside its lock
+712bbbe|2026-11-23|Dudis|Title textures: the write watch scans in a few calls, not thousands
+508a0c7|2026-11-23|Mavix|Merge pull request #516 from Mavixot/present-fps-counter
+9783066|2026-11-24|Frs|Merge branch 'ivall:main' into title-textures-safe-read-committed
+b86fba4|2026-11-23|Mavixot|D3D12.X: show live FPS in the game window title
+7ebf1b8|2026-11-23|Austin Ayers|Merge pull request #486 from theaustinayers/texture-skip-unchanged
+7f94c6f|2026-11-23|Vax|Memory: decommitted sparse tiles stay mapped until the next submit
+69f0635|2026-11-23|theaustinayers|D3D12.X: a title texture whose memory is as at its last upload is not uploaded again
+27c3571|2026-11-24|Xavi Fortes|D3D12.X: tolerate concurrent page decommits in title texture reads
+1f282c7|2026-11-24|emirduran707|Textures: linear levels are detiled a row at a time
+7695539|2026-11-24|nicho|D3D12.X: a placement on title pages sweeps the idle ones, not every page
+2997c9a|2026-11-23|Mavix|updated discord link
+2cefc88|2026-11-24|1984742628|D3D12.X: the title textures of a big batch are detiled on several threads
+7d60a48|2026-11-24|1984742628|Textures: detiling a mip level computes column and row parts once
+c55783e|2026-11-24|1984742628|D3D12.X: title texture uploads reuse their queue's buffer and list
+a94e151|2026-11-23|Logan|Textures: a layout's high-coordinate tables hold one period, not 65536 entries
+a6f5f7a|2026-11-24|ivall|Title textures test: skipped on an adapter that makes no reserved cube with mips
+ef5312f|2026-11-24|ivall|Memory: readable answers a short range from the working set (PR #332, Vaximous)
+fa9ad89|2026-11-23|SandimL|Scripts: run smoke.ps1 on Windows PowerShell 5.1
+97dc49c|2026-11-23|Graham Calihan|Scripts: smoke.ps1 names the adapter XCL ran on, from report.json
+a8072aa|2026-11-24|ivall|Merge PR #338
+0fdefe4|2026-11-24|ivall|Merge PR #330
+da28099|2026-11-24|ivall|Merge PR #331
+1efacca|2026-11-24|ivall|Merge PR #322
+f673b54|2026-11-24|ivall|Merge PR #335
+3516080|2026-11-24|ivall|Title textures test: an array or cube a driver will not make reserved is committed, not a failure
+bb436a0|2026-11-23|Prime1997|Tests: read back mirrored textures across writes and page remapping
+2b4bb43|2026-11-24|ivall|xapu: decode the title's Opus packets into its output buffer; libopus where Windows has none (PR #294, simnJS)
+4403887|2026-11-24|Xavi Fortes|D3D12.X: resolve GPU timestamps targeting memory outside unified memory
+29fb6b7|2026-11-24|ivall|Title textures test: the process's video memory is not asserted (other GPU tests allocate at the same time)
+aeaeecb|2026-11-24|ivall|Merge PR #288
+340189c|2026-11-24|ivall|Merge PR #306
+db1ddb2|2026-11-24|ivall|XCL_NETWORK=0 for the whole process: the system's WinHTTP, WinINet and Winsock refuse too (#305)
+01a7446|2026-11-24|Ivan John Ozimchuk|D3D12.X: constant buffer views are float4 rows (stride 16), not raw buffers
+d6cbfcd|2026-11-23|Kalmarv|D3D12.X: a full write-watch buffer goes on after its last page
+603cdd3|2026-11-23|imnicho|VFS: XCL's shader cache on a drive a console mount names stays where it is
+c8e3ca0|2026-11-23|Logan|DirectStorage: EnqueueRequest reads its page array and file vtable without sizing regions
+85bdf21|2026-11-24|ivall|Merge main (PR #283) into the PR batch
+21b8723|2026-11-24|ivall|Merge pull request #283 from jessenic/fix/gpu-mirror-view
+ee0adee|2026-11-24|ivall|Host: no second CPU check (PR #259 review)
+276cdd5|2026-11-24|ivall|Merge pull request #244 from Cattn/fix-lazy-page-race
+ab4324e|2026-11-24|ivall|Merge PR #270
+5a7346f|2026-11-24|ivall|Merge PR #259
+ad79932|2026-11-23|Gennoun Marso Iliass|D3D12.X: back kept-in-step title textures by shared VRAM pages (#248)
+ef97948|2026-11-24|ivall|Merge PR #254
+c6b6aab|2026-11-24|ivall|Merge PR #293
+dfc19ed|2026-11-24|ivall|Merge PR #290
+8f53764|2026-11-24|ivall|Merge PR #263
+4017f8f|2026-11-23|Austin Ayers|Merge pull request #289 from theaustinayers/dstorage-late-page-array
+a99f64c|2026-11-23|imnicho|Console CPU instructions: no VirtualQuery at every emulated instruction
+7bdc97f|2026-11-23|Claude|d3d12x null device: heap start test calls #9 / #10 with their real signature
+2e67909|2026-11-23|Bloxive|Recompiler: preserve flat pixel parameter bits (#249)
+9bd7635|2026-11-24|Jesse|Memory: GPU views of the title's CPU memory read the CPU view (intro video)
+e93dc9c|2026-11-24|Jesse|kernelx: GPU-visible memory outside the windows is write-watched (menu text)
+0e946cf|2026-11-23|ivall|PR checks: only the PR's own run must be clean, main's run must be from main; game data refused
+9507d05|2026-11-23|AAigars|kernelx: the finest system timer for the title (choppy audio, #260)
+d0b6079|2026-11-23|theaustinayers|DirectStorage: a destination page array entry that is 0 at enqueue is read at the request's turn
+9e9551b|2026-11-24|Alp Pesen|Console CPU instructions: fix ClzeroLoop ModRM check and loop semantics
+130a143|2026-11-24|ryosen0|Merge main into this-first-tests
+ebbf377|2026-11-23|Kalmarv|Memory: a freed sparse block is decommitted before its address is reused
+d54597a|2026-11-23|Claude|e2e: stage the test title under CARGO_TARGET_TMPDIR
+f03fe38|2026-11-23|Kalmarv|Rect lists: the GS carries flat outputs, v0 the provoking vertex
+2c5fe3f|2026-11-23|Kalmarv|Memory: a scatter or map home of n pages costs O(n), not O(n┬▓)
+2f5979e|2026-11-24|ryosen0|this_first: a test of the stale-vtable return buffer and either argument order
+9ab7d76|2026-11-23|ivall|Docs: no PRs written with small or open-weight models; PR checks refuses them in AI use
+63b9930|2026-11-23|ivall|Docs: what a PR needs to be merged - tests run, a regression run on a title, checked by PR checks
+163b55e|2026-11-23|ivall|Merge PR #212
+8adb9dd|2026-11-23|Claude|xgameruntime: say what is missing without System32\xgameruntime.dll
+1775ebb|2026-11-23|Claude|d3d12x null device: descriptor heap start handles in rax
+7a033c8|2026-11-23|ivall|Retail game goes past its first menu: struct-returning device methods tell the return buffer from the device
+77905f6|2026-11-23|Logan|Lazy physical pages: a thread that loses the race to commit a page retries
+c858190|2026-11-23|Claude|testgame-mw: no unit-test harness
+608a79b|2026-11-23|Claude|kernelx: memory in use from PagefileUsage where PrivateUsage is 0
+5ba2b6a|2026-11-23|slopgobblercobbler|Runtime: validate Zen 2 ISA features and CPUID at startup in launcher and host
+60565c4|2026-11-23|ivall|Rect lists' and image_sample_o's test runners as PR #229 has them (draw_gs_views)
+a6f5368|2026-11-23|ivall|Merge PR #229
+5c2eaf5|2026-11-23|ivall|Merge PR #227
+6b9f2ba|2026-11-23|Kalmarv|Console CPU instructions: CLZERO with an address-size prefix zeroes the line at EAX
+0f34407|2026-11-23|ivall|Merge PR #229
+bc9ef13|2026-11-23|ivall|Merge PR #227
+91844fb|2026-11-23|ivall|Merge PR #226
+1eee7ad|2026-11-23|ivall|Merge PR #231
+8c5d16e|2026-11-23|ivall|Merge PR #230
+0c63fd9|2026-11-23|ivall|Merge PR #225
+8a98da6|2026-11-23|artor410|Recompiler: image_sample_o under an implicit LOD moves each blended mip by its own texels
+05a5fd5|2026-11-23|Bloxive|Merge upstream main into the PLS quota branch
+bc59624|2026-11-23|Kalmarv|Console CPU instructions: CLZERO with an address-size prefix zeroes the line at EAX
+d4f17ca|2026-11-23|ivall|D3D12.X: Wait64BitValueX compares the whole value (PR #218, Sr-0w)
+ad289ef|2026-11-23|ivall|Merge PR #210
+594f63a|2026-11-23|Kalmarv|KernelX: memory tracing keeps the caller's last error
+20271d4|2026-11-23|artor410|Recompiler: image_sample_o under an implicit LOD moves each blended mip by its own texels
+31def9e|2026-11-23|ivall|Merge PR #217
+f159441|2026-11-23|ivall|Merge PR #211
+f0a917b|2026-11-23|ivall|Merge PR #199
+2918c9f|2026-11-23|ivall|Merge PR #223
+c118c7c|2026-11-23|ivall|Merge PR #222
+3242c03|2026-11-23|ivall|Merge PR #221
+1200aa4|2026-11-23|ivall|Merge PR #220
+13bb3e1|2026-11-23|ivall|Merge PR #219
+4c1630b|2026-11-23|ivall|Merge PR #213
+327c24c|2026-11-23|Kalmarv|Video-memory arenas: D32S8 and MSAA targets get heaps of their own size, let go when unused
+b25582a|2026-11-24|Jefter|perf(insn): CLZERO loop fast-forwarding and CLWB NOP hot-patching
+5424468|2026-11-24|AliceWood|Merge commit '0cd0a53b584a8be0fd779d16e5826d97a0e66344' into perf/sparse-tile-hash-eaa36b6
+af20b4b|2026-11-23|ivall|SSE4a as a Zen 5 runs it: high quadword zeroed, the last of F2 / F3 decides, 0x67 and early REX ignored
+7b029e2|2026-11-23|yous0serious|Thread affinity: console masks with processors the PC lacks are fitted to the process's (#106)
+09863ba|2026-11-23|Kalmarv|D3D12.X tests: DrawIndexedX test no longer depends on what earlier tests allocated
+247d909|2026-11-23|Kalmarv|DXC: log and report the loaded version, note below 1.8, newest DXC among SDKs first
+0cd0a53|2026-11-23|ivall|SSE4a on Intel CPUs: EXTRQ and INSERTQ emulated (#216)
+a0dce86|2026-11-23|Bloxive|Respect the PLS quota in GetDiskFreeSpaceEx
+b856022|2026-11-24|AliceWood|Spread aligned sparse tile keys across hash buckets
+5ceb8fc|2026-11-23|Kalmarv|D3D12.X: check at start-up that the GPU sees CPU writes to unified memory
+033a6d1|2026-11-23|Kalmarv|Recompiler: preserve the FSPX compute user SGPR count
+7ac4048|2026-11-23|Kalmarv|Rect lists: no CPU expansion for a pipeline with the rect list GS
+82cba12|2026-11-23|Kalmarv|Rect lists: real::has_rect_list_gs, the pipelines given the generated GS
+938fdd2|2026-11-23|Kalmarv|Rect lists: retry a refused GS pipeline without it, map untranslated stream rect lists
+c217b1f|2026-11-23|Kalmarv|Rect lists: test that a CPU-expanded rect's second triangle is completed too
+4bf5466|2026-11-23|Kalmarv|Rect lists: test the full-screen pass order reported downstream
+fa2d1d3|2026-11-23|Kalmarv|D3D12.X: rect lists drawn whole through a generated geometry shader
+5a537b3|2026-11-23|1bugproof|Docs: contribution guidelines for people and AI agents
+6da33fa|2026-11-23|ivall|Merge PR #207
+ddfcffd|2026-11-23|ivall|Merge PR #188
+1b0c610|2026-11-23|ivall|modules: a crash report survives an address below its module's base (PR #147, gefydev)
+4e3741f|2026-11-23|ivall|Merge PR #205
+9e6b63d|2026-11-23|ivall|Merge PR #204
+128c414|2026-11-23|ivall|Merge PR #201
+5af7d71|2026-11-23|ivall|Merge PR #200
+ed4af10|2026-11-23|ivall|Merge PR #190
+aaddda0|2026-11-23|ivall|Merge PR #183
+2297960|2026-11-23|ivall|Merge PR #182
+d877df9|2026-11-23|ivall|Merge PR #181
+52c5195|2026-11-23|ivall|Merge PR #179
+c4b5674|2026-11-23|ivall|Merge PR #178
+8dd9020|2026-11-23|ivall|Merge PR #176
+9e28431|2026-11-23|ivall|Merge PR #167
+e43fdac|2026-11-23|ivall|Merge PR #158
+61f6a78|2026-11-23|ivall|Merge PR #149
+2aaf76a|2026-11-23|ivall|Merge PR #148
+7786340|2026-11-23|ivall|Merge PR #146
+2514938|2026-11-23|ivall|Merge PR #143
+3d62cb7|2026-11-23|ivall|Merge PR #141
+d0846cf|2026-11-23|ivall|Merge PR #135
+8fde77a|2026-11-23|BlestTerror|Tests under Wine: Windows' own answers are checked only on Windows
+f17a5ee|2026-11-23|theaustinayers|Title textures: small render targets the CPU fills are kept in step (glyph caches)
+eaa36b6|2026-11-23|ivall|Buffer mirrors: review fixes from PR #195; a test of the PC's depth formats and views
+68a6640|2026-11-23|Kalmarv|Sparse windows: commits before the device are merged page ranges, not a list scanned per page
+31635bd|2026-11-23|Remington Wilcox|D3D12.X: format queries about the console's own formats (116 ÔÇô 120) ask about their PC formats
+e8564f1|2026-11-23|RandomGithub12309|D3D12.X: fix SetPredicationBufferX resource state lifecycle and KickoffX restore
+2abc562|2026-11-23|ivall|Merge PR #155
+0fb0fd8|2026-11-23|ivall|Merge PR #171
+7b60990|2026-11-23|ivall|Merge PR #180
+3aa8d4a|2026-11-23|ivall|Merge PR #185
+dfc1332|2026-11-23|ivall|Merge PR #144
+2f6b723|2026-11-23|ivall|Merge PR #136
+ad71cde|2026-11-23|ivall|Merge PR #166
+c3746f8|2026-11-23|ivall|Merge PR #191
+0636e7a|2026-11-23|ivall|Merge PR #151
+e0cc44b|2026-11-23|ivall|Merge PR #137
+8558ff1|2026-11-23|ivall|Merge PR #160
+488e5fe|2026-11-23|Kalmarv|Frame events: queue an origin before the wait it wakes can take it
+38b05b7|2026-11-23|ivall|Retail game shows its first menu: target pages instead of arenas, lazy physical pages, PC view formats
+bb66204|2026-11-23|Kalmarv|DirectStorage: count BCPack refusals per mode, opt-in solid fill of their destinations
+4c3c156|2026-11-23|Kalmarv|xgameruntime tests: compare slots by the function bound to their name, not by function address
+9392eae|2026-11-23|Guyliano Buyssens|XCL_TRACE_IMPORTS: every call of an HLE import logged with its arguments and result
+0b28a39|2026-11-23|Guyliano Buyssens|Console CPU instructions a PC CPU lacks are emulated: clwb, clzero, rdpru, monitorx / mwaitx, rdpid
+3d99e80|2026-11-23|Guyliano Buyssens|XCL_D3D12_TRACE shows the arguments: the registers, two stack arguments, what pointers point at
+b8a7794|2026-11-23|Guyliano Buyssens|Refused interfaces are logged: XGameRuntime objects and DirectStorage
+62e0e25|2026-11-23|RandomGithub12309|Recompiler: wave32 src_vccz / src_execz and SDWA f16 inline constants
+af46b71|2026-11-23|@pauliusdotpro|Report sampled frame content from optional frame dumps
+c69c4d1|2026-11-23|ALi|TLS: an image without an index variable gets its slot without a write through address 0 (#106)
+782e45b|2026-11-23|ALi|README: the Agility SDK folders read as two places, not one twice
+e80b5b3|2026-11-23|ALi|Add a security policy (#177)
+d66f4c7|2026-11-23|Thomas|Allow redirected Cargo progress in Windows PowerShell 5.1
+f7c7a48|2026-11-23|TheHoracio|e2e: host preflight warnings no longer fail the console-title check
+a3dedf1|2026-11-23|BaggyALPHA|user: validate RegisterClassExA descriptor size
+5911fb0|2026-11-23|BaggyALPHA|pe: reject overflowing directory field RVAs
+a6e52be|2026-11-23|ryosen0|kbm: free the cursor while the window is dragged or resized
+229708a|2026-11-23|ryosen0|XCL window: window_pos setting ÔÇô center on the primary monitor or a clamped x,y
+10b50ea|2026-11-23|mstr-vinegar|VFS: preserve destination for locked overlay moves
+fc4b2d4|2026-11-23|WarmMilkCodes|VS / PS: the 32-lane form on every GPU that can run 32-lane waves (RDNA2)
+f13bc2e|2026-11-23|ryosen0|DirectStorage: name a refused factory IID in the log (#161)
+deccf2b|2026-11-23|Ethan Barr|Recompiler: round f16 conversions and products to nearest-even by default
+956a476|2026-11-23|ivall|Retail game reaches 30 fps: frame events sharing a deadline, ExecuteCommandListsX, big pipelines in the background
+c00a305|2026-11-23|Ethan Barr|VFS: preserve the destination when an overlay rename fails
+323767f|2026-11-23|Ethan Barr|VFS: report existing game files on CREATE_ALWAYS
+db5dc26|2026-11-23|ivall|Shader loading: dumps on request, translations kept on disk, precompile of compute
+66e8e97|2026-11-23|ivall|Retail game: commit physical page homes once, the DSP, list Reset #139, rect lists
+b210576|2026-11-23|cortexreaver2099-creator|D3D12.X: a title's TEXTURECUBE view is the cube array of its one cube
+9add721|2026-11-23|ivall|Retail game bring-up: physical pages, 1D/3D layouts, newer device, list and fence methods
+6cb71db|2026-11-23|mmmharius|Config: title_memory is read in any case (#106)
+d21e372|2026-11-23|mmmharius|Report: a crash reported while the report is being written is kept (#106)
+1ffa570|2026-11-23|Ivan John Ozimchuk|Test without a GPU: no argument in a register a builder shader does not have
+7495271|2026-11-23|Ivan John Ozimchuk|Compute dispatches: a shader takes no more arguments from user SGPRs than it has
+87fe289|2026-11-23|Tiago Leal|D3D12.X: draws with untranslated pipelines get the title's root signature
+8e2aec9|2026-11-23|Tiago Leal|Tests: the compute PSO-hook end-to-end tests skip on an adapter without 32- or 64-lane waves (WARP)
+b5380ad|2026-11-23|Tiago Leal|Loader: a game DLL that failed to load is not left registered (#106)
+20a35f0|2026-11-23|Tiago Leal|CI: the test title's run left out (no Gaming Services, no GPU on the runner); test.ps1 passes its arguments to the tests
+0b89bdf|2026-11-23|Tiago Leal|CI: build and test on a Windows runner (no GPU)
+1058c0b|2026-11-23|Tiago Leal|Compute TG_SIZE: a partial last wave counts (#105 "also noticed")
+0511fed|2026-11-23|Nik3310|tests: fail when a configured shader sample cannot be read
+c8d9549|2026-11-23|Tiago Leal|Title textures: uploads start from the state the title's transitions left (#104 item 2)
+484dd57|2026-11-23|ivall|HANDOFF: PR #133 checked on the RX 9070
+84414e1|2026-11-23|ivall|Merge pull request #133 from Foniass/nvidia/wave64-graphics-lanes
+55156f0|2026-11-23|Foniass|upper_lanes: v_swaprel, SDWA v_cmpx and absorbing constants
+fc60bf5|2026-11-23|Foniass|Graphics pipelines translate VS / PS for the device's wave size
+af0311d|2026-11-23|Foniass|Wave64 VS / PS in 32-lane waves: the lanes 32..63 they read
+95bda11|2026-11-23|ivall|HANDOFF: PRs #110-#130 (merged, held, closed)
+70f8dc4|2026-11-23|ivall|Revert "Merge pull request #123 from gefydev/recomp-window-carry"
+c4df2fe|2026-11-23|ivall|Recompiler: #119's clamped 8-bit dots through dot4_u8 / dot4_i8 again
+275409e|2026-11-23|ivall|Merge pull request #129 from gbuyssens/pr/frame-clock
+ac18a27|2026-11-23|ivall|Merge pull request #127 from gbuyssens/pr/eh-pe-cpu-check
+828d9db|2026-11-23|ivall|Merge pull request #124 from Foniass/fix/mesh-gs-windows
+778e329|2026-11-23|ivall|Merge pull request #123 from gefydev/recomp-window-carry
+5231403|2026-11-23|ivall|Merge pull request #122 from gefydev/d3d12x-vram-arenas
+0a82d92|2026-11-23|ivall|Merge pull request #121 from gefydev/d3d12x-queue-slot18
+73c7bbe|2026-11-23|ivall|Merge pull request #119 from gefydev/recomp-clamp-omod
+a39781b|2026-11-23|ivall|Merge pull request #118 from bmjask/codex/draw-reset-correctness
+7f1e3f4|2026-11-23|ivall|Merge pull request #117 from gefydev/recomp-cube-arrays
+44a115d|2026-11-23|ivall|Merge pull request #116 from gefydev/issue-templates
+fe9f2dd|2026-11-23|ivall|Merge pull request #115 from gefydev/preflight
+7bf9896|2026-11-23|ivall|Merge pull request #110 from certified-retart/fix/opus-eos-trim
+fdeacf0|2026-11-23|ivall|FidelityFX: the console FSR4 upscaler's passes translate and a frame runs on the GPU
+23c53fc|2026-11-23|Guyliano Buyssens|Frame clock: each frame its own origin, ancillary handles outlive the clock tick (#103)
+1a51a82|2026-11-23|Guyliano Buyssens|Runtime: CPU check at start, bounded reads in the exception logger, thread dump and probes guarded, PE directory bounds (#106)
+3304bb1|2026-11-23|Foniass|MS and GS programs translate with the title's memory windows
+a787c52|2026-11-23|gefydev|recomp: memory window from the full 64-bit address (carry out of the low dword)
+70d7e0a|2026-11-23|gefydev|D3D12.X: video-memory arenas never overlap
+a01d61c|2026-11-23|gefydev|D3D12.X: queue #18 before the layout is known writes 8 bytes
+34efd81|2026-11-23|gefydev|recomp: omod on f64 and f32/f16 conversions, integer clamp on the unsigned and packed adds and dots
+0056934|2026-11-23|gefydev|recomp: cube T#s are cube arrays ÔÇô the face coordinate's slice is sampled
+c806a0b|2026-11-23|bmjask|Keep draw and reset state transactional
+ad48c26|2026-11-23|gefydev|Issue templates: the game report form gets the bug label
+f7a9f5c|2026-11-23|gefydev|Issue templates: a game report form that asks for report.json and xcl.log
+8ba374c|2026-11-23|gefydev|xcl run: say what the PC is missing before the game starts
+f311ca5|2026-11-23|ivall|Merge pull request #113 from Foniass/t3/faster-shader-compile
+517d983|2026-11-23|Foniass|xcl shaders --precompile: the HLSL the runtime asks for
+56fa1dc|2026-11-23|Foniass|Shader compiles on every core but one
+07f12e8|2026-11-23|Foniass|Translated shaders: one memory-window switch per four dwords, no branches for loads
+58309b9|2026-11-23|ivall|XDefiant's UI text back: v_interp of int / uint PS inputs converted again (#107 regression)
+ef4aae1|2026-11-23|unknown|hle/opus: honor Ogg Opus EOS granule trimming and pre-skip
+ea4bd62|2026-11-23|ivall|Fixes from the audits in #103 / #106: PresentX on another queue, frame intervals either side, xcl.toml kept when unreadable
+f90e644|2026-11-23|ivall|README: a Controls section (gamepad recommended, keyboard and mouse as a gamepad), "What is missing" removed; HANDOFF: PRs #107-#109
+221b5fd|2026-11-23|ivall|Merge pull request #108 from certified-retart/fix/gamesave-defer-delete
+5ec6570|2026-11-23|ivall|Merge pull request #109 from certified-retart/fix/d3d12-fence-removal
+c813f08|2026-11-23|ivall|Merge pull request #107 from raylitebull/fix/recomp-alu-interp-and-wave-ops
+668f550|2026-11-23|ivall|HANDOFF: PRs #95-#102
+02d1302|2026-11-23|ivall|GameInput: refused QueryInterface IIDs are logged
+41cc3d5|2026-11-23|unknown|D3D12: check device removal before using GPU readbacks
+5587780|2026-11-23|ivall|Merge pull request #102 from raylitebull/fix/d3d12x-async-compute-and-bind
+b3dd82d|2026-11-23|unknown|XGameSave: defer container deletion until work dispatch
+fe63082|2026-11-23|ivall|Merge pull request #101 from raylitebull/fix/resolver-aliases-and-ansi-paths
+62c9664|2026-11-23|ivall|Merge pull request #100 from raylitebull/fix/input-scancodes-and-gameinput
+bbdede7|2026-11-23|ivall|Merge pull request #99 from raylitebull/fix/d3d12x-sparse-offsets-and-heaps
+9c7bc7e|2026-11-23|ivall|Merge pull request #98 from raylitebull/fix/xgameruntime-async-and-taskqueue
+8247a60|2026-11-23|ivall|Merge pull request #97 from raylitebull/fix/xgameruntime-package-and-saves
+6ea7a64|2026-11-23|ivall|Merge pull request #96 from raylitebull/fix/vfs-move-copy-and-whiteouts
+8f7a96a|2026-11-23|ivall|Merge pull request #95 from raylitebull/fix/gamesave-empty-container-delete
+aaaa7ad|2026-11-23|raylitebull|GPU recomp: fix PS interp ints, wave ops EXEC zeroing, ALU edge cases, and BVH det underflow
+c85cd6f|2026-11-23|ivall|HANDOFF: XDefiant's cold-cache UI checked ÔÇô not a bug, the text's pipelines compile in a later burst
+c9c8677|2026-11-23|raylitebull|d3d12x: fix async compute PSO tracking, initial PSO binding, DrawIndexedX, and KickoffX MRT restore
+eac85f9|2026-11-23|raylitebull|Fix ANSI path encoding, HLE alias stubs/handles, ordinal/forwarder resolution, and stub race
+0a3b802|2026-11-23|raylitebull|xgameruntime: fix XAsync/XTaskQueue termination deadlocks, cleanup races, port tracking, and XErrorReport lock
+2d94699|2026-11-23|raylitebull|XGameRuntime: fix XGameSave atomic/NTFS/null-out, XPackageGetIdentifier, locale fallback, and controller ID
+d7eae06|2026-11-23|raylitebull|VFS: fix whited-out directory listing, type checks, and directory recreation whiteouts
+d903a80|2026-11-23|raylitebull|VFS: fix case-only rename data loss, overwrite flags, and failed copy/move whiteouts
+c204343|2026-11-23|raylitebull|XGameSave: reject empty container name in XGameSaveDeleteContainer
+9cd48da|2026-11-23|raylitebull|Input: scancode WASD/EQ, focus-loss reset, keyboard_mouse gate, GameInput QI & callback sync
+3885b86|2026-11-23|raylitebull|d3d12x: fix sparse page holes, tile reclamation, query offsets, coherent buffer sanitization, descriptor copies, and DMA list release
+60599a9|2026-11-23|ivall|HANDOFF: #92-#94, XDefiant in the split wave64 form on AMD
+f5999e4|2026-11-23|ivall|Merge pull request #94 from hexgeon1/wave64-local-masks
+01966b6|2026-11-23|ivall|Merge pull request #93 from ozimchuk/wine-keep-image-base
+9d1760f|2026-11-23|ivall|Merge pull request #92 from ozimchuk/wine-keep-last-error
+d1e8d9e|2026-11-23|ivall|VFS: device interface paths are not the title's files ÔÇô the PC's controller reaches titles
+3121db5|2026-11-23|ivall|GameInput: the PC's controller ÔÇô connect / disconnect logged, empty slots polled once a second, the real stick wins
+b4019c4|2026-11-23|hexgeon1|Split wave64: masks read only lane by lane stay in their half
+ecbad66|2026-11-23|ivall|HANDOFF: PRs #87-#91, issue #73
+697dbb1|2026-11-23|ivall|Recompiler tests: #91's GPU tests gate on gpu_ready (#67 removed gpu_ready_wave32)
+088d682|2026-11-23|ivall|Merge pull request #91 from certified-retart/fix/recomp-fp-mad-and-round-mode
+c5aeee9|2026-11-23|ivall|Merge pull request #90 from certified-retart/fix/acphal-overflow-and-oom
+ef6b342|2026-11-23|ivall|Merge pull request #89 from certified-retart/fix/xaudio2-region-clamping
+83199a9|2026-11-23|ivall|Merge pull request #88 from certified-retart/fix/vfs-truncate-existing
+25f943e|2026-11-23|ivall|Merge pull request #87 from certified-retart/fix/kernelx-edge-cases
+1f82be3|2026-11-23|ivall|HANDOFF: PRs #80-#82, #85, #86
+9284dcd|2026-11-23|ivall|HANDOFF: PRs #80-#82, #85, #86
+22d21f0|2026-11-23|Ivan John Ozimchuk|Loader: under Wine, PEB.ImageBaseAddress keeps the real main image
+079b541|2026-11-23|Ivan John Ozimchuk|VFS hooks: the guard keeps the thread's last error
+bd174d5|2026-11-23|ivall|Merge pull request #86 from Foniass/fix/placed-texture-overlap
+28132e8|2026-11-23|ivall|Merge pull request #85 from certified-retart/feat/xaccessibility-apis
+2bba48b|2026-11-23|ivall|Merge pull request #82 from certified-retart/feat/adapter-numeric-model-fallback
+f8e7c2b|2026-11-23|ivall|Merge pull request #81 from certified-retart/fix/dstorage-queue-bugs
+92456af|2026-11-23|ivall|Merge pull request #80 from certified-retart/fix/recomp-cvt-norm-f16
+d70f8e9|2026-11-23|ivall|HANDOFF: PRs #74-#79
+f7d631e|2026-11-23|ivall|Merge pull request #75 from certified-retart/feat/d3d12-agility-sdk
+c94d6b7|2026-11-23|ivall|Merge pull request #79 from certified-retart/feat/recomp-ds-addtid
+9bc3a47|2026-11-23|ivall|Merge pull request #78 from gefydev/compute-e2e
+822c9b0|2026-11-23|ivall|Merge pull request #77 from certified-retart/fix/xnetworking-cert-verify
+e132ed4|2026-11-23|ivall|Merge pull request #76 from certified-retart/fix/xnetworking-security-info-padding
+949907b|2026-11-23|ivall|Merge pull request #74 from certified-retart/fix/mesh-dispatch-skip-no-gpu
+71c4b9b|2026-11-23|ivall|HANDOFF: PRs #61-#66 and #72
+c2887bb|2026-11-22|gefydev|recomp: f64 abs / neg modifiers on the sign bit (#72)
+5ed035c|2026-11-23|ivall|Merge pull request #66 from gefydev/xsystem-console-id-format
+2c1c9ed|2026-11-23|ivall|Merge pull request #65 from gefydev/xuser-gamertag-components
+3fa4203|2026-11-23|ivall|Merge pull request #64 from gefydev/vfs-find-limit-to-directories
+5412c24|2026-11-23|ivall|Merge pull request #63 from gefydev/manifest-shared-decoder
+f112834|2026-11-23|ivall|Merge pull request #61 from Mavixot/shader-compile-time
+b4edefb|2026-11-23|ivall|HANDOFF: #46 merged, #43 held (MSAA against the console's XG), XG versions in the samples
+6a41c55|2026-11-23|ivall|Recompiler tests: #46's wave sizes with #67's gpu_ready
+be1994b|2026-11-23|ivall|Merge pull request #46 from grooving6/fix/f64-math-nan-compares
+55df81b|2026-11-23|ivall|HANDOFF: PRs #84, #68, #67, #69 and the 2-D group lane layout found on AMD
+ba905cf|2026-11-23|ivall|XCL_SPLIT_WAVE64=1: the 32-lane GPUs' split wave64 form on an RDNA GPU too
+46a1c3f|2026-11-23|ivall|Compute: console thread ids follow the hardware lanes in 2-D / 3-D groups
+593a237|2026-11-23|ivall|Console lists bind a title's own view heap only when it is shader visible
+9f353e7|2026-11-23|ivall|Merge pull request #67 from Foniass/wave64-on-wave32
+55fca5a|2026-11-23|ivall|Merge pull request #69 from Tems-py/fix/d3d12-frame-and-texture-handling
+a929884|2026-11-23|ivall|Merge pull request #68 from Foniass/nvidia-uav-barriers-fract
+ef4d7d6|2026-11-23|ivall|Merge pull request #84 from Foniass/fix/descriptor-heap-pages
+848e740|2026-11-23|ivall|HANDOFF: PRs #53-#60 and what was measured on Windows
+ff5c940|2026-11-23|ivall|Game saves: a device name followed by spaces before its extension is escaped too
+e38cb65|2026-11-23|ivall|XAsyncSchedule: a terminated queue takes no new work either
+8064fe3|2026-11-23|ivall|VFS: MoveFileA, MoveFileExA and MoveFileWithProgressA are redirected too
+533187c|2026-11-23|ivall|Merge pull request #60 from gefydev/vfs-replace-file
+8603bcd|2026-11-23|ivall|Merge pull request #59 from gefydev/vfs-copy-file
+6ca99f2|2026-11-23|ivall|Merge pull request #58 from gefydev/vfs-move-file-with-progress
+eb8ed07|2026-11-23|ivall|Merge pull request #57 from gefydev/taskqueue-submit-after-terminate
+daa27b0|2026-11-23|ivall|Merge pull request #56 from gefydev/xasync-begin-complete-contract
+331b734|2026-11-23|ivall|Merge pull request #55 from gefydev/gamesave-windows-names
+2e000cb|2026-11-23|ivall|Merge pull request #54 from gefydev/taskqueue-terminate-delayed
+a963568|2026-11-23|ivall|Merge pull request #53 from gefydev/xasync-cancel-to-provider
+93072dc|2026-11-23|unknown|recomp: handle s_round_mode/s_setreg* and pin non-fused MAD/MAC
+7ac0828|2026-11-23|unknown|hle/acphal: fix APU range overflow/overlap, SHAPE rollback, and XApuConnect OOM
+73fb221|2026-11-23|unknown|hle/xaudio2: enforce XAudio2 play/loop region invariants in clamp_regions and silent_buffer
+15243ad|2026-11-23|unknown|vfs: fix TRUNCATE_EXISTING on un-overlaid game files
+30d1e67|2026-11-23|unknown|hle/kernelx: harden null-arg, VirtualFreeEx, GetThreadName, and overflow paths
+8ad0b44|2026-11-23|Foniass|Placed textures larger on the PC than on the console get memory of their own
+98cb80a|2026-11-23|unknown|xgameruntime: add XAccessibility closed caption and high contrast fallback
+385dc5f|2026-11-23|Foniass|Console descriptor heaps: a heap's last page takes only the descriptors it has
+8138894|2026-11-23|unknown|gpu/adapter: fall back to numeric model token when index is out of range
+a4b2e92|2026-11-23|unknown|hle/dstorage: fix queue error reset, event handle duplication, close/release races, and pointer validation
+527fe98|2026-11-23|unknown|gpu/recomp: exact RNE rounding and NaN handling for V_CVT_(PK)NORM_*_F16
+1ad0d4a|2026-11-23|Foniass|Console descriptor heaps: places in the shared heap a page at a time (NVIDIA flicker)
+31a4001|2026-11-22|gefydev|Tests: a console compute shader through the D3D12.X PSO hook, dispatched and read back
+3b74cda|2026-11-23|unknown|gpu/recomp: implement DS_WRITE_ADDTID_B32 and DS_READ_ADDTID_B32
+4ee1b6e|2026-11-23|unknown|agility: trim env path, absolutize relative paths, dynamic D3D12GetInterface, and expand tests
+ed37916|2026-11-23|unknown|xnetworking: fail closed on cert verification errors and malformed pin metadata
+9a85c6e|2026-11-23|unknown|xnetworking: serialize default security info with offset_of! instead of copying struct padding
+6ececa1|2026-11-23|unknown|gpu: load optional D3D12 Agility SDK at runtime for SM 6.6+ on Windows 10
+a8918b7|2026-11-23|unknown|GPU tests: skip mesh_dispatch test when no SM 6.6 GPU is available
+21e42cf|2026-11-23|Tems|Fix D3D12 frame and texture handling
+b8fca79|2026-11-23|grooving6|Run the f64 and NaN compare GPU tests as wave32 programs too
+ba81c3d|2026-11-22|grooving6|Float compares with NaN operands, f64 math past the f32 and int64 ranges
+66e23c5|2026-11-23|Foniass|GPU tests skip on adapters with neither 32- nor 64-lane waves (WARP)
+21bbb85|2026-11-23|Foniass|README / HANDOFF: wave64 programs on 32-lane GPUs
+ab71385|2026-11-22|gefydev|VFS: ReplaceFileW is redirected
+8a52568|2026-11-23|Foniass|Recompiler prelude: drop the half-local wave64 form nothing generates any more
+3ecf4cf|2026-11-23|Foniass|Wave64 console programs on GPUs with 32-lane waves only: two exchanging wave32 halves
+22ebfae|2026-11-23|Foniass|ds_add_rtn test: the old values may wrap around 0xFFFFFFFF
+319bcd6|2026-11-23|Foniass|Console ResourceBarrier: UAV barriers for all resources
+c8d4a2f|2026-11-23|Foniass|v_fract_f32: ┬▒inf gives NaN and a NaN stays NaN, as on RDNA
+654b87b|2026-11-22|gefydev|XSystemGetConsoleId: the console id in its documented format
+3283d11|2026-11-22|gefydev|XUserGetGamertag: components as XUserGamertagComponent documents them
+80489d0|2026-11-22|gefydev|VFS: FindFirstFileExW with FindExSearchLimitToDirectories is listed too
+817328d|2026-11-22|gefydev|MicrosoftGame.config settings: comments skipped, UTF-16 BE read
+33efe92|2026-11-22|gefydev|MicrosoftGame.config: commented-out entries are not the game's
+f6a249f|2026-11-22|Mavixot|cache compiled shaders between pso requests
+935155c|2026-11-22|gefydev|VFS: CopyFileW is redirected too
+2ca2b73|2026-11-22|gefydev|XAsync: a failing Begin fails the call, and E_PENDING does not complete
+f2d5b6f|2026-11-22|gefydev|VFS: moves through MoveFileWithProgressW are redirected too
+5c6bbc5|2026-11-22|gefydev|Task queues: a terminated queue takes no new work
+cfed905|2026-11-22|gefydev|Game saves: names Windows does not keep as file names stay intact
+6a270f5|2026-11-22|gefydev|Task queues: terminating cancels delayed callbacks before the termination callback
+48aabc1|2026-11-22|gefydev|XAsync: cancellation is the provider's to do
+dd713e3|2026-11-22|ivall|Merge pull request #52 from gefydev/xml-attr-entities
+79769cb|2026-11-22|ivall|Merge pull request #51 from Foniass/t3/make-gpu-test-skips-visible
+6f8c4ec|2026-11-22|ivall|Merge pull request #50 from Mavixot/pso-cache-diagnostics
+a081a65|2026-11-22|gefydev|MicrosoftGame.config: attribute values with their character references replaced
+a3feb68|2026-11-22|Mavixot|Report DXIL cache activity and compilation failures
+ff9430e|2026-11-22|Foniass|GPU tests that cannot run on the adapter say so: SKIPPED <test>: <reason> on stderr, the count at the end of scripts/test.ps1, XCL_REQUIRE_GPU=wave64|mesh to fail instead (#42)
+a1869a5|2026-11-22|ivall|Merge pull request #49 from gefydev/vfs-host-drive-paths
+61c6be8|2026-11-22|gefydev|VFS: a console drive mount leaves the PC's own folders on that drive
+521ec08|2026-11-22|ivall|Shader compilation shown for every DXC compile; with little commit left, compiles go one at a time
+9a15c53|2026-11-22|ivall|XCL window: shader compilation in its title; the game's display name
+055b0ad|2026-11-22|ivall|Merge pull request #48 from gefydev/config-series-s-memory
+f5e6b7a|2026-11-22|ivall|Merge pull request #47 from gefydev/xnetworking-chain-offsets
+5d6829e|2026-11-22|ivall|Merge pull request #41 from grahamster2/adapter-select
+4e5c45a|2026-11-22|gefydev|Config: the Series S title memory for every Series S spelling
+7b42c08|2026-11-22|ivall|README: mesh shaders are required; what GPUs with 32-lane waves run (#42)
+2bfcd7a|2026-11-22|ivall|Merge pull request #39 from wrxqed/fix/mesh-wave32
+5f7ec80|2026-11-22|ivall|Merge pull request #44 from grahamster2/fix/wave32-mask-prefix-count
+28ee5d7|2026-11-22|gefydev|XNetworking: read CERT_CHAIN_CONTEXT at its real offsets
+912bb5d|2026-11-22|ivall|Test title: what the retail games do, as checks anyone can run; readback buffers may use the kept room
+e2f185b|2026-11-22|ivall|Merge pull request #45 from raylitebull/sparse-vram-perf-and-coherent-headroom
+aac59d6|2026-11-22|ivall|A small menu when xcl.exe is opened from Explorer; README trimmed
+4de9016|2026-11-22|ivall|Committed console resources XCL does not place get the PC's description
+798ff0d|2026-11-22|Graham Calihan|recomp: refuse split wave32 mesh programs with cross-half wave64 semantics
+afaf413|2026-11-22|raylitebull|Sparse VRAM: async ring-buffered uploads, cached write-watch ranges, and coherent headroom
+a312759|2026-11-22|Graham Calihan|Split wave32 geometry: refuse prefix counts over a mask
+5dd2d56|2026-11-22|ivall|The title's window stays hidden whichever way it is made
+7396683|2026-11-22|ivall|Remove tools/ttpf-viewer; README: no performance gap from GPU buffers in system memory
+bb9f0b5|2026-11-22|ivall|Committed console textures leave the coherent window room; memory and fps diagnostics
+acbbc55|2026-11-22|ivall|Sparse VRAM: keep window 0's descriptor range out of the title's memory
+bb43b5f|2026-11-22|ivall|Merge pull request #40 from raylitebull/sparse-vram-pools
+8ebba61|2026-11-22|Graham Calihan|gpu_pso_e2e: skip the mesh-pass parts on adapters without mesh shaders
+5c15581|2026-11-22|Graham Calihan|README: XCL_ADAPTER for the GPU tests
+3031945|2026-11-22|Graham Calihan|Test title: take the device from d3d12_xs.dll, not the system's d3d12.dll
+2bc2e37|2026-11-22|Graham Calihan|GPU tests: skip mesh draws on adapters without mesh shaders
+2dd04da|2026-11-22|Graham Calihan|XCL_ADAPTER: choose the D3D12 adapter, for titles and the GPU tests
+4a8344c|2026-11-22|raylitebull|Route D3D12 buffer heaps, XMem graphics memory, and descriptor heaps to sparse VRAM
+cf08a50|2026-11-22|ivall|Merge pull request #38 from grooving6/fix/float-atomic-minmax
+004b3db|2026-11-22|wrxqed|recomp: support wave32 split execution for console mesh shaders
+126268c|2026-11-22|ivall|Unicorn Overlord is playable: the newer console runtime's queue and list layouts
+145bc56|2026-11-22|grooving6|Float atomic min / max in memory: -0.0 operands, f64 forms
+6cee70f|2026-11-22|ivall|README: graphics works, what is still missing, console drives and data folders
+bb58372|2026-11-22|ivall|Minecraft is playable: Ore UI gamepad, no draw skipped, keyboard and mouse as a gamepad
+550d979|2026-11-22|ivall|Minecraft's create-world screen: helper lanes of other quads, unread VS inputs, PLS drive
+e80ce8d|2026-11-22|ivall|Whole shader pack: effect-qualified records, far jumps, every program translates
+1903ff6|2026-11-22|ivall|No Xbox Live tokens by default: titles take their offline paths
+9e759de|2026-11-22|ivall|Minecraft reaches its main menu: title window as the console screen, heap buffers in unified memory
+d272821|2026-11-22|ivall|Merge pull request #31 from BBareth/codex/launcher-config-executable
+54df001|2026-11-22|ivall|Merge pull request #32 from Krigsexe/harden/networking-unsafe-config
+9db80ef|2026-11-22|ivall|Merge pull request #30 from BBareth/codex/rpf-probe-option-conflicts
+b9002e0|2026-11-22|ivall|Merge pull request #29 from BBareth/codex/shaders-json-compile
+1fb776c|2026-11-22|ivall|Merge pull request #28 from BBareth/codex/disasm-byte-range
+63a05b0|2026-11-22|ivall|Merge pull request #27 from BBareth/codex/manifest-storage-quota
+8eb3cf4|2026-11-22|ivall|Fortnite UI and title screen draw: PS attributes and VS params are registers
+546f056|2026-11-22|KrigS.exe|Enhance XNetworking Rust review with detailed guidelines
+6c5af1b|2026-11-22|KrigS.exe|Update XNetworking Rust review with additional context
+6038bb1|2026-11-22|KrigS.exe|docs: record focused XNetworking Rust review
+3a8bc96|2026-11-22|ivall|Fortnite reaches its splash screen: TLS slot 0, deferred texture uploads, console heaps and resources, merged ES+GS
+7e74038|2026-11-22|ivall|Merge pull request #23 from raylitebull/list-x-extensions
+e7e0dd0|2026-11-22|ivall|Merge pull request #26 from raylitebull/raytracing-dxr
+507c441|2026-11-22|ivall|XDefiant title screen: shared descriptor heap, quad lane reads, audio processor, GameInput
+74eaad0|2026-11-22|bbareth|Launcher: honor configured executable before auto-detection
+0fac0d3|2026-11-22|bbareth|RPF9: reject conflicting probe options
+c2e6ce9|2026-11-22|bbareth|Shader tools: keep DXC timings out of JSON output
+c13c774|2026-11-22|bbareth|Disassembler: honor explicit byte ranges
+af6aaa1|2026-11-22|bbareth|Manifest: scope the local storage quota to its section
+0fb82c6|2026-11-22|raylitebull|D3D12.X & GPU: raytracing SRVs, 64-bit multi-window BVH traversal, and title-list BVH builder slots
+660f6dc|2026-11-22|ivall|XDefiant: title memory on the GPU (sparse windows), graphics root arguments, vertex buffers
+3dfbcfb|2026-11-21|raylitebull|d3d12x: implement KickoffX, Wait32/64BitValueX, and RSSetDepthBiasX
+d82829c|2026-11-21|ivall|Merge pull request #22 from raylitebull/mfplat-reset-dxgi
+72bb284|2026-11-21|ivall|Merge pull request #21 from raylitebull/dstorage-enhancements
+13e2af9|2026-11-21|ivall|Merge pull request #25 from Lum7nt/fix/audio-endpoint-test-format
+0f16f59|2026-11-21|ivall|Merge pull request #20 from raylitebull/xma2-decoder
+3754f01|2026-11-21|ivall|Merge pull request #17 from bmjask/codex/olympus-mesh-dispatch-pr
+872fbe0|2026-11-21|ivall|Merge pull request #19 from BBareth/codex/rpf-header-diagnostics
+a2baa21|2026-11-21|ivall|Merge pull request #18 from bmjask/codex/olympus-gamesave-test-isolation
+e511b94|2026-11-21|ivall|Merge pull request #24 from raylitebull/xgameruntime-startup-parity
+e7ca2cd|2026-11-22|Antariska|test: accept all valid Windows MMDevice endpoint ID formats
+f6ad90c|2026-11-21|ivall|Aliased GPU-owned textures in title memory (video-memory arenas)
+e89985f|2026-11-21|raylitebull|XGameRuntime & advapi32legacy: UE4 startup, login, and hotfix parity
+ba422b7|2026-11-21|ivall|heap_probe: no needless casts
+58c1f42|2026-11-21|ivall|Probe: D3D12 heaps over title address space (sections in placeholders)
+97e103d|2026-11-21|ivall|Graphics root arguments of console code; title-memory resources; diagnostics
+f12d724|2026-11-21|ivall|Console command lists of the title's own code; compute root arguments; safety nets
+6a27beb|2026-11-21|raylitebull|HLE: implement mfplat.dll!MFResetDXGIDeviceManagerX with system fallback
+6abe17d|2026-11-21|raylitebull|DirectStorage: submitted cancellation, intermediate_size, and physical-page destinations
+e555b87|2026-11-21|ivall|XDefiant: the first stops on the way in; more console shader kernels
+6da1947|2026-11-21|raylitebull|XAudio2: pure-Rust XMA1/XMA2 decoder
+18cb400|2026-11-21|ivall|XG metadata planes; the console shader compiler as a recompiler test generator
+92beeab|2026-11-21|bbareth|RPF9: unify header diagnostics across scan modes
+fd74662|2026-11-21|ivall|Physical pages mapped into reserved address space
+bdae5a4|2026-11-21|ivall|D3D12.X: textures in title memory follow it
+3c546ef|2026-11-21|ivall|Console texture layout library (xg_xs.dll); the console's pipe configuration
+a379e68|2026-11-21|ivall|Console DirectStorage (xcrdapi.dll)
+68c2c20|2026-11-21|bmjask|Olympus: isolate GameSave async validation test
+c2e1f8d|2026-11-21|ivall|Stub database: console DirectStorage and xg_x fail instead of a fake S_OK
+70835a2|2026-11-21|ivall|Console user32 / legacy DLLs routed; task queue handles checked
+c768791|2026-11-21|bmjask|Olympus: add mesh wave dispatcher foundation
+9f62692|2026-11-21|ivall|Merge pull request #16 from bmjask/codex/olympus-mesh-invalid-targets
+f81441a|2026-11-21|ivall|Fortnite's console imports: xmem statistics and physical pages, IID data, DXC
+b8151eb|2026-11-21|bmjask|Olympus: reject invalid mesh branch targets
+972c589|2026-11-21|ivall|Note: the console pipe configuration differs between Series S and X
+ea98a6b|2026-11-21|ivall|HANDOFF: IDXGIDevice for console code only
+fae7655|2026-11-21|ivall|D3D12.X: IDXGIDevice only for console code
+3f68644|2026-11-21|ivall|D3D12.X device as IDXGIDevice; XMemVirtualAlloc
+e8106bc|2026-11-21|ivall|Merge pull request #15 from bmjask/codex/olympus-mesh-wave-analysis
+2ff23c3|2026-11-21|ivall|D3D12.X: nested occlusion queries
+eddf5a7|2026-11-21|ivall|D3D12.X: the console command list's own methods
+50688d5|2026-11-21|ivall|D3D12.X: CreateDerivedPipelineStateX
+d5703bf|2026-11-21|ivall|D3D12.X: the console device's own methods
+d4dc2f5|2026-11-21|bmjask|Olympus: report mesh wave requirements
+daac133|2026-11-21|ivall|Merge pull request #14 from bmjask/codex/olympus-wave32-geometry
+e280e6a|2026-11-21|ivall|Merge pull request #12 from bmjask/codex/olympus-runtime-features
+861869f|2026-11-21|ivall|D3D12.X command lists in the console's vtable layout
+5a5c32b|2026-11-21|ivall|PresentX and console frame pacing
+83f476b|2026-11-21|bmjask|Olympus: align runtime feature availability
+a3ec898|2026-11-21|bmjask|Olympus: report supported runtime features
+b2cc8ed|2026-11-21|bmjask|Olympus: share geometry wave selection
+b81284c|2026-11-21|ivall|Test directory names; HANDOFF: the second round of contributions (#6, #9-#11, #13)
+28c95b4|2026-11-21|bmjask|Olympus: preserve native geometry wave64
+299cd6f|2026-11-21|ivall|Merge pull request #13 from bmjask/codex/olympus-rpf-streaming
+3bb4323|2026-11-21|ivall|Merge pull request #11 from bmjask/codex/olympus-process-queue
+7897f13|2026-11-21|ivall|Merge pull request #10 from bmjask/codex/olympus-gamesave-safety
+895abb0|2026-11-21|ivall|Merge pull request #9 from bmjask/codex/olympus-dxil-cache
+63c8bd7|2026-11-21|ivall|Merge pull request #6 from bmjask/olympus-assets
+122bff2|2026-11-21|bmjask|Olympus: emulate geometry wave64 on wave32
+55ebf2b|2026-11-21|bmjask|Olympus: validate D3D12 texture dimensions
+660a62a|2026-11-21|bmjask|Olympus: load UTF-16 game configurations
+88b68b4|2026-11-21|bmjask|Olympus: probe large RPF9 archives safely
+f410fa1|2026-11-21|ivall|64-bit atomic inc/dec: the first read through the memory window accessors
+813172a|2026-11-21|bmjask|Olympus: honor disabled process task queues
+d0d3062|2026-11-21|bmjask|Olympus: preserve GameSave result retries
+27bc5c2|2026-11-21|bmjask|Olympus: validate GameSave read name arrays
+c9565af|2026-11-21|bmjask|Olympus: use DXC metadata cache identity
+b8f4b0a|2026-11-21|bmjask|Olympus: normalize DXIL cache lock paths
+fb3e8e8|2026-11-21|bmjask|Olympus: fingerprint the loaded DXC toolchain
+23c7099|2026-11-21|bmjask|Olympus: key DXIL cache by toolchain
+5aae781|2026-11-21|bmjask|Olympus: validate fresh DXIL cache output
+7c98008|2026-11-21|ivall|HANDOFF: the merged contributions (PRs #5, #6, #8, part of #7)
+59eaf46|2026-11-21|ivall|Persistent local storage: used bytes measured, the quota reduced by them
+eec9fb4|2026-11-21|ivall|PR #6 follow-up: linear textures keep addrlib's layout
+82efa14|2026-11-21|ivall|Merge PR #6: texture and resource validation (the linear layout stays addrlib's)
+b1477f8|2026-11-21|ivall|PR #8 follow-up: a cached-only attempt does not wait for a compile in flight
+9ebb9b1|2026-11-21|ivall|Merge PR #8: DXIL cache single flight, RPF scanning (without its XAudio2 part, superseded by PR #3)
+e819d36|2026-11-21|ivall|PR #5 follow-up: f64 ceil / sqrt / rsq on the GPU, the swaprel test
+3bd4dfe|2026-11-21|ivall|Merge PR #5: more RDNA2 instructions
+c3049b0|2026-11-21|bmjask|Olympus media compatibility
+4cf10c7|2026-11-21|bmjask|Olympus assets compatibility
+06a4a49|2026-11-21|bmjask|Olympus isa compatibility
+aa8280f|2026-11-21|ivall|Merge PR #3 (rebased head): its content is already on main
+3365f6e|2026-11-21|ivall|Opus: the AWC block size when the voice format has no nBlockAlign; checked on the game's audio
+38b17ba|2026-11-21|ivall|Merge PR #3: real Opus decoding through Windows' MSOpusDecoder MFT
+2bd8fcc|2026-11-21|raylitebull|XAudio2: real Opus decoder via Windows MSOpusDecoder MFT
+c3b10f1|2026-11-21|raylitebull|XAudio2: real Opus decoder via Windows MSOpusDecoder MFT
+d575a8c|2026-11-21|ivall|HANDOFF: the GDK function count (123 XCL, 39 not implemented)
+a6ccf9c|2026-11-21|ivall|XGameRuntime: gamer picture, default audio endpoint, text entry through the PC runtime
+1c8fae9|2026-11-21|ivall|Tests: no process-wide switch in a parallel test, registry cleanup and advapi32 routing checked
+61492f6|2026-11-21|ivall|3D (thick and thin) and linear textures
+6e92fa2|2026-11-21|ivall|Pipeline release fixes; README: no empty cells under What is missing
+576b4db|2026-11-21|ivall|XGameRuntime from the GDK function table: persistent local storage, console device type, more APIs
+3235ebe|2026-11-21|ivall|Non-blocking pipeline creation: a stand-in at once, the real pipeline built in the background
+23e241f|2026-11-21|ivall|README: highlights and status grouped by area (code, services, graphics, media)
+f3b15b9|2026-11-21|ivall|Title memory above 4 GB: UMA in up to four 4 GiB windows
+0b17b2e|2026-11-21|ivall|README with a detailed status table; drop the shader gallery; no personal paths in docs
+98d32ec|2026-11-21|ivall|Translate the repository to English: comments, log/error/CLI messages, tests, docs, HANDOFF
+885e6a2|2026-11-21|ivall|XGameRuntime through the GDK thunks: InitializeApiImpl / QueryApiImpl with XCL and PC API objects
+c6996f7|2026-11-21|ivall|Console textures from console memory: GFX10 mip chains and upload to PC textures
+092a330|2026-11-21|ivall|Static samplers: S# built from constants in console code become root signature static samplers
+c2a9ce6|2026-11-21|ivall|Title sees the PC's processors (no console processor count, no SMT setting)
+77aefa5|2026-11-21|ivall|Settings from the game's MicrosoftGame.Config: PLS quota, SMT, title memory mode
+26cf5ec|2026-11-21|ivall|PS with conservative depth: position input noperspective centroid (DXIL validation)
+dc902f1|2026-11-21|ivall|README: current state, shorter (details in HANDOFF.md)
+71d2f82|2026-11-21|ivall|Cube-map sample_d: LOD from the face gradients (DXC rejected SampleGrad on TextureCube)
+c2123ec|2026-11-21|ivall|More RDNA2 instructions, complete console descriptor heaps, more structured loops
+74cd9db|2026-11-21|ivall|MS (NGG) and GS pipelines from console shaders in PSO creation
+b64dbd3|2026-11-21|ivall|isa_coverage: translator coverage of every decoder instruction (ignored diagnostic)
+a89f714|2026-11-21|ivall|Translator: faster DXC - skip-flag structuring, branch-free helpers, DXC worker pool
+2b7e79b|2026-11-21|ivall|Translator survey over the whole retail shader pack
+3453dd9|2026-11-21|ivall|Console buffers in unified memory; UAV clears and texture copies on console lists
+bb363d1|2026-11-21|ivall|Undo the crate-wide rustfmt of 9cb9c94, keep its changes
+9f217bc|2026-11-21|ivall|Console descriptor tables and heaps (learned from the console FSR4 dispatch)
+a02eb66|2026-11-21|ivall|FSR4 context on XCL's device: console resource creation and descriptor heap ABI
+700c83e|2026-11-21|ivall|Branch-free HLSL: DXC optimises big console shaders again; TLAS on the GPU confirmed
+8c6f1c3|2026-11-21|ivall|Translator: structured control flow, loop-free float atomics, select-based VGPR writes; TLAS probe
+cc29f47|2026-11-21|ivall|HANDOFF: do not emulate the console FSR4 (fp8 ML model, console-cooked pipelines); HLE it with the exe
+575c768|2026-11-21|ivall|Console command lists hooked into creation, Close/Reset and ExecuteCommandLists
+b56a1b2|2026-11-21|ivall|Console command lists: the console XboxBvhBuilder builds a BVH on the PC GPU
+e714e2a|2026-11-21|ivall|D3D12.X compute command list format from XboxBvhBuilder (fake list probe, record writer scan)
+57b529c|2026-11-20|ivall|Console root-argument layout, D3D12.X inline command list finding, memory cap for probes
+a21d3df|2026-11-20|ivall|Session 5: console DLLs, tiling, BVH format, compute PSO translation
+8fa7fa0|2026-11-20|ivall|Initial XCL source and TTPF viewer

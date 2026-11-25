@@ -1,0 +1,635 @@
+﻿ff80ef7|2026-11-24|Brandon|Strand atlas colour decoded with the sRGB curve
+e4b377c|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/rpf9-toc-decrypt
+5433b45|2026-11-24|Brandon|Read the RPF9 table of contents (toc, toc-extract)
+ce30461|2026-11-24|Brandon|Fur tint comment: the colour source is inferred
+193b16d|2026-11-24|Brandon|Fur tint comment: the form is the game's strand resolve step
+0b14859|2026-11-24|Brandon Villar|Vehicles: number plates follow their switches (#223)
+6860849|2026-11-24|Brandon|Strands of sets with UseStandardBsdf are lit by the standard lighting
+658343d|2026-11-24|Brandon|Strand width from the parameter ramp's Thickness and its curve
+93b24bb|2026-11-24|Brandon|Merge master
+c61e3d6|2026-11-24|Brandon|Vehicles: number plates follow their switches (rear on the stock or the moved spot, front only where a part asks for it)
+ff25f02|2026-11-24|Brandon|Hair and fur strands take their colour and parameter sets from the parsed strand tables (research switches)
+d481bad|2026-11-24|Brandon Villar|Viewer: Scenes tab to browse cutscenes, and Open in scenes for each character (#222)
+d7e9bdc|2026-11-24|Brandon Villar|Scanner: join stored (uncompressed) 64 KiB chunks into their chunked entry (#221)
+2936076|2026-11-24|Brandon Villar|Audio stream names: read the names banks store; only metadata-backed stems from the search (#219)
+660b822|2026-11-24|Brandon|Merge origin/master
+bf57dce|2026-11-24|Brandon|Viewer: Scenes tab to browse cutscenes, and Open in scenes for each character (SIX-157)
+e46a7f8|2026-11-24|Brandon Villar|Vehicles: brakes per axle; drum brakes come from the brake slots (#220)
+ce744e5|2026-11-24|Brandon|Scanner: join stored (uncompressed) 64 KiB chunks into their chunked entry
+4608015|2026-11-24|Brandon|sixng audio: each stream's index in the bank, name source and full name hash
+0049900|2026-11-24|Brandon Villar|Viewer: sector grid toggle in Map 2D and Map 3D (#218)
+3d03ae6|2026-11-24|Brandon|WIP hair lighting: the tube normal rounded across the ribbon
+c53ab75|2026-11-24|Brandon|Audio stream names: read the names banks store; only metadata-backed stems from the search
+42432b2|2026-11-24|Brandon|WIP hair lighting: colour ramps of the game's ramp files
+2aa1799|2026-11-24|Brandon|Merge master
+96d5402|2026-11-24|Brandon|Vehicles: brakes per axle, from the brake slots as well as the named models
+85ef9f6|2026-11-24|Brandon|Viewer: sector grid toggle in Map 2D and Map 3D
+fb3c3fe|2026-11-24|Brandon Villar|Cutscenes: join the last missing section windows (#216)
+bef6b80|2026-11-24|Brandon Villar|Vehicles: a part model listed twice on one bone is fitted once (#215)
+8ef61d5|2026-11-24|Brandon|WIP hair lighting: parameter ramps along the strand
+41c1625|2026-11-24|Brandon|Cutscenes: join the last missing section windows
+456538e|2026-11-24|Brandon|Vehicles: a model two parts fit on the same bone goes on once
+4d525f8|2026-11-24|Brandon|Merge master
+f7efcc9|2026-11-24|Brandon|WIP hair lighting: the visibility fill as the program has it
+00041b6|2026-11-24|Brandon Villar|Audio names: bank-list groups give each bank its pack; looser stream-name rule (#214)
+33e736a|2026-11-24|Brandon|WIP hair lighting: the game's ambient factor
+b92c214|2026-11-24|Brandon|WIP hair lighting: the sun's size factor is 1
+1ada935|2026-11-24|Brandon|WIP hair lighting: table A between its rows, visibility term with a stand-in fade
+002aa3e|2026-11-24|Brandon Villar|Cutscenes: join the streamed section dictionaries into scene clips (#213)
+81dbd47|2026-11-24|Brandon|Audio names: bank-list groups give each bank its pack; looser stream-name rule
+d3aeb9a|2026-11-24|Brandon Villar|Hair: grow strands the way the game's generation program does (#212)
+48d1c9a|2026-11-24|Brandon|Merge master and the strand placement branch
+17cee49|2026-11-24|Brandon|WIP hair: ramp root to tip, variants through sets, colours as linear
+e23a836|2026-11-24|Brandon Villar|ttpf: --float writes float textures' unclamped values (#211)
+98b28c4|2026-11-24|Brandon Villar|Sector grids: per-file cell sizes and kinds, map groups switched by world-state rules (#210)
+c3125cd|2026-11-24|Brandon|WIP hair lighting: the game's four tables and its light sum in the viewer
+24a26da|2026-11-24|Brandon|Cutscenes: join the streamed section dictionaries into scene clips
+fcaceef|2026-11-24|Brandon Villar|Names: bank list containers, stream names and more audio bank names (#208)
+89357cb|2026-11-24|Brandon Villar|Ped models: the name the game shows, beside the model name (#207)
+5cc290f|2026-11-24|Brandon|Merge master and the float export branch
+6ce332a|2026-11-24|Brandon|WIP hair lighting: strand direction per vertex, hair material class, first fibre model
+eb4373c|2026-11-24|Brandon Villar|BC6H BCPack: 17 more endpoint presets refitted on edge continuity (#205)
+9d08383|2026-11-24|Brandon Villar|Speed: --bench with checksums, BC decode in bands (SIX-99) (#206)
+9911d05|2026-11-24|Brandon|Merge master into the display names
+0831d85|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/ttpf-float-export
+e90b421|2026-11-24|Brandon Villar|Truck side guards: one length and height, picked by the part's switch (#209)
+92f09d6|2026-11-24|Brandon|Hair: grow strands the way the game's generation program does
+de6100d|2026-11-24|Brandon|ttpf: --float writes float textures' unclamped values
+0771f56|2026-11-24|Brandon Villar|Ped model names: wider search with a control, uncertain flag (#204)
+5ae2d5c|2026-11-24|Brandon|BC6H BCPack: endpoint preset slot 5 refitted with slot 85 held
+bc1e967|2026-11-24|Brandon Villar|Cutscenes: cast, props, cameras and clips of every story scene (SIX-100) (#201)
+9b37e47|2026-11-24|Brandon|Sector grids: map group ids are switched by the world-state rules; bundle key tests (SIX-106)
+a363faf|2026-11-24|Brandon|Sector grids: three cell sizes, cell lists and map-group lists, bundle keys (SIX-106)
+5fcd0f5|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/mule-sideguards
+4f7b5af|2026-11-24|Brandon|Truck side guards: one length and height, picked by the part's switch
+bc95be5|2026-11-24|Brandon|Merge branch 'claude/people-ped-names-wide' into claude/people-display-names
+4e8e969|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/people-ped-names-wide
+c64dc32|2026-11-24|Brandon|Hair: read each strand's root-to-tip profile and use it on characters
+088a245|2026-11-24|Brandon Villar|Viewer: characters' hair takes the colours of its hair preset (#203)
+b83adbd|2026-11-24|Brandon|Merge branch 'claude/people-ped-names-wide' into claude/people-display-names
+3d442e4|2026-11-24|Brandon|Merge master into the wider name search
+6b9793d|2026-11-24|Brandon|Name more audio banks and streams: bank list containers, stream names, text-table words, GUI names
+26aa85a|2026-11-24|Brandon|Ped models: the name the game shows, beside the model name
+af7b5e9|2026-11-24|Brandon Villar|Clothing stitches: name the real stitch atlas and correct the description (#202)
+f73d2f7|2026-11-24|Brandon Villar|CLI: text --find searches every text string (#200)
+17710a9|2026-11-24|Brandon|README: the --bench speed check
+2ff6901|2026-11-24|Brandon|Textures: BC1 to BC7 decode in bands of block rows, one band per core
+d3a089d|2026-11-24|Brandon|Bench: sixng --bench times indexing, search, texture decoding and model export, with a checksum of every result
+783eaa4|2026-11-24|Brandon|BC6H BCPack: 16 more endpoint presets refitted on edge continuity
+0b672e6|2026-11-24|Brandon|Merge branch 'claude/people-text-find' into claude/people-display-names
+c443e42|2026-11-24|Brandon|Ped model names: wider search with a control, uncertain flag
+45d34d8|2026-11-24|Brandon|Viewer: characters' hair takes the colours of its hair preset
+d4540aa|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/cutscenes
+7461d28|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/stitch-atlas
+10be102|2026-11-24|Brandon|Clothing stitches: name the real stitch atlas and correct the description
+3704f15|2026-11-24|Brandon|Cutscenes: cast, props, cameras and clips of every story scene (SIX-100)
+6572044|2026-11-24|Brandon Villar|Characters: list every ped model of the outfit list, named where a name is recovered (#199)
+5f7a635|2026-11-24|Brandon Villar|Tyres stay black: leave the tyre colour slot unapplied (#198)
+ed69b05|2026-11-24|Brandon|CLI: text --find searches every text string
+8f3e0a7|2026-11-24|Brandon Villar|Four-layer ground: describe all 18 variants (#197)
+604c28d|2026-11-24|Brandon|Characters: list every ped model of the outfit list, named where a name is recovered
+8aebab3|2026-11-24|Brandon|Tyres stay black: leave the tyre colour slot unapplied
+9ea455f|2026-11-24|Brandon Villar|Names: mount paths, audio.rpf names and audio bank names (#196)
+1502b8e|2026-11-24|Brandon|Sector grids: three cell sizes, cell lists and map-group lists, bundle keys (SIX-106)
+2f02f1b|2026-11-24|Brandon Villar|Viewer: tick boxes to move doors, windows, bonnet and boot one by one (#191)
+3273670|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/ground-variants
+c8a6c05|2026-11-24|Brandon|Four-layer ground: describe all 18 variants, with what was read per variant
+69c8597|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/tyre-lod-shader
+a42230e|2026-11-24|Brandon|Tyres: the _lod tyre shader is a tyre shader too
+e34f65d|2026-11-24|Brandon Villar|Four-layer ground: tint formula per material (#195)
+6ec24cf|2026-11-24|Brandon Villar|World sector grids in levels.rpf: decoder and sector-grid command (#194)
+6e46dd2|2026-11-24|Brandon|Merge remote-tracking branch 'origin/claude/ground-tint' into claude/ground-variants
+a68b291|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/panel-checkboxes
+ba8c8de|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/mount-audio-names
+0167da7|2026-11-24|Brandon|Names: mount paths, audio.rpf names and audio bank names
+f040646|2026-11-24|Brandon Villar|Viewer: animation clips on animals, with the fur following (#192)
+73eb023|2026-11-24|Brandon Villar|Clothing materials: describe the stitch layer (#193)
+e399c8e|2026-11-24|Brandon|Four-layer ground: write the tint formula per material, with the shader's switches resolved
+f0c2bb6|2026-11-24|Brandon Villar|Viewer: sliding doors slide (#190)
+a213cf5|2026-11-24|Brandon|Merge master
+e030c55|2026-11-24|Brandon|World sector grids in levels.rpf: decoder and sector-grid command (SIX-106)
+2a3b17f|2026-11-24|Brandon|Clothing materials: describe the stitch layer (shared mask texture, third UV set, weight and colour maths)
+13de593|2026-11-24|Brandon Villar|Viewer: Liveries panel to place stickers on a vehicle by hand (#186)
+9c4e2f3|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/people-animal-clips
+101cf3f|2026-11-24|Brandon|Merge branch 'claude/sliding-doors' into claude/panel-checkboxes
+649aa07|2026-11-24|Brandon|Sliding doors: stop at the end of the door opening
+02a189f|2026-11-24|Brandon|Viewer: animation clips on animals, with the fur following the body
+4fc1d86|2026-11-24|Brandon|Viewer: tick boxes to move doors, windows, bonnet and boot one by one
+d2ff12a|2026-11-24|Brandon Villar|Four-layer ground: height-based blend, detail array and data map channels from the shader code (#189)
+7efd16a|2026-11-24|Brandon Villar|Viewer: pose controls for shoulders, twists, wrists, ankles and eyes (#188)
+d9d6cfa|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/livery-editor
+d389556|2026-11-24|Brandon|Viewer: sliding doors slide
+79cd537|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/ground-height-blend
+8a845ae|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/people-pose-joints
+49eca9f|2026-11-24|Brandon Villar|Four-layer ground: where each material's layer weights come from (vertex colours or lookup texture) (#187)
+af75bda|2026-11-24|Brandon Villar|Viewer: export button for hair and fur, with full strands (#185)
+1051ea5|2026-11-24|Brandon Villar|Vehicles: a body kit fitted by hand takes the paint (#184)
+a5ef223|2026-11-24|Brandon|Four-layer ground: the height-based blend, the detail array and the data map channels, from the shader code
+fd0ff5c|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/people-pose-joints
+6a7e082|2026-11-24|Brandon Villar|Liveries: a sticker's colours are colorRed, colorGreen, colorBlue (#180)
+9484e42|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/people-fur-export
+e208dba|2026-11-24|Brandon|Viewer: pose controls for shoulders, twists, wrists, ankles and eyes
+a063865|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/livery-editor
+6098101|2026-11-24|Brandon|Four-layer ground: what the two vertex colour sets hold
+1535e9f|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/ground-vertex-weights
+cc8600e|2026-11-24|Brandon|Four-layer ground: where each material's layer weights come from, measured on its vertices
+9b107ff|2026-11-24|Brandon|Merge origin/master into claude/sticker-colours
+798137f|2026-11-24|Brandon|Liveries: unsaved check ignores the fitted-by-hand marker
+65a9724|2026-11-24|Brandon Villar|Materials: each constant's type from the shader tables; integers written as integers (#183)
+2b25d94|2026-11-24|Brandon|Merge origin/master into claude/kit-paint
+e94415d|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/people-fur-export
+9063d99|2026-11-24|Brandon|Viewer: export button for the shown grooms, with full strands (#146)
+838fa38|2026-11-24|Brandon|Viewer: Liveries panel to place stickers on a vehicle by hand, with save and load
+27c045c|2026-11-24|Brandon|Part colours: fitted parts change colours (a body kit takes the paint)
+f634a10|2026-11-24|Brandon|Four-layer parameters use the typed values
+929b656|2026-11-24|Brandon Villar|Notices: thank the gta6-namehash contributors (#179)
+e0003b6|2026-11-24|Brandon Villar|CI: skip macOS on merges to master (#182)
+a7b553f|2026-11-24|Brandon|CI: skip macOS on merges to master
+11f0cc5|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/param-types
+ca6818a|2026-11-24|Brandon Villar|Viewer: eyes follow the head when it is posed (#181)
+972bf89|2026-11-24|Brandon Villar|Viewer: draw stickers placed on a vehicle (custom liveries) (#176)
+9588bbd|2026-11-24|Brandon|Materials: each constant's type from the shader tables; integers written as integers
+58b355a|2026-11-24|Brandon Villar|Vehicles: boats never get wheels (#177)
+84e1b42|2026-11-24|Brandon|Viewer: eyes follow the head when it is posed
+a2b308c|2026-11-24|Brandon Villar|sixng vehicle: rim size, brakes, and picking single parts (#174)
+83c2a60|2026-11-24|Brandon Villar|Stickers: texture export by id (sixng stickers) and the sticker zone in the viewer's vertices (#172)
+0e43060|2026-11-24|Brandon|Liveries: a sticker's colours are colorRed, colorGreen, colorBlue
+0b4f00e|2026-11-24|Brandon|Notices: thank the gta6-namehash contributors
+6886055|2026-11-24|Brandon|Merge master
+b0b3833|2026-11-24|Brandon|Vehicles: boats never get wheels
+eff6945|2026-11-24|Tarek|Names: import a name dictionary as a last-resort source (#175)
+18bc31c|2026-11-24|Brandon Villar|BC6H BCPack: endpoint presets refitted on edge continuity (#170)
+2398c31|2026-11-24|Brandon|Merge branch 'claude/livery-textures' into claude/livery-draw
+26edab5|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/livery-textures
+6c6c7fe|2026-11-24|Brandon Villar|Grooms: export the full strand set, and document how it is grown (#173)
+c510697|2026-11-24|Brandon Villar|Outfit export: clips carry their movement over the ground (#166)
+8054a34|2026-11-24|Brandon|Merge master
+127ce9c|2026-11-24|Brandon|Viewer: draw stickers placed on a vehicle (custom liveries) from a livery file
+d4b44b3|2026-11-24|Brandon|Grooms: --animal exports an animal's fur by its inferred link (#146)
+ae0bb66|2026-11-24|Brandon|Merge master (#169 merged)
+02578d4|2026-11-24|Brandon|sixng vehicle: rim size, brakes, and picking single parts
+938c75f|2026-11-24|Brandon Villar|Four-layer ground: layer UVs from the material's constants (128 per unit, not 64) (#171)
+d0913eb|2026-11-24|Brandon Villar|Vehicles: liveries as data (brands, stickers, textures, layouts) (#168)
+0f6984c|2026-11-24|Brandon Villar|Vehicles: wheel fitment records of parts without a model, and in sixng vehicle (#169)
+959b1d8|2026-11-24|Brandon|README: how the full strand set is grown from the guides (#146)
+ab56ca6|2026-11-24|Brandon|Stickers: fix the colour list expression
+0dc2b1d|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/people-full-hair
+6c2d97d|2026-11-24|Brandon|Four-layer ground: each layer's UV set, scale and offset from the material's constants
+a8756c6|2026-11-24|Brandon|Grooms: --full writes the full strand set grown from the guides (#146)
+f44f70d|2026-11-24|Brandon|BC6H BCPack: endpoint presets refitted on edge continuity
+1af1b8b|2026-11-24|Brandon|Stickers: the list gives the mask flag and the three named colours
+592f347|2026-11-24|Brandon|Merge master
+25d8c25|2026-11-24|Brandon|Vehicles: wheel fitment records of parts without a model, and in sixng vehicle
+85c7dfa|2026-11-24|Brandon Villar|Export: the second vertex colour stream, which holds a vehicle's sticker zones (#162)
+c823d55|2026-11-24|Brandon|Stickers: texture export by id (sixng stickers) and the sticker zone in the viewer's vertices
+b2066ad|2026-11-24|Brandon Villar|Library: recents and favourites show the item's name; card text stays inside the card (#167)
+1162004|2026-11-24|Brandon|Merge remote-tracking branch 'origin/claude/liveries-data' into claude/livery-textures
+e889c5a|2026-11-24|Brandon|Merge master
+15f4532|2026-11-24|Brandon Villar|People: swimwear counts as clothes; missing garments are listed (#165)
+2cf005b|2026-11-24|Brandon Villar|Materials: read constant values from their buffer at their byte offset (#163)
+4b7b138|2026-11-24|Brandon|Vehicles: liveries as data, checked on the full install
+0df73a6|2026-11-24|Brandon|Library: recents and favourites show the item's name, and card text stays inside the card
+0c95172|2026-11-24|Brandon|Outfit export: clips carry their movement over the ground
+d704c8b|2026-11-24|Brandon|Vehicles: liveries as data (brands, their stickers, textures and layouts)
+03a916f|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/material-constants
+6e95cea|2026-11-24|Brandon|People: swimwear and bodysuits count as clothes; a garment with no model is listed as not found
+2ac9160|2026-11-24|Brandon|People: swimwear and bodysuits count as clothes; a garment with no model is listed as not found
+bbaee1d|2026-11-24|Brandon|Materials: read constant values from their buffer at their byte offset
+3b7aa1f|2026-11-24|Brandon|Export: the second vertex colour stream (_COLOR1), which holds a vehicle's sticker zones
+e45299b|2026-11-24|Brandon Villar|Four-layer ground: layer order, weights and data maps confirmed from the shader code (#161)
+44da5e6|2026-11-24|Brandon Villar|People: 25 more characters open with shoes and clothes (#160)
+2a7e7fa|2026-11-24|Brandon Villar|Map 3D: fill far-field terrain without collision from the height map (#159)
+c8037b3|2026-11-24|Brandon Villar|Shaders: techniques and passes of every effect (shader-bindings) (#158)
+b7fbe3a|2026-11-24|Brandon Villar|Index: keep a resource whose system page continues on a resource boundary in one entry (index version 6) (#156)
+14d4279|2026-11-24|Brandon Villar|Vehicles: a widebody kit moves the wheels out (#157)
+0577151|2026-11-24|Brandon|Four-layer ground: layer order, weights and data maps confirmed from the shader code
+31842f2|2026-11-24|Brandon|People: items take the model of their asset GUID when their textures find none
+4793000|2026-11-24|Brandon|Merge master (bonnet struts, #153)
+758d5c7|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/world-heightmap-3d
+b62cb88|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/shader-techniques
+e91e512|2026-11-24|Brandon|Map 3D: fill far-field terrain without collision from the height map
+e0d4182|2026-11-24|Brandon|Vehicles: a widebody kit moves the wheels out (wheel fitment records of fitted parts)
+8c9171e|2026-11-24|Brandon Villar|Viewer: bonnet and boot struts follow the panel (#153)
+593c106|2026-11-24|Brandon|Index version 6: rebuild indexes for the stream grouping fix
+015d17a|2026-11-24|Brandon|Index: keep a resource whose system page continues on a resource boundary in one entry
+3a1f82f|2026-11-24|Brandon|Shaders: techniques and passes of every effect (shader-bindings)
+88bb24c|2026-11-24|Brandon Villar|Shaders: pipeline cache joined to the programs (shader-bindings --cache) (#155)
+4406256|2026-11-24|Brandon Villar|BC1 BCPack: preset window checked per texture, 20 slots replaced (#154)
+132ccec|2026-11-24|Brandon|Merge branch 'claude/shader-pipeline-cache' into claude/shader-techniques
+6969454|2026-11-24|Brandon Villar|RBF binary XML to XML: sixng rbf command and viewer preview (#152)
+5e1eba2|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/shader-pipeline-cache
+d2bd2c1|2026-11-24|Brandon Villar|Export: materials.json lists a texture's slices (#151)
+fb0786b|2026-11-24|Brandon Villar|People: clips move over the ground (#150)
+9387fd3|2026-11-24|Brandon|Viewer: bonnet and boot struts follow the panel
+cfb8377|2026-11-24|Brandon|Shaders: read the pipeline cache and join its stages to the programs (shader-bindings --cache)
+67a8ca4|2026-11-24|Brandon Villar|Textures: decode R32_FLOAT, R16G16_FLOAT and R10G10B10A2; store chunk table past 4 GiB (#149)
+00ad6ec|2026-11-24|Brandon Villar|Viewer: Randomize button for a vehicle's parts (#148)
+0076218|2026-11-24|Brandon|RBF binary XML to XML text: sixng rbf command and viewer preview
+03c814c|2026-11-24|Brandon Villar|Shaders: declared resources and constants of every program and effect (shader-bindings) (#147)
+eeb82e7|2026-11-24|Brandon|Export: materials.json lists a texture's slices (#133)
+ced7d11|2026-11-24|Brandon|People: clips move over the ground (mover tracks)
+d72779e|2026-11-24|Brandon|Merge branch 'claude/shader-bindings' into claude/shader-pipeline-cache
+796fa44|2026-11-24|Brandon|Viewer: Randomize button for a vehicle's parts
+d15dbef|2026-11-24|Brandon Villar|Decode the whole-world height map (sixng heightmap) (#145)
+4f6b47a|2026-11-24|Brandon|Shaders: read the declared resources and constants of every program and effect (shader-bindings)
+eac3929|2026-11-24|Brandon Villar|CLI: sixng vehicle, a whole vehicle with the parts of a configuration as one GLB (#142)
+002d90f|2026-11-24|Brandon Villar|People: hair stays under a hat (#144)
+4d29c99|2026-11-24|Brandon|Decode the whole-world height map (sixng heightmap)
+50b2436|2026-11-24|Brandon Villar|Export: materials.json keeps every texture when a slot key repeats (#143)
+063d35e|2026-11-24|Brandon|BC1 BCPack: preset window checked per texture, 20 slots replaced
+f184275|2026-11-24|Brandon|People: note that the hat rule is a stand-in, README
+23336c7|2026-11-24|Brandon|sixng vehicle: the configuration's colour is linear as stored
+2d87cee|2026-11-24|Brandon Villar|Heads: export the wrinkle region masks and the face region mask (#141)
+b84ff13|2026-11-24|Brandon|sixng vehicle: rims and tyres take the vehicle's part colours
+37e77ac|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/people-hats
+5d8c94b|2026-11-24|Brandon|Export: materials.json keeps every texture when a slot key repeats (#133)
+609e916|2026-11-24|Brandon|CLI: sixng vehicle, a whole vehicle with the parts of a configuration as one GLB
+f6b3f8f|2026-11-24|Brandon|Heads: export the wrinkle region masks and the face region mask of a face preset (#133)
+c44cc61|2026-11-24|Brandon Villar|Export: readable materials.json beside each model (#140)
+da2223b|2026-11-24|Brandon Villar|Weapons: finishes from the weapon, part set and mod records; default finish (#139)
+68d2267|2026-11-24|Brandon Villar|Vehicles: the second layer of part surfaces (wear), with a wear control in the viewer (#138)
+c3c4d9f|2026-11-24|Brandon|Export: readable materials.json beside each model (#133)
+0602699|2026-11-24|Brandon|Weapons: finishes joined from the weapon, part set and mod records; default finish; seven more part type names
+44b1c20|2026-11-24|Brandon|Merge master (per-pixel palette merged as #137)
+adebfef|2026-11-24|Brandon|Vehicles: the second layer of part surfaces (wear), with a wear control in the viewer
+1f4318f|2026-11-24|Brandon Villar|Vehicles: part colours per pixel from the material palette (#137)
+ba59d5a|2026-11-24|Brandon|People: hair stays under a hat (display rule)
+50d41ea|2026-11-24|Brandon|Vehicles: part colours per pixel from the material palette
+4c2fe2a|2026-11-24|Brandon Villar|Vehicles: shared truck beds and other library parts take the colours of the vehicle they are on (#136)
+d9acd24|2026-11-24|Brandon|Vehicles: library parts (shared truck beds and boxes) take the colours of the vehicle they are on
+75ee571|2026-11-24|Brandon Villar|People: more characters load whole and dressed (#135)
+560901b|2026-11-24|maple-quartz18|Viewer: add MetalFX frame generation (#132)
+23ff140|2026-11-24|Brandon Villar|BC6H BCPack: preset refit with lighting chunks kept for the rules only (#134)
+154e196|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/people-unresolved
+023216e|2026-11-24|Brandon|BC6H BCPack: preset refit with lighting chunks kept for the rules only
+9b38e3c|2026-11-24|Brandon Villar|Vehicles: stock alternatives of the chassis and other parts (switches) (#131)
+1d046ec|2026-11-24|Brandon Villar|Weapons: part type names, finishes for magazines and sights, colour labels (#130)
+e0f26a8|2026-11-24|Brandon|People: more characters load whole and dressed
+cee6c28|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/chassis-alternatives
+e57d163|2026-11-24|Brandon|Vehicles: stock alternatives of the chassis and other parts (switches)
+75bfabe|2026-11-24|Brandon|Weapons: part type names, finishes for magazines and sights, colour labels
+24124ff|2026-11-24|Brandon Villar|Weapons: metalness and roughness per sub-material (#129)
+39a3927|2026-11-24|Brandon|Weapons: metalness and roughness per sub-material
+daf3867|2026-11-24|Brandon Villar|Viewer: fabric weave per pixel for a garment's main sub-material (#128)
+9ce31d3|2026-11-23|Brandon Villar|BC1 BCPack: replace nine preset window slots (#126)
+7338d0e|2026-11-23|Brandon Villar|BCPack: BC3, BC4, BC5 and BC7 presets made consistent with three more exact rules (#125)
+9fa7c0a|2026-11-23|Brandon Villar|Vehicles: the body paint's finish from the data (#127)
+6ccdf22|2026-11-24|Brandon|Viewer: fabric weave per pixel for a garment's main sub-material
+4a473ab|2026-11-24|Brandon|Vehicles: the body paint's finish from the data
+0c8c3f0|2026-11-23|Brandon Villar|Vehicles: mod part models take their vehicle's part colours (#124)
+67c84ab|2026-11-24|Brandon|BC1 BCPack: replace nine preset window slots
+8eff158|2026-11-24|Brandon|BCPack: presets made consistent with three more exact rules
+0819916|2026-11-24|Brandon|Merge remote-tracking branch 'origin/master' into claude/bed-colours
+be45ad2|2026-11-24|Brandon|Vehicles: mod part models take their vehicle's part colours
+ab122bc|2026-11-23|Brandon Villar|Version 0.8.0 (#123)
+08df174|2026-11-24|Brandon|Version 0.8.0
+9e672a3|2026-11-23|Brandon Villar|Viewer: weapon finishes per part type (#121)
+8315a34|2026-11-23|Brandon Villar|People: fabric baked into garment textures (weave, colour gradient, tint-mask layers) (#122)
+3bfa416|2026-11-23|Brandon Villar|Viewer: normal maps in a tangent frame built from the UV set they are sampled with (#120)
+504d4cc|2026-11-23|Brandon|Merge remote-tracking branch 'origin/master' into claude/weapon-finishes
+a938ae6|2026-11-23|Brandon|Merge master
+ba1c275|2026-11-23|Brandon|Viewer: weapon finishes per part type
+eadab44|2026-11-23|Brandon Villar|Export: weapon parts in their preset colours (#119)
+6329e42|2026-11-23|Brandon|Merge master
+839e852|2026-11-23|Brandon|Viewer: normal maps in a tangent frame built from the UV set they are sampled with
+8db11f5|2026-11-23|Brandon|Merge branch 'claude/weapon-export-colours' into claude/weapon-finishes
+8d2183b|2026-11-23|Brandon Villar|Vehicles: a part element names its model by asset id; pickup beds from their part (#118)
+f465d73|2026-11-23|Brandon|Export: weapon parts in their preset colours (COLOR_0 per vertex)
+55d1537|2026-11-23|Brandon|People: fabric baked into garment textures (weave, colour gradient, tint-mask layers)
+ef4e085|2026-11-23|Brandon|Vehicles: a part element names its model by asset id; pickup beds from their part
+cf20b58|2026-11-23|Brandon|Merge master (per-vertex clothing colours of #116 kept inside the fabric path)
+c1dd105|2026-11-23|Brandon|Viewer: garment sub-materials per vertex, fabric tile gradient and a tint-mask layer
+0b44e75|2026-11-23|Brandon Villar|People: per-part clothing colours and preset colours in outfit exports (#116)
+b07f89a|2026-11-23|Brandon|Merge master
+e3871a5|2026-11-23|Brandon Villar|Materials: tint-mask layers of a preset's sub-materials (#115)
+a8f2523|2026-11-23|Brandon|Merge master
+13b7b4e|2026-11-23|Brandon|Merge branch 'claude/tint-mask-layers' into claude/fabric-render
+22f6320|2026-11-23|Brandon|People: per-part clothing colours from the vertex part number, and preset colours in outfit exports
+24bf424|2026-11-23|Brandon|Materials: tint-mask layers of a preset's sub-materials
+f84dfee|2026-11-23|Brandon Villar|Viewer: weapon parts in the colours of their material presets (#114)
+854a4cc|2026-11-23|Brandon|Viewer: weapon parts in the colours of their material presets
+2985152|2026-11-23|Brandon Villar|Viewer: a configuration's body colour is a display value, not linear (#113)
+e56a7bd|2026-11-23|Brandon|Viewer: a configuration's body colour is a display value, not linear
+b5f51ba|2026-11-23|Brandon|Materials: weapon links also when the index is built on demand
+dba88d6|2026-11-23|Brandon|Materials: weapon links also when the index is built on demand
+0187d22|2026-11-23|Brandon Villar|Materials: weapon models, tiles, parameter names (#110)
+f1e976d|2026-11-23|Brandon Villar|Vehicles: part colours for vehicles in shared tables, no gradient map as base colour (#111)
+c353320|2026-11-23|Brandon|README: restore the #105 and #109 sections dropped in the master merge
+e63034d|2026-11-23|Brandon|Merge remote-tracking branch 'origin/master' into pr110-fix
+fad0072|2026-11-23|Brandon|Vehicles: part colours for vehicles in shared tables, no gradient map as base colour
+9aec774|2026-11-23|Brandon|README: material names, tiles, weapon models; fix the materials usage line
+5a4c9f4|2026-11-23|Brandon|Materials: tiles, parameter and field names
+54e26da|2026-11-23|Brandon Villar|People: clothing colours from the garment presets (#109)
+31fc48f|2026-11-23|Brandon|People: clothing colours from the garment presets
+9278ff7|2026-11-23|Brandon Villar|Viewer: the model list is in the order of the names shown (#108)
+01815ed|2026-11-23|Brandon|Merge remote-tracking branch 'origin/master' into picker-sort-fix
+53665e8|2026-11-23|Brandon|Materials: weapon models to presets by name
+087f7dd|2026-11-23|Brandon Villar|Textures: Used by lists heads and characters for ped skin textures (#105)
+631d1e5|2026-11-23|Brandon Villar|Materials: decode the layered-material libraries (clothing and weapon colours) (#107)
+91f866a|2026-11-23|Brandon Villar|Viewer: the model list keeps the selected row on screen without jumping (#106)
+a65aaf6|2026-11-23|Brandon|Merge the list scrolling change (#106): both touch the picker's fields
+db77538|2026-11-23|Brandon|Viewer: the model list is in the order of the names shown
+936b5c0|2026-11-23|Brandon|Materials: decode the layered-material libraries (clothing and weapon colours)
+d397de6|2026-11-23|Brandon Villar|Viewer: parts on a bed's bones mount on the bed (#104)
+f74276f|2026-11-23|Brandon|Viewer: the model list keeps the selected row on screen without jumping
+480d32d|2026-11-23|Brandon Villar|BCPack: BC7 presets with alpha, BC6H refit with the no-wrap rule (#103)
+dd23f11|2026-11-23|Brandon|Textures: Used by lists heads and characters for ped skin textures
+ea103f7|2026-11-23|Brandon|Viewer: parts on a bed's bones mount on the bed
+2a70bca|2026-11-23|Brandon|BC6H BCPack: refit the presets with the no-wrap rule
+aa4f835|2026-11-23|Brandon|BC7 BCPack: refit the presets under the reset rule, with alpha
+5ed86e5|2026-11-23|Brandon Villar|Viewer: fit a part's models only on mounting bones the vehicle has (#102)
+afc30aa|2026-11-23|Brandon Villar|Viewer: occlusion from the vehicle material map (#101)
+116d628|2026-11-23|Snorps37|Names: natural-ground surface names recovered by hash (#99)
+d27f2d8|2026-11-23|Brandon Villar|People: clean fabric shading, hair colour swatches, other hair styles (#100)
+cd311ee|2026-11-23|Brandon|Viewer: fit a part's models only on mounting bones the vehicle has
+154ed58|2026-11-23|Brandon|Viewer: occlusion from the vehicle material map
+9b3b2cb|2026-11-23|Brandon|People: say what the clothing shader does with the two packed maps
+978696b|2026-11-23|Brandon|People: a character's other hair styles to choose from
+bc5c43a|2026-11-23|Brandon|People: hair palette swatches and --hair-colour
+9ef5d24|2026-11-23|Brandon|People: fabric shade from the garment's packed map, not the grime map
+0e2623a|2026-11-23|Brandon|BC7 BCPack: second alpha-aware preset refit
+d10d53c|2026-11-23|Brandon|BC6H BCPack: refit the presets with the no-wrap rule
+4a8da27|2026-11-23|Brandon Villar|Names: vehicle surface reference fields (#98)
+be16132|2026-11-23|Brandon Villar|Vehicles: no prop tint on vehicle shaders (#97)
+db76cc6|2026-11-23|Brandon|Names: vehicle surface reference fields (material0Hash, material1Hash, albedo1Hash, detailMapsHash)
+fe08116|2026-11-23|Brandon|Vehicles: no prop tint on vehicle shaders (truck beds came out in rainbow bands)
+8d2a152|2026-11-23|Brandon|Vehicles: no prop tint on vehicle shaders (truck beds came out in rainbow bands)
+622f9e5|2026-11-23|Brandon Villar|Vehicles: truck bodies and beds from the configuration's parts (#95)
+1d960f3|2026-11-23|Brandon|Vehicles: shared body parts (truck beds, boxes) and a configuration's parts in the viewer
+0bb3cd3|2026-11-23|Brandon Villar|Viewer: landing gear doors close over the bay (#94)
+9abf7ca|2026-11-23|Brandon|Viewer: landing gear doors close over the bay
+20219d8|2026-11-23|Brandon Villar|Viewer: landing gear braces go up with their leg, door rods are put away (#93)
+95029ce|2026-11-23|Brandon|Viewer: landing gear braces go up with their leg, door rods are put away
+067f6dd|2026-11-23|Brandon Villar|Viewer: landing gear doors close level, stray wheels follow their leg (#92)
+72b2cd4|2026-11-23|Brandon Villar|Names: ped wardrobe field names and property tag keys (#91)
+47d22ad|2026-11-23|Brandon|Viewer: landing gear doors close level, stray wheels follow their leg
+2cca731|2026-11-23|Brandon|Names: ped wardrobe field names and property tag keys
+3fbfbd3|2026-11-23|Brandon Villar|People: play the game's animation clips on characters (#90)
+1eb6741|2026-11-23|Brandon|People: play the game's animation clips on characters
+0353566|2026-11-23|Brandon Villar|Viewer: retractable landing gear (#89)
+5e1398e|2026-11-23|Brandon Villar|People: a rig for characters, with pose controls and presets (#88)
+d84b18f|2026-11-23|Brandon|People: a rig for characters, with pose controls and presets
+c1bec41|2026-11-23|Brandon|Viewer: retractable landing gear
+4abd67f|2026-11-23|Brandon Villar|Viewer: aircraft rotors, propellers and control surfaces (#87)
+d8c0f19|2026-11-23|Brandon Villar|People: Lucia and Jason, own-parts characters, faces and layers (#86)
+d4ecbb6|2026-11-23|Brandon Villar|Vehicles: palette rows from their own slice, surface blend from the material map (#85)
+3079e4f|2026-11-23|Brandon|Viewer: aircraft rotors, propellers and control surfaces
+c019432|2026-11-23|Brandon|People: head hair must root on the head
+fcb6c24|2026-11-23|Brandon Villar|Vehicles: lamp colours from the light archetypes (#84)
+83cd212|2026-11-23|Brandon|Vehicles: palette rows from their own slice, surface blend from the material map
+560e06e|2026-11-23|Brandon|README: character counts as measured
+3040cd6|2026-11-23|Brandon|People: Lucia and Jason through the ped model table's character name
+fc6f3e0|2026-11-23|Brandon|People: own-parts looks, faces for heads without a stored texture, layers under jackets
+4b123c4|2026-11-23|Brandon Villar|CI: run once per PR push (#83)
+d824608|2026-11-23|Brandon|Vehicles: lamp colours from the light archetypes
+ca22d2a|2026-11-23|Brandon Villar|Vehicles: light patterns (sirens, strobes), siren lights and siren sound in the viewer (#81)
+1e3ff91|2026-11-23|Brandon|BC7 BCPack: fit the presets on alpha as well as colour
+a877959|2026-11-23|Brandon|BC7 BCPack: refit the presets under the secondary-index reset rule
+7ee1c5b|2026-11-23|Brandon|CI: run once per PR push
+e9f07ec|2026-11-23|Brandon Villar|Names: 231 vehicle material library field names (#82)
+18aadb1|2026-11-23|Brandon|Viewer: siren sound
+74bd58b|2026-11-23|Brandon Villar|extract --force rewrites shared textures (#79)
+a1ab8ca|2026-11-23|Brandon Villar|People: hair grown full, checked against the head, stored hair colour (#80)
+c53c90a|2026-11-23|Brandon|Names: 231 vehicle material library field names in the built-in list
+1206155|2026-11-23|Brandon|Vehicles: light patterns (sirens, strobes) and a siren switch in the viewer
+0548777|2026-11-23|Brandon|People: hair grown full, checked against the head, stored hair colour
+b5f2268|2026-11-23|Brandon|People: hair grown full, checked against the head, stored hair colour
+56c3f30|2026-11-23|Brandon|texfind example: pass force
+97d5064|2026-11-23|Brandon|Merge remote-tracking branch 'origin/master' into fix/force-textures
+4f21726|2026-11-23|Brandon Villar|People: named characters wear their outfits, with hair, a body slider and heeled feet (#78)
+6e23570|2026-11-23|Brandon|extract --force rewrites shared textures
+5cceb3c|2026-11-23|Brandon|People: named characters wear their outfits, with hair, a body slider and heeled feet
+65e1138|2026-11-23|Brandon Villar|Metal renderer: the body paint swap on vehicle parts (#73)
+4d055d8|2026-11-23|Brandon Villar|Viewer: fixes from the whole-fleet check (#77)
+cd044f5|2026-11-23|Brandon|Viewer: fixes from the whole-fleet check (wheels on two-wheelers, boats, placeholder colours)
+08f1c2e|2026-11-23|Brandon Villar|Vehicles: metalness and palette position from the paint shader's reading (#76)
+c4cfa60|2026-11-23|Brandon Villar|Viewer: a screenshot waits for the vehicle's wheels and data (#75)
+04c827e|2026-11-23|Brandon|Vehicles: metalness and palette position from the paint shader's reading
+edf912a|2026-11-23|Brandon|Viewer: a screenshot waits for the vehicle's wheels and data
+18be470|2026-11-23|Brandon Villar|Viewer: side windows roll down (#74)
+c32565e|2026-11-23|Brandon|Viewer: side windows roll down
+f0f43c8|2026-11-23|Brandon Villar|Viewer: rim and tyre colours from the vehicle's part colours (#72)
+bbe8257|2026-11-23|Brandon|Metal renderer: the body paint swap on vehicle parts
+8fac0ba|2026-11-23|Brandon|Viewer: rim and tyre colours from the vehicle's part colours
+c3de3a6|2026-11-23|Ahmet Dedeler|Wardrobe: prefer tag names and ped body class / head prefix in ped-variations (#70)
+b669e20|2026-11-23|Ahmet Dedeler|Textures: reconstruct tangent-space Z on decoded BC5 normal maps (#69)
+8c9de05|2026-11-23|Brandon Villar|Vehicles: part colours per configuration, option lists followed (#71)
+2a69a22|2026-11-23|Brandon|Vehicles: part colours per configuration, option lists followed
+d7abb57|2026-11-23|Brandon Villar|Viewer: brake glow (#68)
+1c71efa|2026-11-23|Brandon Villar|Vehicles: the steering lock from the handling records (#67)
+032dacf|2026-11-23|Brandon Villar|Vehicles: part colours from the result most configurations give (#66)
+81a060d|2026-11-23|Brandon Villar|Viewer: --gpu <name> picks the graphics adapter (#65)
+b6ffda5|2026-11-23|Brandon Villar|Picker: readable names for vehicle parts, weapons and wheels (#64)
+c33023b|2026-11-23|Brandon|Viewer: brake glow
+db16349|2026-11-23|Brandon|Vehicles: the steering lock from the handling records
+ed9ecf4|2026-11-23|Brandon|Vehicles: part colours from the result most configurations give
+4752769|2026-11-23|Brandon|Viewer: --gpu <name> picks the graphics adapter
+8e4fd84|2026-11-23|Brandon|Picker: readable names for vehicle parts, weapons and wheels
+1a51bcf|2026-11-23|Brandon Villar|Viewer: steering (front wheels, fitted wheels and brakes, steering wheel) (#63)
+b57cdb0|2026-11-23|Brandon Villar|BCPack: BC7 secondary-index reset rule, BC6H joint refit (#58)
+8e2a5aa|2026-11-23|Brandon|Viewer: steering (front wheels, fitted wheels and brakes, steering wheel)
+483e075|2026-11-23|Brandon Villar|Vehicles: the game's display names, friendly names in the model picker (#62)
+0a17ad3|2026-11-23|Brandon Villar|Viewer: vehicle lamps (head, tail, brake, reversing, indicators) (#61)
+fad8718|2026-11-23|Brandon|Vehicles: the game's display names, friendly names in the model picker
+9a23bb8|2026-11-23|Brandon|Viewer: vehicle lamps (head, high beam, daytime, tail, brake, reversing, indicators, interior)
+a0740c4|2026-11-23|Brandon|Viewer: steering (front wheels, fitted wheels and brakes, steering wheel)
+dbde704|2026-11-23|Brandon Villar|Vehicles: body-paint groups from the configuration, rim size from the wheel fitment (#60)
+e6e9095|2026-11-23|Brandon|Viewer: vehicle lamps (head, high beam, daytime, tail, brake, reversing, indicators, interior)
+06cfdef|2026-11-23|Brandon|Viewer: rim size from the configuration's wheel fitment
+25b0aea|2026-11-23|Brandon|Vehicles: body-paint groups from the configuration, rim ratio in the vehicle table
+f1f0ec6|2026-11-23|Brandon Villar|Vehicles: part colours from the part sets and the material palette (#59)
+3b50a33|2026-11-23|Brandon|Vehicles: part colours from the part sets and the material palette
+eb55594|2026-11-23|Brandon Villar|Vehicles: mod parts from the vehicle data, with a Parts panel in the viewer (#57)
+122bfce|2026-11-23|Brandon|Merge master (#56 squash) into claude/vehicle-mod-parts
+7670dc5|2026-11-23|Brandon Villar|Vehicles: all clips, bonnet and boot, brake discs, wheels by tyre size (#56)
+7d1c75e|2026-11-23|Brandon|Merge master (#55 squash) into claude/vehicle-small-items
+76179ed|2026-11-23|Brandon Villar|Convertibles: the roof animation in the export and the viewer (#55)
+bca2da3|2026-11-23|Brandon|BC6H BCPack: joint preset refit and anchor-consistent index presets
+1c53628|2026-11-23|Brandon|BC7 BCPack: a block without a secondary index set resets that set
+f91f485|2026-11-23|Brandon|Merge master (#54 squash) into claude/roof-animation
+fbaf9ee|2026-11-23|Brandon Villar|Vehicles: whole skeletons, dual wheels, rail wheels, scooter wheels, roof down (#54)
+e9c6391|2026-11-23|Brandon|Vehicles: mod parts from the vehicle data, with a Parts panel in the viewer
+57533e0|2026-11-23|Brandon|Vehicles: all clips, bonnet and boot, brake discs, wheels by tyre size
+c730853|2026-11-23|Brandon|Convertibles: the roof animation in the export and the viewer
+cae7bd0|2026-11-23|Brandon|Vehicles: whole skeletons, dual wheels, rail wheels, scooter wheels, roof down
+3e01b0f|2026-11-23|maple-quartz18|Add Metal I/O texture cache to the Metal 4 renderer (#52)
+5f74e1c|2026-11-23|Brandon Villar|Weapons: list data.rpf in the picker and assemble weapons from their parts (#53)
+d43d4c3|2026-11-23|Brandon Villar|Names: five more field names (colours, colour, bonerotation, BankName, pedtype) (#51)
+cdedcea|2026-11-23|Brandon|Weapons: list data.rpf in the picker and assemble weapons from their parts
+46092bc|2026-11-23|Brandon|Merge master; name source without project reference
+5663c39|2026-11-23|Tarek|Name valueHash, contentType, childIndex, States and the distance_map shader (#50)
+41da1f9|2026-11-23|Brandon Villar|Vehicles: wheel size, width and position from the fragment's collision discs (#49)
+471936c|2026-11-23|Brandon|Names: five more field names (colours, colour, bonerotation, BankName, pedtype)
+247c422|2026-11-23|Brandon|Vehicles: wheel size, width and position from the fragment's collision discs
+d986342|2026-11-23|Brandon Villar|Fix garbage prop-batch instances (pool refs first, separate graphics page stream) (#48)
+38de2e5|2026-11-23|Brandon|Fix garbage prop-batch instances: pool refs first, separate graphics page stream
+4bec3df|2026-11-23|maple-quartz18|Package macOS app with Game Mode Info.plist (#43)
+5396fce|2026-11-23|Brandon Villar|Vehicles: wheel size from the rim radius; model info joined by handlingId (#47)
+84a4eef|2026-11-23|Brandon|Vehicles: wheel size from the rim radius; model info joined by handlingId
+0426996|2026-11-23|Brandon Villar|Ped clothing colours from the wardrobe tint palettes (#46)
+2e60c27|2026-11-23|Brandon Villar|Add timecycle/fog export (sixng timecycle) (#45)
+d69d833|2026-11-23|Brandon|Ped clothing colours from the wardrobe tint palettes
+f6a7ef7|2026-11-23|Brandon|Add timecycle/fog export (sixng timecycle)
+cb38fb9|2026-11-23|Brandon Villar|Vehicles: read the 4 x u16 joint stream; rim stand-in; spin only the wheels (#44)
+507aae2|2026-11-23|Brandon|Vehicles: read the 4 x u16 joint stream; rim stand-in; spin only the wheels
+d328a4b|2026-11-23|maple-quartz18|Add MetalFX temporal upscaling to the Metal 4 renderer (#42)
+32cf940|2026-11-23|Brandon Villar|BC6H BCPack: refit the preset slots that only BCPack-only textures use (#41)
+71bcd6e|2026-11-23|Brandon Villar|BC7 BCPack: refine the preset tables against plain reference mips (#40)
+a48a681|2026-11-23|Brandon Villar|audio-meta: join split sound files, fitted header field sizes, child refs for 20 sound classes (#39)
+946239a|2026-11-23|Brandon|Merge remote-tracking branch 'origin/master' into wt39
+ad94efc|2026-11-23|Brandon Villar|Vehicles: leave out runtime screen overlays, wiper masks and water stencils (#38)
+8b5dc72|2026-11-23|Brandon Villar|ttpf: single mips without a tail, cube mip counts, 3D volumes (#37)
+e6ab25f|2026-11-23|Brandon Villar|ped-variations: dirt and blood preset definitions from common.rpf (#36)
+0983ba9|2026-11-23|Brandon|BC7 BCPack: arbitrate the refined presets on every BC7 texture
+05511fa|2026-11-23|Brandon|BC6H BCPack: four more bootstrap rounds of the preset refit
+17b82a5|2026-11-23|Brandon|BC6H BCPack: refit the preset slots that only BCPack-only textures use
+588bfa7|2026-11-23|Brandon|audio-meta: fields of game-object classes 54 and 56
+ee16785|2026-11-23|Brandon|BC7 BCPack: refine the preset tables against plain reference mips
+d62ee90|2026-11-23|Brandon|audio-meta: game-object classes (50+): flag header, links to sounds for classes 51, 52, 56, 61, 62, 64 and 68
+b1a86b6|2026-11-23|Brandon|audio-meta: decode class 16 fields (name hashes, slot mask, value, child slots, all empty in the files)
+3cf1e30|2026-11-23|Brandon|audio-meta: allow up to 64 stored chunks between split pieces (a story000 file has 52)
+14f796f|2026-11-23|Brandon|audio-meta: join split sound files, fitted header field sizes, child refs for 20 sound classes
+3f8d185|2026-11-22|Brandon|Merge remote-tracking branch 'origin/master' into claude/vehicle-screens
+63ddde8|2026-11-22|Brandon|Vehicles: leave out runtime screen overlays, wiper masks and water stencils
+e588f63|2026-11-22|Brandon|ped-variations: per-model variation lists (outfit type, body scale)
+66c6e9e|2026-11-22|Brandon|ttpf: single mips without a tail, cube mip counts, 3D volumes
+f72d0b7|2026-11-22|Brandon|ped-variations: dirt and blood preset definitions from common.rpf
+28c0129|2026-11-22|Brandon Villar|ped-variations: tags, dirt presets and texture remaps; outfit --tex-remap (#34)
+d246790|2026-11-22|ifBars|BC1/2/3 previews: follow the specification's colour modes (#35)
+de20d5f|2026-11-22|Brandon|ped-variations: dirt and blood preset definitions from common.rpf
+5475976|2026-11-22|Brandon Villar|Hair on people: find the grooms that lie on a head or character (#33)
+4b7905d|2026-11-22|Brandon|ped-variations: tags, dirt presets and texture remaps; outfit --tex-remap
+84d18c8|2026-11-22|Brandon|Hair on people: find the grooms that lie on a head or character
+f8791cc|2026-11-22|Brandon|Version 0.7.0
+3c0b691|2026-11-22|ifBars|Preserve A8 mask alpha in texture previews (#28)
+d724355|2026-11-22|Brandon Villar|BC7 BCPack: fit the last 34 endpoint preset slots (#31)
+3890537|2026-11-22|Brandon|ped-variations: wardrobe variations to part lists
+a7c3a1a|2026-11-22|Brandon Villar|Meshes: take the axis order from the header, not from the normals (#32)
+a327383|2026-11-22|Brandon Villar|Fur: grow the full coat from the stored per-triangle strand counts (#30)
+e7aae6b|2026-11-22|Brandon|Meshes: take the axis order from the header, not from the normals
+6b7d189|2026-11-22|Brandon|BC7 BCPack: fit the last 34 endpoint preset slots
+6c79005|2026-11-22|Brandon|Fur: grow the full coat from the stored per-triangle strand counts
+c69b22f|2026-11-22|Brandon|README: why the last 12 shader parameters stay unnamed
+264e630|2026-11-22|Brandon|meta: --instances writes every struct instance
+e6ac2c6|2026-11-22|Brandon Villar|Meshlets with 32-bit counts; vehicle interiors off the body paint; fur toggle (#29)
+520f08b|2026-11-22|Brandon|README: bvh4 files hold no geometry of their own
+a52f939|2026-11-22|Brandon|Meshlets with 32-bit counts; vehicle interiors off the body paint; fur toggle
+a5c1441|2026-11-22|Brandon|Audio: child sounds of class 15 and nine more sound classes
+f6eb4dd|2026-11-22|Brandon Villar|Animals: fur from the strand grooms, linked by archive order (#26)
+78e60f9|2026-11-22|Brandon|Animals: fur from the strand grooms, linked by archive order
+2efcfe2|2026-11-22|Brandon|Animals: fur from the strand grooms, linked by archive order
+7881042|2026-11-22|Brandon|Names: seven texture parameters of the water and interior shaders
+c825387|2026-11-22|Brandon|Audio metadata: decode the sound header (sub-masks, fixed-size fields, nested masks) and keep each class body
+4d89229|2026-11-22|Brandon|Audio metadata: sound graph (waves to bank streams, children, reachable streams); script data documents to XML
+e0ebb4b|2026-11-22|ifBars|BC6H: select the signed zero sign after final scaling (#24)
+bc30a1c|2026-11-22|Brandon Villar|Animals: colour textures from material presets; variants without parts (#25)
+742079c|2026-11-22|ifBars|BC6H: select the signed zero sign after final scaling (#24)
+b1398e5|2026-11-22|Brandon|Release workflow: Linux and macOS archives with checksums in the notes
+ee8481c|2026-11-22|Brandon|Model viewer: show only the side-panel controls that apply to the model
+557bf56|2026-11-22|Brandon|Textures: "Used by" panel and sixng texture-users index
+4b40433|2026-11-22|Brandon Villar|BC6H: spec-correct decoder in place of texture2ddecoder's (#23)
+ba94d49|2026-11-22|Brandon|Animals: colour textures from material presets; variants without parts
+3293a94|2026-11-22|Brandon|Minigame pack: R16 textures, meta roots, tail-stream collision, map clip dictionaries, box volumes, audio metadata
+67f4740|2026-11-22|Brandon Villar|Vehicles: tyres, lamp lenses, reflectors and lamps get their own classes (#22)
+6dac5f3|2026-11-22|Brandon|Vehicles: tyres, lamp lenses, reflectors and lamps get their own classes
+2979c57|2026-11-22|Brandon|BC6H: spec-correct decoder in place of texture2ddecoder's
+2ffe3c0|2026-11-22|Brandon|Audio decoding is an optional feature: build without CMake
+9329a2b|2026-11-22|Brandon Villar|BC5 and BC6H BCPack: fit the last preset slots (#21)
+702435c|2026-11-22|Brandon|Version 0.6.1
+307e5e1|2026-11-22|Brandon|BC5 and BC6H BCPack: fit the last preset slots
+0fc9321|2026-11-22|Brandon|ptfx: flipbook frame counts and a grid guess for animated sprites
+189f3c6|2026-11-22|Brandon|sixng annotate: name collision surface ids and road-node streets
+5492154|2026-11-22|Brandon|Text tables: read strings from every blob page
+6100458|2026-11-22|Brandon|ptfx: resolve particle sprites to the vfx texture store (--sprites writes PNGs)
+a225c66|2026-11-22|Brandon|Four-layer: record the c35e27af tiling tests (still undecided)
+b412ee7|2026-11-22|Brandon|Two-layer walls: dirt overlay on TEXCOORD_2 (low confidence)
+455cf5d|2026-11-22|Brandon Villar|BC6H BCPack: refit the preset tables with an index-aware score (#20)
+027ba74|2026-11-22|Brandon|BC6H BCPack: refit the preset tables with an index-aware score
+22f1962|2026-11-22|Brandon|prop_2lyr: dirt overlay on TEXCOORD_2 (seam test)
+ae93328|2026-11-22|Brandon|ptfx: mark the colour-over-life properties; keyframe textures are not life curves
+899b3c1|2026-11-22|Brandon|ptfx note: scalar units are unverified
+bb94402|2026-11-22|Brandon|ptfx: name keyframe properties and behaviours
+702e6e0|2026-11-22|Brandon|ptfx: decode effect events, keyframe properties and keyframe-texture links
+e63f21d|2026-11-22|Brandon|prop_2lyr notes: tint goes on the base layer, dirt UV unresolved
+eeb3076|2026-11-22|Brandon|prop_2lyr_batch: overlay weight is 1 - COLOR0.a
+24c863b|2026-11-22|Brandon|Version 0.6.0
+2ef8b8c|2026-11-22|Brandon|Measure multilayer UV mappings per material
+da11771|2026-11-22|Brandon|Map prop_2lyr_batch and the uv3 four-layer variant
+3d510aa|2026-11-22|Brandon|Model viewer: never show an older model under a newer name (issue #9)
+1456a9b|2026-11-22|Brandon|Shader constants from the parameter table; four-layer ground materials export them (per-layer vec4s split by layer)
+59ebf24|2026-11-22|Tarek|Name the map-format structs and nine more fields
+6046d19|2026-11-22|Brandon|Four-layer ground shaders: multilayer block (layers, lookup weights, macro maps) in model.json and the GLB extras
+65e230a|2026-11-22|Brandon|README: characters, animals and clip-only files, ptfx, fonts, emissive and --paint
+4a1bd3d|2026-11-22|Brandon|Export: emissive materials light up in glTF (emissive shaders by name and family); --paint sets the car-paint colour
+159dca9|2026-11-22|Brandon|sixng fonts: UI font libraries (DefineFont3) as TrueType and three.js typeface files
+530b5af|2026-11-22|Brandon|sixng ptfx: list particle effect dictionaries, rule names and keyframe curves
+de366fb|2026-11-22|Brandon|Outfit: animals on their root skeleton, rigid one-bone parts, ad-hoc characters, several clips, clip-only files; sixng characters
+d2dbb28|2026-11-23|maple-quartz18|Opt-in Metal 4 renderer for macOS; wgpu 30 and eframe 0.36
+a4063d3|2026-11-22|Brandon Villar|BC6H BCPack: fix the state a one-region block hands to a two-region block (#15)
+3df6347|2026-11-22|Brandon|BC6H BCPack: fix the state a one-region block hands to a two-region block
+0619601|2026-11-22|Brandon|sixng text: decode the localised text tables
+d207a54|2026-11-22|Ahmet Dedeler|sixng outfit: a character as one rigged GLB with an animation clip; ped skin fixes
+45bb6c2|2026-11-22|Brandon|ttpf: BC6H decodes too
+d7430ce|2026-11-22|Brandon Villar|Decode BC4, BC5 and BC6H BCPack texture chunks
+74d8c41|2026-11-22|Brandon|Hair picker, cloth and head identity deltas
+488e7b8|2026-11-22|Brandon|Grooms: export strand hair and fur as GLB line strips
+908a301|2026-11-22|Ahmet Dedeler|Audio: read the codec id at 0x1C; export PCM as WAV and XMA2 as RIFF XMA2 (#11)
+606faf7|2026-11-22|Brandon|Version 0.5.0
+4914dba|2026-11-22|Brandon|Audio: decode multichannel music streams, one Opus or WAV file per sub-stream
+fbb783b|2026-11-22|Brandon|Vertex colour red/green: record negative surface, tree, grass-AO and road tests
+9e66cd0|2026-11-22|Brandon|Jobs tab: load the command list in the background
+4c496f2|2026-11-22|labj1987|Drawable dictionaries: one model, name, link and export per member (#8)
+94f699e|2026-11-22|Brandon|Map 3D: near-camera ground fills only uncovered pixels; full-size SLOD atlases near the camera
+80ac189|2026-11-22|Brandon|Map 3D: coverage fallbacks for near-camera gaps, flat ground near LODs, dark building glass
+f555c9f|2026-11-22|Brandon|Map 3D: map cells, far placements merged per area
+06c5cf6|2026-11-22|Brandon Villar|Merge pull request #10 from holdmysocks/claude/bcpack-bc7-e505bb
+543ce5e|2026-11-22|Brandon|Decode BC7 BCPack texture chunks
+f16ad70|2026-11-22|Brandon|Map 3D: nearest models first, faster first loads, uploads off the frame
+c2150e4|2026-11-22|Brandon|Decode BC3 BCPack texture chunks
+5a5a976|2026-11-22|Brandon|Model list: keep generic clothing pieces under 'hide LOD copies' (issue #9)
+747ada2|2026-11-22|Brandon|Vertex colour red: record negative world-level occlusion test
+3af3a69|2026-11-21|Brandon|Map 3D: smoother streaming, GPU memory freed, BC textures
+614b45a|2026-11-21|Brandon|Document what vertex colour red and green show (still unverified)
+6282863|2026-11-21|Brandon|Fallback values for texture references not in the install; hide decals without their colour texture
+98693e0|2026-11-21|Brandon|Decode the R16F array stored at twice its size (every other KiB unused)
+1dfe787|2026-11-21|Brandon|Per-instance tint palette rows: tint_row in placements, row layout in model.json
+4306725|2026-11-21|Brandon|README: order of the texture store notes
+5a3e35b|2026-11-21|Brandon|Textures: use the content-pack stores (pack/*/data/ttdb)
+e996f50|2026-11-21|Brandon|GUI: show the tint palette in the model viewer, with a toggle
+8e8cb9b|2026-11-21|Brandon|GLB: apply the model's tint palette as COLOR_0
+37f52ae|2026-11-21|Brandon|Textures: 4-, 2- and 8-byte formats in all tile modes; embedded tint palettes
+c874c53|2026-11-21|Brandon|Ped heads: face textures (head skins)
+9b445a4|2026-11-21|Brandon|needles example: raw u32 and u64 needles (0x + 8 or 16 hex digits)
+c39f615|2026-11-21|Brandon|Ped clothing: body shape option (game body-shape rig on the shared skeleton)
+a07ac25|2026-11-21|Brandon|Texture stores: decode 1-byte formats (A8, R8) in all tile modes
+8fa1281|2026-11-21|Brandon|Texture stores: recover the real mip count from the store layout
+af96038|2026-11-21|Brandon|Merge remote-tracking branch 'origin/master'
+4a7beb1|2026-11-21|Brandon|Ped clothing skinning: 8 influences and the shared ped skeleton
+e077498|2026-11-21|Vlad Bondarenko|CI: build and test on Windows, macOS and Linux (#4)
+10fb323|2026-11-21|Vlad Bondarenko|macos-app.sh --universal: one SixNG.app for Apple Silicon and Intel (#5)
+25f2603|2026-11-21|Vlad Bondarenko|Textures tab: browse with the mouse wheel and arrow keys (#7)
+a669c73|2026-11-21|Brandon|Version 0.4.0
+08e7457|2026-11-22|Ahmet Dedeler|Decode BC1 BCPack texture chunks (#6)
+e4d1380|2026-11-21|Vlad Bondarenko|macOS support: file-manager buttons, settings folder, memory budget (#2)
+2ea5b0c|2026-11-21|Vlad Bondarenko|Spell out f32 literals the compiler now warns about (#3)
+3399080|2026-11-21|Brandon|Carve Bink videos, export UI texture stores, decode small mip-tail textures
+2f67255|2026-11-21|Brandon|Show decoded vehicle data in the model viewer (spawn colours, rims, tyres, palettes, wheel size)
+f9224b1|2026-11-21|Brandon|Version 0.3.1
+dc64093|2026-11-21|Brandon|Decode PSO files, vehicle handling and vehicle tables (paint, wheels)
+9381c68|2026-11-21|Brandon|Mark interior-local and group-local placements (interior-entities)
+507b59b|2026-11-21|Brandon|Version 0.3.0
+42603f2|2026-11-21|Brandon|Stream the whole map in Map 3D within RAM and VRAM caps
+952e65e|2026-11-21|Brandon|Resolve archetype LOD distances and LOD parents (lod-links)
+9b4f281|2026-11-21|Brandon|Resolve shader, parameter and meta field names
+c3c39c9|2026-11-20|Brandon|Version 0.2.2
+4ac636e|2026-11-20|Brandon|Decode ttpf texture arrays and cube maps
+ffc8255|2026-11-20|Brandon|Version 0.2.1
+3afa6d1|2026-11-20|Brandon|Decode 24-bit x/y positions, ttpf chunk padding and the 7-bit format field
+cfb2f57|2026-11-20|Brandon|Version 0.2.0
+e87c48a|2026-11-20|Brandon|Ped clothing drawn opaque; libopus licence notice
+cb9833d|2026-11-20|Brandon|Audio: find sound banks in audio.rpf, play and export them
+963a969|2026-11-20|Brandon|Viewer: Parts panel to toggle animal and character parts
+b0eaf94|2026-11-20|Brandon|Rebuild normals that the normal stream does not hold
+244936b|2026-11-20|Brandon|GUI: whole animals and characters from their parts, People and Animals categories, readable names
+668d8c1|2026-11-20|Brandon|GUI: Library home with thumbnails, item pages, Jobs, Status, Settings, setup wizard and Ctrl+K search
+6b68f75|2026-11-20|Brandon|Initial commit: SixNG, a GTA VI (Xbox Series, RPF9) asset extractor

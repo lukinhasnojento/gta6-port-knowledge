@@ -1,0 +1,1865 @@
+﻿cb4840b|2026-11-22|One|Rewrite the README and add a build guide
+02c6c85|2026-11-22|One|Add roadmap and changelog
+667a1be|2026-11-22|One|save_keys: name the file in JSAV header warnings
+211deef|2026-11-22|One|gta6rt: accept exactly one mode flag
+b21314e|2026-11-22|One|Rebrand to Project ReCity
+d1211d0|2026-11-21|ItsNotRexed|test_run_gpu_tests: the packed-format test's fake run_cmd takes env and gpu
+e74d7f5|2026-11-21|ItsNotRexed|save_keys: directory scans read .jsav and .asav saves (#844)
+4c0faa7|2026-11-21|ItsNotRexed|Merge pull request #739 from Ayinaki
+749c1ae|2026-11-21|ItsNotRexed|Merge pull request #745 from Ayinaki
+024cfee|2026-11-21|ItsNotRexed|Merge pull request #845 from Dea7hsmiles
+17ef4a7|2026-11-21|ItsNotRexed|Merge pull request #842 from kapitche
+0b30dd3|2026-11-21|ItsNotRexed|Merge pull request #841 from gabrielsteglich
+aa27088|2026-11-21|ItsNotRexed|Merge pull request #840 from Rayhan Robin
+b7e8719|2026-11-21|ItsNotRexed|Merge pull request #839 from Luiz Neves
+59e757e|2026-11-21|ItsNotRexed|Merge pull request #838 from rasptum
+a8ab82d|2026-11-21|ItsNotRexed|Merge pull request #836 from matheuskshn
+48e086c|2026-11-21|ItsNotRexed|Merge pull request #835 from kapitche
+5fd1fec|2026-11-21|ItsNotRexed|Merge pull request #834 from Vonsek
+567c29d|2026-11-21|ItsNotRexed|Merge pull request #829 from Vonsek
+9c12c5b|2026-11-21|ItsNotRexed|Merge pull request #814 from Luiz Neves
+c45e375|2026-11-21|ItsNotRexed|Merge pull request #812 from Luiz Neves
+38baf0c|2026-11-21|ItsNotRexed|Merge pull request #810 from Luiz Neves
+cc90549|2026-11-21|ItsNotRexed|Merge pull request #806 from fearkov
+4fd3758|2026-11-21|ItsNotRexed|Merge pull request #797 from Rayhan Robin
+5dd199f|2026-11-21|ItsNotRexed|Merge pull request #796 from Luiz Neves
+3a18782|2026-11-21|ItsNotRexed|Merge pull request #792 from Luiz Neves
+04acd24|2026-11-21|ItsNotRexed|Merge pull request #790 from Rayhan Robin
+5a3367d|2026-11-21|ItsNotRexed|Merge pull request #784 from SirAmong
+cd07c69|2026-11-21|ItsNotRexed|Merge pull request #706 from cemalyakla
+2867a3b|2026-11-21|ItsNotRexed|Merge pull request #253 from AlxcBTW
+ccf8bdb|2026-11-21|Dea7hsmiles|docs: day-one item 2 reads only plain RPF9 tables
+60d4324|2026-11-21|rasptum|d3d12_node_mask_test: print the masks a failing case asked for, tidy
+7228f4d|2026-11-21|rasptum|Runtime: node masks and resolved heap flags as the host reports them
+8c36677|2026-11-22|Vonsek|chore: merge upstream query and descriptor updates
+c4459ae|2026-11-21|kapitche|vk_descriptor_bench: skip a ReBAR placement the driver won't allocate, and say why any allocation fails
+dd301d3|2026-11-22|Luiz Neves|docs/design.md: contract row for this PR's ops (AGENTS.md; asked in #634)
+aae7b07|2026-11-22|Luiz Neves|docs/design.md: contract row for this PR's ops (AGENTS.md; asked in #634)
+4a8d410|2026-11-22|Luiz Neves|docs/design.md: contract row for this PR's ops (AGENTS.md; asked in #634)
+4a36bb1|2026-11-21|ItsNotRexed|test_run_gpu_tests: the packed-format test's fake assembler writes its .s
+5b06b7d|2026-11-22|Luiz Neves|docs/design.md: contract row for this PR's ops (AGENTS.md; asked in #634)
+f609db4|2026-11-21|Rayhan Robin|BUILD: exclude skipped banks from awc_manifest bank_count
+3c6d117|2026-11-21|SirAmong|docs: permlane bullet follows the fuzzer's docstring since #750 (follow-up to #645)
+bf902d2|2026-11-22|Luiz Neves|docs/design.md: contract rows for ops merged without one
+1552ae7|2026-11-22|AlxcBTW|Merge remote-tracking branch 'origin/main' into bpw32-main
+238c416|2026-11-21|fearkov|Docs: a row for d16 and f16 format narrowing
+d8a9fd1|2026-11-21|fearkov|Tests: no PackHalf2x16 in d16 buffer loads and f16 buffer stores, and d16 normalized loads round to nearest even
+60e4e90|2026-11-22|gabrielsteglich|Publish SPIR-V only after validation succeeds
+ae44316|2026-11-21|fearkov|Translator: d16 buffer loads pack with pack_f16_pair_int, not f16_pack2
+f70970e|2026-11-21|fearkov|Translator: the d16 image results narrow with f16_bits; f32_to_f16_int goes
+11df151|2026-11-22|matheuskshn|Tests: propagate Vulkan texture readback write failures
+99bd54b|2026-11-21|fearkov|Translator: f16_bits without GLSL UMin
+92fd2a9|2026-11-22|Luiz Neves|Merge remote-tracking branch 'origin/main' into lds-cmpst-b32
+e6e7ceb|2026-11-22|Luiz Neves|Merge remote-tracking branch 'origin/main' into interp-lds-atomics
+783a491|2026-11-22|Ayinaki|Answer wave ops and lane counts in D3D12_OPTIONS1
+ab1ff9f|2026-11-22|Ayinaki|Support R10G10B10_XR_BIAS_A2_UNORM textures
+fac8b02|2026-11-22|Vonsek|fix: preserve NEVER comparison samplers in set 0
+da5e153|2026-11-22|Luiz Neves|Merge remote-tracking branch 'origin/main' into lds-read2-write2-b64
+ffff391|2026-11-21|Rayhan Robin|BUILD: keep fssm_header table-only entry counts in the PS scope
+f29d827|2026-11-21|ItsNotRexed|Merge pull request #830 from whattheflop
+c4e8ad2|2026-11-21|ItsNotRexed|Merge pull request #828 from Luiz Neves
+a70b82e|2026-11-21|ItsNotRexed|Merge pull request #825 from Luiz Neves
+d54b9c3|2026-11-21|ItsNotRexed|Merge pull request #824 from FreddyxS
+d381c1a|2026-11-21|ItsNotRexed|Merge pull request #823 from JavierBlanco23
+6823fa5|2026-11-21|ItsNotRexed|Merge pull request #822 from Tonylo-lab
+ff07b0b|2026-11-21|ItsNotRexed|Merge pull request #821 from stayjuced
+501e3db|2026-11-21|ItsNotRexed|Merge pull request #817 from Luiz Neves
+37e7f78|2026-11-21|ItsNotRexed|Merge pull request #816 from Proudnoob4
+2474686|2026-11-21|ItsNotRexed|Merge pull request #815 from Felix Croasdale
+1a08660|2026-11-21|ItsNotRexed|Merge pull request #814 from Luiz Neves
+eaea492|2026-11-21|ItsNotRexed|Merge pull request #812 from Luiz Neves
+653bbce|2026-11-21|ItsNotRexed|Merge pull request #811 from FreddyxS
+30c39d4|2026-11-21|ItsNotRexed|Merge pull request #810 from Luiz Neves
+7b8da60|2026-11-21|ItsNotRexed|Merge pull request #809 from nicolas
+b5e62b9|2026-11-21|Rayhan Robin|BUILD: parse leading-zero decimal immediates in shader_ir
+7837b8b|2026-11-21|ItsNotRexed|Merge pull request #808 from gabrielsteglich
+283a48e|2026-11-21|ItsNotRexed|Merge pull request #807 from eIBart0
+6c5550d|2026-11-21|kapitche|GPU tests: give each test program a time limit, so a GPU hang fails one test instead of stalling the suite
+8f2439c|2026-11-21|ItsNotRexed|Merge pull request #800 from SombraSoft
+910fda5|2026-11-21|ItsNotRexed|Merge pull request #798 from Luiz Neves
+c696fec|2026-11-21|ItsNotRexed|Merge pull request #797 from Rayhan Robin
+77db8d9|2026-11-21|ItsNotRexed|Merge pull request #796 from Luiz Neves
+78c5b42|2026-11-21|ItsNotRexed|Merge pull request #795 from DANISBR1
+7d9f66b|2026-11-21|ItsNotRexed|Merge pull request #792 from Luiz Neves
+bb2ca83|2026-11-21|ItsNotRexed|Merge pull request #791 from fearkov
+8c65a9e|2026-11-21|ItsNotRexed|Merge pull request #790 from Rayhan Robin
+918ef69|2026-11-21|ItsNotRexed|Merge pull request #788 from ismailchaka1
+1a63e61|2026-11-21|ItsNotRexed|Merge pull request #784 from SirAmong
+0b5a342|2026-11-21|ItsNotRexed|Merge pull request #779 from Vonsek
+7747c48|2026-11-21|ItsNotRexed|Merge pull request #772 from Rayhan Robin
+3905faf|2026-11-21|ItsNotRexed|Merge pull request #766 from Rayhan Robin
+f4efdab|2026-11-21|ItsNotRexed|Merge pull request #719 from eIBart0
+0b79afb|2026-11-21|ItsNotRexed|Merge pull request #706 from cemalyakla
+b074091|2026-11-21|ItsNotRexed|Merge pull request #677 from nicolas
+afda786|2026-11-21|ItsNotRexed|Merge pull request #674 from VictorJulianiR
+52a357c|2026-11-21|ItsNotRexed|Merge pull request #341 from AlxcBTW
+2a87f54|2026-11-21|ItsNotRexed|Merge pull request #278 from traeb0n
+4f26a04|2026-11-22|whattheflop|Docs: measure vertex stream strides on 0x4042 pages (ASSET-57)
+4428d93|2026-11-22|Vonsek|fix(runtime): apply minimum LOD to sampled 2D views
+efd6ef2|2026-11-22|Luiz Neves|Translator: v_mad_u32_u16 and v_mad_i32_i16
+51c8074|2026-11-22|Luiz Neves|Translator: v_cvt_pk_u16_u32 and v_cvt_pk_i16_i32
+bbbed2e|2026-11-21|SombraSoft|CI: use deny-list path filtering in Runtime and generalize test discovery
+4ad731e|2026-11-22|FreddyxS|Test that viewer shading preserves GLB material metadata
+3d21628|2026-11-22|JavierBlanco23|Convert every exposed integer RTV format in ClearRenderTargetView
+93f319b|2026-11-22|FreddyxS|Viewer: track original materials outside glTF extras
+c2df6ab|2026-11-21|stayjuced|Warn when post-install llvm-mc cleanup fails
+81a0703|2026-11-22|Tonylo-lab|Fix tex_mode_probe reporting with a single candidate
+d3949f7|2026-11-22|Vonsek|chore: merge upstream depth plane checks
+7079108|2026-11-21|traeb0n|Runtime: query heaps on Vulkan (D3D-15)
+de43b46|2026-11-22|Luiz Neves|Translator: s_get_waveid_in_workgroup
+dedd75c|2026-11-21|ItsNotRexed|test_gpu_unsupported_stage: the fake assembler writes its .s
+710c5e7|2026-11-22|AlxcBTW|Merge remote-tracking branch 'origin/main' into shader-36-gather-wrap
+370b042|2026-11-21|Proudnoob4|d3d12_vulkan_device_test: check requests the host runtime predates against the layer's clamp
+039df7d|2026-11-21|Felix Croasdale|Runtime: upload heaps in Resizable BAR memory when the GPU has it (D3D-96)
+be51fcf|2026-11-22|Luiz Neves|Translator: ds_cmpst_b32 (compare-and-store without return)
+ebbce72|2026-11-22|AlxcBTW|Merge remote-tracking branch 'origin/main' into bpw32-main
+f466112|2026-11-22|Luiz Neves|tests/semantic: run LDS atomics in the interpreter, and value-test them
+56fcc81|2026-11-22|eIBart0|tests: add Wave64/Wave32 s_cmp mask-half, ordering, and u64 mask-vs-scalar tests
+da43e0c|2026-11-22|FreddyxS|Test manifest chunks with test metadata
+94e7e24|2026-11-22|eIBart0|rdna2spirv: exact Wave64 s_cmp on opposite mask halves and mask-vs-scalar operands
+2c3c14f|2026-11-22|FreddyxS|Viewer: select generated terrain from world mode
+a31b9f3|2026-11-22|Luiz Neves|Translator: ds_read2_b64, ds_write2_b64 and their st64 forms
+3bb6858|2026-11-21|SirAmong|docs: permlane hyp_only wording, only a mismatching program is filed apart (follow-up to #645)
+193b2e5|2026-11-21|Rayhan Robin|BUILD: keep fssm_header table-only entry counts in the PS scope
+f15ce71|2026-11-21|Rayhan Robin|BUILD: parse leading-zero decimal immediates in shader_ir
+f282a0d|2026-11-22|gabrielsteglich|Fix descriptor benchmark device index selection
+2234a76|2026-11-21|Rayhan Robin|BUILD: skip a malformed JSAV table with a warning instead of a traceback
+62b5fa1|2026-11-21|Rayhan Robin|BUILD: bound navmesh_index decompression by the --limit window
+db22624|2026-11-22|Luiz Neves|tests/semantic: float compares with equal operands
+80186d3|2026-11-21|nicolas|Audio: preserve recordings across native filesystem name collisions
+e298c7b|2026-11-22|Luiz Neves|Translator: v_mqsad_u32_u8
+1216763|2026-11-22|Luiz Neves|Translator: s_icache_inv, s_ttracedata(_imm), s_code_end, s_version are no-ops
+3d4f0df|2026-11-21|ItsNotRexed|Merge pull request #787 from 465d6a0eac
+ec4840a|2026-11-21|ItsNotRexed|Merge pull request #786 from St├©rm
+507b72e|2026-11-21|ItsNotRexed|Merge pull request #785 from 73N1X
+686e131|2026-11-21|ItsNotRexed|Merge pull request #784 from SirAmong
+9518341|2026-11-21|ItsNotRexed|Merge pull request #783 from mohamedsaad.lahlou
+6badcb8|2026-11-21|ItsNotRexed|Merge pull request #782 from ismailchaka1
+9474059|2026-11-21|ItsNotRexed|Merge pull request #781 from rasptum
+56985b2|2026-11-21|ItsNotRexed|Merge pull request #778 from ismailchaka1
+824f89f|2026-11-21|ItsNotRexed|Merge pull request #776 from kotorvr
+a297365|2026-11-21|ItsNotRexed|Merge pull request #775 from JavierBlanco23
+75dae07|2026-11-21|ItsNotRexed|Merge pull request #772 from Rayhan Robin
+cc772d6|2026-11-21|ItsNotRexed|Merge pull request #771 from bennymxckz
+84e1d2e|2026-11-21|ItsNotRexed|Merge pull request #769 from mohamedsaad.lahlou
+ffbae3f|2026-11-21|ItsNotRexed|Merge pull request #768 from Ayoze Torres
+87daf46|2026-11-21|ItsNotRexed|Merge pull request #767 from Derpbeat
+f75e1fa|2026-11-21|ItsNotRexed|Merge pull request #766 from Rayhan Robin
+859c97f|2026-11-21|ItsNotRexed|Merge pull request #761 from ismailchaka1
+dcc5439|2026-11-21|ItsNotRexed|Merge pull request #750 from kotorvr
+0925302|2026-11-21|ItsNotRexed|Merge pull request #747 from Ayoze Torres
+4703774|2026-11-22|ismailchaka1|docs: d3d12_vulkan.md section 3.2 known gaps match main
+19073af|2026-11-21|ItsNotRexed|Merge pull request #728 from kotorvr
+316e277|2026-11-21|ItsNotRexed|Merge pull request #715 from Vonsek
+b288ad9|2026-11-21|ItsNotRexed|Merge pull request #680 from kotorvr
+672721b|2026-11-21|ItsNotRexed|Merge pull request #617 from VictorJulianiR
+dee21a0|2026-11-21|ItsNotRexed|Merge pull request #592 from SirAmong
+d549d2d|2026-11-21|ItsNotRexed|Merge pull request #417 from kotorvr
+10f5b63|2026-11-21|nicolas|Merge updated GPU runner checks while preserving packed-format coverage
+6398d46|2026-11-22|Vonsek|chore: merge upstream volume SRV support
+fc1bfab|2026-11-21|fearkov|Docs: the mrtz depth rule in the inputs and outputs row
+726e970|2026-11-21|fearkov|Tests: which mrtz exports replace the depth
+80600e8|2026-11-21|fearkov|Translator: exp mrtz writes FragDepth only from an enabled x
+4859a80|2026-11-22|Vonsek|chore(merge): integrate current Vulkan descriptor tests
+f577bf0|2026-11-21|DANISBR1|vk_pipeline_check --stats: the driver's statistics for each translated shader
+e9a8203|2026-11-22|VictorJulianiR|Merge main and preserve volume views and HRESULT tracing in A8 coverage
+cd6ade8|2026-11-22|465d6a0eac|Gamedata: PAMH 0x08 is padding, add a tile census (ASSET-58)
+0ff02e0|2026-11-21|St├©rm|docs: V# OOB_SELECT bounds measured on RDNA2 (SHADER-116)
+d8c909a|2026-11-21|SirAmong|docs: permlane hyp_only wording, only a mismatching program is filed apart (follow-up to #645)
+6998954|2026-11-21|73N1X|Tests: cover RGBA8 RTV automatic mips, predicates and range bounds (D3D-70)
+066df86|2026-11-22|mohamedsaad.lahlou|Vulkan: clamp pipeline check slice before adding count
+f8235ed|2026-11-21|SirAmong|tests: fuzzer reference model for ds_read_u8/i8_d16[_hi] (from PR #605)
+1b6cc3f|2026-11-21|SirAmong|Translator: ds_read_u8/i8_d16[_hi] 8-bit LDS reads into a 16-bit half (SHADER-85)
+5ec780c|2026-11-22|ismailchaka1|Runtime: order back-to-back copies into an image already in the transfer layout
+d5e0041|2026-11-22|JavierBlanco23|D3D-86: answer CheckFeatureSupport OPTIONS2-5, 7, 9, 11, 13-16, 18-21
+734fe50|2026-11-22|Ayoze Torres|CI: don't require run_tiny_game_exit_code under Wine
+71812aa|2026-11-22|kotorvr|GameInput shim: download SDL3 only when asked (LEONIDA_SDL3_FETCH)
+96404ac|2026-11-22|kotorvr|Merge main into D3D-26: unordered-access clears on main
+4fa0fb7|2026-11-21|rasptum|Runtime: ID3D12Resource::GetDesc fills in a defaulted Alignment, as the host does
+123ace7|2026-11-22|ismailchaka1|Runtime: stencil-plane SRVs only on their own depth-stencil family
+18c8092|2026-11-22|kotorvr|glb_writer: a published GLB keeps the replaced file's permission bits
+c7e450f|2026-11-22|kotorvr|D3D-26: keep a null discard region apart from an explicit UINT_MAX count
+0317b8d|2026-11-22|kotorvr|docs/psin: LSCH/LENM layouts measured over every archive (ASSET-50)
+d0ca262|2026-11-22|kotorvr|rtti_scan: the swapped-in report keeps the old report's permission bits
+0e59c75|2026-11-22|kotorvr|Runtime: GameInput shim on SDL3 (any controller; DualSense trigger effects, lightbar)
+74c7167|2026-11-22|Vonsek|fix: reject shader views on textures that deny shader access
+ff354a5|2026-11-21|VictorJulianiR|Report and exercise A8 texture mip support
+376680b|2026-11-22|eIBart0|tests/test_feature_scan.py: test v_perm_b32 immediate, constant-reg, clobbered, and 8-11 selector counts
+ff650ec|2026-11-22|eIBart0|feature_scan.py: count v_perm_b32 selector byte classes and document corpus counts
+3895b9d|2026-11-21|Rayhan Robin|BUILD: skip a malformed JSAV table with a warning instead of a traceback
+e36f74f|2026-11-21|VictorJulianiR|Name the per-format texture locals without shadowing the RGB9E5 fixture
+9f8cac6|2026-11-22|mohamedsaad.lahlou|Tests: isolate shader inputs when reusing GPU test work
+9f755a3|2026-11-21|Derpbeat|Runtime: depth-plane SRVs only on their own depth family (#678 follow-up)
+5879d22|2026-11-22|AlxcBTW|Merge remote-tracking branch 'origin/main' into shader-36-gather-wrap
+2e55bdc|2026-11-21|Rayhan Robin|BUILD: bound navmesh_index decompression by the --limit window
+6eaf8b6|2026-11-22|Ayoze Torres|make_game: runtime stage on Linux with --runtime-build and a Wine launcher
+8df277f|2026-11-21|ItsNotRexed|Restore the rpf9-explorer pin to 917e9b9
+875aecb|2026-11-22|AlxcBTW|Merge remote-tracking branch 'origin/main' into bpw32-main
+a9c9257|2026-11-21|ItsNotRexed|Merge pull request #758 from VictorJulianiR
+94c7864|2026-11-21|ItsNotRexed|Merge pull request #757 from VictorJulianiR
+9756e85|2026-11-21|ItsNotRexed|Merge pull request #756 from Rayhan Robin
+f584a2a|2026-11-21|ItsNotRexed|Merge pull request #755 from BetterJdue
+69ed76d|2026-11-21|ItsNotRexed|Merge pull request #754 from Rafael
+0320b40|2026-11-21|ItsNotRexed|Merge pull request #752 from kotorvr
+979c361|2026-11-21|ItsNotRexed|Merge pull request #751 from nicolas
+fd22f01|2026-11-21|ItsNotRexed|Merge pull request #750 from kotorvr
+dc3fe5f|2026-11-21|ItsNotRexed|Merge pull request #749 from Kam471
+dcb2e8e|2026-11-21|ItsNotRexed|Merge pull request #748 from Vonsek
+1511d2b|2026-11-21|ItsNotRexed|Merge pull request #747 from Ayoze Torres
+e69c573|2026-11-21|ItsNotRexed|Merge pull request #746 from fearkov
+8d67424|2026-11-21|ItsNotRexed|Merge pull request #744 from fearkov
+1242d7b|2026-11-21|ItsNotRexed|Merge pull request #741 from totonii
+cfea5a6|2026-11-21|ItsNotRexed|Merge pull request #738 from kotorvr
+45e34c8|2026-11-21|ItsNotRexed|Merge pull request #735 from Luiz Neves
+35b0026|2026-11-21|ItsNotRexed|Merge pull request #734 from omardev29
+91d05cf|2026-11-21|ItsNotRexed|Merge pull request #733 from Luiz Neves
+0bd81d4|2026-11-21|ItsNotRexed|Merge pull request #732 from HAMADA
+1c71f8c|2026-11-21|ItsNotRexed|Merge pull request #731 from nicolas
+5df93a0|2026-11-21|ItsNotRexed|Merge pull request #730 from nicolas
+04c1bda|2026-11-21|ItsNotRexed|Merge pull request #729 from Luiz Neves
+979c1f9|2026-11-21|ItsNotRexed|Merge pull request #728 from kotorvr
+d844da0|2026-11-21|ItsNotRexed|Merge pull request #727 from ismailchaka1
+e81e153|2026-11-21|ItsNotRexed|Merge pull request #726 from Luiz Neves
+5f540fe|2026-11-21|ItsNotRexed|Merge pull request #724 from dwwite
+68a5066|2026-11-21|ItsNotRexed|Merge pull request #723 from Luiz Neves
+2b905ef|2026-11-22|ismailchaka1|Runtime: PE loader applies HIGHLOW (32-bit) base relocations
+7db9230|2026-11-21|ItsNotRexed|Merge pull request #722 from Om dev
+e4081f2|2026-11-21|ItsNotRexed|Merge pull request #721 from Proudnoob4
+b047624|2026-11-21|ItsNotRexed|Merge pull request #720 from fearkov
+18edaeb|2026-11-21|ItsNotRexed|Merge pull request #717 from Dea7hsmiles
+3d4249f|2026-11-21|ItsNotRexed|Merge pull request #716 from Kam471
+89f3291|2026-11-21|ItsNotRexed|Merge pull request #714 from bbareth
+3713acb|2026-11-21|ItsNotRexed|Merge pull request #713 from kapitche
+7b38c37|2026-11-21|ItsNotRexed|Merge pull request #712 from bbareth
+f5bc1de|2026-11-21|ItsNotRexed|Merge pull request #711 from eIBart0
+dc1c424|2026-11-21|ItsNotRexed|Merge pull request #710 from bbareth
+c042caf|2026-11-21|ItsNotRexed|Merge pull request #709 from Rayhan Robin
+fcd51e7|2026-11-21|ItsNotRexed|Merge pull request #708 from Spaghetih
+3e0195f|2026-11-21|ItsNotRexed|Merge pull request #707 from nicolas
+65db441|2026-11-21|ItsNotRexed|Merge pull request #705 from bbareth
+ce8c10a|2026-11-21|ItsNotRexed|Merge pull request #704 from Ayinaki
+67beadc|2026-11-21|ItsNotRexed|Merge pull request #702 from ismailchaka1
+51a5c3e|2026-11-21|ItsNotRexed|Merge pull request #701 from mohamedsaad.lahlou
+a7d649c|2026-11-21|ItsNotRexed|Merge pull request #700 from VictorJulianiR
+6cb0fac|2026-11-21|ItsNotRexed|Merge pull request #696 from SuarezPM
+9c65738|2026-11-21|ItsNotRexed|Merge pull request #691 from dcastell1
+28e2991|2026-11-21|ItsNotRexed|Merge pull request #672 from Vonsek
+adbc4f4|2026-11-21|ItsNotRexed|Merge pull request #624 from Luiz Neves
+c81acb6|2026-11-21|ItsNotRexed|Merge pull request #623 from Luiz Neves
+a7c7b8c|2026-11-21|ItsNotRexed|Merge pull request #620 from Luiz Neves
+4e0cfc3|2026-11-21|ItsNotRexed|Merge pull request #617 from VictorJulianiR
+d620ffa|2026-11-21|ItsNotRexed|Merge pull request #613 from Luiz Neves
+7c86f68|2026-11-21|ItsNotRexed|Merge pull request #576 from Tim Elery
+1df0045|2026-11-21|ItsNotRexed|Merge pull request #500 from troythedecoyx
+fcea57d|2026-11-21|ItsNotRexed|Merge pull request #455 from fearkov
+48f2164|2026-11-21|ItsNotRexed|Merge pull request #399 from fearkov
+e4d7234|2026-11-22|Ayinaki|Answer 5.1 to a shader model request that asks for it
+178a4b4|2026-11-22|BetterJdue|SHADER-86 follow-up: correctly rounded UNORM/SNORM decode with integer ops; add 8_SNORM, 16_SNORM, 8_8_SNORM
+55d42a9|2026-11-22|kotorvr|psin_index: decode LSCH (type schema) and LENM (enums) (ASSET-50)
+bf319db|2026-11-21|Luiz Neves|third_party: re-pin rpf9-explorer to 917e9b9 so rpf9dump builds
+2c728e5|2026-11-21|Luiz Neves|third_party: re-pin rpf9-explorer to 917e9b9 so rpf9dump builds
+6780e4f|2026-11-21|Luiz Neves|third_party: re-pin rpf9-explorer to 917e9b9 so rpf9dump builds
+91293d3|2026-11-21|Luiz Neves|third_party: re-pin rpf9-explorer to 917e9b9 so rpf9dump builds
+1753798|2026-11-21|Luiz Neves|third_party: re-pin rpf9-explorer to 917e9b9 so rpf9dump builds
+c2ffc8d|2026-11-21|Luiz Neves|third_party: re-pin rpf9-explorer to 917e9b9 so rpf9dump builds
+4c04f07|2026-11-21|Luiz Neves|third_party: re-pin rpf9-explorer to 917e9b9 so rpf9dump builds
+25c61fb|2026-11-21|Luiz Neves|third_party: re-pin rpf9-explorer to 917e9b9 so rpf9dump builds
+3f18621|2026-11-21|Luiz Neves|third_party: re-pin rpf9-explorer to 917e9b9 so rpf9dump builds
+a78d53c|2026-11-22|kotorvr|ASSET-51: decode the 63 30 00 00 pages as vertex blocks and meshlet groups
+276a9e9|2026-11-21|Rafael|runtime: render-target views of a multisample texture array's slice range
+94616fe|2026-11-22|Vonsek|test: cover a volume that denies shader access
+754d359|2026-11-21|Rayhan Robin|BUILD-118: handle quoted > in XML attributes when balancing root tags
+e6eaecd|2026-11-21|SuarezPM|Runtime: the descriptor table lives in device-local memory (D3D-76)
+c53e06b|2026-11-21|eIBart0|tests/test_translate.py: update test_depth_compare_sample_result_width for f16_bits
+d0f0a51|2026-11-22|kotorvr|rtti_scan: keep the old report when a write fails; mark mad denormals as not modelled
+050ea3d|2026-11-22|Kam471|Docs: re-count the model-bearing archives at rpf9-explorer 917e9b9 (ASSET-49)
+9a7a1b5|2026-11-21|fearkov|Translator: drop the second s_bfm_b32 handler, which never ran
+89bf640|2026-11-22|Vonsek|fix(runtime): check image capabilities before texture creation
+ece8aab|2026-11-21|VictorJulianiR|Benchmark: report unavailable descriptor lookup timings
+14668c6|2026-11-22|bennymxckz|Runtime: RTS0 descriptor ranges read Flags before the table offset
+0592ad8|2026-11-21|VictorJulianiR|Keep Vulkan test initialization failures visible in CTest
+247f30e|2026-11-21|Luiz Neves|Merge remote-tracking branch 'origin/main' into valu-cvt-flr-rpi
+be283d1|2026-11-21|VictorJulianiR|Merge main and preserve stencil and depth views alongside A8 sampled textures
+5e55015|2026-11-21|VictorJulianiR|Merge main and verify B5G5R5A1 packed sampling and native footprints
+f946563|2026-11-21|fearkov|Tests: drop the class and import a merge doubled in test_shader_checks.py
+77aae6f|2026-11-21|nicolas|Refresh completed shaders when translation sources change
+7e42a45|2026-11-21|Luiz Neves|Translator: v_qsad_pk_u16_u8 and v_mqsad_pk_u16_u8
+403273a|2026-11-21|Luiz Neves|Translator: constant and ordered/unordered VOPC compares
+d4287c3|2026-11-21|Luiz Neves|Translator: s_cmov_b32 and s_cmovk_i32
+03d1e11|2026-11-21|Tim Elery|bcpack: add BC6H and BC7 decoders with external runtime history loader (ASSET-5)
+c9ef98d|2026-11-22|kotorvr|Gamedata: identify the MHIU 0x28 field as the default height (ASSET-48)
+a48b953|2026-11-22|Spaghetih|docs: native-path workgroup barriers are not proven uniform (SHADER-91)
+23e0f54|2026-11-21|fearkov|Docs: a row for the v_interp_p2_f16 clamp
+05e0bb4|2026-11-21|fearkov|Tests: v_interp_p2_f16 clamp on attributes outside [0, 1]
+8259482|2026-11-21|fearkov|Translator: v_interp_p2_f16 takes its VOP3 clamp
+ece49c0|2026-11-21|Luiz Neves|Translator: v_pipeflush is a no-op
+42e0b56|2026-11-22|Ayoze Torres|runtime: keep the loader off the default EXE base; loader_tls copies with CopyFileW
+13cae9c|2026-11-22|Vonsek|chore: merge upstream descriptor plane coverage
+a9babd0|2026-11-21|Luiz Neves|Translator: s_flbit_i32_b64 and s_flbit_i32_i64
+2e23f95|2026-11-21|Dea7hsmiles|tests: keep d3d12_vulkan_device_test running on Windows 10 (TEST-97)
+e379413|2026-11-22|omardev29|docs/runtime: XDXR BATCHED_DESC2 and XDXR_STREAM_DESC layouts from XboxBvhBuilder.dll (open question 8)
+e095fbb|2026-11-21|Luiz Neves|Translator: s_bitset0_b64 and s_bitset1_b64
+398f5b0|2026-11-22|mohamedsaad.lahlou|Merge current main into the D3D12 trace branch
+7410f5d|2026-11-22|kotorvr|glb_writer: retry a replace hit by a sharing violation; test ab_control_flow's metadata filters
+2adf9af|2026-11-22|HAMADA|third_party: rpf9-explorer at 917e9b9 (lost in the #650 merge)
+b5d1586|2026-11-22|ismailchaka1|docs: valu_fuzz --family f16 needs llvm-mc 21+; 18 runs the rest
+1332cc5|2026-11-21|Luiz Neves|Translator: s_bfe_u64 and s_bfe_i64
+89cd5e1|2026-11-21|Luiz Neves|Translator: s_brev_b64
+fa00dda|2026-11-21|kapitche|third_party: re-pin rpf9-explorer to 917e9b9, which #650's rpf9dump changes need
+67204bf|2026-11-21|ItsNotRexed|Drop format cases two merges both added
+3dce642|2026-11-21|Proudnoob4|bvh_builder_test: skip with a reason when the host D3D12 device has no ID3D12Device11 (#688)
+fee6c26|2026-11-21|Om dev|Fix DDS cubemap array size
+32d0a4b|2026-11-21|nicolas|Use four-color BC3 interpolation when checking texture mip chains
+3fb1536|2026-11-22|dcastell1|fix(tools): score uncompressed swizzle guesses from raw RGB
+d605067|2026-11-22|Kam471|Docs: record the Home Sweet Home mission-music search
+a4717f3|2026-11-21|fearkov|Tests: a pixel test that exits 77 gives one SKIP row
+00fef11|2026-11-22|Vonsek|fix(runtime): report unaligned BC texture support
+6e830f5|2026-11-22|bbareth|shader_disasm.py: an llvm-mc error is a failure, and a run with no listings exits 1
+f4fcbdc|2026-11-21|fearkov|Tests: run_gpu_tests.py reports a pixel test the device can't run once
+52b78d7|2026-11-22|bbareth|story_index.py: a limited scan stays inside its window, and a rerun skips its own report
+4547af3|2026-11-21|nicolas|Restore census reports when publication fails
+ce87bf7|2026-11-21|nicolas|Merge upstream GPU runner coverage into the packed format fixture branch
+f93afca|2026-11-21|eIBart0|tests/test_translate.py: test v_fma_mix* fimm literals and remaining f16_bits pack sites
+5e7b00e|2026-11-22|bbareth|audit_shader4_regs.py: count SGPR reads by s_addk/s_mulk/s_cmovk, reject a negative --limit
+d819ba1|2026-11-21|Rayhan Robin|BUILD: fail the Turing atlas when its malformed control is accepted
+c869775|2026-11-22|Ayoze Torres|CI: run the Windows runtime tests under Wine on Linux
+54d3ea1|2026-11-22|Spaghetih|GPU test: s_barrier sites in different wave-uniform branches meet (SHADER-91)
+0b23f32|2026-11-21|eIBart0|rdna2spirv: fix v_fma_mix* f16 literals and replace remaining PackHalf2x16 sites
+b8f15fa|2026-11-22|bbareth|awc_shorts.py: a missing source or a NaN duration bound fails before export
+2112681|2026-11-22|Ayinaki|Answer shader model and root signature feature queries
+8572c48|2026-11-21|fearkov|Docs: the packed sample addresses row covers the extra arguments
+cb6550f|2026-11-21|fearkov|Tests: the d_cl clamp sample draws on two mips, so its clamp shows
+b707035|2026-11-21|fearkov|Tests: vk_texture_test enables shaderResourceMinLod for a MinLod clamp
+bd880b8|2026-11-21|fearkov|Tests: a16 bias, d_cl and depth compare samples on a GPU
+8de6eb2|2026-11-21|fearkov|Tests: vk_texture_test dref checks depth compare samples on a GPU
+a5a77e5|2026-11-21|fearkov|Translator: image_sample_d_cl reads its clamp right after the coordinates
+96e76f5|2026-11-21|fearkov|Translator: a16 keeps whole VGPRs for a bias, a z-compare and d_cl gradients
+ad6bb01|2026-11-21|troythedecoyx|GPU and value test for SHADER-46: s_ff0/s_ff1_i32_b32 of an immediate
+3dde44e|2026-11-21|VictorJulianiR|Merge current main and isolate the A8 and R8 view descriptors
+8cd37b2|2026-11-22|ismailchaka1|crosslane_fuzz.py: ask for 32-wide subgroups for wave32 and emulated programs (FUZZ-13)
+1fe06f8|2026-11-21|ItsNotRexed|Merge pull request #698 from nicolas
+0aa84a4|2026-11-21|ItsNotRexed|Merge pull request #697 from SirAmong
+6ad7bd1|2026-11-21|ItsNotRexed|Merge pull request #695 from SirAmong
+86a1bfe|2026-11-21|ItsNotRexed|Merge pull request #694 from ismailchaka1
+29c2426|2026-11-21|ItsNotRexed|Merge pull request #692 from kovaaper
+9a6a405|2026-11-21|ItsNotRexed|Merge pull request #691 from dcastell1
+dc785df|2026-11-21|ItsNotRexed|Merge pull request #690 from FreddyxS
+d35045e|2026-11-21|ItsNotRexed|Merge pull request #689 from Diego Casares
+11627a3|2026-11-21|ItsNotRexed|Merge pull request #687 from nicolas
+f68f8d5|2026-11-21|ItsNotRexed|Merge pull request #686 from Tal Swicegood
+339a245|2026-11-21|ItsNotRexed|Merge pull request #685 from VictorJulianiR
+69cb90c|2026-11-21|ItsNotRexed|Merge pull request #683 from Rafael
+0f2cee0|2026-11-21|ItsNotRexed|Merge pull request #682 from Rafael
+e65fdad|2026-11-21|ItsNotRexed|Merge pull request #681 from Rayhan Robin
+816a4e5|2026-11-21|ItsNotRexed|Merge pull request #678 from ismailchaka1
+25ba26a|2026-11-21|ItsNotRexed|Merge pull request #676 from Rayhan Robin
+a3fc24f|2026-11-21|ItsNotRexed|Merge pull request #675 from nicolas
+0a33aa1|2026-11-21|ItsNotRexed|Merge pull request #673 from eIBart0
+25f79b0|2026-11-21|ItsNotRexed|Merge pull request #671 from FreddyxS
+739240f|2026-11-21|ItsNotRexed|Merge pull request #670 from Diego Casares
+db710a0|2026-11-21|ItsNotRexed|Merge pull request #669 from VictorJulianiR
+1abfc43|2026-11-21|ItsNotRexed|Merge pull request #668 from ismailchaka1
+92b82bd|2026-11-21|ItsNotRexed|Merge pull request #667 from eIBart0
+c043350|2026-11-21|ItsNotRexed|Merge pull request #666 from SirAmong
+2736407|2026-11-21|ItsNotRexed|Merge pull request #665 from mohamedsaad.lahlou
+91a9635|2026-11-21|ItsNotRexed|Merge pull request #662 from Diego Casares
+153add7|2026-11-21|ItsNotRexed|Merge pull request #661 from Diego Casares
+303b315|2026-11-21|ItsNotRexed|Merge pull request #659 from mohamedsaad.lahlou
+b9cf64a|2026-11-21|ItsNotRexed|Merge pull request #658 from VictorJulianiR
+d8b3fd7|2026-11-21|ItsNotRexed|Merge pull request #657 from dcastell1
+cf45531|2026-11-21|ItsNotRexed|Merge pull request #656 from Rayhan Robin
+460d23c|2026-11-21|ItsNotRexed|Merge pull request #654 from AlxcBTW
+4d0fb38|2026-11-21|ItsNotRexed|Merge pull request #650 from Kam471
+c77944a|2026-11-21|ItsNotRexed|Merge pull request #647 from SirAmong
+a3eef91|2026-11-21|ItsNotRexed|Merge pull request #645 from SirAmong
+720639a|2026-11-21|ItsNotRexed|Merge pull request #639 from FJBP-code
+9ccadea|2026-11-21|ItsNotRexed|Merge pull request #622 from SirAmong
+36da56b|2026-11-21|ItsNotRexed|Merge pull request #610 from AlxcBTW
+571c8cf|2026-11-21|ItsNotRexed|Merge pull request #608 from VictorJulianiR
+1f2c19d|2026-11-21|ItsNotRexed|Merge pull request #602 from SirAmong
+351702a|2026-11-21|ItsNotRexed|Merge pull request #527 from dcastell1
+89f19af|2026-11-22|Vonsek|chore: merge upstream 3D target and RGB9E5 coverage
+ae51e74|2026-11-21|nicolas|Profile LLVM warning words at their reported columns
+6e1e5c5|2026-11-21|VictorJulianiR|Refresh B5G5R5A1 sampling coverage after RGB9E5 support merged
+4e1de42|2026-11-22|mohamedsaad.lahlou|Runtime: add opt-in D3D12 call tracing
+b228b56|2026-11-22|dwwite|Add files via upload
+0b312b0|2026-11-22|cemalyakla|Runtime: report DXGI format plane counts through CheckFeatureSupport
+527e41c|2026-11-22|cemalyakla|Runtime: report DXGI format plane counts through CheckFeatureSupport
+bfa1983|2026-11-21|VictorJulianiR|Detect stereo Opus packets in later streamed music blocks
+e80485e|2026-11-22|ismailchaka1|Merge main into d3d-61-b4g4r4a4
+33070ca|2026-11-22|dwwite|Add files via upload
+fb4a2f8|2026-11-21|SirAmong|docs: d3d12_vulkan.md push constants on Intel Arc are not 128 B everywhere (PROC-22)
+7fc9d56|2026-11-21|nicolas|Keep every link when decoding chained Ogg Opus to WAV
+762893f|2026-11-21|ItsNotRexed|Fix what the merge round broke
+6d2303e|2026-11-22|AlxcBTW|Merge remote-tracking branch 'origin/main' into shader-36-gather-wrap
+a71caa8|2026-11-22|AlxcBTW|Merge remote-tracking branch 'origin/main' into bpw32-main
+57f98f7|2026-11-21|SirAmong|docs: stale GPU-verified rows, runner note, duplicated section, pipeline_check and valu_fuzz docstring (PROC-21)
+a06ebca|2026-11-21|VictorJulianiR|Merge current main into ASSET-47
+edefec5|2026-11-21|SirAmong|docs: permlane FI=0 credits both measurements and says the fuzzer still tags it hyp (PROC-19 review)
+9b70afe|2026-11-22|ismailchaka1|Runtime: B4G4R4A4_UNORM textures (D3D-61)
+a518a2b|2026-11-21|SirAmong|docs: testing.md image_load row describes this runtime's real mechanism (PROC-16 review)
+bffc494|2026-11-21|SirAmong|docs: textures.md step 1 names ASSET-38 and no longer closes step 3 (PROC-18 review)
+7b3817a|2026-11-21|SirAmong|rpf9_carve.py: reject a file that is not an RPF9 archive (BUILD-98)
+0a35e27|2026-11-22|dcastell1|fix(tools): derive the 64 KB swizzle block extent from the element count
+149870e|2026-11-22|Diego Casares|test(semantic): add value tests for f16 rounding and fract VALU ops
+5952dec|2026-11-22|FreddyxS|Use Win32 HANDLE types for manifest process priority
+5b0e01e|2026-11-22|FreddyxS|Use Win32 HANDLE types for build process priority
+2c2229a|2026-11-21|Rayhan Robin|BUILD-110: also require VULKAN_SDK when the runtime stage must build the checker
+ce43602|2026-11-21|Rafael|runtime: build the tiny_dll fixture with /EHa under clang-cl
+bc8e604|2026-11-21|Tal Swicegood|Avoid descriptor table growth with a bounded slot relocation
+e04eb2a|2026-11-21|nicolas|docs: measure descriptor lookup on Apple M3 Max (D3D-56)
+12f1dc5|2026-11-21|Rafael|runtime: depth-stencil views of a multisample texture array's slice range (D3D-79 part 1)
+3eb5f86|2026-11-21|Rayhan Robin|BUILD: keep the re-parsed page when a new page follows a continuation
+b74ebc5|2026-11-21|Rafael|runtime: compare the Xbox tiled layout word as an integer so clang-cl builds
+abfae22|2026-11-21|VictorJulianiR|Tests: cover the binary32 doubling boundary in the cube oracle
+69e3be8|2026-11-22|ismailchaka1|Runtime: depth-plane shader-resource views of depth-stencil textures
+6b48290|2026-11-21|Rayhan Robin|BUILD: classify BOM-prefixed XML correctly and require a balanced root close
+ed19ed4|2026-11-22|kovaaper|Test: reject invalid stage selections before game access
+6b101b2|2026-11-21|nicolas|Fail pipeline checks when shader modules or pipelines fail
+8cf0a8f|2026-11-21|nicolas|Run the packed 10:10:10:2 fixture in both GPU test suites
+df9039e|2026-11-22|Vonsek|feat(runtime): bind single-sampled 3D texture SRVs
+f165a13|2026-11-22|FJBP-code|D3D-56: sweep all entries in wave-uniform cases and report unique keys
+49d0b83|2026-11-22|Diego Casares|Translator: preserve both dwords for non-mask 64-bit data in s_cselect_b64
+cf1413c|2026-11-22|FreddyxS|Test strict verification with an in-tree manifest
+13b55c8|2026-11-22|FreddyxS|Exclude the selected manifest from verification inventory
+584caf2|2026-11-22|kovaaper|Build: reject empty and unknown stage selections before game access
+ed7e1ea|2026-11-21|VictorJulianiR|D3D-61: keep alpha-only texture sampling distinct from R8
+dd201e7|2026-11-22|ismailchaka1|Runtime: shader-resource views of the stencil plane (D3D-75)
+6495f43|2026-11-21|SirAmong|docs: design.md contract rows for the SAD, sext/flbit and lerp ops (PROC-20)
+a412225|2026-11-22|mohamedsaad.lahlou|Tests: reject unmatched GPU test filters
+7719167|2026-11-22|eIBart0|tests/test_valu_fuzz.py: test --programs, --max-report, and --show CLI validation
+2b7c576|2026-11-21|SirAmong|docs: testing.md image_load row names the right mechanism (PROC-16 review)
+6bb076d|2026-11-22|eIBart0|valu_fuzz.py: validate --programs, --max-report, and --show via ap.error
+17a3c26|2026-11-22|eIBart0|tests/test_audio_config.py: test --min-ms/--max-ms range and --join on file rejection
+015d4ed|2026-11-22|eIBart0|audio_config.py: validate --min-ms/--max-ms range and reject --join on a file
+2e8101b|2026-11-21|VictorJulianiR|tests/semantic: PSB loads and stores in the mini interpreter are one aligned 32-bit word
+00058f8|2026-11-22|Diego Casares|Translator: apply VOP3 output modifiers in v_rcp_iflag_f32
+f090a4a|2026-11-22|Diego Casares|Translator: support non-SGPR scalar destinations in s_mulk_i32 and s_bitset0/1_b32
+f951282|2026-11-22|mohamedsaad.lahlou|Build: package the runtime TLS host DLL
+33545b0|2026-11-21|ItsNotRexed|Merge pull request #652 from eIBart0
+4731c41|2026-11-21|ItsNotRexed|Merge pull request #651 from Davi713
+016f39c|2026-11-21|ItsNotRexed|Merge pull request #650 from Kam471
+ef5aed9|2026-11-21|ItsNotRexed|Merge pull request #649 from eIBart0
+fc92d7c|2026-11-21|ItsNotRexed|Merge pull request #647 from SirAmong
+dfb2b19|2026-11-21|ItsNotRexed|Merge pull request #645 from SirAmong
+d7bceb8|2026-11-21|ItsNotRexed|Merge pull request #643 from Vonsek
+8f2b138|2026-11-21|ItsNotRexed|Merge pull request #641 from Proudnoob4
+ff094ce|2026-11-21|ItsNotRexed|Merge pull request #639 from FJBP-code
+073252c|2026-11-21|ItsNotRexed|Merge pull request #638 from omardev29
+03cca48|2026-11-21|ItsNotRexed|Merge pull request #637 from VictorJulianiR
+ef3d5ea|2026-11-21|ItsNotRexed|Merge pull request #636 from Rafael
+70bf587|2026-11-21|ItsNotRexed|Merge pull request #635 from FreddyxS
+b0bac8d|2026-11-21|ItsNotRexed|Merge pull request #633 from Kam471
+f2b280d|2026-11-21|ItsNotRexed|Merge pull request #632 from nicolas
+13d68c1|2026-11-21|ItsNotRexed|Merge pull request #630 from 73N1X
+42518e6|2026-11-21|ItsNotRexed|Merge pull request #629 from Diego Casares
+c0a93d2|2026-11-21|ItsNotRexed|Merge pull request #628 from SirAmong
+d1c41e7|2026-11-21|ItsNotRexed|Merge pull request #627 from Diego Casares
+4f1f72f|2026-11-21|ItsNotRexed|Merge pull request #626 from Diego Casares
+295dc8c|2026-11-21|ItsNotRexed|Merge pull request #625 from Luiz Neves
+23020c4|2026-11-21|ItsNotRexed|Merge pull request #622 from SirAmong
+983b5c5|2026-11-21|ItsNotRexed|Merge pull request #614 from FreddyxS
+d3a4709|2026-11-21|ItsNotRexed|Merge pull request #611 from bbareth
+809bb42|2026-11-21|ItsNotRexed|Merge pull request #608 from VictorJulianiR
+8b1b1e4|2026-11-21|ItsNotRexed|Merge pull request #607 from Francisco Junior
+78475e9|2026-11-21|ItsNotRexed|Merge pull request #606 from bbareth
+99f6f0b|2026-11-22|dcastell1|test(runtime): register d3d12_vulkan_device_test with CTest
+d11e39b|2026-11-21|ItsNotRexed|Merge pull request #599 from LuanFreitas
+fa7f38b|2026-11-21|ItsNotRexed|Merge pull request #587 from Vonsek
+2452a5b|2026-11-21|ItsNotRexed|Merge pull request #575 from IAmNotSiob
+ef3e774|2026-11-21|ItsNotRexed|Merge pull request #562 from Vonsek
+d10c2e5|2026-11-21|ItsNotRexed|Merge pull request #555 from NRXM
+ab9c9bc|2026-11-21|ItsNotRexed|Merge pull request #527 from dcastell1
+e5d9f28|2026-11-21|ItsNotRexed|Merge pull request #489 from eIBart0
+b95f0f8|2026-11-21|ItsNotRexed|Merge pull request #398 from troythedecoyx
+2370a37|2026-11-21|ItsNotRexed|Merge pull request #394 from Tomgamer
+3fb070d|2026-11-21|ItsNotRexed|Merge pull request #391 from kotorvr
+46722d8|2026-11-22|Kam471|docs: record the packs.rpf full-export result at 917e9b9
+32f51b2|2026-11-22|dcastell1|fix(tests): keep one PIXEL_TESTS registry and run each pixel shader once
+8de2522|2026-11-21|ItsNotRexed|README: the full translation count is with LLVM 21; LLVM 23 rejects 1,471 for now (#644)
+ad1150a|2026-11-22|AlxcBTW|Test: d3d12_vulkan_device_test compares only what D3D12 fixes about GetResourceTiling, sample counts and null-rect resolves
+ea2c6a9|2026-11-21|VictorJulianiR|rtti_scan.py: an output it can't write is one line
+42ce66c|2026-11-21|Rayhan Robin|BUILD: preflight reports a missing vk_pipeline_check before shaders start
+4c5ce1a|2026-11-22|AlxcBTW|Merge remote-tracking branch 'origin/main' into tiling-host-split
+3816356|2026-11-22|Kam471|third_party: bump rpf9-explorer to 917e9b9 and decode packs.rpf dictionary children
+248ca96|2026-11-21|SirAmong|docs: textures.md next steps point at what is left (PROC-18)
+4a7db23|2026-11-22|eIBart0|tests/test_salu_diff.py: test --ops whitespace, duplicates, empty tokens and stderr reporting
+dc216b7|2026-11-22|eIBart0|tests/test_dds_png.py: test negative max_size rejection
+59f9834|2026-11-22|eIBart0|dds_png.py: reject negative max_size in API and CLI
+40e81c2|2026-11-21|SirAmong|docs: the permlane FI=0 open question is answered (PROC-19)
+d29ae77|2026-11-22|eIBart0|salu_diff.py: strip and deduplicate --ops and report invalid --ops via ap.error
+9996098|2026-11-22|NRXM|docs: re-measure the llvmpipe counts in testing.md
+2cb28a4|2026-11-22|Vonsek|feat(runtime): clear selected slices of 3D render targets
+e40bd65|2026-11-22|kotorvr|Merge main into D3D-26: predication and reserved resources on main
+f230b0d|2026-11-22|kotorvr|Merge main (c432cdc) into d3d-25-uav-clears
+b90a2d0|2026-11-22|FJBP-code|D3D-56: add GPU descriptor hash-table micro-benchmark (vk_descriptor_bench)
+d602f61|2026-11-21|Davi713|tests: add semantic value tests for v_fma_mix_f32, v_fma_mixlo_f16 and v_fma_mixhi_f16
+8686b69|2026-11-21|Proudnoob4|make_game.py: --jobs reaches vk_pipeline_check in the pipelines stage
+8985321|2026-11-21|Rafael|tests: give ms_w64x_ballot its synthetic PSV0 so it is translated and validated
+739ef5d|2026-11-22|Kam471|Decode the MHIU and PAMH heightmaps: row tables, max/min arrays and Z mapping
+66da9d2|2026-11-22|FreddyxS|Tests: cover redirected GLB resource URLs
+dbb3319|2026-11-21|eIBart0|Shader: pack d16 image sample/gather results with integer f32->f16 RTE
+9c229ed|2026-11-21|Luiz Neves|Merge remote-tracking branch 'origin/main' into valu-cvt-flr-rpi
+0175e92|2026-11-21|VictorJulianiR|Merge the rebased RGB9E5 dependency and preserve border sampler checks
+06a8593|2026-11-22|FreddyxS|Viewer: resolve GLB dependencies after redirects
+d10e2d4|2026-11-22|Diego Casares|test(semantic): add value tests for s_ashr_i32, s_sub_i32, s_lshl3_add_u32, s_cselect_b64, s_cmp_lg_u64
+14d81dd|2026-11-21|LuanFreitas|SHADER-86: align mem_diff reference with RX 6700 typed-buffer decode
+baa6bee|2026-11-21|LuanFreitas|SHADER-86: match RX 6700 typed buffer decode (repeat, OpFDiv, DST_SEL 1)
+082e150|2026-11-22|omardev29|crosslane_fuzz: accept --modes both, reject unknown modes
+b368833|2026-11-22|Tomgamer|Merge origin/main into fuzz-3-f32-valu (regen_fixtures.py: keep ps_f32_mods and ps_f64_mods)
+e876dd2|2026-11-21|nicolas|Bind world census shards to their source archive
+1168608|2026-11-21|Luiz Neves|Translator: v_cvt_off_f32_i4
+4250c77|2026-11-21|73N1X|Runtime: support RGBA8 typeless RTV mip and array ranges (D3D-70)
+6f4bd2a|2026-11-22|IAmNotSiob|Merge remote-tracking branch 'origin/main' into shader-55-56
+3ff4082|2026-11-22|Diego Casares|test(semantic): add value tests for 3-input float VALU ops
+0726e3f|2026-11-21|SirAmong|Translator: ds_permute_b32, the forward (scatter) cross-lane permute (SHADER-90)
+b928011|2026-11-21|troythedecoyx|GPU tests: run #300's cs_cvt_f32_sat on every input through VKC_SGPRS
+95ab844|2026-11-21|troythedecoyx|vk_compute_test: seed s4.. from VKC_SGPRS, so a compute test can take an input word
+da8420e|2026-11-21|VictorJulianiR|Use the same MoltenVK library as the C++ subgroup checks on macOS
+7a23552|2026-11-22|AlxcBTW|Merge remote-tracking branch 'origin/main' into shader-36-gather-wrap
+acb1365|2026-11-22|NRXM|tests: skip the wave32 lane-mask dumps below 32 lanes (llvmpipe CI)
+8521b0b|2026-11-22|Tomgamer|Merge origin/main into fuzz-3-f32-valu
+fc7e0a1|2026-11-22|Vonsek|Merge remote-tracking branch 'upstream/main' into codex/bgr565-readback
+f5f4cb0|2026-11-22|Vonsek|Merge remote-tracking branch 'upstream/main' into codex/rgb9e5-texture
+4d160e8|2026-11-22|Diego Casares|test(semantic): add value tests for v_cmp_class_f32, v_cmpx_class_f32, v_rndne_f32, v_rcp_iflag_f32
+49ee5d8|2026-11-21|Luiz Neves|Translator: v_cvt_flr_i32_f32 and v_cvt_rpi_i32_f32
+ddef801|2026-11-22|dcastell1|fix(tests): keep one PIXEL_TESTS registry and run each pixel shader once
+78b8239|2026-11-21|SirAmong|docs: G-buffer targets stay 8-bit UNORM; image_load tests need a real T# size (PROC-16)
+78e6c90|2026-11-22|FreddyxS|CI: preserve queued main and manual runs
+67ac056|2026-11-22|AlxcBTW|Merge remote-tracking branch 'origin/main' into bpw32-main
+0a36334|2026-11-22|bbareth|tex_mode_probe.py: --n must be at least 1
+092b028|2026-11-21|Francisco Junior|Tools: close archive mmaps on error and reject empty rpf9_names inputs
+008560e|2026-11-21|VictorJulianiR|Support B5G5R5A1 sampled textures and two-byte footprints
+df0cc48|2026-11-22|AlxcBTW|Merge remote-tracking branch 'origin/main' into d3d-46-copy-compare
+c432cdc|2026-11-21|ItsNotRexed|docs: drop table rows duplicated by this round's merges
+2f230be|2026-11-21|ItsNotRexed|Merge pull request #600 from adriaespii
+e3787a4|2026-11-22|AlxcBTW|Runtime: copy comparison review fixes (D3D-46)
+a8fffc8|2026-11-21|ItsNotRexed|Merge pull request #598 from curnpoo
+0be27bc|2026-11-21|ItsNotRexed|Merge pull request #597 from Jess-Doit
+6e1efe8|2026-11-21|ItsNotRexed|Merge pull request #596 from bbareth
+29b3af5|2026-11-21|ItsNotRexed|Merge pull request #595 from bbareth
+4c61012|2026-11-21|ItsNotRexed|Merge pull request #593 from bbareth
+905b6af|2026-11-21|ItsNotRexed|Merge pull request #591 from bbareth
+dcc4c1d|2026-11-21|ItsNotRexed|Merge pull request #590 from AlxcBTW
+60e1965|2026-11-21|ItsNotRexed|Merge pull request #588 from andretuta
+19902b0|2026-11-21|ItsNotRexed|Merge pull request #586 from bbareth
+52a477e|2026-11-21|ItsNotRexed|Merge pull request #585 from eIBart0
+77cab3b|2026-11-21|ItsNotRexed|Merge pull request #584 from bbareth
+8b47705|2026-11-21|ItsNotRexed|Merge pull request #583 from bbareth
+5fd6399|2026-11-21|ItsNotRexed|Merge pull request #578 from bbareth
+16a9d64|2026-11-21|ItsNotRexed|Merge pull request #577 from NRXM
+1a6078b|2026-11-21|ItsNotRexed|Merge pull request #574 from bbareth
+a57bd02|2026-11-21|ItsNotRexed|Merge pull request #573 from St├©rm
+767e716|2026-11-21|ItsNotRexed|Merge pull request #571 from bbareth
+44ea12d|2026-11-21|ItsNotRexed|Merge pull request #570 from eIBart0
+a409452|2026-11-21|ItsNotRexed|Merge pull request #569 from bbareth
+d73829f|2026-11-21|ItsNotRexed|Merge pull request #568 from Ritolino
+1fa7ae7|2026-11-21|ItsNotRexed|Merge pull request #564 from Ewann
+492b630|2026-11-21|ItsNotRexed|Merge pull request #563 from VictorJulianiR
+00ddff6|2026-11-21|ItsNotRexed|Merge pull request #560 from VictorJulianiR
+b5cc84c|2026-11-21|ItsNotRexed|Merge pull request #559 from Ritolino
+56e2551|2026-11-21|ItsNotRexed|Merge pull request #557 from bbareth
+425d040|2026-11-21|ItsNotRexed|Merge pull request #556 from bbareth
+72314f8|2026-11-21|ItsNotRexed|Merge pull request #554 from Kam471
+e421255|2026-11-21|ItsNotRexed|Merge pull request #553 from NRXM
+556be06|2026-11-21|ItsNotRexed|Merge pull request #552 from bbareth
+298a69d|2026-11-21|ItsNotRexed|Merge pull request #551 from eIBart0
+42c9c9a|2026-11-21|ItsNotRexed|Merge pull request #550 from bbareth
+81f0bab|2026-11-21|ItsNotRexed|Merge pull request #549 from NRXM
+536ba3a|2026-11-21|ItsNotRexed|Merge pull request #538 from kotorvr
+982898a|2026-11-21|ItsNotRexed|Merge pull request #535 from nicolas
+c555b4c|2026-11-21|ItsNotRexed|Merge pull request #512 from SuarezPM
+6a55f98|2026-11-21|ItsNotRexed|Merge pull request #503 from Tomgamer
+c41d654|2026-11-21|ItsNotRexed|Merge pull request #496 from Tomgamer
+8493b28|2026-11-21|ItsNotRexed|Merge pull request #493 from Andrea
+feefef5|2026-11-21|ItsNotRexed|Merge pull request #476 from IAmNotSiob
+e90d40c|2026-11-21|ItsNotRexed|Merge pull request #472 from kotorvr
+678a825|2026-11-21|ItsNotRexed|Merge pull request #414 from Vonsek
+bad14ed|2026-11-22|bbareth|tests/spirv_interp.py: OpBitcast keeps signalling-NaN bits (#509, as #533)
+b8f6c74|2026-11-21|ItsNotRexed|Remove SECURITY.md (#182)
+1ea261b|2026-11-21|VictorJulianiR|Honor zero and reject negative audio bank export limits
+2720df1|2026-11-22|Tomgamer|Merge origin/main into f64-output-modifiers
+f02f164|2026-11-21|ItsNotRexed|Remove CODE_OF_CONDUCT.md from #537
+d00864d|2026-11-21|totonii|fix(vulkan): enable Synchronization Validation and filter validation-only debug messages
+6ea9f97|2026-11-22|NRXM|tests: skip the wave32 lane-mask dumps below 32 lanes (llvmpipe CI)
+12b6b9f|2026-11-22|NRXM|tests: skip the wave32 lane-mask dumps below 32 lanes (llvmpipe CI)
+9cc407c|2026-11-22|NRXM|tests: skip the wave32 lane-mask dumps below 32 lanes (llvmpipe CI)
+d32e73e|2026-11-22|adriaespii|Runtime: add missing integer and typeless texture formats (D3D-60)
+c7ea4b4|2026-11-22|Vonsek|Merge the upstream two-mip fixture with the a16 gradient test
+b6eda1e|2026-11-21|SuarezPM|Translator: flush f16 denormals in the quantized interpolant path
+9833d7d|2026-11-21|nicolas|Merge upstream Vulkan test registrations into checkpoint fix
+1ff4f57|2026-11-22|Tomgamer|Merge origin/main into test-movrel-values
+b3e71d7|2026-11-22|kotorvr|runtime: UINT border colours use VK_BORDER_COLOR_INT_* (#538 review)
+ffb5e34|2026-11-22|kotorvr|runtime: CreateSampler2 on the Vulkan device (D3D-28, part 2)
+382daba|2026-11-22|kotorvr|runtime: the 1/2/3 method variants on the Vulkan device (D3D-28, part 1)
+2a41e7a|2026-11-21|andretuta|Navmesh: decode 0DRP cover-point pages, 0x00010015 tiles and Band-3 grids (ASSET-22)
+cfc314d|2026-11-21|curnpoo|Docs and CMake: the runtime needs the Windows SDK 10.0.26100 or newer
+97e0b62|2026-11-22|bbareth|ab_control_flow.py: --count, --runs and --timeout must be at least 1
+7463b94|2026-11-21|Luiz Neves|Merge remote-tracking branch 'origin/main' into salu-sext-flbit
+320531e|2026-11-21|Luiz Neves|Merge remote-tracking branch 'origin/main' into valu-add-nc-clamp
+6e0d206|2026-11-22|Vonsek|Merge remote-tracking branch 'upstream/main' into codex/bgr565-readback
+b3edaf3|2026-11-22|Vonsek|Merge remote-tracking branch 'upstream/main' into codex/rgb9e5-texture
+511a45e|2026-11-22|bbareth|tex_export.py: --limit must be at least 1
+829ba98|2026-11-21|Luiz Neves|Merge remote-tracking branch 'origin/main' into valu-lerp-u8
+8423530|2026-11-22|bbareth|world_index.py: --limit 0 is not "no limit", and the scan window is checked
+bd7e53f|2026-11-21|Jess-Doit|Runtime: serialize root signature 1.2 as 1.1 on runtimes that stop at 1.1 (WIN10-ROOTSIG)
+96ec049|2026-11-22|bbareth|rdna2spirv.py: check --limit and --shard before translating anything
+7cfa435|2026-11-22|AlxcBTW|runtime: unimplemented-import stub review fixes and ABI tests
+037c373|2026-11-22|Vonsek|feat(runtime): support B5G6R5 render targets and copies
+a67d215|2026-11-22|bbareth|fssm_header.py: a missing path is one line, and --limit can't be negative
+2c01fc8|2026-11-22|Andrea|Validate sample descriptions on buffers and allocation queries
+a4996c7|2026-11-22|Tomgamer|Merge origin/main into f64-output-modifiers
+9448263|2026-11-22|bbareth|anim_index.py: a missing source or an output it can't write is one line
+0cdf534|2026-11-22|Andrea|Use the resource depth-format fallback for MSAA quality queries
+cff1e41|2026-11-22|Tomgamer|Merge origin/main into test-movrel-values
+d80f9a4|2026-11-22|bbareth|gamedata_index.py: a missing target or a refused archive is one line
+66a5fc9|2026-11-22|Andrea|Query multisample quality for depth-stencil formats
+5c8cc4f|2026-11-22|IAmNotSiob|Part 3: f16 FMAs round once, to f16 (SHADER-55)
+8b5ef5f|2026-11-22|IAmNotSiob|Part 2: narrow f16 ALU results with integer ops, not PackHalf2x16 (SHADER-56, #513)
+22590c7|2026-11-21|ItsNotRexed|docs: drop table rows duplicated by this round's both-side merges
+4c842cd|2026-11-21|ItsNotRexed|Merge pull request #548 from Spaghetih
+ef55495|2026-11-21|ItsNotRexed|Merge pull request #547 from bbareth
+3dee137|2026-11-21|ItsNotRexed|Merge pull request #546 from Luiz Neves
+e4375b4|2026-11-21|ItsNotRexed|Merge pull request #544 from Luiz Neves
+9251d2f|2026-11-21|ItsNotRexed|Merge pull request #542 from kotorvr
+b3c2623|2026-11-21|ItsNotRexed|Merge pull request #541 from SirAmong
+2703d83|2026-11-21|ItsNotRexed|Merge pull request #540 from AlxcBTW
+a50ea96|2026-11-21|ItsNotRexed|Merge pull request #537 from kalilinuxvm14-gif
+394497f|2026-11-21|ItsNotRexed|Merge pull request #534 from NWX10
+014e6e0|2026-11-21|ItsNotRexed|Merge pull request #533 from bbareth
+98bfd84|2026-11-21|ItsNotRexed|Merge pull request #532 from VictorJulianiR
+6b34635|2026-11-21|ItsNotRexed|Merge pull request #531 from Capital
+bd502d5|2026-11-21|ItsNotRexed|Merge pull request #530 from eIBart0
+25fea32|2026-11-21|ItsNotRexed|Merge pull request #529 from Jaws
+1ce7964|2026-11-21|ItsNotRexed|Merge pull request #525 from Luis Baker
+a541616|2026-11-21|ItsNotRexed|Merge pull request #524 from kotorvr
+1216bc3|2026-11-21|ItsNotRexed|Merge pull request #523 from Capital
+fa0b52f|2026-11-21|ItsNotRexed|Merge pull request #520 from SombraSoft
+d29971a|2026-11-21|ItsNotRexed|Merge pull request #518 from isaactouzani34100
+302b4f2|2026-11-21|ItsNotRexed|Merge pull request #516 from ezwinxdlmao
+97fda69|2026-11-21|ItsNotRexed|Merge pull request #515 from VictorJulianiR
+887d10e|2026-11-21|ItsNotRexed|Merge pull request #514 from Diego Casares
+55de32c|2026-11-21|ItsNotRexed|Merge pull request #512 from SuarezPM
+166eeee|2026-11-22|bbareth|audio_config.py: a missing source or unreadable input is one line
+93d1609|2026-11-21|Luiz Neves|Translator: v_lerp_u8
+906dd40|2026-11-22|bbareth|shader_profile.py: a bad source or --out is one line, and --out is checked before the scan
+824f07e|2026-11-22|Andrea|Merge latest main and align Vulkan MSAA with D3D12 sample limits
+125ab44|2026-11-22|IAmNotSiob|valu_fuzz: drop the wave family; FUZZ-7 is @kotorvr's crosslane_fuzz.py
+f0fdfe3|2026-11-22|IAmNotSiob|Tools: f16, buffer memory and cross-lane differential fuzzers on the GPU (FUZZ-2, FUZZ-5, FUZZ-7)
+85a4003|2026-11-22|eIBart0|tests: add unit and spirv-val tests for rdna2spirv.split_big_switch (SHADER-77)
+d771bd8|2026-11-22|bbareth|classify_carve.py: a missing argument or a bad carve root is one line
+ae70fbf|2026-11-21|St├©rm|docs: record AMD's reserved-resource mip split next to NVIDIA's (D3D-20)
+eafa573|2026-11-22|bbareth|world_census.py: --limit 0 is an empty range, and a bad archive path is one line
+e26f484|2026-11-22|Ritolino|test(semantic): value and SCC tests for 32-bit scalar inverted logic ops
+3973ce8|2026-11-22|Vonsek|feat(runtime): support sampled RGB9E5 textures
+c0dbd14|2026-11-22|AlxcBTW|Runtime: compare copies with the host runtime (D3D-46)
+9a2db92|2026-11-22|Ritolino|test(semantic): value tests for v_cvt_f32_i32, v_cvt_f32_u32, v_cvt_f32_ubyte0..3
+bcb9f6d|2026-11-22|AlxcBTW|runtime: LEONIDA_UNIMPLEMENTED=log|fail|stop policy for imports with no binding
+55fcbbc|2026-11-22|Ewann|docs: drop the stale 'whole-quad mode on non-EXEC masks is the identity' approximation (PROC-13)
+e5e35ef|2026-11-22|bbareth|feature_scan.py: a missing or unreadable shaders folder is one line
+21ec948|2026-11-21|VictorJulianiR|Release decoded bitmaps when a viewer chunk is discarded
+d2174a1|2026-11-21|VictorJulianiR|Refresh the incremental rpf9dump build before pending exports
+51bb873|2026-11-22|bbareth|hashdict.py: bad carve folders, missing blobs and bad --lookup values are one line
+3f70816|2026-11-21|Luiz Neves|Translator: v_add_nc_i32 / v_sub_nc_i32, and integer clamp on the _nc adds
+16b4d32|2026-11-22|eIBart0|restofworld_index.py: validate directory options, enforce --max-inflate in scan_dir, and close mmap with context manager
+0786a08|2026-11-22|Kam471|Docs: measure the character skeleton and clip sidecars
+ca0c66a|2026-11-21|ItsNotRexed|Merge pull request #510 from kotorvr
+f30729b|2026-11-21|ItsNotRexed|Merge pull request #508 from VictorJulianiR
+02f255b|2026-11-21|ItsNotRexed|Merge pull request #507 from Diego Casares
+a039a18|2026-11-21|ItsNotRexed|Merge pull request #506 from Diego Casares
+2a769f7|2026-11-21|ItsNotRexed|Merge pull request #505 from Koert Lichtendonk
+722b68f|2026-11-21|ItsNotRexed|Merge pull request #504 from NRXM
+6f3765c|2026-11-21|ItsNotRexed|Merge pull request #502 from kotorvr
+2a779e6|2026-11-21|ItsNotRexed|Merge pull request #501 from VictorJulianiR
+a52297c|2026-11-21|ItsNotRexed|Merge pull request #499 from VictorJulianiR
+c73379d|2026-11-21|ItsNotRexed|Merge pull request #498 from Tomgamer
+4b436a4|2026-11-21|ItsNotRexed|Merge pull request #496 from Tomgamer
+bfc6b6e|2026-11-21|ItsNotRexed|Merge pull request #493 from Andrea
+3ac310a|2026-11-21|ItsNotRexed|Merge pull request #477 from tunczzzz
+6581bc4|2026-11-21|ItsNotRexed|Merge pull request #476 from root
+a1d7684|2026-11-21|ItsNotRexed|Merge pull request #454 from Luiz Neves
+dab1015|2026-11-21|ItsNotRexed|Merge pull request #451 from VictorJulianiR
+51b9ccf|2026-11-21|ItsNotRexed|Merge pull request #448 from Luiz Neves
+f58e9b2|2026-11-22|bbareth|fssm_unpack.py: a missing or non-folder source is one line, and nothing is created
+0288f1a|2026-11-21|ItsNotRexed|Merge pull request #439 from SombraSoft
+2601f20|2026-11-21|ItsNotRexed|Merge pull request #435 from SombraSoft
+a7d325b|2026-11-21|ItsNotRexed|Merge pull request #392 from Luiz Neves
+45cf469|2026-11-21|ItsNotRexed|Merge pull request #388 from 73N1X
+8e02b90|2026-11-21|ItsNotRexed|Merge pull request #350 from nicolas
+c03c2bf|2026-11-21|ItsNotRexed|Merge pull request #296 from Vonsek
+b28c8ac|2026-11-21|ItsNotRexed|Merge pull request #288 from Parakeet-Wheat
+bcd3886|2026-11-21|ItsNotRexed|Merge pull request #268 from shelbykb2
+7aea5c5|2026-11-22|bbareth|tests: the dry-run runtime-stage preflight test runs off Windows too
+e0d1848|2026-11-21|Luiz Neves|Translator: s_sext_i32_i8, s_sext_i32_i16, s_flbit_i32
+8b5d88d|2026-11-22|Andrea|Merge upstream main into D3D-47 resolve comparison
+d3e0736|2026-11-22|bbareth|tests: skip the swizzle_search no-layout CLI test without numpy
+726570a|2026-11-21|Luiz Neves|Translator: v_mad_u64_u32 and v_mad_i64_i32
+8ad2ed5|2026-11-22|eIBart0|rdna2spirv: pack v_pk_*_f16 and f16_out with integer IEEE-754 RTE (SHADER-70)
+ee97b84|2026-11-21|ItsNotRexed|tests: dry-run preflight test leaves out the Windows-only runtime stage (fails on Linux otherwise)
+3f4cf2e|2026-11-22|Spaghetih|FUZZ-5: typed buffer loads in tools/mem_diff.py (buffer_load_format, tbuffer_load_format)
+24bfb65|2026-11-22|kotorvr|Follow up three review points on merged PRs (#326, #308, #292)
+7a86a2e|2026-11-21|Luiz Neves|Translator: v_sad_u8, v_sad_hi_u8, v_sad_u16, v_sad_u32, v_msad_u8
+8542365|2026-11-22|AlxcBTW|docs: record GDKX PresentX/frame-event presentation from public samples
+737735a|2026-11-21|SirAmong|Translator: v_movrelsd_2_b32 with separate M0 source/destination fields
+5cd151c|2026-11-22|NRXM|docs: refresh the README status table and stale BCPack rows (PROC-9)
+3fe9203|2026-11-22|bbareth|tests/semantic: OpBitcast keeps signalling-NaN bits in the mini interpreter (TEST-67)
+0a4b0b3|2026-11-22|NWX10|docs: d3d12_vulkan.md section 8.2 in order, and rows 15 and 18 point at their items (PROC-11)
+569d4aa|2026-11-21|SombraSoft|Textures: decode all 697 TTPF 2D arrays, streaming cubemaps and 3D volumes (ASSET-36)
+61f5b38|2026-11-22|kalilinuxvm14-gif|Create CODE_OF_CONDUCT.md
+e27749f|2026-11-21|nicolas|Preserve the last complete Vulkan pipeline cache checkpoint
+879e1a7|2026-11-22|Vonsek|Merge upstream texture and generated shader tests into the a16 fix
+0b29a78|2026-11-22|Capital|Keep barrier state tests compatible with newer Windows SDKs
+7fdabf3|2026-11-21|VictorJulianiR|Preserve nested bank paths during AWC audio export
+f72cbd9|2026-11-21|VictorJulianiR|Run texture tests with pinned dependencies after the CI split
+8f3fc8b|2026-11-21|SombraSoft|CI: build Windows Vulkan/COM targets via Vulkan-Headers and add sccache
+3ef8f4f|2026-11-21|SombraSoft|CI: scope Runtime workflow by path, run Linux ctest, enable D3D12 shim test
+05eedea|2026-11-22|eIBart0|navmesh_index: validate dir/archive CLI options and close mmap cleanly
+58019e8|2026-11-21|73N1X|Merge main and preserve predicated typeless clear handling
+bc7c389|2026-11-21|SuarezPM|Translator: quantize 16-bit interpolant reads with OpQuantizeToF16
+fb8343e|2026-11-22|Tomgamer|Merge origin/main into test-movrel-values
+f9fb9f0|2026-11-21|Jaws|Translator: load mid-dword buffer_load_format elements from every dword they span
+3164a41|2026-11-22|Vonsek|Merge upstream texel-offset coverage with the two-mip fixture
+1565e63|2026-11-21|nicolas|Merge commit '91b36cf86cb92a95836eed8af73abc0671a61e31' into codex/med3-result-modifiers
+adc1549|2026-11-22|Parakeet-Wheat|Runtime: WriteToSubresource and ReadFromSubresource on the Vulkan device
+212c52a|2026-11-22|Tomgamer|docs/design.md: record the ps_f64_mods GPU pass (RTX 6000 Ada)
+e816f20|2026-11-22|Luis Baker|Runtime: SNORM/SINT render targets and clear conversion (D3D-45)
+df696e4|2026-11-22|kotorvr|saves: key hashes are case-sensitive joaat; add tools/save_keys.py
+91b36cf|2026-11-21|ItsNotRexed|tests: follow this round's merges (#433's Python 3.12 floor in the dry-run tests, #488's 8-word dump, #421's global offset test, reworded test-program error)
+81590d3|2026-11-22|tunczzzz|run_gpu_tests: uniform-branch check requires a bit=0 pixel with s5 = 8
+d999bb9|2026-11-21|ItsNotRexed|Merge pull request #421 from shelbykb2
+0b7233e|2026-11-22|ezwinxdlmao|Tests: the D3D-14 push-constant check accepts GPUs with 128 bytes
+c354191|2026-11-22|Diego Casares|test(semantic): add value tests for cube-map VALU ops
+fe67117|2026-11-21|Luiz Neves|Merge origin/main into salu-lshl-add
+3a83c29|2026-11-21|shelbykb2|GPU tests for f16 op_sel and partial writes, hardware-measured; f16 inline constants fixed (SHADER-13)
+796a317|2026-11-21|Luiz Neves|Merge origin/main into interp-floor-ceil-trunc; round vector operands per component
+a9353e8|2026-11-21|Luiz Neves|tests/semantic: export the 64-bit shift results in 16-bit halves
+0f25c63|2026-11-22|kotorvr|Tools: wave and cross-lane differential fuzzer on the GPU (FUZZ-7)
+8829ac4|2026-11-21|ItsNotRexed|Merge pull request #492 from VictorJulianiR
+a5385c4|2026-11-21|ItsNotRexed|Merge pull request #491 from VictorJulianiR
+999b7b2|2026-11-21|ItsNotRexed|Merge pull request #490 from VictorJulianiR
+2fd9504|2026-11-21|ItsNotRexed|Merge pull request #488 from LuanFreitas
+037d636|2026-11-21|ItsNotRexed|Merge pull request #487 from slopgobblercobbler
+6ff710d|2026-11-21|ItsNotRexed|Merge pull request #485 from slopgobblercobbler
+023ae23|2026-11-21|ItsNotRexed|Merge pull request #484 from slopgobblercobbler
+ac2945e|2026-11-21|ItsNotRexed|Merge pull request #483 from slopgobblercobbler
+981815c|2026-11-21|ItsNotRexed|Merge pull request #482 from slopgobblercobbler
+edc131d|2026-11-21|ItsNotRexed|Merge pull request #481 from slopgobblercobbler
+61dbe21|2026-11-21|ItsNotRexed|Merge pull request #480 from slopgobblercobbler
+0d278bb|2026-11-21|ItsNotRexed|Merge pull request #479 from slopgobblercobbler
+291d0f6|2026-11-21|ItsNotRexed|Merge pull request #478 from slopgobblercobbler
+edb8bb8|2026-11-21|ItsNotRexed|Merge pull request #477 from tunczzzz
+85164a7|2026-11-21|ItsNotRexed|Merge pull request #476 from root
+bc7e2ca|2026-11-21|ItsNotRexed|Merge pull request #475 from slopgobblercobbler
+d5059a1|2026-11-21|ItsNotRexed|Merge pull request #474 from Diego Casares
+310c4a5|2026-11-21|ItsNotRexed|Merge pull request #473 from slopgobblercobbler
+aceda25|2026-11-21|ItsNotRexed|Merge pull request #471 from bbareth
+7d9922d|2026-11-21|ItsNotRexed|Merge pull request #470 from bbareth
+11d22b4|2026-11-21|ItsNotRexed|Merge pull request #468 from bbareth
+6398937|2026-11-21|ItsNotRexed|Merge pull request #467 from bbareth
+c87d386|2026-11-21|ItsNotRexed|Merge pull request #466 from bbareth
+6399b34|2026-11-21|ItsNotRexed|Merge pull request #465 from bbareth
+d5c56f6|2026-11-21|ItsNotRexed|Merge pull request #464 from slopgobblercobbler
+903eebf|2026-11-21|ItsNotRexed|Merge pull request #463 from bbareth
+5790021|2026-11-21|ItsNotRexed|Merge pull request #462 from bbareth
+5d4cffa|2026-11-21|ItsNotRexed|Merge pull request #461 from bbareth
+9713052|2026-11-21|ItsNotRexed|Merge pull request #460 from bbareth
+1f8dd7c|2026-11-21|ItsNotRexed|Merge pull request #458 from slopgobblercobbler
+0a08b7e|2026-11-21|ItsNotRexed|Merge pull request #457 from slopgobblercobbler
+c766516|2026-11-21|ItsNotRexed|Merge pull request #456 from slopgobblercobbler
+7f94f73|2026-11-21|ItsNotRexed|Merge pull request #454 from Luiz Neves
+2381bd1|2026-11-21|ItsNotRexed|Merge pull request #452 from slopgobblercobbler
+2335e3d|2026-11-21|ItsNotRexed|Merge pull request #449 from Luiz Neves
+44e3548|2026-11-21|ItsNotRexed|Merge pull request #448 from Luiz Neves
+6b07adf|2026-11-21|ItsNotRexed|Merge pull request #447 from SombraSoft
+0a31f04|2026-11-21|ItsNotRexed|Merge pull request #445 from Luiz Neves
+df1c2ef|2026-11-21|ItsNotRexed|Merge pull request #444 from SombraSoft
+119d308|2026-11-21|ItsNotRexed|Merge pull request #442 from Spaghetih
+e51ab0c|2026-11-21|ItsNotRexed|Merge pull request #441 from Andrea
+6221836|2026-11-21|ItsNotRexed|Merge pull request #440 from Luiz Neves
+22b3259|2026-11-21|ItsNotRexed|Merge pull request #438 from SombraSoft
+a6e5cc7|2026-11-21|ItsNotRexed|Merge pull request #437 from Dea7hsmiles
+8a7f0de|2026-11-21|ItsNotRexed|Merge pull request #434 from SombraSoft
+8119d8d|2026-11-21|ItsNotRexed|Merge pull request #433 from SombraSoft
+f9ba696|2026-11-21|ItsNotRexed|Merge pull request #432 from SombraSoft
+d2b96f6|2026-11-21|ItsNotRexed|Merge pull request #431 from NWX10
+bd15303|2026-11-21|ItsNotRexed|Merge pull request #430 from NRXM
+cd994e1|2026-11-21|ItsNotRexed|Merge pull request #429 from Tomgamer
+6bbac37|2026-11-21|ItsNotRexed|Merge pull request #428 from Tomgamer
+e089894|2026-11-21|ItsNotRexed|Merge pull request #426 from FreddyxS
+513adfd|2026-11-21|ItsNotRexed|Merge pull request #425 from SourNuht
+e1fb6bc|2026-11-21|ItsNotRexed|Merge pull request #424 from Tomgamer
+228e35f|2026-11-21|ItsNotRexed|Merge pull request #422 from Jay Rod
+a3e8a7f|2026-11-21|ItsNotRexed|Merge pull request #420 from kotorvr
+fad3f9e|2026-11-21|ItsNotRexed|Merge pull request #416 from VictorJulianiR
+4a5b3d7|2026-11-21|ItsNotRexed|Merge pull request #415 from VictorJulianiR
+3e335d5|2026-11-21|ItsNotRexed|Merge pull request #413 from VictorJulianiR
+d407987|2026-11-21|ItsNotRexed|Merge pull request #411 from Gen800
+ccb341f|2026-11-21|ItsNotRexed|Merge pull request #406 from VictorJulianiR
+202c58f|2026-11-21|ItsNotRexed|Merge pull request #405 from slopgobblercobbler
+e2cad42|2026-11-21|ItsNotRexed|Merge pull request #404 from slopgobblercobbler
+3ed3260|2026-11-21|ItsNotRexed|Merge pull request #403 from NWX10
+279f42a|2026-11-21|ItsNotRexed|Merge pull request #402 from slopgobblercobbler
+42ef9ff|2026-11-21|VictorJulianiR|tests/semantic: reject 64-bit operands of OpConvertUToF/SToF by type width
+1eaca53|2026-11-22|kotorvr|Merge main into D3D-26: bundles and samplers on main; D3D-26 calls follow the bundle rules
+f89565d|2026-11-22|Diego Casares|test(semantic): add value tests for scalar imm and bitset ALU ops
+5da3f19|2026-11-22|Diego Casares|test(semantic): add value tests for 16-bit integer VALU ops
+cf25a27|2026-11-22|Koert Lichtendonk|Docs: a finding: command for work you found but won't do
+707b194|2026-11-22|kotorvr|Merge main (4abd545) into d3d-25-uav-clears
+f054ef9|2026-11-22|Tomgamer|vk_harness: fix the Float64 unsupported message (a raw newline had split the string literal)
+154761a|2026-11-21|VictorJulianiR|TEST-59: exercise the texture layout probe with synthetic blocks
+1b3ddd4|2026-11-22|isaactouzani34100|runtime: shim the Debug UCRT (ucrtbased.dll) for the game's argv and exit
+58cda5b|2026-11-22|kotorvr|saves.py: refuse a folder with more than one save payload
+91050d0|2026-11-22|root|valu_fuzz: drop the wave family; FUZZ-7 is @kotorvr's crosslane_fuzz.py
+06bd42a|2026-11-22|Tomgamer|Translator: apply clamp and omod to v_add_f64
+fe8c177|2026-11-21|ItsNotRexed|Merge pull request #386 from bbareth
+ce822e5|2026-11-21|ItsNotRexed|Merge pull request #375 from Vonsek
+6aed8b4|2026-11-21|ItsNotRexed|Merge pull request #371 from bbareth
+7a5106e|2026-11-21|ItsNotRexed|Merge pull request #370 from bbareth
+2ad59d3|2026-11-21|ItsNotRexed|Merge pull request #366 from bbareth
+0032f57|2026-11-21|ItsNotRexed|Merge pull request #362 from bbareth
+5290f93|2026-11-21|ItsNotRexed|Merge pull request #361 from Luis Baker
+c237415|2026-11-21|ItsNotRexed|Merge pull request #354 from bbareth
+7bb76ba|2026-11-21|ItsNotRexed|Merge pull request #353 from bbareth
+09d129d|2026-11-21|ItsNotRexed|Merge pull request #351 from bbareth
+7d15dab|2026-11-21|ItsNotRexed|Merge pull request #343 from Andrea
+e5fcb02|2026-11-21|ItsNotRexed|Merge pull request #323 from Ayinaki
+0425c07|2026-11-21|ItsNotRexed|Merge pull request #302 from S1m0ne1997
+3a928c5|2026-11-21|ItsNotRexed|Merge pull request #295 from traeb0n
+ce37e3c|2026-11-22|Tomgamer|bvh/page/story_index: pass --max-inflate to directory scans, reject --start/--limit for a directory
+2da77d5|2026-11-21|ItsNotRexed|Merge pull request #269 from shelbykb2
+8050194|2026-11-21|ItsNotRexed|Merge pull request #258 from Parakeet-Wheat
+2c6f763|2026-11-21|ItsNotRexed|Merge pull request #240 from eIBart0
+b131970|2026-11-22|Tomgamer|tests/semantic: drop the test that pinned v_movrelsd_2_b32 as unsupported
+e66e969|2026-11-21|ItsNotRexed|Merge pull request #193 from AREA52 Agent
+e1cc07c|2026-11-22|Capital|Isolate submodule tests from Git hook settings
+ab5a57b|2026-11-22|Tomgamer|tests/semantic: value tests for v_movrels_b32, v_movreld_b32, v_movrelsd_b32
+aa1c217|2026-11-21|LuanFreitas|SHADER-52: wave32 readlane/writelane mask lane select with 31
+82e9d2e|2026-11-22|Andrea|test(runtime): include 16x MSAA in resolve comparisons
+f0f9ea3|2026-11-22|AlxcBTW|Merge origin/main into bpermute-wave32; wave32 bpermute CPU test
+e53b9e5|2026-11-21|eIBart0|Tests: add ms_wave_info_s3 mesh shader test for s3[27:24] wave ID
+1284712|2026-11-21|eIBart0|Docs/Tools: record SHADER-4 corpus counts and add audit_shader4_regs.py
+d546ab7|2026-11-22|Andrea|test(runtime): report resolve comparison and match counts accurately
+2df4c70|2026-11-22|slopgobblercobbler|test(tools): add unit tests for swizzle_search permutation matching
+58c176d|2026-11-22|Andrea|runtime: match multisample quality query structure fields
+e8b1469|2026-11-22|slopgobblercobbler|test(semantic): add interpreter tests for scalar bitfield extract/insert s_bfe
+ad15e9f|2026-11-22|slopgobblercobbler|test(semantic): add interpreter tests for byte permutation v_perm_b32
+06462f3|2026-11-22|slopgobblercobbler|test(semantic): add interpreter tests for 64-bit scalar bitwise logic
+09848af|2026-11-22|slopgobblercobbler|test(semantic): add interpreter tests for 3-way median v_med3 instructions
+e9773f1|2026-11-22|root|Tools: f16, buffer memory and cross-lane differential fuzzers on the GPU (FUZZ-2, FUZZ-5, FUZZ-7)
+075d425|2026-11-22|slopgobblercobbler|test(tools): add unit tests for make_game dry run and stage isolation
+aa91683|2026-11-21|VictorJulianiR|awc_manifest.py: keep the previous manifest when a write fails
+f3fe263|2026-11-22|slopgobblercobbler|test(semantic): add interpreter tests for vector integer subtraction v_sub/v_subrev
+69d8741|2026-11-22|slopgobblercobbler|test(runtime): add unit tests for PE loader boundary validation
+f2c72c2|2026-11-22|Andrea|docs(runtime): document multisample resolve feature queries
+113fd1c|2026-11-22|slopgobblercobbler|test(semantic): add interpreter tests for vector condition code branches s_cbranch_vccz/nz
+fb5524f|2026-11-22|Andrea|test(runtime): clear multisampled resolve inputs as attachments
+e65b6b5|2026-11-22|slopgobblercobbler|feat(tools): add parallel manifest verifier and unit tests
+8a6deb1|2026-11-22|Tomgamer|Merge origin/main into fuzz-3-f32-valu
+02c74f1|2026-11-21|VictorJulianiR|d3d12_xs_surface.py: accept an SDK um path with a trailing separator
+bdb57ef|2026-11-22|Andrea|test(runtime): tidy resolve comparison support checks
+b100ce5|2026-11-22|slopgobblercobbler|test(semantic): add interpreter tests for 32-bit integer multiplication v_mul
+f3de90d|2026-11-21|VictorJulianiR|psin_index.py: a missing or unreadable source is one line, not a traceback
+a818069|2026-11-22|Andrea|test(runtime): fix readback descriptor construction in resolve cases
+5eda827|2026-11-22|Andrea|test(runtime): compare resolve results with the host D3D12 runtime
+71a16c1|2026-11-21|tunczzzz|FUZZ-8: control-flow/EXEC differential fuzzer; wave32 SCC of mask ops is wave-wide
+bd603ac|2026-11-22|bbareth|awc_opus.py: reject AWC tags that extend past EOF
+1842b42|2026-11-22|bbareth|classify_carve.py: report malformed indexes without replacing the census
+ad4f2b3|2026-11-22|bbareth|gamedata_graph.py: handle deep include chains without recursion
+fa69829|2026-11-22|bbareth|bink_index.py: handle failed ffprobe runs and malformed responses
+f1eb8d3|2026-11-22|bbareth|audio_config.py: locate joined records by file offset
+a9077ae|2026-11-22|slopgobblercobbler|test(tools): add unit tests for bcpack_tables encoding lookup tables
+fc7a439|2026-11-22|Andrea|runtime: report multisample resolve format support and quality levels
+2a802ec|2026-11-21|VictorJulianiR|bench_wave64.py: a configuration that fails partway is a failure
+183426f|2026-11-21|VictorJulianiR|ttpf_mips.py: name a bad pool instead of a traceback, and close it
+eb5a414|2026-11-22|S1m0ne1997|d3d12_vulkan.md A.2/A.3: the loader registers .pdata since #176
+37d53a9|2026-11-22|slopgobblercobbler|test(semantic): add interpreter tests for flat interpolation v_interp_mov_f32
+4097272|2026-11-22|slopgobblercobbler|test(semantic): add interpreter tests for 3-operand integer add v_add3_u32
+41f6c7a|2026-11-22|bbareth|gen_d3d12_stubs.py: handle line comments in SDK headers
+9321157|2026-11-22|bbareth|gamedata_xml.py: count comments from XML parser events
+c6194c7|2026-11-22|bbareth|feature_scan.py: check DXBC part bounds before counting features
+879fba9|2026-11-22|bbareth|world_index.py: continue scanning after an invalid zlib continuation
+a9cc575|2026-11-22|bbareth|manifest.py: exclude the manifest from its own inventory
+ed0ab42|2026-11-22|slopgobblercobbler|test(tools): add unit tests for glb_writer binary container and accessors
+1ff9e22|2026-11-22|Tomgamer|pe_inspect.py: treat the same image under a different search folder as a separate input
+056190e|2026-11-21|Luiz Neves|Translator: v_lshrrev_b64 and v_ashrrev_i64
+be91840|2026-11-22|Parakeet-Wheat|Runtime: SetPredication on VK_EXT_conditional_rendering (D3D-18)
+6416481|2026-11-21|S1m0ne1997|fsr/bvh tests and A.2/A.3: unwind is #176's (or the test's), #93 is TLS only; FSR host imports are 82 on current main
+fb0d52c|2026-11-21|S1m0ne1997|fsr/bvh tests: read the module TLS index from either loader (#95's tls_slot or #93's tls_index)
+ba62e9e|2026-11-21|S1m0ne1997|bvh_builder_test: LEONIDA_BVH_DEVICE=vulkan puts the builder on the Vulkan-backed device (#119)
+1e7a6c6|2026-11-21|S1m0ne1997|fsr/bvh tests: run on main's loader (#95): Loader::initialise, unwind registered here until #93; FSR checks its TLS block
+7b28e72|2026-11-21|S1m0ne1997|bvh_builder_test: record slot 62 per call, decode thrown HRESULTs; measured results in d3d12_vulkan.md A.2
+0feffed|2026-11-21|S1m0ne1997|WIP: bvh_builder_test (local, measuring the constructor)
+0729e58|2026-11-21|S1m0ne1997|Runtime: optional FSR test through the real loader and the Xbox-ABI device proxy
+aeff591|2026-11-22|slopgobblercobbler|fix(tests): replace enterContext with addCleanup in test_make_game_submodule
+a60bb0c|2026-11-21|Luiz Neves|Translator: s_pack_ll_b32_b16, s_pack_lh_b32_b16, s_pack_hh_b32_b16
+b4e31e3|2026-11-21|traeb0n|d3d12_vulkan_device_test: the reserved-resource copies wait on fence value 9
+a7ce844|2026-11-21|traeb0n|d3d12_vulkan_device_test: skip tiling layouts the host runtime refuses
+8c8388f|2026-11-21|traeb0n|Runtime: reserved resources and GetResourceTiling on Vulkan (D3D-20)
+3de32fb|2026-11-21|Luiz Neves|Translator: s_lshl1_add_u32 ... s_lshl4_add_u32
+35b7694|2026-11-22|Diego Casares|test(tools): add synthetic unit tests for vk_subgroup_info
+068b53b|2026-11-21|Luiz Neves|Translator: s_absdiff_i32 and s_mul_hi_i32
+add0b5c|2026-11-21|shelbykb2|GPU test for texel offsets (image_sample*_o, image_gather4_lz_o)
+500255d|2026-11-21|73N1X|Merge main and retain typed view cache with bindless preparation
+e7f5ecb|2026-11-22|Vonsek|test(shader): check a16 gradient register order
+b063c7a|2026-11-22|Vonsek|merge: integrate upstream shader test updates
+08a5d35|2026-11-21|Luiz Neves|Translator: v_mul_hi_u32_u24 and v_mul_hi_i32_i24
+f58e7c4|2026-11-21|VictorJulianiR|Run the NumPy and Pillow texture tests in Ubuntu CI
+970b045|2026-11-22|Vonsek|Merge upstream vertex-clip and shader checks into the mip test
+d9e6292|2026-11-22|Spaghetih|FUZZ-5: memory differential fuzzer (tools/mem_diff.py)
+f6b3d3a|2026-11-21|Dea7hsmiles|Loader: reject a delay-import descriptor with no name table
+544eb8e|2026-11-22|Tomgamer|tests/semantic: v_and_or_b32 cases where OR and ADD differ
+e2546b4|2026-11-22|Andrea|test(tools): add synthetic control-flow A/B regression coverage
+699ba02|2026-11-22|Andrea|test(tools): extract control-flow A/B selection and outcome helpers
+e5bd4a3|2026-11-22|Tomgamer|rpf9_carve.py: reject a header data offset past the end of the file
+906d5c5|2026-11-22|FreddyxS|Exercise malformed world-build material metadata
+fdebb84|2026-11-22|FreddyxS|Treat invalid optional material arrays as absent
+eaae31f|2026-11-22|Vonsek|Merge main; leave the s_ff fix to #349; review fixes for salu_diff
+399b8ff|2026-11-21|kotorvr|Merge main into D3D-26: the replay test's new part D, the resolve-region section
+41cb7c5|2026-11-22|Tomgamer|pe_inspect.py: one report per input image (same-stem inputs overwrote each other)
+158e973|2026-11-22|Tomgamer|tests/semantic: value tests for v_bfm_b32, v_and_or_b32, v_add_lshl_u32, v_lshl_or_b32, v_mad_i32_i24, v_mul_lo_u32
+69e754c|2026-11-22|bbareth|fssm_header: fall back when the nearest stage index is empty
+d74b25b|2026-11-22|bbareth|tex_mode_probe: document and test format prefix filtering
+f6431b6|2026-11-22|bbareth|docs: explain nested bank paths in short audio exports
+de34104|2026-11-22|bbareth|tex_export: cover narrow mips through the Pillow scorer
+49983c2|2026-11-22|bbareth|rpf_probe: cover a permission error below the scan root
+4abd545|2026-11-21|ItsNotRexed|runtime: rename shims/process.h to process_shim.h (it hid the CRT's <process.h> from <thread>)
+013d67f|2026-11-21|Jay Rod|rpf9-explorer: bump pin to ba4ee1b (model recovery, Opus 32 kHz)
+76782b4|2026-11-22|Luis Baker|Runtime: skip the 1.2 path in d3d12_xs_root_signature_test on old runtimes
+1e7b22f|2026-11-22|NWX10|restofworld_index.py: report a missing source, and check the output path before scanning
+86d82da|2026-11-22|NWX10|rbf0_index.py: report a missing source, and check the output path before scanning
+5498905|2026-11-22|NWX10|shader_carve.py: use argparse, and reject a missing or empty archive up front
+43ed753|2026-11-21|kotorvr|runtime: residency and power methods on the Vulkan device as documented no-ops (D3D-33)
+7b6139c|2026-11-21|Ayinaki|Report invalid BVH roots and clarify index output
+bfbe90e|2026-11-22|bbareth|rbf0_tree: validate selectors in the callable decoder
+e8ab742|2026-11-22|bbareth|bc_feature: document floating-point palette averages
+19a5b1e|2026-11-22|bbareth|docs: identify shader profile counts as historical
+ca09a3c|2026-11-22|bbareth|rpf_probe: cover a regular file passed as the survey directory
+6828527|2026-11-22|Vonsek|fix(shader): preserve full-width gradients in a16 samples
+8b58a72|2026-11-21|ItsNotRexed|tests/docs: run_gpu_tests' draw-shader test knows #193's vs_clip variants; drop a duplicated docs row
+86bbb87|2026-11-22|Luis Baker|Runtime: make the deserializer host-check robust to runtime behaviour
+6d106d0|2026-11-21|ItsNotRexed|Merge pull request #401 from FreddyxS
+648a84a|2026-11-21|ItsNotRexed|Merge pull request #400 from Ewann
+47d25c4|2026-11-21|ItsNotRexed|Merge pull request #399 from fearkov
+7356096|2026-11-21|ItsNotRexed|Merge pull request #397 from Rayhan Robin
+81de10e|2026-11-21|ItsNotRexed|Merge pull request #396 from Andrea
+f82029c|2026-11-21|ItsNotRexed|Merge pull request #393 from dcastell1
+11f67b9|2026-11-21|VictorJulianiR|Select the Visual Studio configuration for runtime CPU tests
+b15eaa3|2026-11-21|shelbykb2|rdna2spirv: global_load/store negative offsets were 4096 bytes too low
+f74528b|2026-11-21|VictorJulianiR|Honor explicitly requested build stages on Linux
+e3c13c6|2026-11-21|SombraSoft|CI: run translator-tests against LLVM 21 to match documented requirement
+19d4dbb|2026-11-21|NRXM|docs: mention the llvmpipe section in the docs index
+c671d74|2026-11-21|SourNuht|tests: protect GLB staging ownership and overlapping exports
+e2ad499|2026-11-21|SombraSoft|CI: upgrade viewer-tests to Node 24 LTS and add pip/NuGet caching with global.json
+5f24563|2026-11-22|Luis Baker|Runtime: skip the 1.2 serializer checks when the host runtime lacks 1.2
+6b5786b|2026-11-21|SombraSoft|CI: keep no-game-data check always on for docs-only PRs
+5b73750|2026-11-22|slopgobblercobbler|fix(tests): condition python -P flag on version >= 3.11 in test_hashdict
+6fcbd4f|2026-11-21|SourNuht|glb_writer: isolate staging files for overlapping exports
+2dae6e2|2026-11-21|VictorJulianiR|tests: world_census.py inflate, joins, inspection, gap audit, shards and CLI paths
+eb330b6|2026-11-21|AREA52 Agent|Resolve generated clip variants through their shared assembly source
+9e5eb0a|2026-11-22|slopgobblercobbler|fix(audio): support Python <3.10 TemporaryDirectory in audio_wav
+49f4958|2026-11-21|NRXM|CI: run the GPU tests on Mesa llvmpipe
+60703f5|2026-11-22|slopgobblercobbler|fix(tools): add future annotations for Python 3.9 compatibility in tools
+ebe2036|2026-11-21|ItsNotRexed|Merge pull request #390 from Luiz Neves
+6d6d3ca|2026-11-21|ItsNotRexed|Merge pull request #389 from VictorJulianiR
+b7165a4|2026-11-21|ItsNotRexed|Merge pull request #387 from nicolas
+a5fe28b|2026-11-21|ItsNotRexed|Merge pull request #386 from bbareth
+1f8a970|2026-11-21|ItsNotRexed|Merge pull request #385 from bbareth
+5b6600d|2026-11-21|ItsNotRexed|Merge pull request #384 from bbareth
+eb9cedd|2026-11-21|ItsNotRexed|Merge pull request #383 from Capital
+f9ec9c9|2026-11-21|ItsNotRexed|Merge pull request #382 from bbareth
+e718da2|2026-11-21|ItsNotRexed|Merge pull request #381 from bbareth
+d71451f|2026-11-21|ItsNotRexed|Merge pull request #380 from FreddyxS
+de725e1|2026-11-21|ItsNotRexed|Merge pull request #378 from St├©rm
+280bf05|2026-11-21|ItsNotRexed|Merge pull request #377 from nicolas
+215ccc6|2026-11-21|ItsNotRexed|Merge pull request #376 from Codex
+1c88a66|2026-11-21|ItsNotRexed|Merge pull request #373 from bbareth
+54d5f69|2026-11-21|ItsNotRexed|Merge pull request #372 from bbareth
+b91dd5e|2026-11-21|ItsNotRexed|Merge pull request #371 from bbareth
+049d3b2|2026-11-21|ItsNotRexed|Merge pull request #370 from bbareth
+4cf0480|2026-11-21|ItsNotRexed|Merge pull request #369 from bbareth
+de3da41|2026-11-21|ItsNotRexed|Merge pull request #368 from crastinator
+d7f4c84|2026-11-21|ItsNotRexed|Merge pull request #366 from bbareth
+5dfa8bb|2026-11-21|ItsNotRexed|Merge pull request #365 from bbareth
+67db6e7|2026-11-21|ItsNotRexed|Merge pull request #364 from bbareth
+edbfc26|2026-11-21|ItsNotRexed|Merge pull request #363 from bbareth
+b52f57f|2026-11-21|ItsNotRexed|Merge pull request #362 from bbareth
+4674267|2026-11-21|ItsNotRexed|Merge pull request #361 from Luis Baker
+d661e9e|2026-11-21|ItsNotRexed|Merge pull request #359 from Rayhan Robin
+2f5059d|2026-11-21|ItsNotRexed|Merge pull request #357 from bbareth
+3888bce|2026-11-21|ItsNotRexed|Merge pull request #356 from nicolas
+69bc527|2026-11-21|ItsNotRexed|Merge pull request #355 from bbareth
+3cf8aa3|2026-11-21|ItsNotRexed|Merge pull request #354 from bbareth
+f97b5c1|2026-11-21|ItsNotRexed|Merge pull request #353 from bbareth
+cdd98c1|2026-11-21|ItsNotRexed|Merge pull request #352 from AlxcBTW
+415d61b|2026-11-21|ItsNotRexed|Merge pull request #351 from bbareth
+be1cb87|2026-11-21|ItsNotRexed|Merge pull request #349 from Ayinaki
+ed6b523|2026-11-21|ItsNotRexed|Merge pull request #348 from traeb0n
+99f3906|2026-11-21|ItsNotRexed|Merge pull request #347 from Kam471
+18e10d9|2026-11-21|ItsNotRexed|Merge pull request #346 from Rayhan Robin
+b6c30e6|2026-11-21|ItsNotRexed|Merge pull request #345 from kotorvr
+bf19b5b|2026-11-21|ItsNotRexed|Merge pull request #344 from FreddyxS
+f3c2158|2026-11-21|ItsNotRexed|Merge pull request #342 from Kam471
+237e875|2026-11-21|ItsNotRexed|Merge pull request #339 from Codex
+84c66f7|2026-11-21|ItsNotRexed|Merge pull request #331 from fearkov
+e70a4f3|2026-11-21|ItsNotRexed|Merge pull request #328 from Jan Trencansky
+f5b444a|2026-11-21|ItsNotRexed|Merge pull request #323 from Ayinaki
+82da634|2026-11-21|ItsNotRexed|Merge pull request #322 from Koert Lichtendonk
+537176f|2026-11-21|ItsNotRexed|Merge pull request #316 from IAmNotSiob
+130492b|2026-11-21|VictorJulianiR|anim_index.py: keep the rigs JSON when the RBF0 has no rig sets
+0c55373|2026-11-21|ItsNotRexed|Merge pull request #262 from Luiz Neves
+8b92bce|2026-11-21|ItsNotRexed|Merge pull request #193 from AREA52 Agent
+99e4044|2026-11-21|ItsNotRexed|Merge pull request #93 from Kam471
+bf3e0a2|2026-11-21|SombraSoft|CI: deduplicate runtime and pytest runs, add timeouts and rpf9dump diagnostics
+06ecc1c|2026-11-22|NWX10|tile_probe.py: reject a missing file and an --offset outside the blob
+eed95e2|2026-11-22|NWX10|navmesh_index.py: report a missing input instead of a traceback
+ba977f5|2026-11-22|NWX10|tex_headers.py: check the carve folder and --archives names before scanning
+025a0ff|2026-11-22|NWX10|shader_ir.py: parse arguments with argparse instead of indexing sys.argv
+421207a|2026-11-22|Luis Baker|Runtime: clear the Xbox flag high byte in the d3d12_xs deserializer
+e87d82d|2026-11-22|FreddyxS|Test viewer chunk scheduling work and order
+a42b5e2|2026-11-22|FreddyxS|Skip unnecessary viewer chunk candidate scans
+7145314|2026-11-22|Ewann|check.py: find the Visual Studio build folders too; say which one was used (TEST-38 follow-up)
+cdaaebc|2026-11-21|Rayhan Robin|Tools: report a short OSG1 signature instead of aborting feature_scan
+ea1d34d|2026-11-21|fearkov|Docs: the images row covers d16 compare results
+8b884e4|2026-11-22|FreddyxS|Cover padded DDS rows with custom masks
+f2ec9e5|2026-11-22|FreddyxS|Size DDS mask output from packed pixels
+6ae02af|2026-11-21|kotorvr|Merge main into d3d-25-uav-clears
+0d31245|2026-11-21|fearkov|Tests: the depth compare sample result is an f16 under d16
+d701d73|2026-11-21|fearkov|Translator: image_sample_c_lz returns an f16 under d16
+ad0e4d1|2026-11-21|SombraSoft|Build: require Python 3.12+ to match CI
+2e23b7e|2026-11-21|SombraSoft|CI: lint GitHub Actions workflows with jactionlint
+fe12da7|2026-11-22|Andrea|D3D-35: implement ExecuteBundle IR inlining and validation
+e166d2e|2026-11-22|dcastell1|fix(fuzz): v_perm_b32 selectors 9/11 read bit 31, not bit 23
+25ca1d6|2026-11-21|AREA52 Agent|Merge upstream main into SHADER-7 and retain filtered clip dependencies
+8af93ab|2026-11-21|Luiz Neves|tests/semantic: run Floor/Ceil/Trunc in the interpreter, and test v_floor/ceil/trunc/rndne
+9500680|2026-11-21|Ayinaki|Treat non-mask b32 sources for s_ff* as scalars
+5df3d01|2026-11-21|nicolas|Merge commit 'd937b7f092dbc188b59754e5c73c1a9dac553cf9' into codex/med3-result-modifiers
+467b1d1|2026-11-21|kotorvr|runtime: ClearUnorderedAccessViewUint/Float on the Vulkan device (D3D-25)
+993a2cb|2026-11-21|Kam471|Runtime: install static TLS for mapped images
+8550970|2026-11-22|Vonsek|Merge upstream GPU fixture dependencies into the two-mip test
+85a4e7b|2026-11-21|Luiz Neves|Translator: v_subrev_f16 (S1 - S0 on the selected halves)
+438e144|2026-11-21|Jan Trencansky|Runtime: build with MSVC; the descriptor test shows a missed sampler lookup
+bc14565|2026-11-21|Jan Trencansky|Runtime: texture views and samplers go into the bindless set (M2, the device's part)
+e0e9b90|2026-11-22|Luis Baker|Runtime: test the 1.2 root-signature Xbox flag high byte clearing
+ed6da6b|2026-11-22|Tomgamer|FUZZ-3: float VALU differential fuzzer; v_mac_f32 unfused, conversion output modifiers
+fbffbce|2026-11-21|73N1X|Runtime: preserve explicit RGBA8 typeless RTV formats for clears
+d937b7f|2026-11-21|ItsNotRexed|vk_pipeline_check: read subgroup_size null (--wave64-emulate: any size) as no required size
+514e11d|2026-11-21|VictorJulianiR|Isolate concurrent manifest writes before atomic replacement
+682ba4a|2026-11-22|FreddyxS|Merge branch 'main' into fix/f64-conversion-output-modifiers
+e1e5be6|2026-11-22|bbareth|rpf_probe.py: print filesystem paths without escaping separators
+49cd093|2026-11-21|fearkov|Docs: record the multiply-add literal rule in the contract table
+3c2f245|2026-11-21|Luiz Neves|Merge origin/main into interp-float-compares
+03bd5a0|2026-11-21|fearkov|Tests: ps_fma_literal checks which operand the literal multiplies
+c334b56|2026-11-21|fearkov|Translator: v_fmamk_f32 and v_madmk_f32 multiply S0 by the literal
+5800d0e|2026-11-22|bbareth|rbf0_tree.py: validate requested limits and offsets before decoding
+73e1bf7|2026-11-22|bbareth|swizzle_search.py: explain why an empty search cannot produce a preview
+803b57d|2026-11-22|bbareth|hashdict.py: require inputs for build and lookup
+31925ff|2026-11-22|bbareth|classify_carve.py: preserve reports when a write fails
+7b2bf8c|2026-11-22|bbareth|audio_config.py: stream input files when scanning without --join
+3a9e32e|2026-11-21|nicolas|Address packed buffer-store atomics through a dword array element
+11c13f5|2026-11-22|Capital|Isolate Git environment in Windows submodule tests
+d7cbc3e|2026-11-21|ItsNotRexed|Translator: split a dispatch OpSwitch past SPIR-V's limits into two levels
+bb65ea6|2026-11-22|Codex|runtime: require idle for bindless key replacements
+2a122c7|2026-11-21|Ayinaki|Cite BVH4 header source and report version field
+fc7a3d9|2026-11-22|Vonsek|FUZZ-4: scalar ALU differential fuzzer; s_ff0_i32_b32 on a constant
+2003018|2026-11-22|FreddyxS|Add synthetic f64 conversion fixture
+4c7652f|2026-11-22|bbareth|fssm_header.py: search both locations for shader stages
+286f365|2026-11-22|bbareth|tex_mode_probe.py: reject formats without a supported color scorer
+1aeaec0|2026-11-22|bbareth|gen_d3d12_stubs.py: reject circular interface inheritance
+19da21e|2026-11-22|bbareth|vk_subgroup_info.py: retry partial device enumeration
+6aa1d0f|2026-11-22|bbareth|world_index.py: scan archives larger than the inflate cap
+f139ecd|2026-11-21|St├©rm|tests: value tests for v_min3/v_max3 (i32 and u32)
+8f07d48|2026-11-22|FreddyxS|Check f64 conversion output modifier data flow
+b225bee|2026-11-22|FreddyxS|Document f64 conversion output modifiers
+7d59bea|2026-11-22|FreddyxS|Apply output modifiers after v_cvt_f32_f64
+ed742a6|2026-11-22|crastinator|lds_fuzz: count skips and harness errors apart from matches, never compare a stale dump or SPIR-V, --show keeps --no-exec; vk_compute_test checks the dump after close
+c116ab8|2026-11-21|nicolas|Audio: allocate distinct WAV names through linked output directories
+19742b5|2026-11-21|kotorvr|Runtime: DiscardResource, WriteBufferImmediate and atomic copies on Vulkan (D3D-26)
+4a2f387|2026-11-22|bbareth|bc_feature.py: use all four colors for BC3 palette averages
+b4735ef|2026-11-22|bbareth|fssm_unpack.py: reject a truncated FSSM header before writing output
+c813181|2026-11-22|bbareth|gamedata_maps.py: stop joining at the declared map length
+5fd107b|2026-11-22|bbareth|world_names.py: reject an unrecognized map report
+0d6e7d7|2026-11-22|bbareth|awc_shorts.py: preserve nested bank paths in clip exports
+71646d8|2026-11-21|Rayhan Robin|Docs: correct stale status and duplicated mesh notes
+b157c6d|2026-11-22|Luis Baker|Runtime: clear the Xbox flag high byte for 1.2 root signatures
+3eb5ad9|2026-11-21|ItsNotRexed|docs: drop the open-question rows the #284 merge duplicated again
+8d8a489|2026-11-22|Andrea|test: make missing-program diagnostic portable
+e9f260d|2026-11-22|Andrea|test: cover config priority and diagnostic failures
+0a5f068|2026-11-22|Andrea|test: report missing GPU executables per build config
+4fe8cdf|2026-11-22|crastinator|Tools: LDS / ds_* differential fuzzer on the GPU (FUZZ-6)
+e2edf40|2026-11-22|bbareth|tex_export.py: score narrow formats and one-dimensional mips
+591ecf6|2026-11-22|bbareth|shader_profile.py: use the same instruction counts in both reports
+56cd8af|2026-11-22|bbareth|glb_writer.py: keep mirrored OBJ faces front-facing
+472e7c3|2026-11-22|bbareth|awc_manifest.py: identify recursively scanned banks by relative path
+2ab5d1b|2026-11-22|bbareth|rpf_probe.py: keep the previous report when a scan fails
+d1b75ca|2026-11-22|IAmNotSiob|tiny_game: C++ exception check opt-in again: MSVC's throw needs the image known to RtlPcToFileHeader, not only #176's tables
+e0d68c8|2026-11-22|Koert Lichtendonk|Docs: link the coordination issue by its title, not its number
+5b8dd68|2026-11-21|Kam471|Tools: index named RPF9 resources without the TOC
+d3a0240|2026-11-21|traeb0n|Tests: loader_test on machines whose security software holds new PE files
+a787453|2026-11-21|Ayinaki|Translator: treat s_ff* immediate sources as scalar values
+efcf031|2026-11-22|Andrea|test: verify runner uses detected VS config directory
+a94e30d|2026-11-21|Kam471|Docs: record the full-archive model validation
+dbc785f|2026-11-21|ItsNotRexed|Merge pull request #332 from fearkov
+6976252|2026-11-21|nicolas|Apply output modifiers to v_med3_f32 results
+1956790|2026-11-21|Rayhan Robin|Tests: enforce strict integer width in mini SPIR-V interpreter
+273e53c|2026-11-21|ItsNotRexed|Merge pull request #300 from FreddyxS
+1e0f5a7|2026-11-22|FreddyxS|Cover padded DDS rows and invalid pitch values
+67709de|2026-11-22|FreddyxS|Honor padded scan lines in uncompressed DDS textures
+401b824|2026-11-21|kotorvr|Save files: document JSAV/ASAV/SLAYER1 and add tools/saves.py
+18e968a|2026-11-22|IAmNotSiob|tiny_game: the C++ exception check is on by default now that #176 is on main
+9357f97|2026-11-21|ItsNotRexed|Merge pull request #316 from IAmNotSiob
+03ff5f4|2026-11-21|ItsNotRexed|Merge pull request #338 from mrb-eel
+2f07608|2026-11-21|ItsNotRexed|Merge pull request #327 from Parakeet-Wheat
+b98068e|2026-11-21|ItsNotRexed|Merge pull request #318 from 73N1X
+099a5c8|2026-11-21|ItsNotRexed|Merge pull request #309 from Luis Baker
+68ade67|2026-11-21|ItsNotRexed|Merge pull request #324 from Luis Baker
+6eb245f|2026-11-21|ItsNotRexed|Merge pull request #284 from S1m0ne1997
+0d5ba39|2026-11-21|ItsNotRexed|Merge pull request #247 from crastinator
+7761916|2026-11-21|ItsNotRexed|Merge pull request #303 from mrb-eel
+0f50016|2026-11-21|ItsNotRexed|Merge pull request #304 from DiazE117
+e2460bf|2026-11-21|ItsNotRexed|Merge pull request #245 from DiazE117
+30fae13|2026-11-21|ItsNotRexed|Merge pull request #326 from FreddyxS
+fcd980d|2026-11-21|ItsNotRexed|Merge pull request #325 from dcastell1
+77fb672|2026-11-21|ItsNotRexed|Merge pull request #312 from Tim Elery
+81d3776|2026-11-21|ItsNotRexed|Merge pull request #314 from FreddyxS
+76add28|2026-11-21|ItsNotRexed|Merge pull request #315 from Vonsek
+811ee91|2026-11-21|ItsNotRexed|Merge pull request #337 from Ewann
+97a7633|2026-11-21|ItsNotRexed|Merge pull request #336 from bbareth
+1d2e9cc|2026-11-21|ItsNotRexed|Merge pull request #323 from Ayinaki
+76d3449|2026-11-21|ItsNotRexed|Merge pull request #321 from Jan K┼Ö├¡┼¥
+93953eb|2026-11-21|ItsNotRexed|Merge pull request #320 from Rayhan Robin
+abef7cd|2026-11-21|ItsNotRexed|Merge pull request #308 from NWX10
+31e2c12|2026-11-21|ItsNotRexed|Merge pull request #307 from NWX10
+17072e2|2026-11-21|ItsNotRexed|Merge pull request #322 from Koert Lichtendonk
+a42b199|2026-11-21|ItsNotRexed|Merge pull request #311 from Kam471
+346552a|2026-11-21|ItsNotRexed|Merge pull request #292 from Kam471
+2a06f8f|2026-11-22|Andrea|test: cover Visual Studio GPU test build layouts
+988aeec|2026-11-22|Andrea|test: locate GPU test executables in VS build configs
+abefe80|2026-11-22|AlxcBTW|Merge origin/main into shader-34-wqm; WQM review fixes
+489258f|2026-11-22|mrb-eel|Resolve colour MSAA regions into destination offsets
+d4e767d|2026-11-21|Codex|build: keep searching beneath rejected package folders
+0727ad7|2026-11-21|Codex|build: report package version probe mismatches
+1ba68dd|2026-11-21|Codex|build: verify Visual Studio x64 C++ tools in preflight
+c5dc2d0|2026-11-22|bbareth|shader_carve.py: reject incomplete DXBC parts
+77db72f|2026-11-22|Ewann|run_gpu_tests: find the test programs in RelWithDebInfo/Release (TEST-38)
+1718e02|2026-11-22|AlxcBTW|Merge origin/main into shader-36-gather-wrap
+fe413a2|2026-11-21|FreddyxS|Cancel superseded runs and skip heavy CI on docs-only PRs
+10d6d4b|2026-11-21|dcastell1|test(fuzz): differential coverage for the integer and bit VALU family
+c17cdd8|2026-11-21|Koert Lichtendonk|Docs: point CONTRIBUTING.md and AGENTS.md at #313 for the D3D12 layer
+1186f99|2026-11-21|mrb-eel|Merge updated Leonida GPU runner into class compare fix
+437081f|2026-11-21|Luis Baker|Runtime: parse version 1.2 root signatures, and read RTS0 table ranges from their offset
+5560ac8|2026-11-21|AlxcBTW|Merge origin/main into bpermute-wave32
+eb629d4|2026-11-21|Ayinaki|Decode BVH4 header and node pointer fields
+257e385|2026-11-22|Parakeet-Wheat|Runtime: GetResourceAllocationInfo on the Vulkan device (D3D-23)
+dd4c763|2026-11-21|fearkov|Docs: the SCC row covers s_min_i32 and s_max_i32
+adbe6fd|2026-11-21|fearkov|Tests: ps_scc_minmax checks SCC of s_min and s_max on a tie
+9ef27a9|2026-11-21|fearkov|Translator: s_min_i32 and s_max_i32 leave SCC at 0 on a tie
+ff45269|2026-11-21|IAmNotSiob|tiny_game: _CRT_SECURE_NO_WARNINGS for its plain fopen (MSVC C4996)
+02c89a3|2026-11-21|Jan K┼Ö├¡┼¥|bink_index.py: one line end per CSV row on stdout; a missing target is an error, not a traceback
+fe8cd6b|2026-11-21|Rayhan Robin|Tools: reject out-of-range --start/--limit in RPF index tools
+75e666e|2026-11-21|73N1X|Runtime: convert UINT render-target clear values numerically
+6005d7e|2026-11-21|DiazE117|tests: eight more wave64 mask and vote GPU tests across 64 lanes on the CPU
+56c4594|2026-11-21|FreddyxS|Use the float conversion opcodes now supported on main
+7fefe7f|2026-11-21|Vonsek|Merge upstream cube sampling with the two-mip Vulkan fixture
+4d18ef9|2026-11-21|FreddyxS|Merge branch 'main' into fix/rdna2-float-to-int-saturation
+55f8387|2026-11-21|DiazE117|tests: model OpGroupNonUniformBallot for the wave64 ds_bpermute guard
+87c56d2|2026-11-21|DiazE117|tests: record the RTX 4070 SUPER measurement of the wave64 wrap model
+2fde230|2026-11-21|DiazE117|tests: run wave64 cross-half lane ops across 64 lanes of the translated SPIR-V
+307d5e4|2026-11-21|Koert Lichtendonk|Docs: a guide to running the GPU tests
+0b2ca36|2026-11-21|AlxcBTW|Gather address modes: emit only the needed code, document FORCE_UNNORMALIZED, discriminating tests
+0ca9bb8|2026-11-21|IAmNotSiob|Runtime: gta6rt --run, and a stand-in game executable run through the loader
+4dfdbc3|2026-11-21|Vonsek|fix: build the vertex shader for filtered cube tests
+024dc0e|2026-11-21|FreddyxS|Cover malformed and missing viewer manifests
+526e123|2026-11-21|Kam471|Docs: measure the BCPack block structure and limits
+5da04fd|2026-11-21|FreddyxS|Validate world manifests before viewer startup
+b262056|2026-11-21|Kam471|Tools: measure the common.rpf content-set graph
+8bd0087|2026-11-21|ItsNotRexed|docs: full-corpus pipeline build: 26,503 of 26,503 shaders compile on NVIDIA, 3.81 GB pipeline cache
+3dd8007|2026-11-21|AlxcBTW|translator: whole-quad mode (s_wqm_b32/b64) on lane masks and data (SHADER-34)
+b933118|2026-11-22|crastinator|GPU tests: run ps_vcc_x2 on the GPU with a seeded V# and heap in vk_harness (TEST-19)
+80fb7f2|2026-11-21|Tim Elery|Textures: add clean-room BCPack decoder (rANS + BC1/BC3/BC4/BC5)
+d73fa3c|2026-11-21|ItsNotRexed|tests: shader_profile's --per-shader check goes through run_profile (#263 x #282)
+2442ad1|2026-11-21|ItsNotRexed|tests/docs: follow this round's both-side merges (shader_profile test uses #263's run_profile, drop duplicated table rows)
+ce1eb6a|2026-11-21|mrb-eel|Merge latest Leonida main into class compare fix
+44a94f3|2026-11-21|Luis Baker|Runtime: widen enhanced-barrier stages so every access has a stage that can perform it
+0bcf104|2026-11-21|Vonsek|Merge upstream/main and retain both Vulkan texture checks
+0d05c80|2026-11-21|ItsNotRexed|tests: one SHADERS list in regen_fixtures (two merges each kept their own)
+186d879|2026-11-21|S1m0ne1997|feature_scan: say which DS counter ops the ordered/GWS group includes
+a3ef3b6|2026-11-21|ItsNotRexed|Merge pull request #254 from Eng-Meshari
+4d010bf|2026-11-21|ItsNotRexed|Merge pull request #176 from Spaghetih
+e28fe72|2026-11-21|ItsNotRexed|Merge pull request #191 from Dea7hsmiles
+fafcc41|2026-11-21|ItsNotRexed|Merge pull request #284 from S1m0ne1997
+175a4d4|2026-11-21|ItsNotRexed|Merge pull request #277 from mrb-eel
+383156b|2026-11-21|ItsNotRexed|Merge pull request #299 from AlxcBTW
+cd4fc9a|2026-11-21|ItsNotRexed|Merge pull request #247 from crastinator
+30ad480|2026-11-21|ItsNotRexed|Merge pull request #298 from AlxcBTW
+a4e435f|2026-11-21|ItsNotRexed|Merge pull request #276 from eIBart0
+8183bb5|2026-11-21|ItsNotRexed|Merge pull request #272 from LuanFreitas
+b779cc1|2026-11-21|ItsNotRexed|Merge pull request #301 from Shuvam Pandey
+eaea094|2026-11-21|ItsNotRexed|Merge pull request #274 from SuarezPM
+1fa7b7f|2026-11-21|ItsNotRexed|Merge pull request #142 from ttd0x
+5e0400f|2026-11-21|ItsNotRexed|Merge pull request #203 from Ayinaki
+3a1bfb5|2026-11-21|ItsNotRexed|Merge pull request #290 from crastinator
+8e2bc63|2026-11-21|ItsNotRexed|Merge pull request #287 from troythedecoyx
+bcdb954|2026-11-21|ItsNotRexed|Merge pull request #280 from DiazE117
+05df043|2026-11-21|ItsNotRexed|Merge pull request #265 from Vorpe J├®r├®my
+e3a49bf|2026-11-21|ItsNotRexed|Merge pull request #235 from Shuvam Pandey
+1c62e91|2026-11-21|ItsNotRexed|Merge pull request #261 from Tim Elery
+7acb44b|2026-11-21|ItsNotRexed|Merge pull request #252 from Luiz Neves
+5d04f78|2026-11-21|ItsNotRexed|Merge pull request #275 from S1m0ne1997
+263fcbd|2026-11-21|ItsNotRexed|Merge pull request #270 from nicolas
+b4ca12a|2026-11-21|ItsNotRexed|Merge pull request #294 from mrb-eel
+38f1719|2026-11-21|ItsNotRexed|Merge pull request #282 from Claude
+2a283c9|2026-11-21|ItsNotRexed|Merge pull request #297 from dcastell1
+09cee33|2026-11-21|ItsNotRexed|Merge pull request #283 from Diego Casares
+af688c6|2026-11-21|ItsNotRexed|Merge pull request #271 from nicolas
+435c2bc|2026-11-21|ItsNotRexed|Merge pull request #267 from nicolas
+0b2f460|2026-11-21|ItsNotRexed|Merge pull request #263 from nicolas
+6da439d|2026-11-21|ItsNotRexed|Merge pull request #289 from Ayinaki
+8cd141e|2026-11-21|ItsNotRexed|Merge pull request #305 from Kam471
+a15ed88|2026-11-21|ItsNotRexed|Merge pull request #292 from Kam471
+5a499f2|2026-11-21|ItsNotRexed|Merge pull request #285 from Kam471
+9db1ab2|2026-11-21|ItsNotRexed|Merge pull request #273 from Kam471
+9eac62d|2026-11-21|ItsNotRexed|Merge pull request #266 from Kam471
+83d1ce8|2026-11-21|ItsNotRexed|Merge pull request #264 from Kam471
+b08051b|2026-11-21|S1m0ne1997|test_feature_scan: run as a pytest test as well as a script (pytest collection hit the module-level sys.exit)
+1f48889|2026-11-21|S1m0ne1997|d3d12_vulkan.md: the translator's uses_code_base confirms the per-stage code-base counts
+aa0d8a8|2026-11-21|Vonsek|fix: report unsupported two-mip Vulkan devices
+e8a07da|2026-11-21|S1m0ne1997|feature_scan: count s_getpc_b64 kept for code-embedded data per stage; d3d12_vulkan.md: answer ┬º8.2 #10, per-stage counts for #14, tiled resources for #18
+40a7eda|2026-11-22|NWX10|world_census: reject --shard-size and --jobs below 1
+eef019d|2026-11-21|AREA52 Agent|Keep clip regressions alongside the merged bindless texture check
+3216358|2026-11-21|S1m0ne1997|Tools: feature_scan.py, a corpus scan for D3D12-layer features (SHADER-16)
+ccb0018|2026-11-21|Kam471|Docs: measure the BCPack block structure and limits
+83d0637|2026-11-21|ItsNotRexed|runtime: the D3D12 COM library links d3d12_xs_device.cpp (#224 needs the device behind the proxy); xgameruntime reads LEONIDA_DEVICE_TYPE with GetEnvironmentVariableA (C4996)
+5bc48f2|2026-11-21|Kam471|world_names: resolve placement/archetype hashes with 32-bit joaat and Murmur3-64
+f2df1ed|2026-11-21|AlxcBTW|Translator: image_gather4_l applies the S# address mode at the border (SHADER-36)
+fa8beb7|2026-11-21|mrb-eel|Translate v_cmpx_class_f32 as an EXEC-only compare
+7c33bee|2026-11-22|crastinator|tests: compare resolved paths in test_run_gpu_tests_paths (Windows spells the temp dir RUNNER~1)
+ce41eba|2026-11-21|AREA52 Agent|Merge current main and preserve distinct mesh and clip harness modes
+89b74d8|2026-11-21|FreddyxS|Add the hand-written RDNA2 conversion shader
+23f5a51|2026-11-21|FreddyxS|Remove duplicate tests/test_float_to_int.py from the test root
+7f7e94c|2026-11-21|FreddyxS|Remove duplicate tests/spirv_mini_interp.py from the test root
+ea76a12|2026-11-21|ItsNotRexed|tests: preflight tests follow their faked PATH for #223's .NET SDK check (no real dotnet needed)
+70ae4c0|2026-11-21|FreddyxS|Remove duplicate tests/regen_fixtures.py from the test root
+2c3f217|2026-11-21|FreddyxS|Remove duplicate documentation uploaded to the root
+6516dfe|2026-11-21|dcastell1|fix(tools): report clear errors for empty, short and out-of-range input
+e19df2b|2026-11-21|AlxcBTW|make_game.py: read vulkaninfo's subgroup size per device; vk_subgroup_info.py refuses 32-bit Python
+d798c76|2026-11-21|Vonsek|test: distinguish explicit mip zero from implicit minification on Vulkan
+71b0122|2026-11-21|FreddyxS|Add the generated disassembly for the synthetic shader
+b33cfa9|2026-11-22|NWX10|pe_inspect.py: report a truncated image instead of stopping the run with struct.error
+a638c5a|2026-11-21|mrb-eel|Cache seeded choices in the CFG structure test
+b9552cd|2026-11-22|Shuvam Pandey|Translator: convert cube sample coordinates for the 2D-array view
+c29faa4|2026-11-21|FreddyxS|Add bit-exact CPU regression coverage under tests/semantic
+ac3bf8a|2026-11-21|FreddyxS|Document RDNA2 conversion in the translator contract
+e6cf90f|2026-11-21|S1m0ne1997|test_feature_scan: run as a pytest test as well as a script (pytest collection hit the module-level sys.exit)
+55459fa|2026-11-22|crastinator|run_gpu_tests: ps_texture_sample with a relative --build or a --filter
+a831d1a|2026-11-21|FreddyxS|Test saturated conversions in the SPIR-V interpreter
+6bb3b53|2026-11-21|FreddyxS|Document RDNA2 float-to-int saturation semantics
+bd27a74|2026-11-21|Ayinaki|Decode the MHIU and PAMH map arrays
+a2e4164|2026-11-21|troythedecoyx|GPU tests: report a test program Windows refuses to start, not a traceback
+c6138d9|2026-11-21|FreddyxS|Match RDNA2 saturating float-to-int conversions
+b384056|2026-11-21|Kam471|Docs: record the TTPF array/volume measurements in the design row
+7381924|2026-11-21|AlxcBTW|tests: keep_emulated follows auto only
+94ff4c9|2026-11-22|crastinator|Merge remote-tracking branch 'origin/main' into test19-vcc-x2-gpu
+9e81de4|2026-11-21|S1m0ne1997|d3d12_vulkan.md: the translator's uses_code_base confirms the per-stage code-base counts
+76b7b5b|2026-11-21|Diego Casares|Index tools: refuse --limit/--start values that scan nothing, survive empty archives
+1d645c6|2026-11-21|Luiz Neves|tests/semantic: run OpIAddCarry in the interpreter, and test the carry chain
+b946e90|2026-11-21|AlxcBTW|make_game.py: wave64 mode survives a kill after the merge; auto keeps emulated shaders; stricter auto detection
+46d3093|2026-11-21|Claude|shader_profile: report per-stage register pressure; add --per-shader
+0397a7e|2026-11-21|ItsNotRexed|tests: follow this round's merges (preflight's reworded .NET message, #230's ps_tex in the checks' total and fake run)
+6de5bd4|2026-11-21|DiazE117|run_gpu_tests: run cs_wavemask on any subgroup size with LEONIDA_W64_EMULATE=1
+27d1b11|2026-11-21|Spaghetih|Runtime: register each mapped image's x64 unwind table (.pdata) with RtlAddFunctionTable
+9fcf3d8|2026-11-22|ttd0x|run_gpu_tests: judge the compute dumps like check.py does (eight decimal words, 64-wide confirmation)
+fece829|2026-11-21|Kam471|docs: measure TTPF array and volume layouts (ASSET-18)
+edbef47|2026-11-21|Kam471|Docs: census other world archives for placement maps
+fdf4d29|2026-11-21|SuarezPM|Translator: use the FSSM pixel-input table in the PS input path (SHADER-15)
+c56589c|2026-11-21|LuanFreitas|SHADER-30: emit CullPrimitiveEXT as Block+bool for old spirv-val
+798f4f6|2026-11-22|Eng-Meshari|Rebuild ci.yml on current main; pin setup-node.
+bafda15|2026-11-21|S1m0ne1997|runtime/CMakeLists: register root_sig_test with CTest
+909fd0e|2026-11-21|Claude|README: update the shader item in Want to help?
+95be10b|2026-11-22|Eng-Meshari|Merge branch 'ItsNotRexed:main' into ci/harden-workflows
+c8081eb|2026-11-21|mrb-eel|Cancel distant viewer chunk downloads after camera moves
+052cc57|2026-11-21|S1m0ne1997|feature_scan: count s_getpc_b64 kept for code-embedded data per stage; d3d12_vulkan.md: answer ┬º8.2 #10, per-stage counts for #14, tiled resources for #18
+8bec4de|2026-11-21|nicolas|Audio: isolate ffmpeg worker temporary WAVs from final outputs
+409f702|2026-11-21|S1m0ne1997|Tools: feature_scan.py, a corpus scan for D3D12-layer features (SHADER-16)
+6d3f80a|2026-11-21|Ayinaki|GPU tests: skip bitmask_perm on unknown width, carry the harness skip reason
+c9a3798|2026-11-21|Kam471|Docs: put the measured levels census in the archive row
+553f0df|2026-11-21|ItsNotRexed|docs: drop the Byte permute row the #222 merge duplicated
+cc1f4d3|2026-11-21|ItsNotRexed|Merge pull request #230 from Jan Trencansky
+01bc91e|2026-11-21|ItsNotRexed|Merge pull request #222 from simonbronk
+ca27646|2026-11-21|ItsNotRexed|Merge pull request #234 from Luiz Neves
+63ae33a|2026-11-21|ItsNotRexed|Merge pull request #252 from Luiz Neves
+78bac0e|2026-11-21|ItsNotRexed|Merge pull request #235 from shuv-amp
+f2fead8|2026-11-21|Luiz Neves|tests/semantic: run unordered float compares in the interpreter, and test v_cmp_*_f32/f16
+345465a|2026-11-21|ItsNotRexed|Merge pull request #257 from IAmNotSiob
+5773165|2026-11-21|ItsNotRexed|Merge pull request #241 from 0xTehuti
+b80e3ba|2026-11-21|ItsNotRexed|Merge pull request #228 from Jan Trencansky
+77c466c|2026-11-21|ItsNotRexed|Merge pull request #224 from 0xTehuti
+01e23b6|2026-11-21|ItsNotRexed|Merge pull request #208 from dcastell1
+fdaf5e4|2026-11-21|ItsNotRexed|Merge pull request #246 from LuanFreitas
+9abc65c|2026-11-21|ItsNotRexed|Merge pull request #227 from Luiz Neves
+d5123aa|2026-11-21|ItsNotRexed|Merge pull request #226 from Luiz Neves
+c1686b8|2026-11-21|ItsNotRexed|Merge pull request #223 from Alex Collini
+20fd0de|2026-11-21|ItsNotRexed|Merge pull request #218 from Luiz Neves
+3d58d99|2026-11-21|ItsNotRexed|Merge pull request #186 from Diesel
+919599b|2026-11-21|ItsNotRexed|Merge pull request #256 from Luiz Neves
+5a3aa74|2026-11-21|ItsNotRexed|Merge pull request #250 from Luiz Neves
+e555237|2026-11-21|ItsNotRexed|Merge pull request #255 from SuarezPM
+9c75730|2026-11-21|ItsNotRexed|Merge pull request #248 from Ayinaki
+645f52d|2026-11-21|ItsNotRexed|Merge pull request #244 from nicolas
+5367c61|2026-11-21|ItsNotRexed|Merge pull request #242 from Jonathan
+5a7d97f|2026-11-21|ItsNotRexed|Merge pull request #236 from intelshadow
+e502678|2026-11-21|ItsNotRexed|Merge pull request #231 from mrb-eel
+24eef83|2026-11-21|ItsNotRexed|Merge pull request #260 from NWX10
+2185d5a|2026-11-21|ItsNotRexed|Merge pull request #249 from NWX10
+356bd7b|2026-11-21|ItsNotRexed|Merge pull request #239 from NWX10
+8361fec|2026-11-21|ItsNotRexed|Merge pull request #232 from bbareth
+3176cec|2026-11-21|ItsNotRexed|Merge pull request #251 from Kam471
+d51b4f4|2026-11-21|ItsNotRexed|Merge pull request #237 from IAmNotSiob
+69e8455|2026-11-21|ItsNotRexed|Merge pull request #233 from Kam471
+69b578e|2026-11-21|ItsNotRexed|Merge pull request #229 from Kam471
+b594277|2026-11-21|ItsNotRexed|Merge pull request #225 from Kam471
+74863bf|2026-11-21|ItsNotRexed|Merge pull request #190 from Kam471
+cd10e30|2026-11-21|ItsNotRexed|Merge pull request #181 from Kam471
+d4a44d3|2026-11-21|Tim Elery|Docs/Tests: sync mesh v5 notes in design.md and add NumThreads constant regression test
+6440281|2026-11-21|Luiz Neves|tests/semantic: run OpBitReverse and SAbs in the interpreter, and test bfrev/brev/abs
+36bc120|2026-11-21|IAmNotSiob|Runtime: offline xgameruntime shim (XGameRuntime, XSystem, XTaskQueue, XAsync)
+188fb19|2026-11-21|SuarezPM|Tools: CPU differential oracle for the translator (shader_diff.py)
+58ebecc|2026-11-21|Kam471|Tools: export short streamed-music idents by duration
+338ff33|2026-11-21|eIBart0|tests: verify closed-region node splitting on random irreducible CFGs and synthetic shaders
+ab3b049|2026-11-21|eIBart0|cfg_structure: add closed-region node splitting for irreducible CFGs
+71c3b0b|2026-11-22|NWX10|audio_wav.py: give x.ogg and x.opus their own WAV instead of losing one
+ae144b8|2026-11-21|nicolas|Allow an explicit Vulkan loader in macOS GPU tests
+8200f05|2026-11-21|Kam471|Docs: link the gamedata XML catalog from the design table
+256da65|2026-11-22|Shuvam Pandey|Translator: 10:10:10:2 buffer formats had x and w swapped
+73c9927|2026-11-21|Luiz Neves|tests/semantic: run OpIAddCarry in the interpreter, and test the carry chain
+2765bbf|2026-11-21|Vorpe J├®r├®my|run_gpu_tests: honor LEONIDA_W64_EMULATE via a w64_emulated() helper (cmd.exe leaves a trailing space in 'set VAR=1 &', so the raw == '1' parse drops the flag and mis-sorts the wave64 emulated results on a 32-wide GPU)
+3cb9929|2026-11-22|Eng-Meshari|Update checkout action versions in runtime.yml
+16586f7|2026-11-21|Jan Trencansky|build_runtime.ps1: the direct MSVC build makes gfx10_descriptors_test and vk_bindless_test
+058170f|2026-11-21|Luiz Neves|tests/semantic: run integer compares in the interpreter, and test v_cmp/s_cmp
+2fecf12|2026-11-21|Ayinaki|fssm_header: parse the post-code binding table
+f2d0063|2026-11-22|Eng-Meshari|Refactor CI workflow and update action versions
+690e6ee|2026-11-22|NWX10|manifest.py: report a damaged manifest instead of a traceback; create it atomically
+d9c0ab5|2026-11-21|crastinator|vk_harness: VKH_HEAP on a device without buffer addresses is a SKIP; stricter VKH_SGPRS/VKH_HEAP parsing
+34f63c6|2026-11-21|LuanFreitas|Translator: detect wave64 from 64-bit lane-mask SOP ops (#210)
+d5eabda|2026-11-21|Jan Trencansky|Runtime: CopyDescriptors and CopyDescriptorsSimple on the Vulkan device
+69ff8e5|2026-11-21|Jan Trencansky|Runtime: bindless set 0 (M2)
+36ace71|2026-11-21|ItsNotRexed|Merge pull request #222 from simonbronk
+f43bead|2026-11-21|Jan Trencansky|Runtime: GFX10 T#, S# and V# descriptors (encode, decode, Vulkan mappings)
+7b7a42b|2026-11-21|Jonathan|World builder: preserve output when no input models can load
+047d4d9|2026-11-21|AlxcBTW|Wave64 emulation: guard the chained voted branch, more tests, bench reference
+cdaef79|2026-11-21|AlxcBTW|Wave64 emulation: fewer rounds (reuse mask exchanges, chain voted branches), benchmark
+c33c216|2026-11-21|0xTehuti|Runtime: implement CheckFeatureSupport for format support, VA limits, and options (D3D-11)
+042f665|2026-11-21|AlxcBTW|run_gpu_tests: comment names cs_bpermute32 as the other non-wave64 dump
+87700c0|2026-11-21|AlxcBTW|Zero disabled source lanes in wave32 ds_bpermute_b32
+3fae38a|2026-11-21|ItsNotRexed|GPU tests: ms_v5_workgroup expects #209's v5 (group * NumThreads + lane); run_gpu_tests runs #167's ps_texture_sample
+58f3fe8|2026-11-21|crastinator|GPU tests: run ps_vcc_x2 on the GPU with a seeded V# and heap in vk_harness (TEST-19)
+63cd7b8|2026-11-21|Kam471|Docs: record the measured title-keyed stream-id resolution
+59fc0da|2026-11-21|dcastell1|fix(xbox): run cs_wavemask under wave64 emulation in run_gpu_tests
+49421fe|2026-11-21|IAmNotSiob|README: shader GPU checks now cover 13 GPUs (#166), not one
+8cce07b|2026-11-22|NWX10|shader_disasm.py: scan blobs too short for the header instead of crashing the run
+c73e25f|2026-11-21|intelshadow|make_game.py on Linux: leave the Windows-only runtime stage out by default, refuse it up front, find the Linux vk_pipeline_check
+4776b05|2026-11-21|Luiz Neves|check.py: run cs_w64x_partial at subgroup 32 under wave64 emulation (TEST-20)
+e4cacf5|2026-11-21|Luiz Neves|Translator: keep the buffer_load_format sub-dword merge shift below 32
+7b82460|2026-11-21|ItsNotRexed|Translator: register the mesh NumThreads constant before assembly (#209's v5 seed used it too late)
+56f9e66|2026-11-21|Kam471|Tools: add a title-to-stream-id helper for untitled config records
+3fc2a44|2026-11-21|bbareth|hashdict.py: make generated dictionaries reproducible
+5c1a1fb|2026-11-21|Diesel|Merge main to include the compute Y/Z harness test fix
+64ebdf6|2026-11-21|simonbronk|Tests: integer ALU shaders ps_ops7/ps_ops8 and the SPIR-V ops they need (on top of #216)
+0532026|2026-11-22|Shuvam Pandey|Translator: 10:10:10:2 buffer formats had x and w swapped
+4aab723|2026-11-21|mrb-eel|Fix build destination checks through directory links
+02a830f|2026-11-21|Luiz Neves|Translator: keep the v_alignbyte_b32 shift below 32, and test it
+eef6f14|2026-11-21|Luiz Neves|Translator: keep bitfield extracts inside 32 bits (v_bfe, s_bfe)
+69e1b26|2026-11-21|crastinator|Merge main into bpermute-partial-wave
+f70a588|2026-11-21|Kam471|Tests: cover multi-group stereo streamed music
+019f0fc|2026-11-21|Kam471|Docs: update the full tree JSON size
+8b4d2f7|2026-11-21|ItsNotRexed|Merge pull request #212 from Ayinaki
+6e0a3f0|2026-11-21|Gen800|test(runtime): register root_sig_test with CTest
+a81bcb8|2026-11-21|ItsNotRexed|Merge pull request #207 from LouisRiverstone
+4c2f143|2026-11-21|0xTehuti|Runtime: check maxPushConstantsSize at device creation and flag uniform-buffer fallback (D3D-14)
+e9cb0b0|2026-11-21|ItsNotRexed|Merge pull request #203 from Ayinaki
+6ae2755|2026-11-21|ItsNotRexed|Merge pull request #205 from Parakeet-Wheat
+2b33695|2026-11-21|ItsNotRexed|Merge pull request #204 from crastinator
+981f40d|2026-11-21|ItsNotRexed|Merge pull request #218 from Luiz Neves
+49f24bf|2026-11-21|ItsNotRexed|Merge pull request #219 from Diesel
+caac27b|2026-11-21|ItsNotRexed|Merge pull request #209 from Tim Elery
+e7cfd36|2026-11-21|ItsNotRexed|Merge pull request #216 from Luiz Neves
+343fe4e|2026-11-21|ItsNotRexed|Merge pull request #201 from St├©rm
+bc9e77c|2026-11-21|ItsNotRexed|Merge pull request #213 from Jonathan
+949dd28|2026-11-21|ItsNotRexed|Merge pull request #221 from Koert Lichtendonk
+127361c|2026-11-21|ItsNotRexed|Merge pull request #220 from intelshadow
+ae72c1a|2026-11-21|ItsNotRexed|Merge pull request #215 from Kam471
+2195577|2026-11-21|ItsNotRexed|Merge pull request #202 from avelev99
+4367fb3|2026-11-21|ItsNotRexed|Merge pull request #199 from fabianlanza
+2def887|2026-11-21|ItsNotRexed|Merge pull request #196 from NWX10
+124f9e5|2026-11-21|ItsNotRexed|Merge pull request #195 from simonbronk
+79bc64c|2026-11-21|ItsNotRexed|Merge pull request #190 from Kam471
+b6f21bb|2026-11-21|ItsNotRexed|Merge pull request #186 from Diesel
+bdc5834|2026-11-21|ItsNotRexed|Merge pull request #183 from Kam471
+c52f5be|2026-11-21|ItsNotRexed|Merge pull request #181 from Kam471
+2c79fe1|2026-11-21|ItsNotRexed|Merge pull request #167 from 0xTehuti
+0a57596|2026-11-21|Alex Collini|Translator: accept LLVM 23's 0x80 in unused VOP3 source fields; check for a .NET SDK, not just dotnet
+d27e4c5|2026-11-21|Jan Trencansky|Runtime: ResolveSubresource and multisampled textures on Vulkan
+8a7e5dc|2026-11-21|Koert Lichtendonk|Docs: claim work in #156 before opening a pull request
+1aca9ee|2026-11-21|Luiz Neves|check.py: run cs_w64x_partial at subgroup 32 under wave64 emulation (TEST-20)
+48adc7b|2026-11-21|simonbronk|Translator: v_perm_b32 sign selectors 8-11; integer ALU tests ps_ops7/ps_ops8
+e8a0b11|2026-11-21|Diesel|Test mesh v5 against all 24 coordinates of a 3D draw
+3233417|2026-11-21|Luiz Neves|Translator: v_perm_b32 selectors 8-11 repeat a half's sign bit (fixes #211)
+ded3576|2026-11-21|Kam471|Tools: separate placement maps from CMapData-only metadata in the census
+2992956|2026-11-21|Kam471|rbf0_tree: record child counts, add CSV rows and tree-shape summary
+96c5433|2026-11-21|Kam471|Tests: cover the unknown-element-size diagnostic bucket
+cdc67e4|2026-11-21|Luiz Neves|GPU tests: report gs_tri/ms_tri as SKIP without geometry or mesh shaders (TEST-18)
+24115f1|2026-11-21|Ayinaki|check.py and run_gpu_tests: run cs_bounds (num_records bounds check)
+0c17741|2026-11-21|Jonathan|Viewer: retry failed chunk loads with bounded backoff
+8a7e2da|2026-11-21|intelshadow|Shader stage: keep work folders built before disasm.done (no full re-disassembly and re-translation)
+ed9c90a|2026-11-22|NWX10|viewer/serve.py: answer only requests addressed to 127.0.0.1 or localhost (DNS rebinding)
+258efcc|2026-11-21|Kam471|Tests: cover multi-group stereo streamed music
+9eb0437|2026-11-21|0xTehuti|Runtime: add DescriptorTable::erase() and autonomous vk_texture_test with synthetic shader
+369a062|2026-11-21|AREA52 Agent|Merge main and preserve clip fixtures alongside updated GPU test tooling
+6f6ffff|2026-11-22|Parakeet-Wheat|make_game.py: --wave64-emulate auto|on|off, on for GPUs without 64-wide subgroups (SHADER-11)
+57544ab|2026-11-21|Kam471|Docs: note the full tree JSON size
+084cf31|2026-11-21|Kam471|rbf0_tree: record the XML error status
+37ab207|2026-11-21|Kam471|Docs: correct the UIScreen sample nesting
+c42377b|2026-11-21|Kam471|Docs: clarify the compact skip rows after the rule
+bd7cd27|2026-11-21|Kam471|rbf0_tree: keep string bytes, overwrite XML on rerun
+ddd49a8|2026-11-21|Kam471|Textures: count every gated compact record in the scan total
+ea80364|2026-11-21|Kam471|Textures: name the compact rule in the tex_headers module doc
+9a713d2|2026-11-21|Kam471|Textures: point the carve exporter at the compact layout owner
+0589fb5|2026-11-21|Kam471|Textures: share the compact layout and record the after split
+91db8ec|2026-11-21|Kam471|Tests: cover stereo streamed-music manifest fields
+bb4fc2e|2026-11-21|Tim Elery|rdna2spirv: seed mesh v5 as groupIndex * NumThreads + lane
+8d8ebee|2026-11-21|Dea7hsmiles|Loader: resolve forwarders to shimmed modules through the shim registry
+4e390e0|2026-11-21|ItsNotRexed|run_gpu_tests: --filter ps_flat also builds vs_ids, which ps_flat is drawn with (fixes #192)
+531f778|2026-11-21|ItsNotRexed|tests: test_shader_checks' fake harness answers #186's cs_workgroup_yz
+f348eb9|2026-11-21|Ayinaki|GPU tests: skip pixel tests without barycentrics and narrow subgroups
+21cef25|2026-11-21|crastinator|Translator: wave64 ds_bpermute reads 0 from lanes missing from a partial wave
+e18daf7|2026-11-21|avelev99|tools: reject PSIN records without a first section
+d2afb6f|2026-11-21|nicolas|Report Vulkan atlas capabilities only after a successful device probe
+4cf04e2|2026-11-21|nicolas|Index Bink streams with fractional NTSC frame rates
+6220fd0|2026-11-21|St├©rm|Translator: keep v_perm_b32 and v_alignbit_b32 shifts below 32, and test both
+f6bfb13|2026-11-21|nicolas|Write valid JSON for shader profiles with no memory operations
+d4ab78f|2026-11-21|nicolas|World builder: preserve unrelated GLBs during chunk cleanup
+c45309e|2026-11-21|Diesel|Integrate #188 and guard maintenance8 by its Vulkan header macro
+f238f66|2026-11-21|ItsNotRexed|Merge pull request #186 from imnotdiesel
+f35db03|2026-11-21|fabianlanza|CI: byte-compile tests/ too, as CONTRIBUTING.md says
+f3da088|2026-11-21|ItsNotRexed|Merge pull request #171 from shelbykb2
+b362524|2026-11-21|ItsNotRexed|Merge pull request #185 from Kam471
+63537ec|2026-11-21|ItsNotRexed|Merge pull request #138 from SuarezPM
+1261c08|2026-11-21|ItsNotRexed|Merge pull request #167 from 0xTehuti
+233e245|2026-11-21|ItsNotRexed|Merge pull request #188 from Kam471
+b957eb7|2026-11-21|ItsNotRexed|Merge pull request #170 from adrbn
+b63a645|2026-11-21|ItsNotRexed|Merge pull request #189 from eIBart0
+5026d36|2026-11-21|ItsNotRexed|Merge pull request #184 from Mokbul Miah
+a0611c9|2026-11-21|ItsNotRexed|Merge pull request #177 from simonbronk
+0f3383b|2026-11-21|ItsNotRexed|Merge pull request #190 from Kam471
+070d697|2026-11-21|ItsNotRexed|Merge pull request #187 from Ayinaki
+16240a1|2026-11-21|ItsNotRexed|Merge pull request #183 from Kam471
+72b25c1|2026-11-21|ItsNotRexed|Merge pull request #182 from Eng-Meshari
+548b445|2026-11-21|ItsNotRexed|Merge pull request #181 from Kam471
+b2acfa7|2026-11-21|ItsNotRexed|Merge pull request #178 from Kam471
+d0fc610|2026-11-21|ItsNotRexed|Merge pull request #175 from Ayinaki
+fd8e2f8|2026-11-21|ItsNotRexed|Merge pull request #174 from bbareth
+0980b15|2026-11-21|ItsNotRexed|Merge pull request #173 from shelbykb2
+70ec766|2026-11-21|ItsNotRexed|Merge pull request #169 from NWX10
+380cca4|2026-11-21|ItsNotRexed|Merge pull request #168 from Ayinaki
+3452ebe|2026-11-21|ItsNotRexed|Merge pull request #162 from NWX10
+13092ba|2026-11-21|ItsNotRexed|Merge pull request #153 from NWX10
+485d1de|2026-11-21|ItsNotRexed|Merge pull request #148 from Kam471
+30267d0|2026-11-21|simonbronk|tex_export: read the addrlib patterns on first use; add tests
+c5aeb15|2026-11-21|Kam471|Tools: census every map resource in levels.rpf
+bed17e9|2026-11-21|Kam471|Tests: cover stereo streamed-music manifest fields
+b39592d|2026-11-21|AREA52 Agent|Test two-plane vertex clip coverage against per-pixel CPU masks
+ce2cf75|2026-11-21|Diesel|Merge main and share compute fixture header overrides
+1def0f7|2026-11-21|Kam471|CI: build vk_harness with Vulkan headers that lack maintenance8
+dd199d1|2026-11-21|eIBart0|rdna2spirv: ignore pos1..pos3 exports when OSG1 is absent
+783d7af|2026-11-21|Mokbul Miah|Merge branch 'fix/llvm-mc-command' of https://github.com/mokkymiah/Leonida into fix/llvm-mc-command
+bb20c19|2026-11-21|Kam471|Textures: make the compact mode split reproducible in scan
+48613bb|2026-11-21|Ayinaki|Tests: pin classify_carve classes and rpf_probe header reads
+d50ba56|2026-11-21|Kam471|Tools: decode RBF0 trees for UI and subtitles
+4be73f9|2026-11-21|Kam471|Textures: tighten the compact tool wording and BC coverage note
+c3cd328|2026-11-21|Kam471|Textures: report the compact standalone/tail split in scan
+39631ee|2026-11-21|Kam471|Textures: decode the TTPF compact mip tail
+5b3bbad|2026-11-21|Diesel|Test compute workgroup Y/Z registers on a 3D Vulkan dispatch
+503c871|2026-11-21|Kam471|Tools: export stereo streamed-music AWC channels correctly
+66a410e|2026-11-21|Mokbul Miah|Accept LLVM_MC as a whole command in the tests and GPU tools
+aae4d99|2026-11-21|ItsNotRexed|check.py: draw each pixel test at the wave size recorded in index.json (fixes #146)
+eb1bde3|2026-11-21|Mokbul Miah|Accept LLVM_MC as a whole command in the tests and GPU tools
+530246a|2026-11-21|ItsNotRexed|tests: loader_test fills its byte buffer with uint8_t{0} (C4244 x2 under /W4)
+43daf28|2026-11-21|Kam471|Tools: catalog the common.rpf XML documents
+005fd93|2026-11-21|Eng-Meshari|Add SECURITY.md: private reporting and cleanup for committed game data
+95b2c09|2026-11-21|simonbronk|Build a native Windows llvm-mc with the AMDGPU target, no WSL needed
+5be11c0|2026-11-21|Ayinaki|tests: pin the D3D12 stub generator's parsing and output
+16d285e|2026-11-21|ItsNotRexed|Merge pull request #152 from AlxcBTW
+89ca8c8|2026-11-21|ItsNotRexed|Merge pull request #149 from eIBart0
+0d7dbaa|2026-11-21|ItsNotRexed|Merge pull request #159 from Diesel
+690aab3|2026-11-21|ItsNotRexed|Merge pull request #164 from Kam471
+6a0a3ec|2026-11-21|ItsNotRexed|Merge pull request #113 from eIBart0
+7ec7511|2026-11-21|ItsNotRexed|Merge pull request #140 from IAmNotSiob
+556fc4a|2026-11-21|ItsNotRexed|Merge pull request #161 from S1m0ne1997
+e149b42|2026-11-21|ItsNotRexed|Merge pull request #153 from NWX10
+b7a233d|2026-11-21|ItsNotRexed|Merge pull request #165 from NWX10
+180fd6c|2026-11-21|ItsNotRexed|Merge pull request #162 from NWX10
+0f85eec|2026-11-21|ItsNotRexed|Merge pull request #154 from crastinator
+94fa290|2026-11-21|ItsNotRexed|Merge pull request #160 from Ayinaki
+dae4be1|2026-11-21|ItsNotRexed|Merge pull request #151 from andretuta
+9b5e01b|2026-11-21|ItsNotRexed|Merge pull request #145 from Ayinaki
+0788af6|2026-11-21|ItsNotRexed|Merge pull request #144 from errusso
+6b102f8|2026-11-21|ItsNotRexed|Merge pull request #150 from Kam471
+7cdae2b|2026-11-21|ItsNotRexed|Merge pull request #148 from Kam471
+240c54e|2026-11-21|ItsNotRexed|Merge pull request #143 from Kam471
+899e334|2026-11-21|ItsNotRexed|Merge pull request #141 from Kam471
+5716b7e|2026-11-21|ItsNotRexed|Merge pull request #139 from Kam471
+8b0e1a2|2026-11-21|ItsNotRexed|Merge pull request #133 from Kam471
+71414bf|2026-11-21|NWX10|rpf9dump: write every output under a temporary name and rename it into place
+9d02cc9|2026-11-21|NWX10|Assets stage: resume stopped audio steps, keep no partial files, retry failed XMA decodes
+6139be9|2026-11-21|bbareth|manifest.py: fail when the input directory cannot be scanned
+52b50d9|2026-11-21|adrbn|runtime/test: load MoltenVK on macOS so the GPU tests run on Apple GPUs
+71d39ce|2026-11-21|SuarezPM|Rework RTS0 parser to offset-table layout; harden oracle test
+85c660b|2026-11-21|NWX10|rpf9_carve.py: survive a Bink signature cut off by the end of the file, and an empty data area
+d2c3283|2026-11-21|Ayinaki|tests: pin the shader_ir operand grammar and the pc walk
+7399779|2026-11-21|Kam471|Docs: mark GCL8 resolved in PR #164
+82a1e22|2026-11-21|0xTehuti|Runtime: implement FNV-1a descriptor hash table for shader contract (set 0, binding 2)
+b7db55a|2026-11-21|NWX10|make_game.py: reject --jobs below 1, compare the game folder without case on Windows
+87989ce|2026-11-21|SuarezPM|Parse RTS0 via DXBC chunk walk; fix OOB wrap and FourCC typo
+d3f6901|2026-11-21|Kam471|Docs: measure rest-of-world and script archive composition
+55af930|2026-11-21|Kam471|runtime: add public ID3D12GraphicsCommandList8 to the D3D12 proxy
+49dd92d|2026-11-21|shelbykb2|translator: SMEM loads with soffset and imm add both (the imm was dropped)
+f67d3c1|2026-11-21|Kam471|README: add the measured music/radio config row
+8ea0e07|2026-11-21|shelbykb2|tests: repair the stale stdin handle pytest's fd capture leaves on Windows; mutation test without cwd=HERE
+dcf5f44|2026-11-21|ItsNotRexed|Translator: decide VOP3 for 16-bit integer ops from the encoding size, not the _e64 suffix
+9a794f6|2026-11-21|errusso|fix: keep import pytest at top so CI grep filters test_amd_swizzle
+ab270f3|2026-11-21|SuarezPM|Harden RTS0/oracle path: bound sampler counts, dump blob bytes on parse
+aa2febe|2026-11-21|Ayinaki|tests: cover the stdlib DDS decoder with synthetic buffers
+52e1ac3|2026-11-21|Diesel|Support mipmapped 3D texture transfers on the Vulkan device
+65d927b|2026-11-21|NWX10|rpf9dump: write every output under a temporary name and rename it into place
+2381b53|2026-11-21|Kam471|Docs: add rest-of-world archive row
+d488b0f|2026-11-21|Kam471|Docs: index the new format notes
+580aa8e|2026-11-21|AlxcBTW|docs/design.md: wave64 emulation row, count on main's skip logic
+1f95634|2026-11-21|Kam471|Docs: measure the audio-config station records and content ids
+725052d|2026-11-21|crastinator|GPU tests: say which test programs are missing instead of a traceback
+6ee1904|2026-11-21|Kam471|Docs: add page-directory, story, audio-station and command-object rows
+ab35e9a|2026-11-21|AlxcBTW|Translator: exact wave64 compute and mesh shaders on any subgroup size
+ab5e889|2026-11-21|andretuta|tools, tests: add stdlib paths for tex_headers and rtti_scan and un-skip CI tests
+6b6b9bf|2026-11-21|ItsNotRexed|Translator: s_bcnt1_i32_b32 counts the high word again (#132 kept it for b64 only)
+da1ce50|2026-11-21|ItsNotRexed|Merge pull request #125 from TricksterG
+36cedb8|2026-11-21|ItsNotRexed|Merge pull request #78 from Kam471
+ce4e26c|2026-11-21|ItsNotRexed|Merge pull request #113 from eIBart0
+da4d686|2026-11-21|ItsNotRexed|Merge pull request #122 from Ayinaki
+0a65e6a|2026-11-21|ItsNotRexed|Merge pull request #136 from NWX10
+9fd504c|2026-11-21|ItsNotRexed|Merge pull request #132 from 0xTehuti
+9474638|2026-11-21|ItsNotRexed|Merge pull request #124 from Kam471
+d701f3b|2026-11-21|ItsNotRexed|Merge pull request #128 from Kam471
+377a4b9|2026-11-21|ItsNotRexed|Merge pull request #129 from Kam471
+3b7c30a|2026-11-21|ItsNotRexed|Merge pull request #133 from Kam471
+46a1998|2026-11-21|ItsNotRexed|Merge pull request #134 from Kam471
+340f3fa|2026-11-21|ItsNotRexed|Merge pull request #137 from Kam471
+2f030be|2026-11-21|ItsNotRexed|Merge pull request #139 from Kam471
+eb85039|2026-11-21|NWX10|Assets stage: resume stopped audio steps, keep no partial files, retry failed XMA decodes
+9d3743b|2026-11-21|Kam471|docs: tighten command-object citations
+e2e5ecd|2026-11-21|errusso|fix: test_amd_swizzle exits 0 when numpy is absent
+e4f1d65|2026-11-21|Kam471|docs: measured D3D12 command queue/list/fence surface
+d2debe8|2026-11-21|SuarezPM|Fix MSVC build: std::memcpy instead of __builtin_memcpy
+28cf235|2026-11-21|S1m0ne1997|d3d12_xs device proxy: slot 62 takes (desc, w2, w3, riid, out)
+c2099b3|2026-11-21|eIBart0|Runtime: report pipelines compiled without the requested subgroup size
+67735ca|2026-11-21|Ayinaki|Tools: parse PE images with struct instead of pefile
+711d386|2026-11-21|errusso|CI, tests, tools: fix file handle leak, skip without pytest, build GPU tools on Linux
+d2a7fb6|2026-11-21|Kam471|Docs: link the audio-config table from the audio guide
+da499ab|2026-11-21|IAmNotSiob|Loader: initialise dependencies before their importers
+703b344|2026-11-21|Kam471|Docs: add measured asset rows to the design table
+ff960f8|2026-11-21|Kam471|Docs: link the documentation index from the README
+612f1ed|2026-11-21|SuarezPM|Root signature packer + reconciler + hard-fail (fix the least verifiable part of the layer)
+78af668|2026-11-21|Kam471|Tools: report PSIN LRSC and CHKS fields
+a9da38f|2026-11-21|Kam471|docs: clarify levels sampling fraction
+7cc6068|2026-11-21|NWX10|Shader stage: resume only finished steps, Windows-safe carve names, clear error on empty unpack (fixes #126)
+93481ae|2026-11-21|Kam471|Docs: add a documentation index
+43459b9|2026-11-21|Kam471|docs: extend levels map inventory with second bounded pass
+2251440|2026-11-21|0xTehuti|Translator: implement s_ashr_i64, s_bitcmp0/1, s_bcnt0, and s_ff0 with semantic tests
+50efbdb|2026-11-21|TricksterG|run_gpu_tests.py: run cs_wavemask like check.py
+12ddbc6|2026-11-21|eIBart0|tests: add ms_clip GPU test and enable shaderClipDistance/shaderCullDistance in vk_harness
+26727b5|2026-11-21|eIBart0|tests: add VS and MS ClipDistance/CullDistance translation tests
+79b3542|2026-11-21|eIBart0|rdna2spirv: emit ClipDistance/CullDistance (and VS misc) from pos1..pos3
+950e599|2026-11-21|Kam471|Docs: decode the RPF9 0DRP page directory
+ff573ee|2026-11-21|Ayinaki|loader: follow forwarded exports and validate delay-import descriptors
+af08a9e|2026-11-21|Kam471|tests: rebase semantic value coverage onto current main
+65d62ff|2026-11-21|Kam471|Tools: preserve duplicate XDAT payloads in fssm_unpack
+0412c8c|2026-11-21|Kam471|story: avoid implying the flat carve groups nested archives
+4c75ce5|2026-11-21|ItsNotRexed|run_gpu_tests: skip the wave64 mask dumps on devices without 64-wide compute subgroups, as check.py does
+40a3c59|2026-11-21|Kam471|story: state the bounded run stop accurately
+cfb5f9a|2026-11-21|Kam471|story: tighten PSIN header handling and measured field wording
+ec1dbca|2026-11-21|Kam471|Docs: measure story and minigame archive composition
+67dd9a7|2026-11-21|ItsNotRexed|Merge pull request #107 from Lucas Motta
+c992432|2026-11-21|ItsNotRexed|Merge pull request #113 from eIBart0
+6dfc0ce|2026-11-21|ItsNotRexed|Merge pull request #119 from Ryx
+8bf99ed|2026-11-21|ItsNotRexed|Merge pull request #95 from Ayinaki
+d279b28|2026-11-21|ItsNotRexed|Merge pull request #102 from andretuta
+fae7c56|2026-11-21|ItsNotRexed|Merge pull request #114 from Kam471
+d3bc937|2026-11-21|ItsNotRexed|Merge pull request #117 from Kam471
+db17179|2026-11-21|ItsNotRexed|Merge pull request #111 from Kam471
+f23605c|2026-11-21|ItsNotRexed|Merge pull request #110 from Kam471
+499606e|2026-11-21|ItsNotRexed|Merge pull request #109 from Kam471
+c76aa5c|2026-11-21|ItsNotRexed|Merge pull request #105 from Kam471
+d696ffd|2026-11-21|ItsNotRexed|Merge pull request #99 from Kam471
+8a1d1b1|2026-11-21|ItsNotRexed|Merge pull request #98 from Kam471
+59654ca|2026-11-21|ItsNotRexed|Merge pull request #97 from Kam471
+fb0dfda|2026-11-21|ItsNotRexed|Merge pull request #96 from Kam471
+828cca7|2026-11-21|ItsNotRexed|Merge pull request #108 from Kam471
+232f242|2026-11-21|ItsNotRexed|Merge pull request #103 from shizikaep-prog
+c132259|2026-11-21|ItsNotRexed|Merge pull request #106 from S1m0ne1997
+f1ce844|2026-11-21|ItsNotRexed|Merge pull request #104 from S1m0ne1997
+73b2d32|2026-11-21|ItsNotRexed|Merge pull request #118 from Kam471
+f2fd0da|2026-11-21|ItsNotRexed|Merge pull request #112 from eIBart0
+db2d31d|2026-11-21|ItsNotRexed|Translator: --no-asm drops the .spvasm text; make_game uses it (saves ~35 GB on the full corpus)
+9933638|2026-11-21|Ryx|Runtime: D3D12 copies on Vulkan (buffers, textures, uploads, BC) and GetCopyableFootprints
+617bf18|2026-11-21|Kam471|CI: keep optional numpy out of module imports and pytest collection
+ba191bd|2026-11-21|eIBart0|Runtime: fail cleanly on malformed JSON in vk_pipeline_check JsonParser
+8cfbdc2|2026-11-21|eIBart0|Runtime: wake vk_pipeline_check watchdog via condition_variable on completion
+f1dd3c6|2026-11-21|Kam471|docs: measure world placement and streaming composition
+c2080b5|2026-11-21|Kam471|runtime: add optional Bink Audio track extraction test
+03a9973|2026-11-21|Kam471|Docs: FSSM/RDNA2 cross-check against SCARAB
+ffd26b0|2026-11-21|Kam471|Docs: record the completed s2 shard (10/12, 22,092 modules)
+a87d11c|2026-11-21|Kam471|Tools: index the PSIN metadata container
+40f6399|2026-11-21|Ryx|Runtime: Vulkan-backed ID3D12Device behind the Xbox-ABI proxy
+8331668|2026-11-21|Kam471|docs: note the BVH family is 99.95% of inflated bytes
+1681676|2026-11-21|Kam471|Docs: measured BVH archive composition
+ca801d9|2026-11-21|eIBart0|Tests: add no-GPU unit tests for SPIR-V stub generation and graphics metadata
+428e250|2026-11-21|eIBart0|Runtime: compile real graphics pipelines (ps/vs/ms/gs) in vk_pipeline_check
+7837080|2026-11-21|eIBart0|Tools: add pure-Python SPIR-V stub generator and graphics metadata fields
+957dfb2|2026-11-21|eIBart0|Fix: stop dropping first instruction in shader_ir.parse_file on LLVM 21+ and un-xfail vcc_half test
+3523007|2026-11-21|Kam471|Runtime: skip oversized modules in vk_pipeline_check, and record the corpus pass
+4d6733b|2026-11-21|S1m0ne1997|docs/design.md: whole-wave mask tests are exact only on 64-wide subgroups
+c2e3d81|2026-11-21|Lucas Motta|tests: skip cs_imgload where image reads need a format
+d51bddc|2026-11-21|ItsNotRexed|GPU tests: skip what the device can't run instead of failing (fixes #88 points 2-3)
+5504d5e|2026-11-21|S1m0ne1997|runtime/CMakeLists: find d3d12.lib/dxgi.lib in the Windows SDK outside a Developer Prompt
+464c390|2026-11-21|Kam471|Docs: measured common.rpf game-data composition
+008aa3d|2026-11-21|Kam471|Tools: parse the audio-config music record table
+241b03c|2026-11-21|Kam471|docs: note that all multi-chunk RBF0 resources are wide
+6915273|2026-11-21|andretuta|tools, viewer: add stdlib world.json/.glb chunk builder and harden viewer
+3008b3f|2026-11-21|shizikaep-prog|fix: initialize submodules in linked Git worktrees
+4f4189e|2026-11-21|NotRexed|tests: follow #38 (f16 op_sel helpers) in the mutation/negative controls; test_shader_checks knows #73's wave64 dumps
+9bc8453|2026-11-21|Kam471|docs: measured RBF0 composition in data.rpf, with rbf0_index
+df508f3|2026-11-21|Kam471|docs: distinguish hash presence from record confirmation
+7f993ac|2026-11-21|Kam471|docs: measured navmesh archive composition
+df86dba|2026-11-21|Kam471|docs: scope the motion-matcher sample
+2a0a77f|2026-11-21|Kam471|docs: scope the bone-table resource count
+018fda6|2026-11-21|Kam471|tools: parse RBF0 rig sets and bone-table resources
+126062a|2026-11-21|Ayinaki|Runtime: initialise a loaded module's TLS and DllMain
+71d17d0|2026-11-21|NotRexed|Merge pull request #35 from Zmirzz
+4732779|2026-11-21|NotRexed|Merge pull request #32 from Kam471
+646d48a|2026-11-21|NotRexed|Merge pull request #38 from Ewann
+aa3fe04|2026-11-21|NotRexed|Merge pull request #30 from cxccxc
+6d2e1ed|2026-11-21|NotRexed|Merge pull request #34 from Lucas Motta
+3294bdd|2026-11-21|NotRexed|Merge pull request #33 from Kam471
+af60f90|2026-11-21|NotRexed|Merge pull request #31 from Kam471
+d9eba90|2026-11-21|NotRexed|Merge pull request #37 from Kam471
+453df5d|2026-11-21|NotRexed|Merge pull request #92 from Kam471
+46aa35a|2026-11-21|NotRexed|Merge pull request #91 from Kam471
+58952ed|2026-11-21|NotRexed|Merge pull request #80 from eIBart0
+2a732e0|2026-11-21|NotRexed|runtime/CMakeLists: fix the merged test section (close the loader if(WIN32), drop the replaced clear test, link d3d12_xs_device into the tests that link d3d12_xs)
+851b0eb|2026-11-21|NotRexed|tests: rtti_scan imports pefile only in its CLI; mark the wave64 vcc-half bcnt1 case as a known gap
+ba1f2c6|2026-11-21|NotRexed|tests: follow #73 (mask_sgprs removed, cur_masks is a dict); test_shader_index finds tools/ on its own
+9d28e6d|2026-11-21|Kam471|Contributing: document runtime and package-gated tests
+f9176e5|2026-11-21|NotRexed|Merge pull request #84 from Kam471
+917e821|2026-11-21|NotRexed|Merge pull request #79 from Ryx
+4a513f3|2026-11-21|NotRexed|Merge pull request #62 from Kam471
+36555f1|2026-11-21|NotRexed|Merge pull request #72 from Kam471
+6c9085a|2026-11-21|NotRexed|Merge pull request #73 from eIBart0
+eb7c304|2026-11-21|Kam471|Docs: RPF9 archive and carve-tool guide
+b70ddd6|2026-11-21|NotRexed|Merge pull request #85 from Kam471
+14daa27|2026-11-21|eIBart0|Tests: cover desc_cache_ok (no caching inside an instruction's own construct)
+7a468c9|2026-11-21|NotRexed|Merge pull request #82 from Kam471
+7ac9638|2026-11-21|NotRexed|Merge pull request #71 from slopgobblercobbler
+1965417|2026-11-21|NotRexed|Merge pull request #70 from slopgobblercobbler
+0179fa9|2026-11-21|NotRexed|Merge pull request #69 from slopgobblercobbler
+8317d32|2026-11-21|NotRexed|Merge pull request #66 from slopgobblercobbler
+fd7f083|2026-11-21|NotRexed|Merge pull request #65 from slopgobblercobbler
+dd63ef7|2026-11-21|NotRexed|Merge pull request #64 from slopgobblercobbler
+2258543|2026-11-21|NotRexed|Merge pull request #63 from slopgobblercobbler
+da92eef|2026-11-21|NotRexed|Merge pull request #61 from slopgobblercobbler
+dc0e3d4|2026-11-21|NotRexed|Merge pull request #60 from slopgobblercobbler
+3c99a9d|2026-11-21|NotRexed|Merge pull request #59 from slopgobblercobbler
+b8ec1ef|2026-11-21|NotRexed|Merge pull request #58 from slopgobblercobbler
+f9c630c|2026-11-21|NotRexed|Merge pull request #57 from slopgobblercobbler
+6e5b459|2026-11-21|NotRexed|Merge pull request #56 from slopgobblercobbler
+433f5c9|2026-11-21|NotRexed|Merge pull request #55 from slopgobblercobbler
+8f03582|2026-11-21|NotRexed|Merge pull request #54 from slopgobblercobbler
+370e159|2026-11-21|NotRexed|Merge pull request #53 from slopgobblercobbler
+c2305ec|2026-11-21|NotRexed|Merge pull request #52 from slopgobblercobbler
+68a793b|2026-11-21|NotRexed|Merge pull request #50 from slopgobblercobbler
+0816ea9|2026-11-21|NotRexed|Merge pull request #49 from slopgobblercobbler
+d635cb7|2026-11-21|NotRexed|Merge pull request #48 from slopgobblercobbler
+ebaf583|2026-11-21|NotRexed|Merge pull request #46 from slopgobblercobbler
+c2a9a82|2026-11-21|NotRexed|Merge pull request #45 from slopgobblercobbler
+903b849|2026-11-21|NotRexed|Merge pull request #44 from slopgobblercobbler
+8d6f3d6|2026-11-21|NotRexed|Merge pull request #43 from slopgobblercobbler
+0979e54|2026-11-21|NotRexed|Merge pull request #40 from slopgobblercobbler
+acddb5e|2026-11-21|NotRexed|Merge pull request #77 from andretuta
+bc7761c|2026-11-21|NotRexed|Merge pull request #76 from andretuta
+3358caf|2026-11-21|NotRexed|Merge pull request #83 from SuarezPM
+0f81dbe|2026-11-21|NotRexed|Merge pull request #80 from eIBart0
+52d6137|2026-11-21|NotRexed|Merge pull request #47 from Ayinaki
+ba6dd8b|2026-11-21|NotRexed|Merge pull request #41 from Kam471
+34d4559|2026-11-21|NotRexed|Merge pull request #81 from Kam471
+9925be3|2026-11-21|NotRexed|Merge pull request #86 from Kam471
+87ff57a|2026-11-21|NotRexed|Merge pull request #75 from Kam471
+16029fc|2026-11-21|NotRexed|Merge pull request #39 from Kam471
+8f11b2d|2026-11-21|NotRexed|Merge pull request #67 from Kam471
+81aae57|2026-11-21|NotRexed|Merge pull request #87 from Kam471
+6be14e9|2026-11-21|NotRexed|Merge pull request #89 from Lucas Motta
+58ec7a6|2026-11-21|NotRexed|Merge pull request #90 from Kam471
+4f27dd0|2026-11-21|Kam471|Carve: advance by the bytes actually read, not the 1 MiB request
+862372c|2026-11-21|Lucas Motta|tests: drop llvm-mc directives in shaders/build.py
+fa54b20|2026-11-21|Kam471|docs: state the RBF0 block-boundary evidence
+672ecbb|2026-11-21|Kam471|docs: tighten the measured claims and caveats
+ee91507|2026-11-21|Kam471|Runtime: document the loader, shims, dry run and tests
+bbd15cf|2026-11-21|Kam471|Tools: clean-room FSSM pixel input table decoder
+63e0069|2026-11-21|Kam471|docs: correct type-hash and packed-clip measured counts
+5e79a65|2026-11-21|Kam471|docs: identify the name-table hash as joaat32 of the path stem
+0c2b4f6|2026-11-21|Kam471|docs: exact packed-clip counts and manifest comparison
+3b569cd|2026-11-21|Kam471|docs: use exact readable percentages
+d5c861c|2026-11-21|Kam471|docs: clarify RBF0 token counts and page-count range
+47dec11|2026-11-21|Ayinaki|Runtime: bound every RVA the PE loader follows, and test it
+dc26450|2026-11-21|Kam471|docs: correct observed 0DRP page-count range
+319f984|2026-11-21|Kam471|docs: measured animation archive composition and container index
+e09fd70|2026-11-21|Kam471|Docs: record independent validation of the model decoder fix
+70e240b|2026-11-21|Kam471|runtime: add optional Bink 2 decode test through loader/xmem
+4dc2f59|2026-11-21|eIBart0|lane_masks: a separate write to vcc_hi ends vcc's lane-mask tracking
+caa767d|2026-11-21|SuarezPM|Translator: shader index identity (src/fssm hashes, ISG1 signature, wave64_emulated) + Turing atlas
+9015a62|2026-11-21|Kam471|Runtime: Xbox-ABI device proxy (slots 9/10/62/76)
+df87229|2026-11-21|Kam471|docs: measure the BCPack texture gap and the next step
+b406270|2026-11-21|Kam471|Docs: measured d3d12_xs surface from SCARAB
+6052bf0|2026-11-21|Ryx|Runtime: rectangle clears, layout tracking, enhanced barriers, COM list/queue/fence
+74e188c|2026-11-21|eIBart0|Translator: cache descriptor lookups per basic block
+f980852|2026-11-21|Kam471|movies: index Bink 2 streams and document the container
+1a7ca71|2026-11-21|eIBart0|Tests: add per-file mattr directive, restore wave64 cs_wave64_ballot, register in run_gpu_tests.py
+2151d4e|2026-11-21|eIBart0|Translator: map vcc_lo/vcc_hi halves, use wave_lane() in s_bfm_b64, update docs/tests
+d9db324|2026-11-21|Kam471|Docs+tool: add CPU reference for differential shader validation
+ddd837a|2026-11-21|Kam471|Docs: correct stale status claims in the design document
+caa31b5|2026-11-21|Kam471|Runtime: tests for the native PE loader (fixtures, imports, relocations)
+f3b2b47|2026-11-21|slopgobblercobbler|test(semantic): add interpreter tests for scalar memory reads and descriptor address calculation
+0631f8e|2026-11-21|eIBart0|Tests: fix cs_wave64_ballot.asm for wave32 llvm-mc and add cs_wm_* wave64 tests
+0fdb1f0|2026-11-21|eIBart0|Translator: fix wave64 half-mask bcnt1/ff1/cmp and track s_bfm_b64 in lane_masks
+cb918d9|2026-11-21|eIBart0|Translator: remove dead mask_sgprs and ballot_pair superseded by lane_masks.py
+9755e72|2026-11-21|slopgobblercobbler|test(tools): add DDS synthesis, mip calculations, and GFX10 format mapping tests for tex_headers
+b5aa23e|2026-11-21|slopgobblercobbler|test(semantic): add LDS read/write byte offset calculation interpreter tests
+1d5cad4|2026-11-21|slopgobblercobbler|test(semantic): add whole-wave subgroup ballot equality and comparison tests
+6ec879f|2026-11-21|slopgobblercobbler|test(semantic): add interpreter tests for SDWA source sub-register selection and broadcast
+8abfd1f|2026-11-21|slopgobblercobbler|test(semantic): add interpreter tests for v_bfe_u32 and v_bfe_i32
+da99c24|2026-11-21|slopgobblercobbler|test(tools): add test suite for rtti_scan.py
+eda4ccd|2026-11-21|slopgobblercobbler|test(semantic): add interpreter tests for LDS atomic add (ds_add_u32, ds_add_rtn_u32)
+5f3007f|2026-11-21|andretuta|tests/semantic: cover ps_ops2, ps_ops3, ps_ops4 and ps_legacy_mul (+ check.py)
+428f461|2026-11-21|slopgobblercobbler|test(runtime): verify D3D12 and XMem ABI type alignment and structure sizes
+d711950|2026-11-21|slopgobblercobbler|test(semantic): whole-wave execution mask branching (s_cbranch_execz, s_cbranch_execnz)
+12909a3|2026-11-21|slopgobblercobbler|test(semantic): add interpreter tests for v_lshl_add_u32 and v_lshl_add_u64
+f83fdcb|2026-11-21|slopgobblercobbler|test(semantic): add interpreter tests for 64-bit scalar add and sub with carry
+f2cb85c|2026-11-21|slopgobblercobbler|test(semantic): add interpreter tests for v_bfi_b32 bitfield insert
+7c24cd1|2026-11-21|slopgobblercobbler|test(semantic): interpreter tests for scalar shifts s_lshl_b64, s_lshr_b64, s_ashr_i64
+4d402c7|2026-11-21|slopgobblercobbler|test(tools): test manifest directory hashing, creation, verification, and corruption detection
+6af5524|2026-11-21|Kam471|Docs: link issue 29 and the upstream rpf9-explorer fix
+85842cc|2026-11-21|slopgobblercobbler|test(tools): add test_shader_profile.py and opcode/register profiling in shader_profile.py
+eff14e0|2026-11-21|slopgobblercobbler|test(tools): test synthetic DXBC container scanning and boundary validation in shader_carve
+84776d4|2026-11-21|slopgobblercobbler|test(semantic): add perspective interpolation parameter tests (v_interp_p1_f32, v_interp_p2_f32)
+aa02d3b|2026-11-21|slopgobblercobbler|test(semantic): add interpreter tests for LDS basic allocation and workgroup bounds
+4db3b06|2026-11-21|slopgobblercobbler|test(tools): author test_bc_feature.py covering BC1-BC7 block compression and bit-depth
+3e6cde7|2026-11-21|andretuta|Tools: emit D3D12->Vulkan build metadata in spirv/index.json
+fb18e1f|2026-11-21|slopgobblercobbler|test(semantic): author semantic interpreter tests for s_barrier control
+50b52ae|2026-11-21|slopgobblercobbler|test(tools): add make_game preflight and toolchain tests
+1d8c13f|2026-11-21|Kam471|Docs: record the rpf9-explorer and SCARAB licence boundaries
+dd85598|2026-11-21|slopgobblercobbler|test(tools): add unit tests for make_game argument validation and stage flow
+29a4630|2026-11-21|slopgobblercobbler|test(tools): add test_fssm_unpack covering container carving, headers, alignment, and CRC bounds
+7f6e8f0|2026-11-21|Ryx|Runtime: D3D12 barriers and depth-stencil clears in the command-list IR
+f38de04|2026-11-21|Kam471|Docs: measured model recovery state and the rpf9-explorer fix
+8eff3c4|2026-11-21|slopgobblercobbler|test(tools): add unit tests for hashdict joaat, harvesting, and lookup
+f654ae7|2026-11-21|Kam471|Docs: measured imports of the 16 shipped Xbox modules
+c13ce17|2026-11-21|Lucas Motta|amd_swizzle: parse pattern cells instead of eval
+6582fa2|2026-11-21|Zmirzz|Make Vulkan shader checks aware of wave64 support
+e065f6f|2026-11-21|Kam471|Audio: readable AWC bank/stream manifest without exporting
+ad76917|2026-11-21|Kam471|Runtime: tests for the measured xmem shim ABI
+4f74958|2026-11-21|Kam471|Docs: audio guide, related projects, and a README truth pass
+793b06f|2026-11-21|NotRexed|docs: root-signature ABI facts from the console D3D12 libraries (register-based by default, memory-based opt-in, spill pointer)
+74799a9|2026-11-21|NotRexed|Update README.md
+58cb83d|2026-11-22|cxccxc|Report model decode failure reasons in rpf9dump
+8ecbfa9|2026-11-21|NotRexed|tests: run test_awc_opus's main() serially (--jobs 1); the pool can't pickle the privately loaded module
+f20ea6d|2026-11-21|NotRexed|Merge pull request #28 from Eremia Brinzoi Razvan Andrei
+0a9dc48|2026-11-21|NotRexed|Merge pull request #27 from Kam471
+6a56334|2026-11-21|NotRexed|Merge pull request #26 from Kam471
+c116ba0|2026-11-21|NotRexed|Merge pull request #24 from Kam471
+3c40000|2026-11-21|NotRexed|Merge pull request #23 from Kam471
+964fce8|2026-11-21|NotRexed|Merge pull request #22 from dependabot[bot]
+34d2e63|2026-11-21|Kam471|Runtime: match the measured Xbox xmem/d3d12_xs ABI
+770c496|2026-11-21|Eremia Brinzoi Razvan Andrei|Record full-view color clears and replay them on Vulkan
+0aa9840|2026-11-21|NotRexed|vk_pipeline_check: compile on --jobs threads, name compiles stuck past 60 s, resume from the cache (saved every 10 min), --start/--count, line-buffered failures
+9f79505|2026-11-21|Ewann|CI: leave pytest-based test files to the translator-tests job
+348494d|2026-11-21|Kam471|Docs: prior art and measured Xbox D3D12 ABI
+51b7933|2026-11-21|Kam471|Manifest: hash files with --jobs (parallel create/verify)
+056dafe|2026-11-21|dependabot[bot]|ci: bump the actions group with 3 updates
+dd637c9|2026-11-21|Kam471|Tests: AWC packaging (PCM16, float32, Ogg Opus) with synthetic banks
+718b714|2026-11-21|NotRexed|CI: run the stdlib test scripts without test_translate.py (it needs pytest; the translator-tests job runs it)
+4b251d1|2026-11-21|NotRexed|Merge pull request #15 from Mulkku
+ab4fb9c|2026-11-21|NotRexed|CI: fix the translator-tests / semantic-tests job merge
+af5dc7b|2026-11-21|NotRexed|Merge pull request #20 from ttd0x
+f967ab8|2026-11-21|NotRexed|Merge pull request #18 from ttd0x
+324a787|2026-11-21|NotRexed|Merge pull request #21 from Kam471
+d70f44b|2026-11-21|NotRexed|Merge pull request #1 from Ewann
+53d9039|2026-11-21|NotRexed|Merge pull request #14 from eIBart0
+6f486f7|2026-11-21|NotRexed|Merge pull request #13 from eIBart0
+0008612|2026-11-21|NotRexed|Merge pull request #2 from Nairo Martins
+797b134|2026-11-21|NotRexed|Merge pull request #9 from Adri├á
+3fe7b7f|2026-11-21|NotRexed|Merge pull request #8 from Adri├á
+660f252|2026-11-21|NotRexed|Merge pull request #11 from Adri├á
+ad27984|2026-11-21|NotRexed|Merge pull request #12 from Adri├á
+a984b9e|2026-11-21|NotRexed|Merge pull request #10 from Adri├á
+693cc4f|2026-11-21|NotRexed|Merge pull request #17 from Kam471
+966a409|2026-11-21|NotRexed|Merge pull request #19 from Kam471
+cb33aa7|2026-11-21|NotRexed|Merge pull request #6 from Adri├á
+8d19580|2026-11-21|NotRexed|Merge pull request #16 from Kam471
+b99b4c7|2026-11-21|NotRexed|Merge pull request #5 from Adri├á
+439887f|2026-11-21|Ewann|Tests: check computed values with a small SPIR-V interpreter
+a7a1c01|2026-11-21|Ewann|Translator: support op_sel on f16 VOP3 ops
+8a4b5d0|2026-11-21|Kam471|Docs: Xbox D3D12 -> Vulkan design and boot milestones
+695ae01|2026-11-21|ttd0x|tests: value-level regression tests for RDNA2 -> SPIR-V pixel shaders
+444ec6e|2026-11-21|Kam471|Audio: export AWC banks on --jobs processes
+f247d8a|2026-11-21|Kam471|Audio: gate --wav preflight on assets; add audio_wav regression test
+fe12b10|2026-11-21|Kam471|Audio: decode the Ogg Opus streams to PCM WAV on request
+ab0cf03|2026-11-21|ttd0x|fix(runtime): type D3D12 root signature forwarding
+e64ab9d|2026-11-21|Kam471|Shaders: fail when llvm-mc can't disassemble; accept a WSL command in LLVM_MC
+987e847|2026-11-21|Mulkku|Fix RDNA2 wave masks and flat inputs
+75d7934|2026-11-21|eIBart0|Translator: exact v_mul_legacy_f32, buffer num_records bounds checks, and wave ballot for s_bcnt1/s_ff1
+e72e13e|2026-11-21|eIBart0|Vulkan tests: fix AMD vk_store_test bindings, add subgroupSizeControl, add GPU test runner
+78e44e3|2026-11-21|Adri├á|Add an issue form for bug reports
+4b7e7d3|2026-11-21|Adri├á|Docs: add AGENTS.md for coding agents
+3ecfae3|2026-11-21|Adri├á|Add a pull request template from CONTRIBUTING.md
+233c59f|2026-11-21|Adri├á|CI: Dependabot for GitHub Actions and the rpf9-explorer submodule
+4a90f86|2026-11-21|Adri├á|CI: build the runtime with MSVC
+5a5dda9|2026-11-21|Adri├á|docs: shader translation now runs on --jobs processes
+9c09dee|2026-11-21|Adri├á|make_game: keep disasm/ inside the carve folder so the translator finds each shader's stage
+55fa905|2026-11-21|Adri├á|make_game: translate shaders on --jobs processes with rdna2spirv's --shard/--merge
+1d3b9bf|2026-11-21|Ewann|tests: synthetic ISG1/OSG1 and PSV0 DXBC for the gs_tri and ms_tri samples
+44021cb|2026-11-21|Ewann|Add pytest regression tests for the RDNA2 -> SPIR-V translator
+4146672|2026-11-21|Nairo Martins|Vulkan tools: fix builds on Linux
+56f023a|2026-11-20|NotRexed|Audio: AWC codec 2 = 32-bit float PCM -> float WAV; every stream converted
+0bf4e13|2026-11-20|NotRexed|Docs: audio conversion totals
+573cd13|2026-11-20|NotRexed|Translator: last 12 shaders (mesh LDS sizing, 3D load_mip, cmpswap 2D/3D, packed b16 shifts, sin_f16, add_nc_u16, vcc x2 loads); all 26,503 translate
+1da3c7d|2026-11-20|NotRexed|Audio: XMA2 streams via rpf9dump xma + ffmpeg (all 1,818 decode)
+bfba26f|2026-11-20|NotRexed|Audio: streamed AWC music channels to Ogg Opus
+a16d58e|2026-11-20|NotRexed|Audio: awc_opus.py repackages AWC Opus streams losslessly as Ogg Opus (end-trimmed); make_game runs it
+b4012a8|2026-11-20|NotRexed|Translator: --shard i/n and --merge for parallel corpus runs
+ec83153|2026-11-20|NotRexed|Translator: typed image_load (uint/sint views by T# FORMAT); GPU-checked
+250e9ff|2026-11-20|NotRexed|Build: GPU test tools and vk_pipeline_check in CMake; make_game pipelines stage saves a driver pipeline cache
+4b76bfb|2026-11-20|NotRexed|vk_pipeline_check: create every translated module (and every compute pipeline) on the real driver; optional pipeline cache
+cef55f0|2026-11-20|NotRexed|Translator: ray tracing (image_bvh(64)_intersect_ray emulated per RADV's software path), backward far branches
+21c8ae0|2026-11-20|NotRexed|Translator: exact wave64 lanes in CS/MS, per-lane constant EXEC halves, exec_hi writes; shader metadata index
+e8d9227|2026-11-20|NotRexed|Typed image stores GPU-checked (vk_store_test: float/uint/sint views via T# FORMAT)
+95447e0|2026-11-20|NotRexed|Translator: mesh and geometry shaders, SCC from scalar ALU, general buffer format stores, more CS ops
+0cd75fb|2026-11-20|NotRexed|Docs: restore output location note
+df13e7c|2026-11-20|NotRexed|Docs: drop stale rejection note
+5fa36e3|2026-11-20|NotRexed|Docs: corpus coverage - all 14,337 VS/PS and 88.9% of CS translate
+aad2da1|2026-11-20|NotRexed|Docs: correct model total (155,598)
+c87bf2b|2026-11-20|NotRexed|Assets: texture pools inside pack/*/data/ttdb; final export counts; drop one-off dump script
+0082ad5|2026-11-20|NotRexed|rpf9dump: stream manifests (levels.rpf ran out of memory); docs: wave64 and mesh-shader findings
+bd2dd1c|2026-11-20|NotRexed|Translator: compute shaders, LDS, wave-uniform branches, typed image stores; all VS/PS failure groups
+145a182|2026-11-20|NotRexed|Docs: shader coverage after SDWA fix (13,971 translated, 97.4% of VS/PS)
+1ba84a9|2026-11-20|NotRexed|README: clone URL
+0612563|2026-11-20|NotRexed|Logo: SlyDevil's VI icon from SteamGridDB
+3374a3d|2026-11-20|NotRexed|README logo
+53bee95|2026-11-20|NotRexed|Find the user's copy automatically; Build.bat; prerequisite and disk preflight
+4f1ff7d|2026-11-20|NotRexed|Replace local drive paths with placeholders
+f1260dc|2026-11-20|NotRexed|Shader translator: honour SDWA selects; add v_pk_fma_f16, int min3/max3, v_bfe_i32
+db0dc8b|2026-11-20|NotRexed|Initial commit: Leonida, build-it-yourself PC port groundwork

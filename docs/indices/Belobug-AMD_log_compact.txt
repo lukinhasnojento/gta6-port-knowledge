@@ -1,0 +1,751 @@
+﻿4f62c2a|2026-11-25|beloooo|The ambient light follows the sky by default
+b76a71b|2026-11-25|beloooo|README: the sky following, the clean-up passes, what is refused now
+6986a57|2026-11-25|beloooo|The program that activates the screen probes' rays is left out without rays
+7263339|2026-11-25|beloooo|A compile is not held endless as soon; a trace of what the clean-up drops
+ae75a66|2026-11-25|beloooo|Clean-up passes over translated shaders, from the fork at ba8697aa
+e48eb83|2026-11-25|beloooo|The ambient light follows the sky dome only, and holds it
+5d7bd16|2026-11-25|beloooo|A placed texture's view may hold its detail back with a least level of detail
+f1ba837|2026-11-25|beloooo|The texture census also tells what the pool and the host hold
+c28201f|2026-11-25|beloooo|Shaders of a refused pipeline are saved; a census of placed textures
+705a2d0|2026-11-25|beloooo|The ambient light follows the sky; a write alone does not rebuild the plan
+000ffdd|2026-11-25|beloooo|The bindless plan looks at direct slots only when a window died
+c3bd561|2026-11-25|beloooo|A least light for reflections, set from the ambient file
+50a9fa4|2026-11-25|beloooo|Show the frame rate and frame time in the picture
+a59f3e5|2026-11-25|beloooo|Title submissions return before the host GPU is done by default; README with today's measurements
+ff920f2|2026-11-25|beloooo|The views table is a read-write lock: every list recorder reads it for every descriptor it binds
+14545fa|2026-11-25|beloooo|Merge pull request #96 from Key-rs: thin LTO and one codegen unit for the release profile
+0434b3a|2026-11-25|beloooo|Title memory shown page by page is used in place through a view of ours on the same stretch of its section
+127830e|2026-11-25|beloooo|Merge pull request #34 from romainhedouin: A table made afresh is looked up by a quick hash and its record words are compared, instead of a SipHash over them (a collision now costs a copy, not wrong descriptors)
+a1ef2dd|2026-11-25|beloooo|Merge pull request #33 from romainhedouin: A draw keeps its root constants on the stack, its fresh-table slots in a bit set and the tables it made in a buffer the state reuses, so a draw no longer allocates for them (up to 2 + 1 + 1 allocations per draw)
+0145ca7|2026-11-25|beloooo|Merge pull request #24 from romainhedouin: A root constant buffer not 256-byte aligned is copied into list scratch once for the draws of a list that bind it, until a title copy or run intervenes (up to 64 KiB less copied per repeat)
+58655f9|2026-11-25|beloooo|Merge pull request #29 from romainhedouin: A range shaders write is declared once until the title next writes memory, and the submission finds the unique ranges with a set, so a list of thousands of draws no longer scans and re-snapshots the same ranges per step
+f53ae3d|2026-11-25|beloooo|Merge pull request #30 from romainhedouin: Buffer-to-texture copies take their staging bytes from the list's pooled scratch chunks instead of creating and mapping a committed upload buffer each, which is much cheaper
+684a9b5|2026-11-25|beloooo|Merge pull request #28 from romainhedouin: Clamps hoisted into one list bind their root signature, pipeline and budget once, not before every clamp (3 fewer D3D12 calls per indirect draw)
+ed273ef|2026-11-25|beloooo|Merge pull request #25 from romainhedouin: A pipeline a list binds again is not named, queried and kept again (one lookup by address instead of two QueryInterface calls, three locks and a name search per switch)
+13d6b73|2026-11-25|beloooo|Merge pull request #27 from romainhedouin: The host heap behind a descriptor heap is returned without taking the pending lock once it is made, since nothing is queued after that
+1edd766|2026-11-25|beloooo|Root views into sparse copies reach to the end of the title's buffer (64 MiB at most); sparse copies are logged with their host address
+40b8b9b|2026-11-25|beloooo|A title buffer registered again at the same place retires its old copy instead of dropping it at once
+9ff6beb|2026-11-25|beloooo|README: reflections, lifetimes, the ray passes' state after the runs with Radeon GPU Detective
+44dcd43|2026-11-25|beloooo|Reflections held to the ambient light; copies and retired objects outlive the lists that name them
+01aadd1|2026-11-25|beloooo|README: upstream's status section left out (it named upstream's test machine, an RX 6700 XT, and a warning that is upstream's), Windows 10 as reported
+f870d80|2026-11-25|beloooo|README: pull requests #45 and #18 merged, the ambient light's shading and tuning, what the hours of the day need, the ray passes' state
+a23d1b4|2026-11-25|Key|build: thin LTO and one codegen unit for the release profile
+cd9f78c|2026-11-25|beloooo|Ambient light: shaded in creases and under objects from the scene's depth (VICTORY_AMBIENT_SHADE), tuned live from the ambient file
+64170dd|2026-11-25|beloooo|Merge pull request #18 from PikPakPik/perf-copies-paralleles: sparse copies snapshot and copy back their tiles on several threads
+d6070f1|2026-11-25|beloooo|Merge pull request #45 from Arvi23/pr/integer-target-blend: no blending on integer render targets in host pipelines
+8629211|2026-11-25|pgm1207|GPU: no blending on integer render targets in host pipelines
+e6b6386|2026-11-25|romainhedouin|A draw keeps its root constants on the stack, its fresh-table slots in a bit set and the tables it made in a buffer the state reuses, so a draw no longer allocates for them (up to 2 + 1 + 1 allocations per draw)
+b41f3f3|2026-11-25|romainhedouin|A table made afresh is looked up by a quick hash and its record words are compared, instead of a SipHash over them (a collision now costs a copy, not wrong descriptors)
+b022d86|2026-11-25|romainhedouin|The host heap behind a descriptor heap is returned without taking the pending lock once it is made, since nothing is queued after that
+dd799aa|2026-11-25|romainhedouin|A range shaders write is declared once until the title next writes memory, and the submission finds the unique ranges with a set, so a list of thousands of draws no longer scans and re-snapshots the same ranges per step
+5e08eee|2026-11-25|romainhedouin|Buffer-to-texture copies take their staging bytes from the list's pooled scratch chunks instead of creating and mapping a committed upload buffer each, which is much cheaper
+ab5ece8|2026-11-25|romainhedouin|Clamps hoisted into one list bind their root signature, pipeline and budget once, not before every clamp (3 fewer D3D12 calls per indirect draw)
+4ffc476|2026-11-25|beloooo|The ambient light's colour can be set (VICTORY_AMBIENT_TINT), and level and colour tuned in a running game from a file (VICTORY_AMBIENT_FILE, diagnostics)
+92d353f|2026-11-25|romainhedouin|A pipeline a list binds again is not named, queried and kept again (one lookup by address instead of two QueryInterface calls, three locks and a name search per switch)
+84ea9c1|2026-11-25|romainhedouin|A root constant buffer not 256-byte aligned is copied into list scratch once for the draws of a list that bind it, until a title copy or run intervenes (up to 64 KiB less copied per repeat)
+cf57ca3|2026-11-25|beloooo|A queue held on a wait first finishes the unwaited submission, whose bottom-of-pipe writes the wait may be for (it stood two seconds a frame)
+bdecda3|2026-11-25|beloooo|An unwaited submission is finished when it is waited for (its shaders' writes, read-backs and bottom-of-pipe writes), so every submission of the title's may go unwaited; the next one's buffer copies are refreshed meanwhile (VICTORY_ASYNC_SUBMIT=1, off by default)
+9b89ec2|2026-11-25|beloooo|Only the title's submissions may return before the host GPU is done; ours wait (the present's capture buffer was freed with its copy pending: device removed at the first frame with VICTORY_ASYNC_SUBMIT=1)
+a0a4591|2026-11-25|PikPak|Sparse copies: snapshots and copy-back of shader-written tiles on several threads, ranges already declared in the submission skipped, tiles found under one lock
+71652a2|2026-11-25|beloooo|README: vehicles and distant trees work, the phone does not; memory and descriptor slots among the known problems
+788ea46|2026-11-25|beloooo|A search for free dynamic slots that failed is not walked again until a release, and at most eight times a frame (frames of seconds when the slots ran out)
+e11fb06|2026-11-25|beloooo|The tile sweep asks the system by region and outside the tiles' lock, once a frame, and logs what it took
+0a32e89|2026-11-25|beloooo|Tiles of title memory that is no longer there can be given back (VICTORY_SWEEP_TILES=2), so the copies stop growing; off by default
+f2cc100|2026-11-25|beloooo|The views are looked at once for a run of guarded blocks, and pages with one view make no list (less time under the guards' lock)
+579a8d9|2026-11-25|beloooo|Blocks the kernel is about to write stay writable for two seconds, at every view of their pages, and are reported written meanwhile (an asynchronous read into a block guarded again failed, and the title stopped)
+e7e6c00|2026-11-25|beloooo|Guarded blocks given back in a run that spans views are given back one by one when the run fails
+1c7231d|2026-11-25|beloooo|A view made read-only between its mapping and the runtime's notice is given back; a read-only view block no guard knows is opened on its fault
+ae90937|2026-11-25|beloooo|Every view of a guarded physical page is guarded with it: a write of the title's through another address is seen (parts of moving vehicles were left behind); VICTORY_ALWAYS_COPY modes (diagnostics)
+4cbe9d7|2026-11-25|beloooo|README: what this fork is, its state on one AMD machine, how it is run, credits; VICTORY_ALWAYS_COPY (diagnostics)
+cf62e1a|2026-11-25|beloooo|VICTORY_SHADER_SWAP replaces shader containers by files: the distant trees' variants without wind stand in for those with wind
+03629f3|2026-11-25|beloooo|A pixel's quad is read through quad reads, helper lanes included: a derivative taken by hand at a triangle's edge was the whole value (lines on car paint, glass and skin)
+76387c2|2026-11-25|beloooo|Hoisted clamps run one after another by default (mode 7): no flicker of mesh objects
+4f45ab8|2026-11-25|beloooo|The resolve's indirect diffuse light is replaced by a constant while rays do not run (magenta foliage, blocks of colours indoors); VICTORY_SHADER_PATCH changes a word of a shader's code (diagnostics)
+afca189|2026-11-25|beloooo|Work in progress: switches to find the flicker of hoisted clamps (modes 2 to 7, VICTORY_HOIST_FILE)
+918ab03|2026-11-25|beloooo|Clamps hoisted before a run of indirect draws by default (VICTORY_HOIST_CLAMPS=0 turns it off)
+ccab973|2026-11-25|beloooo|Clamps of a run of indirect draws go to a list before it (VICTORY_HOIST_CLAMPS=1); GPU time per kind of command; shader cache of another build
+f520772|2026-11-25|beloooo|A helper lane's v_readfirstlane reads its own value (upstream 0601955)
+7de1751|2026-11-25|beloooo|Diagnostics: a peeked view's bytes as a file; a test that detiles a peeked 256x16 texture
+236ecce|2026-11-25|beloooo|Diagnostics: a draw's root buffers, index buffer and whole indirect record in the pass text
+18e57db|2026-11-25|beloooo|Screen passes get pipeline workers and a wait budget of their own
+b1105d1|2026-11-24|beloooo|A host pipeline's state in its log line (diagnostics)
+2aad398|2026-11-24|beloooo|Twice the dynamic descriptor slots: tables of heavy frames no longer fit and their draws were dropped
+64e7c9f|2026-11-24|beloooo|Memory the runtime fills from disk counts as written for host copies of buffers
+fa042f6|2026-11-24|beloooo|Raw-viewed structured buffers keep their size query
+1503444|2026-11-24|beloooo|Buffer element counts by slot from the host's table, not a size query (AMD compiler crash)
+1ebf29d|2026-11-24|beloooo|A descriptor's size words are asked of the host only when read as data
+2823ba1|2026-11-24|beloooo|A first half of an interpolation other instructions read evaluates on its own
+c98fac0|2026-11-24|beloooo|Why a draw was not prepared, in the drop notes (diagnostics)
+ffedb7d|2026-11-24|beloooo|Tile snapshots reused from their own pool; a sampling profile and GPU wait counts (diagnostics)
+3afed01|2026-11-24|beloooo|victory-gpu: place large buffers in VRAM with Wave64 GPU page hashing
+df71546|2026-11-24|beloooo|Large descriptor tables made once for every length shaders read them to
+78028ad|2026-11-24|beloooo|Reads through root views stay inside the memory behind them
+72e748e|2026-11-24|beloooo|Rays: builders' writes ordered around atomics, their root buffers coherent
+4d63a09|2026-11-24|beloooo|Ambient light off by default: the title's own light only
+0603123|2026-11-24|beloooo|A least amount of indirect light where the title's ray-traced probes have none
+beffaea|2026-11-24|beloooo|Views the title wrote last are made at each submission; memory by address clamped
+7eb9545|2026-11-24|beloooo|Depth twins on by default: every material is lit
+9956958|2026-11-24|beloooo|Tiles of copies no longer given back (crash 120 frames into the world); view indices kept inside the heap
+a049b48|2026-11-24|beloooo|victory-gpu: make experimental async submit and GPU_UPLOAD opt-in for driver stability
+8202cfc|2026-11-24|beloooo|victory-gpu: zero-syscall VEH safe_copy, texture watch/backoff fast path, and batched copy timing
+eebcf07|2026-11-24|beloooo|victory-gpu: wait for in-flight async GPU work before signalling title fences
+c5948a7|2026-11-24|beloooo|victory-shader: keep parked lanes across v_movrels_b32 and gate BVH user-data unspill behind VICTORY_RAYS
+a873b24|2026-11-24|beloooo|victory-gpu: fix GPU use-after-free in texpool/Staging/HostHeap and coalesce VirtualProtect
+2bfe95a|2026-11-24|beloooo|victory-gpu: per-region guard epochs, faster bindless streaming, and async GPU submissions
+0506e78|2026-11-24|beloooo|victory-gpu: guard-epoch O(1) watch fast path, pooled sparse snapshots, parallel copy_back, and Resizable BAR GPU_UPLOAD
+520cfb9|2026-11-24|beloooo|victory-shader + victory-gpu: implement raw root UAVs (D3D12_ROOT_PARAMETER_TYPE_UAV)
+2b6adbb|2026-11-24|beloooo|victory-gpu: cache unmapped holes in watch::guard (fix 2.5GB/frame fault storm) and set 240 FPS default cap
+fa07481|2026-11-24|beloooo|victory-gpu: uncap frame pacing by default (optional VICTORY_FPS override)
+18e3849|2026-11-24|beloooo|victory-gpu: keep page-guarding active on sparse shadows and speed up copy_back with 64-bit dirty-span merge
+522d2bc|2026-11-24|beloooo|victory-shader: lower RDNA2 POPS/ROV fast path and ray-tracing CBV-as-data
+56fad1c|2026-11-24|beloooo|victory-shader: resolve wrexec SCC, high-half phi, fma_mixlo old-half, multi-mask lane_select, and pack2 spills
+d3a5f2d|2026-11-24|beloooo|Shaders: fix f16 inline constants/EXEC init/wave restore; add f64 ops, f16/f64 wave sums, and mesh MaskData::Host
+04b1a1d|2026-11-24|beloooo|Merge official main up to 8e79c80 (CI), before the per-lane phi and waterfall changes
+8044d21|2026-11-24|beloooo|Depth twins off unless VICTORY_DEPTH_TWINS=1; peeks read constant and buffer views
+e52106f|2026-11-24|beloooo|Depth textures written as images: twins the title's compute writes, copied into the depth after each dispatch
+36a19d1|2026-11-24|beloooo|Rays: dispatches that count threads, coherent builders, off unless VICTORY_RAYS=1
+d567f6b|2026-11-24|beloooo|WIP: rays: memory by address on the host, ray intersections
+e63e820|2026-11-24|beloooo|Shaders: memory by address (the ray tracing builders translate)
+2655edb|2026-11-24|beloooo|Shaders: lane permutations follow the console's lanes; pipelines: slow compiles are stopped by the memory they take
+5559960|2026-11-24|beloooo|Shaders: SCC as a number, lane permutations, one lane read of a section, packed half FMA, atomics with 16-bit addresses
+7df4a50|2026-11-24|beloooo|Shaders: ACCC containers (AMD's ACO compiler), descriptors made raw
+8b2c36f|2026-11-24|beloooo|Textures bindless slots begin to view are uploaded before the submission's lists
+4284939|2026-11-24|beloooo|Streamed textures: only the mips the title's view reads, padding ignored
+a549d67|2026-11-24|beloooo|Pipelines: full waiting again; empty title memory looked at each frame and when committed
+3a839d4|2026-11-24|beloooo|WIP: no tiles for unmapped title memory
+95e935d|2026-11-24|beloooo|Pipelines: workers lost to the driver's compiler are replaced, hung compiles stopped, no waiting for lost ones
+4e23b53|2026-11-24|beloooo|Textures uploaded again as soon as streaming rewrites them; VICTORY_TEXTURES=keep|always
+d88566e|2026-11-24|beloooo|Structured buffers of 16-byte multiples as raw views (AMD reads element 0 otherwise)
+fd3b8ce|2026-11-24|beloooo|GPU: scratch and tile memory given back, planes put together, memory counters
+8e79c80|2026-11-24|Marvis|CI: clippy and tests on pull requests and main
+c7a5f49|2026-11-24|Marvis|Merge pull request #93 from TG0000/perf/bcpack-bucket-lookup
+2005e35|2026-11-24|Marvis|Merge pull request #88 from AndyLatimer/fix/title-size-overflows
+c810215|2026-11-24|beloooo|Diagnostics: what placed buffers hold
+1b0c6b5|2026-11-24|beloooo|GPU: pipelines the compiler does not end are left out
+4c0409f|2026-11-24|beloooo|Diagnostics: snapshots within a frame, indirect arguments
+58fed37|2026-11-24|Marvis|Merge pull request #706 from Lyrnc/fix/cmp-lg-ordered
+a51bdfa|2026-11-24|Marvis|Merge pull request #696 from catminou4/devin/formats-doc-micro-link
+02f404e|2026-11-24|Marvis|Merge pull request #685 from catminou4/devin/constant-color-cfg-windows
+5cd7421|2026-11-24|Marvis|Merge pull request #681 from fuzeofficlal/fix/vertex-buffer-null-unbind
+8d23f07|2026-11-24|Marvis|Merge pull request #680 from EatCodeSleep2/fix/wine-staging-upload-128
+22700b9|2026-11-24|Marvis|Merge pull request #675 from lameloball2813-ui/docs/rustdoc-private-links
+6db02ea|2026-11-24|Marvis|Merge pull request #671 from fuzeofficlal/fix/copyresource-cpu-texture-source
+16bd577|2026-11-24|Marvis|Merge pull request #666 from lameloball2813-ui/fix/load-probe-target-dir
+b4b4110|2026-11-24|Marvis|Merge pull request #654 from SantannaCarlos/fix/uav-describe
+cf0bb43|2026-11-24|Marvis|Merge pull request #637 from AlanQiang0418/codex/gfx10-packed-inline-constants
+6f0a10a|2026-11-24|Marvis|Merge pull request #634 from SAitken91/shader/image-sample-o
+9a92ccf|2026-11-24|Marvis|Merge pull request #612 from KoLolX3/fix/phi-liveness-transitive
+204bdcc|2026-11-24|Marvis|Merge pull request #611 from AdvaitPalve11/fix/config-show-data-dir
+a4d7b16|2026-11-24|Marvis|Merge pull request #565 from SAitken91/shader/conservative-depth-position
+fd92558|2026-11-24|Marvis|Merge pull request #520 from Quat3rnion/victory-xasync-payload
+dd54de2|2026-11-24|Marvis|Merge pull request #448 from Dufftwt/fix/min-max-signed-zeros
+0ddbce8|2026-11-24|Marvis|Merge pull request #433 from r4tedx/tests/serialise-valu-gpu-tests
+ce42e77|2026-11-24|Marvis|Merge pull request #432 from Proudnoob4/fix/uninitialized-sgprs
+f0894c2|2026-11-24|Marvis|Merge pull request #429 from marquezinii/fix/xgamesave-documented-errors
+9f18eb4|2026-11-24|Marvis|Merge pull request #423 from pedrofort/shader-perm-no-int64
+a1ca60f|2026-11-24|beloooo|GPU: 32-bit targets read as shared-exponent colors through placed views
+dd273df|2026-11-24|Marvis|Merge pull request #419 from itsRevela/fix/swallow-keyboard-menu
+3c86238|2026-11-24|Marvis|Merge pull request #418 from enzoduarte1/gpu/half-subnormal-output
+2e4e280|2026-11-24|Marvis|Merge pull request #384 from LouisRiverstone/shader-cvt16-saturate
+faba64c|2026-11-24|Marvis|Merge pull request #382 from Dufftwt/fix/stencil-ref-shader-flag
+c30fc99|2026-11-24|Marvis|Merge pull request #381 from Dufftwt/fix/psv-sample-frequency
+ebf3615|2026-11-24|Marvis|Merge pull request #376 from LouisRiverstone/shader-cvt-norm-f16
+f67c50c|2026-11-24|Marvis|Merge pull request #372 from marquezinii/fix/capture-unorm16-formats
+40b7ed1|2026-11-24|Marvis|Merge pull request #371 from marquezinii/fix/pls-path-small-buffer
+63af596|2026-11-24|beloooo|GPU: copies keep what shaders wrote where the title changed nothing
+7374bfb|2026-11-24|Marvis|Merge pull request #365 from FIocker/gpu/publish-initialized-descriptor-heap
+42361b0|2026-11-24|Marvis|Merge pull request #356 from FIocker/gpu/stable-drop-rank
+2745589|2026-11-24|Marvis|Merge pull request #355 from enzoduarte1/clippy/clean-workspace-lints
+533b7e2|2026-11-24|Marvis|Merge pull request #341 from enzoduarte1/config/empty-test-titles-env
+edf64e2|2026-11-24|Marvis|Merge pull request #336 from hophaver/fix/dynamic-descriptor-exhaustion
+5a16e66|2026-11-24|Marvis|Merge pull request #313 from Abdellah-Khanani/loader-aligned-unwind
+93c0852|2026-11-24|Marvis|Merge pull request #285 from Dufftwt/fix/name-title-dll-that-fails-to-prepare
+db89843|2026-11-24|Marvis|Merge pull request #276 from Dufftwt/fix/s-ttracedata-imm-opcode
+89e1031|2026-11-24|Marvis|Merge pull request #260 from Dufftwt/fix/f32-to-half-rounding-carry
+88b6658|2026-11-24|Marvis|Merge pull request #249 from Maraco91/gpu/get-device-newer-levels
+56d5032|2026-11-24|Marvis|Merge pull request #245 from Dufftwt/fix/import-trap-in-crash-log
+9e44f38|2026-11-24|Marvis|Merge pull request #239 from Maraco91/xtaskqueue/terminate-ends-dispatch
+7c8cecb|2026-11-24|Marvis|Merge pull request #229 from Dufftwt/fix/gamertag-modern-suffix-empty
+27f9b76|2026-11-24|Marvis|Merge pull request #209 from Maraco91/xgamesave/empty-configuration-id
+6af0fae|2026-11-24|Marvis|Merge pull request #205 from asdaasdsaddf/fix/null-uav-dimension
+27c960b|2026-11-24|Marvis|Merge pull request #204 from Dufftwt/fix/crash-report-fault-memory
+3dd37e6|2026-11-24|Marvis|Merge pull request #198 from Dufftwt/fix/crash-report-instruction-bytes
+13ac0e6|2026-11-24|Marvis|Merge pull request #167 from Maraco91/xmem/zero-length-unmap
+025e6c5|2026-11-24|beloooo|Shaders: uniform descriptors joined in a former use
+787f665|2026-11-24|Marvis|Merge pull request #161 from lordon1a/fix/pipeline-staging-cleanup
+ba7d873|2026-11-24|Marvis|Merge pull request #152 from Makto94/fix/net-test-win10
+80c0d12|2026-11-24|Marvis|Merge pull request #140 from lordon1a/feat/cmp-class-f16
+1dc1b4f|2026-11-24|beloooo|Shaders: programs that trace rays, SCC joins
+3d77d5e|2026-11-24|Marvis|Merge pull request #117 from tedin7/vic-s-bitcmp-2
+c0fc5d3|2026-11-24|beloooo|Shaders: 64-bit sums in whole-wave sections
+b0328ba|2026-11-24|Marvis|Merge pull request #111 from Dufftwt/fix/narrow-paths-translated-twice
+0e990e4|2026-11-24|Marvis|Merge pull request #104 from TG0000/perf/bitcode-worklist-liveness
+ec476ff|2026-11-24|beloooo|Shaders: samplers a branch picks, per-lane descriptors joined in several blocks
+c2e7254|2026-11-24|Marvis|Merge pull request #87 from jeremygold02/codex/copy-stat-frame-window
+1bb4e98|2026-11-24|beloooo|Shaders: registers joined in a former use (masks, descriptors)
+1f858b0|2026-11-24|Marvis|Merge pull request #25 from artor410/packed-buffer-formats
+ac36741|2026-11-24|beloooo|GPU: unchanged textures looked at less often
+ebd990d|2026-11-24|beloooo|GPU: streamed textures without their largest mips as video memory fills up
+6db1472|2026-11-24|beloooo|GPU: unchanged tiles looked at less often
+6e2a299|2026-11-24|beloooo|GPU: texture and staging memory in slabs, parallel copies, plans whole once a frame
+3e39eac|2026-11-23|quaternion|fix(hle): return XAsync payloads for nonnegative results
+51f1627|2026-11-24|Lyrnc|Shaders: v_cmp_lg is ordered on AMD hosts too (olt | ogt, not fcmp one)
+6bca461|2026-11-24|beloooo|Shaders: tables in the code read through computed pointers; hair strands left out
+0f0c872|2026-11-23|Louis Faust|Docs: drop the private intra-doc link to MICRO in texture.rs
+4f53d6f|2026-11-24|fuzeofficial|GPU: upload CPU-written sources before texture region copies
+0fe13af|2026-11-24|beloooo|Shaders: rays hit nothing where the BVH cannot be read; GPU: sparse copies in 2 GiB chunks
+ab3eb92|2026-11-23|Louis Faust|Shaders: gate the constant_color test helper to Windows
+31ce30f|2026-11-24|fuzeofficial|GPU: unbind vertex buffer slots for null view arrays
+5864aab|2026-11-23|lameloball2813-ui|Docs: rustdoc builds the loader, GPU and shader crates without warnings
+cc4d18d|2026-11-24|beloooo|GPU: copies of title memory in sparse buffers
+af22e5d|2026-11-23|EatCodeSleep2|GPU: use the host upload path for texture staging copies
+0064c08|2026-11-24|fuzeofficial|GPU: upload CPU-written textures before CopyResource
+0723474|2026-11-24|beloooo|GPU: placed textures only where their pages are, cheaper refreshes and checks
+764fa19|2026-11-23|lameloball2813-ui|Loader tests: build the probe fixture under CARGO_TARGET_TMPDIR
+41b9207|2026-11-24|beloooo|GPU: the title's GPU heap shown whole and used in place; far less work per bindless submission
+d74558c|2026-11-24|Carlos Sant'Anna|GPU diagnostics: describe a buffer UAV by its range, not as uav None
+a0efd2d|2026-11-24|AlanQiang0418|Shaders: decode GFX10 packed inline constants by operand type
+260611a|2026-11-23|Saitken91|Shaders: image_sample_o with constant offsets
+85340e8|2026-11-24|beloooo|GPU: drop the memory probes (heaps of file mappings leak in the driver)
+3dd467c|2026-11-23|KoLolX3|Shaders: a phi that only another read phi consumes is live too
+25b0f88|2026-11-24|Dathinel|Test probe: compare direct and joined reads of a shader timestamp
+440589e|2026-11-24|beloooo|GPU: title memory used in place by the host GPU
+9a8908c|2026-11-24|Advait Palve|core: show data_dir in config and check its asset policy
+e4e4904|2026-11-24|beloooo|Shaders: lane permutations through LDS, SGPRs no one set; more time for bindless slots
+c3f8407|2026-11-24|beloooo|Shaders: whole-wave sections fetch inactive lanes through permlanex16 with fi
+0d2f6a6|2026-11-24|beloooo|Survive driver compiler crashes; diagnostics for target dumps on demand
+c249f02|2026-11-23|Saitken91|Shaders: centroid position with conservative depth
+e136a3f|2026-11-23|beloooo|Merge PR 413 (bindless heap materialization) into the local branch
+e0c582e|2026-11-23|beloooo|Revert the integration's old PR 185 (copies gigabytes per frame in the world)
+161dc7f|2026-11-23|beloooo|Diagnostics: keys and captures on demand; test fixes after the merge
+da7a7f8|2026-11-23|beloooo|Merge PR 414 (community integration) into the local branch
+126388e|2026-11-24|wrothgaril|GPU: keep bindless record-time work off other recording threads
+efc045e|2026-11-24|wrothgaril|GPU: bound bindless slot work while the world streams in
+4d34cef|2026-11-23|beloooo|GPU: cut a list at a wait that follows work
+d852b24|2026-11-23|beloooo|GPU: queues hold work back for the memory values lists wait for
+e8d3b64|2026-11-24|hophaver|GPU: the larger dynamic range only where the heap still fits
+7afcbff|2026-11-24|wrothgaril|GPU: make bindless plans incremental and throttle bindless texture uploads
+cc9e86d|2026-11-23|beloooo|GPU: count queue waits that are not met (diagnostics)
+fd1bf62|2026-11-23|beloooo|GPU: rectangle lists without vertex buffers through a generated geometry shader, indirect draws included
+bf84134|2026-11-24|Duff|Shaders: maximums and minimums order -0 below +0, as RDNA2 does
+1106f43|2026-11-24|r4.|Shader tests: run the VALU GPU tests one at a time
+f4438b3|2026-11-23|local|Shaders: reads of uninitialized SGPRs read as zero, as VGPRs do
+d3c29f1|2026-11-23|beloooo|GPU: name the pipeline and topology of dropped indirect draws (diagnostics)
+f0ee35e|2026-11-24|marquezini|XGameSave: a full host disk is E_GS_OUT_OF_LOCAL_STORAGE, not the quota
+d5704aa|2026-11-24|Pedro Fortunato|fix(shader): lower dynamic v_perm_b32 without INT64
+28c1b07|2026-11-24|marquezini|XGameSave: a read result into a small buffer is E_GS_PROVIDED_BUFFER_TOO_SMALL
+eb30a0d|2026-11-24|Enzo Souza Duarte|GPU: write half subnormals from f32 rectangle outputs
+bcc5f60|2026-11-24|wrothgaril|GPU: materialize bindless heap views and refresh only what changed
+d3917df|2026-11-24|Claude|Merge PR #342 (Shaders: lower partial-channel typed buffer stores) into the integration
+e510ba7|2026-11-23|beloooo|Shaders: image sizes read through sibling loads; quad derivatives for compute samples
+3287834|2026-11-24|Claude|Merge PR #333 (Shaders: native blobs must place root parameters, vertex inputs and thread ids in real registers) into the integration
+9a7c323|2026-11-24|Claude|Merge PR #332 (Shaders: lower partial-channel image_store) into the integration
+d9e7d31|2026-11-24|Claude|Merge PR #329 (Query record counts for structured buffers read only through their descriptor) into the integration
+ff8694a|2026-11-23|itsRevela|Window: keep Alt and F10 from freezing the title in menu mode
+e0a596a|2026-11-24|Claude|Merge PR #328 (Shaders: lower MSAA image_load and image_get_resinfo) into the integration
+4a8d5ec|2026-11-24|Claude|Merge PR #320 (Shaders: translate for the host's wave sizes; console flow for lane reads where lanes branch differently) into the integration
+efd7063|2026-11-24|Claude|Merge PR #317 (Shaders: support cube and MSAA dimensions in descriptor_data) into the integration
+eb962e1|2026-11-24|Claude|Merge PR #306 (Shader: fix biased 16-bit image samples and DXIL validator failures) into the integration
+e186586|2026-11-24|Claude|Merge PR #305 (Shaders: lower 64-bit image atomics) into the integration
+2af66ff|2026-11-23|Luiz Neves|Shaders: v_cvt_u16_f16 and v_cvt_i16_f16 saturate at 16 bits
+60303c3|2026-11-24|Claude|Merge PR #288 (Shaders: cap BDD memo table and bail out early on overflow) into the integration
+c8b1a03|2026-11-24|Claude|Merge PR #286 (Shaders: accept known D3D_MIN_PRECISION signature elements) into the integration
+302285d|2026-11-24|Claude|Merge PR #284 (Shaders: RDNA2's legacy multiply-adds are the fused ones) into the integration
+80c2eb9|2026-11-24|Claude|Shaders: drop a doubled blank line in the spill tests
+bd1110d|2026-11-24|Claude|Merge PR #276 (Shaders: s_ttracedata_imm is SOPP opcode 0x28, not 0x26) into the integration
+511a8bb|2026-11-24|Claude|Merge PR #269 (Shaders: scalars leave divergent loops and branches as the wave's last path left them) into the integration
+c2f60d6|2026-11-24|Duff|Shaders: a pixel shader writing SV_StencilRef declares StencilRef
+404d7fd|2026-11-24|Duff|Shaders: PSV0 says a pixel shader runs per sample when an input does
+ded334b|2026-11-23|Luiz Neves|Shaders: lower v_cvt_norm_i16_f16 and v_cvt_norm_u16_f16
+2f39239|2026-11-24|Claude|Merge PR #265 (Shaders: private (scratch) memory as a per-lane array) into the integration
+fa3efd1|2026-11-24|Claude|Merge PR #259 (Shaders: query a descriptor's level count only when word 3 is read) into the integration
+b02980d|2026-11-23|beloooo|Shaders: follow SGPRs spilled to VGPR lanes; diagnostics save untranslated shaders
+a62995f|2026-11-24|Claude|Take out upstream PRs that do not serve the 3D picture or stability
+0f369d6|2026-11-23|marquezini|Capture: R16G16B16A16_UNORM targets are integers, format 89 is 10:10:10:2
+a4e7f1d|2026-11-24|FIocker|GPU: replay pending descriptors before publishing the host heap
+536aa29|2026-11-23|SkippySteve|Shaders: a native vertex input must load into the VGPRs
+376b3cf|2026-11-23|marquezini|Storage: a path buffer too small fails with E_FAIL, as on Xbox
+efb3e3d|2026-11-24|FIocker|GPU diagnostics: order tied drop counts consistently
+40c127c|2026-11-23|Enzo Souza Duarte|Chore: clear two workspace Clippy errors
+85f90f1|2026-11-24|Claude|Revert PR #234 (xmem section views, overlapped DirectStorage) from the integration
+fabe8bc|2026-11-24|r4.|Shaders: validate the split and console-flow test programs
+6cdedbe|2026-11-24|Claude|Fix the three Windows tests that failed on integrate/all
+765712f|2026-11-23|SkippySteve|Shaders: a thread-id count field of 3 still means three components
+94a8607|2026-11-23|Tarcisio|Shaders: lower partial-channel typed buffer stores
+cc63aa2|2026-11-23|Enzo Souza Duarte|Config: ignore an empty VICTORY_TEST_TITLES
+3c81420|2026-11-24|hophaver|GPU: drop draws whose fresh tables cannot be made; 2^18 dynamic slots
+fb7d023|2026-11-23|SkippySteve|Shader tests: name the reason each native blob is refused
+808e921|2026-11-23|SkippySteve|Shaders: a native program's root parameters must sit in its SGPRs
+00fc4a7|2026-11-24|wrothgaril|gpu: materialize and refresh bindless ResourceDescriptorHeap views
+5cc9a7e|2026-11-24|r4.|Shaders: console flow joins masks that start as constants
+81ef5a3|2026-11-23|Tarcisio|Shaders: lower partial-channel image_store
+02564c5|2026-11-23|Peter Bonanni|Query record counts for structured buffers read only through their descriptor
+6d7602d|2026-11-23|Tarcisio|Shaders: lower MSAA image_load and image_get_resinfo
+f636134|2026-11-24|AntoninMichelq|Shaders: per-lane descriptors fetched with buffer_load over a table or heap
+ee1f683|2026-11-24|Claude|Merge fix/packed-half: keep #176's half_inputs and add its end-to-end test
+451f2c6|2026-11-24|r4.|Shaders: lane reads and writes where lanes branch differently run in the console flow
+4a3f8a8|2026-11-23|Tarcisio|Shaders: support cube and MSAA dimensions in descriptor_data
+0758d0a|2026-11-24|Claude|Merge fix/validate (DXIL validator fixes) into the integration
+2d43710|2026-11-24|Claude|Merge fix/firstlane (per-lane descriptors through phis) into the integration
+2cf1b15|2026-11-24|Claude|Merge integrate/shaders (upstream shader PRs) into the integration
+b5c6678|2026-11-24|Abdellah K.|loader: unwind a 16-byte aligned copy of the context
+eedd372|2026-11-23|beloooo|GPU: hold retired objects 120 frames; VICTORY_KEEP_RETIRED holds them for good
+038a36f|2026-11-23|Tarcisio|Shaders: lower 64-bit image atomics
+4d838a9|2026-11-24|Claude|Merge PR #25 (shader: decode the packed typed-buffer formats) into the integration
+cc39174|2026-11-24|Claude|Merge PR #226 (Shaders: test that an image read as float and used by an atomic is annotated twice) into the integration
+6b0f69d|2026-11-24|wrothgaril|Shader: fix biased 16-bit image samples and DXIL validator failures
+e4c7c8a|2026-11-24|Claude|Merge PR #200 (Shaders: lower v_div_scale_f32, v_div_fmas_f32 and v_div_fixup_f32) into the integration
+80a3884|2026-11-24|Claude|Merge PR #179 (Shaders: index interpolation halves on demand) into the integration
+8fda153|2026-11-24|Claude|Merge PR #169 (Shaders: tbuffer_load_format_d16 loads pack two 16-bit channels per VGPR) into the integration
+4576c50|2026-11-24|Claude|Merge PR #168 (Shaders: SCC of s_min, s_max and s_lshl1-4_add_u32 as the ISA sets it) into the integration
+703aa0e|2026-11-24|Claude|Merge PR #166 (Shaders: lower s_bitset{0,1}_b64, s_brev_b64 and s_bitreplicate_b64_b32) into the integration
+d81cfaf|2026-11-24|Claude|GPU: frame wait's diagnostics log no longer names a removed tick
+6148054|2026-11-24|Claude|Merge PR #162 (Shaders: lower v_sad_u8, v_sad_hi_u8, v_sad_u16, v_sad_u32 and v_msad_u8) into the integration
+7e480f6|2026-11-24|Claude|Shaders: refuse mesh outputs past the host's 32 KiB
+fec4d02|2026-11-24|Claude|Shaders: leave the array slice of a level-of-detail query undef
+c30b9c3|2026-11-24|Claude|Shaders: give each packed signature row one interpolation mode
+b3e1e23|2026-11-24|Claude|Shaders: declare the position centroid under conservative depth
+09a673b|2026-11-24|Claude|Merge PR #157 (Shaders: lower 24-bit mul_hi, saturating 16-bit packs, integer dot products and v_ldexp_f32) into the integration
+d48de53|2026-11-24|Claude|Reapply "Merge remote-tracking branch 'pr/12' into integrate/all"
+50a3f1e|2026-11-24|Claude|Reapply "Merge remote-tracking branch 'pr/150' into integrate/all"
+8302f6a|2026-11-24|Claude|Reapply "Merge remote-tracking branch 'pr/213' into integrate/all"
+56037e9|2026-11-24|Claude|Merge integrate/runtime into the integration
+d158fdb|2026-11-24|Claude|Merge PR #156 (Shaders: lower v_mul_hi_u32_u24 and v_mul_hi_i32_i24) into the integration
+176c766|2026-11-24|Yaekai|Shaders: cap BDD memo table and bail out early on overflow
+9356bee|2026-11-24|TheHoracio|Shaders: test a scalar counted in nested divergent loops
+b05196d|2026-11-24|Claude|Merge PR #154 (Shaders: use DXIL IsNaN for unordered/ordered and self float compares) into the integration
+42ad74e|2026-11-24|Claude|Shaders: trace per-lane descriptors through the phis that join them
+05d6d18|2026-11-24|Claude|Merge PR #145 (Shaders: read both ballot halves for wave32 host-wave mask ops) into the integration
+192a82d|2026-11-24|Claude|Merge PR #237 (HLE: offload async saves, reuse audio buffers, pin APU heap, and decouple input rumble/dialogs) into the integration
+9fe73ba|2026-11-23|artor410|shader: decode the packed typed-buffer formats
+6afdb58|2026-11-23|Tarcisio|Shaders: accept known D3D_MIN_PRECISION signature elements
+16ac1b3|2026-11-24|Claude|Merge PR #139 (Shaders: reuse SSA sums when tracing memory addresses) into the integration
+0bbfc31|2026-11-24|Claude|Merge PR #138 (Shaders: support image_sample_b with a16 and _cl LOD-clamp variants; gradient samples on cube images) into the integration
+5cd3c93|2026-11-24|Claude|Merge PR #234 (HLE: overlapped DirectStorage I/O and persistent xmem section views) into the integration
+393ca51|2026-11-24|Claude|Merge PR #180 (Shaders: twin descriptor loads and quad gradients for compute samples) into the integration
+2a000c1|2026-11-23|beloooo|GPU: root views in loose memory get a copy reaching past the view's start
+3b27a86|2026-11-24|Claude|Shaders: pair packed fp16 pixel inputs whose row2 repeats their row with the unlisted signature row
+9a9b3dd|2026-11-24|Claude|Merge PR #224 (HLE: report the host's commit headroom before the title starts) into the integration
+f653c1c|2026-11-24|Claude|Merge PR #216 (Loader & HLE: harden VEH crash handler, PE prep/exports/TLS, and allow oleaut32) into the integration
+d5d0970|2026-11-24|Claude|Merge PR #177 (Shader: key heap handles by element type too) into the integration
+d18cd26|2026-11-24|Claude|Shaders: write signature parts as the validator rebuilds them
+187472f|2026-11-24|Claude|Merge PR #193 (Shaders, GPU: add runtime stride table for structured buffers (#155)) into the integration
+964aa13|2026-11-24|Claude|Merge PR #182 (Files: `..` in a title path stops at the virtual drive's root) into the integration
+3febd4a|2026-11-24|Claude|Merge PR #132 (XTaskQueue: terminating a queue cancels its delayed callbacks too) into the integration
+fb0a797|2026-11-24|Claude|Merge PR #159 (GPU: an occlusion query around a draw the host skipped keeps its stand-in) into the integration
+7660587|2026-11-24|Claude|Merge PR #158 (GPU: the depth bounds test reaches the host) into the integration
+3a653c1|2026-11-24|Claude|Merge PR #24 (Run indirect mesh dispatches through indirect execution) into the integration
+43a4ce4|2026-11-24|Claude|Merge PR #242 (GPU: make ExecuteIndirect clamping countBuffer-aware and non-destructive) into the integration
+fa5189d|2026-11-24|Duff|Shaders: RDNA2's legacy multiply-adds are the fused ones
+774a50f|2026-11-23|beloooo|GPU: free host objects some frames after their last use
+e1dd56b|2026-11-24|Claude|Revert "Merge remote-tracking branch 'pr/12' into integrate/all"
+02744d5|2026-11-24|Claude|Merge PR #176 (Shaders: pair packed fp16 pixel inputs with unlisted signature rows) into the integration
+d0f97ef|2026-11-24|Claude|Revert "Merge remote-tracking branch 'pr/245' into integrate/all"
+5da8aaf|2026-11-24|Claude|Revert "Merge remote-tracking branch 'pr/213' into integrate/all"
+4270e8f|2026-11-24|Claude|Revert "Merge remote-tracking branch 'pr/204' into integrate/all"
+13d385d|2026-11-24|Claude|Revert "Merge remote-tracking branch 'pr/198' into integrate/all"
+fe72473|2026-11-24|Claude|Revert "Merge remote-tracking branch 'pr/207' into integrate/all"
+011e7de|2026-11-24|Claude|Revert "Merge remote-tracking branch 'pr/133' into integrate/all"
+9b32471|2026-11-24|Claude|Revert "Merge remote-tracking branch 'pr/26' into integrate/all"
+4eb9643|2026-11-24|Claude|Revert "Merge remote-tracking branch 'pr/87' into integrate/all"
+7dfc31b|2026-11-24|Claude|Revert "Merge remote-tracking branch 'pr/115' into integrate/all"
+b79192f|2026-11-24|Claude|Revert "Merge remote-tracking branch 'pr/244' into integrate/all"
+2645fcd|2026-11-24|Claude|Revert "Merge remote-tracking branch 'pr/150' into integrate/all"
+050b9ac|2026-11-24|Claude|Merge PR #134 (GPU: drop a draw whose table found no dynamic slots; more dynamic slots) into the integration
+cb0cc5f|2026-11-24|Claude|Merge PR #160 (Shaders: a16 packs an image's coordinates, not its derivatives) into the integration
+65d73aa|2026-11-24|Claude|Merge PR #230 (GPU: skip unchanged texture uploads via prelude copy recording) into the integration
+b67d15d|2026-11-24|TheHoracio|Shaders: scalars leave divergent loops and branches as the wave's last path left them
+cf5af29|2026-11-24|Claude|Merge PR #164 (Shaders: lower integer memory atomics and sub-dword buffer accesses) into the integration
+b3b27b8|2026-11-24|Claude|Merge PR #215 (GPU: reuse the read buffer for watched textures) into the integration
+5f29f3a|2026-11-24|Duff|Loader: a title DLL that fails to prepare is named in the error
+8d3b701|2026-11-24|Claude|Merge PR #143 (GPU: hash and detile unwatched textures from a kernel-read copy) into the integration
+e232d3d|2026-11-23|desp|Shaders: query a descriptor's level count only when word 3 is read
+b302c71|2026-11-24|Claude|Merge PR #206 (GPU: make a structured buffer view off its host copy's elements a raw view) into the integration
+44cbbb1|2026-11-24|Claude|Merge PR #185 (GPU: maintain shadow-buffer coherency for directly indexed SRVs) into the integration
+7463484|2026-11-24|r4.|Shaders: private (scratch) memory as a per-lane array
+b16b81f|2026-11-24|Claude|Merge PR #163 (Shaders: lower scalar and vector arithmetic and compares) into the integration
+f5e18de|2026-11-24|Claude|Merge PR #135 (GPU: age retired host resources in presented frames, not the title's 60 Hz clock) into the integration
+3f8a1de|2026-11-24|Claude|Merge PR #136 (Shader: support s_buffer descriptor/structured loads, dead descriptor phis, PSV0/ISG1 fixes, calculateLOD and image_gather4_l) into the integration
+4c9a922|2026-11-24|Nikita Romanovich|Shaders: handle both-huge operands (-1e35 / 1e35) in v_div_scale_f32
+717f322|2026-11-24|Maraco91|GPU: GetDevice and the DXGI device hand out the device at every level
+8986e24|2026-11-24|Claude|Merge remote-tracking branch 'pr/247' into integrate/all
+b94ba80|2026-11-24|Claude|Merge remote-tracking branch 'pr/245' into integrate/all
+b0d137b|2026-11-24|Claude|Merge remote-tracking branch 'pr/244' into integrate/all
+cfd7736|2026-11-24|Claude|Merge remote-tracking branch 'pr/240' into integrate/all
+13c88ff|2026-11-24|Claude|Merge remote-tracking branch 'pr/239' into integrate/all
+3b30332|2026-11-24|Claude|Merge remote-tracking branch 'pr/236' into integrate/all
+e6fc838|2026-11-24|Claude|Merge remote-tracking branch 'pr/229' into integrate/all
+beeffa2|2026-11-24|Claude|Merge remote-tracking branch 'pr/228' into integrate/all
+e94f123|2026-11-24|Claude|Merge remote-tracking branch 'pr/221' into integrate/all
+e60e6b7|2026-11-24|Claude|Merge remote-tracking branch 'pr/219' into integrate/all
+393b973|2026-11-24|Claude|Merge remote-tracking branch 'pr/218' into integrate/all
+1d6039c|2026-11-24|Claude|Merge remote-tracking branch 'pr/213' into integrate/all
+c7deab0|2026-11-24|Claude|Merge remote-tracking branch 'pr/209' into integrate/all
+c811c22|2026-11-24|Claude|Merge remote-tracking branch 'pr/207' into integrate/all
+edeb2e1|2026-11-24|Claude|Merge remote-tracking branch 'pr/205' into integrate/all
+9e47523|2026-11-24|Claude|Merge remote-tracking branch 'pr/204' into integrate/all
+aadd87a|2026-11-24|Claude|Merge remote-tracking branch 'pr/202' into integrate/all
+d8f3a6c|2026-11-24|Claude|Merge remote-tracking branch 'pr/198' into integrate/all
+7013788|2026-11-24|Claude|Merge remote-tracking branch 'pr/196' into integrate/all
+26292a1|2026-11-24|Claude|Merge remote-tracking branch 'pr/194' into integrate/all
+15649f6|2026-11-24|Claude|Merge remote-tracking branch 'pr/188' into integrate/all
+89f70c3|2026-11-24|Claude|Merge remote-tracking branch 'pr/186' into integrate/all
+9f4f3b4|2026-11-24|Claude|Merge remote-tracking branch 'pr/183' into integrate/all
+032e863|2026-11-24|Claude|Merge remote-tracking branch 'pr/174' into integrate/all
+2a2dc7d|2026-11-24|Claude|Merge remote-tracking branch 'pr/172' into integrate/all
+744707c|2026-11-24|Claude|Merge remote-tracking branch 'pr/171' into integrate/all
+6bb3375|2026-11-24|Claude|Merge remote-tracking branch 'pr/167' into integrate/all
+4456829|2026-11-24|Claude|Merge remote-tracking branch 'pr/161' into integrate/all
+d3a6297|2026-11-24|Claude|Merge remote-tracking branch 'pr/153' into integrate/all
+a05662a|2026-11-24|Claude|Merge remote-tracking branch 'pr/151' into integrate/all
+86fd469|2026-11-24|Claude|Merge remote-tracking branch 'pr/150' into integrate/all
+0a59417|2026-11-24|Claude|Merge remote-tracking branch 'pr/148' into integrate/all
+8227afa|2026-11-24|Claude|Merge remote-tracking branch 'pr/141' into integrate/all
+f71de9e|2026-11-24|Claude|Merge remote-tracking branch 'pr/140' into integrate/all
+97e170c|2026-11-24|Claude|Merge remote-tracking branch 'pr/137' into integrate/all
+ef71bc8|2026-11-24|Claude|Merge remote-tracking branch 'pr/133' into integrate/all
+231213c|2026-11-24|Claude|Merge remote-tracking branch 'pr/126' into integrate/all
+5eee1ae|2026-11-24|Claude|Merge remote-tracking branch 'pr/124' into integrate/all
+d803006|2026-11-24|Claude|Merge remote-tracking branch 'pr/115' into integrate/all
+be19d01|2026-11-24|Claude|Merge remote-tracking branch 'pr/111' into integrate/all
+3f11e34|2026-11-24|Claude|Merge remote-tracking branch 'pr/96' into integrate/all
+032fa09|2026-11-24|Claude|Merge remote-tracking branch 'pr/93' into integrate/all
+5397ded|2026-11-24|Claude|Merge remote-tracking branch 'pr/88' into integrate/all
+8570386|2026-11-24|Claude|Merge remote-tracking branch 'pr/87' into integrate/all
+fd4b2fc|2026-11-24|Claude|Merge remote-tracking branch 'pr/76' into integrate/all
+f5a81dd|2026-11-24|Claude|Merge remote-tracking branch 'pr/72' into integrate/all
+798e671|2026-11-24|Claude|Merge remote-tracking branch 'pr/31' into integrate/all
+431f0a4|2026-11-24|Claude|Merge remote-tracking branch 'pr/26' into integrate/all
+a75e290|2026-11-24|Claude|Merge remote-tracking branch 'pr/12' into integrate/all
+63df363|2026-11-24|Duff|GPU: a half-float rounding carry raises the exponent, not halves the value
+f0e7745|2026-11-24|Yaekai|Shaders: address PR #176 review comments on half_inputs
+01c3a5a|2026-11-24|Claude|Merge branch 'fix/spill' into test/nuit
+48b6a5c|2026-11-24|Claude|Shaders: leave SV_Barycentrics unpacked; tally the new descriptor and interpolation kinds
+5ff639e|2026-11-23|permadiego|Shaders: descriptor dwords at joins and images read only for their size
+db20637|2026-11-24|Nikita Romanovich|Shaders: fix v_div_scale_f32 src1/src2 order (den, num) and zero->NaN
+5cff000|2026-11-24|Maraco91|XAsync: a new block where a result was left behind begins a call
+7f95b87|2026-11-24|Manuel P├®rez|Shaders: share and serialize WARP host operations across threads
+79fb722|2026-11-24|Duff|Shaders: s_ttracedata_imm is SOPP opcode 0x28, not 0x26
+754f401|2026-11-23|beloooo|GPU: run on the fastest adapter and log it; name buffers in unordered views
+44ab54d|2026-11-24|Claude|Shaders: forward SGPRs reloaded from VGPR lanes as the spilled value
+1d5e1bf|2026-11-24|Claude|Merge the night's shader fixes into the test stack
+36d6a79|2026-11-24|Maraco91|XTaskQueue: terminating a queue ends a dispatch waiting on it
+c7d3f7d|2026-11-24|Claude|Shaders: pass the non-uniform flag in the descriptor size handle
+f78d243|2026-11-24|mich0206|Merge fork branch memory/world-load-commit (bb1d5d6)
+f435ff5|2026-11-24|Claude|Merge branch 'fix/waterfall' into stack/shader-fixes-on-d2a4bae
+34e0a70|2026-11-24|Claude|Merge branch 'fix/interp' into stack/shader-fixes-on-d2a4bae
+7265593|2026-11-24|r4.|Shaders: a16 packs an image's coordinates, not its derivatives
+01c900d|2026-11-24|Claude|Shaders: lower waterfall loops over per-lane descriptors in one pass
+9f77a9a|2026-11-23|quaternion|feat(hle): convolve DSP reverb streams on the host
+bb1d5d6|2026-11-24|Claude|Memory log: host textures and placed textures
+1f7f7d2|2026-11-24|wrothgaril|GPU: make ExecuteIndirect clamping countBuffer-aware and non-destructive
+203d9f3|2026-11-24|wrothgaril|HLE: offload async saves, reuse audio buffers, pin APU heap, and decouple input rumble/dialogs
+1343a0b|2026-11-24|mich0206|Merge fork branch memory/world-load-commit (e63b96a)
+d105484|2026-11-24|mich0206|Merge fork branch fix/gpu-hang-texture-lifetime (7dddec2)
+27d18d5|2026-11-24|mich0206|gpu: expand rectangle lists of indirect draws on the GPU
+5f670bb|2026-11-24|Duff|Loader: a trapped unimplemented import goes into the crash log
+a5af45f|2026-11-24|Nikita Romanovich|Shaders: fix v_mad_i64_i32 65-bit carry, refuse clamp, add -3*5+0 test
+97cdea7|2026-11-24|Claude|Shaders: interpolate with computed barycentrics from the vertex values
+7dddec2|2026-11-24|AntoninMichelq|GPU: free textures and slot resources only after running submissions
+727e884|2026-11-24|r4.|Shaders: DPP row masks name the console's rows in split programs
+5eac4fa|2026-11-24|r4.|Shaders: wave64 compute whose halves exchange lanes, on NVIDIA
+6ccf47b|2026-11-24|r4.|Shaders: run in-half wave64 compute as two 32-lane waves
+d2715a1|2026-11-24|r4.|Shaders: pick the test adapter by name
+f43117c|2026-11-24|r4.|Docs: plan for console wave64 compute on 32-lane hosts
+e63b96a|2026-11-24|Claude|Memory log: split private commit by title range and allocation size
+c153ae6|2026-11-24|wrothgaril|HLE: overlapped DirectStorage I/O and persistent xmem section views
+c7bd0dc|2026-11-24|Claude|Shaders: match a descriptor's size load through a rebuilt table pointer
+f0393dd|2026-11-24|Duff|XAsync: a canceled pending call's work touches neither freed state nor the next call
+6a96adb|2026-11-24|wrothgaril|GPU: skip unchanged texture uploads via prelude copy recording
+b87a968|2026-11-23|shadowhacker|HLE: report the host's commit headroom before the title starts
+acdcc41|2026-11-24|Manuel P├®rez|Loader: suspend a thread before reading its TEB; skip bad dump times
+e0865d2|2026-11-24|r4.|Shaders: translate for the host's wave sizes
+d46b078|2026-11-24|Duff|XUser: a gamertag without a suffix has an empty modern suffix
+e57e76a|2026-11-23|Diego|fix(pe): validate section raw data bounds
+200943e|2026-11-23|quaternion|feat(hle): support APU decode-convert and PCM rate conversion
+09ff84b|2026-11-24|Duff|XGameSave: a failed create leaves a null handle, as documented
+d38b73f|2026-11-24|mich0206|Merge fork branch stack/shader-fixes-on-d2a4bae (2a10e49)
+18b2716|2026-11-24|Andrea Casale|net: rustfmt the presence assertion
+afc4641|2026-11-24|Andrea Casale|net: skip newer-Windows-only exports in only_loopback_is_reachable
+79bb95e|2026-11-24|Manuel P├®rez|Merge remote-tracking branch 'origin/main' into pr31-merge
+2f3c4b2|2026-11-24|mich0206|shader-info: print the runtime's hash per container, filter with VICTORY_SHADER_HASHES; diag: name indirect rectangle-list drops
+2a10e49|2026-11-24|Claude|Merge branch 'fix/wholewave' into stack/shader-fixes-on-d2a4bae
+c263e28|2026-11-24|Claude|Merge fix/gather onto the shader stack
+0f7052e|2026-11-23|Travis Curtsinger|GPU: reuse the read buffer for watched textures
+a8bfe78|2026-11-24|Claude|Shaders: follow lane writes and scalar steps in whole-wave sections
+6269b57|2026-11-24|wrothgaril|Loader & HLE: harden VEH crash handler, PE prep/exports/TLS, and allow oleaut32
+c88b7ac|2026-11-24|Maraco91|Game saves: an empty configuration id is the default, not every configuration's folder
+80883b7|2026-11-24|Claude|Shaders: trace scalar addresses kept in phis
+4a3c9f1|2026-11-24|r4.|GPU: an occlusion query around a draw the host skipped keeps its stand-in
+56d3a5d|2026-11-24|r4.|GPU: occlusion, statistics and timestamp queries run on the host
+728a8e3|2026-11-24|r4.|GPU: the depth bounds test reaches the host
+11ca3ce|2026-11-24|Maraco91|Media: a share is refused however it is spelled
+6e01ea0|2026-11-23|gingertonik|Shaders: test that an image read as float and used by an atomic is annotated twice
+05981dd|2026-11-24|AnoHunted|GPU: make a structured buffer view off its host copy's elements a raw view
+cbb50b8|2026-11-23|julio|GPU: give null texture UAVs the title's view dimension
+7f00a62|2026-11-24|Duff|Crash reports: name the host's CPU and Windows build
+dcf6664|2026-11-23|ifBars|GPU: skip unmapped regions after a failed bulk read into host memory
+416ac79|2026-11-24|Claude|Shaders: read pixel barycentrics as values through SV_Barycentrics
+6cf5090|2026-11-23|beloooo|GPU: larger dynamic descriptor space; skip draws whose tables have no slots
+cf1f4d4|2026-11-24|mich0206|Merge fork branch memory/world-load-commit (687e7c9)
+3e8f2d3|2026-11-24|Nikita Romanovich|Shaders: lower v_div_scale_f32, v_div_fmas_f32 and v_div_fixup_f32
+42ac20c|2026-11-24|mich0206|diag: VICTORY_PRESENT_TARGET presents a chosen render target in place of the title's image
+687e7c9|2026-11-24|Claude|GPU: share a made copy of title memory instead of copying its bytes again
+c63262f|2026-11-24|Peter Bonanni|Merge upstream main into startup breakpoint diagnostics
+5e72a8f|2026-11-24|Claude|Log where the commit charge goes every 5 seconds
+3b039fd|2026-11-24|mich0206|translate: a selected descriptor source is no leaf either (stack fix for the shader-fixes branch)
+bccb4d9|2026-11-24|mich0206|Merge fork branch fix/gpu-hang-split-submissions (082e9a2)
+5df733f|2026-11-24|mich0206|Merge fork branch stack/shader-fixes-on-d2a4bae (9707daf)
+3390e47|2026-11-24|Duff|Crash reports: say what an access violation's address holds
+082e9a2|2026-11-24|AntoninMichelq|GPU: submit each host list on its own, wait once at the end
+3c0b609|2026-11-24|TG0000|GPU: specialize packed position and color rectangle expansion
+985d8d4|2026-11-24|Maraco91|Audio: an XMA loop's skip is of its first frame, not of its last
+9707daf|2026-11-24|Claude|Merge descriptor select tracing onto the shader stack
+538d2de|2026-11-24|Claude|Merge PR #109 onto the shader stack
+655d996|2026-11-24|Claude|Merge remote-tracking branch 'pr/120' into stack/approx
+8c19657|2026-11-24|Claude|Merge PR #116 onto the shader stack
+2a6e6a4|2026-11-24|TG0000|Loader: find TLS-array load candidates sixteen offsets at a time
+ca4e0f9|2026-11-24|Claude|Merge PR #92 onto the shader stack
+48dcdde|2026-11-24|Claude|Merge PR #91 onto the shader stack
+3c7d845|2026-11-24|Maraco91|Kernel: a title image's file name that fits clears the last error
+aa369b1|2026-11-24|Claude|Merge PR #78 onto the shader stack
+48b6f5c|2026-11-24|Claude|Merge PR #69 onto the shader stack
+4322b61|2026-11-24|Nikita Romanovich|Shaders, GPU: add runtime stride table for structured buffers (#155)
+ce9c884|2026-11-24|Claude|Merge remote-tracking branch 'fork/fix/sgpr-address-not-root' into stack/approx
+9a0c483|2026-11-24|Claude|Merge remote-tracking branch 'pr/20' into stack/approx
+d503d4c|2026-11-24|Claude|Merge remote-tracking branch 'pr/86' into stack/approx
+da79a33|2026-11-24|Claude|Merge remote-tracking branch 'pr/123' into stack/approx
+ac53b1b|2026-11-24|Claude|Merge remote-tracking branch 'pr/114' into stack/approx
+c1f430f|2026-11-24|Claude|Merge remote-tracking branch 'pr/122' into stack/approx
+8137ca0|2026-11-24|Claude|Merge remote-tracking branch 'pr/119' into stack/approx
+4225b64|2026-11-24|Claude|Merge remote-tracking branch 'pr/104' into stack/approx
+13e61a2|2026-11-24|Claude|Merge remote-tracking branch 'pr/117' into stack/approx
+fe602fd|2026-11-24|Claude|Merge remote-tracking branch 'pr/110' into stack/approx
+9520a19|2026-11-24|Claude|Merge remote-tracking branch 'pr/105' into stack/approx
+622dd40|2026-11-24|Claude|Merge remote-tracking branch 'pr/101' into stack/approx
+18f3165|2026-11-24|Claude|Merge remote-tracking branch 'pr/98' into stack/approx
+c8b6aa3|2026-11-24|Claude|Merge remote-tracking branch 'pr/73' into stack/approx
+6f475a9|2026-11-24|Claude|Merge remote-tracking branch 'pr/67' into stack/approx
+145faad|2026-11-24|Claude|Merge remote-tracking branch 'pr/35' into stack/approx
+0406c6c|2026-11-24|Claude|Merge remote-tracking branch 'pr/52' into stack/approx
+9f6e765|2026-11-24|Claude|Merge remote-tracking branch 'pr/48' into stack/approx
+c47b922|2026-11-24|Claude|Merge remote-tracking branch 'pr/55' into stack/approx
+e1d9f29|2026-11-24|Claude|Merge remote-tracking branch 'fork/fix/shader-gaps-combined' into stack/approx
+d4d1822|2026-11-24|AnoHunted|XMA: noise tests, and end a frame at its data instead of looping forever
+1827532|2026-11-24|Maraco91|Files: `..` in a title path stops at the virtual drive's root
+babe2db|2026-11-24|Duff|Crash reports: show the bytes of an instruction the CPU refused
+0434f3d|2026-11-24|mich0206|Merge fix/sgpr-address-not-root
+383bcb5|2026-11-24|mich0206|Merge origin/main (d2a4bae)
+83963c5|2026-11-23|asc|GPU: maintain shadow-buffer coherency for directly indexed SRVs
+d83f807|2026-11-24|mich0206|shader: read root parameters a program loads from the user-data spill table
+c78056c|2026-11-23|permadiego|Shaders: twin descriptor loads and quad gradients for compute samples
+3248948|2026-11-24|TG0000|Shaders: index interpolation halves on demand
+24d7c6c|2026-11-24|Claude|Shaders: trace descriptors chosen by s_cselect and s_cmov
+f5f4ad9|2026-11-24|TG0000|Shaders: benchmark the I/O raising pass
+a823dfb|2026-11-24|Yaekai|Shaders: pair packed fp16 pixel inputs with unlisted signature rows
+e55eb69|2026-11-24|Ortomanic|Shader: key heap handles by element type too
+810f442|2026-11-24|Manuel P├®rez|GPU: a frame wait takes its tick before it sleeps
+60b63b4|2026-11-24|Nikita Romanovich|Shaders: lower v_mad_u64_u32 and v_mad_i64_i32
+4eb0898|2026-11-24|TG0000|XMA: build the inverse transform's rotations once per subframe size
+02fcf72|2026-11-24|Maraco91|xmem: mapping or unmapping no pages changes nothing
+318082f|2026-11-23|Rareuncommon|Shaders: lower v_sad_u8, v_sad_hi_u8, v_sad_u16, v_sad_u32 and v_msad_u8
+04acee2|2026-11-24|Nikita Romanovich|Shaders: lower s_bitset{0,1}_b64, s_brev_b64 and s_bitreplicate_b64_b32
+800227d|2026-11-23|LaunchDoesntCode|Merge main: keep both test helpers in the lowering tests
+7d73e2b|2026-11-24|Codex|pipeline: remove staging files when cache publication fails
+13d984a|2026-11-24|9hvn9yt2vk-netizen|Shaders: lower 24-bit mul_hi, saturating 16-bit packs, integer dot products and v_ldexp_f32
+8142a94|2026-11-23|Rareuncommon|Shaders: lower v_mul_hi_u32_u24 and v_mul_hi_i32_i24
+d5fca30|2026-11-24|lordon1a|Shaders: use DXIL IsNaN for unordered/ordered and self float compares
+03a9a15|2026-11-24|TG0000|GPU: seek directly to private data on final release
+ff95daf|2026-11-23|LaunchDoesntCode|Shaders: test gradient samples on planes and cubes
+3bbc9ba|2026-11-24|r4.|Shaders: lower integer memory atomics and sub-dword buffer accesses
+ce1f138|2026-11-24|r4.|Shaders: lower scalar and vector arithmetic and compares
+be7369a|2026-11-24|r4.|Shaders: texel offsets, comparison and gather forms of image samples
+f96b197|2026-11-24|r4.|Shaders: an audit of which opcodes lower
+d2a4bae|2026-11-24|Marvis|Merge pull request #129 from Luislariosss/fix/duplicate-test-module
+d77408b|2026-11-23|itsyusei99|Link victory.exe with a 16 MiB default thread stack
+4c5545a|2026-11-24|mich0206|Merge fork branch fix/gpu-hang-with-pr32 (new tip)
+34a0823|2026-11-24|Kam471|Input: read DualSense pads over HID when XInput has none
+9dac364|2026-11-24|mpDom|GPU: age retired host resources in presented frames, not the title's 60 Hz clock
+d566e33|2026-11-24|AntoninMichelq|GPU: drop dispatches that write through a null unordered access view
+ecc4eb6|2026-11-24|7ROBE|Shaders: read both ballot halves for wave32 host-wave mask ops
+a038004|2026-11-23|Rareuncommon|Shaders: lower s_bcnt0_i32_b32/_b64, s_ff0_i32_b32/_b64 and s_flbit_i32_b64/_i64
+4f49a25|2026-11-24|mich0206|list: pass the host list by reference to texture upload in readbacks (stack fix: #67 on top of the PR32 branch)
+652f060|2026-11-24|Manuel P├®rez|GPU: hash and detile unwatched textures from a kernel-read copy
+8fb5435|2026-11-24|mich0206|Merge branch 'fix/shader-gaps-combined' of https://github.com/AntoninMichelq/VIctory into victory-stack
+2f6efc1|2026-11-24|TG0000|HLE: find an import's implementation by name, not by scanning every module
+6d8d197|2026-11-23|gmehru|GPU: drop a draw whose table found no dynamic slots; more dynamic slots
+a103937|2026-11-24|Duff|Shaders: tbuffer_load_format_d16 loads pack two 16-bit channels per VGPR
+c74bb8d|2026-11-24|mich0206|Merge fork branch memory/world-load-commit
+78b3463|2026-11-24|mich0206|Merge fork branch fix/gpu-hang-with-pr32
+8507e54|2026-11-24|mich0206|Merge branch 'pr20' into victory-stack
+1823079|2026-11-24|lordon1a|Shaders: lower v_cmp_class_f16 and v_cmpx_class_f16
+92f7127|2026-11-24|mich0206|Merge branch 'pr116' into victory-stack
+aa31d2b|2026-11-24|mich0206|Merge branch 'pr92' into victory-stack
+ae8967c|2026-11-24|Duff|Shaders: SCC of s_min, s_max and s_lshl1-4_add_u32 as the ISA sets it
+492e948|2026-11-23|LaunchDoesntCode|Shaders: gradient samples on cube images
+dea90cc|2026-11-24|Surya K|xmem: map a run of physical pages over several placeholders
+efe8a76|2026-11-24|mich0206|Merge branch 'pr91' into victory-stack
+a6731dd|2026-11-24|Claude|Merge branches 'fix/address-from-root-param' and 'fix/scalar-read-as-data' into combo-test
+2fd2a92|2026-11-24|mich0206|Merge branch 'pr78' into victory-stack
+1c5493f|2026-11-24|TG0000|Shaders: reuse SSA sums when tracing memory addresses
+0214df8|2026-11-24|Claude|Shaders: read scalar loads from root views and repeated descriptor loads as data
+8ae232f|2026-11-24|Dom|Shader: support s_buffer descriptor/structured loads, dead descriptor phis, PSV0/ISG1 fixes, calculateLOD and image_gather4_l
+d112889|2026-11-23|Dom|Shader: support a16 biased/clamped/compare image samples and conservative depth centroid position
+6cb36b7|2026-11-24|mpDom|GPU: expand dynamic descriptor slots, use typed nulls, and drop draws missing fresh tables or root views
+a78c323|2026-11-24|Dom|GPU: defer dropping replaced host resources across frames
+e136a55|2026-11-24|Claude|Reduce host memory committed while loading the world
+26556d2|2026-11-24|Claude|Shaders: trace addresses offset by root constants, s_addk_i32 and s_sub
+1c96414|2026-11-24|mich0206|Merge branch 'pr86' into victory-stack
+f352a03|2026-11-24|mich0206|Merge branch 'pr123' into victory-stack
+d29f899|2026-11-24|mich0206|Merge branch 'pr114' into victory-stack
+baa8c70|2026-11-24|mich0206|Merge branch 'pr122' into victory-stack
+5c7de66|2026-11-24|Claude|Shaders: index buffers built around root descriptors by their own stride
+45407c7|2026-11-24|mich0206|Merge branch 'pr119' into victory-stack
+6d45a26|2026-11-24|mich0206|Merge branch 'pr104' into victory-stack
+b98c32d|2026-11-24|mich0206|Merge branch 'pr89' into victory-stack
+09c970d|2026-11-24|mich0206|Merge branch 'pr117' into victory-stack
+50ab30c|2026-11-24|mich0206|Merge branch 'pr110' into victory-stack
+663953c|2026-11-24|mich0206|Merge branch 'pr105' into victory-stack
+908b511|2026-11-24|mich0206|Merge branch 'pr101' into victory-stack
+430b0a8|2026-11-24|mich0206|Merge branch 'pr98' into victory-stack
+b658e5c|2026-11-24|mich0206|Merge branch 'pr73' into victory-stack
+bd3b654|2026-11-24|mich0206|Merge branch 'pr69' into victory-stack
+6692d75|2026-11-24|mich0206|Merge branch 'pr67' into victory-stack
+72af95d|2026-11-24|mich0206|Merge branch 'pr35' into victory-stack
+9b46bde|2026-11-24|mich0206|Merge branch 'pr52' into victory-stack
+f853f34|2026-11-24|mich0206|Merge branch 'pr48' into victory-stack
+3a5786d|2026-11-24|mich0206|Merge branch 'pr55' into victory-stack
+6b867e6|2026-11-24|AntoninMichelq|GPU: keep the indirect budget from wrapping; drop dispatches past the group limit
+cf42807|2026-11-24|Manuel P├®rez|GPU: pool detached host lists and preserve pending list lifetimes
+a8dcf2f|2026-11-24|Manuel P├®rez|GPU: wake fence events and held queues on direct memory writes
+40d8ca5|2026-11-24|Manuel P├®rez|GPU: order CopyPageMappingsBatchX behind a queue's timeline
+b85061f|2026-11-24|Manuel P├®rez|GPU: order Present behind a queue's timeline
+f1ffee9|2026-11-24|Manuel P├®rez|GPU: hold a queue's work back behind a fence wait
+e969948|2026-11-23|Manuel P├®rez|Fences: block on a null-event wait, wake waits on bottom-of-pipe writes
+7102a49|2026-11-23|LUIS LARIOS|GPU: rename the second test module in host.rs so the tests compile
+219e3ce|2026-11-23|Jeremy Goldberg|fix(gpu): preserve pixels outside texture readback regions
+da580e4|2026-11-23|Henrique Bueno|gpu: packed 16-bit render targets are R8G8B8A8 where the GPU cannot render to them
+01ae55a|2026-11-24|Duff|Files: a title run by its file name alone gets its own folder as G:
+9aef3d9|2026-11-24|Marvis|Merge pull request #51 from BaggyALPHA/fix/windows-commit-limit-diagnostic
+8a8a38d|2026-11-24|Marvis|Merge pull request #53 from a55uka/fix/wine-physical-pages
+4c0bb89|2026-11-24|Marvis|Merge pull request #41 from LaunchDoesntCode/codex/proton-warp-safety
+91e9bc9|2026-11-24|Marvis|Merge pull request #46 from 9hvn9yt2vk-netizen/shader-loop-limit
+b9ff219|2026-11-24|Duff|XTaskQueue: terminating a queue cancels its delayed callbacks too
+e5b7159|2026-11-24|TG0000|Shaders: walk a lane-mask diagram once in vars and given
+6168fc6|2026-11-24|Marvis|Merge pull request #70 from FIocker/gpu/diagnostic-pipeline-filter
+0322732|2026-11-24|lordon1a|Merge remote-tracking branch 'origin/main' into fix/med3-dxil-isnan
+97464ba|2026-11-24|Marvis|Merge pull request #61 from TG0000/hle/physical-page-runs
+93bc978|2026-11-24|Marvis|Merge pull request #60 from ifBars/perf/reuse-texture-row-spans
+fa5ef73|2026-11-24|Marvis|Merge pull request #79 from TG0000/perf/texture-check-once-per-submission
+0f35dfc|2026-11-24|Marvis|Merge pull request #66 from AndyLatimer/fix/gpu-rect-element-past-stride
+fc0c4dd|2026-11-24|Marvis|Merge pull request #77 from Exorion1er/fix/guard-fault-race
+828e3cd|2026-11-24|9hvn9yt2vk-netizen|GPU: refuse raw buffer views that do not start on 16 bytes
+095e44a|2026-11-23|ifBars|Query allocation type directly when guarding mapped memory
+683278b|2026-11-24|Marvis|Merge pull request #36 from jeremygold02/codex/root-parameter-fixture
+cb40cdc|2026-11-24|tedin7|Shaders: lower s_absdiff_i32, s_sext_i32_i8/i16 and s_pack_ll/lh/hh_b32_b16
+a6deb46|2026-11-24|TG0000|GPU: reuse unchanged page checks across shadow copy-back ranges
+eda38aa|2026-11-24|Marvis|Merge pull request #57 from Yaekai/fix/null-buffer-views
+3c86053|2026-11-24|tedin7|Shaders: lower s_bitcmp0/1_b32 and s_bitcmp0/1_b64
+237f2e8|2026-11-24|Marvis|Merge pull request #37 from alessiodeia/fix/valu-med3-fract-trig
+b1bdd89|2026-11-23|Bloxive|Census: report directory traversal failures
+0b729de|2026-11-24|Manuel P├®rez|XAsync: run a failed call's cleanup without the completion lock
+4926f72|2026-11-24|Marvis|Merge pull request #80 from tedin7/vic-far-jump-backward
+46610eb|2026-11-24|Marvis|Merge pull request #81 from tedin7/vic-scalar-carry
+d01b170|2026-11-24|Duff|XAsync: end the call that finished, not whatever call the block holds now
+8504777|2026-11-23|diego|Shaders: byte and halfword LDS reads and writes
+a5837b8|2026-11-24|lordon1a|Shaders: use DXIL IsNaN in med3 so Intel Xe does not fold fcmp uno
+4a8a058|2026-11-24|Marvis|Merge pull request #58 from Yaekai/feat/shader-xnor-swap
+8fe0b74|2026-11-24|Marvis|Merge pull request #56 from 9hvn9yt2vk-netizen/find-input-underflow
+a6888a6|2026-11-24|Marvis|Merge pull request #43 from 9hvn9yt2vk-netizen/shader-mask-cycle
+062ad14|2026-11-24|Marvis|Merge pull request #50 from Vanthys/fix/format-offset-overflow
+bf6c557|2026-11-24|Marvis|Merge pull request #75 from tedin7/vic-pe-export-holes
+cc51927|2026-11-24|Marvis|Merge pull request #30 from AndyLatimer/fix/pe-rva-offset-overflow
+cbd71a9|2026-11-24|Marvis|Merge pull request #38 from raffclar/emulation-tests
+24480a7|2026-11-24|TG0000|Shaders: find the written instructions with a worklist, not repeated passes
+c78ccf7|2026-11-24|Yaekai|Shaders: lower sub-dword LDS reads and writes
+27e6442|2026-11-24|Marvis|Merge pull request #28 from ifBars/fix/windows10-import-directory
+27b530e|2026-11-24|Duff|Files: send rewritten narrow paths to the host, not to our wide wrappers
+743b1e2|2026-11-24|tedin7|Shaders: rebuild a cube image descriptor for code that reads its dwords
+7d33c46|2026-11-24|Marvis|Merge pull request #45 from HenriqueSBueno/clwb
+f468457|2026-11-24|tedin7|fix: model v_permlane16_b32 in whole-wave sections
+ba42db6|2026-11-24|tedin7|xma: start the frame after a continuation at the next packet that has frames
+df40f86|2026-11-23|shadowhacker|GPU: report the view heap sizes when the host caps one
+6e6d3fc|2026-11-24|tedin7|fix: accept shader loops that branch to the first instruction
+3e982f7|2026-11-24|TG0000|BCPack: find a slot's bucket from a window table
+4f2d5db|2026-11-24|tedin7|shader: lower v_add_nc_i32, v_sub_nc_i32, v_mul_lo_i32 and v_add_nc_i16, v_sub_nc_i16
+0e5953d|2026-11-23|ifBars|Merge branch 'main' into fix/windows10-import-directory
+38ae55d|2026-11-24|FIocker|Keep the diagnostic skip outside indirect argument validation
+ed5f98f|2026-11-24|tedin7|Shaders: lower s_cmov_b32, s_cmov_b64 and s_cmovk_i32
+b5c38fa|2026-11-24|alessiodeia|GPU: skip texture-to-buffer readback when host texel size differs
+ec0d155|2026-11-24|Manuel P├®rez|Watch: saturate the end of announced writes and remaps
+257d8bb|2026-11-24|Manuel P├®rez|Audio: reduce the title's XMA read advance before adding it
+b304b7d|2026-11-23|Jeremy Goldberg|fix(gpu): average copy statistics over the full reporting interval
+a80eb17|2026-11-24|Faultz|GPU: cap a sampler heap past the host's limit instead of losing it
+a2f5f43|2026-11-24|tedin7|Shaders: set SCC from the carry of s_addc_u32 and s_subb_u32
+c963b71|2026-11-24|tedin7|fix: read a far jump's offset as signed so backward far jumps decode
+73d776b|2026-11-24|TG0000|GPU: check a sampled texture once per submission, not once per list
+e6faad2|2026-11-24|tedin7|Shaders: inline float constants as f16 in v_fma_mix and v_pack_b32_f16
+4c1766c|2026-11-24|Exorion|GPU: keep a guarded block's write fault from being declined in a race
+9a5cbbe|2026-11-24|tedin7|fix: skip unused export address slots instead of reporting them at RVA 0
+c4e915f|2026-11-23|Henrique Bueno|loader: a clwb write-back loop runs in one exception
+6c8af09|2026-11-24|Yaekai|Shaders: support image_sample_b with a16 and _cl LOD-clamp variants
+521cecc|2026-11-24|FIocker|GPU: retry pipeline cache saves after write failures
+0eca412|2026-11-24|FIocker|GPU diagnostics: skip pipelines by shader hash
+18f3937|2026-11-24|flapwarp78|Translate compute selects with numeric lane masks
+56f1d41|2026-11-23|meower|GPU: create host textures without the uses the host refuses
+78b8404|2026-11-23|meower|xmem: commit physical-page sections whole under Wine
+25a3e95|2026-11-23|ifBars|Keep an empty import descriptor so Windows assigns static TLS
+f3c7f0f|2026-11-24|Manuel P├®rez|GPU: leave rectangle vertex components past the stride alone
+56f0072|2026-11-24|flapwarp78|Translate 64-bit texture atomics and specialize proven shader branches
+1ac256c|2026-11-24|alessiodeia|GPU: implement CopyTextureRegion texture-to-buffer readbacks
+35b054e|2026-11-24|Marvis|GPU: pipelines off the render thread and cached; indirect execution on
+fc807b6|2026-11-23|ifBars|Reuse texture row spans when converting Xbox pixel layouts
+4e94c2b|2026-11-24|TG0000|xmem: write DirectStorage page destinations one view per run
+0c56091|2026-11-24|Yaekai|Shaders: lower v_xnor_b32 and v_swap_b32
+071487f|2026-11-24|Yaekai|GPU: emit null buffer SRV/UAV when descriptor names a buffer with null resource
+5fbea47|2026-11-24|9hvn9yt2vk-netizen|shader: look up an input channel without underflowing
+4da3d63|2026-11-23|ifBars|Clear the IAT directory alongside the import directory
+2e5001c|2026-11-24|alessiodeia|shader: keep fract(NaN) as NaN on NVIDIA and add synthetic GPU VALU tests
+628b95d|2026-11-24|Manuel P├®rez|GPU: hold SHADER_HEAPS across descriptor mirror and check query offsets
+ef22723|2026-11-24|Manuel P├®rez|PE: remove leftover dbg_tls test and check layout offsets
+7e42fef|2026-11-23|BaggyALPHA|Report Windows commit-limit failures in crashes.log
+4cca767|2026-11-24|Vanthys|Reject empty XMA test fixture directories
+e158d95|2026-11-24|Vanthys|Guard texture and XMA offsets against overflow
+15b0091|2026-11-24|9hvn9yt2vk-netizen|shader: VICTORY_SHADER_LOOP_LIMIT to find what makes world frames slow
+71cfe84|2026-11-23|Henrique Bueno|loader: emulate clwb on Intel CPUs before Ice Lake
+ea24ea1|2026-11-24|9hvn9yt2vk-netizen|shader: a lane mask that needs its own value fails instead of overflowing the stack
+0b607b1|2026-11-23|LaunchDoesntCode|GPU: verify WARP adapter is software before using it
+f00caec|2026-11-23|raffclar|Loader: test 64-bit extrq at index 0, not in AMD's undefined range
+97c78d1|2026-11-24|Marvis|Merge pull request #21 from Nostyxx/fix/nvidia-view-heap-cap
+d222b87|2026-11-24|Marvis|Merge pull request #19 from raffclar/exit-watchdog
+0c91c03|2026-11-23|raffclar|Loader: test the AMD-only instruction emulation on any CPU
+9e04419|2026-11-24|Marvis|Merge pull request #15 from 9hvn9yt2vk-netizen/fix-texture-extents
+29b558c|2026-11-23|Jeremy Goldberg|test(gpu): use the SDK root parameter in the serializer fixture
+d85097a|2026-11-23|ifBars|Keep an empty import descriptor for the Windows 10 loader
+b3ecede|2026-11-24|Manuel P├®rez|HLE: leave a released-out COM count at zero
+e98d3ca|2026-11-23|Manuel P├®rez|PE: checked file offset in rva_to_file_offset
+1dd7afd|2026-11-24|Marvis|Merge pull request #14 from 9hvn9yt2vk-netizen/fix-xma-zero-length
+4b76fff|2026-11-23|artor410|Run indirect mesh dispatches through indirect execution
+886d15b|2026-11-23|Sunkiller-qc|Input: pass the trigger motor levels on to the host
+3827767|2026-11-24|Nostyxx|GPU: make tables past a capped host view heap afresh
+a68ac08|2026-11-24|Ryx|Keep SRV descriptor tables stable until command list reset
+8c26061|2026-11-24|Marvis|GPU: the world stays up; indirect execution behind a switch
+0b499d7|2026-11-24|Marvis|Shaders: sine and cosine in turns, exact zeros at half and quarter turns
+36eb0b4|2026-11-23|Marvis|Shaders: med3 with NaN, fract below 1.0, signed bit fields past bit 31
+e6a2c54|2026-11-24|9hvn9yt2vk-netizen|texture: refuse extents past 16384 texels instead of overflowing
+d348b9a|2026-11-24|Marvis|Merge pull request #10 from ismailchaka1/emulate-amd-only-instructions
+d4ed2de|2026-11-23|raffclar|Process exit: start the watchdog before other threads end
+005ad49|2026-11-24|9hvn9yt2vk-netizen|xma: stop at a zero-length frame instead of looping forever
+a3acc87|2026-11-23|Peter Bonanni|Check the required startup archive before executing Series 1.0.2.1
+f5cb5ff|2026-11-23|Peter Bonanni|Capture startup breakpoint diagnostics
+934e67f|2026-11-23|ismailchaka1|loader: emulate AMD-only instructions on Intel CPUs
+e8f3b1c|2026-11-23|Marvis|Merge pull request #4 from Exorion1er/fix/tls-callbacks-reloc
+c21208c|2026-11-23|Exorion|Loader: keep the cleared TLS callback pointer out of base relocations
+015d45b|2026-11-23|Marvis|README: status, subsystem table, how to run, debugging switches
+2849477|2026-11-23|Marvis|Run Grand Theft Auto VI from first boot into the world
+bc30709|2026-11-23|Marvis|Thread notices: leave out threads Rust's std starts
+4b25269|2026-11-23|Marvis|Thread notices for title images
+d032b8a|2026-11-23|Marvis|Title DLLs at run time: find by name, map on first LoadLibrary
+754619f|2026-11-23|Marvis|Run Minecraft: runtime HLE, D3D12.X device on the host GPU, shader IR
+12caefe|2026-11-23|Marvis|GFX10 operand fields and SP3 text; FSSM wave size
+f4504f6|2026-11-23|Marvis|Initial commit

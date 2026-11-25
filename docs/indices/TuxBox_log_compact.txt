@@ -1,0 +1,592 @@
+﻿bd847b5|2026-11-25|brcly|launcher: pin GE-Proton11-14 as the default Proton
+1b0dfaa|2026-11-25|brcly|d3d12 checks: present again while waiting for a frame to reach the screen
+e9c8fb6|2026-11-25|brcly|runtime shaders: optimise cs_6_6 without lifetime markers
+1b32189|2026-11-25|brcly|Merge pull request #190 from smith-3/lanes-gpu-indirect
+552e099|2026-11-25|brcly|Merge pull request #189 from gtb-sbe/evidence-nixos-rx9060xt
+b5ed526|2026-11-25|brcly|Merge pull request #188 from Vladimir-Human/d3d12/castable-packed-uavs
+f489d3c|2026-11-25|brcly|Merge pull request #184 from DrArroway/fix/radv-inline-descriptor-stride
+4ba74bc|2026-11-25|brcly|Merge pull request #187 from smith-3/codex/lanes-direct-copy-regression
+3e6deed|2026-11-25|brcly|Merge pull request #186 from Vladimir-Human/d3d12/fix-memory-wait-stalls
+22a0cdf|2026-11-25|gtb-sbe|Merge branch 'brcly:main' into evidence-rx9060xt
+aa30d03|2026-11-25|gtb-sbe|evidence: NixOS + RX 9060 XT guest check results
+0ad09b1|2026-11-25|Manuel Smith Lazarte Alcocer|lanes: check dispatch arguments written by the GPU
+91a9de2|2026-11-25|Vladimir|d3d12: fix audit findings for R9G9B9E5 UAV interop, native gating, and buffer UAVs
+04e267c|2026-11-25|Manuel Smith Lazarte Alcocer|lanes: include direct-copy-wait in GPU verification
+6bae710|2026-11-25|Vladimir|d3d12: resolve GPU memory-wait stalls across all comparisons, queue types, and submissions
+78319b5|2026-11-25|Manuel Smith Lazarte Alcocer|lanes: reproduce a direct queue label wait after CopyBufferRegion
+4cb6a4a|2026-11-25|brcly|Merge pull request #183 from smith-3/codex/lanes-post-dispatch-wait
+cda1912|2026-11-25|Vladimir|d3d12: support R9G9B9E5_SHAREDEXP UAV textures via R32_UINT castable formats
+1f40ee4|2026-11-25|brcly|Merge pull request #176 from Vladimir-Human/shader/exec-group-wave32-intrinsics
+a9b9715|2026-11-25|brcly|Merge pull request #174 from JeffreyBytes/feat/omitted-static-samplers
+82d3467|2026-11-25|brcly|Merge pull request #173 from JeffreyBytes/feat/vertex-table-parameter
+cd70848|2026-11-25|brcly|Merge pull request #177 from 3kynox/pr-mesh-pixel-layout
+fde44ae|2026-11-25|brcly|Merge pull request #179 from smith-3/codex/lanes-cross-queue-return
+d7b42f4|2026-11-25|brcly|Merge pull request #178 from 3kynox/pr-reclaim-selftest-limit
+cf427e8|2026-11-25|DrArroway|d3d12: use 32-byte guest stride for Device11 inline descriptor arenas
+84c12e6|2026-11-25|Manuel Smith Lazarte Alcocer|d3d12: honor mid-list memory waits on compute queues
+c87c57d|2026-11-25|Manuel Smith Lazarte Alcocer|lanes: reproduce a label wait after compute dispatch
+6e4ecea|2026-11-25|Manuel Smith Lazarte Alcocer|lanes: check the return wait and readback across GPU queues
+0705a9d|2026-11-25|Thierry PROST|lanes: pin the descriptor limit the reclaim self-test counts on
+32919f4|2026-11-25|Vladimir|shader-compiler: coalesce Wave32, pure intrinsic, and block-local temp exec groups
+934fc97|2026-11-25|Thierry PROST|d3d12, dxbc: lay out a mesh pipeline's pixel tables as the pixel program reads them
+4b56c70|2026-11-25|Jeffrey C|xshader: take a vertex shader's table parameter from its own records
+a2e5f35|2026-11-25|Jeffrey C|d3d12: restore static samplers a multi-table raster root leaves out
+7b22d71|2026-11-25|brcly|Merge pull request #175 from NathansDomainSolutions/fix/xmem-legacy-mapped-writes
+b375732|2026-11-25|brcly|docs: shorten the README and move run options to their own page
+6f08e06|2026-11-25|brcly|tests: keep Rust files short and tests in src/tests
+c8f4b53|2026-11-25|brcly|refactor: split the remaining files over 1,000 lines
+9399e4f|2026-11-25|brcly|refactor: split the two instruction emitters by instruction family
+a8f24b6|2026-11-24|NathansDomainSolutions|xmem: write DirectStorage data into legacy-mapped physical pages at their CPU copy
+9e491ff|2026-11-25|brcly|refactor: split the HLSL translator into modules
+aa42ae9|2026-11-25|brcly|refactor: move Rust tests into each crate's src/tests
+9ca0060|2026-11-25|brcly|Merge pull request #172 from Vladimir-Human/d3d12/reclaim-descriptor-slots
+1d821cb|2026-11-25|brcly|Merge pull request #61 from Valdi320/work/scarlett-observability
+3bd0402|2026-11-25|brcly|Merge pull request #60 from Valdi320/work/scarlett-cpu-oracle
+bca2514|2026-11-25|brcly|Merge pull request #74 from DrArroway/evidence/cachyos-rx6900xt
+8fe20cc|2026-11-25|brcly|Merge pull request #166 from smith-3/codex/shader-integration-20261125
+de47600|2026-11-25|brcly|Merge pull request #168 from postblink/fix/raster-multi-table-roots
+0eaa8c6|2026-11-25|brcly|Merge pull request #170 from Vladimir-Human/d3d12/slot80-thread-dimensions
+3aa9241|2026-11-25|brcly|Merge pull request #171 from Vladimir-Human/shader/wave32-wave64-diagnostics
+94412a5|2026-11-25|brcly|Merge pull request #167 from Valdi320/work/scarlett-pipeline-rank-accuracy-20261125
+daccc40|2026-11-25|brcly|Merge pull request #169 from Vladimir-Human/build/msvc-w4-guest-narrowing
+7a11b27|2026-11-25|brcly|xshader: branch with the whole wave where targeted guards refuse
+96783e4|2026-11-25|Vladimir|lanes, verify: add descriptor-reclaim GPU selftest and negative-control proof
+98043df|2026-11-25|Vladimir|d3d12: reclaim shader-visible descriptor slots with lease and fence pinning
+682a0e4|2026-11-25|brcly|tools: check float, comparison, memory, pixel and atomic translation on the GPU
+f50e52d|2026-11-25|brcly|tools: run the shader translator's GPU checks as part of `check`
+c3ea79b|2026-11-25|brcly|xshader: carry bits shifted out in s_lshl<n>_add_u32
+6161046|2026-11-25|Vladimir|d3d12, dxbc: refuse incompatible WaveSize(N) compute shaders before driver compile
+2edd4a9|2026-11-25|Vladimir|d3d12, dxbc: convert slot 80 thread-dimension dispatches using bound PSO numthreads
+95b242b|2026-11-25|Lucas Boyles|d3d12: reflect raster roots with several descriptor tables
+db5d899|2026-11-25|brcly|ci: build every provider, guest and Lanes
+bd8049f|2026-11-25|brcly|docs: record the 66 guest checks on an RTX 4070 Ti SUPER
+940ab23|2026-11-25|brcly|lanes: time frames and the shader cache lookup, run the regression controls
+7f8d1ad|2026-11-25|brcly|tools: accept import reuse records in the D3D12 regression controls
+a7431e3|2026-11-25|Vladimir|build, verify: fix MSVC /W4 warnings and resolve ordinal imports
+52292e6|2026-11-25|brcly|lanes: add scenarios and a benchmark, and check every guest suite
+047de82|2026-11-25|brcly|d3d12, bvh: hand fences over faster and copy structures through the right slot
+a79aedb|2026-11-25|brcly|docs: require a Lanes GPU run before merging, update progress
+4ae23ab|2026-11-25|brcly|lanes: add a GPU self-test, shader cache checks and a single check command
+faf8b19|2026-11-25|brcly|d3d12, bvh: stop TuxBox deadlocking the title's queues on its fence labels
+796b793|2026-11-25|Valdi320|tools: avoid stale and ambiguous pipeline failure attribution
+54db032|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: keep table-selected exponent scaling portable after wave reductions
+cd6ce4f|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: prove both arms of conditional scalar table offsets
+fdf5877|2026-11-25|Manuel Smith Lazarte Alcocer|tools: replay bounded native table selectors on a guarded GPU buffer
+1ed5a1f|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: bound scalar table indices extracted from bit fields
+8c412a8|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: handle XOR permutations of bounded scalar offsets
+1ed9907|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: track scalar OR in bounded table offsets
+ee47444|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: honor FP32 modes for exponent scaling
+c5d9815|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: preserve directed rounding for integer-to-float conversions
+e5add62|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: honor FP32 rounding when packing an unsigned byte
+2985d33|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: allow verified single-wave floating sums on wave32 hosts
+c550f8b|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: preserve cross-lane signed minima and maxima in compute
+e30cc88|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: translate masked whole-wave XOR reductions in compute
+5fb5cc2|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: run single-wave bitwise reductions on wave32 hosts
+76d800a|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: translate complementary DPP8 reduction partners
+50a9a9c|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: accept equivalent DPP controls in full-EXEC reductions
+5dd0d84|2026-11-25|brcly|Merge pull request #165 from Jerkin42/fix/cache-lookups
+824b866|2026-11-25|brcly|Merge pull request #41 from ReverendOzmund/bazzite-nvidia-results
+4b4c08c|2026-11-25|Jerkin42|d3d12: look up cached shaders without scanning the cache directory
+529c52d|2026-11-25|brcly|Merge pull request #163 from NathansDomainSolutions/fix/mesh-mirror-all-pixel-tables
+63bec84|2026-11-25|brcly|Merge pull request #162 from Jerkin42/fix/d16-depth-uav
+dfe7813|2026-11-25|brcly|Merge pull request #161 from Jerkin42/fix/dispatch-barrier
+1d4a55c|2026-11-25|brcly|Merge pull request #160 from smith-3/codex/shader-corrections-handoff
+6fbfb48|2026-11-25|brcly|Merge pull request #159 from s3rius/xshader/wave_divergent_scc
+fcd74ae|2026-11-25|brcly|Merge pull request #134 from smith-3/codex/persistent-dxc
+e8898ce|2026-11-25|Manuel Smith Lazarte Alcocer|Merge main and preserve validated CLI fallback for persistent DXC
+069be0c|2026-11-25|NathansDomainSolutions|d3d12: mirror every pixel-visible table the mesh layout rewrites
+16effc0|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: reconcile shared half constants and masked quad writes
+b456d1a|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: track execution-mask snapshots across lane elections
+68d2e7c|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: honor source and destination masks for DPP row operations
+523b484|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: lower quad exchanges for integer and floating-point operations
+e1c3d80|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: permute the first source of DPP16 subtraction
+3a2f553|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: apply SDWA source and result controls before packing
+d2857d9|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: track floating-point mode and conversion exceptions
+8bff734|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: honor guest modes for fractional and half operations
+f76fd34|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: round midpoints toward positive infinity for RPI
+69ef67a|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: preserve full-range float-to-integer conversion semantics
+e0f3e07|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: translate subword ALU and 24-bit products in ray continuations
+b2ebf74|2026-11-25|Manuel Smith Lazarte Alcocer|d3d12: respect pipeline root overrides on embedded mesh roots
+234944c|2026-11-25|Pavel Kirilin|shader-compiler: accept uniform SCC branches around wave reductions
+96947c5|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: resolve corroborated UAV stores beyond SRV tables
+259f3fd|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: recognize commuted descriptor stride setup
+bde2fbf|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: validate scalar selectors for partial-wave lane reads
+6f97e34|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: handle readfirstlane with an empty execution mask
+7f1fa7b|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: saturate 24-bit products after accumulation
+e06222c|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: handle unsigned no-carry saturation
+c59e0a5|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: preserve carry flags and handle discarded carry outputs
+4a02f49|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: implement signed integer clamp controls
+1c0fd26|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: saturate packed integer conversions
+63f8eaa|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: accept inline accumulators for unsigned MAD
+1db0cd8|2026-11-25|ReverendOzmund|evidence: Bazzite + RTX 3080 Ti verify results on current main
+5678a2f|2026-11-25|brcly|Merge pull request #144 from s3rius/xshader/wave_divergent
+cc9f44b|2026-11-25|brcly|Merge pull request #158 from NathansDomainSolutions/fix/mesh-pixel-table-copy
+8000866|2026-11-25|Pavel Kirilin|shader-compiler: accept uniform branches around wave reductions
+aad0ecd|2026-11-25|brcly|Merge pull request #157 from NathansDomainSolutions/fix/rooted-pixel-sampler-heap
+e971efc|2026-11-24|NathansDomainSolutions|d3d12: give the pixel stage a copy of guest tables the mesh layout rewrites
+8ce988d|2026-11-25|brcly|Merge pull request #156 from ReverendOzmund/d3d12-slot148-list-memory
+71c7c85|2026-11-25|NathansDomainSolutions|xshader: accept the sampler heap base in rooted pixel shaders
+18e4e08|2026-11-25|ReverendOzmund|d3d12: list memory (slot 148) and flagged dispatch (slot 80) for XboxBvhBuilder
+8feefd2|2026-11-25|Jerkin42|shaders: let a wave catch up before a barrier in block-dispatched programs
+62e74e1|2026-11-25|brcly|Merge pull request #155 from 3kynox/pr-vulkan-headers
+20fc550|2026-11-25|brcly|Merge pull request #154 from 3kynox/pr-nvidia-cache
+7ef61b9|2026-11-25|brcly|Merge pull request #153 from 3kynox/pr-insertq
+fb78824|2026-11-25|Thierry PROST|tools: let the compiler find the Vulkan headers for the constant-buffer layer
+d439070|2026-11-25|Thierry PROST|launcher: size the NVIDIA shader cache when the environment sets its path
+7d281f8|2026-11-25|Thierry PROST|d3d12: handle AMD-only insertq on Intel CPUs
+53bb4d6|2026-11-25|brcly|Merge pull request #150 from NathansDomainSolutions/fix/mesh-pixel-link
+3d24d97|2026-11-25|brcly|d3d12: fall back to an earlier page for buffer imports, name failed lookups
+e8af9fd|2026-11-25|brcly|d3d12: record title fence writes and stop one command failing a whole list
+8a2c01e|2026-11-24|NathansDomainSolutions|d3d12: translate a mesh pipeline's pixel stage against the guest root
+315b287|2026-11-24|NathansDomainSolutions|xshader, d3d12: link mesh programs to their pixel consumer
+0a8d2ee|2026-11-25|brcly|Merge pull request #149 from nztom/fix/xshader-compute-wave-rejoin
+b1e30cd|2026-11-25|user|xshader: integrate bounded reductions with upstream EXECZ votes
+78c9017|2026-11-25|brcly|Merge pull request #139 from ReverendOzmund/evidence-rtx3080ti
+6b67fac|2026-11-25|brcly|Merge pull request #148 from JeffreyBytes/fix/page-import-reuse
+a70399f|2026-11-25|brcly|Merge pull request #146 from JeffreyBytes/fix/amd-only-cpu-instructions
+9a9775b|2026-11-25|brcly|Merge pull request #143 from nztom/fix/xshader-compute-wave-execz
+fd561df|2026-11-25|Jeffrey C|d3d12: reuse live imports that span several pages
+02f3f75|2026-11-25|brcly|Merge pull request #142 from smith-3/codex/dpp16-bitwise-quad-perm
+408f876|2026-11-25|brcly|Merge pull request #141 from nztom/perf/xshader-large-pixel-dxc
+d665f54|2026-11-25|brcly|Merge pull request #140 from nztom/fix/xshader-nsa-wide-atomic
+60af1db|2026-11-25|brcly|Merge pull request #138 from smith-3/codex/sad-u8-zero
+299d4b0|2026-11-25|brcly|Merge pull request #137 from smith-3/codex/mul-lo-u16-inline
+a62839c|2026-11-25|brcly|Merge pull request #132 from NathansDomainSolutions/fix/descriptor-retire-grace
+91072dd|2026-11-25|user|xshader: require a full-width bitmap copy for loop bounds
+be2a198|2026-11-25|user|xshader: prove bounded reductions in full-mask Wave32
+99e7399|2026-11-24|Jeffrey C|d3d12: reuse single-page imports outside registered page pools
+e1262ac|2026-11-24|Jeffrey C|d3d12: handle AMD-only clzero, monitorx and mwaitx on Intel CPUs
+340366d|2026-11-25|user|xshader: use a whole-wave vote for guarded compute reductions
+45fb409|2026-11-25|Manuel Smith Lazarte Alcocer|xshader: translate DPP16 quad permutations for bitwise operations
+0e00f83|2026-11-25|Jerkin42|d3d12: give 16-bit depth with stencil a writable depth plane
+64daad2|2026-11-25|user|launcher: speed up cold compilation of large pixel shaders
+a30aa2a|2026-11-25|ReverendOzmund|evidence: ProjectScarlett reaches Game Running on an RTX 3080 Ti
+d32d635|2026-11-25|user|xshader: support non-sequential coordinates for wide image maxima
+bf30dd8|2026-11-24|Manuel Smith Lazarte Alcocer|xshader: accept an inline zero accumulator for v_sad_u8
+97b8ad3|2026-11-25|brcly|d3d12: make slot 62 copy from source to destination, trace memory waits
+987f845|2026-11-24|Manuel Smith Lazarte Alcocer|xshader: accept inline integers in compute v_mul_lo_u16
+9967792|2026-11-25|brcly|Merge pull request #136 from NathansDomainSolutions/feat/physical-page-reads
+946b6e5|2026-11-24|NathansDomainSolutions|xmem: export TuxBoxWritePhysicalPages
+5dbe85f|2026-11-24|NathansDomainSolutions|xcrdapi, xmem: DirectStorage requests whose destination is physical pages
+d83f5b1|2026-11-25|brcly|progress: update ProjectScarlett shader preparation after #135
+a6f3289|2026-11-25|brcly|Merge pull request #135 from NathansDomainSolutions/fix/pixel-heap-and-block-quads
+2852d6f|2026-11-25|brcly|progress: update ProjectScarlett shader preparation and gameplay result
+a93613a|2026-11-25|brcly|docs: record ProjectScarlett reaching the story intro
+2183364|2026-11-24|NathansDomainSolutions|xshader: support pixel_wave quad exchanges in block dispatch
+0b6e788|2026-11-24|NathansDomainSolutions|xshader: allow pixel_heap_base with rooted resource heaps
+335a343|2026-11-25|brcly|Merge pull request #125 from smith-3/codex/shader-regression
+fc25aea|2026-11-25|brcly|Merge pull request #121 from vladbondarenko97/tests-resolve-tmp-macos
+573c2cf|2026-11-25|brcly|Merge pull request #131 from absceptual/d3d12/mask-console-resource-flags
+704d331|2026-11-25|brcly|Merge pull request #133 from NathansDomainSolutions/fix/pixel-quad-exchange-loops
+3f2a717|2026-11-25|brcly|d3d12: bound large pipeline compiles, release stalled memory waits, log failures
+5119588|2026-11-24|Manuel Smith Lazarte Alcocer|worker: add experimental persistent DXC
+1397cb6|2026-11-24|NathansDomainSolutions|xshader: allow pixel_wave quad exchanges inside loops
+e4783b4|2026-11-24|NathansDomainSolutions|d3d12: keep replaced descriptor backings alive for 3 s
+9ba53f9|2026-11-24|absceptual|d3d12: keep console-only resource flags off host buffer and allocation calls
+83cf1a5|2026-11-25|brcly|Merge pull request #128 from absceptual/xshader/exec-group-all-stages
+ccce179|2026-11-25|brcly|Merge pull request #130 from s3rius/xshader/lane_spills
+4774547|2026-11-25|Pavel Kirilin|lane spills: accept uniform Sgpr-lane reads via whole-wave group read
+4b40c64|2026-11-24|Manuel Smith Lazarte Alcocer|xshader: accept immediates in signed 16-bit add and subtract
+4046aaa|2026-11-25|brcly|Merge pull request #129 from absceptual/scarlett/cached-refusal-reasons
+5d2b59d|2026-11-24|absceptual|scarlett: keep refusal reasons for cached refusals
+ab06fe1|2026-11-24|absceptual|xshader: group EXEC-guarded register writes in every stage
+75fdeba|2026-11-25|brcly|launcher: reuse DXIL when a translator update leaves the HLSL unchanged
+91cfdbe|2026-11-25|brcly|Merge pull request #126 from NathansDomainSolutions/fix/graphics-menu-eof
+6af7f47|2026-11-24|Carrie|Cancel the graphics menu on terminal EOF
+5891be3|2026-11-24|Manuel Smith Lazarte Alcocer|xshader: accept immediates in signed no-carry add and subtract
+62dfa31|2026-11-25|brcly|Merge pull request #124 from postblink/fix/lanes-input-first-key
+c12deae|2026-11-25|brcly|Merge pull request #123 from s3rius/feature/wave_sum
+8e01961|2026-11-25|brcly|Merge pull request #122 from Valdi320/work/scarlett-large-next
+b19ce28|2026-11-24|Lucas Boyles|tools: repeat a lost first key in the Lanes input check
+d59da4d|2026-11-25|Pavel Kirilin|wave_sum: accept forward s_cbranch_execz skips of masked regions
+0319929|2026-11-25|Valdi320|shader cache: validate stages and deduplicate cold compilation with bounded preparation
+20d8280|2026-11-25|brcly|Merge pull request #119 from Valdi320/work/scarlett-slot86-followup
+ca9b143|2026-11-25|brcly|Merge pull request #120 from Valdi320/work/scarlett-lane-exact-next
+7e76da5|2026-11-25|Valdi320|shader: extend exact DPP8 exchanges to signed extrema, XOR and FI
+9838454|2026-11-25|Valdi320|test: exercise portable pixel linking through actual slot 86 worker
+dbc357b|2026-11-24|brcly|d3d12: count compiled shaders and pipeline builds in the progress panel
+465318f|2026-11-24|brcly|Merge pull request #118 from postblink/test/lanes-input-gate
+ebe62d0|2026-11-24|brcly|Merge pull request #117 from Valdi320/work/scarlett-link-validation
+5213877|2026-11-24|Lucas Boyles|tools: check Lanes keyboard play through XTest on any course
+36b6a61|2026-11-24|brcly|Add progress overlay to shader translation / compilation stage of games
+6a2ca92|2026-11-25|Valdi320|shader: reconcile portable pixel consumer component types
+8dfe439|2026-11-24|brcly|Merge pull request #114 from Valdi320/work/scarlett-root-cbv-window-validation
+fa92644|2026-11-25|Valdi320|docs: record five-window strict root CBV validation
+f111f5c|2026-11-24|brcly|xshader: size mesh vertex output to DXC's 32 KiB limit
+6f5af52|2026-11-25|Valdi320|Merge upstream strict regression controls and extend CBV coverage
+9139f2f|2026-11-24|brcly|Merge pull request #92 from Valdi320/work/scarlett-strict-gpu-regression
+4bce37a|2026-11-24|brcly|Merge pull request #115 from NathansDomainSolutions/speedup/prep-jobs-and-pack-seed
+53bf140|2026-11-24|Claude|Speed up ProjectScarlett shader preparation
+2e96986|2026-11-24|brcly|Merge pull request #113 from NathansDomainSolutions/perf/xcrdapi-parallel-reads
+4db194e|2026-11-25|Valdi320|test: verify full Scarlett root CBV windows across pages
+8bd56af|2026-11-24|brcly|test: repair the GPU regression checker after the main merge
+329ab83|2026-11-24|brcly|Merge pull request #112 from NathansDomainSolutions/feat/xsystem-app-device-id
+285a7ab|2026-11-24|NathansDomainSolutions|xcrdapi: run the reads between queue barriers in parallel
+7fa2c83|2026-11-24|NathansDomainSolutions|xgameruntime: serve XSystemGetAppSpecificDeviceId (XSystem slot 5)
+a25ee08|2026-11-24|brcly|Merge branch 'main' into work/scarlett-strict-gpu-regression
+8661492|2026-11-24|brcly|Merge pull request #111 from Valdi320/work/scarlett-heap-cfg-provenance
+3ad360e|2026-11-24|brcly|Merge pull request #110 from s3rius/feature/evidence-arch-rtx5090
+1181af3|2026-11-25|Valdi320|shader: correlate dynamic heap descriptor origins through direct CFG
+d18ca6c|2026-11-24|Pavel Kirilin|Added evidence arch-rtx5090.
+c0d5369|2026-11-24|Vlad Bondarenko|tests: resolve the temporary root in the shader inventory test
+ade292d|2026-11-24|brcly|Merge pull request #109 from davutsimsekk/fix/windows-python-tests
+4eed160|2026-11-25|davutsimsekk|tests: run the Python suite on Windows
+9167968|2026-11-24|brcly|Merge pull request #108 from Valdi320/work/scarlett-lane-mask-provenance
+5a67cef|2026-11-24|brcly|Merge pull request #107 from NathansDomainSolutions/fix/root-cbv-64k-window
+2dfceb3|2026-11-25|Valdi320|shader: preserve heap offset and straight-line descriptor provenance
+5c73bee|2026-11-24|NathansDomainSolutions|d3d12: import a 64 KiB window behind root CBVs
+6aeed55|2026-11-24|brcly|Merge pull request #106 from Valdi320/work/scarlett-alias-deferred-validation
+854923d|2026-11-24|brcly|Merge pull request #105 from s3rius/bugfix/wayland-displays
+eac38ec|2026-11-24|Valdi320|test: verify nonblocking placed-texture refresh and late publication
+b5b25f4|2026-11-24|brcly|Merge pull request #104 from Valdi320/work/scarlett-lone-lane-validation
+7d7dc72|2026-11-24|Valdi320|shader: preserve proven straight-line DPP8 lane exchanges
+1b9df5d|2026-11-24|Pavel Kirilin|Fix private Xwayland display collision and guest-process cleanup.
+7b815f2|2026-11-24|brcly|Merge pull request #100 from Valdi320/work/scarlett-remap-validation
+8ed271c|2026-11-24|brcly|Merge pull request #102 from JohnVonWells/xshader/sad-and-mad-i64
+524cd21|2026-11-24|brcly|d3d12: defer placed-texture refresh instead of waiting on the CPU
+0ad2fa9|2026-11-24|brcly|Merge pull request #101 from Jerkin42/feat/xshader-coverage
+de5639f|2026-11-24|JohnVonWells|xshader: lower SAD forms and v_mad_i64_i32
+bd7108c|2026-11-24|Jerkin42|xshader: give the f64 fixture the new fields
+3e74127|2026-11-24|Jerkin42|Merge main
+63343eb|2026-11-24|Jerkin42|xshader: translate most ProjectScarlett programs
+45c7395|2026-11-24|Valdi320|Verify queue-ordered XMem remaps against physical GPU readback
+cb185e0|2026-11-24|brcly|d3d12: degrade placed-texture aliasing instead of failing the queue
+0dab8e6|2026-11-24|brcly|Merge pull request #99 from JohnVonWells/xshader/exact-f64-rounding
+919f148|2026-11-24|brcly|Merge pull request #62 from Valdi320/work/scarlett-resource-analysis
+d2fa361|2026-11-24|brcly|Merge pull request #81 from chunfeng11221/build/native-msvc
+f80dff3|2026-11-24|JohnVonWells|xshader: lower exact f64 rounding and f64/int32 conversions
+d94e4e5|2026-11-24|brcly|Merge pull request #91 from JohnVonWells/evidence/rx6950xt-gpu-controls
+d402b85|2026-11-24|brcly|Merge pull request #94 from Valdi320/work/scarlett-sat-cbv-controls
+63ac019|2026-11-24|brcly|Merge pull request #98 from Valdi320/work/scarlett-mailblock-runtime
+6842ef0|2026-11-24|brcly|shader: add a root signature dump example
+6171f56|2026-11-24|Valdi320|d3d12: preserve guest buffer identity after late commitment
+b6647ec|2026-11-24|brcly|d3d12: map CopyResourceX, DXR and DispatchMesh in the Scarlett command-list table
+ff2cdfb|2026-11-24|brcly|d3d12: add CreatePlacedRawUnorderedAccessViewX (device slot 71)
+63fa17c|2026-11-24|DrArroway|Add CachyOS + RX 6900 XT (Proton Experimental) verify results
+f057e9b|2026-11-24|brcly|Merge pull request #96 from NathansDomainSolutions/fix/interpolant-component-types
+2d7f215|2026-11-24|brcly|Merge pull request #93 from Valdi320/work/scarlett-wave-extrema-controls
+be864f5|2026-11-24|brcly|Merge pull request #95 from JohnVonWells/xshader/ordinary-integer-vop3
+81d4a92|2026-11-24|brcly|Merge pull request #97 from NathansDomainSolutions/fix/dxc-o0-timeout
+2d887b3|2026-11-24|NathansDomainSolutions|runtime shaders: give the unoptimised DXC fallback 90 seconds
+81b8aec|2026-11-24|NathansDomainSolutions|xshader, dxbc: link raster stages whose interpolant component types differ
+db6a4bf|2026-11-24|JohnVonWells|xshader: lower fourteen ordinary VOP3 integer forms
+c6136a3|2026-11-24|Valdi320|test: validate saturating pack chains and bounded CBV reflection
+a171f17|2026-11-24|Valdi320|docs: record portable extrema GPU validation
+2ce238c|2026-11-24|Valdi320|test: disable null fallback in positive GPU regression controls
+17a61e7|2026-11-24|JohnVonWells|evidence: run the synthetic GPU controls on an RX 6950 XT
+3102329|2026-11-24|Valdi320|shader: extend portable wave64 reductions to proven extrema
+f2184c1|2026-11-24|brcly|Merge pull request #64 from JohnVonWells/verify/arch-rdna2-results
+f5ab25e|2026-11-24|brcly|Merge pull request #63 from JohnVonWells/xshader/support-v-sat-pk-u8-i16
+1a50eb9|2026-11-24|brcly|shader: restore s_flbit_i32_b64 and s_ff0_i32 lowering dropped by a merge
+7b39959|2026-11-24|brcly|Merge pull request #90 from Valdi320/work/scarlett-next20-validation
+c9f90f2|2026-11-24|brcly|Merge pull request #51 from Valdi320/work/scarlett-allocation-trace
+326fd2d|2026-11-24|JohnVonWells|Add CachyOS + RX 6950 XT verify results
+5cee10f|2026-11-24|brcly|Merge pull request #88 from Valdi320/work/scarlett-null-usage-fixture
+0eda69f|2026-11-24|JohnVonWells|xshader: support v_sat_pk_u8_i16
+d58956c|2026-11-24|brcly|Merge pull request #89 from Valdi320/work/scarlett-bounded-cbv-descriptors
+44a5b2d|2026-11-24|brcly|Merge pull request #87 from Valdi320/work/scarlett-twenty-validation
+8fa657f|2026-11-24|brcly|Merge pull request #86 from Valdi320/work/scarlett-page-cache-bounded-sweep
+0008dac|2026-11-24|Valdi320|tools: verify paired shader inputs and export private-safe aggregate outcomes
+b9e42ec|2026-11-24|brcly|Merge pull request #85 from Valdi320/work/scarlett-autonomous-validation
+befbfd7|2026-11-24|Valdi320|Merge remote-tracking branch 'origin/main' into refresh/pr51-twenty-20261124
+acbd67e|2026-11-24|Valdi320|shader: prove finite runtime CBV descriptor selection
+dc6c1d6|2026-11-24|Valdi320|test: automate offline GPU controls and verify null compute usage
+2f2f0b3|2026-11-24|Valdi320|test: exercise Scarlett indirect and driver hint command-list slots
+95af9d3|2026-11-24|brcly|docs: record ProjectScarlett shader preparation at 6,487 of 16,025 requests
+bedf503|2026-11-24|brcly|d3d12: add Scarlett command-list ExecuteIndirect (slot 61) and DriverHintX (slot 101)
+97642c7|2026-11-24|Valdi320|d3d12: bound saturated weak page cache reclamation work
+0e762f9|2026-11-24|Valdi320|shader: fix packed signed saturation in dependent GPU chains
+8acef7c|2026-11-24|brcly|Merge pull request #73 from s3rius/xshader/wave_reduction
+a674a9a|2026-11-24|brcly|Merge pull request #83 from Valdi320/work/scarlett-null-usage
+bc15cb9|2026-11-24|brcly|Merge pull request #84 from Valdi320/work/scarlett-dynamic-offset-bounds
+dd0f8b2|2026-11-24|brcly|d3d12: recover from two ProjectScarlett tile-heap run-table asserts
+e7cc159|2026-11-24|brcly|d3d12: retire GPU imports whose pages a remap replaces
+dbc5492|2026-11-24|Valdi320|tools: select private replay requests from sampled null pipeline usage
+dddbcbf|2026-11-24|Valdi320|shader: prove bounded runtime scalar loads from embedded code tables
+2ca683f|2026-11-24|Valdi320|d3d12: rank recorded null pipeline usage without native pointer identities
+a9b7739|2026-11-24|Pavel Kirilin|wave reduction: accept int and floating masked prologues in wave_sum lowering
+356ac1a|2026-11-24|brcly|Merge branch 'main' into work/scarlett-resource-analysis
+e365d24|2026-11-24|brcly|Merge branch 'main' into work/scarlett-observability
+af8e581|2026-11-24|brcly|Merge branch 'main' into work/scarlett-cpu-oracle
+2885072|2026-11-24|brcly|Merge pull request #58 from Valdi320/work/scarlett-scalar-bit-operations
+64f1af7|2026-11-24|brcly|Merge pull request #48 from Valdi320/work/scarlett-verified-raw-index
+0ec0b42|2026-11-24|brcly|Merge pull request #44 from Valdi320/work/scarlett-refusal-ranking
+84fe4a2|2026-11-24|Valdi320|Merge remote-tracking branch 'origin/main' into refresh/pr62-mail-20261124
+b7e935e|2026-11-24|Valdi320|Merge remote-tracking branch 'origin/main' into refresh/pr61-mail-20261124
+dc1601f|2026-11-24|Valdi320|Merge remote-tracking branch 'origin/main' into refresh/pr44-mail-20261124
+761857b|2026-11-24|Valdi320|Merge remote-tracking branch 'origin/main' into refresh/pr51-mail-20261124
+482889e|2026-11-24|Valdi320|Merge remote-tracking branch 'origin/main' into refresh/pr60-mail-20261124
+ff28ede|2026-11-24|Valdi320|Merge remote-tracking branch 'origin/main' into refresh/pr58-mail-20261124
+e7b3f2a|2026-11-24|Valdi320|Merge remote-tracking branch 'origin/main' into refresh/pr48-mail-20261124
+cf95792|2026-11-24|brcly|Merge pull request #56 from trigger337/feat/sop1-bit-instructions
+c2640de|2026-11-24|brcly|Merge pull request #65 from s3rius/xshader/v_interp_p1ll_f16
+a64cadc|2026-11-24|brcly|Merge pull request #80 from chunfeng11221/d3d12/clwb-fallback
+dbdc3fb|2026-11-24|brcly|Merge pull request #78 from Valdi320/work/linux-gpu-journal-correlation
+621d6da|2026-11-24|brcly|Merge pull request #59 from trigger337/fix/staging-descriptor-cleanup
+699e50c|2026-11-24|brcly|Merge pull request #75 from Valdi320/work/scarlett-prep-reasons
+a31b92d|2026-11-24|brcly|Merge branch 'main' into work/scarlett-prep-reasons
+3d9185a|2026-11-24|brcly|Merge pull request #82 from Valdi320/work/scarlett-runtime-bottlenecks
+a8dfc7c|2026-11-24|brcly|Merge branch 'main' into work/scarlett-refusal-ranking
+7995cef|2026-11-24|brcly|Merge pull request #54 from Valdi320/work/scarlett-parallel-shader-requests
+4ba2386|2026-11-24|brcly|Merge pull request #69 from Valdi320/work/scarlett-packed-cpu
+f6bdf40|2026-11-24|brcly|Merge pull request #70 from JohnVonWells/xshader/compute-quad-swizzle
+e25075c|2026-11-24|brcly|Merge pull request #79 from Valdi320/work/scarlett-offset-wave-proofs
+dbc8d41|2026-11-24|brcly|d3d12: accept height-padded single-subresource linear uploads
+0bbb39d|2026-11-24|Valdi320|d3d12: retain embedded-root compute translation and link portable pixel consumers
+c3c4c57|2026-11-24|Valdi320|d3d12: reuse interleaved live page imports with a bounded weak cache
+5d951b2|2026-11-25|chunfeng11221|build: fix native Windows MSVC link forwarders and /W4 /WX warnings
+aeed457|2026-11-24|brcly|d3d12, xmem: reserved resources, tile commands and virtual memory updates
+242121b|2026-11-24|brcly|shader: lower raw idxen buffer accesses in the HLSL emitter
+371c839|2026-11-25|chunfeng11221|d3d12: rewrite unsupported clwb to clflushopt on pre-Ice Lake CPUs
+66c57cf|2026-11-24|Valdi320|diagnostics: aggregate pipeline linkage, driver results and allocation sizes
+326c500|2026-11-24|Valdi320|scarlett: distinguish twelve additional fixed refusal families
+188463f|2026-11-24|Valdi320|shader: extend verified heap offsets, mesh ranges and wave elections
+1d20aa5|2026-11-24|Valdi320|scarlett: compare aggregate refusal transitions on identical requests
+072e007|2026-11-24|Valdi320|shader: propagate exact scalar offsets and prove uniform scalar chains
+2dd567d|2026-11-24|Valdi320|shader: prove zero SMEM offsets and literal-uniform wave guards
+1ab02ab|2026-11-24|Valdi320|diagnostics: distinguish sampled compute failures and latest milestone
+4db1076|2026-11-24|Valdi320|tools: correlate Linux kernel GPU faults with explicit launch windows
+7d8be17|2026-11-24|Pavel Kirilin|xshader: v_interp_p1ll_f16 support.
+56cbb05|2026-11-24|Valdi320|diagnose native host heap import failures without changing placement
+6030b68|2026-11-24|Valdi320|diagnose current Scarlett driver failures and sampled fallback counts
+0c99119|2026-11-24|Valdi320|Merge current upstream main and retain both sets of documentation
+02359d9|2026-11-24|Valdi320|Merge current upstream main and retain both sets of documentation
+d101b96|2026-11-24|Valdi320|Merge current upstream main and retain both sets of documentation
+67198a2|2026-11-24|Valdi320|Merge current upstream main and retain both sets of documentation
+8fd6a99|2026-11-24|Valdi320|Merge current upstream main and retain both sets of documentation
+2c65e37|2026-11-24|Valdi320|Merge current upstream main and retain both sets of documentation
+8fed08c|2026-11-24|JohnVonWells|xshader: support QDMode ds_swizzle_b32 in compute shaders
+092e96f|2026-11-24|Valdi320|scarlett: report preparation refusal buckets without sharing shader inputs
+3b11973|2026-11-24|brcly|Merge pull request #52 from Valdi320/work/scarlett-dxc-preflight
+3366551|2026-11-24|brcly|Merge pull request #47 from Jerkin42/feat/xgamesave-containers
+00f69b8|2026-11-24|brcly|d3d12: record the command-list slots shared by both Xbox generations
+f9e7883|2026-11-24|brcly|shader: lower compute-heap 2D image_get_resinfo
+02953b0|2026-11-24|brcly|ci: run host checks on pull requests and pushes to main
+1a0b6f3|2026-11-24|Valdi320|shader: validate integer half chains with CPU oracle and add three ordinary forms
+fd3a6f4|2026-11-24|brcly|Merge pull request #66 from Valdi320/work/scarlett-packed-integers
+cc59e5f|2026-11-24|brcly|Merge pull request #67 from JohnVonWells/launcher/friendlier-arg-errors
+34ba13a|2026-11-24|Valdi320|shader: validate saturating packed integer arithmetic
+7b7dec7|2026-11-24|brcly|Merge pull request #68 from JohnVonWells/docs/fresh-setup-hints
+fcbcf5b|2026-11-24|JohnVonWells|docs: complete the Lanes setup and verify commands
+7ca880e|2026-11-24|JohnVonWells|launcher: reject launcher options placed after the game path
+fae402f|2026-11-24|Valdi320|shader: lower verified ordinary packed 16-bit integer operations
+fe4ab60|2026-11-24|Valdi320|test: bounded scalar differential campaigns with minimized reproducers
+e6ca8f2|2026-11-24|Valdi320|test: preserve minimized dependent-scalar regression cases
+e55d354|2026-11-24|Andrey|game_log, verify: close descriptor on fdopen error and clean up staging on failure
+0ee91ad|2026-11-24|Andrey|xshader: support s_flbit_i32_b64, s_ff0_i32_b32 and s_ff0_i32_b64
+11b70eb|2026-11-24|Valdi320|shader: retain proven scalar provenance through dependent compute operations
+0d08d73|2026-11-24|Valdi320|tools: analyze memory retention and paired performance regressions
+fad9835|2026-11-24|Valdi320|tools: diagnose Scarlett launch blockers and compare aligned frames offline
+1229a76|2026-11-24|Valdi320|test: recheck scalar oracle on updated upstream
+893daa0|2026-11-24|Valdi320|docs: record CPU oracle coverage and detected refusals
+f44166c|2026-11-24|Valdi320|test: generate native scalar programs and compare with independent CPU oracle
+3086e0b|2026-11-24|brcly|d3d12: upload command-list slot 62 from the CPU and mirror a failed CBV import
+a2c1e9e|2026-11-24|brcly|d3d12: return a null compute pipeline when the driver compile passes its deadline
+914d664|2026-11-24|brcly|Merge pull request #55 from s3rius/xshader/row-mirror
+6e48a58|2026-11-24|brcly|Merge pull request #49 from Valdi320/work/scarlett-verified-wide-atomic
+5f777d6|2026-11-24|brcly|Merge pull request #42 from Jerkin42/fix/cbv-descriptor-buffer-per-gpu
+306344e|2026-11-24|brcly|Merge pull request #40 from trigger337/fix/shader-profile-whitespace
+01928f2|2026-11-24|brcly|Merge pull request #43 from Valdi320/work/valdi-rtx4080-bazzite
+f988b31|2026-11-24|brcly|Merge pull request #46 from Valdi320/work/scarlett-uniform-reduction-guards
+4cd8d1c|2026-11-24|brcly|Merge pull request #45 from Valdi320/work/scarlett-comparison-samplers
+e3ed1a0|2026-11-24|Valdi320|scarlett: turn shader comparisons into prioritized replay and regression worklists
+4ca3bff|2026-11-24|Valdi320|shader: lower verified ordinary scalar bit operations
+285f686|2026-11-24|Pavel Kirilin|xshader: accept row_mirror DPP16 v_mov in wave reductions.
+ff033aa|2026-11-24|Valdi320|shader cache: schedule independent live translations concurrently
+02dcc15|2026-11-24|Valdi320|scarlett: warn about missing Windows DXC dependencies
+be20365|2026-11-24|Valdi320|d3d12: add opt-in allocation size diagnostics
+dbd7525|2026-11-24|Valdi320|test: enforce expected shader outcomes and reject inconclusive comparisons
+d575b34|2026-11-24|Pavel Kirilin|xshader: support s_ff1_i32_b64 and 16_16_16_16_UINT typed buffers
+5f8cda4|2026-11-24|Valdi320|scarlett: compare validated shader coverage across compiler revisions
+0a964da|2026-11-24|Valdi320|docs: regenerate progress map with RTX 4080 evidence
+2a7fd48|2026-11-24|Valdi320|shader: generalize verified non-returning wide image maxima
+3d17a00|2026-11-24|Valdi320|shader: support verified byte-stride indexed raw SRV reads
+e2860b5|2026-11-24|Valdi320|shader: share literal sampler matching and recover scalar pair copies
+48e4431|2026-11-24|Valdi320|shader: emulate verified single-wave64 reductions with group shared exchange
+e7e911f|2026-11-24|Valdi320|test: verify guarded wave32 reductions on GPU
+d9a5482|2026-11-24|Valdi320|shader: accept proven uniform forward reduction guards
+2ac1e6d|2026-11-24|Jerkin42|xgameruntime: store game saves in containers
+0f6d97c|2026-11-24|Valdi320|scarlett: rank refusals directly from runtime logs
+4a518ef|2026-11-24|Valdi320|dxbc: recover literal comparison samplers
+8180866|2026-11-24|Valdi320|scarlett: rank shader refusals during preparation
+72766e7|2026-11-24|Jerkin42|host: hide VK_EXT_descriptor_buffer only on GPUs that need it
+00fa5f9|2026-11-24|Valdi320|test: add Bazzite RTX 4080 Proton evidence
+832d0aa|2026-11-24|Andrey|runtime_shaders: strip whitespace from profile output before validation
+11a278a|2026-11-24|brcly|Merge pull request #38 from postblink/feat/present-private-xwayland
+00200ba|2026-11-24|Lucas Boyles|verify: run the present checks in a private rootful Xwayland
+dc0b8c1|2026-11-24|brcly|Merge pull request #35 from postblink/fix/present-rootless-xwayland
+b87ece1|2026-11-24|brcly|Merge pull request #36 from postblink/build/declare-rust-version
+855f2da|2026-11-24|brcly|Merge pull request #37 from postblink/test/xshader-per-dword-raw-transfers
+e1d7f5a|2026-11-24|Lucas Boyles|xshader: pin raw buffer transfers to one dword per Load/Store
+04641a6|2026-11-24|Lucas Boyles|build: declare the Rust 1.95 floor in the workspace
+1de4d36|2026-11-24|Lucas Boyles|verify: report rootless XWayland instead of sampling a black screen
+d10b369|2026-11-24|brcly|Fix linux shader caching issues
+8017bf5|2026-11-24|brcly|d3d12: continue past the Scarlett tile-heap assert
+444368a|2026-11-24|brcly|launcher: compile cs_6_6 at -O0 and cap DXC at 15s
+9b18f7c|2026-11-24|brcly|launcher: keep each prefix's NVIDIA shader cache
+21c8d05|2026-11-24|brcly|Merge pull request #33 from NathansDomainSolutions/fix/heap-sampler-hardening
+c418316|2026-11-23|NathansDomainSolutions|xshader, triage: harden the run-time sampler-heap fetch and the triage CLI
+c90ff8e|2026-11-24|brcly|Merge pull request #31 from NathansDomainSolutions/fix/sload-dynamic-soffset
+ebd3022|2026-11-23|NathansDomainSolutions|xshader: fetch compute samplers from the sampler heap at a run-time offset
+d73502d|2026-11-24|brcly|Merge pull request #30 from NathansDomainSolutions/fix/scarlett-samplers-raster
+345b23a|2026-11-24|brcly|xshader: reuse one heap resource local per uniform SGPR index
+290f307|2026-11-24|brcly|launcher: skip Scarlett's pre-game shader archive
+4afc67d|2026-11-23|NathansDomainSolutions|xshader: MUBUF SOFFSET as an address term; raw SRVs behind root descriptors
+f8abe8f|2026-11-23|NathansDomainSolutions|xshader: private samplers when the root declares no static samplers
+243b695|2026-11-23|NathansDomainSolutions|xshader: FSSM fallback for uncovered raster slots; private root-less samplers
+1233e21|2026-11-23|NathansDomainSolutions|xshader: match literal sampler words in any shader with static samplers
+118c71d|2026-11-24|brcly|Merge pull request #29 from NathansDomainSolutions/tools/scarlett-refusal-triage
+c9eaf42|2026-11-23|NathansDomainSolutions|tools: rank xshader refusals over ProjectScarlett's recorded requests
+dd491c6|2026-11-24|brcly|Merge pull request #26 from NathansDomainSolutions/fix/raster-s9-diagnostics
+4359e7f|2026-11-24|brcly|Merge pull request #28 from NathansDomainSolutions/feat/input-joystick
+6a57c65|2026-11-23|NathansDomainSolutions|gameinput: turn the keyboard gamepad on by default, as documented
+b8ee94a|2026-11-24|brcly|Merge pull request #27 from NathansDomainSolutions/feat/offline-launch
+2bad2b7|2026-11-24|brcly|Merge pull request #25 from NathansDomainSolutions/fix/rage-shader-translation
+791d59a|2026-11-24|brcly|Merge pull request #24 from NathansDomainSolutions/feat/gather-explicit-lod
+c039cb4|2026-11-23|NathansDomainSolutions|xshader: translate image_gather4_l on 2D images as four texel-centre samples
+cc752ba|2026-11-23|NathansDomainSolutions|xshader: translate image_gather4_l, resolve root-less descriptors, and handle typed heap stores
+19786f2|2026-11-24|brcly|Merge pull request #8 from NathansDomainSolutions/docs/scarlett-setup
+78be8ab|2026-11-24|brcly|Merge pull request #23 from NathansDomainSolutions/fix/dxc-timeout-fallback
+ca29374|2026-11-23|NathansDomainSolutions|Bound and test the retry after a DXC timeout
+d7773e2|2026-11-23|NathansDomainSolutions|runtime shaders: retry DXC at -O0 when the optimised compile times out
+2edd22c|2026-11-23|NathansDomainSolutions|dxbc, d3d12: support s9 raster descriptor tables and track null compute dispatches
+ca20f93|2026-11-23|NathansDomainSolutions|docs: add a ProjectScarlett setup guide
+d130bf1|2026-11-23|NathansDomainSolutions|launcher: add run --offline to block crash uploads on Linux
+f22f388|2026-11-24|brcly|Merge pull request #22 from NathansDomainSolutions/fix/proton-runner-symlink
+18e81b5|2026-11-24|brcly|Merge pull request #21 from NathansDomainSolutions/fix/pipeline-trace-events
+344a03b|2026-11-23|NathansDomainSolutions|Accept symlinked Proton launchers with renamed targets
+e360e3e|2026-11-24|brcly|Merge pull request #20 from NathansDomainSolutions/fix/package-drive-launch-cleanup
+76591e4|2026-11-23|NathansDomainSolutions|Skip malformed pipeline timing events
+22caa19|2026-11-23|NathansDomainSolutions|Restore package drive state when launch setup fails
+b0dc9a1|2026-11-24|brcly|Bind uncovered compute descriptors that FSSM and PSV agree on
+9e2fd66|2026-11-24|brcly|Merge pull request #18 from ReverendOzmund/fix-frame-present-tests
+40e1565|2026-11-24|ReverendOzmund|Fix frame tests: present probe crash and clang 19 RGB10 clear
+7666f54|2026-11-24|brcly|Merge pull request #17 from NathansDomainSolutions/fix/pipeline-big-stack
+c679f13|2026-11-23|NathansDomainSolutions|runtime/d3d12: create host pipelines on a thread with a 64 MiB stack
+669451e|2026-11-24|brcly|Merge pull request #13 from NathansDomainSolutions/feat/xpackage-slot-39
+23c848b|2026-11-24|brcly|Pass the package directory through the merged launch path
+97c1cad|2026-11-24|brcly|Merge branch 'translator-bindless-resources'
+56d40c7|2026-11-24|brcly|Merge pull request #12 from NathansDomainSolutions/test/xg-layout-invariants
+1a9929a|2026-11-24|brcly|Merge pull request #11 from NathansDomainSolutions/fix/d3d12-failure-diagnostics
+faa99ae|2026-11-24|brcly|Merge pull request #10 from NathansDomainSolutions/fix/xgameruntime-query-log
+1cfd0c6|2026-11-24|brcly|Merge pull request #5 from NathansDomainSolutions/build/linux-toolchain-checks
+0651924|2026-11-24|brcly|Merge pull request #14 from NathansDomainSolutions/perf/xmem-commit-section-whole
+c7487e4|2026-11-24|brcly|Merge pull request #9 from NathansDomainSolutions/fix/cached-pages-imports
+ff7fd07|2026-11-24|brcly|Merge pull request #6 from NathansDomainSolutions/fix/package-drive
+05c7e3e|2026-11-24|brcly|Merge pull request #15 from ReverendOzmund/fix-linux-build-current-toolchains
+cc9d34d|2026-11-24|brcly|Add an opt-in Project Scarlett graphics profile
+444066e|2026-11-24|brcly|Lower mesh resource-heap loads and whole-wave allocations
+ca772f1|2026-11-24|ReverendOzmund|Fix Linux build with current Rust and clang
+aaaad1d|2026-11-23|NathansDomainSolutions|xmem: commit physical-page sections whole instead of per view
+2bf99e3|2026-11-23|NathansDomainSolutions|Serve XPackageEnumeratePackages on XPackage slot 39
+dab1a10|2026-11-23|NathansDomainSolutions|xg-layout: add host unit tests for layout invariants
+1c321f0|2026-11-23|NathansDomainSolutions|Log distinct d3d12 pipeline failures and per-kind counts
+a15bf14|2026-11-23|NathansDomainSolutions|xgameruntime: log served classes, print canonical GUIDs
+2cc9ff3|2026-11-23|NathansDomainSolutions|Fix check_frosty_cached_pages imports
+c561d03|2026-11-23|NathansDomainSolutions|Find the package root from the launch and restore G: afterwards
+cf0abde|2026-11-23|NathansDomainSolutions|Bound, cache, and fall through the DXC probe
+9a81229|2026-11-24|brcly|Translate SM 6.6 descriptor-heap resources in compute shaders
+84c35b3|2026-11-23|NathansDomainSolutions|Map the package to G: for Wine and Proton launches
+baa315b|2026-11-23|NathansDomainSolutions|Link synchronization.lib and reject broken DXC builds on Linux
+0b80c58|2026-11-24|brcly|Expand mesh shader coverage and report Scarlett progress
+1b6fbb1|2026-11-24|brcly|License TuxBox under Apache 2.0
+9cbc5b9|2026-11-24|brcly|Reconcile mesh and resolve shader bindings
+89af910|2026-11-23|brcly|Prewarm ProjectScarlett shaders and speed up texture writeback
+52a24b8|2026-11-23|brcly|Recognize ProjectScarlett mesh shader exports
+c217aa4|2026-11-23|brcly|Now displays GTA VI properly on linux.
+938c402|2026-11-23|brcly|Merge ProjectScarlett runtime and graphics updates
+33d513e|2026-11-23|brcly|Add offline platform services and graphics diagnostics
+fe6b0e1|2026-11-23|brcly|Bring ProjectScarlett from Game Init to Game Running
+57fe562|2026-11-23|brcly|Merge pull request #3 from Batushn/fix/windows-unittest-compatibility
+91f775d|2026-11-23|brcly|Merge pull request #2 from Batushn/fix/inspect-resolve-root
+46f1dbf|2026-11-23|Batuhan Ôö╝┼×ahin|Make Python unittest suite pass on Windows
+115fcce|2026-11-23|Batuhan Ôö╝┼×ahin|Resolve package root in inspect.member() before containment checks
+03ca42e|2026-11-23|brcly|Advance ProjectScarlett startup and Frosty rendering
+f47dfcd|2026-11-23|brcly|Run Frosty through Wake Up with packaged Lumen settings
+5be71bc|2026-11-23|brcly|Complete Frosty non-ray compute translation and expand FidelityFX shader support
+f2aebd2|2026-11-23|brcly|Translate Frosty hair visibility and expand compute shader coverage
+858d057|2026-11-23|brcly|Track verified game behavior and improve Xbox shader and graphics support
+3a0e412|2026-11-23|brcly|Measure Series library and shader coverage and retire unused providers
+e82aaf2|2026-11-23|brcly|Match the Series custom microcode export through driver dispatch
+6607af2|2026-11-23|brcly|Track verified project milestones and focus the library map on Frosty
+759701f|2026-11-23|brcly|Expand D3D12, XMem, XG and DXC providers and verify Frosty startup
+a0afb42|2026-11-22|brcly|Expand XG texture layouts and batch startup tracing
+ad78374|2026-11-22|brcly|Measure overlapping XTF assertion dispatch
+949862a|2026-11-22|brcly|Support checked packed 3D mip tails
+c23c83c|2026-11-22|brcly|Preserve XMem null heap free behavior
+95bebe3|2026-11-22|brcly|Measure XTF assertion handler contracts
+09c88fd|2026-11-22|brcly|Update library documentation and coverage summary
+d2e5108|2026-11-22|brcly|Support unpacked tiled 3D mip chains
+9e216b1|2026-11-22|brcly|Implement checked XMem title heap operations
+cc23b46|2026-11-22|brcly|Add XTF diagnostic severity helpers
+249b2f4|2026-11-22|brcly|Support tiled 3D textures and XTF assertion state
+971c1a1|2026-11-22|brcly|Measure PIX parser ownership and mutation
+595c9f7|2026-11-22|brcly|Expand XMem CPU heap attribute support
+173db5f|2026-11-22|brcly|Survey PIX PDB parser behavior
+062a726|2026-11-22|brcly|Implement swizzle selection and PIX PDB lookup
+af943b8|2026-11-22|brcly|Expand verified CPU virtual allocation profiles
+db6d614|2026-11-22|brcly|Add PIX status logging and scatter page mapping
+ada7a3e|2026-11-22|brcly|Validate XG depth swizzle modes
+a745ff0|2026-11-22|brcly|Expand XG tile shapes and write-watch allocations
+d29cde1|2026-11-22|brcly|Measure pixel wave behavior on both GPUs
+c5bcc4f|2026-11-22|brcly|Support checked linear 3D texture layouts
+473b1e7|2026-11-22|brcly|Survey global pixel wave elections
+d9545fd|2026-11-22|brcly|Support write-watch suspension and resume
+a1bfa1a|2026-11-22|brcly|Support checked 1D layouts and write-watch queries
+94f4556|2026-11-22|brcly|Translate texture layouts and allocation hooks
+ac78271|2026-11-22|brcly|Measure Xbox DXR compiler factory interface
+19176db|2026-11-22|brcly|Expand graphics and memory export coverage
+4cbab30|2026-11-22|brcly|Validate sphere graph sidecar generation
+1aaa1c4|2026-11-22|brcly|Validate paired triangle sidecar bounds
+7cbfeda|2026-11-22|brcly|Clarify progress map and project documentation
+76db0e4|2026-11-22|brcly|Translate Lumen update grid tile shader
+d1cda6f|2026-11-22|brcly|Translate guarded LDS exchange operations
+aea0d4f|2026-11-22|brcly|Translate Lumen visibility indirect arguments
+29a4795|2026-11-22|brcly|Validate GPU-generated procedural sidecars
+099445e|2026-11-22|brcly|Test sidecar directory with guarded ray candidates
+c2dfdbf|2026-11-22|brcly|Translate classified subsurface setup
+78e8991|2026-11-22|brcly|Test procedural candidates with GPU triangle data
+310320e|2026-11-22|brcly|Translate depth-only subsurface setup
+ae42eb8|2026-11-22|brcly|Test zero-distance procedural ray candidates
+6bd38de|2026-11-22|brcly|Translate indirect hair visibility compaction
+2dd6dbc|2026-11-22|brcly|Test widened ray query distance filtering
+249e78e|2026-11-22|brcly|Check native zero-distance triangle candidates
+9c52ce4|2026-11-22|brcly|Verify native triangle distance boundary
+066744d|2026-11-22|brcly|Document inline ray distance boundaries
+6a19897|2026-11-22|brcly|Translate depth-filtered hair visibility compaction
+9f026ef|2026-11-22|brcly|Compare direct lighting ray segments on both GPUs
+2018002|2026-11-22|brcly|Test exceptional BVH rounding behavior
+2935150|2026-11-22|brcly|Translate hair cluster metadata culling shader
+24c49e2|2026-11-22|brcly|Reject ambiguous acceleration structure addresses
+5298e51|2026-11-22|brcly|Validate hair compaction and GPU address reads
+7d8fe16|2026-11-22|brcly|Validate hair prefix through Xbox provider
+5d61036|2026-11-22|brcly|Test provider hair culling and BVH edge arithmetic
+a067ba9|2026-11-22|brcly|Validate dynamic BVH and guarded GPU traversal
+1500678|2026-11-22|brcly|Validate hair deformation and parallel BVH checks
+4a4770f|2026-11-22|brcly|Validate bounded GPU shadow reads and tile shaders
+85e8e1d|2026-11-22|brcly|Validate mesh SDF offsets and GPU shadow sources
+5e400cc|2026-11-22|brcly|Expand reflection and shadow resource checks
+e76f612|2026-11-22|brcly|Expand reflection and BVH reference validation
+35d5208|2026-11-22|brcly|Validate retained BVH traversal and reflection scans
+adf70dd|2026-11-22|brcly|Characterize BVH traversal and GPU ordering
+98f6c76|2026-11-22|brcly|Validate ray visualization and BVH boundaries
+b43c65a|2026-11-22|brcly|Validate ray compaction and BVH ordering
+640a42a|2026-11-22|brcly|Extend shadow traversal and shader controls
+912ae06|2026-11-22|brcly|Expand shader census and RDNA traversal controls
+0e69566|2026-11-22|brcly|Validate RDNA BVH instructions and shadow culling
+b63805c|2026-11-22|brcly|Expand shadow culling and BVH validation
+b61def9|2026-11-22|brcly|Validate Xbox BVH nodes and shadow instances
+45f88ce|2026-11-22|brcly|Validate serialized BVH traversal and shadow shaders
+594c62d|2026-11-22|brcly|Expand Xbox ray tracing and shader translation
+346b50e|2026-11-22|brcly|Preserve integer page-table reads in Xbox street materials
+393f485|2026-11-22|brcly|Measure FrostyÔÇÖs shooting tutorial and menu texture detail on stock Proton
+521a741|2026-11-22|brcly|Reduce branch overhead when translating Xbox pixel shaders
+77642e1|2026-11-22|brcly|Improve FrostyÔÇÖs menu glyphs and prepare shaders through the chase
+4f91131|2026-11-22|brcly|Translate simple Xbox shaders independently and run Frosty on stock Proton
+accd7e1|2026-11-22|brcly|Run Frosty's highway chase and city free roam on Linux
+5725d77|2026-11-21|brcly|Translate Frosty's Nanite mesh and culling shaders
+d5abfc0|2026-11-21|brcly|Restore Frosty's code trails and link raster shaders on demand
+260e104|2026-11-21|brcly|Render Frosty's menu code and map Xbox shader coverage
+feee428|2026-11-21|brcly|Track per-library export coverage and expand shared Xbox APIs
+151c088|2026-11-21|brcly|Implement and verify six partial Xbox DLL providers
+6d15471|2026-11-21|brcly|Initial commit

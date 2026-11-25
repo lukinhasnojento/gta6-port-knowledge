@@ -1,0 +1,5 @@
+﻿bad5bc2|2026-11-20|walkthestars|structure: byte-level layout notes for RPF9, resources/textures, AWC audio, PSO and object graph, TTPF stores, models and shaders
+14b4bff|2026-11-20|Brandon|LEGAL: describe the repo as format notes, not the SixNG tool
+4b3beb1|2026-11-20|Brandon|README: fix BCPack anchor
+0a52a67|2026-11-20|Brandon|README: describe the repo as GTA VI format info, not the SixNG tool
+dd592ba|2026-11-20|Brandon|GTA VI asset format docs and SixNG tool guide (2026-11-20)
