@@ -16,6 +16,9 @@ evidência, sob os usos permitidos pelas licenças dos respectivos projetos.
 Este acervo não é afiliado, endossado ou patrocinado pela Rockstar Games, Take-Two Interactive,
 Microsoft ou AMD. *Grand Theft Auto*, *GTA VI* e marcas relacionadas pertencem aos seus titulares.
 
+Este repositório é distribuído sob **GNU General Public License v3.0** (veja `LICENSE`).
+Copyright (C) 2026 lukinhasnojento.
+
 Os doze repositórios analisados são projetos independentes de terceiros. Suas licenças estão
 listadas abaixo, conforme declaradas nos próprios repositórios no momento da análise.
 
@@ -58,6 +61,11 @@ GPL-3.0 — o que torna a distribuição combinada problemática.
 necessária, porque emula `CLZERO`, `MONITORX`, `MWAITX` e as instruções SSE4a que o executável do
 jogo usa —, reimplemente do zero a partir do comportamento documentado (o `STATUS_ILLEGAL_INSTRUCTION`
 que essas instruções geram em CPU Intel), sem consultar a implementação GPL-2.0-only.
+
+O agravante é que **este acervo e o repositório unificado pretendido são GPL-3.0**. Incorporar
+código GPL-2.0-only violaria a licença em dois sentidos: pela incompatibilidade entre as versões e
+pelo relicenciamento indevido. A regra vale para qualquer arquivo, de qualquer fork, cujo cabeçalho
+declare `GPL-2.0-only` — não só para este.
 
 Isto é uma observação técnica sobre compatibilidade de licenças, não assessoria jurídica.
 

@@ -96,3 +96,31 @@ encontrado em um dos forks que precisa ser resolvido antes de qualquer consolida
 **A precisão é variável por natureza.** Cada conclusão traz o grau de confiança que tinha quando
 foi escrita. Onde não havia evidência, está escrito `NÃO VERIFICADO` — isso é intencional e é a
 razão pela qual o acervo pode ser usado.
+
+## Licença
+
+**GNU General Public License v3.0** — veja [`LICENSE`](LICENSE).
+
+```
+GTA VI PC port — acervo de conhecimento histórico
+Copyright (C) 2026 lukinhasnojento
+
+Este programa é software livre: você pode redistribuí-lo e/ou modificá-lo
+sob os termos da GNU General Public License, versão 3, conforme publicada
+pela Free Software Foundation.
+
+Este programa é distribuído na esperança de ser útil, mas SEM NENHUMA
+GARANTIA; sem sequer a garantia implícita de COMERCIALIZAÇÃO ou ADEQUAÇÃO
+A UM PROPÓSITO ESPECÍFICO. Veja a GNU General Public License para mais
+detalhes.
+
+Você deve ter recebido uma cópia da GNU General Public License junto com
+este programa. Se não, veja <https://www.gnu.org/licenses/>.
+```
+
+A escolha é coerente com o ecossistema: os projetos analisados são majoritariamente GPL-3.0, e
+o repositório unificado que este acervo pretende alimentar também será. Usar a mesma licença evita
+atrito na hora de incorporar correções vindas deles.
+
+O texto em `LICENSE` é cópia verbatim do original da Free Software Foundation
+(35.149 bytes, 674 linhas), sem modificação — a própria licença proíbe alterá-la.
