@@ -1,119 +1,125 @@
-# Execução de 2026-11-26 00:00
+# Execução de 2026-11-26 01:00
 
-- **Data/hora local:** 2026-11-26 00:00 (America/Sao_Paulo) — início da coleta 2026-11-26T03:03Z
-- **Execução:** 3 de N (22:00 foi o baseline; 23:00 a primeira documentação)
-- **Estado:** `baselined=true` na entrada; baseline não foi refeito
+- **Data/hora local:** 2026-11-26 01:00 (America/Sao_Paulo) — início da coleta 2026-11-26T04:03Z
+- **Execução:** 4 de N (22:00 foi o baseline; 23:00 a primeira documentação)
+- **Estado na entrada:** `baselined=true`, `runs=3`, `backlog=["R0Y00/Xbox2Windows"]`, `updated=2026-11-26T03:16:53Z`
 
-## Repositórios com delta (10)
+## Repositórios com delta (9)
 
-| Repositório | Commits novos | PRs abertos | PRs mesclados | Documento |
+| Repositório | Commits novos | PRs abertos | PRs mesclados (no cursor) | Documento |
 |---|---|---|---|---|
-| Marvisak/VIctory | 0 | 24 | 0 | `docs/updates/2026-11-26/00/VIctory.md` |
-| ivall/xcl | 0 | 9 | 0 | `docs/updates/2026-11-26/00/xcl.md` |
-| R0Y00/Xbox2Windows | 43 (40 documentados) | 14 | 18 | `docs/updates/2026-11-26/00/Xbox2Windows.md` |
-| Belobug/VIctory-Belobug-AMD | 0 | 3 | 0 | `docs/updates/2026-11-26/00/VIctory-Belobug-AMD.md` |
-| DexNom/VIctory | 0 | 2 | 0 | `docs/updates/2026-11-26/00/VIctory-DexNom.md` |
-| uiliannn/VItoriaBr | 1 | 3 | 0 | `docs/updates/2026-11-26/00/VItoriaBr.md` |
-| avatarmanz/VIctory-7900XTX | 0 | 7 | 0 | `docs/updates/2026-11-26/00/VIctory-7900XTX.md` |
-| fxceless/victory-fork | 9 | 5 | 0 | `docs/updates/2026-11-26/00/victory-fork.md` |
-| brcly/TuxBox | 4 (2 merges) | 1 | 2 | `docs/updates/2026-11-26/00/TuxBox.md` |
-| holdmysocks/SixNG | 6 | 7 | 6 | `docs/updates/2026-11-26/00/SixNG.md` |
+| R0Y00/Xbox2Windows | 31 | 9 | 18 | `docs/updates/2026-11-26/01/Xbox2Windows.md` |
+| fxceless/victory-fork | 9 | 1 | 1 | `docs/updates/2026-11-26/01/victory-fork.md` |
+| holdmysocks/SixNG | 4 | 3 | 1 | `docs/updates/2026-11-26/01/SixNG.md` |
+| avatarmanz/VIctory-7900XTX | 3 | 11 | 0 | `docs/updates/2026-11-26/01/VIctory-7900XTX.md` |
+| brcly/TuxBox | 2 | 1 | 0 | `docs/updates/2026-11-26/01/TuxBox.md` |
+| Marvisak/VIctory | 0 | 28 | 0 | `docs/updates/2026-11-26/01/VIctory.md` |
+| ivall/xcl | 0 | 11 | 0 | `docs/updates/2026-11-26/01/xcl.md` |
+| DexNom/VIctory | 0 | 4 | 0 | `docs/updates/2026-11-26/01/VIctory-DexNom.md` |
+| Belobug/VIctory-Belobug-AMD | 0 | 2 | 0 | `docs/updates/2026-11-26/01/VIctory-Belobug-AMD.md` |
 
-Sem delta: `californiaAlmonds/OpenScarlett` (`main` em `7220ce94`, 2 PRs abertos todos ≤ 60),
-`omonkeyz/xbox-emulator` (topo em `a618736d`, 25 PRs abertos todos ≤ 394), `walkthestars/GTA6-Asset-Info`
-(topo em `bad5bc21`, 1 PR aberto e zero mesclados).
+Sem delta: `uiliannn/VItoriaBr` (`main` em `e40fba44`), `californiaAlmonds/OpenScarlett` (`7220ce94`),
+`omonkeyz/xbox-emulator` (`a618736d`) e `walkthestars/GTA6-Asset-Info` (`bad5bc21`). Nesses quatro a
+varredura de abertos (números ≤ 111, 60, 394 e 0) e a de mesclados por `merged_at` não acharam nada.
 
 ## Números da hora
 
-- **60 commits** documentados, de 63 na faixa real (40 de `Xbox2Windows` + 9 de `victory-fork` +
-  6 de `SixNG` + 4 de `TuxBox` + 1 de `VItoriaBr`).
-- **101 PRs** documentados: **75 abertos** (24 + 9 + 14 + 3 + 2 + 3 + 7 + 5 + 1 + 7) e **26 mesclados**
-  (18 de `Xbox2Windows`, 6 de `SixNG`, 2 de `TuxBox`).
-- **10 documentos** escritos, um por repositório com delta; **0 documentos de falha**.
-- **3 commits em backlog:** `404446e8` (#2668), `41ad992e` (#2671) e `2a801192` (#2667), todos de
-  `Xbox2Windows`, pelo teto de 40 commits.
+- **49 commits** documentados, de 49 na faixa — nenhum corte de teto. `Xbox2Windows` sozinho tem 31
+  (abaixo do teto de 40), e os três commits que a hora anterior deixou no backlog (`404446e8`,
+  `41ad992e`, `2a801192`) estão entre eles.
+- **70 PRs abertos** (28 + 11 + 9 + 4 + 3 + 2 + 1 + 11 + 1) e **20 PRs mesclados** detectados no cursor
+  (18 em `Xbox2Windows`, 1 em `SixNG`, 1 em `victory-fork`).
+- **9 documentos** escritos, um por repositório com delta; **0 documentos de falha** (`_falhas.md` não
+  existe nesta hora porque nenhuma coleta falhou).
+- **Backlog:** esvaziado. `R0Y00/Xbox2Windows` foi consumido e os cursores `commit_cursor`/`head_at_run`
+  foram removidos do estado, como manda a regra (só existem quando o teto corta a faixa).
+- `runs` passou de 3 para 4.
 
-## Decisões e desvios do procedimento
+## Método: o que mudou em relação ao procedimento escrito
 
-1. **Subagentes: nenhum.** A ferramenta de subagente não está disponível nesta sessão, então os dez
-   repositórios com delta foram processados **em sequência**, como o passo 3 autoriza. O limite de 4
-   simultâneos não foi exercido e nada foi para o `backlog` por concorrência. O `backlog` tem uma
-   entrada — `R0Y00/Xbox2Windows` — apenas por causa do teto de commits.
-2. **PRs mesclados passaram a ser detectados por `mergedAt`, não por `last_pr_number`.** Esta é a
-   mudança de método mais importante da hora. Nos treze repositórios, a numeração de PR **não acompanha
-   a ordem de merge**: `Marvisak/VIctory` tem `last_pr_number = 2978` e o maior PR mesclado devolvido é
-   2493; `ivall/xcl` tem 2614 e o maior mesclado é 2466; `Xbox2Windows` mesclou 18 PRs nesta hora com
-   números de 2630 a 2706, abaixo do cursor 2688. O filtro `numero > last_pr_number` do procedimento
-   teria perdido **18 merges de `Xbox2Windows`, 6 de `SixNG` e 2 de `TuxBox`** — ou seja, todos. Usei
-   `mergedAt > last_run` (02:11:35Z) e conferi que cada `mergeCommit.oid` corresponde ao commit
-   documentado. O `last_pr_number` continua sendo o cursor de PRs **abertos**.
-3. **Teto de 40 commits em `Xbox2Windows`.** A faixa tinha 43. Documentei os 40 mais antigos
-   (`c1e4c709` … `d5ea71b2`) e gravei `last_commit = d5ea71b2` (mais `commit_cursor` e `head_at_run` em
-   `state/watch.json`), de modo que a próxima execução comece exatamente nos três que faltam. Não
-   avancei o cursor até o topo para não perder commit sem documento.
-4. **Divergência não resolvida em `Xbox2Windows`: 44 merges contra 43 commits.** A busca
-   `search/issues?is:pr+is:merged+merged:>=2026-11-26T02:11:35Z` conta **44** PRs mesclados, e o
-   `compare` `572723f9...2a801192` tem **43** commits. Um PR mesclado na janela não aparece como commit
-   próprio na lista (merge de branch, ou squash ausente). Não identifiquei qual pela API de commits e
-   registrei a divergência na seção Confiança do documento, em vez de inventar a linha que falta.
-5. **Duas passadas de commit, e por quê.** O passo 6 manda publicar `docs/updates state` e o passo 7
-   manda gravar este arquivo com "o resultado do push", que não existe antes do push. Segui o mesmo
-   formato da execução anterior: primeiro o commit de documentação e estado, publicado nas duas
-   branches; depois este arquivo, num segundo commit com a mesma sequência `public` → `push origin
-   public:main` → `main` → `merge --no-ff` → `push private main`.
-6. **Commits de merge contados como commits.** Em `TuxBox` a faixa tem 4 commits, mas dois são os merges
-   `c2d7bbc8` (#206) e `bc4ba79f` (#208) e dois são os commits de branch (`5cd728f8`, `ff9d54cf`). Eles
-   aparecem na tabela de commits e os PRs correspondentes na tabela de mesclados, sem duplicar a
-   descrição do conteúdo.
+1. **PR mesclado continuou por `mergedAt`** (mudança adotada na hora anterior, já registrada no próprio
+   procedimento). O filtro por `numero > last_pr_number` teria perdido 20 merges: em `Xbox2Windows` os
+   números vão de 1821 a 2726 com cursor de abertos em 2710; em `SixNG` o `#346` é maior que o cursor 345,
+   mas `#333`/`#338`/`#345` não.
+2. **A busca de mesclados falhou nesta hora e foi trocada.** `gh pr list --state merged --search
+   "merged:>=<cursor>"` devolveu **lista vazia nos treze repositórios** (índice de busca atrasado: PRs
+   mesclados há minutos ainda não estavam indexados). Troquei por
+   `gh api 'repos/<owner>/<repo>/pulls?state=closed&sort=updated&direction=desc&per_page=100'` e filtrei
+   `merged_at > last_run` no cliente. Só assim os 18 merges de `Xbox2Windows` apareceram. Registrei o
+   desvio no `INDEX.md` e no documento de cada repositório afetado. Se a busca voltar a funcionar, as duas
+   rotas concordam; se não voltar, a rota por API é a que deve ficar.
+3. **Divergência entre commits e merges, registrada e não "consertada".** A janela de commits tem 31
+   merges squash em `Xbox2Windows` e 4 em `SixNG`, mas a API de mesclados (com o cursor
+   `2026-11-26T03:16:53Z`) devolveu 18 e 1. Os 16 restantes (`#333`/`#338`/`#345` de `SixNG` e 13 de
+   `Xbox2Windows`) mesclaram **antes** do cursor `last_run` e **depois** do `last_commit` anterior: a
+   execução de 00:00 gravou o estado às 03:16:53Z sem ter visto esses commits. Conferi cada `mergedAt` por
+   `gh api repos/<owner>/<repo>/pulls/<n>` e a contagem fecha (18+13 = 31; 1+3 = 4). O documento de cada
+   repositório traz a divergência na seção Confiança, com os números e as horas.
+4. **Subagentes: nenhum.** A ferramenta de subagente não está disponível nesta sessão; os nove
+   repositórios foram processados **em sequência**, como o passo 3 autoriza. O limite de 4 simultâneos não
+   foi exercido e nada foi para o backlog por concorrência.
+5. **Duas passadas de commit, e por quê.** O passo 6 publica `docs/updates state`; o passo 7 manda este
+   arquivo conter "o resultado do push", que não existe antes do push. Segui o formato da execução
+   anterior: commit de documentação e estado primeiro, publicado nas duas branches; este arquivo depois,
+   num segundo commit com a mesma sequência. O primeiro commit é o que o passo 6 pede, com a mensagem
+   exata `docs(updates): 2026-11-26 01:00`.
 
 ## Resultado do push
 
-Sequência executada sem merge de `main` na `public`:
+Sequência executada exatamente como o procedimento manda, sem merge de `main` na `public`:
 
 1. `git -C G:\gta6-port-knowledge switch public` → **ok**.
-2. `git add docs/updates state` → 12 arquivos (10 documentos novos, `INDEX.md`, `state/watch.json`).
-3. `git commit -m "docs(updates): 2026-11-26 00:00"` → **ok**, commit `97834af`, 12 arquivos, +631/-17.
-4. `git push origin public:main` → **ok**, `24a5ac1..97834af  public -> main`.
-5. `git switch main` + `git merge --no-ff public -m "merge updates 2026-11-26 00:00"` → **ok**, merge
-   `2d3c449`.
-6. `git push private main` → **ok**, `1f77d9c..2d3c449  main -> main`.
+2. `git add docs/updates state` → 11 arquivos (9 documentos novos, `INDEX.md`, `state/watch.json`).
+3. `git commit -m "docs(updates): 2026-11-26 01:00"` → **ok**, commit `740bd83`, 11 arquivos,
+   +671/−16.
+4. `git push origin public:main` → **ok**, `a1bb51d..740bd83  public -> main`.
+5. `git switch main` + `git merge --no-ff public -m "merge updates 2026-11-26 01:00"` → **ok**, merge
+   `91f3d3d`.
+6. `git push private main` → **ok**, `32d94e5..91f3d3d  main -> main`.
 
-Este arquivo entra no commit seguinte, pelo mesmo caminho (public → main público → merge na main →
-main privado).
+Verificado depois: `git ls-remote origin main` devolve `740bd83d…` e o `HEAD` local da `main` é
+`91f3d3d`. Nenhum push falhou, então o estado **pôde** avançar (a regra "se o push falhar, não avance o
+estado" não foi acionada).
+
+Este arquivo entra num commit seguinte, pelo mesmo caminho: `public` → `push origin public:main` →
+`main` → `merge --no-ff` → `push private main`.
 
 ## Achados que valem acompanhamento
 
-- **`Xbox2Windows` `c452959f` (#2706)** remove quatro linhas que declaravam `bound_targets[8]` /
-  `bound_depth` duas vezes no `Pass`; as duplicatas vieram da integração de **#2448 (`a3b923e1`)** e
-  **#2417 (`73621923`)** e derrubavam a build MSVC (C2086) antes dos testes. Defeito introduzido e
-  corrigido em ~40 minutos. O PR **#2707** propõe a mesma correção e continua aberto contra uma `main`
-  já corrigida — vai precisar de rebase.
-- **`Xbox2Windows` #2710** diz que `startup_compute_dispatch_texture_*` (da #2532) **falha na `main`
-  atual** em `tests/startup_compute_dispatch_texture_check.py:101`, por causa da reescrita de recusa de
-  view do #2649. Se for verdade, a `main` está vermelha nesse teste agora.
-- **`Xbox2Windows` #2701 e #2707** declaram a `main` quebrada por motivos diferentes (logs de Windows de
-  #2454 e #2704 mostrando as declarações duplicadas antes dos testes). Os dois achados apontam para a
-  mesma janela de integração.
-- **`TuxBox` #208** é cobertura de teste do caminho que o `#168` refletiu (roots raster com duas tabelas
-  de descritor), não correção do `D-22`. O catálogo não tem linha para "faltava cenário de duas
-  tabelas" — candidato a item novo.
-- **`SixNG` b7a9ad07 (#337)** volta à tabela BC1 do BCPack, que é a região de `D-09`. Aqui a régua é
-  declarada (checagem de mip sobre 35.533 texturas: abaixo de 20 dB 65 → 60, nenhuma pior), diferente do
-  ajuste empírico que originou `D-09`.
-- **`victory-fork 895a23bc`** muda o que a passagem de buffer-views revisita e está atrás de switch
-  desligado; o autor declara "compilado aqui; não rodado em jogo". Se o switch virar padrão sem medição,
-  é a classe de mudança que já produziu perda de device neste fork (`D-16`, aberto).
-- **`xcl` #2624** (83 arquivos, +12.712/-687) é a maior proposta da fila e mistura upstream, preparação
-  de shader em processos worker e mudanças em `dxil/`/`recomp/`. Quando mesclar, merece documento só
-  dele.
+- **`Xbox2Windows` `#2679` (`293e77f6`) reverte parte de um recurso próprio.** O commit remove a reescrita
+  de descritores que o `#2579` tinha acabado de introduzir, e converte `X2W_D3D12_RELEASE_RETIRED_VIEWS`
+  em diagnóstico legado. O `#2719`, aberto na mesma hora, propõe a fatia seguinte de `#2379` (slots 19/20/21
+  na classe de aposentadoria). Se ele mesclar sem revisão, o mesmo tipo de regressão pode voltar.
+- **`Xbox2Windows` `#2685`**: o corpo do PR descreve `probe_writable` (sonda de escrita sob SEH), mas o
+  código que entrou usa `QueryWorkingSetEx` e mantém `VirtualQuery` como fallback — a revisão do próprio PR
+  trocou a abordagem. Documento registra a divergência entre texto e diff.
+- **`Xbox2Windows` `#2044`**: o corpo cita `x2w-startup-shader-9`, o código entrou em `-18`. É só número
+  defasado no texto, mas qualquer auditoria que compare corpo do PR com código vai tropeçar nisso.
+- **`AvatarManz`**: `#97` (UAV de textura posicionada escrevendo em stand-in → interiores sem luz indireta)
+  e `#96` (exaustão de slots dinâmicos em heap com teto) descrevem defeitos que o catálogo `AvatarManz` não
+  tem. `#96` é a mesma classe de `VIctory D-01` e `Belobug-AMD D-05`.
+- **`DexNom` `#66`**: slot de heap sem stride lido como constant buffer → fault de página de GPU e remoção
+  do dispositivo num dispatch indireto de culling, em RX 9070 (RDNA 4). É a falha mais grave da hora na
+  fila aberta e não tem linha no catálogo.
+- **`victory-fork` `4d0c6345`** porta `c1c32819e9` (upstream) e corrige, neste fork, o que o catálogo
+  registra como `DexNom D-16`. Vale acrescentar a linha em `victory-fork` com `corrigido = 4d0c6345`.
+- **`TuxBox` `ac4f0993`** sobe as vagas de compilação em jogo de `min(4, núcleos)` para
+  `max(2, núcleos/2)` (máx. 32) e as de preparação de 8 para os núcleos. É a alavanca de `D-02`/`D-03`
+  (tempo e memória do otimizador do DXC) e o commit não traz medição de memória com o novo padrão.
+- **`SixNG` `#346`**: a segunda tabela `EDUP` (`core_restofworld`, 33 pares, texturas de gore) ficava fora
+  do índice porque estava apendada ao XML de setup do pacote. Defeito novo, corrigido, sem linha no
+  catálogo.
+- **README de `AvatarManz`**: a linha `ZETTROX` entra no merge da `main` do GitHub (`a6ba0a8d`) e sai três
+  minutos depois num commit direto (`b0cfe2ba`). A `main` local fica divergindo da remota nesse arquivo; a
+  próxima sincronização traz a linha de volta e a rotina terá de documentar o mesmo vai-e-vem.
 
 ## O que não foi verificado
 
 Nenhum dos treze repositórios monitorados foi escrito — somente leitura, como manda o limite. Nada foi
-compilado nem executado. Os 40 diffs de `Xbox2Windows`, os 9 de `victory-fork`, os 6 de `SixNG`, os 4 de
-`TuxBox` e o 1 de `VItoriaBr` foram lidos pela API (arquivos, contagens, trechos de patch), mas os
-números de cobertura que os testes declaram (1.024 words, 320 words, 35.533 texturas, 17.431 pares) são
-declaração dos próprios testes. Os corpos dos 75 PRs abertos foram lidos, **os diffs não**: toda
-afirmação sobre o que um PR faz é declaração do autor. Os cinco logs de diagnóstico de `victory-fork`
-têm 25 a 37 mil linhas cada e **não** foram lidos integralmente; o resumo é o que o próprio
-`diagnostics/README.md` publica.
+compilado nem executado. Os 49 diffs foram lidos pela API (lista de arquivos, contagens, trechos de patch
+truncados em 3.000 caracteres por arquivo e 25 arquivos por commit), e os corpos dos 70 PRs abertos e dos
+20 mesclados foram lidos; os **diffs dos PRs abertos não** — toda afirmação sobre o que um PR aberto faz é
+declaração do autor. Os números de teste citados (320 palavras de readback, 1.024 pixels, 35.533 texturas,
+17.464 pares de deduplicação, 2.800 draws dropados) são os que os PRs e commits declaram. Os quatro logs
+de diagnóstico de `victory-fork` têm 30 a 37 mil linhas cada e não foram lidos integralmente; o resumo é o
+que o `diagnostics/README.md` do próprio repositório publica.
