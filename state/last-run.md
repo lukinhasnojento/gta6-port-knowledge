@@ -8,7 +8,8 @@
 - Repositórios com delta: **nenhum** — baseline não documenta.
 - Documentos escritos: **0**. Nenhum arquivo em `docs/updates/` foi criado.
 - Falhas: nenhuma (13/13 consultas `gh api` retornaram 200).
-- Push: pendente de resultado ao final desta execução.
+- Push: **ok**. `origin public:main` `b14ffc8..b31db0c`; merge `--no-ff` na `main` local e
+  `private main` `06ba28f..34c1e75`.
 
 Cursores gravados:
 
