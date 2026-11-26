@@ -1,4 +1,8 @@
-﻿022a8b2|2026-11-25|californiaAlmonds|feat(d3d12_xs,gpu,loader): unlock RAGE9 720p/4K rendering, async fence pacing & 4GB VRAM scaling
+﻿7220ce9|2026-11-26|californiaAlmonds|feat(gpu,d3d12_xs,loader): add v_cmp_class_f32/f16, Slot129 DispatchMesh, and watchdog/chunk guards
+4ea8411|2026-11-26|californiaAlmonds|feat(d3d12_xs): add async UMA readback ring, >65535 dispatch split, and 16-bit RT stand-ins
+4cfcc43|2026-11-26|californiaAlmonds|feat(gpu,d3d12_xs): lift retail XDAT/Slot57 mesh PSOs, Param0..31/MRT0..7, and prune >32KiB MS outputs
+6fb3502|2026-11-26|californiaAlmonds|feat(gpu,d3d12_xs): fix Bink2 video, GFX10 v_cmpx ramps, untiling, and Scaleform FTUE UI
+022a8b2|2026-11-25|californiaAlmonds|feat(d3d12_xs,gpu,loader): unlock RAGE9 720p/4K rendering, async fence pacing & 4GB VRAM scaling
 bd8568e|2026-11-24|californiaAlmonds|Merge branch 'neon/wt-rdna2-fssm'
 b616d32|2026-11-24|californiaAlmonds|feat(gpu): unlock XDAT FSSM v5/v6 CS/MS/VS/PS lifting and fix VOP2 cndmask & s_endpgm reachability
 cef939b|2026-11-24|californiaAlmonds|Merge branch 'neon/wt-bvh-slots'

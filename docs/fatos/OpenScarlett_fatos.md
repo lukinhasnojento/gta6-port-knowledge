@@ -1,25 +1,25 @@
 ﻿# FATOS VERIFICADOS - OpenScarlett
 
-Gerado automaticamente a partir do clone git local. Nenhuma interpretacao de LLM aqui.
+Gerado por git puro, sem LLM.
 
 ## A. Identificacao
-- Repositorio: 
-- URL: 
-- Branch analisada: 
-- Raiz (commit 0): 
-- Primeiro commit: 
-- Ultimo commit: 
-- Periodo: 2026-11-21 a 2026-11-25 (5 dias distintos com commit)
-- Commits alcancaveis de HEAD: 347
-- Commits alcancaveis de todas as refs: 351
-- Commits apenas em outras branches: 4
-- Arquivos versionados: 541
+- Nome: OpenScarlett
+- URL: https://github.com/californiaAlmonds/OpenScarlett
+- Branch analisada: main
+- Raiz (commit 0): ec4d6d389a1105e9cd7b6afab56ec1c48bb2d8dc
+- Primeiro commit: ec4d6d389a1105e9cd7b6afab56ec1c48bb2d8dc | 2026-11-21 20:05:34 +0530 | californiaAlmonds | chore: initialize OpenScarlett MIT C++20 workspace and engineering guide
+- Ultimo commit: 7220ce949800a959535086ce175b1e13b738aa16 | 2026-11-26 05:42:08 +0530 | californiaAlmonds | feat(gpu,d3d12_xs,loader): add v_cmp_class_f32/f16, Slot129 DispatchMesh, and watchdog/chunk guards
+- Periodo: 2026-11-21 a 2026-11-26 (6 dias com commit)
+- Commits em HEAD: 351
+- Commits em todas as refs: 355
+- Commits so em outras branches: 4
+- Arquivos versionados: 545
 - Merges: 101
 - Dias com commit: 
 
-## Autores (commits por autor)
+## Autores
 ```
-   337  californiaAlmonds <deeja.132024@gmail.com>
+   341  californiaAlmonds <deeja.132024@gmail.com>
      2  marquezini <felipemarquesini10@gmail.com>
      2  californiaAlmonds <160736368+californiaAlmonds@users.noreply.github.com>
      2  Felipe Marquezini <felipemarquesini10@gmail.com>
@@ -36,53 +36,54 @@ Gerado automaticamente a partir do clone git local. Nenhuma interpretacao de LLM
 2026-11-23     96
 2026-11-24     25
 2026-11-25      1
+2026-11-26      4
 ```
 
 ## 40 arquivos mais alterados
 ```
    56  README.md
-   43  CMakeLists.txt
+   44  src/gpu/d3d12_xs/device_x.cpp
+   44  CMakeLists.txt
    42  docs/status.svg
-   40  src/gpu/d3d12_xs/device_x.cpp
-   34  src/loader/hook_dll.cpp
-   33  src/gpu/d3d12_xs/command_queue_x.cpp
-   30  src/shims/xgameruntime_shim.cpp
-   29  tools/generate_status.py
-   29  src/gpu/d3d12_xs/device_x.h
+   36  src/loader/hook_dll.cpp
+   35  src/gpu/d3d12_xs/command_queue_x.cpp
+   31  src/shims/xgameruntime_shim.cpp
+   30  src/gpu/d3d12_xs/device_x.h
    29  docs/index.html
-   25  src/gpu/d3d12_xs/command_list_x.cpp
-   25  src/shims/d3d12_xs_shim.cpp
-   25  src/gpu/rdna2_lifter.cpp
+   29  tools/generate_status.py
+   28  src/gpu/d3d12_xs/command_list_x.cpp
+   27  src/shims/d3d12_xs_shim.cpp
+   27  src/gpu/rdna2_lifter.cpp
+   22  src/gpu/rdna2_ir.cpp
    21  tools/run_hardware_test.ps1
-   20  src/shims/dstorage_shim.cpp
+   21  src/shims/dstorage_shim.cpp
    20  .github/workflows/ci.yml
-   19  src/gpu/d3d12_xs/command_list_x.h
-   19  src/gpu/rdna2_ir.cpp
-   16  src/gpu/d3d12_xs/command_queue_x.h
+   20  src/gpu/d3d12_xs/command_list_x.h
+   18  src/gpu/rdna2_disasm.cpp
+   17  src/gpu/d3d12_xs/command_queue_x.h
    16  docs/matrix.svg
-   15  include/openscarlett/gpu/d3d12_xs_abi.h
-   15  src/shims/gameinput_shim.cpp
-   15  src/gpu/d3d12_xs/proxies_x.cpp
-   15  src/shims/kernelx_shim.cpp
+   16  src/shims/kernelx_shim.cpp
+   16  include/openscarlett/gpu/rdna2_ir.h
+   16  src/gpu/d3d12_xs/proxies_x.h
+   16  src/shims/gameinput_shim.cpp
+   16  src/gpu/d3d12_xs/proxies_x.cpp
    15  src/main.cpp
-   15  src/gpu/rdna2_disasm.cpp
+   15  include/openscarlett/gpu/d3d12_xs_abi.h
+   15  include/openscarlett/gpu/rdna2_disasm.h
    15  src/shims/xmem_shim.cpp
-   14  src/gpu/d3d12_xs/proxies_x.h
-   14  include/openscarlett/gpu/rdna2_ir.h
-   13  src/shims/acphal_shim.cpp
-   13  src/shims/xaudio2_shim.cpp
-   12  src/loader/vfs_mounts.cpp
+   14  src/shims/xaudio2_shim.cpp
+   14  src/shims/acphal_shim.cpp
+   13  include/openscarlett/gdk/xgameruntime_abi.h
    12  src/gpu/vulkan_backend.cpp
-   12  include/openscarlett/gdk/xgameruntime_abi.h
-   12  include/openscarlett/gpu/rdna2_disasm.h
+   12  src/shims/xapu_shim.cpp
+   12  src/gpu/rdna2_interpreter.cpp
+   12  src/loader/vfs_mounts.cpp
    11  src/gpu/rdna2_coverage_tool.cpp
-   11  src/shims/xapu_shim.cpp
-   11  src/gpu/rdna2_interpreter.cpp
    11  src/loader/apc_injector.cpp
    10  include/openscarlett/io/dstorage_abi.h
 ```
 
-## Merges de pull request (primeiros 120)
+## Merges (primeiros 100)
 ```
 bd8568e|2026-11-24|Merge branch 'neon/wt-rdna2-fssm'
 cef939b|2026-11-24|Merge branch 'neon/wt-bvh-slots'
@@ -184,10 +185,9 @@ f69c998|2026-11-21|feat(bringup): merge Sprint 3 real MIT Microsoft Xbox-GDK-Sam
 e4bc196|2026-11-21|feat(graphics): merge modular d3d12_xs COM proxy, xg_xs swizzle, high-perf adapter selector, and GPU FSR 1.0
 2c8c5cd|2026-11-21|feat(gdk): merge clean-room xgameruntime, GameInput, XAudio2/AcpHal, dstorage_xs, and XSAPI shims
 efe0954|2026-11-21|feat(kernelx): merge VirtualAlloc2/MapViewOfFile3 memory aliasing, GpuTilePool, and kernelx.dll
-40a2ddf|2026-11-21|feat(loader): merge suspended-process APC hook loader, VFS mounts, and openscarlett run
 ```
 
-## Branches remotas nao mergeadas em HEAD (ate 60)
+## Branches remotas nao mergeadas
 ```
 origin/feat/ue5-matrix-awakens-imports
 ```
@@ -197,20 +197,17 @@ origin/feat/ue5-matrix-awakens-imports
 
 ```
 
-## Candidatos a correcao (filtro por mensagem)
+## Candidatos a correcao
 ```
+6fb3502|2026-11-26|californiaAlmonds|feat(gpu,d3d12_xs): fix Bink2 video, GFX10 v_cmpx ramps, untiling, and Scaleform FTUE UI
 022a8b2|2026-11-25|californiaAlmonds|feat(d3d12_xs,gpu,loader): unlock RAGE9 720p/4K rendering, async fence pacing & 4GB VRAM scaling
 b616d32|2026-11-24|californiaAlmonds|feat(gpu): unlock XDAT FSSM v5/v6 CS/MS/VS/PS lifting and fix VOP2 cndmask & s_endpgm reachability
-86d18ac|2026-11-24|californiaAlmonds|feat(gpu,input,loader): Scaleform space1 RS ranges, whole-slice upload & live GameInput steering
-c382f68|2026-11-24|californiaAlmonds|feat(gpu,xmem,loader): space2 multi-texture RDNA2 lifting, UMA shadow sync, paired alias VA & SSE4A
 bda9242|2026-11-24|californiaAlmonds|fix(gpu,rdna2,input): harden descriptor materializer/barriers, add 6 VOP1 math ops & post-landing shader support
 f8e24d4|2026-11-24|californiaAlmonds|feat(gpu): live 4K retail Scaleform rendering via guest descriptor materializer, RECTLIST expansion & RDNA2 MUBUF fixes
 ef4448a|2026-11-24|californiaAlmonds|fix(audio): harden Opus MFT System32 loading & retail XApu raw-packet/pitch/channel fidelity
 ef763eb|2026-11-24|californiaAlmonds|feat(boot,d3d12_xs,xapu): clear Stops 37-41 to complete 249/249 GTA VI init tasks at 30 FPS
 3cc1984|2026-11-24|californiaAlmonds|fix(audio): align external_gdk xaudio2_xs.h with 19-slot IXAudio2Voice vtable and pack(1) ABI
-cb55d0b|2026-11-24|californiaAlmonds|test(audio): add focused unit tests for retail xapu, chad, AcpHal & XAudio2 engines
 3e9162c|2026-11-24|californiaAlmonds|feat(audio): implement real chad.dll FFT/IFFT/Convolution DSP engine with SRWLOCK
-b08fa23|2026-11-24|californiaAlmonds|feat(audio): implement real xapu.dll Opus/PCM decode & SRC engine with SRWLOCK
 1c56104|2026-11-24|californiaAlmonds|fix(audio): restore AcpHal OOM/SHAPE rollback, SRWLOCK sync, and XApu shm test parity
 4808ad8|2026-11-24|californiaAlmonds|perf(gpu,kernel): 256MB render-graph VA aliasing heap & 64KB dirty-hash mirroring (Stops 35-36)
 0cbc742|2026-11-24|californiaAlmonds|feat(d3d12_xs,rdna2): fix GTX 1650 Ti 0x887A0006 hang & unpack retail XDAT/XBCH/FSSM shaders
@@ -228,7 +225,6 @@ a208562|2026-11-23|californiaAlmonds|fix(dstorage): eliminate IocpReadOp & Close
 1ffd939|2026-11-23|californiaAlmonds|fix(ci): mark test_s15_rdna2_bench_trap_harness RUN_SERIAL TRUE to prevent parallel CTest wall-clock contention
 74e6c68|2026-11-23|californiaAlmonds|chore(s16): finalize Sprint 16 portability, CI headless/MinGW/portable-smoke fixes & status (89/89 CTest, 0 stub DLLs)
 afcd167|2026-11-23|californiaAlmonds|fix(input,gpu,perf): instant XInput/Alt-Tab recovery, OreUI gamepad connect, live Raw Mouse & anti-microstutter PresentX/telemetry
-8e82301|2026-11-23|californiaAlmonds|feat(media,storage,audio): complete Sprint 16 W3 100% hardening & GPU video
 6a6243e|2026-11-23|californiaAlmonds|fix(vfs,audio,dstorage,d3d12_xs): clean-room hardening & cached barrier unwrap
 a241ef4|2026-11-23|californiaAlmonds|merge(main,xbox): integrate Sprint 15 Zero-Gaps + Xbox D3D12/VFS/GameInput fixes
 f2c0610|2026-11-23|californiaAlmonds|fix(d3d12_xs): restore ScarlettRetailDeviceProxy wrapping in D3D12XboxCreateDevice after UE5 merge
@@ -239,7 +235,6 @@ f7566aa|2026-11-23|californiaAlmonds|fix(d3d12_xs): stage unaligned Xbox CopyTex
 2761df0|2026-11-23|californiaAlmonds|feat(sprint15): Zero-Gaps Sprint ÔÇö 28x faster rdna2_bench (8.68s), honest 775/779 GPU + 4/4 trap harness, full peer parity (79/79 CTest)
 d71ed46|2026-11-23|californiaAlmonds|fix(d3d12_xs): do not auto-evict live GPU heaps without explicit budget override
 be0fda1|2026-11-23|californiaAlmonds|fix(vfs,gameinput): hook CRT file APIs for LevelDB/P: saves and fix focus gating & gamepad capability separation
-5f51f35|2026-11-23|californiaAlmonds|feat(gpu,xg,bcpack): Sprint 15 D3D12X, Vulkan, XG 3D & BC6H/BCPack parity
 7e2dd9b|2026-11-23|californiaAlmonds|perf(build,test): add shared sccache, parallel CTest locks, rdna2_lifter /Og fix & agent speed rules
 3112404|2026-11-23|californiaAlmonds|fix(gameinput): match official Microsoft GDK GameInputGamepadButtons bitmask (0x0001..0x2000)
 59eb76b|2026-11-23|californiaAlmonds|merge(main): integrate retail Scarlett D3D12/GameInput/AcpHal/xapu/XMem ABI fixes
@@ -249,7 +244,6 @@ ac47c20|2026-11-23|californiaAlmonds|merge: integrate feat/minecraft-preview-bri
 2241564|2026-11-23|californiaAlmonds|fix(gpu): Intel Arc B390 mesh PSO/Vulkan hardening & log RTX 3060 HW report
 675d9f4|2026-11-23|californiaAlmonds|fix(xmem): support real 2-arg Xbox XMemGetWorkingSetStatistics(flags, outStats) ABI
 6c40c28|2026-11-23|californiaAlmonds|fix(d3d12_xs): guard D3D12_DEPTH_STENCIL_DESC2 for MinGW-w64 d3d12.h compatibility
-cd71bc6|2026-11-23|californiaAlmonds|feat(sprint14): wire LiftDxrStateObjectDesc into DeviceX, 779/779 GFX10.3 opcodes, 72/72 CTest & status docs
 8d285d9|2026-11-23|californiaAlmonds|feat(gpu): fix Issue #29 RDNA4 VOPC, SM 6.6 + off-C cache, RayQuery wiring, radar rules, 779/779 + live MS/AS
 d467436|2026-11-23|californiaAlmonds|fix(rdna2): use atomic-free per-lane ballot for sv64 VOPC (#29) & log HW reports (#30, #31)
 4af2702|2026-11-23|californiaAlmonds|fix(rdna2): avoid AMD RDNA2 v_mul_lo_u16 mask elision, harden S12 audio stress & update HW reports
@@ -257,12 +251,8 @@ ec89742|2026-11-23|DeviousCardi|feat(xgameruntime): XSystemHandleTrack / XSystem
 76adeff|2026-11-22|Ahmet Dedeler|fix(dstorage): read titles' requests with the Xbox dstorage_xs.h layout (#25)
 5d3809b|2026-11-22|Felipe Marquezini|fix(rdna2): lift LDS ds_sub as a CAS loop so NVIDIA can build the pipeline (#26)
 762771c|2026-11-22|californiaAlmonds|fix(test): guard hardware-Vulkan checks in test_s13_shader_cfg_safety for headless CI runners
-b7f1aaf|2026-11-22|californiaAlmonds|merge(s13): Worker 4 offline-first XSTS, XTaskQueue waiter re-arm, dialog/XError bounds & UMS/wldp shims
-380db11|2026-11-22|californiaAlmonds|feat(gdk): offline-first XSTS default, XTaskQueue waiter re-arm, dialog/XError validation, and UMS/wldp shims
 85e2d3d|2026-11-22|californiaAlmonds|fix(dstorage): eliminate lost-wakeup race in DStoragePriorityScheduler::NotifyWorkAvailable
 fe86185|2026-11-22|californiaAlmonds|fix(gdkx): remove UNICODE macro on ANSI GDKX samples so DefWindowProcA matches RegisterClassExA under Clang-CL
-5e72a2c|2026-11-22|californiaAlmonds|chore(ci): trace USER32 RegisterClassExA/CreateWindowExA under OPENSCARLETT_TRACE_ODS
-cd7f163|2026-11-22|californiaAlmonds|chore(ci): trace GDKX startup checkpoints under OPENSCARLETT_TRACE_ODS for Clang-CL diagnosis
 fc77262|2026-11-22|californiaAlmonds|feat(loader): add opt-in OPENSCARLETT_TRACE_ODS OutputDebugStringA hook for guest diagnostics
 990c3ff|2026-11-22|californiaAlmonds|fix(vfs): preserve real host D:\ paths across VFS/Win32/NT hooks on CI runners & host drives
 c5d4a7a|2026-11-22|californiaAlmonds|fix(ci): pass /arch:AVX2 under Clang-CL for _GAMING_XBOX_SCARLETT DirectXMath intrinsics
@@ -295,8 +285,6 @@ ba1c58f|2026-11-22|californiaAlmonds|fix(ci,tests): skip HW-only Vulkan SPIR-V e
 aa3a175|2026-11-22|californiaAlmonds|fix(readme,status): stop re.sub from injecting NUL byte for XS2\\0 in README.md and update GDK shim metrics
 55b9473|2026-11-22|californiaAlmonds|fix(gdk,tests): handle 3-arg XGamingRuntimeThunks QueryApiImpl(clsid, iid, ppv) safely and clean CI VFS overlay
 7cc28a7|2026-11-22|californiaAlmonds|fix(build,ci): prevent MSVC 17.10+ std::mutex crash on older msvcp140.dll
-ff98830|2026-11-22|californiaAlmonds|feat(loader): eliminate C:\ default VFS/telemetry leak, add versioned GDK DLL routing aliases, and add Store-bootstrap diagnostics
-ee10610|2026-11-22|californiaAlmonds|feat(d3d12_xs): HDR10/scRGB PresentX swapchains, default array SRVs, unified-memory tracking & fail-closed stubs
 d7f1b7d|2026-11-22|californiaAlmonds|fix(ci): harden shader cache SM key, Opus MFT probe, and headless PresentX for Windows Server CI
 9aa3955|2026-11-22|californiaAlmonds|fix(tests,docs): polish HW report UX/logs and update RTX 2060 SUPER 13/13 pass (#8)
 df979fe|2026-11-22|californiaAlmonds|fix(d3d12_xs): add MinGW-w64 COM aggregate-return and UUID compatibility (#6)

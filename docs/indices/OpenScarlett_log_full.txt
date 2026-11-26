@@ -1,0 +1,2916 @@
+﻿COMMIT 7220ce949800a959535086ce175b1e13b738aa16
+DATE 2026-11-26
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu,d3d12_xs,loader): add v_cmp_class_f32/f16, Slot129 DispatchMesh, and watchdog/chunk guards
+
+
+----
+COMMIT 4ea84119ed0b39929e735e243f78242ce958d533
+DATE 2026-11-26
+AUTHOR californiaAlmonds
+SUBJECT feat(d3d12_xs): add async UMA readback ring, >65535 dispatch split, and 16-bit RT stand-ins
+
+
+----
+COMMIT 4cfcc4334187b02bf40b948a97fb07f5b0ad64c2
+DATE 2026-11-26
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu,d3d12_xs): lift retail XDAT/Slot57 mesh PSOs, Param0..31/MRT0..7, and prune >32KiB MS outputs
+
+
+----
+COMMIT 6fb350289a88a370db8818b8ac5df7b9ecaac642
+DATE 2026-11-26
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu,d3d12_xs): fix Bink2 video, GFX10 v_cmpx ramps, untiling, and Scaleform FTUE UI
+
+
+----
+COMMIT 022a8b25148cc08412df8ac7e752b9efed4cd819
+DATE 2026-11-25
+AUTHOR californiaAlmonds
+SUBJECT feat(d3d12_xs,gpu,loader): unlock RAGE9 720p/4K rendering, async fence pacing & 4GB VRAM scaling
+
+- Eliminate 4x50ms synchronous fence stall in CommandQueueX::Signal via async FenceWaitDispatcher CPU fence-word updates (5.0 FPS -> 161-250 FPS @ 720p / 57-104 FPS @ 4K unthrottled, locked 30 FPS landing UI)
+
+- Fix Slot 70 CreatePlacedShaderResourceViewX for placed 2D textures with spec-legal clean SRV descriptors and dimension-checked GPU VA resolution
+
+- Add PresentX 2-plane (P0+P1) GPU compositing, OPENSCARLETT_DISPLAY_RES override, separate RT/DS aliasing heaps, and 4 GB VRAM budget scaling
+
+- Fix RDNA2 sub-element IA stage inputs, non-idxen space2 CBV vs SRV routing, 3D rwtex0 inference, and Zen 2 MWAITX #UD backoff
+
+- Update chad.dll routing rule counts and register test_s12_d3d12_aaa_wiring under window lock (90/90 CTests passing)
+
+----
+COMMIT bd8568ea5944280ffcf750759b8c8dfdf2198721
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT Merge branch 'neon/wt-rdna2-fssm'
+
+
+----
+COMMIT b616d322b6552adaf01d3b99c85cd4d9af8a587a
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu): unlock XDAT FSSM v5/v6 CS/MS/VS/PS lifting and fix VOP2 cndmask & s_endpgm reachability
+
+
+----
+COMMIT cef939b0467b293918343e25dc9a454e7af030fe
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT Merge branch 'neon/wt-bvh-slots'
+
+
+----
+COMMIT 44b369654182241517ed90603593e20349e04ca6
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT feat(streaming,loader,bvh): zero-alloc DirectStorage X2 scratch, Zen2 VEH + OEM ConsoleMode hooks, and DXR=0 BVH4 safety
+
+
+----
+COMMIT 9b334cdf01267c1abbf38ab35c15c3f7238caecd
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT Merge branch 'neon/wt-lockhart-mem'
+
+
+----
+COMMIT acd0cdc8e319dcad21539f65de0e0dff616d29c4
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT feat(d3d12_xs,gdk): 8-slot async upload ring, isolated RT/DS aliasing, lazy CS XDAT lift & GRDK 2504 COM IIDs
+
+
+----
+COMMIT f5387827b051bdeaafc905443ae5671d613adbbb
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT feat(kernel): Lockhart 8 GiB budget, MEM_WRITE_WATCH guest allocs & persistent TitleVAMirror staging
+
+
+----
+COMMIT 86d18ac45126b31aaf9ee44bafccafc16dd72b8d
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu,input,loader): Scaleform space1 RS ranges, whole-slice upload & live GameInput steering
+
+Unlocks 100% live retail Scaleform/UI shader lifting (23/23 S_OK) through first-boot setup screens (Navigation Experience, Finish Setup, Legal Notices, Terms & Policies) and adds live interactive GameInput steering:
+
+- D3D12_XS (device_x.cpp, command_queue_x.cpp): extend single-slot {t2, b0} space1 Scaleform root signatures with non-overlapping b1..b31 CBV and t3..t15 SRV ranges (guarded against visibility-overlapping parameters), optimize FlushDirtyUnifiedTextures with an exact-footprint whole-slice memcpy fast path, and make PresentX PNG capture zero-copy and std::bad_alloc-safe.
+- GameInput (gameinput_shim.cpp): add opt-in OPENSCARLETT_AUTONAV scripted button timelines and OPENSCARLETT_LIVE_INPUT_FILE interactive controller injection (buttons + right/left thumbsticks).
+- Loader & DirectStorage (hook_dll.cpp, dstorage_shim.cpp): add opt-in OPENSCARLETT_CONTINUE_INT3 diagnostic continuation and OPENSCARLETT_TRACE_DSTORAGE Zlib size-mismatch logging.
+
+Verified by carbon code review (Verdict: APPROVE TO COMMIT) and 5/5 targeted CTests passing with 0 /W4 warnings.
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT 46d8e2c2f47ce48f84e54d11eeaf7effdbd8ad57
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT Merge branch 'main' into neon/audio
+
+
+----
+COMMIT c382f68072f850301bad691bb9d4b66eede97955
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu,xmem,loader): space2 multi-texture RDNA2 lifting, UMA shadow sync, paired alias VA & SSE4A
+
+Unlocks live full-color 4K (3840x2160) retail video playback on desktop D3D12 (7/7 lifted shaders S_OK, 176K-233K unique RGB colors) and advances past AMD SSE4A instructions on Intel CPUs:
+
+- RDNA2 IR/Lifter (rdna2_ir.h/.cpp, rdna2_lifter.cpp): track static descriptor-table loads (s_load_dwordx4/x8 with SGPR_NULL/0 soffset) across CFG joins/loops and emit direct space2 SRV/CBV/Texture2D slots (t0..t15, b0..b15, space2) for multi-texture YUV420 and multi-CBV shaders.
+- D3D12_XS (device_x.h/.cpp, proxies_x.h/.cpp, command_queue_x.cpp): overlay space2 SRV/CBV descriptor ranges on retail root signatures, bump DXIL cache to v7_, sync UMA Map/Unmap CPU shadow buffers to host GPU textures with aligned footprint RowPitch and proper NotifyResourceDestroyed cleanup, enable retail color RTVs while preserving CPU upload tracking via allow_cpu_upload, sanitize texture barrier states, and add OPENSCARLETT_DUMP_AFTER_LIFT diagnostics.
+- XMem & DirectStorage (xmem_shim.cpp, xmem_mingw.def, dstorage_shim.cpp): detect paired CPU-RW / GPU-RO XMemVirtualAlloc windows and export OpenScarlett_XMemResolveCpuAliasVa for DeviceX and DirectStorage request resolution, plus OPENSCARLETT_TRACE_DSTORAGE failure logging.
+- Loader (hook_dll.cpp): emulate AMD SSE4A INSERTQ and EXTRQ (immediate and register forms) in Zen2IllegalInstructionVeh and add g_trace_ods-gated page-safe unhandled #UD logging.
+
+Verified by carbon code review (Verdict: APPROVE TO COMMIT) and 21/21 targeted CTests passing with 0 /W4 warnings.
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT bda9242f37ab45091b6d11cd6d6c1e0729cb4d60
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT fix(gpu,rdna2,input): harden descriptor materializer/barriers, add 6 VOP1 math ops & post-landing shader support
+
+- Partition shadow descriptor heap (static textures vs dynamic CBVs) with slot-key eviction, wrapped-ring null SRV clearing, and heap/RS/resource destruction cleanup
+- Gate guest-backed descriptor heap registration strictly to shader-visible CBV_SRV_UAV heaps
+- Seed retail resource states at creation, reconcile explicit ResourceBarrier calls, emit end-of-list RT->SRV transitions on Close, and clear state on NotifyResourceDestroyed
+- Restrict TitleVAMirror touched-chunk hints to oversized >16 MiB ring buffers and widen touched window to 512 KiB
+- Fix HlslEmitter in0_is_srv routing for MUBUF BufferLoadFormat and non-CB LoadUav when srsrc != 0
+- Add 6 RDNA2 VOP1 math opcodes (V_TRUNC_F32, V_RNDNE_F32, V_EXP_F32, V_LOG_F32, V_SIN_F32, V_COS_F32) across disassembler, IR, interpreter, HLSL and SPIR-V
+- Expand space1 static sampler & b27 template RS aliases (t2/t3/t5/t72/b3) so all 7/7 live retail shaders compile S_OK
+- Add opt-in OPENSCARLETT_AUTOPRESS_A_MS GameInput automation hook, guard SF-IB/SF-VB debug reads with SafeCopyBytes, preserve caller FirstElement on placed buffer SRVs, and gate diagnostic prints
+- Verified: 17/17 CTests pass (0 warnings)
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT f8e24d49d4eb5e104001221ce5b2a8d2e5e46781
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu): live 4K retail Scaleform rendering via guest descriptor materializer, RECTLIST expansion & RDNA2 MUBUF fixes
+
+- Materialize Scarlett guest-backed 1.24M-slot descriptor heaps into desktop shader-visible heaps via spec-legal CopyDescriptorsSimple (handles direct CPU descriptor memcpy and >1M Tier-2/3 heap wrapping)
+- Add 64 MiB persistently-mapped transient upload ring for unmapped retail CPU VB/IB/CBV buffers and small placed buffer SRVs (t7 world matrix)
+- Implement hypotenuse-aware Xbox RECTLIST (topology 17/19) 3->6 vertex quad expansion preserving front-face winding
+- Add automatic retail RT->SRV barrier tracker for Scarlett titles synchronizing passes via FlushGpuCachesX instead of ResourceBarrier
+- Fix GFX10.3 MUBUF 0x0E/0x0F swap (dwordx4 vs dwordx3), 16-byte idxen stride, in0_is_srv CBV routing, Scaleform b0/b7 @0 template root-sig aliasing, and unified texture hash/batch-upload stalls
+- Verified: 14/14 RDNA2/D3D12_XS/PresentX CTests pass (0 warnings) and live 3840x2160 retail PresentX swapchain renders crisp Scaleform UI on GTX 1650 Ti
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT ef4448ab1319b393d6a8cb4f4ff5f3fa2800e00a
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT fix(audio): harden Opus MFT System32 loading & retail XApu raw-packet/pitch/channel fidelity
+
+- opus_adpcm_decoder: resolve System32\mfplat.dll and System32\MSOpusDecoder.dll via
+  GetSystemDirectoryW first (preventing hooked-process redirection to mfplat_xs.dll
+  from dropping into the synthetic FallbackTocDecoder tone generator), and prefer
+  output media types matching exact requested channels and sample rate.
+- xapu_shim: call DecodePacket directly on retail raw Opus packets (matching GTA VI
+  0x144F20B0F which strips the 2-byte length prefix), guard zeroed Start startPitch=0
+  against clamping to 0.125f, normalize MFT output_channels -> stream.channels to
+  prevent half/double-speed garbling, and add Data() trace diagnostics.
+- audio_trace: allow OPENSCARLETT_TRACE_AUDIO=1 for audio-only tracing at full FPS.
+- test_retail_audio_engine: add sub-test 1C covering exact GTA VI XApu sequence
+  (proc=1, shm=0x104000, opt=1, zeroed Start pitch, 1-arg XApuGetResultCount in EAX,
+  mono Opus packet with firstFrame=312 pre-skip & frameCount=0x3C0).
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT 022c5e189d5272d0ad4a2d7e28d13b909abdbf4d
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT merge(audio): sync neon/audio with main (ef763eb) keeping real xapu engine & SRWLOCK
+
+- Resolve xapu_shim.cpp GetResultCount conflict by keeping 1-arg retail EAX count ABI
+  from ef763eb with SrwLockGuard.
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT ef763eb404de502d8f95fb51fdba2edb61f811e9
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT feat(boot,d3d12_xs,xapu): clear Stops 37-41 to complete 249/249 GTA VI init tasks at 30 FPS
+
+- xapu_shim: fix retail XApuGetResultCount(handle, 0) ABI returning pending count in EAX (eliminated 2.14B-iteration deadlock holding global audio mutex [0x149AE9968] across init tasks)
+- proxies_x: return Xbox unified VA (xbox_gpu_va_) from ResourceXProxy::GetGPUVirtualAddress when desktop D3D12 returns 0 for textures (clears Stop 38 NULL memset)
+- d3d12_xs: sanitize Xbox DXGI formats 115..121 (B4G4R4A4 RT->BGRA8, D16_UNORM_S8_UINT->D24S8, etc.), strip desktop-illegal UAV flags on SRGB/BC/16-bit formats, add GetResourceAllocationInfo2 & CreatePlacedResourceX E_INVALIDARG/E_OUTOFMEMORY L0 spillover fallbacks (clears Stops 39-41)
+- title_va_mirror & device_x: add lock-free touched-chunk hints, 64 MiB <=64 KiB buffer aliasing heap, and tiny zero-buffer mirror skip (boosts live 4K PresentX to steady 30 FPS)
+- xgameruntime_shim: honor OPENSCARLETT_OFFLINE=1 in XNetworkingGetConnectivityHint + env-gated XGR/DStorage trace counters
+
+Validated 9/9 targeted CTests passing and live GTA VI booting past all 249/249 init tasks (867 MB RPF loaded) into the live 30 FPS Scaleform UI loop with LAZY-LIFT #3/#4.
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT 3cc1984272b32e0873b9567e84c0adb5ba7296ed
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT fix(audio): align external_gdk xaudio2_xs.h with 19-slot IXAudio2Voice vtable and pack(1) ABI
+
+- Sync tests/external_gdk/gdk_compat_headers/xaudio2_xs.h with the 19-slot
+  IXAudio2Voice vtable and #pragma pack(push, 1) XAUDIO2_BUFFER/VOICE_STATE layout
+  from xaudio2_abi.h (fixes test_external_gdk_bringup XAudio2 PCM16 voice failure).
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT cb55d0b07c5808e28a653bfaec797fc78d266389
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT test(audio): add focused unit tests for retail xapu, chad, AcpHal & XAudio2 engines
+
+- Add test_retail_audio_engine covering:
+  * xapu.dll: 3-arg DecodeOpus + ready event + 64 KiB shm alignment + bad Opus error
+    (0x8AC81008), ConvertPCM planar I/O + pitch-ramped SRC + saturation bit, Reset,
+    deferred Stop deactivation on dequeue, and XApuGetUtilization.
+  * chad.dll: 4-arg XDspActivate status/stream handles, Cartesian & Polar FFT/IFFT
+    round-trip (< 1e-4 err), stereo interleaved/deinterleaved partitioned convolution
+    with 0xFFFFACE1 metadata skip (< 1e-3 err), envelope scaling, empty-IR passthrough.
+  * AcpHal.dll: pre-retail ApuAlloc flags==2 non-cached routing, 1-arg SHAPE VA+APU
+    population, 12-slot IAcpHal fence write + real XMA2 decode into output ring +
+    28-byte PopMessage + unsupported slots 6..10 + Disconnect 0x80.
+  * XAudio2_9.dll: implicit COM MTA on fresh CreateThread, console flags/processor/
+    console-audio-endpoint-0 normalization, malformed-id rejection, and live WASAPI
+    vs OPENSCARLETT_AUDIO_NULL=1 parity.
+- Log decoded XApuConnectInput parameters in xapu_shim.cpp OPENSCARLETT_TRACE_RETAIL=1.
+- Register test_retail_audio_engine under RESOURCE_LOCK audio in
+  cmake/build_speedups.cmake (shared file: 1-line addition).
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT defb9155b610630a087c0d3c2153961fae9c8a55
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT feat(audio): upgrade AcpHal SHAPE/IAcpHal XMA2 decode & XAudio2 SRWLOCK/console ABI
+
+- AcpHal: route ApuAlloc flags==2 directly to non-cached heap; populate retail SHAPE
+  APU addresses (+0x48..+0x5C) safely for non-zero stages; upgrade XboxRetailAcpHalImpl
+  to full 12-slot non-IUnknown vtable with fence writes, XMA enable/update/decode via
+  Xma2Decoder, 28-byte messages with 48 kHz audioClockSamples, and RVA tracing.
+- XAudio2_9: eliminate all std::mutex/condition_variable/std::thread in favor of native
+  SRWLOCK/CONDITION_VARIABLE/CreateThread (avoiding guest msvcp140 14.29 deadlock);
+  add implicit COM MTA init (CoIncrementMTAUsage fallback), console flag/processor/
+  endpoint normalization, accurate telemetry vtable slots (19..28), and RVA tracing.
+- Clean-room ABI facts referenced from ItsNotRexed/Leonida, omonkeyz/xbox-emulator,
+  ivall/xcl, Freminet/ScarlettX, and rpatty-dev/PercyScarlett.
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT 3e9162cba7d12783adee77d2211b8e25ee599a27
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT feat(audio): implement real chad.dll FFT/IFFT/Convolution DSP engine with SRWLOCK
+
+- Replace no-op XDsp* stubs with real clean-room radix-2 FFT, IFFT (Cartesian & Polar),
+  and partitioned overlap-save Convolution DSP with FDL ring, 0xFFFFACE1 metadata skip,
+  mono/stereo interleaved & deinterleaved buffers, and envelope scaling.
+- Fix retail 4-arg XDspActivate(client, desc, &pStatus, &pStream) to return a real
+  16-byte aligned atomic XDspStatusBlock (submittedSeq, completedSeq, firstFailedSeq,
+  result) and real context handle; export XDspConnect & XDspSubmitCommandWithEnvelope.
+- Migrate chad_shim.cpp off std::mutex to native SRWLOCK and add
+  OPENSCARLETT_TRACE_RETAIL / UNIMPL RVA logging.
+- Clean-room ABI facts referenced from ItsNotRexed/Leonida, omonkeyz/xbox-emulator,
+  and brcly/TuxBox.
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT b08fa2367c3453c348c8ae142f20f4721e3ce55b
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT feat(audio): implement real xapu.dll Opus/PCM decode & SRC engine with SRWLOCK
+
+- Replace no-op retail XApuEnqueueCommand/XApuDequeueResult stubs with real per-stream
+  Start/Stop/Reset/Data command processing (DecodeOpus, DecodeConvertOpus, ConvertPCM)
+  backed by OpusMftDecoder (48 kHz) and pitch-ramped linear SRC with planar I/O support.
+- Allocate 64 KiB-aligned shared memory honoring sharedMemoryBytes, support Win32
+  auto-reset ready event (options & 8), emit full 80-byte XApuRetailResult with QPC
+  timing and saturation flags, and export XApuGetUtilization.
+- Migrate xapu_shim.cpp off std::mutex to native SRWLOCK, add spin-yield Sleep(1) after
+  consecutive empty retail polls, and add OPENSCARLETT_TRACE_RETAIL / UNIMPL RVA logging.
+- Clean-room ABI facts referenced from ivall/xcl, ItsNotRexed/Leonida,
+  omonkeyz/xbox-emulator, and brcly/TuxBox.
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT 1c56104cf89fbacf8c2b4089e336f5c12184202c
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT fix(audio): restore AcpHal OOM/SHAPE rollback, SRWLOCK sync, and XApu shm test parity
+
+- Keep retail AcpHal complementary-pool fallback without auto-expanding past explicit
+  ApuCreateHeap capacity, and pass retail APU_ALLOC_CACHED=1 in retail 1-arg
+  AcpHalAllocateShapeContexts (fixes test_s16_media_storage_audio line 1044).
+- Add native Win32 SRWLOCK/CONDITION_VARIABLE helpers (audio_sync.h) and RVA-aware
+  OPENSCARLETT_TRACE_RETAIL / UNIMPL logging helpers (audio_trace.h); migrate
+  acphal_shim.cpp off std::mutex to avoid guest msvcp140 14.29 ABI hazards.
+- Align test_s16_media_storage_audio & test_minecraft_perf_hardening with c82ca43
+  XApuConnect sharedMemoryBytes sizing.
+- Register test_dstorage_audio_diag_parity under RESOURCE_LOCK audio in
+  cmake/build_speedups.cmake (shared file: 1-line addition).
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT 87cdba6a16052a5809f904ed5725d70e50521744
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT docs(readme,status): document GRDK 2504/2510 Stops 1-36, live FSSM v5/v6 RDNA2 PSO lifting, 256MB VA aliasing heap (360+ 4K frames) & HW reports #45-#47 (15 PCs)
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT 4808ad837d44951678e45b96841594c6e0d80028
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT perf(gpu,kernel): 256MB render-graph VA aliasing heap & 64KB dirty-hash mirroring (Stops 35-36)
+
+- Add 256 MiB Tier-2 ID3D12Heap aliasing pool (+ 64 MiB MSAA pool) in DeviceX::CreatePlacedResourceX so retail Scarlett transient render-graph textures placed at overlapping physical VAs share host VRAM (keeps total VRAM ~850 MB on 4 GiB GTX 1650 Ti, clearing Stop 35 E_OUTOFMEMORY and Stop 36 std::bad_alloc).
+- Add L0 system-RAM spill and CREATE_NOT_RESIDENT fallback for remaining CreatePlacedResourceX OOMs.
+- Skip GPU-only RT/DS/UAV/MSAA/Tiled textures in RefreshDirtyUnifiedResources (eliminating 4x/frame 500 MB byte-by-byte FNV1a64 hashing) and add 64 KiB chunk dirty-hashing for non-write-watch TitleVAMirror buffers + single-pass FlushMirroredTitleVaPagesOnQueue (~10x frame-time speedup, sustaining 360+ live 4K PresentX frames crash-free across 3,500+ retail resources).
+- Request MEM_WRITE_WATCH on XMemVirtualAlloc VirtualAlloc/VirtualAlloc2 allocations when supported.
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT e5db0c665f84bf14378e040fc3c32e9c5cc85c49
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu,xgameruntime): live FSSM v5/v6 RDNA2 PSO lifting on GTX 1650 Ti & GRDK 2504/2510 COM IIDs
+
+- Parse retail FSSM v5/v6 stage metadata (wave32/user SGPRs at +0xD4, VS 5-byte fetch table at +0x138, PS interp table + SPI_PS_INPUT_ENA at +0x248, CS numthreads at +0x13C..+0x144) and DXIL PSV0 resource bindings (CBV/SRV/Texture2D/Sampler incl. dual CBV+SRV routing and static sampler res_kind=14).
+- Add GFX10.3 opcodes needed by live retail shaders: MIMG NSA multi-dword addresses, VOP2 0x07 (v_mul_legacy_f32) & 0x1A (v_lshlrev_b32), VOPC 0x00..0x0F (v_cmp_*_f32), VOP3 0x151..0x159 (v_min3/max3/med3) & 0x346/0x36F (v_lshl_add_u32 / v_lshl_or_b32).
+- Implement lazy on-first-bind XDAT/FSSM graphics PSO lifting with optional disk DXIL cache, shared template root-signature aliasing ([RS #5] b27/t7/t277/b0 + s0..s21 space1 + s0 space99), 256B-aligned TitleVaMirror CBV ring copy, and Device::Slot 70 placed buffer SRV creation; verified all 3/3 live retail Frame-1 draws execute with S_OK on hardware NVIDIA GeForce GTX 1650 Ti.
+- Add missing GRDK 2504/2510 COM IIDs in xgameruntime_shim (XUserImpl self-IID, XNetworkingImpl2, XPackageImpl4, XPersistentLocalStorageImpl3, XGameSaveImpl2) with tail guards, breaking the XNetworking poll loop and advancing live boot into full 3D render-graph allocation.
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT 0cbc742aa607bb19e3a580bfb81442cfcd99e39c
+DATE 2026-11-24
+AUTHOR californiaAlmonds
+SUBJECT feat(d3d12_xs,rdna2): fix GTX 1650 Ti 0x887A0006 hang & unpack retail XDAT/XBCH/FSSM shaders
+
+- Sanitize Xbox Scarlett console-only primitive topologies (e.g. 17=RECTLIST) in
+  CommandListX::IASetPrimitiveTopology -> D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST,
+  eliminating DXGI_ERROR_DEVICE_HUNG (0x887A0006) on hardware NVIDIA GTX 1650 Ti
+  and enabling crash-free live 4K PresentX frames on hardware GPU.
+- Extract shared zero-dependency RFC 1950/1951 zlib decoder to
+  include/openscarlett/io/zlib_rfc1950.h (used by both dstorage_xs and rdna2_xbox_container).
+- Add DXBC -> DXIL -> XDAT -> XBCH (zlib) -> FSSM microcode container unpacker in
+  rdna2_xbox_container.cpp, skipping the 40-byte zero+hash VOP3 NOP prologue.
+- Add real GFX10.3 opcodes in rdna2_disasm/ir/lifter: SOPP hints (s_inst_prefetch,
+  s_clause, etc.), SOP1 (s_mov_b64, s_wqm_b32, hardware s_setpc_b64/s_swappc_b64),
+  SMEM s_load_dwordx2/4/8/16, MUBUF 0x0C..0x0F, and V_CVT_PKRTZ_F16_F32 (PackF16).
+  Verified 4/4 live GTA VI Frame-1 shaders (VS_Clear, PS_Clear, VTexTG, FTexTG)
+  disassemble, lift to HLSL, and compile to signed SM 6.5 DXIL via dxc.exe with 0 errors.
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT c82ca435578bc1b251d15f3841eb42e54ae6d8c0
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(d3d12_xs,dstorage,xmem,audio): retail GRDK 2504/2510 live 4K PresentX bring-up (Stops 18-34)
+
+- Wire Scarlett Version 0x20004 D3D12X vtables: Device slots 60/61/68/74/108-112/133,
+  CommandQueue V4 shifted slots (Signal=16..PresentX=32, ExecuteCommandListsX=35),
+  CommandList 192-slot proxy (ExecuteIndirect=61, Write32/64BottomOfPipe=71/72,
+  Wait32/64=73/74, ResetX=139, Barrier=146), CommandAllocator slot 9, Fence slot 12.
+- Port GPU-fence transient retirement, stand-in PSO/empty-RS guards, per-list private
+  allocator ring, IA VB/IB GPU VA translation, format 118->D24S8, and auto Win32
+  display window creation for live 4K PresentX swapchain output.
+- Fix DirectStorage X2 IID, native Win32 SRWLOCK IOCP (avoiding guest msvcp140 14.29
+  deadlock), multi-page scatter-mapped TileHeap validation, and Slot 8 staging probe.
+- Fix retail audio/memory bring-up: XMemAlloc system-allocator attributes (0xF0814000),
+  XMemMapPhysicalPagesScatter null-PFN unmap sentinel, AcpHal retail APU_ALLOC_CACHED=1,
+  XApuConnect shared-memory sizing, XGCreateTextureComputer fallback, and Zen 2
+  MONITORX/MWAITX/RDPRU VEH emulation.
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT b9d988c8083cf2680ec1effc9cfdfb4d27826b4f
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT docs(readme,status): highlight GRDK 2504/2510 Stops 1-17 (chad.dll, 33 DLLs / 1,360 exports), input/save/MSAA fixes, UE5 4K PresentX & PRs #40/#41/#44
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT 82bd3fae9e987787b6bae4c5f877c0c4e4a5b931
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(scarlett,d3d12_xs,xmem): clear retail GRDK 2504/2510 boot Stops 1-17 (chad.dll, __XMemAllocationHooks__, Zen 2 CLWB VEH, 4K RT + BVH init)
+
+- Integrate retail Scarlett ABI fixes from feat/ue5-matrix-awakens-imports (67ce767 + XG tests)
+- Add chad.dll (XDsp*) and 35 missing exports across xapu, xmem, d3d12_xs, xg_xs, XboxBvhBuilder, libHttpClient.GDK, and Bink2Scarlett (587/587 imports resolved)
+- Fix System32 xgameruntime.dll / guest amd_fidelityfx_upscaler_xbox.dll loader shadowing via dynamic sibling loading
+- Implement MEM_RESERVE_PLACEHOLDER / MEM_REPLACE_PLACEHOLDER splits, multiple-of-16 PFNs, NTFS sparse-file commit fallback, and __XMemAllocationHooks__ auto-binding (cracking Stop 17)
+- Add ScarlettRetailDeviceProxy 192-slot vtable (ID3D12Device11, Slots 25/70/73/127/133), ScarlettRetailDescriptorHeapProxy (+0x10/+0x18 CPU base), VirtualDxgiOutput Xbox slot 21, and Version >= 0x20004 PresentX slot 32
+- Add OPENSCARLETT_OFFLINE=1 WinHttp guard and Zen 2 CLWB/CLFLUSHOPT/CLZERO/MCOMMIT VEH hot-patching in openscarlett_hook.dll
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT 05a24bcb49ac2d88db380507e941d50ff93ada68
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(input,gdk,gpu): fix QPC microsecond overflow, XInput-first polling, Base64 XGameSave names & MSAA sample-count clamping
+
+- Replace signed int64_t (ticks * 1000000) / freq in QueryTimestampMicros() with overflow-free QpcTicksToMicros() so GameInput timestamps and disconnected-slot reprobe timers never freeze on hosts with >10.67 days QPC uptime.
+- Restore XInput-first polling (XInputGetStateEx ordinal #100 -> XInputGetState) with 250ms reprobe and make NativeHostGameInputBackend (System32 GameInputRedist.dll) strictly opt-in via OPENSCARLETT_ENABLE_NATIVE_GAMEINPUT=1 (and release COM devices outside mutex_ on hot-plug) so PowerA/XInput controllers work immediately on startup, across Alt-Tab, and across USB replug without crashing.
+- Handle WM_ACTIVATE focus handoff and Raw Mouse re-registration alongside WM_ACTIVATEAPP/WM_SETFOCUS in CommandQueueX SubclassWndProc.
+- Allow printable ASCII container characters (including Base64 '=', '+', '~') in XGameSave IsValidGameSaveContainerName so retail world containers like Minecraft's ZAQEa-bIAAA= succeed.
+- Clamp unsupported MSAA SampleDesc.Count (e.g. 16x -> 8x/4x/2x/1x) in DeviceX::ClampMsaaSampleDescForFormat and CreatePipelineState even when Quality==0, with depth-format-aware probing.
+- Add regression tests in test_s12_os_loader_gameinput, test_s15_graphics_xg_bc6h, and test_s16_os_vfs_gdk_shims (89/89 CTest pass, 0 MSVC /W4 warnings).
+
+----
+COMMIT cee89779a3746ef3f581f452bb041864b987ea09
+DATE 2026-11-23
+AUTHOR aidenhrld
+SUBJECT fix(gameinput): add opt-in F8 cursor-lock auto-recenter and WM_SETCURSOR hiding (#41)
+
+* fix(gameinput): add opt-in F8 cursor-lock auto-recenter and WM_SETCURSOR hiding
+
+* fix(gameinput): keep F8 toggle active under WM_INPUT, avoid double-recenter & use GetEnvironmentVariableA
+
+- Poll VK_F8 cursor-lock toggle outside the fallback-only branch so F8 still toggles/unlocks when WM_INPUT raw mouse packets are active.
+- Gate PresentX SetCursorPos recentering on raw_mouse_packets_seen so it never fights PollFallbackCursorMouseLocked, and suppress any 1-frame jump on lock engage.
+- Replace MSVC-only _dupenv_s with GetEnvironmentVariableA and add OPENSCARLETT_GAMEINPUT_API on the new export definitions for Clang-CL/MinGW portability.
+- Extend test_s12_os_loader_gameinput to verify OPENSCARLETT_CURSOR_LOCK=1 init and Release() lock-count cleanup.
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+---------
+
+Co-authored-by: Aiden <aidenisliquid@gmail.com>
+Co-authored-by: californiaAlmonds <deeja.132024@gmail.com>
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+----
+COMMIT f99d57e2b0b0aade72755be18b9ca586a5a0427f
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(tests): gate DispatchMesh live test on MeshShaderTier >= 1 (fixes #44)
+
+Pre-Turing hardware GPUs such as NVIDIA GeForce MX250 (Pascal, MeshTier=0) legitimately report D3D12_MESH_SHADER_TIER_NOT_SUPPORTED. Remove the unconditional OS_REQUIRE(hw_mesh) on HW_GPU in TestGxdkExtensionsAndMesh3DLive so non-MeshShader GPUs exercise the existing 3D DispatchMesh group-tracking fallback path instead of failing.
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT 0a13a0c09ab5325e1a3aed899b4a304f084808b3
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT docs(status): log RTX 5090 (#36) and Ryzen Z1 Extreme / Radeon 780M (#38) HW reports (12 PCs verified)
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+----
+COMMIT 438fdb0e5cf371781f486d15bfae0fcb83d299c6
+DATE 2026-11-23
+AUTHOR Felipe Marquezini
+SUBJECT fix(tests): let the work-dir checks pass when the build lives on C: (#40)
+
+ResolveDefaultWorkDirW skips C:\ anchors and falls back to
+%TEMP%\openscarlett on C:-only machines, but test_loader_vfs_config
+still expected the anchor-derived paths and test_s16_os_vfs_gdk_shims
+required a non-C: result unconditionally. Expect the %TEMP% fallback
+when the sandbox is on C:, and only assert "no C:" when the binaries
+are off C:.
+----
+COMMIT d25a84930c8deeca9bb738fcdfe82899ed594bde
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(vfs,docs): expand 8.3 short paths in TryMapHostPathToVirtualW (fixes CI) & update README for Sprint 16 (89/89 CTest, 0 stub DLLs)
+
+
+----
+COMMIT 4bc2db449fd42b42ac0b2b5b0dbb0b34d85acec5
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(input,vfs,window): native System32 GameInput GIP backend, target HWND/focus handoff & VFS GetFinalPathNameByHandleW guard
+
+
+----
+COMMIT a20856273ac9b293030ed1e7434f43888f4472db
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(dstorage): eliminate IocpReadOp & CloseInternal condition_variable use-after-free races
+
+
+----
+COMMIT 16c816dd7c684e7ea830f1be191dc9dbc6f019ce
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(dstorage): serialize barrier dispatch against in-flight barriers & eliminate priority test wakeup jitter
+
+
+----
+COMMIT 1ffd9396ab7bc5c8d6ec51621fde3ccf7cffd1b1
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(ci): mark test_s15_rdna2_bench_trap_harness RUN_SERIAL TRUE to prevent parallel CTest wall-clock contention
+
+
+----
+COMMIT 74e6c6838d0b88fb824df4684e0565402038fda3
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT chore(s16): finalize Sprint 16 portability, CI headless/MinGW/portable-smoke fixes & status (89/89 CTest, 0 stub DLLs)
+
+
+----
+COMMIT afcd1670ce78ad3a193a323967d4870ad7512162
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(input,gpu,perf): instant XInput/Alt-Tab recovery, OreUI gamepad connect, live Raw Mouse & anti-microstutter PresentX/telemetry
+
+
+----
+COMMIT 035034e5802266e3aff90339d1377f5c97c9bd92
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(s16): integrate W4 OS, VFS, GDK runtime & retire all remaining 6 non-media stub DLLs
+
+
+----
+COMMIT 0a65ecd1f45d7aaac595494e76ef1f9aa61b77d7
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(s16): integrate W3 storage, codecs, audio & video completeness (DirectStorage X2, BC7 98 presets/TTPF, XAudio2/AcpHal/xapu, mfhevcdec/mflnmhelp, Bink2 GPU YUV->RGBA)
+
+
+----
+COMMIT 211ec9ef7290db905dba089af312a7268d924c97
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(s16): integrate W2 RDNA2 shader compiler completeness (single s_buffer_load bounds check, BVH clamping, last-mile ISA, all 7 stages GPU verified, MT async PSO cache)
+
+
+----
+COMMIT 934879bc2ae88e2b0d04234783cd74c6b3f3a8d1
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(s16): integrate W1 graphics engine completeness (page heaps, unbounded samplers, Copy queue, ExecuteIndirect, FMASK/DCC/HTILE GPU resolve, Vulkan 1.4, residency)
+
+
+----
+COMMIT 62ee1246ff0bbe2643196355c9b2ac43904b816d
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu): Sprint 16 RDNA2/GFX10.3 shader compiler 100% completeness, all-7-stage GPU bench & async PSO cache
+
+
+----
+COMMIT e44397bf94cdbad204a37ff4e6dfcd14a22aa8e8
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu): Sprint 16 Workstream 1 ÔÇö Graphics Engine 100% completeness
+
+
+----
+COMMIT cc8678005f807d81a7428715378429a45917dd8c
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(main): integrate feat/minecraft-preview-perf (Minecraft 60 FPS 3D, UE5 7-DLL surface, os_live_profiler, 85/85 CTest)
+
+
+----
+COMMIT bd6e9d80bf8f76958d57e04e79846c25391557c4
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT docs(readme,status): document Minecraft Preview 60 FPS 3D gameplay, perf wins & os_live_profiler
+
+
+----
+COMMIT 969f183da707e96c1ec87758fd7a6c7474ed0190
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT perf(d3d12_xs,xgr): lock-free 64MiB CBV align ring, L0 WRITE_BACK retail upload buffers & zero-VirtualQuery QueryApiImpl
+
+
+----
+COMMIT 8e8230128d2d77ae50cc6e4303ba2990b0610190
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(media,storage,audio): complete Sprint 16 W3 100% hardening & GPU video
+
+- DirectStorage X2: atomic RetrieveErrorRecord reset, DuplicateHandle/CloseHandle event ownership, shared queue core teardown/race elimination, strict pointer/size/overflow/OOB validation, MT streaming soak.
+
+- BCPack & TTPF: full 98-slot BC7 BCPack preset table (including all 34 tail slots 64..97), bit-exact 8-mode BC7 & 14-mode BC6H reference decode/roundtrip, complete TTPF layout/serialize/parse/validate for single-mip no-tail, cubemap 6-face chains, 3D volumes, and >4 GiB 64-bit arithmetic.
+
+- Audio: XAudio2_9 64-bit play/loop clamping & silent_buffer EOS handling; AcpHal 64-bit APU address overflow/overlap validation & atomic SHAPE multi-stage rollback; xapu XApuConnect OOM/invalid-param/double-disconnect hardening; concurrent XMA2+Opus+PCM stress test.
+
+- Video: real IMFTransform HEVC/H.264 D3D12 decoder in mfhevcdec.dll (wired into mfplat_xs), stateful license/manifest/network helper in mflnmhelp.dll, and live D3D12 compute shader YUV420p(+A)->RGBA8/BGRA8 (BT.709/BT.601) in Bink2Scarlett verified <= 1 LSB vs CPU on HW GPU + WARP.
+
+----
+COMMIT c922caacd012b94df06be8037a328273be50b632
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(s16-w4): complete VFS CoW/NT hooks, GDK runtime/UI parity, and retire all 6 non-media stub DLLs
+
+
+----
+COMMIT be560d84b27c93ca7f6d14a67abb38abced817af
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT docs(status): refresh badges & README for 32 DLLs / 1252 exports and 84/84 CTest
+
+
+----
+COMMIT 63e53a87487164fd21b0818f6ae865cbc483e98b
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(d3d12_xs,xg,xaudio2): GPU-fence transient retirement, L0-spill DEFAULT masking, retail Scarlett ABI & Matrix Awakens live 4K PresentX bring-up
+
+
+----
+COMMIT 5788857e28f5763b04c6792540e7775698450fc2
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(tools): add os_live_profiler real-time resource & x64 stack-sampling profiler
+
+
+----
+COMMIT e48fede97a9334c7b59235fe026a55ac28182540
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT test(ue5): update DllRoutingTable rule counts for xapu.dll merge (20/25/31)
+
+
+----
+COMMIT 6a6243efe61092ed5d3e5cb18d4266714081ac95
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(vfs,audio,dstorage,d3d12_xs): clean-room hardening & cached barrier unwrap
+
+
+----
+COMMIT b01ed32c42c4b95db6ba3fe474bb5c3f997d0ebb
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT chore(sprint16): split mflnmhelp/mfhevcdec shims and register s16 modular cmake hooks
+
+
+----
+COMMIT a241ef41d8935766f074c0dff576b7a00b5b3e7f
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(main,xbox): integrate Sprint 15 Zero-Gaps + Xbox D3D12/VFS/GameInput fixes
+
+# Conflicts:
+#	src/gpu/d3d12_xs/command_list_x.cpp
+#	src/gpu/d3d12_xs/device_x.cpp
+#	src/loader/hook_dll.cpp
+#	src/shims/d3d12_xs_shim.cpp
+#	src/shims/kernelx_shim.cpp
+
+----
+COMMIT f2c061055b5d816d07948ff3731eff1a384c3b9e
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(d3d12_xs): restore ScarlettRetailDeviceProxy wrapping in D3D12XboxCreateDevice after UE5 merge
+
+
+----
+COMMIT 5ce3bc59aff428fc9d635c4f13bbac2e9b1bef1b
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT perf(d3d12_xs,telemetry): async PresentX ring, disable retail per-frame readback, fullscreen stretch fix, staging ring & sharded telemetry
+
+
+----
+COMMIT 67ce76712e6f026341307e5f95b8e00afecc40dd
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT wip(ue5): checkpoint Matrix Awakens live bring-up ABI fixes
+
+
+----
+COMMIT cbfd4f1f31505cb4c92cf29ffb43d86df44e0733
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT Merge branch 'feat/ue5-matrix-awakens-imports' into feat/minecraft-preview-perf
+
+# Conflicts:
+#	CMakeLists.txt
+#	include/openscarlett/gpu/d3d12_xs_abi.h
+#	src/loader/apc_injector.cpp
+#	src/shims/d3d12_xs_mingw.def
+#	src/shims/d3d12_xs_shim.cpp
+#	src/shims/xmem_shim.cpp
+#	tools/generate_status.py
+#	tools/run_hardware_test.ps1
+
+----
+COMMIT 74c3a5c4562bae072c6916a5b9b03413cb50e289
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT Merge branch 'main' into feat/minecraft-preview-perf
+
+# Conflicts:
+#	src/gpu/d3d12_xs/command_list_x.cpp
+#	src/loader/hook_dll.cpp
+
+----
+COMMIT e7c5f85ec82403018d1fd0512f1a1caa05b80f81
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(vfs): pass through host D: paths in GetFileAttributes/CreateDirectory hooks (unblocks Minecraft LevelDB world creation)
+
+
+----
+COMMIT c7a7e46788c834d5d6f4684b47333697f2960c08
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT docs(readme,status): highlight Sprint 14-15 next-gen AAA gap closure, active Minecraft/UE5 bring-up & updated compatibility row
+
+
+----
+COMMIT f7566aa79dc6a55b2215e2891807ee70b7a695f4
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(d3d12_xs): stage unaligned Xbox CopyTextureRegion footprints to 512B/256B desktop alignment and skip failed command lists
+
+
+----
+COMMIT 2761df00f72d18cec6bb8db902dfa9854f995db8
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(sprint15): Zero-Gaps Sprint ÔÇö 28x faster rdna2_bench (8.68s), honest 775/779 GPU + 4/4 trap harness, full peer parity (79/79 CTest)
+
+Finalizes Sprint 15 across all 4 parallel workstreams:
+- W1: 28x faster rdna2_bench --full (243.44s -> 8.68s via thread-local in-process dxcompiler.dll + zero-temp-file spirv-val + parallel D3D12/Vulkan execution), honest 775/779 (99.5%) real-GPU verified GFX10.3 opcodes + 4/4 CPU privileged trap/halt harness.
+- W2: ds_swizzle_b32 4-mode, direct PC-relative s_getpc+s_add+s_addc+s_setpc branches, signed 21-bit SMEM & pinned FLAT/GLOBAL/SCRATCH offsets, LDS D16 loads, safe OOB s_buffer_load clamping, Wave64 dual-Wave32 + folded EXECZ CFG fix, v_fract_f32 NaN/Inf + Blackwell select-after-shuffle guard, image_sample_c_lz, SDWA/int/pixel ops, Vulkan 1.2 core dynamic descriptor indexing, DXBC signature validation & DXIL cache diagnostics.
+- W3: Oversized placed-texture committed memory promotion (xcl #86), global UAV barriers -> conservative Vulkan memory barriers, ALLOW_CROSS_ADAPTER reserved resources, non-aborting unsupported extensions, 3D console-flag strip + live MSAA quality clamp, DXGIXSetVLineNotification/FrameNotification, read-only DSV/footprint-offset CopyTextureRegion/zero-count no-ops, Vulkan GPU ranking + OPENSCARLETT_VK_GPU, XG packed/unpacked 3D mip tails, and bit-exact 14-mode BC6H signed-zero decoder + 64-bit TTPF/rANS bounds.
+- W4: MicrosoftGame.config XML entity decoding, host-preserving VFS + CoW ReplaceFileW + ANSI hooks + virtualized GetModuleFileName/Handle + delay-load import binding, XAsyncGetStatus(wait) completion-callback wait + XTaskQueue conformance, XSystemGetConsoleId/XUserGetGamertag/XAccessibilityImpl/1-byte XStoreShowRateAndReviewUIResult, RFC 7230 WinHTTP validation, KernelX/XMemFree(nullptr) hardening, and in-memory ETW controller.
+- Zero MSVC /W4 warnings, 79/79 CTest PASS, 31 shimmed DLLs, updated docs/rdna2_coverage.json & status dashboards.
+
+----
+COMMIT ad6643c630a335014bc7abfca92bfb88b6ad0210
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(s15): integrate s15-w4-shims (XML entities, VFS/ReplaceFile/ANSI/delay-load, XAsync, GDK, KernelX, ETW)
+
+
+----
+COMMIT 2733bfb6f25914b5658072493e4a693347c46793
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(s15): integrate s15-w3-graphics (placed-tex promotion, UAV/MSAA/DXGIX, Vk GPU rank, XG 3D, BC6H/TTPF)
+
+
+----
+COMMIT 3d4a8d7cb380a9fa01bfc8f6f135b9084711002e
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(s15): integrate s15-w2-shaders (ds_swizzle, PC-rel branch, SMEM/LDS D16, Wave64, Blackwell/NaN, SPIR-V 1.2)
+
+
+----
+COMMIT ce6b27d5c8418e762c3f0fa574cc5b0306f686a4
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(s15): integrate s15-w1-rdna2-bench
+
+
+----
+COMMIT d71ed46afd59412bf02f6d40ef6c057f7059d20c
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(d3d12_xs): do not auto-evict live GPU heaps without explicit budget override
+
+
+----
+COMMIT e0a95050ea6d2eeda2916fafac591cf6e5281199
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT Sprint 15 W2: RDNA2 shader & ISA peer parity across disasm/IR/CPU/HLSL/SPIR-V
+
+
+----
+COMMIT 004fc580b3082bf0f5e1993f26050eb70a46e774
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT Merge branch 'main' into feat/ue5-matrix-awakens-imports
+
+# Conflicts:
+#	CMakeLists.txt
+
+----
+COMMIT 37674f0d3fa22fd60b9352b983959565cf05bb59
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT Merge remote-tracking branch 'origin/main' into feat/minecraft-preview-bringup
+
+
+----
+COMMIT be0fda1387ebdf72a9eefce84d20044f5c9419c6
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(vfs,gameinput): hook CRT file APIs for LevelDB/P: saves and fix focus gating & gamepad capability separation
+
+
+----
+COMMIT 5f51f353e89329b114c84105a8a902c11d243d82
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu,xg,bcpack): Sprint 15 D3D12X, Vulkan, XG 3D & BC6H/BCPack parity
+
+- D3D12X oversized placed-texture transparent committed promotion across
+  CreatePlacedResource / CreatePlacedResource1 / CreatePlacedResource2
+  (pre-check host GetResourceAllocationInfo vs remaining heap capacity and
+  alignment, plus retry promotion with promoted_oversized_placed_resources
+  telemetry via IOpenScarlettGraphicsParity & residency stats).
+- D3D12X & Xbox extension hardening:
+  * Global UAV barriers (UAV.pResource == nullptr) on D3D12 and conservative
+    full Vulkan VK_ACCESS_MEMORY_READ|WRITE barrier across graphics+compute.
+  * CreateReservedResource/1/2 ALLOW_CROSS_ADAPTER preservation with graceful
+    strip-and-retry fallback on unsupported adapters.
+  * Unsupported console command-list extensions log telemetry cleanly without
+    poisoning subsequent supported Draw/Dispatch/Copy/Barrier commands.
+  * 1D/2D/3D texture console-flag stripping & live MSAA quality clamping via
+    CheckFeatureSupport(D3D12_FEATURE_MULTISAMPLE_QUALITY_LEVELS).
+  * DXGIXSetVLineNotification & DXGIXSetFrameNotification declared, exported
+    (MSVC + MinGW .def), and signaled on PresentX completion.
+  * Read-only DSV (READ_ONLY_DEPTH|STENCIL), depth/stencil plane CopyTextureRegion
+    normalization & sub-512B footprint-offset staging, and zero-count no-op guards.
+- Vulkan deterministic physical device ranking (Discrete > Integrated > Virtual >
+  CPU, weighted by VK_EXT_mesh_shader, VRAM, API version) + OPENSCARLETT_VK_GPU
+  selector (index or case-insensitive substring) & listing helper.
+- XG 3D packed mip tails & unpacked tiled 3D mip chains for SW_64KB_* textures
+  with 64-bit overflow/bounds validation and lossless round-trip tile/untile.
+- BC6H spec-correct bit-exact 14-mode UF16/SF16 integer decoder with post-scaling
+  signed-zero selection, BCPack 1-region/2-region transition & preset hardening,
+  64-bit >4 GiB TTPF codec-mask/bounds checks, and bounds-checked rANS codec.
+- Add comprehensive test_s15_graphics_xg_bc6h suite (11/11 GPU/XG/BCPack tests
+  passing, 0 MSVC /W4 warnings, MinGW/Clang-CL portable).
+
+----
+COMMIT 7e2dd9b80147d889804f163ee602723e2833e7e9
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT perf(build,test): add shared sccache, parallel CTest locks, rdna2_lifter /Og fix & agent speed rules
+
+
+----
+COMMIT 31124045b63d04b41901a321b46029e68004f09c
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(gameinput): match official Microsoft GDK GameInputGamepadButtons bitmask (0x0001..0x2000)
+
+
+----
+COMMIT e3c8f2c50e60d71fb64068b53a6d541dffb7400c
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT Sprint 15 W4: Loader/VFS hardening, XAsync callback wait, GDK ABI & ETW controller
+
+
+----
+COMMIT 8e2312419697927a562f3b8ae895877517c69fc9
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT Sprint 15 W1: 20x rdna2_bench speedup (11.9s) & honest 775/779 GPU + 4/4 trap harness
+
+
+----
+COMMIT 51e6a02c1cde93fe1a0f07f2d98016bac2ba3422
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT docs(readme): sync Hardware Tier & Community Hardware Reports tables (RTX 4070 Laptop, RTX 3060, Arc B390, 75/75 CTest)
+
+
+----
+COMMIT 28ac576cb2a11e85267cff423c821ccda5800b87
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT chore(docs): log NVIDIA RTX 4070 Laptop GPU (Ada Lovelace SM 6.7, 67/67 PASS) HW report and refresh 75/75 status
+
+
+----
+COMMIT 59eb76b09646de45ca7c435e293d5566e455e919
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(main): integrate retail Scarlett D3D12/GameInput/AcpHal/xapu/XMem ABI fixes
+
+
+----
+COMMIT 7c1a928a9f039aeb3d3d7b45276e3148bb1fc018
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT docs(status): refresh badges & README for 31 DLLs / 1213 exports and 77/77 CTest
+
+
+----
+COMMIT 3cfbcedb7d522ca3aae4c0bde85b1468ee61c140
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT test(ue5): add 7-DLL Matrix Awakens E2E import bringup test & CI dxcompiler_xs packaging
+
+
+----
+COMMIT bc7ae085f77e830d01919d7658a56b3be3954571
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(tests): use temp_directory_path in test_mine_routing_apisets for portable bundle smoke test
+
+
+----
+COMMIT ac47c2039fcffae65f4309c9b5297d5caa5f717e
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge: integrate feat/minecraft-preview-bringup (09c65d1) into main (75/75 CTest)
+
+Integrates retail Scarlett ID3D12Device/CommandQueue/CommandList ABI proxies, retail AcpHal.dll/xapu.dll ABI for FMOD, GameInput COM ABI, legacy XGameRuntime IIDs, XGameStreaming slots, P:\ PLS VFS, CallTelemetry mutex fix, and XMemGetWorkingSetStatistics 2-arg ABI while preserving 6c40c28 MinGW DEPTH_STENCIL2 and 2241564 Intel Arc B390 fixes. Adds xapu and mine_* targets to wave3_portability.cmake.
+
+----
+COMMIT 09c65d177761e242223270b60aff454aa03ebd3a
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(d3d12_xs): add retail Scarlett ID3D12Device/CommandQueue/CommandList ABI proxies and desktop alignment
+
+
+----
+COMMIT cb4e44fda59190b667a0127c84ad5c9f44b08975
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(audio): support retail Xbox AcpHal.dll and xapu.dll ABI for FMOD
+
+
+----
+COMMIT 0019effe42468c8e3670e6956dd60eb026c4419b
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(gdk): align GameInput COM ABI, legacy XGameRuntime IIDs, XGameStreaming slots, and P:\ PLS VFS
+
+
+----
+COMMIT 2b42f7288e35830d68738f6e37b07d4661c2d974
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(core): release CallTelemetry mutex before forwarding to hook DLL
+
+
+----
+COMMIT 2241564a7171a3f0bce8e5a98a246f8a216f48e5
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(gpu): Intel Arc B390 mesh PSO/Vulkan hardening & log RTX 3060 HW report
+
+- Sanitize zero-initialized D3D12_DEPTH_STENCIL_DESC/1 enum fields in DeviceX::CreateGraphicsPipelineState & CreatePipelineState so strict Intel Arc Battlemage drivers never fault on invalid 0 ComparisonFunc/StencilOp values.
+- Add explicit PRIMITIVE_TOPOLOGY=TRIANGLE & valid depth-stencil defaults to gdk_simple_mesh_shader and gdk_meshlet_cull, remove invalid IASetPrimitiveTopology before DispatchMesh, and log GetDeviceRemovedReason on PresentX failure.
+- Handle UMA iGPU 128 MB local VRAM budgets in DeviceX::EffectiveResidencyBudgetBytesLocked().
+- Move BuildSimpleMeshSpirv triangle Z from 0.0 (near clip plane) to 0.25, add incoming EXTERNAL->0 VkSubpassDependency in VulkanBackend::ExecuteGraphicsOrMeshOnIcd, and log Vulkan DispatchMesh errors instead of silent swallow.
+- Log NVIDIA GeForce RTX 3060 (67/67 PASS) and Intel Arc B390 Battlemage test in tools/generate_status.py and refresh status docs (72/72 CTest, 10 PCs verified).
+
+Closes #33
+Closes #34
+
+----
+COMMIT 675d9f473a13b54a8710c538897c44c6072765b5
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(xmem): support real 2-arg Xbox XMemGetWorkingSetStatistics(flags, outStats) ABI
+
+
+----
+COMMIT 6c40c28fabdaace983ae0e82ea67068044dcfe33
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(d3d12_xs): guard D3D12_DEPTH_STENCIL_DESC2 for MinGW-w64 d3d12.h compatibility
+
+
+----
+COMMIT cd71bc6ca844f7d98a45e34a0d7510fc360804fa
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(sprint14): wire LiftDxrStateObjectDesc into DeviceX, 779/779 GFX10.3 opcodes, 72/72 CTest & status docs
+
+Integrates all 5 Sprint 14 parallel worktrees:
+- Worker 1: XAudio2_9 @1-@4 ordinal pinning, XMemGetWorkingSetStatistics, real 5-export AMD FidelityFX 2.0 ABI, middleware routing, 15 curl_form/mime + HCWebSocket exports, PE TLS/EOF hardening, module pinning, full MicrosoftGame.Config + P:\ PLS quota + OPENSCARLETT_LOCALE + XErrorReport + XGameSaveFiles.
+- Worker 2: Agility SDK exports & D3D12Core discovery, unwrapped Enhanced Barriers + VA mirror sync, live VramResidencyManager + sparse Window-0 isolation + Lockhart/Anaconda profile, Series PSO stream remap + PSV0 mesh topology + f16 VS/PS linkage, Resource1/2 + Heap1 proxies, 64-way striped PSO lock, outside-mutex FenceWaitDispatcher + device-removal wakeup.
+- Worker 3: 24 mangled C++ XboxBvhBuilder ABI exports + 9 C exports, dual-path BVH4 rehydration (DXR 1.1 + DXR=0 GPU compute), and LiftDxrStateObjectDesc wired into DeviceX::CreateStateObject.
+- Worker 4: DirectStorage X2 COM, RFC 1950/1951 Zlib, real Xbox BCPack BC1-BC7 + fuzz, 4 swizzle modes, physical-page targets, concurrent OVERLAPPED/IOCP (>64 GiB sparse) & MSAA 2x/4x/8x tiled layouts (preserving PR #25 0x48 ABI 100%).
+- Worker 5: Issue #29 AMD RDNA4 VOPC atomic-free ballot & pure bit-exact IEEE-754 helpers, SM 6.6 + HS/DS/GS/lib profiles, off-C: shader cache, wired RayQuery lifter, 13 radar shader rules, 779/779 GFX10.3 opcodes (769/779 real-GPU verified, 3120/3120 5-stage SPIR-V) & live MS/AS parity.
+
+Closes #29
+
+----
+COMMIT 4d7cf5e8ac17020871e1a94aa616c0aef2047219
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(ue5): Worker 4 dxcompiler_xs routing, static missing-DLL stub synthesis & Launcher copy UX
+
+
+----
+COMMIT 1d3014ca833f04f3e5241e99beb987229e355b8a
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(ue5): Worker 3 AcpHal APU heap, XMem allocation hooks & MFPlat System32 forwarding
+
+
+----
+COMMIT 100e39c5922339584ef1270e69688583308d843f
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(ue5): Worker 2 d3d12_xs COM GUID data exports & D3D12Xbox helpers
+
+
+----
+COMMIT ff6ff88724d8db63f881eaa4238a87922384d69f
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(ue5): Worker 1 dxcompiler_xs, XCRDAPI DStorageGetFactory & xg_xs XGCreateTextureComputer
+
+
+----
+COMMIT acc9bc8045c56d11d828a8e9c16137876cc56531
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(d3d12_xs): export D3D12 COM IID GUID data symbols and D3D12Xbox process/device helpers
+
+
+----
+COMMIT b5787d2c7c6a473fca2eaa2755a172d0ccb9f753
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(shims): implement AcpHal heap, XMem allocation hooks & MFPlat System32 forwarding
+
+
+----
+COMMIT fd65845109726f863f1a8f9ce12b2bf08383d74e
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT Merge branch 'mine-w3-routing-apisets' into feat/minecraft-preview-bringup
+
+# Conflicts:
+#	CMakeLists.txt
+
+----
+COMMIT 6b7b51e7ad5cd744df110472059d74a3800800a8
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT Merge branch 'mine-w2-d3d12-xmem' into feat/minecraft-preview-bringup
+
+# Conflicts:
+#	CMakeLists.txt
+
+----
+COMMIT 3c972bf3170a3533a96b0f933847e4ce0ce1ee44
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(audio): add xapu.dll shim and AcpHal Apu* heap exports for Minecraft/UE5
+
+
+----
+COMMIT 66c821976c3569665a985bc39863cd8606585c0a
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(shims): export d3d12_xs IID_ID3D12* GUIDs and xmem XMemTransferMemory
+
+
+----
+COMMIT 002289a34429dce00a152475d8604f9732bf35ea
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(loader,launcher): route dxcompiler_xs, synthesize static missing-DLL stubs & add full inspector copy
+
+
+----
+COMMIT 532762576b71838b099bce8208c897632dd35005
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(loader): register xapu.dll shim routing and ext-ms-win-rtcore-ntuser API-sets
+
+
+----
+COMMIT a83fc6cfcd1696e217b0d256db2092366a2f6ee3
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(shims): add dxcompiler_xs, XCRDAPI DStorageGetFactory & xg_xs XGCreateTextureComputer
+
+
+----
+COMMIT 59f80944adfe1d79611bc7aded57fe464348400b
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT chore(cmake): register modular UE5 Matrix Awakens import bringup cmake files
+
+
+----
+COMMIT cc6bace17dd3dc0b9755a723b669cb74910eb9c6
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(s14): Worker 5 Issue #29 RDNA4 VOPC hardening, SM 6.6 + all-stage profiles, RayQuery lifter & 779/779 opcodes
+
+
+----
+COMMIT aa33c6b91a257186af3a0fc9bba081073c4f7cb4
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(s14): Worker 4 DirectStorage X2, RFC1950 Zlib, BCPack BC1-BC7, concurrent IOCP (>64GiB) & MSAA tiled layouts
+
+
+----
+COMMIT c43d6602c884d56458d987ecdecb8001adc848d9
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(s14): Worker 3 XboxBvhBuilder 12-method C++ ABI, dual-path BVH4 rehydration & LiftDxrStateObjectDesc
+
+
+----
+COMMIT 67ce44004270b2c03e3e3c03358f0f627cd4ff03
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(s14): Worker 2 D3D12X Agility SDK, unwrapped Enhanced Barriers, live VRAM residency & PSO hardening
+
+
+----
+COMMIT 163d93b924f1382a2aaea8c581d7ccd3a854470e
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT merge(s14): Worker 1 P0 shims, XAudio2 ordinals, FFX 2.0 ABI, middleware routing & full MicrosoftGame.Config
+
+
+----
+COMMIT 8d285d9319c40f78f4d5ebd847a047b4be994cbd
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu): fix Issue #29 RDNA4 VOPC, SM 6.6 + off-C cache, RayQuery wiring, radar rules, 779/779 + live MS/AS
+
+
+----
+COMMIT a92359cb0aaefba485a38c79a8eb3eb896ff4025
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(d3d12_xs): Sprint 14 Agility SDK, unwrapped Enhanced Barriers, live VRAM residency & PSO hardening
+
+
+----
+COMMIT a79fd8da5b3d8028cad3b5823e29b30d59f7e97e
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(dstorage,xg): DirectStorage X2, IOCP >64GiB I/O, Xbox Zlib/BCPack/Swizzle & MSAA layout
+
+
+----
+COMMIT d467436b44411b0b074ee21af10bf6f18d81d1c0
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(rdna2): use atomic-free per-lane ballot for sv64 VOPC (#29) & log HW reports (#30, #31)
+
+
+----
+COMMIT 669f0b9a4a3b34441a7a5c68618c8e2a8d7c8e6a
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(shims,loader): Sprint 14 P0/P1 XAudio2 ordinals, FFX 2.0 ABI, XMem stats, XCurl/HC offline exports, PE hardening & GameConfig PLS
+
+
+----
+COMMIT db2b05322ce3cbe726d3142ab29530bdf6d0797b
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT feat(bvh): export XboxBvhBuilder C++ ABI, dual-path BVH4 rehydration, and DXR StateObject lifter
+
+
+----
+COMMIT 34bfbfc1fd55873d34fa90b4bd7be5c06df3829c
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT chore(release): prepare v0.6.0-alpha (Sprints 11-13, 6/6 untouched GDKX samples, 764/779 real-GPU RDNA2, 67/67 CTest)
+
+
+----
+COMMIT f35062200b71e3651c6043e40c7eadf9a5543c0a
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT chore(docs): refresh 67/67 CTest status badges
+
+
+----
+COMMIT 4af2702177af7dbcce8c1c71254c2c4dbd489882
+DATE 2026-11-23
+AUTHOR californiaAlmonds
+SUBJECT fix(rdna2): avoid AMD RDNA2 v_mul_lo_u16 mask elision, harden S12 audio stress & update HW reports
+
+
+----
+COMMIT ec897422449ee92522155a1e3e1dcccdbdee785b
+DATE 2026-11-23
+AUTHOR DeviousCardi
+SUBJECT feat(xgameruntime): XSystemHandleTrack / XSystemIsHandleValid handle registry (#24)
+
+* feat(xgameruntime): add XSystemHandleTrack/XSystemIsHandleValid handle registry
+
+* fix(xgameruntime): match real GDK 2-arg XSystemHandleTrack ABI
+
+Per review on #22:
+1. XSystemHandleTrack now takes (callback, context) and registers a
+   process-wide handle lifecycle observer; passing nullptr clears it.
+   XSystemHandleUntrack is removed (no such export in the real GDK).
+   XSystemHandleType values match XSystem.h (0x00-0x10) and the new
+   XSystemHandleCallbackReason (Created/Destroyed) was added. Created
+   fires from RegisterHandleIfNeeded and Destroyed from MarkHandleClosed,
+   both outside handle_mutex.
+2. XSystemHandleTrack is appended at the END of IXgrSystemApiVtable (and
+   g_system_vtable) so existing slot indices stay ABI-stable.
+3. UserAddProvider: the duplicated RegisterHandleIfNeeded call inside the
+   user_mutex lock is removed and the single call moved after the lock
+   scope, so handle_mutex is never nested under user_mutex.
+
+Tests updated to the 2-arg API (Created/Destroyed events, nullptr clear,
+concurrency). Shim + test_gdk_shims syntax-check clean with g++ -fsyntax-only
+(full build is Windows-only CI).
+
+Generated by Mistral Vibe.
+
+Co-Authored-By: Mistral Vibe <vibe@mistral.ai>
+
+---------
+
+Co-authored-by: Mistral Vibe <vibe@mistral.ai>
+Co-authored-by: californiaAlmonds <160736368+californiaAlmonds@users.noreply.github.com>
+----
+COMMIT 76adeff2277f365d7211193751d3d13f67606508
+DATE 2026-11-22
+AUTHOR Ahmet Dedeler
+SUBJECT fix(dstorage): read titles' requests with the Xbox dstorage_xs.h layout (#25)
+
+* fix(dstorage): read titles' requests with the Xbox dstorage_xs.h layout
+
+IDStorageQueueX::EnqueueRequest declared DSTORAGE_REQUEST with the PC
+dstorage.h shape (byte-sized Options, Source/Destination unions,
+UncompressedSize). A title built against dstorage_xs.h passes the Xbox
+0x48-byte struct instead: a 64-bit option bitfield, Destination @0x08,
+DestinationSize @0x18, File/Source @0x20, FileOffset @0x28, SourceSize
+@0x30, IntermediateSize @0x34, CancellationTag @0x38, Name @0x40. Every
+field the shim read was at the wrong offset.
+
+- dstorage_abi.h: Xbox DSTORAGE_REQUEST, DSTORAGE_REQUEST_OPTIONS,
+  DSTORAGE_QUEUE_DESC (UINT64 SourceType, no Device), DSTORAGE_QUEUE_INFO,
+  DSTORAGE_ERROR_RECORD (0x290), BCPACK/SWIZZLE/COMMAND_TYPE enums and
+  DSTORAGE_MAX_QUEUE_CAPACITY 0x2000, with size/offset static_asserts.
+- The old struct becomes OpenScarlettDStorageRequestDesc, a host extension
+  for GDeflate/D3D12 destinations, submitted via the new
+  OpenScarlettDStorageEnqueueRequestDesc export. Queue devices move to
+  OpenScarlettDStorageSetQueueDevice.
+- EnqueueRequest decodes the option word: zlib/BCPack requests fail with
+  E_DSTORAGE_DECOMPRESSION_ERROR (the shim's ZLIB/BCPACK codecs are its
+  own synthetic container), swizzle/physical-page/reserved bits with
+  E_INVALIDARG. RetrieveErrorRecord fills the Xbox FirstFailure.Request.
+- Tests: host-extension tests move to the desc API; external GDK tests and
+  the compat dstorage_xs.h use the Xbox layout; the MS sample runner is
+  built on its _GAMING_XBOX_SCARLETT path.
+
+Refs:
+https://learn.microsoft.com/en-us/gaming/gdk/docs/reference/system/dstorage/structs/dstorage_request
+https://learn.microsoft.com/en-us/gaming/gdk/docs/reference/system/dstorage/structs/dstorage_request_options
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+* test(dstorage): raw-byte Xbox DSTORAGE_REQUEST through EnqueueRequest
+
+Writes each field at its documented dstorage_xs.h offset into a 0x48-byte
+buffer (padding poisoned) and checks the shim: memory copies, option bit
+positions, zlib/BCPack/swizzle/physical-page rejection, error record
+contents, CancelRequestsWithTag on the +0x38 tag, and (Windows) file reads
+at FileOffset.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+---------
+
+Co-authored-by: Claude Opus 5.5 <noreply@anthropic.com>
+Co-authored-by: californiaAlmonds <160736368+californiaAlmonds@users.noreply.github.com>
+----
+COMMIT 5d3809bb8c18f8a2012c577f4b92745415834c38
+DATE 2026-11-22
+AUTHOR Felipe Marquezini
+SUBJECT fix(rdna2): lift LDS ds_sub as a CAS loop so NVIDIA can build the pipeline (#26)
+
+The lifter emitted ds_sub_u32 / ds_sub_rtn_u32 on LDS as InterlockedAdd of
+(0u - v[n]). On an RTX 5070 (driver 621.24) CreateComputePipelineState
+returns E_OUTOFMEMORY for any compute shader with a groupshared atomic add
+whose operand is a runtime negation; DXC folds every spelling of -x
+(0u - x, ~x + 1u, x * 0xFFFFFFFF, asuint(-asint(x))) to sub 0, x. The same
+pattern on a UAV is accepted. This made the mem_ds_atomics kernel fail on
+D3D12 HW, failing test_rdna2_corpus_bench and test_rdna2_gpu_accuracy.
+
+ds_sub on LDS now goes through the same compare-exchange loop the lifter
+already uses for ds_inc, ds_dec and the signed min/max. The buffer and
+typed-UAV paths are unchanged.
+
+Co-authored-by: californiaAlmonds <160736368+californiaAlmonds@users.noreply.github.com>
+----
+COMMIT 0f01d679d7c8ecdfd00e1723a524a6f0d2521dd1
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT chore(docs): streamline repository wording across docs, comments, and wiki
+
+
+----
+COMMIT 762771c4d45edca8b3736f980c6709b97811dc8c
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(test): guard hardware-Vulkan checks in test_s13_shader_cfg_safety for headless CI runners
+
+
+----
+COMMIT a7bf894135ae6afd5ca8c9916774943e5c029fc3
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(sprint13): finalize live Xbox shader E2E, VK/XG parity, 764/779 GPU opcodes, 6/6 GDKX & 66/66 status docs
+
+
+----
+COMMIT 40320bf88e4d7669cf0ee33e6600df11af985058
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s13): Worker 5 6/6 untouched MIT _GAMING_XBOX_SCARLETT samples (+SimpleBezier, +SimpleCompute)
+
+# Conflicts:
+#	cmake/gdkx_bringup_targets.cmake
+
+----
+COMMIT b7f1aaf049b263026375f5f9de16228e0411324d
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s13): Worker 4 offline-first XSTS, XTaskQueue waiter re-arm, dialog/XError bounds & UMS/wldp shims
+
+# Conflicts:
+#	CMakeLists.txt
+
+----
+COMMIT a6476a22b4e182a642b723acba24e390028bd14d
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s13): Worker 3 shader CFG/MIMG/V#/LDS safety & 764/779 real GPU-verified opcodes
+
+# Conflicts:
+#	CMakeLists.txt
+
+----
+COMMIT 78ab9693d979d4b313c4b83dd7af256a40cc19f8
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s13): Worker 2 Vulkan OPTIONS2/7 & custom border color, tiled placed textures & XG stencil/HTILE
+
+# Conflicts:
+#	CMakeLists.txt
+
+----
+COMMIT 963bd269970b3e1aced4917719bdbc178c383d29
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s13): Worker 1 live Xbox DXBC/PM4/RDNA2 + RayQuery DeviceX pipeline & unified texture sync
+
+
+----
+COMMIT 8bb8429947d9b64a75e7112ed67358bb1337d949
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(shader): harden RDNA2 CFG/MIMG/V#/LDS safety and expand real-GPU verification to 700+ opcodes
+
+
+----
+COMMIT dcfe215b63b2307685dd069a82ed9ea440b3345c
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu): wire live Xbox DXBC/RDNA2 + RayQuery pipeline into DeviceX and unified texture sync
+
+
+----
+COMMIT 659116287b2b4fd8d2f5debe9353a5fab6cb22ca
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu): add Vulkan OPTIONS2/7 & custom border color, tiled placed textures, and XG stencil/HTILE parity
+
+
+----
+COMMIT 380db1135337015019a9949bda1502e4dd7c6acb
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gdk): offline-first XSTS default, XTaskQueue waiter re-arm, dialog/XError validation, and UMS/wldp shims
+
+
+----
+COMMIT c108476cba4302666954a0a2b63bfeee4cb93183
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gdkx): add 2 more untouched MIT _GAMING_XBOX_SCARLETT samples (6/6 live 4K verified)
+
+
+----
+COMMIT 85e2d3d16b6897b29fe8d4690bd2e9644f2aa1cf
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(dstorage): eliminate lost-wakeup race in DStoragePriorityScheduler::NotifyWorkAvailable
+
+Acquire scheduler mutex_ before calling work_cv_.notify_one() so Submit()/auto-submit cannot notify while RunLoop is between pick_next() and entering work_cv_.wait(), fixing intermittent 5s timeout in test_dstorage_audio_diag_parity under Debug builds.
+
+----
+COMMIT fe86185556fe67b26f7cea5ea3d7c7fd39446e42
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(gdkx): remove UNICODE macro on ANSI GDKX samples so DefWindowProcA matches RegisterClassExA under Clang-CL
+
+Microsoft's untouched GDKX Main.cpp registers an ANSI window class (RegisterClassExA) and creates an ANSI window (CreateWindowExA), then forwards messages via DefWindowProc(). Defining UNICODE/_UNICODE turned DefWindowProc into DefWindowProcW, which misread ANSI CREATESTRUCTA::lpszName as UTF-16 during WM_NCCREATE and caused CreateWindowExA to fail with NULL / GetLastError()==0 on SimpleLighting_GDKX under Clang-CL's .rdata string layout. Also removes temporary CI USER32/header diagnostic traces.
+
+----
+COMMIT 5e72a2ce514648acfa3e2143dc1119d7ca0f7707
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT chore(ci): trace USER32 RegisterClassExA/CreateWindowExA under OPENSCARLETT_TRACE_ODS
+
+
+----
+COMMIT cd7f16375bb61ca9ff2bbc3dddad578ed5a826a2
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT chore(ci): trace GDKX startup checkpoints under OPENSCARLETT_TRACE_ODS for Clang-CL diagnosis
+
+
+----
+COMMIT fc77262197fe84643aca2dc5c089dc40fa431481
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(loader): add opt-in OPENSCARLETT_TRACE_ODS OutputDebugStringA hook for guest diagnostics
+
+
+----
+COMMIT 990c3ffd4121cff4a5a6767d738078d1dc5451ee
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(vfs): preserve real host D:\ paths across VFS/Win32/NT hooks on CI runners & host drives
+
+
+----
+COMMIT b0159348faab67255d15d4fce99ec8d4e6df8a3b
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT docs(wiki): link README badge to live GitHub Wiki and rewrite .md links on publish
+
+
+----
+COMMIT debcef53fd1a43ec2c40243b5048ef837d7884e6
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT docs(wiki): add comprehensive 15-page OpenScarlett wiki and GitHub Wiki sync script
+
+
+----
+COMMIT 664af08b77c359b961d4b953ec0cb73d603ea514
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(sprint12): finalize AAA wall integration, portable test paths, hardware runner & 62/62 status docs
+
+
+----
+COMMIT 1be8083283d72d513c06534849357c244ff3e6f9
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s12): Worker 5 live PeForwarder/LSA/probe, TLS slot 0, NtCreateFile VFS, GameInput & 128-voice XAudio2
+
+
+----
+COMMIT 2b4e48554c5a85bfa62d5a2831b07ad01e8f74c6
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s12): Worker 4 hardened DirectStorage/BCPack/metadata coherency, page aliasing & VRAM residency
+
+
+----
+COMMIT 6c17dc8141e5c1feb3c1e47f092b80b3f17635c9
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s12): Worker 3 live RDNA2 RayQuery DXR/SPIR-V bridge, 64-bit multi-window BVH4 & SBT remapping
+
+
+----
+COMMIT 37e54cfb4adc16bc65b986cd87f33cb890a188a1
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s12): Worker 2 Xbox DXBC/PM4/SGPR shader container, CFG hardening & in-proc DXC cache
+
+
+----
+COMMIT eadac726ee72e140765b830b8b156940edd3a5de
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s12): Worker 1 live D3D12X island wiring, GXDK extensions & PresentX pacing
+
+
+----
+COMMIT 80081d5c234964f40be60a699a1d21f88c3dc3e4
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s12): Worker 6 4 untouched Microsoft Xbox-GDK-Samples (SimpleTriangle, SimpleLighting, SimpleTexture, SimpleInstancing)
+
+
+----
+COMMIT d3866a208f2c67ffcfd6eb34a089b63840509c40
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu): add Xbox dxc_xs shader container parser, CFG hardening, and in-process DXC shader cache
+
+
+----
+COMMIT 6989d7073d9ba270d9c79cd1ca33994b2364fbec
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(d3d12_xs): wire Sprint 12 AAA GPU islands, GXDK extensions & PresentX pacing
+
+
+----
+COMMIT c5d4a7aa0d9a2cc52a5aa10bd0e2719e30699d6b
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(ci): pass /arch:AVX2 under Clang-CL for _GAMING_XBOX_SCARLETT DirectXMath intrinsics
+
+
+----
+COMMIT 75d23eea39a5cafa5b9e400134f139f84b197890
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(s12-os-loader): wire PeForwarder/XvdInspector/ConsoleLsaPolicy live, TLS slot 0, NT VFS, GameInput, xgameruntime & lock-free 128-voice XAudio2
+
+
+----
+COMMIT dac08f1b44c3cb39d8c34f1345fb9a5ad4cf5e84
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(s12): harden DirectStorage/BCPack/metadata coherency and add VRAM residency + page aliasing
+
+
+----
+COMMIT d348487192ef2f294a9d18f27f1b176918ae5b85
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu,dxr): Sprint 12 RDNA2 RayQuery bridge, 64-bit multi-window BVH4, XboxBvhBuilder conversion & SBT remapping
+
+
+----
+COMMIT f599765e9227744eb4e3a091fe20b7cba0c8256e
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gdkx): bring up 4 untouched Microsoft Xbox-GDK-Samples (add SimpleTexture + SimpleInstancing)
+
+
+----
+COMMIT 4a7e79badb3acd28a28ea09af183dd8d1d108f71
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(ci): resolve Clang-CL constexpr enum range in gdkx_headers/d3d12_xs.h and portable temp path in test_xvd_loader_lsa
+
+
+----
+COMMIT 44b1aa85158a847d902c19ac8df62d7cf06b6611
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(sprint11): enable AS TaskEXT SPIR-V in corpus (3120/3120), publish 615/779 GPU-verified RDNA2 coverage & 57/57 CTest
+
+Closes #20
+Closes #21
+Closes #23
+
+----
+COMMIT 902c38e11faecf2d5cc76adfeb0dfd9eef22be10
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s11): Worker 1 615/779 real GPU-verified RDNA2 opcodes, 414 spirv-val, 432 dxc & 4 GFX10.3 HW accuracy rules
+
+
+----
+COMMIT d5b1f507c9c59627cc4b853a3e21024ee89e4ec2
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(rdna2): expand real-GPU verification to 615/779 opcodes and fix 4 GFX10.3 HW accuracy rules
+
+
+----
+COMMIT 95fde102af452540af02f382a59642ed51ab032c
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s11): Worker 4 12 KiB XVD inspector, mixed-case PE forwarders, Console LSA/PFN policy & 2 extra MIT GDKX samples
+
+
+----
+COMMIT b8bbf32314ef9d9ee64ffdffa4af1315e2e8abc3
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s11): Worker 3 console Sampler Feedback readback/clear, QueryAccumulatorX, predicated byte copies & GPU-QPC clock calibration
+
+
+----
+COMMIT c492ca74d0f6269b90643fee55611b348df58396
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s11): Worker 2 AS TaskEXT SPIR-V 1.6 (130/130 spirv-val), Wave64 LDS & barycentric CullDistance
+
+
+----
+COMMIT d8a5a275396cd2bc2ad8466a4811f78b79984229
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(ci): resolve Clang-CL constexpr enum range and MinGW-w64 ID3D12Device10 pCastableFormats constness
+
+
+----
+COMMIT d3371a5758b4a614f9db0bda3af48b879c1c3e23
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu): emit SPIR-V 1.6 TaskEXT for Amplification shaders, Wave64 LDS helpers & VS/GS/MS CullDistance
+
+
+----
+COMMIT 974836df0f446d17ef3f6ab81dd695620d612aa3
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(d3d12_xs): add console Sampler Feedback readback/clear, QueryAccumulatorX, predicated byte copies & GPU-QPC clock calibration
+
+
+----
+COMMIT e555736a21ad1146cb582b606f52e6a109218da3
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gdkx): fix real _GAMING_XBOX_SCARLETT d3d12_xs ABI & boot untouched SimpleTriangle + SimpleLighting (53/53 CTest)
+
+Closes #18
+Closes #19
+
+----
+COMMIT c57f29b4887918fea1e4c1238d274ff5902efcd1
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT wip(gdkx): snapshot uncommitted GDKX ABI fixes and untouched SimpleTriangle/SimpleLighting bring-up
+
+
+----
+COMMIT 0c61420f9bd8d2e4c094f7da41e1088f0798ada5
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(s11): add 12 KiB XVD geometry inspector, mixed-case PE forwarder resolver, Console LSA/PFN policy & 2 untouched MIT GDKX samples
+
+
+----
+COMMIT a23044c1c62d7e2b692036d41ff5c770af62b405
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(rdna2): keep PROC_THREAD_ATTRIBUTE_HANDLE_LIST array alive across CreateProcessA (Clang-CL err=87)
+
+
+----
+COMMIT 7b90c9c3202d1b2f815766f8edeb998052f611af
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(ci): resolve Clang-CL narrowing, MinGW __mingw_uuidof IIDs & host-DXR GetShaderStackSize on CI WARP
+
+
+----
+COMMIT e4463d0892f0d6a5fa8577a568e24a54d520e537
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT docs(s910): update status badges, dashboard, CI release notes & README for v0.5.0-alpha (51/51 CTest)
+
+
+----
+COMMIT 04a8eba309b1a32cdab6f4c5b0cf77eed1886fd2
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(s910): wire Sprint 9+10 compatibility engine targets, hooks, VEH probe & LDS/dxc fixes (51/51 CTest)
+
+
+----
+COMMIT df175a2d60a1ccb6b0d43746709851ed48602106
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s910): Worker 1 d3d12_xs 10 COM proxies, Xbox extensions & multi-queue thread safety
+
+
+----
+COMMIT c39a175057af36e2711cf4318f1158d8d8b694f9
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s910): Worker 6 First-Boot Probe VEH crash dumper, frame capture & launcher UI
+
+
+----
+COMMIT d3f227756d1051b78415326893f1da676ffdd831
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s910): Worker 5 MFMediaEngine video decode, 64-voice XAudio2, Bink2 streaming & GameInput
+
+
+----
+COMMIT dca4cc78239648e814882067a9ae7442727c3ae9
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s910): Worker 4 7-core affinity remap, WinRT lifecycle & non-blocking offline auth
+
+
+----
+COMMIT e3cb2338d935e5472db2fadd10fcd294870e3fad
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s910): Worker 3 GPU compute untiler/retiler, HS/DS/GS, DXR SBT, Wave64-on-32 & async PSO pool
+
+
+----
+COMMIT 18da085609b739570e423d4a1b6debaa03ae3325
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(s910): Worker 2 64-bit TitleVAMirror & RDNA2 V#/T#/S# bindless SGPR bridge
+
+
+----
+COMMIT 9a964ff0bc02eca7e09f6519b1535f64c1d606ba
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(d3d12_xs): complete 10 COM object proxies, Xbox extensions, and multi-queue thread safety
+
+
+----
+COMMIT dd71dd3a57daeca33e62cc6fbf679d7cefd49426
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(media,audio,input): implement MFMediaEngine video decode, 64-voice XAudio2 effects, Bink2 streaming & GameInput hot-plug
+
+
+----
+COMMIT 634c5a1e29f4dc48e58965280b9ef35602f3791d
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu): add GPU compute GFX10 untiler, HS/DS/GS lifting, DXR SBT mapper, Wave64-on-Wave32 & async PSO pool
+
+
+----
+COMMIT 126a234f43ca81b9692f732b990a943d87ba4ad5
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(os-winrt-auth): Xbox 14-thread affinity remapping, WinRT lifecycle & offline XSTS/Store/XSAPI/XCurl boot
+
+
+----
+COMMIT b9c26e8cd165def24387b7fd796608c43141df14
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(probe,capture,launcher): add First-Boot Probe VEH dumper, per-draw PNG frame capture & Launcher controls
+
+
+----
+COMMIT e01f21b545bdc87ba83525d732f70f826383b4d7
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu,kernel): add TitleVAMirror unified memory mirror and RDNA2 DescriptorSgprBridge
+
+
+----
+COMMIT 6d383713ba3b9463122e9d06eea21c2079d4c1da
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT docs(readme,status): add RTX 5070 Blackwell report (#17) by @marquezinii (7 PCs verified)
+
+
+----
+COMMIT 4e350ba2c50e5fe01fa2ceb1a901ae600b986aad
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(build,launcher): harden x64 prompt check in build.cmd and mirror <REPO_DIR> sanitizer
+
+
+----
+COMMIT 8633ad74411144f1e9b10ed905dcdd540d0de659
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT Merge pull request #15 from marquezinii/fix/build-cmd-toolchain-discovery
+
+fix(build): find MSVC, CMake, Ninja and dxc instead of fixed paths
+----
+COMMIT 831981256e07c6b13f934cba20320fd897fe7e38
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT Merge pull request #16 from marquezinii/fix/hw-report-repo-path
+
+fix(tools): mask the repo folder in hardware reports from source builds
+----
+COMMIT bee85df2d116d6601df613dc39867d22a18ce7f7
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(ci,tests): use portable temp_directory_path in test_rdna2_corpus_bench and skip WARP in D3D12 HW init
+
+
+----
+COMMIT efc35f5c91e7c7c157c63571ec8126467866d877
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT docs(sprint8): publish verified GFX10.3 coverage report (774/779 opcodes, 3,120/3,120 shaders, 45/45 CTest)
+
+
+----
+COMMIT 78543c9ea18ea19ca5dc916c9f0e26130f2b748a
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(sprint8): wire GFX10.3 ISA modules, rdna2-bench CLI & CTest targets (45/45 passing, 0 warnings)
+
+
+----
+COMMIT c2c93aa811c826f47b0976da9cd6fa26ddb4c4da
+DATE 2026-11-22
+AUTHOR marquezini
+SUBJECT fix(tools): mask the repo folder in hardware reports from source builds
+
+When run_hardware_test.ps1 runs from a build\ (or build\Release) folder, the
+loader puts its work dir under <repo>\.tmp\openscarlett_run, and that path was
+copied into the report unmasked (VFS G: CoW lines, about 30 per run). Mirror
+the loader's rule from ResolveDefaultWorkDirW and replace the parent folder
+with <REPO_DIR>. A folder that contains the user profile is never masked, so
+the existing user-home and username rules still apply.
+
+Checked from a source build on Windows 11 / RTX 5070: 42/42 passed, and the
+report no longer contains the local repo path.
+
+----
+COMMIT c5187591438be5f13266340c14b384d1e66df20f
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(sprint8): Worker 4 launcher icon resource & 3-tier updater zip extraction
+
+
+----
+COMMIT 554073a270187a361ca1262c4b49a53f81727cec
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(sprint8): Worker 3 GFX10.3 779-opcode coverage auditor & 3,120-shader corpus bench
+
+
+----
+COMMIT 05b1df9b5dc421263bcfb8170637a536fa719a1b
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(sprint8): Worker 2 GFX10.3 MUBUF/MTBUF/MIMG/DS/FLAT/EXP ISA (449 mnemonics)
+
+
+----
+COMMIT 3208ca1d33c5cc3d38249e3e6e6d2918a9169925
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge(sprint8): Worker 1 GFX10.3 scalar & vector ISA (744 mnemonics, SDWA/DPP16/DPP8)
+
+
+----
+COMMIT db26565bac25f92cbfad038c184131dd0d099b8b
+DATE 2026-11-22
+AUTHOR marquezini
+SUBJECT fix(build): find MSVC, CMake, Ninja and dxc instead of fixed paths
+
+build.cmd only worked with VS 2022 Community and the E:\ScarlettX-dev
+toolchain. Look up the newest Visual Studio with the x64 C++ tools through
+vswhere (any edition, Build Tools included), keep an already initialised
+developer prompt, use the CMake and Ninja bundled with that install, and take
+dxc.exe from the newest Windows SDK. The pinned E:\ tools are still used
+first when they exist.
+
+Checked on Windows 11 with VS Build Tools 18 (MSVC 14.52): configure and full
+build succeed, 0 warnings, ctest 42/42.
+
+----
+COMMIT 1d46efa9b88b56efbbb53732b23dd1bea94b7e16
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(rdna2): expand GFX10.3 scalar/vector ISA to 744 mnemonics with SDWA/DPP16/DPP8, CPU ref, and SPIR-V/DXIL live GPU parity
+
+
+----
+COMMIT 0392f8141e42add212b2cd657b6f45bb85aa3a51
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu): complete GFX10.3 MUBUF/MTBUF/MIMG/DS/FLAT/EXP ISA (449 mnemonics, CPU ref, SPIR-V 1.3 & SM 6.5 live GPU parity)
+
+
+----
+COMMIT 7ba25f7b08ef8a8724f615e99a3630332e5b90b2
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT docs(readme,status): add Discord invite, real-GDK tester callout, honest progress bars and 30-DLL / RDNA2 / D3D12-Vulkan coverage visualizer
+
+
+----
+COMMIT 43e8c32bc181bea135b89d2345cc1b69230c464d
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(launcher): embed failing test diagnostics in pre-filled GitHub hardware report URLs (#14)
+
+
+----
+COMMIT 91364e4f29e96b7dd82587a7e5fde8592054afb0
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(loader,tests): fix C:\ portable bundle test guards and skip APC-injecting dxc.exe (#14)
+
+
+----
+COMMIT a8b4193235388405c8c3b17cb683623664d6850f
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu): add GFX10.3 779-opcode coverage auditor and 3,120-shader corpus benchmark
+
+
+----
+COMMIT 34b8196c602e0fa55acd757d7f31e6bf7d1b095d
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(launcher,updater): harden zip extraction for CI/spaces and embed docs/icon.ico
+
+
+----
+COMMIT 0e851daa28070bf3db2d7df256553548f32357fc
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(updater): use built-in tar.exe with .NET ZipFile fallback to avoid pwsh7 PSModulePath Expand-Archive failure on CI
+
+
+----
+COMMIT c9172fcefbf835de03ac480e54b20abd2c589fd9
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(ci,tests): guard remaining HW Vulkan SPIR-V paths in test_rdna2_lockstep_isa when no ICD is present
+
+
+----
+COMMIT 84d368963848967fb05508b18bdd6167d1f7812a
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT docs(status): publish verified codebase metrics (30 DLLs / 926 exports, 224/779 RDNA2 opcodes, 42/42 CTest) across README, SVG & dashboard
+
+
+----
+COMMIT ba1c58fcee38d55a699cc8a44672e7365570c322
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(ci,tests): skip HW-only Vulkan SPIR-V execution when no ICD is present and honor OPENSCARLETT_VK_FORCE_SOFTWARE
+
+
+----
+COMMIT 58f3fd88da2168ea65eeb00e1731810086d1b804
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(sprint7): integrate Wave 2 native Win32/D2D OpenScarlettLauncher GUI, 60s hardware tester & BCrypt SHA-256 updater (42/42 CTest)
+
+
+----
+COMMIT 54c24572008750973a86726074b374fbf005434a
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge: Wave 2C (Native Win32/Direct2D dark GUI shell & launcher/updater test suite)
+
+
+----
+COMMIT 686dd75d230b9fdeafeb8c68f9223b072d13fcf0
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge: Wave 2B (Hardware test runner, GPU telemetry & PE inspector bridge)
+
+
+----
+COMMIT fb459828f31951522a723bc3b3f6f44f769b9c15
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge: Wave 2A (WinHTTP + BCrypt SHA-256 opt-in updater)
+
+
+----
+COMMIT 915e602b056a714340aab6992ae1e16d99296ed4
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(launcher): add native Win32/Direct2D dark GUI shell and updater test suite
+
+
+----
+COMMIT 27b509745d0a31f3ff729db87f9b7854a321be18
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(launcher): implement hardware test runner, telemetry bridge, and PE export inspector
+
+
+----
+COMMIT 08811679a47000257f375ab14dd2fab4f2f536c4
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT docs: fix hardware test references from .bat to run_hardware_test.ps1
+
+
+----
+COMMIT 90dd58dc65cd722184d0ada86afb9b00bfaeb3a1
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(launcher): implement clean-room WinHTTP/BCrypt updater core
+
+
+----
+COMMIT afd0d3eebcec969747a147a89e44d90d9217abc2
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT docs(readme,branding): human-readable README, subtle Series X|S banner & icon, clean status.svg and interactive dashboard
+
+
+----
+COMMIT 6aeeb86b5c516fb638b1157bee30e39abc2967fa
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(launcher): define Wave 2 contract headers for updater and hardware-test runner bridge
+
+
+----
+COMMIT d073446b0ba6d8f44f6c707ed2e7983b3593f3c7
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(sprint7): integrate Wave 1 (d3d12_xs->Vulkan routing, RDNA2 lockstep LDS & diff ISA, PE/GDK runtime & 3D GDK scene; 41/41 CTest)
+
+
+----
+COMMIT 360d909b2b4f178dca6861031b1bfb1afe32689d
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge: Wave 1 Worker 4 (3D shadowed skinned BC1/BC3 GDK scene & dual-API test)
+
+
+----
+COMMIT f5bfe24a10719bbb845ce102cffb27e7f5126e3f
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge: Wave 1 Worker 3 (PE/loader hardening, XMemVirtualQuery, GDK parity & 6 stubs)
+
+
+----
+COMMIT 666ffcc3911e50974517763966ced8d43bc0a383
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge: Wave 1 Worker 2 (RDNA2 lockstep LDS barriers, no-op opcodes & diff ISA)
+
+
+----
+COMMIT 44472915eaee19f7260c4ebc5a8f886c98e1abdf
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge: Wave 1 Worker 1 (d3d12_xs->Vulkan routing & cross-vendor edge cases)
+
+
+----
+COMMIT 567ef39b61d3b27fbb2def35d00e48c8ffb73147
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(s7): PE/loader hardening, XMemVirtualQuery, Minecraft-GDK surface, 6 stub DLLs, raw mouse & XGEncodeDCC
+
+
+----
+COMMIT de604893a7b85cabc04558d92d2b591d2f5eeb63
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu): single-wave lockstep LDS barriers, explicit no-ops, and differential ISA verification
+
+
+----
+COMMIT 2abe1ec9a51fe318cfe672f08ded5c22ca5fcbeb
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu): direct d3d12_xs -> Vulkan 1.4 routing, cross-vendor Vulkan edge cases & separated PresentX timings
+
+
+----
+COMMIT afc6e8e0673899bcf94a3cc15eaba5dba6a5348e
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gdk-3d-scene): add 3D shadowed skinned BC1/BC3 GDK title and dual-API test
+
+
+----
+COMMIT 6a15cbf9324b34b9e4e814fb719942b5505268d7
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(ci,vfs,gpu): honor explicit VFS env overrides unless forbid_sys_writes set, fix WARP GetResourceTiling mip split & v0.3.1-alpha release notes
+
+
+----
+COMMIT d373def979d603f67d6ab554034d8f9da022d572
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(sprint6): integrate 7-worker parity wave, 292/292 GDK thunks, child-hook propagation & playable Scarlett game (37/37 CTest)
+
+
+----
+COMMIT 9685348b42e73ab81abf2af4d728907c42b6e70a
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge: integrate feat/playable-scarlett-game
+
+
+----
+COMMIT ea82eb8d1b21e6696a96dd3e320226eb26f33bd8
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge: integrate feat/bcpack-bvh4-codecs
+
+
+----
+COMMIT 9a3f027c0079b9bdc6ca5a73de56ebed60dcf5c3
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge: integrate feat/loader-vfs-child-hook
+
+
+----
+COMMIT 51f8386c0f1c597708c32bffb5fdd657dbb00fec
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge: integrate feat/dstorage-mfplat-audio-shims
+
+
+----
+COMMIT 5dbc8ff36652e10846a3e8875fa02a5f47ec942d
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge: integrate feat/xgr-100pct-queryapi
+
+
+----
+COMMIT 269170a219f1da849c38022471774bc5cecb12cc
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge: integrate feat/gpu-d3d12x-vk-tiling
+
+
+----
+COMMIT 55c660feef7645bbc72a2b23aa8501ba35e94c3e
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT merge: integrate feat/rdna2-corpus-parity
+
+
+----
+COMMIT fc2699dbf9f8bc96c08cf314f79e6af90ca6472b
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu): add RDNA2/GFX10.3 corpus parity, PSV0 wave bounds, mesh contracts, and DXIL re-signing
+
+
+----
+COMMIT 1efa12b6d5a5239ec6c128df21304370129702ab
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu): add D3D12X extensions, Vulkan sparse/mip parity, and xg_xs metadata layouts
+
+
+----
+COMMIT 19e788951ec8cd34bc6083ea7c315af9f66d8a7f
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(xgr): 100% XGamingRuntimeThunks parity (292/292) & 3-arg QueryApiImpl COM ABI
+
+
+----
+COMMIT 095964e24e0febfed8c9ec8900b946df64435fe7
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(loader): add unified DLL routing updates, hardened CoW VFS, and CreateProcess child hook propagation
+
+
+----
+COMMIT ed0ad716c9910ed55d4995b0f4a698bf7795b99e
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(shims): add DirectStorage cancel/bounds/phys-page, mfplat/diag DLLs, XMem/XThread & WASAPI parity
+
+
+----
+COMMIT 0a61312fe04007e0ea0d544e63efbaaa541fbeb3
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(codecs,gpu): harden BCPack BC1-BC7 entropy layer and add RDNA2 BVH4 decoder
+
+
+----
+COMMIT 84718cd5af82ce6c2e2750ac5311427525c02c07
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(playable-game): add Scarlett full-stack Freedoom/Arena host & real GDK thunks verification
+
+
+----
+COMMIT e264e941ce85a6ae19a4a804adbde0228941717c
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT ci(release): make publish-release idempotent with clobber/edit for tag republishes
+
+
+----
+COMMIT 4d23c6b48520ebea9810d322eb58c6f499b213bb
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(ci): preserve /EHsc in Clang-CL CMAKE_CXX_FLAGS so C++ exceptions stay enabled
+
+
+----
+COMMIT 0eb97f97852238fccd8b31479108444313c5333d
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(ci,docs): fix Clang-CL STL check & MinGW d3d12_xs export macro, switch hardware test refs to .ps1
+
+
+----
+COMMIT 841d872c215d885a62dc4b1f3e29259aa6fd2d81
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(ci,tests): make test_gdk_extended_loader portable for hidden-build smoke test and make Clang-CL leg non-blocking
+
+
+----
+COMMIT aa3a1753a625837133e40640d7e34f7b6cc989c9
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(readme,status): stop re.sub from injecting NUL byte for XS2\\0 in README.md and update GDK shim metrics
+
+
+----
+COMMIT 55b94738aecb6ec1de051c04692e59a98abb604c
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(gdk,tests): handle 3-arg XGamingRuntimeThunks QueryApiImpl(clsid, iid, ppv) safely and clean CI VFS overlay
+
+
+----
+COMMIT 9595eea3b555160e82502da93fd8696f4606a056
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT docs,release: upgrade portable tester, status dashboard & README for v0.3.0-alpha (closes #3, #5, #6)
+
+
+----
+COMMIT c05c58e29b6d57d329ee0845157a27b08059eb3f
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(wave2): merge wave2/vulkan-mesh-showcase
+
+
+----
+COMMIT a7bb35b6b299f2c00db9d7c852900981430f1603
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(wave2): merge wave2/gdk-hdr-cubemap
+
+
+----
+COMMIT 9aacf544d3d75f07603f0531bc18570c5a378f67
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(wave2): merge wave2/gdk-simple-lighting
+
+
+----
+COMMIT 9028d7b9624dfa6b33e051a622d0e595a6c9e55d
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gdk): add SimpleLighting 3D Blinn-Phong workload with XDisplay, X3DAudio/FX & Vulkan 1.4 parity
+
+
+----
+COMMIT d814027eaa5c530ff1aad7fe580b2597f39c15f5
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(showcase): add VulkanMeshShowcase RDNA2 XS2 AS+MS+PS + 3D LUT cross-API parity suite
+
+
+----
+COMMIT b5930b06a255bf8c053142a8bf19e33db2894202
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gdk): add HDRCubeMap real-binary GDK workload (FP16 cubemap, default Texture2DArray SRV, HDR10 ST.2084)
+
+
+----
+COMMIT fd31b271fedb58304b6e71e6926cd7383f11d079
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT Merge branch 'feat/loader-vfs-routing'
+
+
+----
+COMMIT 364c70d50d6dda22598bc53394ee43b0881c379a
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT Merge branch 'feat/xgameruntime-thunks-parity'
+
+# Conflicts:
+#	include/openscarlett/gdk/xgameruntime_abi.h
+#	src/shims/xgameruntime_shim.cpp
+
+----
+COMMIT 96d41b3699ef9c575ba312f7dc04ab1fb198682d
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT Merge branch 'feat/xcurl-xsapi-parity'
+
+
+----
+COMMIT 0b3d66bb16da5624daa354fa62f16afbf57324c2
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gdk): expand xgameruntime.dll thunks parity and 12-GUID QueryApiImpl dispatch
+
+
+----
+COMMIT 9fa5019acc2a10fa80f1911c8546303a9a924ef5
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(shims): achieve XCurl 16/16 real-import parity and expand XSAPI to 178 exports
+
+
+----
+COMMIT 7cc28a7bc5bdd69cd475b70a1064287eee6e560c
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(build,ci): prevent MSVC 17.10+ std::mutex crash on older msvcp140.dll
+
+
+----
+COMMIT 72582ffcc5f13a0dd4a56782b5fca09eeaf46dde
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT docs(status): refresh live status dashboard after Wave 1 (26/26 CTest passing)
+
+
+----
+COMMIT 92aa4e44c9a3e1b910b4997d6080d795b11577ea
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(wave1): merge wave1/mingw-ci-portability
+
+
+----
+COMMIT 480945a35dfd8223e0ec2c06075a76a6f104b691
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(wave1): merge wave1/gdk-display-audio-loader
+
+
+----
+COMMIT bab0de4f44771ff614665b6ac403a513db116973
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(wave1): merge wave1/hdr10-d3d12-catches
+
+
+----
+COMMIT af78d026984997dc5bc6eabc61bab87555307178
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(wave1): merge wave1/rdna2-isa-catches
+
+
+----
+COMMIT 3316f2be51c1759357fdcd78cbe76b1ef6b538c3
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(wave1): merge wave1/vulkan-full-graphics
+
+
+----
+COMMIT 7e413eff3aeb6a6e6c4d4c1d94845fcd3f12f0b1
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(rdna2): implement 5 GFX10.3 ISA, LDS zero-init, quad deriv, wave64 mesh, & WARP catches
+
+
+----
+COMMIT ff98830f56674e4f0ac014cadacf4b01016a6b2e
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(loader): eliminate C:\ default VFS/telemetry leak, add versioned GDK DLL routing aliases, and add Store-bootstrap diagnostics
+
+
+----
+COMMIT e8915fa4407b0cab3eaa40bbebe03349734ab492
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(vulkan): add zero-SDK Vulkan 1.2/1.4 rasterization, VK_EXT_mesh_shader, 3D textures & Win32 swapchain
+
+
+----
+COMMIT ee10610227ffacbb8c7d538087b14da3a09b5fb1
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(d3d12_xs): HDR10/scRGB PresentX swapchains, default array SRVs, unified-memory tracking & fail-closed stubs
+
+
+----
+COMMIT 9fd909839f7ada592ba858a06afcaa27ca3ef067
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(gdk,audio,loader): add XDisplay HDR, extended GDK UI/Invite/Speech, X3DAudio/XAudio2FX, and topological DLL init ordering
+
+
+----
+COMMIT 39c85200777da36743729bc13a6845d5cdc10d13
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT ci(portability): add Clang-CL & MinGW-w64 CI legs and compiler portability profile (#6)
+
+
+----
+COMMIT d5222932bdefb62633885086bfa8517d5a1eaac8
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT chore(cmake): add modular optional includes for v0.3.0-alpha parallel waves
+
+
+----
+COMMIT bcc28958f94f6a2c35a72b2bee7bbda64be83d59
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT docs(readme): add AMD RX 7600 & NVIDIA RTX 3080 Ti 13/13 passes (#12, #13)
+
+
+----
+COMMIT 2c0c7d1d01200278183e35fa4a601b6bda626459
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT docs(readme): feature AMD RX 7900 XTX & RX 9070 XT 13/13 passes and PR #11 (#9, #10)
+
+
+----
+COMMIT 9ad1971de632b9cc42b36762af6c05cd1eafdeb1
+DATE 2026-11-21
+AUTHOR rpatty
+SUBJECT tests: add NPOT mip-chain and 32x32x32 3D LUT vectors to test_xg_dstorage (#11)
+
+
+----
+COMMIT d7f1b7df79154b5bcd503f85963108a6f509a62e
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(ci): harden shader cache SM key, Opus MFT probe, and headless PresentX for Windows Server CI
+
+
+----
+COMMIT 9aa39555d0d82de745d59e8d22519bca7f57f706
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(tests,docs): polish HW report UX/logs and update RTX 2060 SUPER 13/13 pass (#8)
+
+
+----
+COMMIT df979fe1bf8eade02e4f3b5d261c76339df40e26
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT fix(d3d12_xs): add MinGW-w64 COM aggregate-return and UUID compatibility (#6)
+
+
+----
+COMMIT 69f0d1b94327745f937d96a510df1595ce923b1c
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(wave2): merge wave2/external-gdk-bringup
+
+
+----
+COMMIT 59bd45ad5fc61f8836e8dbf45726db536192ccc7
+DATE 2026-11-22
+AUTHOR californiaAlmonds
+SUBJECT feat(bringup): add GDK-header external binaries and 19-DLL live telemetry bring-up
+
+
+----
+COMMIT a80932e97d957aae1982144af1e9a21069459f91
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(wave2): merge final wave2/gdk-meshlet-cull (Win10 WARP fix + HW/WARP parity)
+
+
+----
+COMMIT cb2e7c73f8d3debae26832de249d55d95290da5f
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT fix(bringup): fix MeshletCull Win10 WARP DXIL JIT crash and tighten verification
+
+
+----
+COMMIT a6a1a05650ca57edb0871aa1c2eb99bfe5c1c080
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(wave2): merge wave2/gdk-meshlet-cull
+
+
+----
+COMMIT 12923312f5971b44951fbf67c397569c9c3a38c3
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(bringup): add MeshletCull AS+MS+PS GPU culling GDK live sample
+
+
+----
+COMMIT 851a20c08eee83917bb83bc1595a1ba3a2589f70
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(wave2): merge wave2/gdk-dxr-triangle
+
+
+----
+COMMIT d41617c2a8dd3ea78c08adaa3e3c827b549dea71
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(wave2): merge wave2/gdk-simple-pbr
+
+
+----
+COMMIT f55763e3dc62f50143bd95c101bde5f462df13e1
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(bringup): add DXRTriangle hardware-DXR/SAH-BVH GDK live sample
+
+
+----
+COMMIT 55db73e914a7907775a7f39a63fde61498da003d
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(bringup): add SimplePBR multi-frame 3D MSAA/depth GDK live sample
+
+
+----
+COMMIT 326a3d772b6a1fab2efc6f77c674070e5cf4befe
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT chore(build): add modular per-agent cmake hooks for Wave 2 GDK bring-up
+
+
+----
+COMMIT 67cf01be6ea714683bc06908dda0667d6b564bd8
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT chore(wave1): fix C4324 warning, portable test_loader_vfs_config paths, and update status dashboard (19/19 CTest)
+
+
+----
+COMMIT 8aa18bf7be8c890a0cb9d972c82cc1214839f48e
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(wave1): merge wave1/presentx-windowing
+
+
+----
+COMMIT a212196937f2d371a6f9c4209ce002d08d8c78ef
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(wave1): merge wave1/secondary-shims-queryapi
+
+
+----
+COMMIT f3ab0f982cd1d346e920ff1ae685937119d54fcc
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(wave1): merge wave1/loader-vfs-config
+
+
+----
+COMMIT 1a0e5921ed3403d740e057c895eea4314b7a74f5
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(wave1): merge wave1/audio-textures-dstorage
+
+
+----
+COMMIT 78614ba9661227caa1dc6798aa879b9b1f3a1e03
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(wave1): merge wave1/rdna2-aaa-cache
+
+
+----
+COMMIT 538e9041a43e3bae2a133d65ffd64cce1e7fca25
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(shaders): add AAA RDNA2 opcodes, Xbox DXBC parser, CPU wave32/64 interpreter, disk shader cache, and d3d12_xs auto-lifting
+
+
+----
+COMMIT 80bb4f2308c87a04adfebf42ab484abf2661109d
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(audio,xg,dstorage): add Opus MFT + IMA-ADPCM + live WASAPI, full GFX10 2D/3D/mip-tail xg_xs, and dstorage queue hardening
+
+
+----
+COMMIT a4f24d1c32e0a0144f02aaf4f5503cee6ede241c
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(shims): implement xgameruntime QueryApiImpl dispatch and 9 secondary GDK/console shim DLLs
+
+
+----
+COMMIT c421483a72cb98892a74f6870910f644b8c72346
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(loader): add MicrosoftGame.Config parser, CoW overlay VFS, PE forwarder/TLS/.pdata hardening, and data-driven DLL routing
+
+
+----
+COMMIT 26a994982b79c0a0b36c2c6efabb887f28219afc
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(presentx,input): add interactive Win32 PresentX swapchain windowing, pacing, and GameInput frame loop
+
+
+----
+COMMIT 7d97bb9ee70602d86488eb7604a2e88b82e52a55
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT fix(tests): resolve runtime exe dir & TEMP scratch portably (fixes #1) and hide build/ in CI smoke test
+
+
+----
+COMMIT ed3f81801efb28b269a412324f286df4a94ea982
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT docs(readme): feature RTX 2060 SUPER / Win11 DXR Tier 12 community report, contributor thanks, and hero tester callout
+
+
+----
+COMMIT 7e1897a7c6fb63a2cff6de87b8b4e56574345a5f
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT chore(build): add modular Wave 1/2 cmake hooks and DeviceX frame-interval getters
+
+
+----
+COMMIT a08e3f79715b943d7eabf781deeff0a3c0d912ef
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(testing): add 1-click hardware test runner, bundled dxc lookup, GitHub Issue submission, and v* release automation
+
+
+----
+COMMIT 529e0a6d5d50eb9ac7f8708bd828f2e0e7030b3c
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT fix(ci): detect Hyper-V Basic Render Driver (0x1414/0x008C) as WARP and fix test_apc_loader temp path
+
+
+----
+COMMIT cde5b2aa998f06493da8c0523a9760752c4727dc
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT docs(status): publish live Sprint 1-3 hardware compatibility matrix and 13/13 status dashboard
+
+
+----
+COMMIT d8518c2304117fd0354dcdd65d83090aefd4b118
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT fix(ci): ensure portable temp/dxc paths and WARP-only CI fallback while preserving strict HW checks
+
+
+----
+COMMIT f69c998168d42621aedf07df63790131c050f7e8
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(bringup): merge Sprint 3 real MIT Microsoft Xbox-GDK-Samples live bring-up
+
+
+----
+COMMIT dacad04f5479347406ed627978d1cdfcc145ebd8
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(bringup): run real MIT Microsoft Xbox-GDK-Samples live via openscarlett run
+
+
+----
+COMMIT 7b3c45548de4f8f1a617fdf919199e8200d9e010
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT docs(status): update dashboard after Sprint 2 AAA RDNA2 shader lifter merge
+
+
+----
+COMMIT 71436e8856583eb9b49c2398a3aafe539f944115
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(shaders): merge AAA RDNA2 lifter with MIMG, DS/LDS, wave64-on-wave32, and SM6.5 Mesh/AS
+
+
+----
+COMMIT 9ecc1d2caba0a320c23a45dd329e7b8044bbfc7a
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(shaders): add AAA RDNA2 lifter with MIMG, DS/LDS, wave64-on-wave32, and SM6.5 Mesh/AS shaders
+
+
+----
+COMMIT fbf9ae5128296b3ce4b9a9ae7305c4753eff904b
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT chore(build): add optional gdk_live_targets.cmake hook for Sprint 3 real-binary bring-up
+
+
+----
+COMMIT 3e9b42a3d93df1f7c0d0217c2067ab509d86cd77
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT fix(graphics): deduplicate FrameBufferRgba8 and sanitize Xbox D3D12 flags + 0-plane PresentX
+
+
+----
+COMMIT 8ca13f6a0ff989a56f1e82131196ef925bc13202
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT docs(status): update dashboard after DXR Tier 1.1 merge
+
+
+----
+COMMIT 90dce2575d991bb9995d4ebf1be84c6dd96836ca
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(dxr): merge Hardware DXR Tier 1.1 pipeline with SAH software BVH fallback
+
+
+----
+COMMIT dd2efb521ddac0b2b74e84934c8d0a94c09673e5
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(dxr): add Hardware DXR Tier 1.1 pipeline with SAH software BVH fallback
+
+
+----
+COMMIT 7487b05ddfe249ff56a8199e4fcc56c7be3178fe
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT docs(status): update dashboard after Sprint 1 completion (d3d12_xs, xg_xs, FSR 1.0)
+
+
+----
+COMMIT e4bc196b56bb018cfe19b0ee0b8d70851f30374b
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(graphics): merge modular d3d12_xs COM proxy, xg_xs swizzle, high-perf adapter selector, and GPU FSR 1.0
+
+
+----
+COMMIT d58f0b6aef0a3834e04fe7898cc9b5ebbd317fa7
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(graphics): add modular d3d12_xs COM proxy, xg_xs swizzle, high-perf adapter selector, and GPU FSR 1.0
+
+
+----
+COMMIT b68fdd970e62039686b3e1e8a357423096fc468c
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT docs(status): update dashboard after core GDK shims merge
+
+
+----
+COMMIT 2c8c5cd8937a870a158fad9b7e079552bb9fb22b
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(gdk): merge clean-room xgameruntime, GameInput, XAudio2/AcpHal, dstorage_xs, and XSAPI shims
+
+
+----
+COMMIT a429535bc666627dc5292877cfefb1e49fb8faec
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(gdk): add clean-room xgameruntime, GameInput, XAudio2/AcpHal, dstorage_xs, and XSAPI shims
+
+
+----
+COMMIT 7cb91257e61c04966a71bebadee72ad57d80d812
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT chore(build): add optional dxr_targets.cmake hook for Sprint 2 worktrees
+
+
+----
+COMMIT 1317b55d3059ad0c1ea63aebd2bfeb71d5befdb0
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT docs(status): update dashboard after kernelx & GpuTilePool merge
+
+
+----
+COMMIT efe09545f036eedfb0175fe99c88363b0630fe09
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(kernelx): merge VirtualAlloc2/MapViewOfFile3 memory aliasing, GpuTilePool, and kernelx.dll
+
+
+----
+COMMIT 922ef272ddce410949189f7b16b4055f9c08fdb0
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT docs(status): update dashboard after APC hook loader & VFS merge
+
+
+----
+COMMIT 8eddb1e171942625d10813f69c379a41c2af400e
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(kernelx): add VirtualAlloc2/MapViewOfFile3 memory aliasing, GpuTilePool, and kernelx.dll
+
+
+----
+COMMIT 40a2ddfee9d1cf0d49bd2b90e6cac0e6ede8c554
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(loader): merge suspended-process APC hook loader, VFS mounts, and openscarlett run
+
+
+----
+COMMIT c6857ea0bd69063cde4bbedeaffcd076abaf162b
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(loader): add suspended-process APC hook loader, G:/T:/S: VFS, and openscarlett run
+
+
+----
+COMMIT 5e76043d6aebfbf3acb03e595a159236ce208414
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT fix(test): copy VulkanDeviceInfo before Shutdown so GPU name logs accurately
+
+
+----
+COMMIT 7b4aeaa73fcc00790b578b6ef70f46982d292b7c
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT ci(windows): add GitHub Actions MSVC/Ninja CI and portable win64 test bundle
+
+
+----
+COMMIT acbdb7c214efddc06035be0268bc00a67f5b3093
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT chore(build): add modular CMake target hooks and cross-DLL telemetry forwarding
+
+
+----
+COMMIT a2763f4f8b1d9ace0e504b39db42485c0dbae573
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT fix(gpu): replace leftover ScarlettX log strings with OpenScarlett and ignore .worktrees/.tools
+
+
+----
+COMMIT 54e4fe1234491b6610b6966d848aae9bb672bf99
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT docs(status): add human-readable README and auto-generated live status dashboard
+
+
+----
+COMMIT 9e710fd9c9fdddfff45337baa558cb0abfaf68d7
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(winrt): add clean-room WinRT activation and HSTRING runtime (winrt_xs.dll)
+
+
+----
+COMMIT 2fa61ca2d8ddbd142f3d1e63186f9cfb6bd0e7be
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(gpu): add dynamic Vulkan 1.2/1.4 compute backend and RDNA2/GFX10.3 decoder + SSA IR
+
+
+----
+COMMIT d971f0de4b5463d5f3986babe5a6236ed7adbdf6
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(codecs): add clean-room GDeflate v1, BCPack, XMA2 IMDCT, and Bink2 codecs
+
+
+----
+COMMIT 775af44b0d9d696d3e46adb2b299fc1887d8497f
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT feat(core): add PE32+ import/delay-load inspector, live call telemetry, and CLI GPU probe
+
+
+----
+COMMIT ec4d6d389a1105e9cd7b6afab56ec1c48bb2d8dc
+DATE 2026-11-21
+AUTHOR californiaAlmonds
+SUBJECT chore: initialize OpenScarlett MIT C++20 workspace and engineering guide
+
+
+----

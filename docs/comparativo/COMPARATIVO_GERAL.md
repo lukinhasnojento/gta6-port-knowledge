@@ -1,6 +1,6 @@
-# Comparativo geral — 12 repositórios
+# Comparativo geral — 13 repositórios
 
-Placar consolidado dos doze projetos, com o que cada um acertou e errou, e o que isso significa para
+Placar consolidado dos treze projetos, com o que cada um acertou e errou, e o que isso significa para
 o repositório unificado. Documentos individuais em `docs/comparativo/<repo>.md`.
 
 ## 1. Matriz completa
@@ -21,15 +21,16 @@ Notas de 0 a 5. **Eng** engenharia · **Ver** verificabilidade · **Doc** docume
 | 9 | VItoriaBr | 4 | 3 | 3 | 2 | 4 | 3,2 |
 | 10 | victory-fork | 4 | **2** | 4 | 2 | 4 | 3,2 |
 | 11 | GTA6-Asset-Info | 4 | 4 | **2** | 2 | 4 | 3,2 |
-| 12 | **AvatarManz** | 4 | 3 | 2 | 2 | **0** | **2,2** |
+| 12 | OpenScarlett | 4 | 3 | **2** | 2 | 4 | 3,0 |
+| 13 | **AvatarManz** | 4 | 3 | 2 | 2 | **0** | **2,2** |
 
 Amplitude total: **1,8 ponto** entre o primeiro e o último. Nenhum projeto é ruim; nenhum é ótimo.
 
 ## 2. O que a matriz revela
 
-### 2.1 Engenharia é 4 em doze de doze
+### 2.1 Engenharia é 4 em treze de treze
 
-A coluna mais estável do placar é a que mede qualidade técnica das correções. Doze projetos
+A coluna mais estável do placar é a que mede qualidade técnica das correções. Treze projetos
 independentes, autores diferentes, stacks diferentes — e todos chegam ao mesmo 4.
 
 Isso não é coincidência nem complacência da avaliação. É o resultado de um filtro: quem conseguiu
@@ -42,10 +43,10 @@ fazer o jogo bootar sabe o que faz. A competência técnica não é o que separa
 | Nota | Quantos |
 |---|---|
 | 3 | 3 (TuxBox, xbox-emulator) |
-| 2 | 9 |
+| 2 | 10 |
 | 4 ou 5 | **0** |
 
-Nove dos doze têm nota 2. E os casos não são abstratos:
+Dez dos treze têm nota 2. E os casos não são abstratos:
 
 - `crashed.txt` persistente cujo dano só se desfaz apagando o arquivo à mão (Belobug)
 - *"this merged tree was built; its test suites were not run"* em seis commits (victory-fork)
@@ -65,7 +66,7 @@ cada um está sozinho correndo atrás de frames.
 |---|---|
 | 5 | xbox-emulator, Xbox2Windows |
 | 4 | TuxBox, SixNG, VIctory, XCL, DexNom, GTA6-Asset-Info |
-| 3 | Belobug, VItoriaBr, AvatarManz |
+| 3 | Belobug, VItoriaBr, AvatarManz, OpenScarlett |
 | 2 | victory-fork |
 
 Os dois com 5 chegaram lá pelo mesmo método, independente: **conformance contra a implementação de
@@ -242,13 +243,13 @@ Ordem de trabalho sugerida:
 5. **Não copiar:** nada do AvatarManz (licença); nenhum default do Belobug (`crashed.txt`, 33 GB,
    contagem de slots); nenhum import monolítico.
 6. **Sustentabilidade:** é a única dimensão em que ninguém passou de 3. Se o repositório unificado
-   não atacar isso, herdará a mesma falha de todos os doze.
+   não atacar isso, herdará a mesma falha de todos os treze.
 
 ## 6. Método
 
 Cada documento individual foi produzido por um subagente isolado, que recebeu apenas o próprio
 repositório, sua análise completa, os fatos gerados por `git` e a divergência entre forks. Nenhum viu
-o trabalho dos outros. O placar consolidado foi extraído dos doze arquivos por script, não por
+o trabalho dos outros. O placar consolidado foi extraído dos treze arquivos por script, não por
 transcrição manual.
 
 Onze conclusões foram reconferidas à mão no `git` — ver `VERIFICACOES.md`. Duas nesta rodada:

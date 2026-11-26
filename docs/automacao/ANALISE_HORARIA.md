@@ -99,7 +99,7 @@ repositório. Não invente nomes — siga esta tabela.
 | 1 | `Marvisak/VIctory` | main | `VIctory.md` | `VIctory.md` | `VIctory.md` |
 | 2 | `ivall/xcl` | main | `XCL.md` | `XCL.md` | `xcl.md` |
 | 3 | `R0Y00/Xbox2Windows` | main | `Xbox2Windows.md` | `Xbox2Windows.md` | `Xbox2Windows.md` |
-| 4 | `californiaAlmonds/OpenScarlett` | main | — (só dossiê) | — | `OpenScarlett.md` |
+| 4 | `californiaAlmonds/OpenScarlett` | main | `OpenScarlett.md` | `OpenScarlett.md` | `OpenScarlett.md` |
 | 5 | `Belobug/VIctory-Belobug-AMD` | main | `Belobug-AMD.md` | `Belobug-AMD.md` | `VIctory-Belobug-AMD.md` |
 | 6 | `DexNom/VIctory` | main | `DexNom.md` | `DexNom.md` | `VIctory-DexNom.md` |
 | 7 | `uiliannn/VItoriaBr` | main | `VItoriaBr.md` | `VItoriaBr.md` | `VItoriaBr.md` |
@@ -112,9 +112,6 @@ repositório. Não invente nomes — siga esta tabela.
 
 O repositório `ivall/xcl` responde também por `xcl-dev/xcl` (transferência); use `ivall/xcl`, que
 redireciona.
-
-`californiaAlmonds/OpenScarlett` não tem documento em `docs/analises/` nem em `docs/comparativo/`:
-só foi gerado o dossiê factual em `docs/fatos/OpenScarlett_fatos.md`. A rotina horária o monitora
 normalmente.
 
 ### Verificar cobertura

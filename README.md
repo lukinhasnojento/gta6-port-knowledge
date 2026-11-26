@@ -12,13 +12,13 @@ nenhum arquivo de jogo, nenhuma chave, nenhum executável.
 
 | Caminho | Conteúdo |
 |---|---|
-| `docs/analises/` | 12 análises históricas, uma por repositório, em 12 seções (A–L) |
-| `docs/comparativo/` | 12 documentos de acertos e defeitos + `COMPARATIVO_GERAL.md` com a matriz |
+| `docs/analises/` | 13 análises históricas, uma por repositório, em 13 seções (A–L) |
+| `docs/comparativo/` | 13 documentos de acertos e defeitos + `COMPARATIVO_GERAL.md` com a matriz |
 | `docs/plano/` | `PLANO_REVISADO.md` — decisão de fundação, ordem de trabalho e o que não herdar |
 | `docs/relatorios/` | 2 relatórios consolidados, um por rodada de análise |
 | `docs/fatos/` | 15 dossiês factuais gerados **por git puro**, sem nenhum modelo de linguagem |
 | `docs/indices/` | 14 índices de commits (hash, data, autor, assunto) — a evidência bruta |
-| `catalogo/defeitos.csv` | 281 defeitos catalogados, com hashes de introdução e correção |
+| `catalogo/defeitos.csv` | 305 defeitos catalogados, com hashes de introdução e correção |
 | `METODO.md` | Como a análise foi feita e quais regras impediram invenção |
 | `VERIFICACOES.md` | 11 conclusões reconferidas à mão, com o comando e o resultado |
 | `NOTICE.md` | Licenças, atribuição e um bloqueio jurídico encontrado |
@@ -27,13 +27,13 @@ nenhum arquivo de jogo, nenhuma chave, nenhum executável.
 
 | Métrica | Valor |
 |---|---|
-| Repositórios analisados | 12 |
-| Commits cobertos | 9.209 |
-| Defeitos catalogados | 281 |
-| Defeitos com hash de introdução identificado | 139 |
-| Defeitos com hash de correção identificado | 192 |
-| Defeitos com confiança declarada | 96 (91 CONFIRMADA, 5 PROVÁVEL) |
-| Páginas de análise | 44 arquivos, 3,4 MB |
+| Repositórios analisados | 13 |
+| Commits cobertos | 9.560 |
+| Defeitos catalogados | 305 |
+| Defeitos com hash de introdução identificado | 157 |
+| Defeitos com hash de correção identificado | 209 |
+| Defeitos com confiança declarada | 120 (115 CONFIRMADA, 5 PROVÁVEL) |
+| Páginas de análise | 29 arquivos, 2,1 MB |
 
 Os 185 defeitos sem confiança declarada no CSV não são de qualidade inferior: são os casos em que
 a extração automática não conseguiu localizar o campo no texto original. A classificação está
@@ -48,7 +48,7 @@ no documento de análise correspondente.
 | `Marvisak/VIctory` | 241 | Camada Rust que roda o executável Xbox nativamente no Windows |
 | `ivall/xcl` | 853 | Camada estilo Wine, traduz shaders RDNA2 para DXIL |
 | `R0Y00/Xbox2Windows` | 4.076 | Pesquisa de recompilação estática, estudo de caso GTA VI |
-| `californiaAlmonds/OpenScarlett` | 347 | Camada C++20 D3D12/Vulkan para jogos Xbox Series |
+| `californiaAlmonds/OpenScarlett` | 351 | Camada C++20 D3D12/Vulkan para jogos Xbox Series |
 
 **Forks do VIctory**
 
