@@ -1,0 +1,110 @@
+﻿[
+    {
+        "Repo":  "TuxBox",
+        "E":  4,
+        "V":  4,
+        "D":  4,
+        "S":  3,
+        "R":  5,
+        "Media":  4
+    },
+    {
+        "Repo":  "xbox-emulator",
+        "E":  4,
+        "V":  5,
+        "D":  3,
+        "S":  3,
+        "R":  4,
+        "Media":  3.8
+    },
+    {
+        "Repo":  "SixNG",
+        "E":  4,
+        "V":  4,
+        "D":  4,
+        "S":  2,
+        "R":  5,
+        "Media":  3.8
+    },
+    {
+        "Repo":  "Xbox2Windows",
+        "E":  4,
+        "V":  5,
+        "D":  4,
+        "S":  2,
+        "R":  3,
+        "Media":  3.6
+    },
+    {
+        "Repo":  "VIctory",
+        "E":  4,
+        "V":  4,
+        "D":  3,
+        "S":  2,
+        "R":  5,
+        "Media":  3.6
+    },
+    {
+        "Repo":  "XCL",
+        "E":  4,
+        "V":  4,
+        "D":  3,
+        "S":  2,
+        "R":  4,
+        "Media":  3.4
+    },
+    {
+        "Repo":  "DexNom",
+        "E":  4,
+        "V":  4,
+        "D":  3,
+        "S":  2,
+        "R":  4,
+        "Media":  3.4
+    },
+    {
+        "Repo":  "Belobug-AMD",
+        "E":  4,
+        "V":  3,
+        "D":  4,
+        "S":  2,
+        "R":  4,
+        "Media":  3.4
+    },
+    {
+        "Repo":  "VItoriaBr",
+        "E":  4,
+        "V":  3,
+        "D":  3,
+        "S":  2,
+        "R":  4,
+        "Media":  3.2
+    },
+    {
+        "Repo":  "victory-fork",
+        "E":  4,
+        "V":  2,
+        "D":  4,
+        "S":  2,
+        "R":  4,
+        "Media":  3.2
+    },
+    {
+        "Repo":  "GTA6-Asset-Info",
+        "E":  4,
+        "V":  4,
+        "D":  2,
+        "S":  2,
+        "R":  4,
+        "Media":  3.2
+    },
+    {
+        "Repo":  "AvatarManz",
+        "E":  4,
+        "V":  3,
+        "D":  2,
+        "S":  2,
+        "R":  0,
+        "Media":  2.2
+    }
+]

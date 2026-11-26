@@ -13,6 +13,7 @@ nenhum arquivo de jogo, nenhuma chave, nenhum executável.
 | Caminho | Conteúdo |
 |---|---|
 | `docs/analises/` | 12 análises históricas, uma por repositório, em 12 seções (A–L) |
+| `docs/comparativo/` | 12 documentos de acertos e defeitos + `COMPARATIVO_GERAL.md` com a matriz |
 | `docs/relatorios/` | 2 relatórios consolidados, um por rodada de análise |
 | `docs/fatos/` | 15 dossiês factuais gerados **por git puro**, sem nenhum modelo de linguagem |
 | `docs/indices/` | 14 índices de commits (hash, data, autor, assunto) — a evidência bruta |
