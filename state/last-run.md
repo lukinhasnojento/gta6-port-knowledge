@@ -86,5 +86,15 @@ Tetos aplicados:
 - Nenhum merge de `main` em `public`.
 - A diferença entre as duas branches continua sendo só `docs/plano/PROMPT_WINDOWS_PHASE.md` (na `main`).
 - Este arquivo é escrito **depois** da publicação e vai num commit `chore(state)` na `public`, mesclado na
-  `main` e empurrado para os dois remotes — mesmo padrão da execução de 19:00. Os hashes desse segundo par de
-  commits estão no rodapé abaixo.
+  `main` e empurrado para os dois remotes — mesmo padrão da execução de 19:00.
+
+## Rodapé: o segundo par de commits
+
+- `chore(state)` de 2026-11-26 20:00 = **7e91b83** — `git push origin public:main` ok
+  (`713cce9..7e91b83 public -> main`); inclui este arquivo e a correção da tabela de merges do
+  `VIctory-7900XTX.md` feita depois da primeira publicação (`git diff` do merge confirmou +202/−22 em #147,
+  +199/−21 em #63 etc.).
+- `git merge --no-ff public -m "merge updates 2026-11-26 20:00 (last-run)"` = **504a921**;
+  `git push private main` ok (`b2a0dcb..504a921 main -> main`).
+- Estado final: `public` = `origin/main` (0 commits de diferença); árvore limpa.
+
