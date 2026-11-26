@@ -23,9 +23,21 @@ docs/updates/AAAA-MM-DD/HH/_falhas.md   erros daquela execução, se houver
 | 2026-11-25 | 23:00 | 10 | 48 commits e 96 PRs (89 abertos, 7 mesclados) em `VIctory`, `xcl`, `Xbox2Windows`, `VIctory-Belobug-AMD`, `VIctory-DexNom`, `VItoriaBr`, `VIctory-7900XTX`, `victory-fork`, `TuxBox`, `SixNG`. Três repos sem delta: `OpenScarlett`, `xbox-emulator`, `GTA6-Asset-Info` |
 | 2026-11-26 | 00:00 | 10 | 60 commits documentados de 63 na faixa (3 ficaram no backlog por teto de 40 em `Xbox2Windows`) e 101 PRs (75 abertos, 26 mesclados) nos mesmos dez repositórios. `VIctory` e `xcl` sem commit novo, com 24 e 9 PRs abertos. Sem delta em `OpenScarlett`, `xbox-emulator` e `GTA6-Asset-Info` |
 | 2026-11-26 | 01:00 | 9 | 49 commits (todos documentados, nenhum corte de teto) e 70 PRs abertos + 20 mesclados detectados no cursor, em `Xbox2Windows` (31 commits, 18 mesclados), `victory-fork` (9, 1), `SixNG` (4, 1), `VIctory-7900XTX` (3, 0), `TuxBox` (2, 0) e, sem commit, `VIctory` (28 abertos), `xcl` (11), `VIctory-DexNom` (4), `VIctory-Belobug-AMD` (2). Backlog da hora anterior (`Xbox2Windows`) consumido. Sem delta em `VItoriaBr`, `OpenScarlett`, `xbox-emulator` e `GTA6-Asset-Info` |
+| 2026-11-26 | 19:00 | 4 | 120 commits de 200 na janela (teto de 40 cortou 112→40 em `Xbox2Windows` e 48→40 em `SixNG`) e 49 PRs abertos de 257 detectados + 78 mesclados de 158, em `Xbox2Windows` (40 commits), `xcl` (13), `OpenScarlett` (27) e `SixNG` (40). Oito repositórios com delta ficaram em `backlog` pelo limite de 4 por execução |
 
 O primeiro ciclo não documenta nada: grava os cursores em `state/watch.json` para que o ciclo
 seguinte comece a contar a partir dali.
+
+Documentos de 2026-11-26 19:00: [`2026-11-26/19/`](2026-11-26/19/) — `Xbox2Windows.md`, `xcl.md`,
+`OpenScarlett.md`, `SixNG.md`. Execução atrasada: a tentativa do slot 02:00 foi interrompida antes de gravar
+qualquer coisa e o estado não avançou, então esta janela cobre 01:15→19:35 local (~18 h) e não uma hora. Sem
+ferramenta de subagente disponível, os quatro repositórios foram processados em sequência; os outros oito com
+delta (`VIctory`, `VIctory-Belobug-AMD`, `VIctory-DexNom`, `VItoriaBr`, `VIctory-7900XTX`, `victory-fork`,
+`xbox-emulator`, `TuxBox`) ficaram em `backlog`. Tetos aplicados e registrados: 40 commits por repositório
+(`Xbox2Windows` 112→40, `SixNG` 48→40, `commit_cursor` gravado) e 20 PRs abertos por repositório
+(`Xbox2Windows` 63→20, `xcl` 185→20). O cursor de PRs mesclados avançou até o `mergedAt` do último merge
+documentado (06:27:26Z em `Xbox2Windows`, 18:31:19Z em `SixNG`), não até o horário da execução, para não pular
+merges não documentados. Nenhuma falha de coleta; nenhum `_falhas.md`.
 
 Documentos de 2026-11-26 01:00: [`2026-11-26/01/`](2026-11-26/01/) — `Xbox2Windows.md`,
 `victory-fork.md`, `SixNG.md`, `VIctory-7900XTX.md`, `TuxBox.md`, `VIctory.md`, `xcl.md`,
