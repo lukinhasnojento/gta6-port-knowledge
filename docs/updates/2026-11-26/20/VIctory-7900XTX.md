@@ -97,38 +97,38 @@ arquivos do merge contra o primeiro pai, sem leitura de hunk. `mergedAt` de todo
 
 | # | Título | Merge | O que entrou de fato |
 |---|---|---|---|
-| 147 | Our threads prefer the big-cache cores on dual-CCD X3D Ryzens (VICTORY_CACHE_CORES) | 4c3f311a | 3 arquivos: `README.md`, `cores.rs` (novo), `queue.rs` — seleção de núcleos por cache. Merge de 2 pais. |
-| 144 | Trace shader and driver work on pipeline workers | 022db78e | 4 arquivos em `pipeline/`: tracing nos workers de pipeline. |
-| 140 | Fix workspace Clippy -D warnings failures across CI targets | 8ec1189d | 28 arquivos, quase todos de ajuste para `-D warnings`. |
-| 139 | Honor both host wave override names in translate and translate --warm | 4dde9d57 | 6 arquivos; novos `apps/victory/src/translate/host_wave.rs` e teste de integração. |
-| 137 | Report diagnostic settings discarded by play.ps1 | f31e8fa1 | Só `scripts/play.ps1`. |
-| 132 | Distinguish named and ordinal imports in census missing reports | 2016f8de | Só `apps/victory/src/census.rs`. |
-| 130 | Correct the required switches for three opt-in upcheck tests | 153cf84b | Só `host/upcheck.rs`. |
-| 128 | Report warm worker startup failures without marking pipelines as bad | 930a35cf | Só `apps/victory/src/warm.rs`. |
-| 127 | Run default and diagnostics tests independently of Clippy | c02db953 | Só `.github/workflows/ci.yml`. |
-| 123 | Report storage quota errors when save usage cannot be read | 450b6124 | Só `hle/modules/storage.rs` — mesma mensagem do commit `8211226` desta faixa (conteúdo equivalente). |
-| 121 | GPU: back host sampler heaps with 2,048 slots and reserve slot 2,047 as null sentinel | 93292908 | Só `descriptor/host.rs` — equivalente a `dd67ae7` (fora do teto). |
-| 120 | GPU tests: fall back to 1,000,000 view descriptors in replay_big on capped adapters (#116) | d38720a2 | Só `tests/replay_big.rs` — equivalente a `d0aaed0f` (41º commit, fora do teto). |
-| 117 | Report file scan outcomes in shader-info and shaders | bd687863 | 6 arquivos, inclui `apps/victory/src/shader/scan.rs` — equivalente a `c3d5cd80`, já documentado acima. |
-| 106 | Timing runs: the card's time by kind of list | 1778ac5f | `copystat.rs` + `host.rs` — equivalente a `01400899`. |
-| 104 | Decode packed 16-bit BGR targets in diagnostic captures | dfeabb14 | Só `capture.rs` — equivalente a `96a7bd7b`. |
-| 90 | Docs: switches as the code reads them, and an xtask check for dead names (#49) | 1eed7793 | 5 arquivos, inclui `xtask/src/switches.rs` — equivalente a `d792ebd4`. |
-| 89 | VICTORY_WRITE_SITES: refuse a file inside the source tree (#33) | e102fca1 | 3 arquivos — equivalente a `effa1dc8`. |
-| 82 | Translate tiled cascade shadows exactly on wave32 GPUs | 0cb13721 | `wave64_tests.rs` + `ir.rs` — equivalente a `4fd34fdd`. |
-| 78 | Drop the invalid play.ps1 skip default and fail on missing executables | 4651f89c | Só `scripts/play.ps1` — equivalente a `5cfe32df`. |
-| 77 | GPU: opt-in system-RAM budget for idle windows | 4c04dda3 | `host.rs` + `shadow.rs` — equivalente a `ffc2cf6f`. |
-| 69 | GPU: add optional memory category log | 1a7d64a2 | Só `copystat.rs` — equivalente a `70cc7d2e`. |
-| 66 | Shaders: count threads of wave64 builder programs on 32-lane hosts (NVIDIA) | 29c64295 | `lower.rs` + `wave64_tests.rs` — equivalente a `06fe22a7`. |
-| 63 | Retry incomplete pipeline book writes and flush on orderly exit | 15f1a48e | 7 arquivos, inclui `pipeline/known/writer.rs` — equivalente a `1438f09d`/`33439c8d`. |
-| 39 | GPU: state the DRED stop command as the first uncompleted op (#22) | eb797463 | Só `host.rs` — equivalente a `787c7b43`. |
-| 24 | Skip unrelated buffer slots in each spread heap scan | ab9f1b72 | `descriptor/host.rs` + `draw.rs` — equivalente a `888bf1e2`. |
-| 23 | Keep structured buffer reads raw on heaps without descriptor twins | 86bb00ec | Só `descriptor/host.rs` — equivalente a `b68e65e0`/`ce42cc74`. |
-| 17 | Count a frame only after DXGI accepts the present | 64d2b76c | Só `host.rs` — equivalente a `8699d96a`. |
-| 14 | copies of title memory: a guard page fails the copy and stays a guard page | 150f287e | `safecopy.rs` + `watch.rs` — equivalente a `fa116500`/`c2775339`. |
-| 9 | replay: defer clamp scratch copy until split transition completes | 0dc8c655 | `replay/edit.rs` + `replay/play.rs` — equivalente a `3bb5980a`. |
-| 7 | Share GPU selection between runtime and shader validation | f3f6bb62 | 5 arquivos — equivalente a `0a4253f7`. |
-| 5 | Fix resource-state and binding errors in the replay fixture | 2ba2a664 | Só `tests/replay.rs` — equivalente a `b295a683`/`631aadc9`. |
-| 4 | Shaders: run LDS flag regions on 32-lane GPUs | a5e42338 | `shader_cache.rs`, `lower.rs`, `wave64_tests.rs` — equivalente a `ad0f9dda` + `25025d2f` + `e29bfe27`. |
+| 147 | Our threads prefer the big-cache cores on dual-CCD X3D Ryzens (VICTORY_CACHE_CORES) | 4c3f311a | 3 arquivos, +202/−22: `README.md`, `crates/victory-gpu/src/cores.rs`, `crates/victory-gpu/src/queue.rs` — seleção de núcleos por cache. |
+| 144 | Trace shader and driver work on pipeline workers | 022db78e | 4 arquivos, +23/−3, em `pipeline/`: tracing nos workers de pipeline. |
+| 140 | Fix workspace Clippy -D warnings failures across CI targets | 8ec1189d | 28 arquivos, +53/−46: quase tudo ajuste para `-D warnings`, espalhado por `victory-formats`, `victory-gpu` e `apps/victory`. |
+| 139 | Honor both host wave override names in translate and translate --warm | 4dde9d57 | 6 arquivos, +134/−24; novos `apps/victory/src/translate/host_wave.rs` e teste de integração. |
+| 137 | Report diagnostic settings discarded by play.ps1 | f31e8fa1 | Só `scripts/play.ps1`, +8/−1. |
+| 132 | Distinguish named and ordinal imports in census missing reports | 2016f8de | Só `apps/victory/src/census.rs`, +61/−14. |
+| 130 | Correct the required switches for three opt-in upcheck tests | 153cf84b | Só `host/upcheck.rs`, +4/−4. |
+| 128 | Report warm worker startup failures without marking pipelines as bad | 930a35cf | Só `apps/victory/src/warm.rs`, +196/−57. |
+| 127 | Run default and diagnostics tests independently of Clippy | c02db953 | Só `.github/workflows/ci.yml`, +36/−3. |
+| 123 | Report storage quota errors when save usage cannot be read | 450b6124 | Só `hle/modules/storage.rs`, +104/−27 — mesmo assunto do commit `8211226`, que está fora do teto e não foi lido em hunk. |
+| 121 | GPU: back host sampler heaps with 2,048 slots and reserve slot 2,047 as null sentinel | 93292908 | Só `descriptor/host.rs`, +30/−2 — mesmo assunto de `dd67ae7` (fora do teto). |
+| 120 | GPU tests: fall back to 1,000,000 view descriptors in replay_big on capped adapters (#116) | d38720a2 | Só `tests/replay_big.rs`, +10/−5 — mesmo assunto de `d0aaed0f` (41º commit, fora do teto). |
+| 117 | Report file scan outcomes in shader-info and shaders | bd687863 | 6 arquivos, +233/−25, `shader/scan.rs` incluído — praticamente o mesmo diff de `c3d5cd80` (+233/−26). |
+| 106 | Timing runs: the card's time by kind of list | 1778ac5f | 2 arquivos, +122/−14 — mesmos números de `01400899`. |
+| 104 | Decode packed 16-bit BGR targets in diagnostic captures | dfeabb14 | Só `capture.rs`, +50/−4 — idêntico a `96a7bd7b`. |
+| 90 | Docs: switches as the code reads them, and an xtask check for dead names (#49) | 1eed7793 | 5 arquivos, +137/−17, `xtask/src/switches.rs` incluído — idêntico a `d792ebd4`. |
+| 89 | VICTORY_WRITE_SITES: refuse a file inside the source tree (#33) | e102fca1 | 3 arquivos, +39/−4 — idêntico a `effa1dc8`. |
+| 82 | Translate tiled cascade shadows exactly on wave32 GPUs | 0cb13721 | 2 arquivos, +332/−30 — idêntico a `4fd34fdd`. |
+| 78 | Drop the invalid play.ps1 skip default and fail on missing executables | 4651f89c | Só `play.ps1`, +3/−3 — idêntico a `5cfe32df`. |
+| 77 | GPU: opt-in system-RAM budget for idle windows | 4c04dda3 | 2 arquivos, +238/−6 — idêntico a `ffc2cf6f`. |
+| 69 | GPU: add optional memory category log | 1a7d64a2 | Só `copystat.rs`, +71/−3 — idêntico a `70cc7d2e`. |
+| 66 | Shaders: count threads of wave64 builder programs on 32-lane hosts (NVIDIA) | 29c64295 | 2 arquivos, +188/−16 — idêntico a `06fe22a7`. |
+| 63 | Retry incomplete pipeline book writes and flush on orderly exit | 15f1a48e | 7 arquivos, +199/−21: junta `1438f09d` (+107/−8, 5 arquivos) e `33439c8d` (+93/−14, 3 arquivos), com um arquivo em comum. |
+| 39 | GPU: state the DRED stop command as the first uncompleted op (#22) | eb797463 | Só `host.rs`, +66/−4 — idêntico a `787c7b43`. |
+| 24 | Skip unrelated buffer slots in each spread heap scan | ab9f1b72 | 2 arquivos, +40/−16 — idêntico a `888bf1e2`. |
+| 23 | Keep structured buffer reads raw on heaps without descriptor twins | 86bb00ec | Só `descriptor/host.rs`, +49/−16. Não é idêntico a `b68e65e0` (+40/−16): o merge tem 9 linhas somadas a mais. |
+| 17 | Count a frame only after DXGI accepts the present | 64d2b76c | Só `host.rs`, +41/−3 — idêntico a `8699d96a`. |
+| 14 | copies of title memory: a guard page fails the copy and stays a guard page | 150f287e | 2 arquivos, +165/−4, `safecopy.rs` + `watch.rs` — mesmo assunto de `fa116500` e `c2775339` (o merge soma os dois, −4 contra −4/−15). |
+| 9 | replay: defer clamp scratch copy until split transition completes | 0dc8c655 | 2 arquivos, +98/−29 — idêntico a `3bb5980a`. |
+| 7 | Share GPU selection between runtime and shader validation | f3f6bb62 | 5 arquivos, +177/−32 — praticamente `0a4253f7` (+175/−33). |
+| 5 | Fix resource-state and binding errors in the replay fixture | 2ba2a664 | Só `tests/replay.rs`, +43/−27 — soma o efeito de `b295a683` e `631aadc9` no mesmo arquivo; o diff é diferente dos dois isolados. |
+| 4 | Shaders: run LDS flag regions on 32-lane GPUs | a5e42338 | 3 arquivos, +398/−2 (`shader_cache.rs`, `lower.rs`, `wave64_tests.rs`) — cobre `ad0f9dda`, `25025d2f` e `e29bfe27`. |
 
 ## Cruzamento com o catálogo
 
@@ -175,11 +175,11 @@ arquivos do merge contra o primeiro pai, sem leitura de hunk. `mergedAt` de todo
   `mergeCommit` confirmado como ancestral de `HEAD` e não ancestral do cursor. `last_run` avança para
   `2026-11-26T08:17:50Z` (último `mergedAt` documentado), **não** para o horário da execução — assim os
   merges posteriores a esse instante não são pulados.
-- **Ressalva nas linhas de PR mesclado:** a coluna "o que entrou de fato" sai do subject do merge commit e do
-  conjunto de arquivos (`git diff --name-status <merge>^1 <merge>`), com leitura de hunk apenas quando o
-  commit de conteúdo correspondente caiu dentro do teto de 40. A marcação "equivalente a X" foi inferida por
-  assunto idêntico + arquivos compatíveis, **não** por `git patch-id`; onde os arquivos do par diferem em
-  número, não afirmo identidade byte a byte.
+- **Ressalva nas linhas de PR mesclado:** a coluna "o que entrou de fato" sai do subject do merge commit, do
+  conjunto de arquivos (`git diff --name-status <merge>^1 <merge>`) e do `--shortstat` de cada merge, com
+  leitura de hunk apenas quando o commit de conteúdo correspondente caiu dentro do teto de 40. Onde escrevo
+  "idêntico", os arquivos e as estatísticas batem exatamente com o commit de conteúdo citado; onde escrevo
+  "mesmo assunto" ou cito números diferentes, o merge **não** foi provado idêntico — não usei `git patch-id`.
 - **Divergência registrada:** 32 PRs mesclados contra 147 commits na janela. A explicação visível é que cada
   PR deixou **dois** commits no histórico — o `Merge PR #N:` do bot e o commit de conteúdo com o mesmo
   assunto e `(#N)` no fim (por exemplo `d38720a2` e `d0aaed0f`). Isso é o mesmo padrão do defeito D-15 do
