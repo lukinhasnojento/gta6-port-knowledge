@@ -59,5 +59,11 @@ Mais `docs/updates/INDEX.md` (uma linha e um parágrafo) e `state/watch.json`.
 
 ## Publicação
 
-Preparada no commit desta execução (`docs(updates): 2026-11-26 19:00`). Resultado do push registrado no commit
-seguinte, `chore(state): registra resultado do push de 2026-11-26 19:00`.
+- `git switch public`, `git add docs/updates state`, commit `docs(updates): 2026-11-26 19:00` = **99907b4**.
+- `git push origin public:main` → **ok** (`1625ff2..99907b4 public -> main`).
+- `git switch main`, `git merge --no-ff public -m "merge updates 2026-11-26 19:00"` = **36a9798**.
+- `git push private main` → **ok** (`ee82d73..36a9798 main -> main`).
+- Nenhum merge de `main` em `public`.
+- A diferença entre as duas branches continua sendo só `docs/plano/PROMPT_WINDOWS_PHASE.md` (presente na `main`,
+  ausente na `public`), como antes desta execução.
+
