@@ -18,6 +18,7 @@ docs/updates/AAAA-MM-DD/HH/_falhas.md   erros daquela execução, se houver
 
 | Data | Hora | Repositórios com mudança | Resumo |
 |---|---|---|---|
+| 2026-11-26 | 20:00 | 4 | 104 commits (40 em `VIctory-7900XTX`, 40 em `TuxBox`, 22 em `victory-fork`, 2 em `VItoriaBr`) e 72 PRs abertos documentados de 161 detectados + 62 mesclados documentados de 62, nos quatro repositórios retirados do backlog. Sete repositórios com delta ficaram em `backlog` |
 | 2026-11-26 | 19:14 | verificacao manual do tracker | Kelvaroq entra no topo; Belobug medido a 22 fps contra 5-7 no proprio README; AvatarManz consolida victory-fork + DexNom + Belobug |
 | 2026-11-25 | 22:00 | — | execução de baseline: cursores gravados em `state/watch.json`, nenhum documento escrito |
 | 2026-11-25 | 23:00 | 10 | 48 commits e 96 PRs (89 abertos, 7 mesclados) em `VIctory`, `xcl`, `Xbox2Windows`, `VIctory-Belobug-AMD`, `VIctory-DexNom`, `VItoriaBr`, `VIctory-7900XTX`, `victory-fork`, `TuxBox`, `SixNG`. Três repos sem delta: `OpenScarlett`, `xbox-emulator`, `GTA6-Asset-Info` |
@@ -27,6 +28,19 @@ docs/updates/AAAA-MM-DD/HH/_falhas.md   erros daquela execução, se houver
 
 O primeiro ciclo não documenta nada: grava os cursores em `state/watch.json` para que o ciclo
 seguinte comece a contar a partir dali.
+
+Documentos de 2026-11-26 20:00: [`2026-11-26/20/`](2026-11-26/20/) — `VIctory-7900XTX.md`, `TuxBox.md`,
+`victory-fork.md`, `VItoriaBr.md`. Os quatro saíram do `backlog` na ordem em que já estavam registrados. Sem
+ferramenta de subagente no ambiente, foram processados em sequência. Tetos aplicados: 40 commits por
+repositório (cortou `VIctory-7900XTX` 147→40 e `TuxBox` 84→40, com `commit_cursor` gravado em `306722bc` e
+`be9055c9`) e 20 PRs abertos por repositório (`VIctory-7900XTX` 60→20, `TuxBox` 29→20, `victory-fork` 60→20,
+`VItoriaBr` 12→12). O cursor de mesclados avançou até o `mergedAt` do último merge documentado por
+repositório (08:17:50Z em `VIctory-7900XTX`, 19:34:00Z em `TuxBox`, 18:05:17Z em `victory-fork`), não até o
+horário da execução. Nenhuma falha de coleta; nenhum `_falhas.md`. Achados que valem revisão do catálogo:
+`VICTORY_SHOW_NEW_LATER` (`4cd2d133`+`91018a5d`+`cf9ba084`) ataca o mecanismo do **D-09** do `AvatarManz`,
+que segue com `corrigido` vazio; `5cfe32df`+`d792ebd4` fecham só a metade "nome documentado que o código não
+lê" do **D-19**; `c6ce497b` do `TuxBox` derruba o teto do cache NVIDIA de 32 GiB para 4 GiB, porque o driver
+parou de indexar com ~5 GB — o **D-04** estava corrigido com um teto acima do ponto de quebra.
 
 Documentos de 2026-11-26 19:00: [`2026-11-26/19/`](2026-11-26/19/) — `Xbox2Windows.md`, `xcl.md`,
 `OpenScarlett.md`, `SixNG.md`. Execução atrasada: a tentativa do slot 02:00 foi interrompida antes de gravar
