@@ -90,14 +90,51 @@ invente a linha que falta.
 
 ## Repositórios monitorados
 
-Camada e portes: `Marvisak/VIctory`, `ivall/xcl`, `R0Y00/Xbox2Windows`, `californiaAlmonds/OpenScarlett`.
+Treze, com o nome exato usado em `state/watch.json` e na API. A coluna de nome de arquivo importa:
+as análises e os comparativos usam um rótulo curto, e as atualizações horárias usam o nome do
+repositório. Não invente nomes — siga esta tabela.
 
-Forks do VIctory: `Belobug/VIctory-Belobug-AMD`, `DexNom/VIctory`, `uiliannn/VItoriaBr`,
-`avatarmanz/VIctory-7900XTX`, `fxceless/victory-fork`.
+| # | Repositório | Branch | Arquivo em `docs/analises/` | Arquivo em `docs/comparativo/` | Arquivo em `docs/updates/` |
+|---|---|---|---|---|---|
+| 1 | `Marvisak/VIctory` | main | `VIctory.md` | `VIctory.md` | `VIctory.md` |
+| 2 | `ivall/xcl` | main | `XCL.md` | `XCL.md` | `xcl.md` |
+| 3 | `R0Y00/Xbox2Windows` | main | `Xbox2Windows.md` | `Xbox2Windows.md` | `Xbox2Windows.md` |
+| 4 | `californiaAlmonds/OpenScarlett` | main | — (só dossiê) | — | `OpenScarlett.md` |
+| 5 | `Belobug/VIctory-Belobug-AMD` | main | `Belobug-AMD.md` | `Belobug-AMD.md` | `VIctory-Belobug-AMD.md` |
+| 6 | `DexNom/VIctory` | main | `DexNom.md` | `DexNom.md` | `VIctory-DexNom.md` |
+| 7 | `uiliannn/VItoriaBr` | main | `VItoriaBr.md` | `VItoriaBr.md` | `VItoriaBr.md` |
+| 8 | `avatarmanz/VIctory-7900XTX` | main | `AvatarManz.md` | `AvatarManz.md` | `VIctory-7900XTX.md` |
+| 9 | `fxceless/victory-fork` | main | `victory-fork.md` | `victory-fork.md` | `victory-fork.md` |
+| 10 | `omonkeyz/xbox-emulator` | main | `xbox-emulator.md` | `xbox-emulator.md` | `xbox-emulator.md` |
+| 11 | `brcly/TuxBox` | main | `TuxBox.md` | `TuxBox.md` | `TuxBox.md` |
+| 12 | `holdmysocks/SixNG` | **master** | `SixNG.md` | `SixNG.md` | `SixNG.md` |
+| 13 | `walkthestars/GTA6-Asset-Info` | main | `GTA6-Asset-Info.md` | `GTA6-Asset-Info.md` | `GTA6-Asset-Info.md` |
 
-Independentes: `omonkeyz/xbox-emulator`, `brcly/TuxBox`.
+O repositório `ivall/xcl` responde também por `xcl-dev/xcl` (transferência); use `ivall/xcl`, que
+redireciona.
 
-Ferramentas: `holdmysocks/SixNG`, `walkthestars/GTA6-Asset-Info`.
+`californiaAlmonds/OpenScarlett` não tem documento em `docs/analises/` nem em `docs/comparativo/`:
+só foi gerado o dossiê factual em `docs/fatos/OpenScarlett_fatos.md`. A rotina horária o monitora
+normalmente.
+
+### Verificar cobertura
+
+Antes de concluir que falta um repositório, rode esta checagem — ela compara `state/watch.json` com os
+arquivos em disco:
+
+```bash
+cd gta6-port-knowledge
+jq -r '.repos | keys[]' state/watch.json | while read repo; do
+  printf '%-36s watch=sim' "$repo"
+  for d in docs/analises docs/comparativo; do
+    n=$(ls "$d" 2>/dev/null | wc -l)
+    printf ' %s=%s' "$d" "$n"
+  done
+  echo
+done
+```
+
+A saída esperada é 13 linhas, uma por repositório, todas com `watch=sim`.
 
 ## Formato de cada documento de atualização
 
