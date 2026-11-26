@@ -1,0 +1,23 @@
+{
+  "updated": null,
+  "baselined": false,
+  "note": "Estado da rotina horaria. baselined=true significa que a primeira execucao ja gravou os cursores sem documentar nada.",
+  "repos": {
+    "Marvisak/VIctory":                  { "default_branch": "main",   "last_commit": null, "last_pr_number": null, "last_run": null },
+    "ivall/xcl":                         { "default_branch": "main",   "last_commit": null, "last_pr_number": null, "last_run": null },
+    "R0Y00/Xbox2Windows":                { "default_branch": "main",   "last_commit": null, "last_pr_number": null, "last_run": null },
+    "californiaAlmonds/OpenScarlett":    { "default_branch": "main",   "last_commit": null, "last_pr_number": null, "last_run": null },
+    "Belobug/VIctory-Belobug-AMD":       { "default_branch": "main",   "last_commit": null, "last_pr_number": null, "last_run": null },
+    "DexNom/VIctory":                    { "default_branch": "main",   "last_commit": null, "last_pr_number": null, "last_run": null },
+    "uiliannn/VItoriaBr":                { "default_branch": "main",   "last_commit": null, "last_pr_number": null, "last_run": null },
+    "avatarmanz/VIctory-7900XTX":        { "default_branch": "main",   "last_commit": null, "last_pr_number": null, "last_run": null },
+    "fxceless/victory-fork":             { "default_branch": "main",   "last_commit": null, "last_pr_number": null, "last_run": null },
+    "omonkeyz/xbox-emulator":            { "default_branch": "main",   "last_commit": null, "last_pr_number": null, "last_run": null },
+    "brcly/TuxBox":                      { "default_branch": "main",   "last_commit": null, "last_pr_number": null, "last_run": null },
+    "holdmysocks/SixNG":                 { "default_branch": "master", "last_commit": null, "last_pr_number": null, "last_run": null },
+    "walkthestars/GTA6-Asset-Info":      { "default_branch": "main",   "last_commit": null, "last_pr_number": null, "last_run": null }
+  },
+  "backlog": [],
+  "runs": 0,
+  "last_error": null
+}
