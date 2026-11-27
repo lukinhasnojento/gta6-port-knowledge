@@ -71,6 +71,35 @@ Regras de escrita do estado:
 - `last_run` é o cursor de **PRs mesclados**, comparado com `mergedAt`.
 - Nunca apague `repos`; adicione se um repositório novo entrar na lista.
 
+### Quatro regras que nasceram de falhas reais da rotina
+
+Estas quatro foram escritas depois de a rotina errar, não por precaução teórica.
+
+**1. Releia `default_branch` a cada execução; nunca confie no valor gravado.**
+`Belobug/VIctory-Belobug-AMD` trocou a branch default de `main` para `a-publier`. O estado continuou
+apontando `main`, e por isso o `compare` passou a devolver `diverged` com 638 commits à frente e 550
+atrás — número sem sentido que manteve o repositório no backlog indefinidamente. A consulta é barata:
+
+```
+gh api repos/<owner>/<repo> --jq .default_branch
+```
+
+Se divergir do estado, corrija o estado **antes** de calcular o delta.
+
+**2. Nunca reduza a lista de `repos`.** Se o número de entradas for menor que o do estado lido,
+aborte a escrita e registre o erro. A rotina já apagou o `stellarr-studio/kelvaroq` que havia sido
+adicionado à mão, porque reconstruiu o estado a partir do próprio conjunto de trabalho em vez de
+mesclar.
+
+**3. `compare` com `status = "diverged"` não é faixa de commits.** Quando o histórico foi reescrito,
+`ahead_by` conta tudo que não está no ancestral comum e não tem relação com o que falta documentar.
+Nesse caso: grave o novo `head` como cursor, documente apenas os últimos `N` commits (pelo teto) com
+uma linha dizendo que o histórico foi reescrito, e siga.
+
+**4. Cursor nulo significa baseline daquele repositório, não histórico inteiro.** Ao encontrar
+`last_commit: null`, grave o head atual e não documente nada naquela execução. Sem isso, um
+repositório novo entra com 50 commits de um dia documentados como se fossem novidade do dia.
+
 ### Por que PR mesclado não usa número
 
 A numeração de PR não acompanha a ordem de merge nos repositórios monitorados. Medição de
@@ -184,14 +213,36 @@ Se o push falhar, a rotina **não** avança o estado — a próxima execução r
 
 ## Limites e falhas
 
-- **Máximo 4 subagentes por execução.** Excedente vai para `backlog`.
-- **Máximo de 40 commits documentados por repositório por execução.** O restante fica no backlog com
-  a marca `commit_cursor`.
-- **Falha em um repositório não interrompe os outros.** Registre o erro em
+O desenho original era "documentar tudo a cada hora". Ele não se sustenta: com 14 repositórios e
+repositórios que recebem 80 commits por hora, o teto de 4 repositórios por execução nunca alcança a
+fila. Medição de 2026-11-27: 714 commits pendentes, 638 deles em um único repositório.
+
+O desenho correto é **triagem caro, documentação barata**:
+
+**Toda execução, barato, para os 14:**
+- `gh api repos/<owner>/<repo> --jq .default_branch` (e corrige o estado se mudou)
+- head atual e contagem de commits desde o cursor via `compare`
+- PRs abertos e mesclados desde `last_run`
+- grava uma linha de triagem por repositório em `docs/updates/AAAA-MM-DD/HH/_triagem.md`
+
+**Deep dive só quando houver sinal**, até 4 repositórios por execução, priorizando:
+1. commit ou PR mesclado que casa com um defeito do `catalogo/defeitos.csv`
+2. commit com sinal de correção, reversão ou regressão
+3. PR aberto que toca arquivo de área listada na tabela de pistas
+4. nenhum dos acima e atraso maior que 200 commits
+
+Repositórios que não entram no deep dive ficam com o cursor **parado** — a triagem registra o atraso e
+o próximo ciclo decide. O importante é que a fila pare de crescer: a triagem cobre os 14 sempre, e o
+deep dive é seletivo por mérito, não por ordem de chegada.
+
+- **Máximo 4 deep dives por execução.** O que não entrar fica na triagem, com o atraso medido.
+- **Máximo de 40 commits documentados por repositório por deep dive.**
+- **Falha em um repositório não interrompe os outros.** Registre em
   `docs/updates/AAAA-MM-DD/HH/_falhas.md` e siga.
 - **Rate limit do GitHub**: se `gh api` retornar 403 por limite, pare e aguarde a próxima hora. Não
   faça retry em laço.
 - **Nada de escrita em repositório de terceiros.** Somente leitura neles.
+- **Nunca reduza `repos` no estado.** Se a contagem cair, aborte a escrita.
 
 ## Como desligar
 
