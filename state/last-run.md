@@ -1,97 +1,103 @@
-# Execução de 2026-11-27 17:00
+# Execução de 2026-11-27 18:00
 
 ## Data e hora
 
-Coleta de 2026-11-27T14:00–14:25 no relógio dos dados do GitHub e no horário local do operador
-(UTC−3) — 17:00–17:25 UTC real. Diretório de documentos: `docs/updates/2026-11-27/17/` (UTC).
-Estado lido: `baselined: true`, `runs: 14` (gravado como 15); 14 entradas em `repos`, nenhuma removida.
+Coleta de 2026-11-27T15:07–15:45 no horário local do operador (UTC−3) — 18:07–18:45 UTC real, com
+os timestamps do GitHub ainda 3 h atrás do UTC real (relógio em que `last_run` é gravado). Diretório
+de documentos: `docs/updates/2026-11-27/18/` (UTC). Estado lido: `baselined: true`, `runs: 15`
+(gravado como 16); 14 entradas em `repos` no início e no fim, nenhuma removida.
 
 ## Triagem (passo 2)
 
-Primeira execução no desenho **triagem-primeiro**: os 14 foram triados, sempre, e 4 entraram no deep dive.
-Arquivo: `docs/updates/2026-11-27/17/_triagem.md`.
+Os 14 foram triados; 4 entraram no deep dive. Arquivo: `docs/updates/2026-11-27/18/_triagem.md`.
 
 | Repositório | Commits atrás | Abertos acima do cursor | Mesclados na janela | Sinal | Deep dive |
 |---|---|---|---|---|---|
-| `R0Y00/Xbox2Windows` | 79 (47 novos) | 5 | 6 | SIM | sim |
-| `brcly/TuxBox` | 14 | 1 | 2 | SIM | sim |
-| `holdmysocks/SixNG` | 1 | 0 | 1 | SIM | sim |
-| `DexNom/VIctory` | 0 | 26 | 0 | SIM | sim |
-| `Belobug/VIctory-Belobug-AMD` | 0 | 50 (piso #551) | 0 | SIM | não |
-| `avatarmanz/VIctory-7900XTX` | 0 | 37 | 0 | SIM | não |
-| `fxceless/victory-fork` | 0 | 10 | 0 | SIM | não |
-| `ivall/xcl` | 0 | 4 | 0 | SIM | não |
-| `Marvisak/VIctory` | 0 | 3 | 0 | SIM | não |
+| `R0Y00/Xbox2Windows` | 11 | 14 | 4 | SIM | sim |
+| `brcly/TuxBox` | 2 | 2 | 1 | SIM | sim |
+| `ivall/xcl` | 2 | 10 | 1 | SIM | sim |
+| `fxceless/victory-fork` | 1 (284 arquivos) | 13 | 0 | SIM | sim |
+| `holdmysocks/SixNG` | 1 | 0 | 1 | SIM (área de render) | não |
+| `Belobug/VIctory-Belobug-AMD` | 0 | ≥61 acima de #456 | 0 | SIM | não |
+| `avatarmanz/VIctory-7900XTX` | 0 | 39 | 0 | SIM | não |
+| `Marvisak/VIctory` | 0 | 8 | 0 | SIM | não |
 | `omonkeyz/xbox-emulator` | 0 | 1 (#395) | 0 | SIM | não |
-| `californiaAlmonds/OpenScarlett` | 0 | 0 (#60 abaixo do cursor) | 0 | NAO | não |
+| `DexNom/VIctory` | 0 | 0 | 0 | NAO | não |
+| `californiaAlmonds/OpenScarlett` | 0 | 0 | 0 | NAO | não |
 | `uiliannn/VItoriaBr` | 0 | 0 | 0 | NAO | não |
 | `walkthestars/GTA6-Asset-Info` | 0 | 0 | 0 | NAO | não |
 | `stellarr-studio/kelvaroq` | 0 | 0 | 0 | NAO | não |
 
-Nenhum `compare` devolveu `diverged`. `default_branch` reconferido nos 14 e igual ao gravado.
+Nenhum `compare` devolveu `diverged`. `default_branch` reconferido nos 14 por `gh api repos/<o>/<r>
+--jq .default_branch` e igual ao gravado, inclusive `a-publier` e `master`. Nenhum `last_commit`
+nulo: não houve baseline nesta execução.
 
 ## Documentos escritos (passo 3)
 
-4 documentos em `docs/updates/2026-11-27/17/`: `Xbox2Windows.md`, `TuxBox.md`, `SixNG.md`,
-`VIctory-DexNom.md`, mais `_triagem.md`. Total: **55 commits** (40 + 14 + 1 + 0) de **62** na janela,
-**9 PRs mesclados** (6 + 2 + 1) e **32 PRs abertos** (5 + 1 + 0 + 26).
+4 documentos em `docs/updates/2026-11-27/18/`: `Xbox2Windows.md`, `TuxBox.md`, `xcl.md`,
+`victory-fork.md`, mais `_triagem.md`. **16 commits documentados de 17** atrás dos cursores,
+**6 PRs mesclados** (4 + 1 + 1 + 0) e **39 PRs abertos** (14 + 2 + 10 + 13). Nenhum repositório
+chegou ao teto de 40 commits; o único commit não documentado é o `SixNG` (performance, sem sinal).
 
-`R0Y00/Xbox2Windows` é o único com corte de teto: 47 commits novos desde `f5204690`, documentados os 40
-mais antigos (até `801f4c3b`), com `commit_cursor = 801f4c3b` e `head_at_run = e1ea515d`; os 7 restantes
-(`db28a796`, `ff04a75e`, `246857e4`, `36d2cbeb`, `2972e00a`, `9072230f`, `e1ea515d`) voltam na próxima hora.
-Dos 6 merges dele, 5 estão acima do teto e foram registrados **só pelo assunto**, marcados na tabela.
+Achados principais:
+
+- `R0Y00/Xbox2Windows`: `246857e459` (#3058) substitui `Round_ne`/`fptoui` por aritmética inteira na
+  conversão U8 empacotada porque o literal 0,5 voltava como 1 em driver NVIDIA (#3052) — é a correção
+  de uma regressão do #2997. `2972e00aaf` (#2871) habilita volume 0x105 de um mip no slot 70;
+  `36d2cbebde` (#3028) torna opt-in o pulo da cópia de 64 KiB do root SRV do slot 44; `ff04a75e58`
+  (#3056) cria um carregador de manifesto de patch com gate de SHA-256 que ainda não aplica nada.
+- `fxceless/victory-fork`: `5dbf5ce226` troca a árvore inteira pela de
+  `trustno1-coder/VIctory-NVIDIA@959dcaf` (284 arquivos, +95.231/−913.607). Conferi por download no
+  topo novo os símbolos dos consertos D-01 a D-06 (`VICTORY_WAVE_WIDE`, `WINDOW_MOST`,
+  `RECHECK_FRAMES`, `staged_memory`, `unspill`/`parks`, `V_HOST_MAX_WAVE`, `Spans`/`overlap`): todos
+  presentes, equivalência semântica **não medida**.
+- `brcly/TuxBox`: `b46c3db9` (#309) fixa a opção do DXC no teste de fallback `-O0`, que desde
+  `8a3b6df` contava chamadas conforme a versão instalada; #310 (aberto) retenta 374 recusas de IDXEN
+  na preparação offline (área de D-12).
+- `ivall/xcl`: a `main` ganha perfis de teclado/mouse por título (#1824, `81693f02`); #3023 em
+  `amd-dev` corrige `V_CMP_LG_F32` no tradutor direto RDNA4 — mesma classe de `VIctory D-20`.
 
 ## Falhas e desvios
 
-- **A "tabela de pistas" citada no passo 2 não existe.** `docs/automacao/ANALISE_HORARIA.md` cita, na
-  linha 231, "arquivo de área listada na tabela de pistas", mas nenhuma tabela de pistas existe no
-  procedimento nem em outro arquivo do acervo (`grep` por "pista" devolve só essa linha e duas menções
-  em documentos de atualização). Na ausência dela, as áreas do sinal foram tomadas das seções D de
-  `catalogo/defeitos.md` (tradutor DXIL/`gfx2hlsl`, descritor e heap, memória e XMem, textura e tiling,
-  present e save). O critério 3 do passo 3 ficou, na prática, subsumido pelo critério 2 nesta hora.
-- **Reaparecimento de commits já documentados no `compare`.** No `Xbox2Windows`, `compare` desde
-  `f5204690` devolveu 79, mas 32 (`40365770` a `999e17cd`) são commits da linha `cpp-migration` que já
-  estavam no documento das 16:00 e **não são ancestrais de `f5204690`** (medido: `compare/40365770...f5204690`
-  dá `diverged`, `merge_base 6ee878d8`; `compare/40365770...e1ea515d` dá `ahead` com `behind_by 0`). Eles
-  reaparecem até o cursor passar pelo merge `91cbedd6` (10:13), que os traz para a `main`. Não foram
-  redocumentados; a contagem "atrás" na triagem traz os dois números. Registrado como pendência estrutural 3.
-- **`pulls?state=open` com um único PR não é lista.** Em `OpenScarlett` (#60) e `SixNG` (#472) a resposta é
-  um objeto, não um array; a contagem inicial devolveu 0 e foi corrigida por reconferência antes de escrever
-  a triagem. Os dois estão abaixo do cursor e não foram triados além de título e estado.
-- **PRs abertos documentados sem diff.** Os 26 do `DexNom/VIctory` foram documentados pela proposta que o
-  autor declara no corpo (lido até 700 caracteres) e pela lista de arquivos; nenhum patch de PR aberto foi
-  lido linha a linha. A tabela diz isso na coluna e na seção Confiança do documento.
-- **Sem subagentes.** A ferramenta de subagente não existe neste ambiente; os quatro repositórios foram
-  processados em sequência. O limite de 4 deep dives foi respeitado.
-- **Rate limit**: `gh api rate_limit` marcava 4.919 de 5.000 no início; nenhuma chamada devolveu 403.
-- Nenhum `_falhas.md`: não houve erro de coleta ou de escrita em repositório monitorado. Nenhuma escrita
-  fora de `G:\gta6-port-knowledge`.
+- **A "tabela de pistas" citada no passo 2 continua inexistente.** `docs/automacao/ANALISE_HORARIA.md`
+  cita "arquivo de área listada na tabela de pistas" na linha 231, mas nenhuma tabela existe no
+  procedimento nem em outro arquivo do acervo. As áreas do sinal foram tomadas das seções D de
+  `catalogo/defeitos.md`, como nas duas horas anteriores; o critério 3 ficou subsumido pelo 2.
+- **PRs abertos documentados pelo corpo, não pelo patch.** Os 39 foram lidos por título, corpo (até
+  ~1.100 caracteres) e lista de arquivos; nenhum patch de PR aberto foi lido linha a linha. Onde o
+  corpo não foi lido (`victory-fork` #1475 a #1483), a tabela diz "corpo e arquivos não lidos".
+- **A coleta de mesclados não via `gh pr list --search`.** Usei `pulls?state=closed&sort=updated`,
+  paginando até o `updated_at` mais antigo cair abaixo de `last_run`, como o estado manda. Em
+  `Xbox2Windows`, 4 merges contra 11 commits: os outros 7 citam número de PR no assunto mas têm
+  `merged_at` anterior ao cursor das 13:55:58 — são os que a execução das 17:00 deixou acima do teto,
+  não uma divergência de coleta. Registrado na seção Confiança do documento.
+- **`victory-fork` sem merge e com `last_run` parado.** Não houve merge na janela; o cursor de
+  mesclados ficou em `2026-11-27T13:05:00Z` de propósito.
+- **Sem subagentes.** A ferramenta de subagente não existe neste ambiente; os quatro repositórios
+  foram processados em sequência. O limite de 4 deep dives foi respeitado.
+- **Rate limit**: `gh api rate_limit` marcava 4.997 de 5.000 no início; nenhuma chamada devolveu 403.
+- Nenhum `_falhas.md`: não houve erro de coleta ou de escrita em repositório monitorado. Nenhuma
+  escrita fora de `G:\gta6-port-knowledge`.
 
 ## Estado gravado
 
-`runs: 15`, `updated: 2026-11-27T17:22:16Z`, `last_error: null`. Cursores que avançaram:
+`runs: 16`, `updated: 2026-11-27T18:19:18Z`, `last_error: null`. Cursores que avançaram:
 
 | Repositório | `last_commit` | `last_pr_number` | `last_run` |
 |---|---|---|---|
-| `R0Y00/Xbox2Windows` | `801f4c3b` (cursor), `e1ea515d` (head) | 3071 | 2026-11-27T13:55:58Z |
-| `brcly/TuxBox` | `76d1abe0` | 309 | 2026-11-27T14:07:09Z |
-| `holdmysocks/SixNG` | `2d9c230d` | 472 (inalterado) | 2026-11-27T13:55:15Z |
-| `DexNom/VIctory` | inalterado | 134 | inalterado (sem merge) |
+| `R0Y00/Xbox2Windows` | `de1595b9` (cursor e head; `commit_cursor`/`head_at_run` removidos) | 3097 | 2026-11-27T15:07:31Z |
+| `brcly/TuxBox` | `cf0a0824` | 311 | 2026-11-27T14:11:02Z |
+| `ivall/xcl` | `81693f02` | 3032 | 2026-11-27T14:21:57Z |
+| `fxceless/victory-fork` | `5dbf5ce2` | 1483 | inalterado (sem merge) |
 
-Os outros 10 mantêm cursor de commit e de merge; `OpenScarlett`, `VItoriaBr`, `GTA6-Asset-Info` e
-`kelvaroq` não tiveram delta. `backlog` com 7: `R0Y00/Xbox2Windows` (7 commits), `Belobug/VIctory-Belobug-AMD`,
-`avatarmanz/VIctory-7900XTX`, `fxceless/victory-fork`, `omonkeyz/xbox-emulator`, `ivall/xcl`,
-`Marvisak/VIctory`. A ordem da próxima hora está no `backlog_note`.
+Os outros 10 mantêm cursor de commit e de merge. `backlog` com 5: `Belobug/VIctory-Belobug-AMD`,
+`avatarmanz/VIctory-7900XTX`, `Marvisak/VIctory`, `holdmysocks/SixNG`, `omonkeyz/xbox-emulator`. A
+ordem da próxima hora está no `backlog_note`. Também corrigi o `watch.json`, que tinha **duas chaves
+`backlog_note`** (a das 16:00 e a das 17:00 no mesmo objeto); ficou uma só, a desta execução, e as
+pendências estruturais antigas que ainda valem foram reescritas nela.
 
 ## Push
 
-- Commit na `public`: `083ddf7` — `docs(updates): 2026-11-27 17:00` (8 arquivos, 412 inserções, 86
-  remoções: os 4 documentos, `_triagem.md`, `docs/updates/INDEX.md`, `state/watch.json` e
-  `state/last-run.md`).
-- `git push origin public:main`: **sucesso** — `000bfb8..083ddf7  public -> main`; `origin/main` =
-  `083ddf71096d7632b143e8b4bb9ca5d3e9c959d1`.
-- Este fechamento (registro do push) é o segundo commit da mesma execução; o merge `--no-ff` de `public`
-  na `main` é **um só** e vem depois dele, como o passo 5 limita ("um merge por execução, no máximo").
-- Nenhum `git reset --hard`, nenhum merge de `main` na `public`: a `public` só recebeu commits próprios e
-  a `main` recebeu a `public`.
-
+- Commit na `public`: pendente.
+- `git push origin public:main`: pendente.
+- Merge `--no-ff` de `public` na `main` e `git push private main`: pendente.
