@@ -55,5 +55,6 @@ porque não houve falha de coleta ou de escrita em nenhum repositório.
   remoções: os 4 documentos novos, `docs/updates/INDEX.md`, `state/watch.json`, `state/last-run.md`).
 - `git push origin public:main`: **sucesso** — `7b619b8..2125552 public -> main`.
 - `git switch main && git merge --no-ff public -m "merge updates 2026-11-27 05:00"` e
-  `git push private main`: resultado no commit de fechamento desta hora (este arquivo), com o hash do merge.
-  Nenhum merge de `main` na `public` foi feito.
+  `git push private main`: **sucesso** — merge `4b86d08`, `e020317..4b86d08 main -> main`. Nenhum merge
+  de `main` na `public` foi feito.
+- Estado final: `origin/main` = `995fdb8` (branch `public`), `private/main` = `4b86d08`. Árvore limpa.
