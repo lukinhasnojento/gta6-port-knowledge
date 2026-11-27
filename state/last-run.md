@@ -1,63 +1,81 @@
-# Execução de 2026-11-27 05:00
+# Execução de 2026-11-27 15:00
 
-## Data e hora
+Horário: 2026-11-27 15:00 UTC (12:00 BRT). Executor: rotina horária do acervo `gta6-port-knowledge`.
+Estado lido de `state/watch.json` com `baselined: true`, `runs: 12`. Primeira etapa (baseline) não se
+aplicou.
 
-Coleta iniciada em 2026-11-27T05:03:17Z (UTC), concluída em 2026-11-27T05:15:04Z. Hora local do
-operador: 02:03–02:15 (E. South America Standard Time, UTC-3). Janela documentada: de
-`updated` anterior (2026-11-27T04:18:02Z) até o cursor de cada repositório.
+## Repositórios com delta (11 de 13)
 
-## Repositórios com delta
-
-Detectados com delta em 10 dos 13: `Marvisak/VIctory`, `ivall/xcl`, `R0Y00/Xbox2Windows`,
-`Belobug/VIctory-Belobug-AMD`, `DexNom/VIctory`, `avatarmanz/VIctory-7900XTX`, `fxceless/victory-fork`,
-`omonkeyz/xbox-emulator`, `brcly/TuxBox` e `holdmysocks/SixNG`. Sem delta: `californiaAlmonds/OpenScarlett`,
-`uiliannn/VItoriaBr` e `walkthestars/GTA6-Asset-Info`.
-
-Processados (limite de 4 por execução — os quatro com commit ou merge na janela, mais o PR-aberto de
-`last_run` mais antigo):
-
-| Repositório | Commits | Mesclados | Abertos documentados | Abertos detectados acima do cursor |
+| Repositório | Commits na janela | PRs mesclados | PRs abertos acima do cursor | Documentado? |
 |---|---|---|---|---|
-| `R0Y00/Xbox2Windows` | 12 | 16 (12 na `main`, 4 em `cpp-migration`) | 5 | 5 |
-| `ivall/xcl` | 6 | 3 (#2924 e #2844 na `main`, #2927 em `nvidia-dev`) | 20 | 180 |
-| `holdmysocks/SixNG` | 2 | 2 | 10 | 10 |
-| `Marvisak/VIctory` | 0 | 0 | 20 | 380 |
+| `brcly/TuxBox` | 47 (compare) | 9 | 0 (cursor 284) | sim — 40 commits, 8 merges |
+| `holdmysocks/SixNG` | 24 | 24 | 1 (#472) | sim — 24, 24, 1 |
+| `fxceless/victory-fork` | 1 | 0 | 35 (1428-1468) | sim — 1, 0, 35 |
+| `uiliannn/VItoriaBr` | 1 | 0 | 0 (cursor 126) | sim — 1, 0, 0 |
+| `R0Y00/Xbox2Windows` | 46 | 47 | 12 | não — backlog |
+| `ivall/xcl` | 5 | 4 | 50 (piso) | não — backlog |
+| `Marvisak/VIctory` | 0 | 0 | 50 (piso) | não — backlog |
+| `Belobug/VIctory-Belobug-AMD` | 0 | 0 | 50 (piso) | não — backlog |
+| `DexNom/VIctory` | 0 | 0 | 25 | não — backlog |
+| `avatarmanz/VIctory-7900XTX` | 0 | 0 | 33 | não — backlog |
+| `omonkeyz/xbox-emulator` | 0 | 0 | 1 (#395) | não — backlog |
 
-Os outros seis ficaram em `backlog` no estado, com a contagem de cada um.
+Sem delta: `californiaAlmonds/OpenScarlett` (1 PR aberto, nenhum acima do cursor 60; 1 merge na busca com
+`mergedAt` anterior ao cursor) e `walkthestars/GTA6-Asset-Info` (branch parada em `bad5bc21`).
+
+Critério aplicado, o mesmo registrado no `backlog_note` da execução anterior: repositório com commit ou
+merge na janela antes de repositório só com PR aberto; dentro de cada grupo, o `last_run` mais antigo.
+Isso deu `VItoriaBr` (26/11 04:15Z), `victory-fork` (26/11 23:06Z), `TuxBox` (27/11 02:54Z) e `SixNG`
+(27/11 04:37Z). `xcl` (05:02:20Z) e `Xbox2Windows` (05:02:42Z) ficaram de fora pelo limite de 4 e vão para
+o backlog.
 
 ## Documentos escritos
 
-4 documentos, em `docs/updates/2026-11-27/05/`: `Xbox2Windows.md`, `xcl.md`, `SixNG.md` e `VIctory.md`.
-Nenhum doc acima do teto de 40 commits por repositório (o maior foi 12). `_falhas.md` não foi escrito
-porque não houve falha de coleta ou de escrita em nenhum repositório.
+4 documentos em `docs/updates/2026-11-27/15/`:
+
+- `TuxBox.md` — 40 commits (de 47), 8 merges (de 9), 0 PRs abertos novos.
+- `SixNG.md` — 24 commits, 24 merges, 1 PR aberto.
+- `victory-fork.md` — 1 commit, 0 merges, 35 PRs abertos.
+- `VItoriaBr.md` — 1 commit, 0 merges, 0 PRs abertos.
+
+Total: 66 commits e 32 merges documentados, mais 36 PRs abertos. Nenhum repositório passou do teto de 40
+commits além do `TuxBox`, que foi cortado em 40 exatamente.
 
 ## Falhas e desvios
 
-- **Perda de merge na listagem padrão**: `gh pr list --state merged --limit 50` devolveu 15 dos 17 PRs
-  mesclados do `Xbox2Windows` na janela e perdeu o **#2661** (criado há dias, mesclado às 05:02:20Z), porque
-  a listagem corta por data de criação. A coleta passou a usar
-  `search/issues?q=repo:<owner>/<repo>+type:pr+is:merged+merged:>=<last_run>`, que devolveu 17 (incluindo
-  o #2947, exatamente no cursor, já documentado às 03:00). Fica registrado em `state/watch.json`.
-- **Filtro de mesclados**: a instrução desta hora pedia filtrar por `numero > last_pr_number`; o
-  procedimento (`docs/automacao/ANALISE_HORARIA.md`, seção "Por que PR mesclado não usa número") proíbe
-  isso. Segui o procedimento: `mergedAt > last_run`.
-- **Sem subagentes**: a ferramenta de subagente não existe neste ambiente. Os quatro repositórios foram
-  processados em sequência pelo próprio executor; o limite de 4 repositórios por execução foi respeitado.
-- **Rate limit**: `gh api rate_limit` marcava 4.702 de 5.000 restantes no início; nenhuma chamada devolveu
-  403.
-- **Janelas de 50**: `Belobug/VIctory-Belobug-AMD`, `DexNom/VIctory`, `avatarmanz/VIctory-7900XTX`,
-  `fxceless/victory-fork`, `omonkeyz/xbox-emulator` e `brcly/TuxBox` foram medidos com `--limit 50`, então
-  as contagens no backlog são piso. `VIctory` e `xcl` foram medidos com `--limit 500`.
+- **`search/issues` devolve 422 para repositório transferido.** `ivall/xcl` redireciona para
+  `xcl-dev/xcl`; a API de conteúdo aceita o nome antigo, a busca não
+  (`The listed users and repositories cannot be searched`). A contagem de mesclados do `xcl` (4) foi
+  medida com `repo:xcl-dev/xcl`. Registrado no campo `note` do estado. Não afetou os quatro documentados.
+- **Faixa do `TuxBox` cresceu entre coleta e documentação.** A coleta às 12:36 viu 44 commits novos; o
+  `compare` às 12:40 viu 47 (`ahead_by=47`). O teto de 40 foi aplicado sobre o `compare`, e os 7 commits
+  restantes ficam com `commit_cursor` em `90df685ad5`. O merge #306 (`07db52f8`, 12:36:16Z) caiu fora do
+  teto, e por isso o `last_run` do `TuxBox` avançou só até o `mergedAt` do #305 (09:37:36Z) — não até o
+  horário da execução.
+- **Instrução de filtro de merge contrariada pelo procedimento.** O pedido desta hora diz "PRs mesclados:
+  filtre por numero > last_pr_number"; o procedimento (`docs/automacao/ANALISE_HORARIA.md`, seção "Por
+  que PR mesclado não usa número") proíbe isso e manda usar `mergedAt` contra `last_run`. Segui o
+  procedimento. Nesta hora os dois critérios dariam resultados diferentes: no `SixNG` o cursor de abertos
+  era 460 e os merges foram #447-#470, todos **abaixo** dele.
+- **Sem subagentes.** Não há ferramenta de subagente neste ambiente; os quatro repositórios foram
+  processados em sequência pelo próprio executor, respeitando o limite de 4.
+- **Janelas de 50.** As contagens de PRs abertos de `ivall/xcl`, `Marvisak/VIctory`,
+  `Belobug/VIctory-Belobug-AMD`, `DexNom/VIctory` e `avatarmanz/VIctory-7900XTX` vêm de `--limit 50`:
+  são piso, não total.
+- **Rate limit.** `gh api rate_limit` marcava 4.996 de 5.000 no início e 4.636 restantes no fim da
+  documentação. Nenhuma chamada devolveu 403.
+- Nenhum `_falhas.md` foi escrito porque nenhum dos quatro repositórios documentados falhou na coleta ou
+  na escrita.
+
+## Estado
+
+`updated` = `2026-11-27T15:56:00Z`, `runs` = 13. Cursores avançados: `VItoriaBr` (`15779f81`),
+`victory-fork` (`9a9091d1`, aberto até 1468), `TuxBox` (`90df685a` com `commit_cursor` e `head_at_run`
+`07db52f8`, `last_run` 09:37:36Z), `SixNG` (`790a3c67`, aberto até 472, `last_run` 07:02:25Z).
+`fxceless/victory-fork` e `uiliannn/VItoriaBr` saíram/ficaram fora do backlog; `ivall/xcl`,
+`R0Y00/Xbox2Windows`, `Marvisak/VIctory`, `Belobug/VIctory-Belobug-AMD`, `DexNom/VIctory`,
+`avatarmanz/VIctory-7900XTX`, `omonkeyz/xbox-emulator` e `brcly/TuxBox` (resto da faixa) ficaram.
 
 ## Push
 
-- Commit na `public`: `2125552` — `docs(updates): 2026-11-27 05:00` (7 arquivos, 419 inserções, 88
-  remoções: os 4 documentos novos, `docs/updates/INDEX.md`, `state/watch.json`, `state/last-run.md`).
-- `git push origin public:main`: **sucesso** — `7b619b8..2125552 public -> main`.
-- `git switch main && git merge --no-ff public -m "merge updates 2026-11-27 05:00"` e
-  `git push private main`: **sucesso** — merge `4b86d08`, `e020317..4b86d08 main -> main`. Nenhum merge
-  de `main` na `public` foi feito.
-- Estado: o commit de documentação é `2125552` em `origin/main` (branch `public`); o merge correspondente
-  é `4b86d08` em `private/main`; `e020317..4b86d08 main -> main`. Os commits de fechamento desta hora, que
-  só registram estes hashes em `state/last-run.md`, vêm depois dos dois. Árvore limpa, sem merge de `main`
-  na `public`.
+(Pendente de preenchimento depois da publicação.)
