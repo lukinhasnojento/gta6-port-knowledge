@@ -109,4 +109,18 @@ Os outros 10 mantêm cursor de commit e de merge. `backlog` com 7: `Belobug/VIct
 
 ## Push
 
-(pendente — preenchido no commit de registro, depois do push)
+- Commit na `public`: `12864ca` — `docs(updates): 2026-11-27 19:00` (8 arquivos, 479 inserções, 96
+  remoções: os 4 documentos, `_triagem.md`, `docs/updates/INDEX.md`, `state/watch.json` e
+  `state/last-run.md`).
+- `git push origin public:main`: **sucesso** — `7e0c4ea..12864ca  public -> main`.
+- `git switch main` + `git merge --no-ff public`: **conflito em `state/last-run.md`** (a `main`
+  carregava a correção do registro das 18:00 em `b98fc99`, a `public` trazia o registro desta hora).
+  Resolvido a favor da `public` (`git checkout --theirs`), porque o registro desta execução substitui
+  o da anterior; merge `d2ffde3` — `merge updates 2026-11-27 19:00`.
+- `git push private main`: **sucesso** — `b98fc99..d2ffde3  main -> main`.
+- Este fechamento (registro do push) é um segundo commit na `public`, depois do merge. Para não criar
+  um segundo merge na execução (o passo 5 limita a um), a `main` recebe esse commit por cherry-pick,
+  como na execução das 18:00.
+- Nenhum `git reset --hard`, nenhum merge de `main` na `public`: a `public` só recebeu commits
+  próprios e a `main` recebeu a `public`.
+
