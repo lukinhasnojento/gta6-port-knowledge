@@ -82,3 +82,17 @@ repositório para em `2026-11-27T09:37:36Z` (merge do #305).
   commit `e47623d`. `git push origin public:main` **sucesso** (`30d48d7..e47623d`); merge `--no-ff` na
   `main` = `9019d82`, `git push private main` **sucesso** (`a8f4acc..9019d82`).
 - Nenhum merge de `main` na `public` em nenhum momento.
+
+## Push â€” fechamento verificado
+
+- `origin/main` = `e47623d4adcc4e67e4f44d34812f092685fdc2cd`: a branch `public` chegou lÃ¡ com
+  `741eab0` (`docs(updates): 2026-11-27 15:00`), `30d48d7` (`... (correcao de cursores e indice)`) e
+  `e47623d` (`chore(state): corrige cursores e fecha o registro`). Push conferido com
+  `git rev-parse origin/main` depois de `git push origin public:main` (que respondeu "Everything
+  up-to-date").
+- `private/main` = `9019d82b847b2e77e450aad1f5c257a00b090bd4`: merge `--no-ff` de `public` na `main`
+  (`merge updates 2026-11-27 15:00 (correcao de cursores)`), no topo de `a8f4acc`. Conferido com
+  `git rev-parse private/main`.
+- Nenhum merge de `main` na `public` em nenhum momento; a `public` sÃ³ recebeu commits prÃ³prios e a `main`
+  recebeu a `public`.
+- Ãrvore de trabalho limpa ao fim (`git status --short` vazio), nas duas branches.
