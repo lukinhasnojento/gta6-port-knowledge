@@ -116,6 +116,19 @@ acima do cursor e 946 abertos no total. A ordem da próxima hora está no `backl
 
 ## Push
 
-Pendente no momento da escrita deste arquivo; o resultado é registrado no segundo commit desta
-execução, na `public`, com cherry-pick para a `main` (como nas execuções das 18:00 e 19:00, para não
-criar um segundo merge).
+- Commit na `public`: `63b3104` — `docs(updates): 2026-11-27 20:00` (8 arquivos, 519 inserções, 94
+  remoções: os 4 documentos, `_triagem.md`, `docs/updates/INDEX.md`, `state/watch.json` e
+  `state/last-run.md`).
+- `git push origin public:main`: **sucesso** — `70fb975..63b3104  public -> main`.
+- `git switch main` + `git merge --no-ff public`: **conflito em `state/last-run.md`** (a `main`
+  carregava o registro do push das 19:00 em `3489092`, a `public` trazia o registro desta hora).
+  Resolvido a favor da `public` (`git checkout --theirs`), porque o registro desta execução substitui o
+  da anterior; merge `f018882` — `merge updates 2026-11-27 20:00`.
+- `git push private main`: **sucesso** — `3489092..f018882  main -> main`.
+- Este fechamento (registro do push) é um segundo commit na `public`, depois do merge. Para não criar um
+  segundo merge na execução (o passo 5 limita a um), a `main` recebe esse commit por cherry-pick, como
+  nas execuções das 18:00 e 19:00.
+- Nenhum `git reset --hard`, nenhum merge de `main` na `public`: a `public` só recebeu commits próprios
+  e a `main` recebeu a `public`.
+- Ficaram fora do commit, intactos: `docs/analises/victory-fork.md` modificado e dois relatórios não
+  rastreados em `docs/relatorios/`, que não são desta rotina.
