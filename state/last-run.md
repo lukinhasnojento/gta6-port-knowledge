@@ -80,6 +80,15 @@ pelo próprio executor. O limite de 4 foi respeitado como limite de repositório
 
 ## Push
 
-Executado depois deste commit, na ordem do procedimento (nunca `main` na `public`). O resultado está
-registrado no commit seguinte, `docs(state): resultado do push 2026-11-27 01:00`, porque os hashes só
-existem depois do push.
+Sucesso nas duas branches, na ordem do procedimento (nunca `main` na `public`).
+
+- commit na `public`: `d942d1d` — `docs(updates): 2026-11-27 01:00` (7 arquivos, +456/-51)
+- `git push origin public:main`: `7154018..d942d1d  public -> main`; `origin/main` = `d942d1d`
+- `git switch main && git merge --no-ff public`: merge `d5e6b34` — `merge updates 2026-11-27 01:00`
+- `git push private main`: `955718c..d5e6b34  main -> main`; `private/main` = `d5e6b34`
+
+Conferido com `git ls-remote` nos dois remotes depois do push. Nenhum force, nenhum rebase.
+
+Os hashes acima só existem depois do push, então este parágrafo foi gravado no commit seguinte —
+`chore(state): registra hashes do push de 2026-11-27 01:00` —, também publicado na `public` e mesclado
+na `main`, como na execução anterior.
