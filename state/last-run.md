@@ -51,6 +51,9 @@ porque não houve falha de coleta ou de escrita em nenhum repositório.
 
 ## Push
 
-- Gravação na `public` e `git push origin public:main`: **em execução no momento em que este arquivo foi
-  escrito**; o resultado é registrado no commit seguinte desta mesma hora, `state/last-run.md` atualizado.
-- `git switch main && git merge --no-ff public` e `git push private main`: idem.
+- Commit na `public`: `2125552` — `docs(updates): 2026-11-27 05:00` (7 arquivos, 419 inserções, 88
+  remoções: os 4 documentos novos, `docs/updates/INDEX.md`, `state/watch.json`, `state/last-run.md`).
+- `git push origin public:main`: **sucesso** — `7b619b8..2125552 public -> main`.
+- `git switch main && git merge --no-ff public -m "merge updates 2026-11-27 05:00"` e
+  `git push private main`: resultado no commit de fechamento desta hora (este arquivo), com o hash do merge.
+  Nenhum merge de `main` na `public` foi feito.
