@@ -67,5 +67,14 @@ Tetos aplicados:
 
 ## Push
 
-Pendente no momento da gravação deste arquivo; o resultado e os hashes entram no commit de estado
-seguinte, sobre a `public`, e são mesclados na `main` pelo mesmo caminho.
+- Comando executado: `switch public` → `add docs/updates state` → `commit -m "docs(updates): 2026-11-26 23:00"`
+  → `push origin public:main` → `switch main` → `merge --no-ff public` → `push private main`.
+- Resultado: **sucesso nas duas branches.**
+  - `public`: commit `1e605a2858914d4d674af1ec275d81fc9a8388cf`; `git push origin public:main` avançou
+    `ccbf844..1e605a2`.
+  - `main`: merge `--no-ff` `c11a3629cc66ae3caafd9d214718dc8bb96eb2a7` ("merge updates 2026-11-26 23:00");
+    `git push private main` avançou `029b148..c11a362`.
+- O `main` nunca foi mesclado na `public`; a `public` foi mesclada na `main`, na ordem do procedimento.
+- Este parágrafo e os hashes foram gravados no commit de estado seguinte, sobre a `public`, e mesclados na
+  `main` pelo mesmo caminho.
+- `rate_limit` ao fim: 4.885/5.000; nenhum 403 em nenhuma chamada.
