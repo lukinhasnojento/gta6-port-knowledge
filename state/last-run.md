@@ -130,5 +130,18 @@ commit e de merge. `backlog` com 7: os dois bloqueados e `Marvisak/VIctory`, `iv
 
 ## Push
 
-Resultado registrado no fechamento desta execução (segundo commit na `public`, como nas horas
-anteriores).
+- Commit na `public`: `6276379` — `docs(updates): 2026-11-27 23:00` (9 arquivos, 524 inserções, 108
+  remoções: os 4 documentos, `_triagem.md`, `_falhas.md`, `docs/updates/INDEX.md`, `state/watch.json` e
+  `state/last-run.md`).
+- `git push origin public:main`: **sucesso** — `ac1f8fd..6276379  public -> main`.
+- `git switch main` + `git merge --no-ff public`: **sem conflito** desta vez (a `main` não tinha mudado
+  `state/last-run.md` desde o merge das 22:00; a diferença entre as branches é só
+  `docs/plano/PROMPT_WINDOWS_PHASE.md`). Merge `ef1f6b4` — `merge updates 2026-11-27 23:00`.
+- `git push private main`: **sucesso** — `5458ebb..ef1f6b4  main -> main`.
+- Este fechamento (registro do push) é um segundo commit na `public`, depois do merge. Para não criar um
+  segundo merge na execução (o passo 5 limita a um), a `main` recebe esse commit por cherry-pick, como nas
+  execuções das 18:00, 19:00, 20:00, 21:00 e 22:00.
+- Nenhum `git reset --hard`, nenhum merge de `main` na `public`: a `public` só recebeu commits próprios e
+  a `main` recebeu a `public`.
+- Ficaram fora do commit, intactos: `docs/analises/victory-fork.md` modificado e os dois relatórios não
+  rastreados em `docs/relatorios/`, que não são desta rotina.
