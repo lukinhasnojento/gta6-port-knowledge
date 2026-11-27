@@ -72,4 +72,14 @@ na tabela do documento, mas 42 deles caíram fora da faixa de commits documentad
 
 ## Push
 
-Pendente no momento da primeira gravação deste arquivo; o resultado entra no commit de fechamento.
+- Commit na `public`: `b6d0be4` — `docs(updates): 2026-11-27 16:00` (7 arquivos, 575 inserções, 92
+  remoções: os 4 documentos, `docs/updates/INDEX.md`, `state/watch.json` e `state/last-run.md`).
+- `git push origin public:main`: **sucesso** — `6820f51..b6d0be4  public -> main`.
+- `git switch main && git merge --no-ff public -m "merge updates 2026-11-27 16:00"`: **sucesso**, merge
+  `5b4e29e`; `git push private main`: **sucesso** — `d753ac5..5b4e29e  main -> main`.
+- Conferido depois: `git rev-parse origin/main` = `b6d0be4fc9c78342b794814b4838541675fdf260`;
+  `git rev-parse private/main` = `5b4e29e2014c2fc05857bfdc33fa812356baed34`.
+- Fechamento (este registro): commit na `public` e merge `--no-ff` na `main`, com o resultado no fim deste
+  arquivo. Nenhum merge de `main` na `public` em nenhum momento: a `public` só recebeu commits próprios e a
+  `main` recebeu a `public`.
+
