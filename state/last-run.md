@@ -122,10 +122,19 @@ estão no `backlog_note`.
 
 ## Push
 
-- Commit na `public`: `docs(updates): 2026-11-27 22:00`.
-- `git push origin public:main`: resultado registrado no fechamento desta execução (segundo commit).
-- `git switch main` + `git merge --no-ff public`: idem.
-- `git push private main`: idem.
-- Nenhum `git reset --hard`, nenhum merge de `main` na `public`.
+- Commit na `public`: `35637f9` — `docs(updates): 2026-11-27 22:00` (9 arquivos, 548 inserções, 111
+  remoções: os 4 documentos, `_triagem.md`, `_falhas.md`, `docs/updates/INDEX.md`, `state/watch.json` e
+  `state/last-run.md`).
+- `git push origin public:main`: **sucesso** — `d9dc319..35637f9  public -> main`.
+- `git switch main` + `git merge --no-ff public`: **conflito em `state/last-run.md`** (a `main` carregava
+  o registro do push das 21:00 em `954060e`, a `public` trazia o registro desta hora). Resolvido a favor
+  da `public` (`git checkout --theirs`), porque o registro desta execução substitui o da anterior; merge
+  `22b6683` — `merge updates 2026-11-27 22:00`.
+- `git push private main`: **sucesso** — `954060e..22b6683  main -> main`.
+- Este fechamento (registro do push) é um segundo commit na `public`, depois do merge. Para não criar um
+  segundo merge na execução (o passo 5 limita a um), a `main` recebe esse commit por cherry-pick, como nas
+  execuções das 18:00, 19:00, 20:00 e 21:00.
+- Nenhum `git reset --hard`, nenhum merge de `main` na `public`: a `public` só recebeu commits próprios e
+  a `main` recebeu a `public`.
 - Ficaram fora do commit, intactos: `docs/analises/victory-fork.md` modificado e os dois relatórios não
   rastreados em `docs/relatorios/`, que não são desta rotina.
