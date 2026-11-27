@@ -18,6 +18,7 @@ docs/updates/AAAA-MM-DD/HH/_falhas.md   erros daquela execução, se houver
 
 | Data | Hora | Repositórios com mudança | Resumo |
 |---|---|---|---|
+| 2026-11-26 | 21:00 | 4 | 130 commits documentados (`Xbox2Windows` 40 de 72, `VIctory-7900XTX` 40 de 85, `TuxBox` 34 de 34, `SixNG` 16 de 16) e 37 PRs abertos documentados de 67 detectados + 75 mesclados de 75. Quatro repositórios retirados do backlog; seis com delta só de PRs ficam em `backlog` |
 | 2026-11-26 | 20:00 | 4 | 104 commits (40 em `VIctory-7900XTX`, 40 em `TuxBox`, 22 em `victory-fork`, 2 em `VItoriaBr`) e 72 PRs abertos documentados de 161 detectados + 62 mesclados documentados de 62, nos quatro repositórios retirados do backlog. Sete repositórios com delta ficaram em `backlog` |
 | 2026-11-26 | 19:14 | verificacao manual do tracker | Kelvaroq entra no topo; Belobug medido a 22 fps contra 5-7 no proprio README; AvatarManz consolida victory-fork + DexNom + Belobug |
 | 2026-11-25 | 22:00 | — | execução de baseline: cursores gravados em `state/watch.json`, nenhum documento escrito |
@@ -28,6 +29,17 @@ docs/updates/AAAA-MM-DD/HH/_falhas.md   erros daquela execução, se houver
 
 O primeiro ciclo não documenta nada: grava os cursores em `state/watch.json` para que o ciclo
 seguinte comece a contar a partir dali.
+
+Documentos de 2026-11-26 21:00: [`2026-11-26/21/`](2026-11-26/21/) — `Xbox2Windows.md`,
+`VIctory-7900XTX.md`, `TuxBox.md`, `SixNG.md`. Os quatro repositórios com commit pendente foram processados
+antes dos que só têm PR aberto; o teto de 4 por execução deixou `Marvisak/VIctory`, `ivall/xcl`,
+`Belobug/VIctory-Belobug-AMD`, `DexNom/VIctory`, `omonkeyz/xbox-emulator` e `fxceless/victory-fork` no
+`backlog`. Sem ferramenta de subagente no ambiente, processados em sequência. Tetos: 40 commits por
+repositório (cortou `Xbox2Windows` 72→40 e `VIctory-7900XTX` 85→40, com `commit_cursor` em `1983228b` e
+`f03bfa51`) e 20 PRs abertos por repositório (`Xbox2Windows` 50→20). Divergência registrada: o cursor de
+`TuxBox` deixado às 20:00 (`be9055c9`) estava atrás de 22 commits que aquela execução já documentara; a
+faixa de 56 foi deduplicada contra os documentos anteriores e só 34 foram escritos. Nenhuma falha de
+coleta; nenhum `_falhas.md`; nenhum 403.
 
 Documentos de 2026-11-26 20:00: [`2026-11-26/20/`](2026-11-26/20/) — `VIctory-7900XTX.md`, `TuxBox.md`,
 `victory-fork.md`, `VItoriaBr.md`. Os quatro saíram do `backlog` na ordem em que já estavam registrados. Sem
