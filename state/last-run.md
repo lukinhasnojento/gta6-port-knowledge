@@ -76,8 +76,9 @@ repositório para em `2026-11-27T09:37:36Z` (merge do #305).
   **sucesso** (`741eab0..81d7c25`); merge `a8f4acc` na `main`, `git push private main` **sucesso**
   (`c9cc65d..a8f4acc`).
 - Ajuste posterior, depois que a segunda execução desta hora reescreveu `state/watch.json` e
-  `state/last-run.md` na árvore: commit na `public` com os cursores corrigidos (`runs` 13, `TuxBox` em
-  `90df685ad5` com `commit_cursor`/`head_at_run` e `last_run` 09:37:36Z, `SixNG` com `last_run` 07:02:25Z),
-  push `origin public:main`, merge `--no-ff` na `main` e push `private main`; os hashes estão no commit de
-  fechamento seguinte.
+  `state/last-run.md` na árvore: os cursores corrigidos (`runs` 13, `TuxBox` em `90df685ad5` com
+  `commit_cursor`/`head_at_run` e `last_run` 09:37:36Z, `SixNG` com `last_run` 07:02:25Z) entraram em
+  `30d48d7` — `docs(updates): 2026-11-27 15:00 (correcao de cursores e indice)` —, e este registro, no
+  commit `e47623d`. `git push origin public:main` **sucesso** (`30d48d7..e47623d`); merge `--no-ff` na
+  `main` = `9019d82`, `git push private main` **sucesso** (`a8f4acc..9019d82`).
 - Nenhum merge de `main` na `public` em nenhum momento.
