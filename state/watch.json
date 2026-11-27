@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T01:11:27Z",
+  "updated": "2026-11-27T02:14:11Z",
   "baselined": true,
   "note": "Estado da rotina horaria. baselined=true significa que a primeira execucao ja gravou os cursores sem documentar nada. last_commit avanca so depois de os commits da faixa serem documentados; last_pr_number so avanca para o maior PR processado; last_run e o cursor de PRs mesclados (comparado com mergedAt), nao o horario da execucao.",
   "repos": {
@@ -8,27 +8,24 @@
     "R0Y00/Xbox2Windows":                { "default_branch": "main",   "last_commit": "6ee878d8cd500d3a0b2eabe36d652775488ae25d", "last_pr_number": 2887, "last_run": "2026-11-26T21:59:23Z" },
     "californiaAlmonds/OpenScarlett":    { "default_branch": "main",   "last_commit": "48a98fcd31a9f5d6c8ba344592215c1539d6e7dc", "last_pr_number": 60,   "last_run": "2026-11-26T07:52:24Z" },
     "Belobug/VIctory-Belobug-AMD":       { "default_branch": "main",   "last_commit": "4f62c2a5e27e7beebf3e8d68f77898e43dc7b77c", "last_pr_number": 223,  "last_run": "2026-11-26T04:15:00Z" },
-    "DexNom/VIctory":                    { "default_branch": "main",   "last_commit": "64bd58f5fb794216894bc0e33e03a3a64d19c347", "last_pr_number": 68,   "last_run": "2026-11-26T04:15:00Z" },
+    "DexNom/VIctory":                    { "default_branch": "main",   "last_commit": "8114ff779b5e1c7112b87476753dc8d0992ed97c", "last_pr_number": 106,  "last_run": "2026-11-26T04:15:00Z" },
     "uiliannn/VItoriaBr":                { "default_branch": "main",   "last_commit": "1361e190b7f46df996f00ea1b540ecf66785127f", "last_pr_number": 126,  "last_run": "2026-11-26T04:15:00Z" },
-    "avatarmanz/VIctory-7900XTX":        { "default_branch": "main",   "last_commit": "a9400a6d", "commit_cursor": "a9400a6d", "head_at_run": "126acb35b509bdbe097d607f198d7a2736de5202", "last_pr_number": 387, "last_run": "2026-11-26T08:17:50Z" },
-    "fxceless/victory-fork":             { "default_branch": "main",   "last_commit": "52ac4ec0f8a03f103c146e60228e53612759d435", "last_pr_number": 1380, "last_run": "2026-11-26T18:05:17Z" },
+    "avatarmanz/VIctory-7900XTX":        { "default_branch": "main",   "last_commit": "014d52dedf837d1ac660a0bd256c4704be9eeb40", "last_pr_number": 419,  "last_run": "2026-11-26T08:17:50Z" },
+    "fxceless/victory-fork":             { "default_branch": "main",   "last_commit": "81d54b06f728ade90e450acb67e8c2e0735b024d", "last_pr_number": 1411, "last_run": "2026-11-26T23:06:47Z" },
     "omonkeyz/xbox-emulator":            { "default_branch": "main",   "last_commit": "a618736df799d21d9a565d08893355fc3c96fdf5", "last_pr_number": 394,  "last_run": "2026-11-26T04:15:00Z" },
-    "brcly/TuxBox":                      { "default_branch": "main",   "last_commit": "e76ff6a2", "last_pr_number": 275, "last_run": "2026-11-26T21:27:17Z" },
+    "brcly/TuxBox":                      { "default_branch": "main",   "last_commit": "f48ce028a1bc3c72d509fc141581cc7e0f9b628f", "last_pr_number": 284,  "last_run": "2026-11-27T01:54:42Z" },
     "holdmysocks/SixNG":                 { "default_branch": "master", "last_commit": "e0fd6ffa", "last_pr_number": 416, "last_run": "2026-11-26T22:01:14Z" },
     "walkthestars/GTA6-Asset-Info":      { "default_branch": "main",   "last_commit": "bad5bc2180ade416eafdb50aa21e21eeec5adbda", "last_pr_number": 0,    "last_run": "2026-11-26T04:15:00Z" }
   },
   "backlog": [
     "Marvisak/VIctory",
     "ivall/xcl",
-    "Belobug/VIctory-Belobug-AMD",
-    "DexNom/VIctory",
-    "uiliannn/VItoriaBr",
-    "fxceless/victory-fork",
-    "omonkeyz/xbox-emulator",
     "R0Y00/Xbox2Windows",
-    "avatarmanz/VIctory-7900XTX"
+    "Belobug/VIctory-Belobug-AMD",
+    "omonkeyz/xbox-emulator",
+    "holdmysocks/SixNG"
   ],
-  "backlog_note": "Xbox2Windows saiu do backlog de commits: a faixa pendente das 21:00 foi inteira documentada. Volta ao backlog so pelos PRs abertos 2888-2930 (30 dos 50 detectados) nao documentados, com last_pr_number em 2887. avatarmanz/VIctory-7900XTX tem 18 commits pendentes (commit_cursor a9400a6d, head 126acb35). VItoriaBr entra no backlog com 1 PR aberto novo. As 30h de commits de TuxBox e SixNG foram inteiramente documentadas.",
-  "runs": 8,
+  "backlog_note": "As 23:00 documentaram VIctory-DexNom, VIctory-7900XTX, victory-fork e TuxBox. VIctory-7900XTX saiu com a faixa inteira (commit_cursor/head_at_run removidos, cursor = 014d52de) e os 18 PRs abertos documentados (last_pr_number 419). victory-fork: 20 de 28 PRs abertos e os 7 mesclados (last_run 23:06:47Z, o mergedAt do #1312); PRs 1412-1422 no backlog. TuxBox: faixa e PRs inteiros (12 merges, last_run 01:54:42Z do #291; 2 abertos, last_pr_number 284). DexNom: unico commit e 20 de 50 PRs abertos (last_pr_number 106; 107-128 no backlog). Continuam no backlog, com delta desta hora: Marvisak/VIctory (50 abertos acima de 3032), ivall/xcl (50 abertos + 6 mesclados), R0Y00/Xbox2Windows (43 abertos + 16 mesclados para main), Belobug/VIctory-Belobug-AMD (50 abertos + 20 mesclados), omonkeyz/xbox-emulator (1 aberto, #395) e holdmysocks/SixNG (12 commits, 14 abertos, 12 mesclados; cursor de commits e0fd6ffa). VItoriaBr saiu: sem delta (maior aberto 126 = cursor). A escolha das 23:00 priorizou repositorio com commit pendente e cursor mais antigo: DexNom (04:15), VIctory-7900XTX (08:17), victory-fork (18:05) e TuxBox (21:27); SixNG (22:01) ficou por ser o mais recente dos cinco com commit.",
+  "runs": 9,
   "last_error": null
 }

@@ -18,6 +18,7 @@ docs/updates/AAAA-MM-DD/HH/_falhas.md   erros daquela execução, se houver
 
 | Data | Hora | Repositórios com mudança | Resumo |
 |---|---|---|---|
+| 2026-11-26 | 23:00 | 4 | 81 commits documentados de 81 na faixa (25 em `VIctory-7900XTX`, 20 em `victory-fork`, 35 em `TuxBox`, 1 em `VIctory-DexNom`) e 40 PRs abertos de 98 detectados nos quatro + 7 mesclados de 7; `TuxBox` e `victory-fork` retirados do backlog. Seis repositórios com delta ficaram em `backlog` pelo limite de 4 por execução: `VIctory` (50 abertos), `xcl` (50 + 6 merges), `Xbox2Windows` (43 + 16), `VIctory-Belobug-AMD` (50 + 20), `SixNG` (12 commits, 14 abertos, 12 merges) e `xbox-emulator` (1 aberto). `VItoriaBr` saiu do backlog: sem delta |
 | 2026-11-26 | 22:00 | 4 | 127 commits na janela, 109 documentados (32 em `Xbox2Windows`, 40 de 58 em `VIctory-7900XTX`, 31 em `TuxBox`, 6 em `SixNG`) e 33 PRs abertos de 63 detectados nos quatro + 19 mesclados em `main` (13 `TuxBox`, 6 `SixNG`); outros seis merges do `Xbox2Windows` foram para `cpp-migration`, não para `main`. Sete repositórios com delta só de PRs e `VIctory-7900XTX` com 18 commits ficam em `backlog` |
 | 2026-11-26 | 21:00 | 4 | 130 commits documentados (`Xbox2Windows` 40 de 72, `VIctory-7900XTX` 40 de 85, `TuxBox` 34 de 34, `SixNG` 16 de 16) e 37 PRs abertos documentados de 67 detectados + 75 mesclados de 75. Quatro repositórios retirados do backlog; seis com delta só de PRs ficam em `backlog` |
 | 2026-11-26 | 20:00 | 4 | 104 commits (40 em `VIctory-7900XTX`, 40 em `TuxBox`, 22 em `victory-fork`, 2 em `VItoriaBr`) e 72 PRs abertos documentados de 161 detectados + 62 mesclados documentados de 62, nos quatro repositórios retirados do backlog. Sete repositórios com delta ficaram em `backlog` |
@@ -30,6 +31,22 @@ docs/updates/AAAA-MM-DD/HH/_falhas.md   erros daquela execução, se houver
 
 O primeiro ciclo não documenta nada: grava os cursores em `state/watch.json` para que o ciclo
 seguinte comece a contar a partir dali.
+
+Documentos de 2026-11-26 23:00: [`2026-11-26/23/`](2026-11-26/23/) — `VIctory-DexNom.md`,
+`VIctory-7900XTX.md`, `victory-fork.md`, `TuxBox.md`. A faixa de `VIctory-7900XTX` desde `a9400a6d` foi
+inteira documentada (25 commits, o cursor `commit_cursor` das 22:00 consumido) e `TuxBox` e `victory-fork`
+saíram do backlog. `victory-fork` teve sete PRs mesclados em 22 segundos (`23:06:25` a `23:06:47Z`), cada
+um com seu commit de merge; `TuxBox`, doze merges. Dos 98 PRs abertos detectados nos quatro, 40 foram
+documentados (20 de 50 no `VIctory-DexNom`, 20 de 28 no `victory-fork`, os 18 do `VIctory-7900XTX` e os 2
+do `TuxBox`); os 58 restantes ficam com `last_pr_number` no maior documentado. Cruzamentos que mudam o
+catálogo: `victory-fork` **D-12** passa a ter correção com hash (`0a40a00a` e `b1d777a8`, cargas raw
+pedindo só as dwords lidas e guardadas no fim da view); `victory-fork` **D-05** tem variante coberta por
+PR aberto (#1391); `AvatarManz` **D-17** aparece como PR aberto (#393). Candidatos a linha nova:
+`e9428969` (filtro de sondas magenta na AMD esconde dado inválido), `VIctory-7900XTX #104` (crash
+`+0x5149aec` em `--no-rt` com placa de 8 GB), `VIctory-DexNom #106`/`#107` (waits de listas liberadas,
+backlinks de contador UAV), `victory-fork #1389` (root constants vazios → `0xc0000005`), `TuxBox`
+`ab644f02` (execução sem memória gráfica termina em fault de GPU) e `TuxBox e9134b07` (escrita em página
+fora do write-watch passa a depender de consulta de `VirtualQuery` que pode envelhecer).
 
 Documentos de 2026-11-26 22:00: [`2026-11-26/22/`](2026-11-26/22/) — `Xbox2Windows.md`,
 `VIctory-7900XTX.md`, `TuxBox.md`, `SixNG.md`. Nenhum commit novo entrou em `main` do `Xbox2Windows`
