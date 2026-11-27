@@ -1,98 +1,75 @@
-# Execução de 2026-11-27 15:00
+# Execução de 2026-11-27 16:00
 
 ## Data e hora
 
-Coleta em 2026-11-27T12:34–12:57 (UTC−3), isto é 15:34–15:57Z. Hora local do operador: 12:34–12:57
-(E. South America Standard Time). Diretório de documentos: `docs/updates/2026-11-27/15/` (UTC).
-Estado lido: `baselined: true`, `runs: 12` — a etapa de baseline não se aplicou.
+Coleta de 2026-11-27T13:00–13:25 no relógio dos dados do GitHub (16:00–16:25 UTC real; 10:00–10:25 no
+horário local do operador, UTC−3). Diretório de documentos: `docs/updates/2026-11-27/16/` (UTC).
+Estado lido: `baselined: true`, `runs: 13` — a etapa de baseline não se aplicou.
 
 ## Repositórios com delta
 
-Delta em 11 dos 13. Sem delta: `californiaAlmonds/OpenScarlett` (o único merge, #50, tem `mergedAt` igual ao
-cursor `2026-11-26T07:52:24Z` e já foi documentado às 08:00) e `walkthestars/GTA6-Asset-Info` (branch parada
-em `bad5bc21`, 0 PR).
-
-Processados, pelo critério do `backlog_note` anterior (commit ou merge na janela primeiro, depois `last_run`
-mais antigo):
+Delta em 4 dos 13, já filtrado pelo critério de prioridade do `backlog_note` anterior (repositório com
+commit ou merge na janela primeiro, depois só-PR-aberto pelo `last_run` mais antigo):
 
 | Repositório | Commits na faixa | Mesclados na janela | Abertos acima do cursor | Documentado |
 |---|---|---|---|---|
-| `uiliannn/VItoriaBr` | 1 | 0 | 0 (cursor 126) | 1 / 0 / 0 |
-| `fxceless/victory-fork` | 1 | 0 | 35 (1428–1468) | 1 / 0 / 35 |
-| `brcly/TuxBox` | 47 (`compare`) | 9 | 0 (cursor 284) | 40 / 8 / 0 |
-| `holdmysocks/SixNG` | 24 | 24 | 1 (#472) | 24 / 24 / 1 |
+| `R0Y00/Xbox2Windows` | 80 (`compare`) | 50 | 14 | 40 / 50 / 14 |
+| `brcly/TuxBox` | 19 (`compare`) | 2 | 0 | 19 / 2 / 0 |
+| `ivall/xcl` | 5 (`compare`) | 3 | 50 (piso) | 5 / 3 / 50 |
+| `Marvisak/VIctory` | 0 | 0 | 50 (piso) | 0 / 0 / 50 |
 
-Em `backlog` (8): `Marvisak/VIctory`, `ivall/xcl`, `R0Y00/Xbox2Windows` (46 commits e 47 merges, o maior
-delta pendente), `Belobug/VIctory-Belobug-AMD`, `DexNom/VIctory`, `avatarmanz/VIctory-7900XTX`,
-`omonkeyz/xbox-emulator` e `brcly/TuxBox` (os 7 commits acima de `90df685a` e o merge #306). Contagens e
-prioridade registradas em `state/watch.json`.
+Sem delta, reconferido: `californiaAlmonds/OpenScarlett`, `uiliannn/VItoriaBr`,
+`walkthestars/GTA6-Asset-Info` (branch parada, nenhum merge na janela),
+`Belobug/VIctory-Belobug-AMD`, `DexNom/VIctory`, `avatarmanz/VIctory-7900XTX`,
+`omonkeyz/xbox-emulator`, `fxceless/victory-fork` (só PRs abertos, sem commit nem merge; consumiram a vez).
+
+Em `backlog` (7): `R0Y00/Xbox2Windows` (os 40 commits acima de `f52046900a` e os diffs do `#3055` e do
+`#2882`), `DexNom/VIctory`, `omonkeyz/xbox-emulator`, `avatarmanz/VIctory-7900XTX`,
+`Belobug/VIctory-Belobug-AMD`, `holdmysocks/SixNG` e `fxceless/victory-fork`. Contagens medidas nesta hora
+e a prioridade da próxima estão em `state/watch.json`.
 
 ## Documentos escritos
 
-4 documentos em `docs/updates/2026-11-27/15/`: `TuxBox.md`, `SixNG.md`, `victory-fork.md`, `VItoriaBr.md`.
-Total: **66 commits** (40 + 24 + 1 + 1), **32 PRs mesclados** (8 + 24) e **36 PRs abertos** (35 + 1).
+4 documentos em `docs/updates/2026-11-27/16/`: `Xbox2Windows.md`, `xcl.md`, `TuxBox.md`, `VIctory.md`.
+Total: **64 commits** (40 + 19 + 5 + 0), **55 PRs mesclados** (50 + 2 + 3) e **64 PRs abertos**
+(50 + 50 + 14 + 0, nos quatro onde há delta).
 
-`brcly/TuxBox` é o único com corte: a faixa `9168b2fa..07db52f84f` tem 47 commits e o teto é 40. Os 7 mais
-novos (`edf9e0518c`, `6ed257873d`, `c7c84de79e`, `5995ed341c`, `3894902a29`, `cf47e6874c`, `07db52f84f`)
-ficam com `commit_cursor` em `90df685ad5` e voltam na próxima hora, junto com o PR **#306**; `last_run` do
-repositório para em `2026-11-27T09:37:36Z` (merge do #305).
+`R0Y00/Xbox2Windows` é o único com corte: a faixa `e62e3a5e..801f4c3b` tem 80 commits e o teto é 40. Os 40
+mais antigos foram documentados (até `f52046900a`), e os 40 seguintes ficam com `commit_cursor` em
+`f52046900a` e `head_at_run` em `801f4c3b`, voltando na próxima hora. Os 50 merges da janela entraram todos
+na tabela do documento, mas 42 deles caíram fora da faixa de commits documentada e estão marcados como
+`NÃO VERIFICADO` (só número, título e sha de merge).
 
 ## Falhas e desvios
 
-- **Execução duplicada da mesma hora.** O diretório começou com `state/last-run.md` e os quatro documentos
-  já escritos por uma execução anterior de 15:00 que não chegou a commitar (o `runs` do estado já estava em
-  13 e a árvore tinha `state/last-run.md` modificado). Em vez de sobrescrever sem olhar, as contagens foram
-  reverificadas de forma independente (`compare`, filtro estrito de mesclados, casamento dos `mergeCommit`)
-  e os documentos foram adotados onde batiam; `last-run.md` e `INDEX.md` foram reescritos para ficar
-  coerentes. `runs` ficou em 13 (uma execução), não 14.
-- **Contagem de commits por listagem estava errada.** `gh api commits?sha=<branch>&per_page=100` ordena por
-  data de commit; commits de pré-merge com data anterior ao cursor caem depois dele na lista. No `TuxBox`
-  isso deu 38 em vez de 47. A fonte correta é `compare/<last_commit>...<head>` (`ahead_by`). O método errado
-  está registrado no campo `note` do estado.
-- **Filtro de mesclados estrito.** A instrução desta hora pedia filtrar por `numero > last_pr_number`; o
-  procedimento da seção "Por que PR mesclado não usa número" proíbe isso. Usei
-  `merged:>last_run` (estrito). Com `>=`, 46 PRs já documentados voltariam como delta: 25 do
-  `VIctory-7900XTX`, 17 do `VIctory-Belobug-AMD`, 1 do `OpenScarlett`, 1 do `victory-fork`, 1 do `TuxBox` e
-  1 do `xcl`.
-- **`search/issues` devolve 422 em repositório transferido.** `ivall/xcl` redireciona para `xcl-dev/xcl`; a
-  API de conteúdo aceita o nome antigo e a de busca não. A coleta de mesclados passou a usar
-  `gh pr list --state merged --search`, que aceita o nome antigo.
+- **`gh pr list --state merged --search "merged:>..."` não serve.** Devolveu lista vazia no `ivall/xcl`
+  (repositório transferido de `xcl-dev/xcl`) e 49 dos 50 merges do `Xbox2Windows`, perdendo o `#2882`
+  (`db28a796`, `mergedAt 2026-11-27T13:14:52Z`). A coleta passou a usar a API REST
+  `pulls?state=closed&sort=updated&direction=desc`, paginada de 100 em 100 até o `updated_at` mais antigo
+  cair abaixo do `last_run`. Registrado no campo `note` do estado.
+- **Dois relógios.** Os timestamps do GitHub ficaram 3 h atrás do UTC real nesta coleta: o `#3055` do
+  `Xbox2Windows` traz `mergedAt 2026-11-27T13:06:51Z` e foi visto às 16:06Z. A execução de 15:00 gravou
+  `last_run = 2026-11-27T16:05:00Z` em quatro repositórios **sem merge** (`OpenScarlett`, `VItoriaBr`,
+  `victory-fork`, `GTA6-Asset-Info`) — três horas no futuro do relógio dos dados, o que esconderia
+  qualquer merge até o relógio dos dados alcançar aquele instante. Os quatro foram reconferidos contra
+  `2026-11-26T00:00Z` (zero merges novos: `OpenScarlett` só o #50 de `2026-11-26T07:52:24Z`, já
+  documentado; `victory-fork` 14 merges, todos até `2026-11-26T23:06:47Z`, já documentados) e
+  normalizados para `2026-11-27T13:05:00Z`. `VIctory`, que não teve merge, foi avançado para o instante da
+  consulta no relógio dos dados (`13:20:45Z`), não para o horário da execução.
+- **Repositórios se movem durante a execução.** No `TuxBox` o primeiro `compare` devolveu 16 commits e a
+  reconferência 19 — `eb2a5000` (data de commit anterior) foi inserido no meio da lista e o `#308` chegou
+  com dois commits. No `Xbox2Windows` o `#3055` (`13:06:51Z`) e o `#2882` (`13:14:52Z`) entraram depois do
+  `compare` de commits. As contagens publicadas são as da reconferência, e o que chegou depois fica para a
+  próxima hora pelo `commit_cursor`.
 - **Sem subagentes.** A ferramenta de subagente não existe neste ambiente; os quatro repositórios foram
   processados em sequência. O limite de 4 por execução foi respeitado.
-- **Rate limit**: `gh api rate_limit` marcava 4.996 de 5.000 no início; nenhuma chamada devolveu 403.
-- **Aberto acima do cursor**: `victory-fork` teve os 35 catalogados um a um (#1428 a #1468). A coluna
-  "Proposta" desses 35 vem do título e do nome da branch, que neste repositório são descritivos ao nível de
-  changelog; só o #1468 teve o patch lido.
+- **Rate limit**: `gh api rate_limit` marcava 4.621 de 5.000 no início (379 usados, sobra de execuções
+  anteriores) e 30 de 30 na busca; nenhuma chamada devolveu 403.
+- **Abertos acima do cursor**: `xcl` e `VIctory` estão no piso da janela de 50, então o total real acima do
+  cursor é ≥ 50 em ambos; os 50 de cada foram catalogados um a um, mas nenhum patch foi lido — a coluna
+  "Proposta" vem do título e do nome da branch, como o documento diz.
 - Nenhum `_falhas.md`: não houve erro de coleta ou de escrita em repositório.
 
 ## Push
 
-- Commit na `public`: `741eab0` — `docs(updates): 2026-11-27 15:00` (7 arquivos, 593 inserções, 80
-  remoções: os 4 documentos, `docs/updates/INDEX.md`, `state/watch.json` e `state/last-run.md`).
-- `git push origin public:main`: **sucesso** — `6a99faa..741eab0 public -> main`.
-- `git switch main && git merge --no-ff public -m "merge updates 2026-11-27 15:00"`: **sucesso**, merge
-  `c9cc65d`; `git push private main`: **sucesso** — `52ceb22..c9cc65d main -> main`.
-- Fechamento (registro em `state/last-run.md`): commit `81d7c25` na `public`, `git push origin public:main`
-  **sucesso** (`741eab0..81d7c25`); merge `a8f4acc` na `main`, `git push private main` **sucesso**
-  (`c9cc65d..a8f4acc`).
-- Ajuste posterior, depois que a segunda execução desta hora reescreveu `state/watch.json` e
-  `state/last-run.md` na árvore: os cursores corrigidos (`runs` 13, `TuxBox` em `90df685ad5` com
-  `commit_cursor`/`head_at_run` e `last_run` 09:37:36Z, `SixNG` com `last_run` 07:02:25Z) entraram em
-  `30d48d7` — `docs(updates): 2026-11-27 15:00 (correcao de cursores e indice)` —, e este registro, no
-  commit `e47623d`. `git push origin public:main` **sucesso** (`30d48d7..e47623d`); merge `--no-ff` na
-  `main` = `9019d82`, `git push private main` **sucesso** (`a8f4acc..9019d82`).
-- Nenhum merge de `main` na `public` em nenhum momento.
-
-## Push â€” fechamento verificado
-
-- `origin/main` = `e47623d4adcc4e67e4f44d34812f092685fdc2cd`: a branch `public` chegou lÃ¡ com
-  `741eab0` (`docs(updates): 2026-11-27 15:00`), `30d48d7` (`... (correcao de cursores e indice)`) e
-  `e47623d` (`chore(state): corrige cursores e fecha o registro`). Push conferido com
-  `git rev-parse origin/main` depois de `git push origin public:main` (que respondeu "Everything
-  up-to-date").
-- `private/main` = `9019d82b847b2e77e450aad1f5c257a00b090bd4`: merge `--no-ff` de `public` na `main`
-  (`merge updates 2026-11-27 15:00 (correcao de cursores)`), no topo de `a8f4acc`. Conferido com
-  `git rev-parse private/main`.
-- Nenhum merge de `main` na `public` em nenhum momento; a `public` sÃ³ recebeu commits prÃ³prios e a `main`
-  recebeu a `public`.
-- Ãrvore de trabalho limpa ao fim (`git status --short` vazio), nas duas branches.
+Pendente no momento da primeira gravação deste arquivo; o resultado entra no commit de fechamento.
