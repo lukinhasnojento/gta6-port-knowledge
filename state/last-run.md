@@ -78,3 +78,7 @@ Tetos aplicados:
 - Este parágrafo e os hashes foram gravados no commit de estado seguinte, sobre a `public`, e mesclados na
   `main` pelo mesmo caminho.
 - `rate_limit` ao fim: 4.885/5.000; nenhum 403 em nenhuma chamada.
+- Correção posterior à publicação: a contagem de autores do documento do `TuxBox` dizia "nove" e os
+  commits da faixa têm sete autores distintos (brcly, Nick Stallman, Pavel Kirilin, Valdi320, Manuel
+  Smith Lazarte Alcocer, JohnVonWells, Jeffrey C); corrigida em commit de documentação sobre a `public`,
+  mesclado na `main` pelo mesmo caminho.

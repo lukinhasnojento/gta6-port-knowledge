@@ -2,7 +2,7 @@
 
 ## Resumo
 
-Trinta e cinco commits e doze PRs mesclados em cerca de cinco horas, de nove autores. O grosso é
+Trinta e cinco commits e doze PRs mesclados em cerca de cinco horas, de sete autores de commit. O grosso é
 tradutor de shader (`s_quadmask`, `s_bitreplicate`, saveexec de nor/xnor/orn1, SAD de byte e quad,
 `frexp/ldexp` de f16 exato, packs normalizados, interpolação de pixel, heaps de sampler de mesh) e
 verificação de D3D12 (roots bindless de computação, CBV em cada offset de 16 bytes, publicação de escrita
