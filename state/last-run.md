@@ -122,4 +122,19 @@ Os outros 10 mantêm cursor de commit e de merge; `Belobug` e `avatarmanz` ganha
 
 ## Push
 
-(Preenchido após a publicação.)
+- Commit na `public`: `17ae460` — `docs(updates): 2026-11-27 21:00` (9 arquivos, 639 inserções, 118
+  remoções: os 4 documentos, `_triagem.md`, `_falhas.md`, `docs/updates/INDEX.md`, `state/watch.json` e
+  `state/last-run.md`).
+- `git push origin public:main`: **sucesso** — `4f46b3c..17ae460  public -> main`.
+- `git switch main` + `git merge --no-ff public`: **conflito em `state/last-run.md`** (a `main` carregava
+  o registro do push das 20:00 em `682de47`, a `public` trazia o registro desta hora). Resolvido a favor
+  da `public` (`git checkout --theirs`), porque o registro desta execução substitui o da anterior; merge
+  `c7dedcd` — `merge updates 2026-11-27 21:00`.
+- `git push private main`: **sucesso** — `682de47..c7dedcd  main -> main`.
+- Este fechamento (registro do push) é um segundo commit na `public`, depois do merge. Para não criar um
+  segundo merge na execução (o passo 5 limita a um), a `main` recebe esse commit por cherry-pick, como
+  nas execuções das 18:00, 19:00 e 20:00.
+- Nenhum `git reset --hard`, nenhum merge de `main` na `public`: a `public` só recebeu commits próprios
+  e a `main` recebeu a `public`.
+- Ficaram fora do commit, intactos: `docs/analises/victory-fork.md` modificado e dois relatórios não
+  rastreados em `docs/relatorios/`, que não são desta rotina.
