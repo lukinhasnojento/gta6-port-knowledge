@@ -33,13 +33,13 @@ o backlog.
 
 4 documentos em `docs/updates/2026-11-27/15/`:
 
-- `TuxBox.md` — 40 commits (de 47), 8 merges (de 9), 0 PRs abertos novos.
+- `TuxBox.md` — 40 commits documentados (de 47; o teto de 40 cortou os 7 mais novos), 8 merges (de 9), 0
+  PRs abertos novos.
 - `SixNG.md` — 24 commits, 24 merges, 1 PR aberto.
 - `victory-fork.md` — 1 commit, 0 merges, 35 PRs abertos.
 - `VItoriaBr.md` — 1 commit, 0 merges, 0 PRs abertos.
 
-Total: 66 commits e 32 merges documentados, mais 36 PRs abertos. Nenhum repositório passou do teto de 40
-commits além do `TuxBox`, que foi cortado em 40 exatamente.
+Total: 66 commits e 32 merges documentados, mais 36 PRs abertos.
 
 ## Falhas e desvios
 
@@ -64,18 +64,30 @@ commits além do `TuxBox`, que foi cortado em 40 exatamente.
   são piso, não total.
 - **Rate limit.** `gh api rate_limit` marcava 4.996 de 5.000 no início e 4.636 restantes no fim da
   documentação. Nenhuma chamada devolveu 403.
-- Nenhum `_falhas.md` foi escrito porque nenhum dos quatro repositórios documentados falhou na coleta ou
-  na escrita.
+- **Edição concorrente nos documentos desta hora.** Durante a execução, os quatro arquivos de
+  `docs/updates/2026-11-27/15/` foram reescritos por outro processo (duas versões, com contagens de
+  faixa diferentes para o `TuxBox`: 38 e 47). A versão publicada é a que segue o procedimento — 47
+  commits na faixa, 40 documentados, `commit_cursor` em `90df685ad5` — e a seção "Teto de 40" do
+  `TuxBox.md` foi corrigida depois de uma inserção que descrevia os 7 cortados como se fossem os 7 mais
+  antigos, o que era falso. Nenhum `_falhas.md` foi escrito: não houve falha de coleta nem de escrita em
+  repositório documentado.
 
 ## Estado
 
 `updated` = `2026-11-27T15:56:00Z`, `runs` = 13. Cursores avançados: `VItoriaBr` (`15779f81`),
 `victory-fork` (`9a9091d1`, aberto até 1468), `TuxBox` (`90df685a` com `commit_cursor` e `head_at_run`
 `07db52f8`, `last_run` 09:37:36Z), `SixNG` (`790a3c67`, aberto até 472, `last_run` 07:02:25Z).
-`fxceless/victory-fork` e `uiliannn/VItoriaBr` saíram/ficaram fora do backlog; `ivall/xcl`,
-`R0Y00/Xbox2Windows`, `Marvisak/VIctory`, `Belobug/VIctory-Belobug-AMD`, `DexNom/VIctory`,
-`avatarmanz/VIctory-7900XTX`, `omonkeyz/xbox-emulator` e `brcly/TuxBox` (resto da faixa) ficaram.
+`fxceless/victory-fork` saiu do backlog; `ivall/xcl`, `R0Y00/Xbox2Windows`, `Marvisak/VIctory`,
+`Belobug/VIctory-Belobug-AMD`, `DexNom/VIctory`, `avatarmanz/VIctory-7900XTX`,
+`omonkeyz/xbox-emulator` e `brcly/TuxBox` (resto da faixa) ficaram.
 
 ## Push
 
-(Pendente de preenchimento depois da publicação.)
+- Commit na `public`: `741eab0` — `docs(updates): 2026-11-27 15:00` (7 arquivos, 593 inserções, 80
+  remoções: os 4 documentos novos, `docs/updates/INDEX.md`, `state/watch.json` e `state/last-run.md`).
+- `git push origin public:main`: **sucesso** — `6a99faa..741eab0 public -> main`.
+- `git switch main && git merge --no-ff public -m "merge updates 2026-11-27 15:00"`: **sucesso**, merge
+  `c9cc65d`. `git push private main`: **sucesso** — `52ceb22..c9cc65d main -> main`.
+- Nenhum merge de `main` na `public`. `main..public` estava vazio antes e depois da publicação.
+- O commit de fechamento desta hora (que só registra estes hashes em `state/last-run.md`) vem depois dos
+  dois, primeiro na `public` e depois no merge para a `main`.
