@@ -75,7 +75,13 @@ Tetos aplicados:
 
 ## Push
 
-- Comando a executar: `switch public` → `add docs/updates state` → `commit -m "docs(updates): 2026-11-26 21:00"`
+- Comando executado: `switch public` → `add docs/updates state` → `commit -m "docs(updates): 2026-11-26 21:00"`
   → `push origin public:main` → `switch main` → `merge --no-ff public` → `push private main`.
-- Resultado: **a executar** no momento em que este arquivo foi gravado. O resultado e os hashes entram no
-  commit de estado imediatamente seguinte; se o push falhar, esta seção é reescrita e o estado não avança.
+- Resultado: **sucesso nas duas branches.**
+  - `public`: commit `be35454212d50cdad68aeec07fcb99bb6fd68306`; `git push origin public:main` avançou
+    `85a67d4..be35454`.
+  - `main`: merge `--no-ff` `3e5e977c2ecdea86b8c3ea70e2f8392db19674c9` ("merge updates 2026-11-26 21:00");
+    `git push private main` avançou `8b572c1..3e5e977`.
+- O `main` nunca foi mesclado na `public`; a `public` foi mesclada na `main`, na ordem do procedimento.
+- Este parágrafo e os dois hashes foram gravados no commit de estado seguinte, sobre a `public`, e
+  mesclados na `main` pelo mesmo caminho.
