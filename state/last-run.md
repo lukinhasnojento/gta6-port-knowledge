@@ -82,3 +82,16 @@ Os outros 10 mantêm cursor de commit e de merge; `OpenScarlett`, `VItoriaBr`, `
 `kelvaroq` não tiveram delta. `backlog` com 7: `R0Y00/Xbox2Windows` (7 commits), `Belobug/VIctory-Belobug-AMD`,
 `avatarmanz/VIctory-7900XTX`, `fxceless/victory-fork`, `omonkeyz/xbox-emulator`, `ivall/xcl`,
 `Marvisak/VIctory`. A ordem da próxima hora está no `backlog_note`.
+
+## Push
+
+- Commit na `public`: `083ddf7` — `docs(updates): 2026-11-27 17:00` (8 arquivos, 412 inserções, 86
+  remoções: os 4 documentos, `_triagem.md`, `docs/updates/INDEX.md`, `state/watch.json` e
+  `state/last-run.md`).
+- `git push origin public:main`: **sucesso** — `000bfb8..083ddf7  public -> main`; `origin/main` =
+  `083ddf71096d7632b143e8b4bb9ca5d3e9c959d1`.
+- Este fechamento (registro do push) é o segundo commit da mesma execução; o merge `--no-ff` de `public`
+  na `main` é **um só** e vem depois dele, como o passo 5 limita ("um merge por execução, no máximo").
+- Nenhum `git reset --hard`, nenhum merge de `main` na `public`: a `public` só recebeu commits próprios e
+  a `main` recebeu a `public`.
+
