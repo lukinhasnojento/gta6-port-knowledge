@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-27T18:19:18Z",
+    "updated": "2026-11-27T19:19:05Z",
     "baselined": true,
     "note": "Estado da rotina horaria. baselined=true significa que a primeira execucao ja gravou os cursores sem documentar nada. last_commit (SHA completo) e o cursor de commits da branch default: so avanca ate o ultimo commit documentado. commit_cursor e head_at_run so aparecem quando o teto de 40 commits corta a faixa; o proximo ciclo comeca em commit_cursor. last_pr_number e o cursor de PRs ABERTOS apenas. last_run e o cursor de PRs MESCLADOS (comparado com mergedAt). DOIS RELOGIOS, medido em 2026-11-27 16:00: o campo updated usa UTC real; os timestamps do GitHub (mergedAt, commit dates) ficaram 3 h atras do UTC real nesta coleta (PR R0Y00/Xbox2Windows#3055 com mergedAt 2026-11-27T13:06:51Z apareceu as 16:06Z reais). Por isso todo last_run tem de ser escrito no relogio do GitHub, nunca no horario da execucao: a execucao de 15:00 gravou 2026-11-27T16:05:00Z em quatro repositorios sem merge (OpenScarlett, VItoriaBr, victory-fork, GTA6-Asset-Info), o que esconderia qualquer merge por tres horas; nesta hora os quatro foram reconferidos contra 2026-11-26T00:00Z (zero merges novos: OpenScarlett so o #50 de 2026-11-26T07:52:24Z, ja documentado; victory-fork 14 merges, todos ate 2026-11-26T23:06:47Z, ja documentados) e normalizados para 2026-11-27T13:05:00Z. COLETA DE MESCLADOS: nao usar gh pr list --state merged --search. Em 2026-11-27 16:00 essa via devolveu lista vazia para ivall/xcl (repositorio transferido) e 49 dos 50 merges do Xbox2Windows, perdendo o #2882. Usar a API REST repos/<o>/<r>/pulls?state=closed&sort=updated&direction=desc&per_page=100, paginando ate o updated_at mais antigo da pagina cair abaixo do last_run, e filtrar merged_at > last_run. COLETA DE COMMITS: usar repos/<o>/<r>/compare/<last_commit>...<head> e o campo ahead_by; a listagem commits?sha=<branch>&per_page=100 ordena por data de commit e esconde commits de pre-merge com data anterior ao cursor (medido: 38 contra 47 no TuxBox em 15:00). Janela de PRs abertos: gh pr list --state open --limit 50 traz so os 50 mais novos; quando o menor numero da janela ainda e maior que o cursor, o total real e >= 50 e o cursor nao prova cobertura dos antigos.",
     "repos": {
@@ -11,15 +11,15 @@
         },
         "ivall/xcl": {
             "default_branch": "main",
-            "last_commit": "81693f020768ec47dbfe9eefba5eec0ab9aeda6c",
-            "last_pr_number": 3032,
-            "last_run": "2026-11-27T14:21:57Z"
+            "last_commit": "f9a0cb80f9decb41d6f6315f6cf4e06270ba2bda",
+            "last_pr_number": 3038,
+            "last_run": "2026-11-27T15:11:50Z"
         },
         "R0Y00/Xbox2Windows": {
             "default_branch": "main",
-            "last_commit": "de1595b96b7ab3eb148f4e7f6e68ec1419fe3343",
-            "last_pr_number": 3097,
-            "last_run": "2026-11-27T15:07:31Z"
+            "last_commit": "300b93f0bea3efd30246da77351604316fe2abc1",
+            "last_pr_number": 3121,
+            "last_run": "2026-11-27T16:08:23Z"
         },
         "californiaAlmonds/OpenScarlett": {
             "default_branch": "main",
@@ -53,8 +53,8 @@
         },
         "fxceless/victory-fork": {
             "default_branch": "main",
-            "last_commit": "5dbf5ce226690bb0f1b2949dc8ef822617ae81ea",
-            "last_pr_number": 1483,
+            "last_commit": "3e573d2556adc5a5b22ccd2d6d92231a72ee55bb",
+            "last_pr_number": 1487,
             "last_run": "2026-11-27T13:05:00Z"
         },
         "omonkeyz/xbox-emulator": {
@@ -65,9 +65,9 @@
         },
         "brcly/TuxBox": {
             "default_branch": "main",
-            "last_commit": "cf0a0824c66e5deff8742c20d0b2c50069b33539",
+            "last_commit": "c2a59af5a2e4ff7731e828fbd5e5de15729bda2f",
             "last_pr_number": 311,
-            "last_run": "2026-11-27T14:11:02Z"
+            "last_run": "2026-11-27T15:28:30Z"
         },
         "holdmysocks/SixNG": {
             "default_branch": "master",
@@ -93,9 +93,11 @@
         "avatarmanz/VIctory-7900XTX",
         "Marvisak/VIctory",
         "holdmysocks/SixNG",
-        "omonkeyz/xbox-emulator"
+        "omonkeyz/xbox-emulator",
+        "DexNom/VIctory",
+        "uiliannn/VItoriaBr"
     ],
-    "backlog_note": "A execucao de 2026-11-27 18:00 triou os 14 e documentou 4: 16 commits de 17 na janela e 6 merges. R0Y00/Xbox2Windows consumiu os 7 commits que o teto das 17:00 deixou (db28a796, ff04a75e, 246857e4, 36d2cbeb, 2972e00a, 9072230f, e1ea515d) mais os 4 que chegaram depois do last_run (2a4bbff5 #3059, 020c7a82 #3057, ca659396 #3067, de1595b9 #3065); o commit_cursor e o head_at_run foram removidos e o cursor esta no head de1595b9. brcly/TuxBox consumiu o #309 (b46c3db9) e avancou para cf0a0824. ivall/xcl consumiu o #1824 (81693f02); o commit de conteudo b8005022 tem data de autor 2026-11-24 e so entrou na main agora -- nao e cursor retrocedendo. fxceless/victory-fork avancou para 5dbf5ce226, o rebase que substitui a arvore inteira pela de trustno1-coder/VIctory-NVIDIA@959dcaf (+95.231/-913.607 em 284 arquivos); o last_run ficou em 2026-11-27T13:05:00Z porque nao houve merge. PRIORIDADE PROXIMA HORA: (1) Belobug/VIctory-Belobug-AMD, 61 abertos acima de 456 na janela dos 100 mais recentes, zero commit desde 4eb6cfdf -- o criterio 3 empatou com o xcl e perdeu no desempate por delta real; (2) avatarmanz/VIctory-7900XTX, 39 abertos acima de 419 (varios '14 bug fixes' e 'five XGameSave fixes'), last_run 2026-11-26T08:17:50Z; (3) holdmysocks/SixNG, 1 commit (bab14f08, #475) e 1 merge, sem sinal de defeito do catalogo nem termo de correcao -- decidir se o criterio de area (render3d/cells) justifica o deep dive; (4) Marvisak/VIctory, 8 abertos acima de 3521; (5) omonkeyz/xbox-emulator, #395. Depois: DexNom/VIctory e VItoriaBr tem 100 e 74 abertos, todos abaixo do cursor (zero acima), e ficam sem delta. PENDENCIA ESTRUTURAL 1: a 'tabela de pistas' citada no passo 2 do procedimento continua inexistente em docs/automacao/ANALISE_HORARIA.md; nesta hora as areas foram tomadas das secoes D de catalogo/defeitos.md, como nas duas horas anteriores. PENDENCIA ESTRUTURAL 2: ivall/xcl tem 3 PRs abertos com base amd-dev (#3023, #3024, #3025) e merges nessa base nao entram no cursor de commits nem no de merges -- a rotina so ve a main. PENDENCIA ESTRUTURAL 3: R0Y00/Xbox2Windows tem #3094 com base codex/native-shader-modules, tambem fora do cursor. PENDENCIA ESTRUTURAL 4: os 13 PRs abertos do fxceless/victory-fork foram escritos contra a linha antiga (9a9091d1) e agora tem base main rebaseada; a mergeabilidade nao foi verificada nesta hora. PENDENCIA ESTRUTURAL 5: os timestamps de merged_at e de commit do GitHub continuam 3 h atras do UTC real; todo last_run e gravado no relogio do GitHub. PENDENCIA ESTRUTURAL 6: a coleta de commits usa compare/<last_commit>...<head>; em Xbox2Windows o compare devolveu exatamente os 11 commits devidos nesta hora, sem reaparecimento de commits de pre-merge.",
-    "runs": 16,
+    "backlog_note": "A execucao de 2026-11-27 19:00 triou os 14 e documentou 4: 36 commits de 36 atras dos cursores e 20 merges. R0Y00/Xbox2Windows avancou de de1595b9 para 300b93f0 (16 commits, 16 merges) e deixou 2641cc72 (#3114, quadmask escalar, mesclado 16:11:30 no relogio do GitHub) para o proximo ciclo. brcly/TuxBox avancou para c2a59af5; dos 12 commits, so 3 sao conteudo novo (dedupe/cache DXIL do #239, splash do #311, retentativa de stride IDXEN do #310), o resto sao merges e o d33de277 traz 116 arquivos de main ja documentada (segundo pai 6ce0aac8 esta 104 commits atras do cursor). ivall/xcl avancou para f9a0cb80 (#1871, pso-precompile; o commit de conteudo 062158ea tem data de autor 2026-11-24 e so entrou agora). fxceless/victory-fork avancou para 3e573d25; a main agora carrega a linha raytracing (bfca0bea) e liga VICTORY_BVH_BUILDER=1 e VICTORY_DYNAMIC_WAIT=1 por padrao, com last_run parado em 2026-11-27T13:05:00Z porque nao houve merge. PRIORIDADE PROXIMA HORA: (1) Belobug/VIctory-Belobug-AMD, pelo menos 100 abertos acima de 456 na janela de 100 mais recentes (357 abertos no total), zero commit desde 4eb6cfdf -- criterio 3, perdeu o desempate por delta real nas duas ultimas horas; (2) avatarmanz/VIctory-7900XTX, 39 abertos acima de 419 (235 no total), zero commit; (3) Marvisak/VIctory, 19 abertos acima de 3521; (4) holdmysocks/SixNG, 1 commit (bab14f08, #475, batching de celulas) e 1 merge, sem termo de correcao; (5) omonkeyz/xbox-emulator, #395; (6) DexNom/VIctory #135 e uiliannn/VItoriaBr #132, um PR aberto cada e zero commit. R0Y00/Xbox2Windows volta com 2641cc72 pendente. PENDENCIA ESTRUTURAL 1: a tabela de pistas citada no passo 2 continua inexistente em docs/automacao/ANALISE_HORARIA.md; as areas foram tomadas das secoes D de catalogo/defeitos.md, como nas tres horas anteriores. PENDENCIA ESTRUTURAL 2: ivall/xcl tem PRs abertos com base amd-dev/nvidia-dev (#3036, #3037) e merges nessas bases nao entram no cursor de commits nem no de merges -- a rotina so ve a main. PENDENCIA ESTRUTURAL 3: R0Y00/Xbox2Windows tem PRs com base codex e cpp-migration, tambem fora do cursor. PENDENCIA ESTRUTURAL 4: os timestamps de merged_at e de commit do GitHub continuam 3 h atras do UTC real; todo last_run e gravado no relogio do GitHub. PENDENCIA ESTRUTURAL 5: a coleta de mesclados usa a API REST de pulls fechados paginando ate o updated_at cair abaixo do last_run; nesta hora ela devolveu 16 merges em Xbox2Windows contra 15 commits no primeiro compare, diferenca explicada pelo #3011 ter entrado um segundo depois do snapshot do head. PENDENCIA ESTRUTURAL 6: search/issues recusa ivall/xcl com HTTP 422 (repositorio transferido), entao nao ha contagem global de PRs abertos desse repositorio.",
+    "runs": 17,
     "last_error": null
 }
