@@ -22,9 +22,10 @@ mais antigo):
 | `brcly/TuxBox` | 47 (`compare`) | 9 | 0 (cursor 284) | 40 / 8 / 0 |
 | `holdmysocks/SixNG` | 24 | 24 | 1 (#472) | 24 / 24 / 1 |
 
-Em `backlog` (7): `Marvisak/VIctory`, `ivall/xcl`, `R0Y00/Xbox2Windows` (46 commits e 47 merges, o maior
-delta pendente), `Belobug/VIctory-Belobug-AMD`, `DexNom/VIctory`, `avatarmanz/VIctory-7900XTX` e
-`omonkeyz/xbox-emulator`. Contagens e prioridade registradas em `state/watch.json`.
+Em `backlog` (8): `Marvisak/VIctory`, `ivall/xcl`, `R0Y00/Xbox2Windows` (46 commits e 47 merges, o maior
+delta pendente), `Belobug/VIctory-Belobug-AMD`, `DexNom/VIctory`, `avatarmanz/VIctory-7900XTX`,
+`omonkeyz/xbox-emulator` e `brcly/TuxBox` (os 7 commits acima de `90df685a` e o merge #306). Contagens e
+prioridade registradas em `state/watch.json`.
 
 ## Documentos escritos
 
@@ -66,4 +67,17 @@ repositório para em `2026-11-27T09:37:36Z` (merge do #305).
 
 ## Push
 
-Pendente no momento da escrita deste arquivo; o resultado é registrado no commit de fechamento.
+- Commit na `public`: `741eab0` — `docs(updates): 2026-11-27 15:00` (7 arquivos, 593 inserções, 80
+  remoções: os 4 documentos, `docs/updates/INDEX.md`, `state/watch.json` e `state/last-run.md`).
+- `git push origin public:main`: **sucesso** — `6a99faa..741eab0 public -> main`.
+- `git switch main && git merge --no-ff public -m "merge updates 2026-11-27 15:00"`: **sucesso**, merge
+  `c9cc65d`; `git push private main`: **sucesso** — `52ceb22..c9cc65d main -> main`.
+- Fechamento (registro em `state/last-run.md`): commit `81d7c25` na `public`, `git push origin public:main`
+  **sucesso** (`741eab0..81d7c25`); merge `a8f4acc` na `main`, `git push private main` **sucesso**
+  (`c9cc65d..a8f4acc`).
+- Ajuste posterior, depois que a segunda execução desta hora reescreveu `state/watch.json` e
+  `state/last-run.md` na árvore: commit na `public` com os cursores corrigidos (`runs` 13, `TuxBox` em
+  `90df685ad5` com `commit_cursor`/`head_at_run` e `last_run` 09:37:36Z, `SixNG` com `last_run` 07:02:25Z),
+  push `origin public:main`, merge `--no-ff` na `main` e push `private main`; os hashes estão no commit de
+  fechamento seguinte.
+- Nenhum merge de `main` na `public` em nenhum momento.
