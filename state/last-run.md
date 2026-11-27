@@ -61,5 +61,11 @@ pelo próprio executor, não em paralelo.
 
 ## Push
 
-Executado em seguida ao commit de documentos. Resultado registrado no commit seguinte
-(`chore(state): registra hashes do push de 2026-11-27 00:00`).
+Sucesso nas duas branches, na ordem do procedimento (nunca `main` na `public`).
+
+- commit na `public`: `70a7f05` — `docs(updates): 2026-11-27 00:00` (7 arquivos, +585/-80)
+- `git push origin public:main`: `90eb06f..70a7f05  public -> main`; `origin/main` = `70a7f05`
+- `git switch main && git merge --no-ff public`: merge `195659e` — `merge updates 2026-11-27 00:00`
+- `git push private main`: `2d3b409..195659e  main -> main`; `private/main` = `195659e`
+
+Conferido com `git ls-remote` nos dois remotes depois do push. Nenhum force, nenhum rebase.
