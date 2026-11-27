@@ -18,6 +18,7 @@ docs/updates/AAAA-MM-DD/HH/_falhas.md   erros daquela execução, se houver
 
 | Data | Hora | Repositórios com mudança | Resumo |
 |---|---|---|---|
+| 2026-11-26 | 22:00 | 4 | 127 commits na janela, 109 documentados (32 em `Xbox2Windows`, 40 de 58 em `VIctory-7900XTX`, 31 em `TuxBox`, 6 em `SixNG`) e 33 PRs abertos de 63 detectados nos quatro + 19 mesclados em `main` (13 `TuxBox`, 6 `SixNG`); outros seis merges do `Xbox2Windows` foram para `cpp-migration`, não para `main`. Sete repositórios com delta só de PRs e `VIctory-7900XTX` com 18 commits ficam em `backlog` |
 | 2026-11-26 | 21:00 | 4 | 130 commits documentados (`Xbox2Windows` 40 de 72, `VIctory-7900XTX` 40 de 85, `TuxBox` 34 de 34, `SixNG` 16 de 16) e 37 PRs abertos documentados de 67 detectados + 75 mesclados de 75. Quatro repositórios retirados do backlog; seis com delta só de PRs ficam em `backlog` |
 | 2026-11-26 | 20:00 | 4 | 104 commits (40 em `VIctory-7900XTX`, 40 em `TuxBox`, 22 em `victory-fork`, 2 em `VItoriaBr`) e 72 PRs abertos documentados de 161 detectados + 62 mesclados documentados de 62, nos quatro repositórios retirados do backlog. Sete repositórios com delta ficaram em `backlog` |
 | 2026-11-26 | 19:14 | verificacao manual do tracker | Kelvaroq entra no topo; Belobug medido a 22 fps contra 5-7 no proprio README; AvatarManz consolida victory-fork + DexNom + Belobug |
@@ -29,6 +30,20 @@ docs/updates/AAAA-MM-DD/HH/_falhas.md   erros daquela execução, se houver
 
 O primeiro ciclo não documenta nada: grava os cursores em `state/watch.json` para que o ciclo
 seguinte comece a contar a partir dali.
+
+Documentos de 2026-11-26 22:00: [`2026-11-26/22/`](2026-11-26/22/) — `Xbox2Windows.md`,
+`VIctory-7900XTX.md`, `TuxBox.md`, `SixNG.md`. Nenhum commit novo entrou em `main` do `Xbox2Windows`
+desde 21:00; a faixa documentada (32) é o resto que o teto das 21:00 deixou, com `commit_cursor` consumido.
+Em `VIctory-7900XTX` o teto de 40 cortou 58 → 40 e os 18 restantes ficam com `commit_cursor` em
+`a9400a6d`. `TuxBox` teve 13 PRs e 31 commits (14 merge commits para 13 PRs: #268 foi mesclado duas
+vezes, `6466bcf9` e `e76ff6a2`) e `SixNG` mesclou 6 PRs. Os seis PRs mesclados do `Xbox2Windows`
+(`#2914`, `#2918`, `#2917`, `#2931`, `#2928`, `#2932`) têm `base.ref = cpp-migration` e foram registrados
+sem contar como mudança de `main`; o par `#2918`/`#2931` repete o padrão do **D-29** (merge e revert no
+mesmo dia). Achados para o catálogo: `9ba5661f` do `AvatarManz` refaz a correção de replay que o **D-10**
+descreve como revertida; `#266`/`#268` do `TuxBox` cobrem casos de mesh que a correção do **D-21**
+(`315b287`) não pegava; `be41e588` do `SixNG` corrige defeito de camada de roupa sem entrada no catálogo.
+Tetos aplicados: 40 commits por repositório e 20 PRs abertos por repositório (`Xbox2Windows` 50 → 20,
+cursor de abertos em `2887`). Nenhuma falha de coleta; nenhum `_falhas.md`; nenhum 403.
 
 Documentos de 2026-11-26 21:00: [`2026-11-26/21/`](2026-11-26/21/) — `Xbox2Windows.md`,
 `VIctory-7900XTX.md`, `TuxBox.md`, `SixNG.md`. Os quatro repositórios com commit pendente foram processados
