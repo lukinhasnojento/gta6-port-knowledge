@@ -108,6 +108,9 @@ pendências estruturais antigas que ainda valem foram reescritas nela.
   `dabe290` (merge `merge updates 2026-11-27 18:00`).
 - Este fechamento (registro do push) é um segundo commit na `public`, depois do merge; para não
   criar um segundo merge na execução (o passo 5 limita a um), a `main` recebeu esse commit por
-  fast-forward de `public`, não por um segundo `--no-ff`.
+  cherry-pick (`faa935a`), não por um segundo `--no-ff` — o fast-forward não era possível porque o
+  merge `dabe290` já a havia deixado divergente da `public`.
+- Correção posterior a esta gravação: a primeira versão deste parágrafo dizia "fast-forward", que
+  falhou (`fatal: Not possible to fast-forward`); o commit `faa935a` é o cherry-pick do registro.
 - Nenhum `git reset --hard`, nenhum merge de `main` na `public`: a `public` só recebeu commits próprios
   e a `main` recebeu a `public`.
