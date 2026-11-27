@@ -57,4 +57,7 @@ porque não houve falha de coleta ou de escrita em nenhum repositório.
 - `git switch main && git merge --no-ff public -m "merge updates 2026-11-27 05:00"` e
   `git push private main`: **sucesso** — merge `4b86d08`, `e020317..4b86d08 main -> main`. Nenhum merge
   de `main` na `public` foi feito.
-- Estado final: `origin/main` = `995fdb8` (branch `public`), `private/main` = `4b86d08`. Árvore limpa.
+- Estado: o commit de documentação é `2125552` em `origin/main` (branch `public`); o merge correspondente
+  é `4b86d08` em `private/main`; `e020317..4b86d08 main -> main`. Os commits de fechamento desta hora, que
+  só registram estes hashes em `state/last-run.md`, vêm depois dos dois. Árvore limpa, sem merge de `main`
+  na `public`.
