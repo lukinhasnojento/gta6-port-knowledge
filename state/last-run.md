@@ -79,7 +79,10 @@ na tabela do documento, mas 42 deles caíram fora da faixa de commits documentad
   `5b4e29e`; `git push private main`: **sucesso** — `d753ac5..5b4e29e  main -> main`.
 - Conferido depois: `git rev-parse origin/main` = `b6d0be4fc9c78342b794814b4838541675fdf260`;
   `git rev-parse private/main` = `5b4e29e2014c2fc05857bfdc33fa812356baed34`.
-- Fechamento (este registro): commit na `public` e merge `--no-ff` na `main`, com o resultado no fim deste
-  arquivo. Nenhum merge de `main` na `public` em nenhum momento: a `public` só recebeu commits próprios e a
-  `main` recebeu a `public`.
+- Fechamento (este registro): commit na `public` `8e05bf2` — `chore(state): registra o push de
+  2026-11-27 16:00` —, `git push origin public:main` **sucesso** (`b6d0be4..8e05bf2`); merge `--no-ff` na
+  `main` = `5840bc9`, `git push private main` **sucesso** (`5b4e29e..5840bc9`). `origin/main` =
+  `8e05bf24f9def1af174a653efde14f9157035b70`; `private/main` =
+  `5840bc90fdb5dcb082eaeeff659ed9b2aea293c6`. Nenhum merge de `main` na `public` em nenhum momento: a
+  `public` só recebeu commits próprios e a `main` recebeu a `public`.
 
