@@ -98,6 +98,16 @@ pendências estruturais antigas que ainda valem foram reescritas nela.
 
 ## Push
 
-- Commit na `public`: pendente.
-- `git push origin public:main`: pendente.
-- Merge `--no-ff` de `public` na `main` e `git push private main`: pendente.
+- Commit na `public`: `f0f0141` — `docs(updates): 2026-11-27 18:00` (8 arquivos, 516 inserções, 171
+  remoções: os 4 documentos, `_triagem.md`, `docs/updates/INDEX.md`, `state/watch.json` e
+  `state/last-run.md`).
+- `git push origin public:main`: **sucesso** — `d546e96..f0f0141  public -> main`; `origin/main` =
+  `f0f0141e5cac5d36cbf9a04ac57c677dff2b5af0`.
+- `git switch main` + `git merge --no-ff public`: **sucesso** — `3379744..dabe290`; `git push private
+  main`: **sucesso** — `3379744..dabe290  main -> main`, `private/main` =
+  `dabe290` (merge `merge updates 2026-11-27 18:00`).
+- Este fechamento (registro do push) é um segundo commit na `public`, depois do merge; para não
+  criar um segundo merge na execução (o passo 5 limita a um), a `main` recebeu esse commit por
+  fast-forward de `public`, não por um segundo `--no-ff`.
+- Nenhum `git reset --hard`, nenhum merge de `main` na `public`: a `public` só recebeu commits próprios
+  e a `main` recebeu a `public`.
