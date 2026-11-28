@@ -127,6 +127,22 @@ teto, `holdmysocks/SixNG`, `Marvisak/VIctory`, `DexNom/VIctory`, `uiliannn/VItor
 
 ## Push
 
-Este registro é escrito antes da publicação; o resultado do push entra no fechamento desta execução,
-num segundo commit na `public` (o passo 5 limita a **um merge** por execução; o registro do push vai
-por cherry-pick para a `main`, como nas execuções das 18:00 às 01:00).
+O registro abaixo foi escrito depois das duas publicações, no fechamento de 2026-11-28T13:41Z.
+
+- Commit na `public`: `f2f20b1` — `docs(updates): 2026-11-28 13:00` (9 arquivos, 884 inserções, 109
+  remoções: os 4 documentos, `_triagem.md`, `_falhas.md`, `docs/updates/INDEX.md`, `state/watch.json`
+  e `state/last-run.md`).
+- `git push origin public:main`: **sucesso** — `cff0570..f2f20b1  public -> main` (a saída do git vai
+  para stderr e o PowerShell a reporta como erro; o intervalo de refs confirma o envio).
+- `git switch main` + `git merge --no-ff public`: **conflito em `state/last-run.md`** (a `main` tinha o
+  registro de push da execução das 12:00, cherry-pickado; a `public` trazia o arquivo novo). Resolvido
+  tomando a versão da `public` (`git checkout --theirs`) e conferindo o resto do merge: os outros 8
+  arquivos entraram sem conflito. Merge `adf4d58` — `merge updates 2026-11-28 13:00`.
+- `git push private main`: **sucesso** — `ce911e7..adf4d58  main -> main`.
+- Este fechamento (registro do push) é um segundo commit na `public`, depois do merge. Para não criar
+  um segundo merge na execução (o passo 5 limita a um), a `main` recebe esse commit por cherry-pick,
+  como nas execuções das 18:00 às 01:00.
+- Nenhum `git reset --hard`, nenhum merge de `main` na `public`: a `public` só recebeu commits próprios
+  e a `main` recebeu a `public`.
+- Ficaram fora do commit, intactos: `docs/analises/victory-fork.md` modificado e os dois relatórios não
+  rastreados em `docs/relatorios/`, que não são desta rotina.
