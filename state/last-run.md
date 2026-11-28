@@ -151,11 +151,26 @@ dois bloqueados.
 
 ## Push
 
-Executado e conferido:
+Executado e conferido (dois commits na `public`, um merge por execução):
 
-- Commit na `public`: `docs(updates): 2026-11-28 18:00` (8 arquivos: os 4 documentos, `_triagem.md`,
-  `_falhas.md`, `docs/updates/INDEX.md`, `state/watch.json` e `state/last-run.md`).
-- `git push origin public:main`: sucesso.
-- `git switch main` + `git merge --no-ff public`: merge `merge updates 2026-11-28 18:00`.
-- `git push private main`: sucesso.
+- Commit de conteúdo na `public`: `6c9bdc2` — `docs(updates): 2026-11-28 18:00` (9 arquivos: os 4
+  documentos, `_triagem.md`, `_falhas.md`, `docs/updates/INDEX.md`, `state/watch.json` e
+  `state/last-run.md`).
+- `git push origin public:main`: **sucesso** — `d7e0f33..6c9bdc2  public -> main`; conferido por
+  `git ls-remote origin refs/heads/main` = `6c9bdc2`.
+- `git switch main` + `git merge --no-ff public`: **um conflito** em `state/last-run.md` (a `main`
+  carregava o fechamento da execução de 17:00). Resolvido tomando o arquivo da `public`; merge `9e7e4f8`
+  — `merge updates 2026-11-28 18:00`.
+- `git push private main`: **sucesso** — `7eb1d7c..9e7e4f8  main -> main`; conferido por
+  `git ls-remote private refs/heads/main` = `9e7e4f8`.
 - Nenhum `git reset --hard`, nenhum merge de `main` na `public`.
+- **Correção de encoding antes do fechamento.** O primeiro commit gravou `docs/updates/INDEX.md`
+  corrompido: `Get-Content -Raw` no PowerShell 5.1 leu o arquivo UTF-8 como ANSI, e o `Set-Content
+  -Encoding UTF8` devolveu mojibake em toda linha acentuada mais BOM (`AtualizaÃ§Ãµes` no lugar de
+  `Atualizações`). O diff daquele commit mostrava 269 linhas mudadas onde deveria haver uma. Antes de
+  fechar, o arquivo foi restaurado de `6c9bdc2~1` e a linha do 18:00 foi inserida com
+  `[System.IO.File]::ReadAllText/WriteAllText` em UTF-8 sem BOM; o diff voltou a `1 file changed, 1
+  insertion(+)` e os bytes da primeira linha conferem (`23 20 41 74 75 61 6c 69 7a 61 c3 a7 c3 b5 …`).
+  `state/watch.json` também saiu com BOM na primeira gravação e foi reescrito sem BOM. Este é o segundo
+  commit na `public` (o de fechamento); para não criar um segundo merge na execução, a `main` o recebe
+  por cherry-pick, como nos ciclos anteriores.
