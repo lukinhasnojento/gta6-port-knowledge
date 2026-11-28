@@ -1,0 +1,139 @@
+# R0Y00/Xbox2Windows — atualização de 2026-11-28 14:00
+
+## Resumo
+
+84 commits entre o `commit_cursor` `d649e470` e o head `06cfb07f`, dos quais 40 são documentados aqui
+(os 40 primeiros não documentados na ordem do `compare`). A faixa é dominada pela integração da pilha
+de shader nativo (`codex/native-shader-modules` → `codex/native-graphics-integration` → `main`): o
+merge `#3091` (`221ed27b`) traz o compilador de mesh/pixel nativo e o `#3094` (`06cfb07f`) traz o
+runtime que o consome, com sete commits de sincronização entre eles. Em volta disso, a hora fecha
+recusas do tradutor direto uma por uma (deslocamentos escalares de 64 bits, `saveexec`/`wrexec`,
+`v_cvt_norm_*`, clamp de VOP3P f16, `s_bfm_b64` em VCC) e entrega cinco ferramentas de conhecimento
+do GDK. 33 PRs mesclados na janela não estavam documentados; 6 PRs abertos.
+
+## Commits novos (40 de 71 não documentados)
+
+| Hash | Autor | Assunto | O que o diff faz |
+|---|---|---|---|
+| `94d2803f` | Royoo | shader: compile direct mesh and pixel stages and prewarm native compute requests | 36 arquivos, +3.601/−235. Novo `tests/native_direct_mesh_check.py` (ISA de mesh sintética com `GS_ALLOC_REQ`, `mbcnt_lo`, `POS0`), `mesh57_pixel_entry.py`, `frozen_compute_requests.h` com `FrozenComputeRequests` (pool de 4.096, 2 páginas) e `native_compute_pack_check.py`, que compila um pack de frontend versionado e verifica identidade/integridade dos inputs. `compile_dxil.cpp` ganha o caminho `--prepare-compute-pack`. |
+| `71844ba0` | Royoo | runtime: bind native shader requests and submit fixed mesh pipelines | 20 arquivos, +2.388/−118. `native_mesh57.inl` (450 linhas) resolve cada SRV de mesh antes de gravar barreiras ou tabela de descritores e usa o restante da alocação de GPU provada quando a raiz convidada não traz comprimento; `mesh57_profile.h` normaliza cinco campos de ponteiro de um descritor de 15 qwords; `list_upload_pages.h` ganha `UploadFailure` (estágio, HRESULT, página pedida) para o relatório de falha de upload; `translated_sampler_bindings.h` aceita `input_assembler` e passa `ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT`. |
+| `0e95ef2c` | Royoo | tests: keep fixed vertex submission in the runtime integration | Remove (−44) a função `fixed_vertex_draw` do check de cache de requisições; o teste passa a viver na integração de runtime (`startup_indirect_draw_indexed.cpp`), não no check de compilação. |
+| `e7b1cbda` | Royoo | tests: verify fixed vertex submission away from the RGBA8 rounding boundary | `startup_stream_draw.cpp` põe a cor interpolada no centro de um bin de quantização (`64/255`) quando `X2W_TEST_FIXED_COLOR` está posto; o check passa a esperar `bytes((64,)*4)` em vez de `128`. |
+| `7b682f19` | Royoo | tests: isolate fixed mesh creation archives across reused process IDs | O diretório de cache do teste deixa de ser `mesh57-native-<pid>` e passa a `<pid>-<n>`, criado com `create_directory` em laço (Windows recicla PIDs); o diretório é removido no sucesso e mantido em falha. |
+| `a48d39dc` | Royoo | merge main: preserve 64-bit shift and quad compare register invalidation | Traz da `main` o lowering de `s_lshl_b64`/`s_lshr_b64`/`s_ashr_i64` no compute direto: destino par (`s0..s104`) ou `vcc` (106), fontes par/inline/literal, todos os fontes lidos antes de escrever `D[0:1]`, `Int64Ops` ligado e `SCC = (D != 0)`; `transfer()` limpa `s[dst+1]` também para `_i64`. Teste `native_salu_shift64_check.py` (controls + hardware) e doc próprio. |
+| `10b45ff5` | Royoo | Merge branch 'codex/native-shader-modules' into codex/native-graphics-integration | Merge dos mesmos 5 arquivos do commit anterior (nada novo além do `a48d39dc`, que já entrou como primeiro pai). |
+| `a1f169d2` | Royoo | Preserve local menu shader and settings texture fixes | `d3d12_compute_dispatch.inl`: `texture_srv` de dimensão 1 vira `texture_input` e `texture_uav` de dimensão 2 vira `volume` (com `uav_dimension = TEXTURE3D`); `direct_compute_cache.cpp` publica `tex3d` para esse caso e aceita `linked_raw_row` quando o PS especializado lê mais componentes da mesma `PARAM` do que a variante de biblioteca; `gfx1013_direct_compute.inl` troca o booleano por `helper_result_unobserved(r)` para não marcar VGPRs de entry de pixel por engano. |
+| `de567a70` | Royoo | Merge main into native shader modules and preserve watcher dependencies | Merge de 300 arquivos (+35.076/−1.355) que traz a `main` para a pilha de shader nativo. Entre os arquivos novos: `native_m0_check.py` (M0 numérico sobrevive a sobrescrita, fluxo SCC, junções e laços), `native_mad32_check.py` (produto arredondado separado, flush de denormal, formas legacy), `native_mad64_check.py` (carry-out em SDST como máscara de lane), `native_int32_minmax3_check.py` (seis VOP3 de min/max/median) e `native_lane_spill_descriptor_check.py` (spill simbólico e numérico no mesmo VGPR). |
+| `247530b0` | Royoo | Merge remote-tracking branch 'origin/main' into HEAD | Só `README.md` (+1/−1): a barra de navegação troca "Run the …" por "Choose a …". |
+| `5cfceda8` | Royoo | Integrate the runtime stack with current compiler and preserve disk shader precedence | Outro merge de 300 arquivos (+35.121/−1.386) da `main` para a pilha de runtime; mesmos testes novos do `de567a70`, mais a resolução de precedência do cache de shader em disco. |
+| `97cde4d5` | Royoo | Merge remote-tracking branch 'origin/main' into HEAD | Dois arquivos de teste: o `revision.txt` que o primeiro request grava é excluído da lista de publicações (`native` e `revision.txt`) e da comparação de diretório do `native_rtv_variant_check.py`. |
+| `e31ffc6d` | legacy-code-archaeologist | shader: invalidate watch manifests on older-mtime sidecar changes | Extrai `read_pixel_input_description()` (parse exato de `.psin`/`.ps57in`, recusa de registros conflitantes), compara a descrição canônica com `<key>.psdep`, apaga `.psdep` obsoleto quando não há entrada de pixel e recompila com `.psdep` de 0 byte. `compile_dxil.cpp` ganha `read_small_file` (limite de bytes) e `sidecar_changed` no lugar de `dependency_changed`. |
+| `cead019e` | Roland Edi | shader: merge current main into the native shader module stack | 52 arquivos (+1.409/−71): resolve cinco áreas mantendo os dois lados (validação de forma do request e wave32 do estado empacotado; `sampler_heap` e `stride_srvs` no cache de frontend; wave-size atual + caminho virtual; strides preparados uma vez). Os testes passam a marcar o dword de estado com `1 | (1 << 20)`. |
+| `cf19be36` | Roland Edi | compute: validate a request before reading its wave-size bit | `read_compute_request` monta o request com `wave32` padrão, roda `validate_compute_request_shape` e **só então** lê o bit 20 de `sa[18]`; antes indexava um bloco de 24 bytes como se tivesse 28. Teste com estado A curto espera o diagnóstico "compute state block A is not 28 bytes" e nenhum `.cso`. |
+| `f7bf5e2e` | Roland Edi | shader: merge main 9872074a into the native shader stack | 50 arquivos (+1.868/−99): mantém os casos de textura de largura exata e os registros de teste da pilha; acrescenta `packed_d16_x_uav` e `indexed_raw_srv` aos kinds, usa `indexed_raw_srv` como limite de decodificação e preserva `exact_store`/`indexed` no gate de store/descritor. Testes novos de SDWA f16 escalar, DPP8, dot2 f32/f16 e `or_saveexec`. |
+| `4a007912` | Roland Edi | shader: merge main a44e1f95 into the native shader stack | 15 arquivos (+726/−22): mantém as duas formas de saída do compute (wave virtual termina `64x1x1`, quads de derivada plana `x*y*z`), a análise de offset de heap da `main` e a validação WREXEC; `compute()` do fixture aceita `group` explícito e o caso de derivada passa a usar 6 threads (quads incompletos) para continuar recusado. |
+| `2a0c2401` | Roland Edi | shader: merge main a166a753 into the native shader stack | 22 arquivos (+802/−92): absorve a validação `scalar64` de `s_cselect_b64`/`s_not_b64` (incluindo VCC/EXEC como fontes) e o motivo nomeado para programa que compila sem manifesto de runtime; testes `native_s_not_b64_exec_check.py` e `native_compute_manifest_reasons_check.py`. |
+| `cd746f6a` | Roland Edi | compute: refuse implicit derivatives in virtual wave64 groups | `gfx1013_direct_compute.inl` recusa "implicit derivatives with virtual wave64 groups" quando o grupo empacotado tem mais de uma wave64 e entra no agendador virtual (sem readback do escalonador empacotado). Teste `native_wave_virtual_derivative_check.py` mantém LOD explícito e derivada comum compilando. |
+| `8665a14a` | Roland Edi | ci: retry the Windows smoke test | Commit vazio (0 arquivos): reexecução de CI. |
+| `4a0d0b13` | Roland Edi | Merge origin/main into gdk/runtime-oracle | 15 arquivos (+731/−87): traz `native_fract_f16_check.py` e muda `era_heap_check.cpp` para `XALLOC_ATTRIBUTES` com `address_below_4gib` (bit 33 válido, reservados de 34 a 63) e página de 2 MB em vez de 4 MB; `ttpf_batch_export.py` recusa manifesto que colida com DDS de saída. |
+| `f623e4c4` | Roland Edi | Merge origin/main into gdk/shader-corpus | 22 arquivos (+810/−140) com o mesmo conteúdo da `main` do commit anterior (packed min/max com `neg_lo`/`neg_hi`/clamp, fract f16, era heap), aplicado na branch do corpus. |
+| `4942e557` | Roland Edi | Merge origin/main into gdk/knowledge-report | 22 arquivos (+810/−140), idêntico ao `f623e4c4` na branch do relatório de conhecimento. |
+| `16e3aa87` | Roland Edi | tooling: parse GDK MSVC class layouts (#3282) | `tools/gdk_layouts.py` lê logs `/d1reportAllClassLayout` (classes aninhadas, bases, vftable, bitfields, arrays, alinhamento) e compara dois conjuntos; `tools/gdk_abi_probe.py` gera `static_assert` de `sizeof`/`offsetof` e modo de impressão para diff GRDK/GXDK. Medição no corpo: 2.098 classes em `xg.h`, 3.029 em `d3d12_x.h`, 3.344 em `GameInput.h`. |
+| `17f112b2` | wish131400 | shader: preserve the direct fract binary32 upper bound (#3285) | `v_fract_f32` no frontend direto passa a aplicar comparação ordenada `>= 1.0` e devolver `0x3f7fffff` antes de escala/clamp; NaN atravessa. Motivo: `Frc` do host arredonda −2⁻³⁰ para 1.0. Fixture de 8 entradas × 4 formas, 2.048 palavras e 16 de guarda. |
+| `116f1db3` | legacy-code-archaeologist | shader: lower v_cvt_norm_i16_f16 and v_cvt_norm_u16_f16 in direct DXIL | Implementa VOP1 `0x63`/`0x64` e VOP3 `0x1e3`/`0x1e4` com aritmética inteira exata de 32 bits: decodifica expoente/significante binário16, multiplica por 32767/65535, arredonda uma vez para o par mais próximo; ±0 → 0, `|x| ≥ 1` satura, NaN → 0 e negativo em `u16` → 0. Compartilha a decodificação de meia-fonte com `v_fract_f16` e exige o gate de modo `0x8000cc`. |
+| `9e32722b` | Roland Edi | tooling: extract GDK MSBuild platform profiles (#3286) | `tools/gdk_platform_profiles.py` lê os arquivos de plataforma do VS2022/flatDeployment (10 fontes por plataforma), mantém condições MSBuild, junta `PreprocessorDefinitions` incrementais e deixa variáveis de instalação visíveis; perfil medido para Desktop.x64 (2 defines) e Scarlett (7 defines, 3 include roots). |
+| `6a1968a1` | legacy-code-archaeologist | shader: support VOP3P clamp on v_pk_add_f16, v_pk_mul_f16, and v_pk_fma_f16 (#3290) | Aceita `CLAMP` de VOP3P nas três formas e satura cada metade binário16 arredondada em `[+0.0, 1.0]`, com `-0.0 → +0.0` e `NaN → +0.0`; terceiro operando/modificadores não usados em `add`/`mul` e MODE dinâmico continuam recusados. Teste `native_packed_f16_clamp_check.py` (22 casos, 9 recusas). |
+| `80c13cf5` | legacy-code-archaeologist | shader: lower remaining SOP1 *_saveexec_* and *_wrexec_* ops in direct Compute DXIL | Generaliza o combinador de máscara escalar e a análise de SCC: entram as 9 formas wave32 (`s_xor/andn2/orn2/nand/nor/xnor/andn1/orn1_saveexec_b32`, `s_andn1_wrexec_b32`) e as 3 wave64 (`s_andn1/orn1_saveexec_b64`, `s_andn1_wrexec_b64`); `transfer()` limpa proveniência simbólica em `i.dst` e em `EXEC_LO`. |
+| `0b505c1c` | John Connor | Merge pull request #3138 from legacy-code-archaeologist/shader/watch-sidecar-content-invalidation | Merge do `e31ffc6d` (4 arquivos, +158/−28) na `main`. |
+| `19358dae` | RonLogic | test: isolate the quad axis in the compute LOD replay (#3299) | O replay de LOD do compute passa a variar só na vertical (rampa `3/(8*altura)`, índice `& 14`), de modo que quads consecutivos cobrem 0,75 texel e quads espaciais 3 texels; o controle de compilação confere `NumThreads` no `dxc -dumpbin` para a forma implícita (dimensões achatadas) e a explícita (dimensões pedidas). |
+| `48ca9ab1` | yjs | shader: lower bounded per-lane heap record indices in compute waterfalls (#2644 T3) (#2861) | `gfx2hlsl.py` ganha `vgpr_heap_bounds` (dataflow direto no CFG) que reconhece limites explícitos por `v_and_b32`, `v_min_u32`, `v_bfe_u32`, `v_lshrrev_b32`, `v_lshlrev_b32 …, 5` e `v_mov_b32`, com EXEC estrito em branches/junções e teto `RESHEAP_RANGE_MAX = 1024`; o dispatch passa a indexar registro de heap por lane dentro do waterfall, sem vazar faixa. Oráculo de GPU novo em `compute_check.cpp`. |
+| `945350ac` | legacy-code-archaeologist | shader: lower v_cvt_pknorm_i16_f32 and v_cvt_pknorm_u16_f32 in direct DXIL (#3295) | Empacota `cvt_norm(S0)` em `D[15:0]` e `cvt_norm(S1)` em `D[31:16]` com RNE inteiro puro de 32 bits (`(m << k) - m` dividido em bit k), NaN e magnitudes abaixo de 2^-17 → 0, saturação em `|x| ≥ 1`, `abs`/`neg` por fonte; clamp/omod/op_sel/terceiro operando/DPP/SDWA recusados. |
+| `bbf4687b` | wish131400 | bcpack: add standalone BC2/BC6H and exact BC1 reconstruction (#3293) | 22 arquivos, +2.597/−605: BC2 e os 14 modos de BC6H passam a decodificar de verdade (antes "sucesso" com destino em branco) e BC1 troca a reconstrução ajustada por histórico independente de endpoints/índices e dicionários exatos; tabelas extras em `.inl` (+1.470) e `bcpack_recover_constants.py`. Formatos inválidos e fluxo danificado falham sem publicar textura parcial. |
+| `ba708223` | yjs | compile_dxil: add --rekey mode matching shader_cache_rekey.py (#3014) | `compile_dxil --rekey OLD NEW [--jobs N]` reescreve as chaves de cache sem DXC/SDK: varre marcadores `req_<16 hex>` (`.a`, `.c67`, `.m57`, `.rtv`), revalida e recalcula em paralelo com as revisões atuais (`x2w-startup-shader-29`, `-29cs`, `mesh-57-3`), regrava `.psin`/`.rtv` sob a chave nova e sai 1 sem escrever nada se algum request estiver incompleto. |
+| `336e1206` | RonLogic | runtime: bind published D16 buffer stores to typed UAVs (#3302) | Publica `uav N bufhalf table R B bytes S` para 2/4/8 bytes (`R16_FLOAT`, `R16G16_FLOAT`, `R16G16B16A16_FLOAT`), valida formato gfx10, stride, seletores de identidade, modo OOB estruturado, alias e faixa antes de criar o UAV tipado; o runtime usa a contagem de registros e o offset alinhado ao elemento do convidado. |
+| `c3204a9c` | SimSalabimse | compute: treat scalar min, max and absdiff as SCC writers (#3301) | `s_absdiff_i32`, `s_min_u32`, `s_min_i32` e `s_max_i32` entram na lista de `overwrites` de `uses_scc_after` (junto de `s_max_u32`); antes eram tratados como leitores e um campo de descritor simbólico logo antes era recusado. Teste gera o mutante que remove as quatro entradas. |
+| `ca165ed9` | Kelbo | fix: prevent undefined behavior in unpin_slot when slot is not pinned | Uma linha em `xmem_mapped_pages.cpp`: `if (found == memory.pins.end()) return;` antes de desreferenciar o iterador de `pins`. |
+| `e46cd28c` | John Connor | tooling: extend the patch manifest loader (nesting refusal, shader kind, load_data) (#3119) | `patch_manifest.py`: recusa aninhamento que estoure a recursão do `tomllib` ("manifest is nested too deeply to parse"), define o kind `shader` (chave de 16 hex, pipeline, revisão, lista de arquivos com SHA-256) e `load_data(manifest, data)` para quem já leu os bytes; `NUL`/`CON`/`COM1` etc. são recusados como nome de arquivo. Nada aplica patch ainda. |
+| `1f07b2c1` | JB2WIN | runtime: bind 1D, 2D-array and 3D texture SRVs for published native compute (#3306) | O manifesto publica `srv N tex1d|tex3d|tex2da table R B` e o leitor do Dispatch usa a dimensão no slot; exige a view descrita pelo título que caiba na textura (`address_view_fits`: mesmo formato ou família typeless, mips e slices dentro, sem `ResourceMinLODClamp`) e recusa por nome quando não há. Cubo e multisample mantêm recusa. |
+
+## Pull requests abertos (6 acima de #3354)
+
+| # | Título | Proposta | Cobre defeito conhecido? |
+|---|---|---|---|
+| #3364 | runtime: always commit fresh slot in section_for() | Uma linha: remove a guarda `!first_slot_committed`, que nunca é verdadeira porque `make_slab` já compromete o offset 0; slots novos em offset não zero ficavam sem commit e davam fault no primeiro uso. Corrige #3355. | Não é defeito do catálogo; é correção declarada de regressão do próprio XMem (`section_for`). |
+| #3362 | shader: lower v_mqsad_u32_u8 in direct compute path | VOP3A `0x175` com SAD mascarado em 4 acumuladores `uint32`, clamp exato e wrap mod 2³²; recusa estágio de pixel, `abs`/`neg`/`omod`/`op_sel`, `dpp`, fontes fora de par/quad. | Área de recusas do tradutor direto (#3224), não do catálogo. |
+| #3360 | shader: lower v_qsad_pk_u16_u8 and v_mqsad_pk_u16_u8 in direct compute path | As duas formas empacotadas `0x172`/`0x173`, com acumuladores `uint16` e saturação `0xFFFF`; mesmas recusas. | Idem. |
+| #3357 | compute: accept VCC as destination in s_bfm_b64 | Aceita `dst == 106` (VCC) e 126 (EXEC) em `s_bfm_b64`, escrevendo `vcc_lo`/`vcc_hi` e preservando SCC; o corpo mede a recusa como a de maior impacto no censo do #3224 (9 shaders wave64 / 27.004 dispatches). | Idem (classe de `VItoriaBr`/`XCL` de máscara, mas sem hash no catálogo). |
+| #3356 | compute: order wave32 LDS accesses within the host wave with a ballot | Generaliza de `lane_pairs` para `!wave64 || lane_pairs` o ballot que ordena acesso LDS sem barreira de grupo à frente; WARP 1.0.22 devolvia a palavra não escrita. Depende de #3352 (dirty). | Idem; a causa (ordem dentro da wave no modelo wave32) não está catalogada. |
+| #3355 | xmem: always commit fresh slot in section_for() | O mesmo commit do #3364, com 7 arquivos (inclui `sync.yml`, README e um teste de `cmp_class_f16`), estado `blocked`. | Idem. |
+
+## Pull requests mesclados (38 na janela, 33 novos)
+
+| # | Título | Merge | O que entrou de fato |
+|---|---|---|---|
+| #3094 | runtime: bind native shader requests and submit fixed mesh pipelines | `06cfb07f` (14:07:49Z) | 29 arquivos, +2.447/−190: `native_mesh57.inl`, `mesh57_profile.h`, `d3d12_draw.inl` (+326/−57), `d3d12_compute_dispatch.inl` (+277/−20), fixture de IA fixa centrada em bin RGBA8. Corpo: 49 testes em Debug (48 ok, 1 skip) e 14 em Release no head `10b45ff5`; WARP recusou o dispatch wave32 de compute nos dois modos. |
+| #3358 | runtime: retire translated sampler heaps with their allocator | `d3d0c7f6` (13:49:19Z) | Heaps de sampler traduzidos ficam retidos com o allocator que os gravou até a lista liberar o recording e todas as filas alcançarem o fence da última submissão; ponto de conclusão ausente mantém allocator e heap. |
+| #3091 | shader: compile native mesh interfaces and prewarm compute requests | `221ed27b` (13:48:21Z) | 39 arquivos, +3.840/−237: `gfx1013_direct_mesh.inl` (1.122 linhas), `gfx1013_direct_compute.inl` (+354/−83), `direct_compute_cache.cpp` (+222/−55), `compile_dxil.cpp` (+163/−15), testes de mesh e container. Base do #3094. |
+| #3241 | shader: merge current main into the native shader module stack | `07e8daa6` (13:42:15Z) | 299 arquivos, +25.122/−1.440: merge-only de `main` `7e5c378d` na branch do #3091, com resoluções declaradas (gate de watch com `sidecar_changed` + `dependency_changed`, helpers de chave compartilhados, BCNT64 junto de `combine_scalar_mask`). O corpo relata a única falha (`native_ldexp_f16_hardware` numa RX 9060 XT) como já presente na `main`. |
+| #3284 | tooling: audit GDK export coverage | `ee3347d3` (11:15:51Z) | `tools/gdk_exports.py` (dumpbin/PE) e `gdk_shim_coverage.py`; medido em 89 módulos e 8.035 nomes, `xmem` com 13 de 36 funções cobertas. |
+| #3322 | shader: map inline binary16 float constants in v_floor/ceil/trunc/rndne_f16 | `93357dcd` (11:14:38Z) | Constantes inline (`240..248`) passam por `inline_half_words` em vez de truncar o padrão f32; o bloco de arredondamento binário16 recusa `graphics_input`. |
+| #3334 | compute: use vcc_hi as a wave32 lane mask in direct compute | `bc1da08d` (11:11:13Z) | Aceita 107 (`vcc_hi`) como destino de carry-out, fonte de máscara de `v_cndmask_b32` e carry-in no modelo wave32; estágios gráficos e pedido wave64 mantêm a recusa. |
+| #3036 | startup: lower v_dot2_i32_i16 and v_dot2_u32_u16 in gfx2hlsl | `ec71c290` (10:37:52Z) | `gfx2hlsl.py` (+56): SAD de dois meios-words com rastreio de carry exato para o clamp; helpers emitidos só quando usados. |
+| #3123 | shader: lower v_ldexp_f16 in the direct compute path | `3926a289` (09:50:47Z) | `v_ldexp_f16` com escala inteira IEEE-754 binário16, expoente limitado a [−64, 64], denormais normalizados sem flush, subnormal para par mais próximo, `±0/±Inf/NaN` preservados; certos modificadores recusados. |
+| #2889 | shader: harden directory, symlink, and output path guards in probe_root_devices with CLI suite | `32dc3d7c` (09:11:39Z) | Validação de `--bin`, `.cso`, `build`, `dest`, inventário e imagens antes de rodar; três recusas de symlink anteriores removidas porque `temporary.replace` nunca escreve através do link. +575 linhas de suíte CLI. |
+| #3313 | startup: let X2W_PROBE_PRECHECK=0 turn the probe pre-check off under a debugger | `3f780716` (08:35:52Z) | `precheck_enabled()` lê `X2W_PROBE_PRECHECK` primeiro (`0` desliga); só a variável ausente cai em `IsDebuggerPresent()`. |
+| #3136 | shader: harden compile_lds_request CLI, path guards, and replay checks with offline unit suite | `a78a5c7a` (08:34:13Z) | `_validate_paths` valida `.c67` e os cinco arquivos companheiros, `--compiler`, `--sdk`, `output`/`--cache` (symlink permitido, arquivo não), com escrita atômica; suíte offline de 709 linhas. |
+| #3297 | shader: lower remaining SOP1 *_saveexec_* and *_wrexec_* ops in direct Compute DXIL | `c6f23813` (08:27:43Z) | As 12 instruções do `80c13cf5`, com `uses_scc_after`/`transfer` ajustados. |
+| #3292 | shader: lower v_cvt_norm_i16_f16 and v_cvt_norm_u16_f16 in direct DXIL | `24c958ff` (08:27:22Z) | O lowering de `116f1db3` (30 casos, 11 recusas). |
+| #3288 | shader: add a GDK shader corpus harness | `99e3ef0e` (08:26:45Z) | Seis casos HLSL originais compilados com o `dxcompiler_xs` 1.8 e retargetados, com SHA-256 de fonte e container; mede 4.316→4.152 bytes no `wave64_ballot_ps`. |
+| #2881 | startup: read block-compressed 0x105 volumes in slot 70 | `6ddf1b28` (08:25:06Z) | Volume `Texture3D` 0x105 com BC1–BC7, um mip ou cadeia, com largura/altura arredondadas a blocos 4x4 e profundidade livre; antes recusado como `unsupported_description`. |
+| #3307 | 'fix: prevent undefined behavior in unpin_slot when slot is not pinned' | `50df9123` (08:24:47Z) | A checagem de `end()` de `ca165ed9`. |
+| #3289 | tooling: report GDK knowledge coverage | `863b1ae3` (08:24:42Z) | `gdk_knowledge_report.py` (1.676 linhas) normaliza layouts, ABI, exports, perfis e casos de shader em 28.785 fatos e lista conflitos e exports sem fato. |
+| #3281 | runtime: compare the GDK runtime with the shim | `4c765ef3` (08:24:37Z) | Harness que compila o mesmo fixture contra GRDK e contra o shim, mascara handles/ids e grava diff normalizado; mediu `XGameGetXboxTitleId` como `0x80070490` na referência e `S_OK` no shim. |
+| #3306 | runtime: bind 1D, 2D-array and 3D texture SRVs for published native compute | `1f07b2c1` (08:02:29Z) | As dimensões novas de SRV e `address_view_fits` (10 arquivos). |
+| #3119 | tooling: extend the patch manifest loader (nesting refusal, shader kind, load_data) | `e46cd28c` (08:02:02Z) | O kind `shader`, `load_data` e a recusa de aninhamento/nomes de dispositivo. |
+| #3301 | compute: treat scalar min, max and absdiff as SCC writers | `c3204a9c` (07:06:47Z) | As quatro instruções em `overwrites`. |
+| #3302 | runtime: bind published D16 buffer stores to typed UAVs | `336e1206` (07:04:42Z) | A view tipada `bufhalf` e as validações de formato/stride/faixa. |
+| #3014 | compile_dxil: add --rekey mode matching shader_cache_rekey.py | `ba708223` (07:02:04Z) | O modo `--rekey` e os helpers de chave compartilhados. |
+| #3295 | shader: lower v_cvt_pknorm_i16_f32 and v_cvt_pknorm_u16_f32 in direct DXIL | `945350ac` (06:43:22Z) | O empacotamento RNE de 32 bits (26 casos, 8 recusas). |
+| #3293 | bcpack: add standalone BC2/BC6H and exact BC1 reconstruction | `bbf4687b` (06:44:09Z) | BC2/BC6H reais, BC1 exato e falha sem publicação parcial. |
+| #2861 | shader: lower bounded per-lane heap record indices in compute waterfalls (#2644 T3) | `48ca9ab1` (06:35:57Z) | `vgpr_heap_bounds` e o limite de 1.024 registros. |
+| #3299 | test: isolate the quad axis in the compute LOD replay | `19358dae` (06:23:40Z) | A rampa vertical de 0,75 texel e a checagem de `NumThreads`. |
+| #3138 | shader: invalidate watch manifests when sidecar content changes with an older mtime | `0b505c1c` (06:15:48Z) | O `sidecar_changed`, `read_pixel_input_description` e os casos de `.psdep` de 0 byte. |
+| #3290 | shader: support VOP3P clamp on v_pk_add_f16, v_pk_mul_f16, and v_pk_fma_f16 | `6a1968a1` (06:02:51Z) | O clamp f16 empacotado. |
+| #3286 | tooling: extract GDK MSBuild platform profiles | `9e32722b` (06:01:24Z) | O extrator de perfis MSBuild. |
+| #3285 | shader: preserve the direct fract binary32 upper bound | `17f112b2` (05:42:16Z) | O teto de `v_fract_f32`. |
+| #3282 | tooling: parse GDK MSVC class layouts | `16e3aa87` (05:41:37Z) | O parser de layouts e o probe de ABI. |
+| #2890, #3335, #3314, #3308, #3269 | (já documentados em ciclos anteriores) | `052abe6f`, `24fcd0b5`, `7e5c378d`, `71e23baf`, `d649e470` | Reconhecidos por hash nos documentos de 12:00/13:00; não reescritos. |
+
+## Cruzamento com o catálogo
+
+- **Corrige D-xx?** Nenhum por hash. Os hashes dos 40 commits e dos 38 merges foram conferidos contra
+  `catalogo/defeitos.csv` (305 linhas): zero interseção; nenhum assunto cita `D-xx`.
+- **Área compartilhada (hipótese):**
+  - `116f1db3`/`#3292` e `945350ac`/`#3295` são a família do **D-06/D-07 do XCL** (conversões f16 que
+    arredondam para zero ou abaixo do menor denormal), mas em outro repositório e em outra
+    implementação; não há hash comum.
+  - `17f112b2`/`#3285` é a mesma classe de **D-23 do VIctory** (`fract` divergente entre hosts), de
+    novo sem hash comum.
+  - `bbf4687b`/`#3293` corrige BC1 "ajustado" e BC2/BC6H em branco — sintoma que não está catalogado
+    neste repositório.
+  - `ca165ed9`/`#3307` (e os abertos `#3355`/`#3364`) são um use-after-end/commit faltante no XMem;
+    nenhum defeito do catálogo descreve `unpin_slot` ou `section_for`.
+- **Regressão?** `#3241` é merge-only e o corpo declara duas falhas de hardware (`native_ldexp_f16`
+  e `native_compute_implicit_lod`) como já presentes na `main`; não foram verificadas aqui.
+
+## Confiança
+
+**Verificado no diff:** os 40 commits (arquivos e recusas lidos no patch) e os 33 merges novos, com
+hash, data, arquivos e linhas; o corpo dos 6 PRs abertos. As contagens de teste citadas (49/48, 2.048
+palavras, 28.785 fatos) são declarações dos corpos.
+
+**Não verificado:** nada foi executado. Os números de desempenho e de cobertura dos corpos não foram
+reproduzidos; o `106`/`107` de VCC e o comportamento em WARP não foram medidos.
+
+**Cobertura:** 71 commits não documentados na faixa; 40 entraram. 33 dos 38 merges eram novos; 5 já
+estavam documentados por hash (#2890, #3335, #3314, #3308, #3269), e três deles (#3094, #3091, #3241)
+são merges de branch com centenas de arquivos, cujo conteúdo não foi lido linha a linha — o que a
+tabela diz vem do corpo do PR e do diff de topo. `last_run` avança até `#3094` (14:07:49Z), o maior
+`merged_at` coberto. Nenhum subagente; leitura apenas na API.
