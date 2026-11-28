@@ -1,5 +1,5 @@
-{
-    "updated": "2026-11-28T12:44:00Z",
+﻿{
+    "updated": "2026-11-28T13:30:00Z",
     "baselined": true,
     "note": "Estado da rotina horaria. baselined=true significa que a primeira execucao ja gravou os cursores sem documentar nada. last_commit (SHA completo) e o cursor de commits da branch default: so avanca ate o ultimo commit documentado. commit_cursor e head_at_run so aparecem quando o teto de 40 commits corta a faixa; o proximo ciclo comeca em commit_cursor. last_pr_number e o cursor de PRs ABERTOS apenas. last_run e o cursor de PRs MESCLADOS (comparado com mergedAt). DOIS RELOGIOS, medido em 2026-11-27 16:00: o campo updated usa UTC real; os timestamps do GitHub (mergedAt, commit dates) ficaram 3 h atras do UTC real nesta coleta (PR R0Y00/Xbox2Windows#3055 com mergedAt 2026-11-27T13:06:51Z apareceu as 16:06Z reais). Por isso todo last_run tem de ser escrito no relogio do GitHub, nunca no horario da execucao: a execucao de 15:00 gravou 2026-11-27T16:05:00Z em quatro repositorios sem merge (OpenScarlett, VItoriaBr, victory-fork, GTA6-Asset-Info), o que esconderia qualquer merge por tres horas; nesta hora os quatro foram reconferidos contra 2026-11-26T00:00Z (zero merges novos: OpenScarlett so o #50 de 2026-11-26T07:52:24Z, ja documentado; victory-fork 14 merges, todos ate 2026-11-26T23:06:47Z, ja documentados) e normalizados para 2026-11-27T13:05:00Z. COLETA DE MESCLADOS: nao usar gh pr list --state merged --search. Em 2026-11-27 16:00 essa via devolveu lista vazia para ivall/xcl (repositorio transferido) e 49 dos 50 merges do Xbox2Windows, perdendo o #2882. Usar a API REST repos/<o>/<r>/pulls?state=closed&sort=updated&direction=desc&per_page=100, paginando ate o updated_at mais antigo da pagina cair abaixo do last_run, e filtrar merged_at > last_run. COLETA DE COMMITS: usar repos/<o>/<r>/compare/<last_commit>...<head> e o campo ahead_by; a listagem commits?sha=<branch>&per_page=100 ordena por data de commit e esconde commits de pre-merge com data anterior ao cursor (medido: 38 contra 47 no TuxBox em 15:00). Janela de PRs abertos: gh pr list --state open --limit 50 traz so os 50 mais novos; quando o menor numero da janela ainda e maior que o cursor, o total real e >= 50 e o cursor nao prova cobertura dos antigos.",
     "repos": {
@@ -11,19 +11,19 @@
         },
         "ivall/xcl": {
             "default_branch": "main",
-            "last_commit": "2c717a043c8488938179fca81da4bb9e7913a358",
-            "commit_cursor": "3dbac13a48ec4beface5a995feced513e0d84c6a",
-            "head_at_run": "e429936c10a5b8aa09470ff99dfc8c8d3d8c56fd",
-            "last_pr_number": 3075,
-            "last_run": "2026-11-28T01:14:26Z"
+            "last_commit": "4e59a81438057887c62fe3ef4f03b77acfe747d2",
+            "commit_cursor": "e52662546bb01c589c55cc3046a24dce33219977",
+            "head_at_run": "e13d6250432d486502971781e9589a330e548d24",
+            "last_pr_number": 3155,
+            "last_run": "2026-11-28T04:12:54Z"
         },
         "R0Y00/Xbox2Windows": {
             "default_branch": "main",
-            "last_commit": "886a5a287c754de20c8e1f5a962b819c0e192c33",
-            "commit_cursor": "50e4f763e9e6c99d71412d3a6ae75629314b6b70",
+            "last_commit": "7486749165877c13c4b2ee5ad00308d8550f6986",
+            "commit_cursor": "d649e470e43d0b815145b788b5bac0ac42b29aca",
             "head_at_run": "052abe6f28f7f2aba31b58273afa81e79fbac841",
-            "last_pr_number": 3215,
-            "last_run": "2026-11-28T01:42:49Z"
+            "last_pr_number": 3354,
+            "last_run": "2026-11-28T05:24:33Z"
         },
         "californiaAlmonds/OpenScarlett": {
             "default_branch": "main",
@@ -59,9 +59,11 @@
         },
         "fxceless/victory-fork": {
             "default_branch": "main",
-            "last_commit": "2eade68cade9b2f8cd2511cc97328e83f58508c3",
-            "last_pr_number": 1496,
-            "last_run": "2026-11-27T18:10:00Z"
+            "last_commit": "6b3ce6ce54288df514585caa6880f91468c8bc54",
+            "commit_cursor": "368967f8fea2a982cea134c5a051b2afe7d9fc8f",
+            "head_at_run": "368967f8fea2a982cea134c5a051b2afe7d9fc8f",
+            "last_pr_number": 1513,
+            "last_run": "2026-11-28T01:48:22Z"
         },
         "omonkeyz/xbox-emulator": {
             "default_branch": "main",
@@ -71,11 +73,11 @@
         },
         "brcly/TuxBox": {
             "default_branch": "main",
-            "last_commit": "1d0f3fa9faf5181ea5c970ba5e6f8f2ac89081c8",
-            "commit_cursor": "8420ba03bda516610fd3657c7d00db9f64c2604f",
+            "last_commit": "26d0f6df951c4ba22fbd88416b268692b67fb94f",
+            "commit_cursor": "02fceb2672b6244908081aed2001572ca7ad61b5",
             "head_at_run": "6f89916ae0c2f8053968b0fe91025344ab277d3c",
-            "last_pr_number": 339,
-            "last_run": "2026-11-28T00:05:08Z"
+            "last_pr_number": 397,
+            "last_run": "2026-11-28T01:16:56Z"
         },
         "holdmysocks/SixNG": {
             "default_branch": "master",
@@ -102,13 +104,13 @@
         "ivall/xcl",
         "brcly/TuxBox",
         "R0Y00/Xbox2Windows",
-        "fxceless/victory-fork",
+        "holdmysocks/SixNG",
         "Marvisak/VIctory",
         "DexNom/VIctory",
         "uiliannn/VItoriaBr",
         "omonkeyz/xbox-emulator"
     ],
-    "backlog_note": "A execucao de 2026-11-28 12:00 triou os 14 e documentou 4: 156 commits de 702 atras dos cursores (xcl 40 de 376, TuxBox 40 de 169, Xbox2Windows 40 de 121, SixNG 36 de 36) e 80 merges documentados (Xbox2Windows 35, SixNG 35, xcl 8, TuxBox 2); 89 PRs abertos lidos acima dos cursores. TRES REPOSITORIOS BATERAM O TETO DE 40 E FICAM COM commit_cursor: xcl (3dbac13a; 336 restantes), TuxBox (8420ba03; 129), Xbox2Windows (50e4f763; 81). O compare a partir do commit_cursor NAO devolve exatamente o resto: 338 vs 336, 148 vs 129, 86 vs 81 - a diferenca vem de commits que sao ancestrais do 40o (merge em TuxBox; em xcl o historico tem merges de dois pais). Nao e perda silenciosa: esta medido em cada documento. SixNG zerou (last_commit no head 2b2277a5). PRIORIDADE DA PROXIMA HORA, nesta ordem: (1) xcl, 336 atras, a serie de pipeline library continua e e o maior atraso estrutural da rotina (~9 h de deep dive para zerar); (2) TuxBox, 129 atras, 48 merges nao documentados; (3) Xbox2Windows, 81 atras, 71 merges nao documentados; (4) fxceless/victory-fork, 8 commits e 2 merges com sinal por correcao. Ficam tambem Marvisak (181 abertos acima de 3521), DexNom (4 acima de 148), VItoriaBr (3 acima de 126), omonkeyz (#395) e os dois bloqueados. ACHADOS PARA O PROXIMO DEEP DIVE: (1) SixNG a565fd9f (#530) troca a UV do bake de tatuagem da quarta para a segunda e NAO sobe BAKE_RULE (que so muda em f4105aae e 7dee3840, dois commits depois): entre os dois um cache de bake antigo e aceito pela regra nova - candidato a linha de catalogo; (2) TuxBox 24ebba7e troca WaveActiveMin por ballot porque o minimo sobre indices de lane DERRUBOU a GPU numa RTX 5090 (Xid 109, CTX SWITCH TIMEOUT) - classe nova, sem linha em catalogo/defeitos.csv para TuxBox; (3) xcl e2d5cd87 (confiar em biblioteca completa) afrouxa a verificacao exatamente na area de D-11 (DXIL obsoleto servido do disco) - nao ha prova de regressao no diff, mas e a area; (4) Xbox2Windows 7364e6a9 escolhe o modelo wave64 por threads > 32 e o proprio comentario admite que ele nao escreve a palavra alta zerada de um par de SGPR - compare de 64 bits com 32 threads ou menos ficaria com metade alta indefinida; (5) Xbox2Windows 4b0350ea criou a causa ring_full e passou a RECUSAR o draw em vez de ligar zeros - mudanca de comportamento que merece triagem nos testes de UI; (6) TuxBox 94f3803b: a barreira global de argumentos indiretos usava ACCESS_COMMON e o runtime de desktop recusa COMMON antes de acesso nomeado, fazendo o Close falhar - classe de XCL D-20, sem linha no catalogo do TuxBox. Nenhum hash de catalogo na janela: 710 hashes conferidos contra as 306 linhas.",
-    "runs": 24,
-    "last_error": "2 repositorios inacessiveis (HTTP 404 em repos/): Belobug/VIctory-Belobug-AMD, avatarmanz/VIctory-7900XTX (sexta hora)"
+    "backlog_note": "A execucao de 2026-11-28 13:00 triou os 14 e documentou 4. O cursor de xcl/TuxBox/Xbox2Windows NAO aponta para o primeiro commit nao documentado: o compare ordena diferente do ciclo anterior. Medi a sobreposicao antes de escrever e comecei cada janela no primeiro commit fora do documento das 12:00 (xcl indice 0, TuxBox 19, Xbox2Windows 5), com zero repeticao. Documentados 128 commits (xcl 40, TuxBox 40, Xbox2Windows 40, victory-fork 8), 75 merges (xcl 19, TuxBox 17, Xbox2Windows 37, victory-fork 2) e 125 PRs abertos lidos. Cursores: xcl last_commit 4e59a814 + commit_cursor e5266254 (338 atras, pagina do compare com 250 de 338 - 88 commits nao vem na resposta e estao registrados como lacuna); TuxBox 26d0f6df + 02fceb26 (108 restantes); Xbox2Windows 74867491 + d649e470 (46 restantes). victory-fork zerou ate 6b3ce6ce. HEADS MUDARAM DURANTE A EXECUCAO: xcl foi de e429936c para e13d6250 as 13:23-13:24Z (+13 commits, quatro merges: #1809 huge shader compile, #3102 bench config, #1873 geometry setpc, #1908 MSAA sample clamp) e victory-fork ganhou 368967f8 as 13:25Z; nenhum documentado por teto/janela, todos serao vistos no proximo compare. PRIORIDADE DA PROXIMA HORA: (1) xcl, 338 atras e voltou a andar; (2) TuxBox, 108; (3) Xbox2Windows, 46; (4) holdmysocks/SixNG, 7 commits + 9 merges e #554 (v0.15.0) mesclado as 13:17Z durante a execucao. Ficam tambem Marvisak (187 abertos acima de 3521), DexNom (4), VItoriaBr (3), omonkeyz (#395) e os dois bloqueados. ACHADOS PARA O PROXIMO DEEP DIVE: (1) TuxBox #344 propoe anexar os slots de descritor que um root raster deixa de fora - area de D-22, sem merge; (2) victory-fork #1513/#1504 poe todos os switches do tradutor na chave do cache de shader - e literalmente a classe de D-02, reaberta em 2026-11-27 22:00, e o switch novo VICTORY_RAY_GUIDE nao foi conferido contra a chave; (3) Xbox2Windows 0f43029b troca PageSize=2 de 4 MiB para 2 MiB pelo header 261000, mas o proprio diff admite que as palavras gravadas do titulo nao distinguem os dois layouts; (4) xcl 15aa7f36 faz o otimizador ler a perna preservada de select(exec,novo,antigo) e depende de lane_local estar completo; (5) xcl 5fb57918 e fb5e7d15 sao a area de D-11 (identidade e invalidacao do cache de blob de driver).",
+    "runs": 25,
+    "last_error": "2 repositorios inacessiveis (HTTP 404 em repos/): Belobug/VIctory-Belobug-AMD, avatarmanz/VIctory-7900XTX (setima hora)"
 }
