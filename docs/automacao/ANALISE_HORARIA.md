@@ -119,7 +119,7 @@ invente a linha que falta.
 
 ## Repositórios monitorados
 
-Treze, com o nome exato usado em `state/watch.json` e na API. A coluna de nome de arquivo importa:
+Quinze, com o nome exato usado em `state/watch.json` e na API. A coluna de nome de arquivo importa:
 as análises e os comparativos usam um rótulo curto, e as atualizações horárias usam o nome do
 repositório. Não invente nomes — siga esta tabela.
 
@@ -138,6 +138,8 @@ repositório. Não invente nomes — siga esta tabela.
 | 11 | `brcly/TuxBox` | main | `TuxBox.md` | `TuxBox.md` | `TuxBox.md` |
 | 12 | `holdmysocks/SixNG` | **master** | `SixNG.md` | `SixNG.md` | `SixNG.md` |
 | 13 | `walkthestars/GTA6-Asset-Info` | main | `GTA6-Asset-Info.md` | `GTA6-Asset-Info.md` | `GTA6-Asset-Info.md` |
+| 14 | `stellarr-studio/kelvaroq` | main | `Kelvaroq.md` | `Kelvaroq.md` | `Kelvaroq.md` |
+| 15 | `trustno1-coder/VIctory-NVIDIA` | main | - (sem analise ainda) | - (sem comparativo ainda) | `VIctory-NVIDIA.md` |
 
 O repositório `ivall/xcl` responde também por `xcl-dev/xcl` (transferência); use `ivall/xcl`, que
 redireciona.
