@@ -854,3 +854,11 @@ As regras que o codigo segue, e que explicam por que varios builds privados pode
 8. **Auditoria dos 219 switches incompleta.** Verifiquei defaults e semantica de ~30 switches, escolhidos por risco ou por citacao no README. Nao ha garantia de que nenhum outro switch tenha documentacao divergente do codigo, nem de que todos os que alteram a emissao estejam na chave do cache (D-02, risco residual declarado).
 9. **Causas nao confirmadas.** As perdas de device (D-16), a agua preta (D-12) e a quebra de streaming por view longa (D-15) permanecem sem causa estabelecida - nem pelo autor, nem por mim. Nao apresentei nenhuma delas como resolvida.
 10. **Data da analise.** 2026-11-25. O repositorio tem 29 horas de vida no momento da leitura e commits a cada poucas horas; qualquer conclusao sobre "estado atual" envelhece rapido. HEAD analisado: `6d20eed`.
+
+## M. Atualizacao de teste posterior (2026-11-27)
+
+Um teste local posterior do pré-aquecimento de pipelines proposto no PR #1226
+avançou até o prólogo sem reproduzir o watchdog durante a janela observada. A
+execução ainda teve desempenho muito baixo e draws descartados, portanto não
+confirma uma correção geral. Os detalhes sanitizados, método e limitações estão
+em [`docs/relatorios/prebuild-pipelines-pr1226-2026-11-27.md`](../relatorios/prebuild-pipelines-pr1226-2026-11-27.md).
