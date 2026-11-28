@@ -55,6 +55,8 @@ ordem do `compare`; 114 ficam para os próximos ciclos.
 | `885e825c` | bmjask | Tests: cover the dormant restoration coordinator | Prova identidade estável do `OnceLock`, que a classificação dormente não roda driver no chamador e que o `Pending` registrado é o mesmo objeto. |
 | `833d2676` | bmjask | Scripts: record Cargo feature performance variants | O manifesto de `perf-compare` passa a validar `build.cargo_features`: sem vazio, sem duplicata, ordem ordinal canônica; manifesto malformado falha a comparação. |
 | `622c5e61` | bmjask | Tests: benchmark allocator contention across workers | `benches/runtime.rs` mede 128 jobs de alocação com `Barrier` e `Arc<[u8; 64]>` compartilhado entre workers para medir contenção do alocador. |
+| `5c50099c` | bmjask | Tests: seed resubmit lifetime identity | Três linhas em `alloc_pool.rs`: antes do submit sintético, chama `begin_submit(&[list])` e solta o guarda, para a submissão real capturar o endereço exato da lista antes de publicar `LastSubmit`. |
+| `3cde0cc3` | bmjask | Recompiler: use larger compact tables on every GPU | Remove o parâmetro `tables`/`TABLE_WORDS_WAVE32` do tradutor compacto e usa `MAX_TABLE_WORDS = 12288` em todo adaptador (antes 8192 em GPU de wave64, 12288 só em wave32). Toca `dxil/compact.rs`, `kernel.rs` (−18/+10) e `recomp/pso.rs`; teste novo cobre tabela inline acima do teto antigo. |
 
 ## Pull requests abertos (9)
 
