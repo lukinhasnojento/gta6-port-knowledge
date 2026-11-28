@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-28T00:17:42Z",
+    "updated": "2026-11-28T01:17:11Z",
     "baselined": true,
     "note": "Estado da rotina horaria. baselined=true significa que a primeira execucao ja gravou os cursores sem documentar nada. last_commit (SHA completo) e o cursor de commits da branch default: so avanca ate o ultimo commit documentado. commit_cursor e head_at_run so aparecem quando o teto de 40 commits corta a faixa; o proximo ciclo comeca em commit_cursor. last_pr_number e o cursor de PRs ABERTOS apenas. last_run e o cursor de PRs MESCLADOS (comparado com mergedAt). DOIS RELOGIOS, medido em 2026-11-27 16:00: o campo updated usa UTC real; os timestamps do GitHub (mergedAt, commit dates) ficaram 3 h atras do UTC real nesta coleta (PR R0Y00/Xbox2Windows#3055 com mergedAt 2026-11-27T13:06:51Z apareceu as 16:06Z reais). Por isso todo last_run tem de ser escrito no relogio do GitHub, nunca no horario da execucao: a execucao de 15:00 gravou 2026-11-27T16:05:00Z em quatro repositorios sem merge (OpenScarlett, VItoriaBr, victory-fork, GTA6-Asset-Info), o que esconderia qualquer merge por tres horas; nesta hora os quatro foram reconferidos contra 2026-11-26T00:00Z (zero merges novos: OpenScarlett so o #50 de 2026-11-26T07:52:24Z, ja documentado; victory-fork 14 merges, todos ate 2026-11-26T23:06:47Z, ja documentados) e normalizados para 2026-11-27T13:05:00Z. COLETA DE MESCLADOS: nao usar gh pr list --state merged --search. Em 2026-11-27 16:00 essa via devolveu lista vazia para ivall/xcl (repositorio transferido) e 49 dos 50 merges do Xbox2Windows, perdendo o #2882. Usar a API REST repos/<o>/<r>/pulls?state=closed&sort=updated&direction=desc&per_page=100, paginando ate o updated_at mais antigo da pagina cair abaixo do last_run, e filtrar merged_at > last_run. COLETA DE COMMITS: usar repos/<o>/<r>/compare/<last_commit>...<head> e o campo ahead_by; a listagem commits?sha=<branch>&per_page=100 ordena por data de commit e esconde commits de pre-merge com data anterior ao cursor (medido: 38 contra 47 no TuxBox em 15:00). Janela de PRs abertos: gh pr list --state open --limit 50 traz so os 50 mais novos; quando o menor numero da janela ainda e maior que o cursor, o total real e >= 50 e o cursor nao prova cobertura dos antigos.",
     "repos": {
@@ -11,15 +11,15 @@
         },
         "ivall/xcl": {
             "default_branch": "main",
-            "last_commit": "6089122a1c96dff16e93b6fdf04c8ed20cfb6102",
-            "last_pr_number": 3042,
-            "last_run": "2026-11-27T17:20:00Z"
+            "last_commit": "2c717a043c8488938179fca81da4bb9e7913a358",
+            "last_pr_number": 3075,
+            "last_run": "2026-11-27T21:27:54Z"
         },
         "R0Y00/Xbox2Windows": {
             "default_branch": "main",
-            "last_commit": "cf3df832b3127b27bef0f67da74c3dedcd623247",
-            "last_pr_number": 3191,
-            "last_run": "2026-11-27T21:02:29Z"
+            "last_commit": "886a5a287c754de20c8e1f5a962b819c0e192c33",
+            "last_pr_number": 3215,
+            "last_run": "2026-11-27T22:07:09Z"
         },
         "californiaAlmonds/OpenScarlett": {
             "default_branch": "main",
@@ -67,15 +67,15 @@
         },
         "brcly/TuxBox": {
             "default_branch": "main",
-            "last_commit": "62c7e390242df39635b5e8f6e14f1ac3c6d9b85c",
-            "last_pr_number": 328,
+            "last_commit": "1d0f3fa9faf5181ea5c970ba5e6f8f2ac89081c8",
+            "last_pr_number": 339,
             "last_run": "2026-11-27T20:01:33Z"
         },
         "holdmysocks/SixNG": {
             "default_branch": "master",
-            "last_commit": "1b419021e8d29de9724d6f44a346e2e5f9024ac0",
-            "last_pr_number": 506,
-            "last_run": "2026-11-27T20:41:30Z"
+            "last_commit": "b42d09a9da907ca40b6b48ec24633943756a2eba",
+            "last_pr_number": 510,
+            "last_run": "2026-11-27T22:03:13Z"
         },
         "walkthestars/GTA6-Asset-Info": {
             "default_branch": "main",
@@ -94,11 +94,11 @@
         "Belobug/VIctory-Belobug-AMD",
         "avatarmanz/VIctory-7900XTX",
         "Marvisak/VIctory",
-        "ivall/xcl",
         "uiliannn/VItoriaBr",
+        "fxceless/victory-fork",
         "omonkeyz/xbox-emulator"
     ],
-    "backlog_note": "A execucao de 2026-11-28 00:00 triou os 14 e documentou 4: 17 commits de 17 atras dos cursores (Xbox2Windows 12, TuxBox 2, SixNG 2, victory-fork 1) e 14 merges (Xbox2Windows 12, SixNG 2). Tres commits foram push direto sem PR (TuxBox 2, victory-fork 1), o que explica 17 commits contra 14 merges. Criterio 2 selecionou os quatro repositorios com commit; nenhum reaplicou defeito do catalogo (criterio 1 vazio nesta hora). BELOBUG E AVATARMANZ SEGUEM BLOQUEADOS: repos/ E users/ devolvem HTTP 404 pela quarta hora. last_run gravado no relogio do GitHub com o maior merged_at documentado: 21:02:29Z (Xbox2Windows), 20:41:30Z (SixNG); TuxBox e victory-fork ficaram como estavam (sem merge). Proxima hora, na ordem: Marvisak (76 acima do cursor 3.521), xcl (24 acima de 3.042), TuxBox #326/#327/#328, victory-fork #1495/#1496, Xbox2Windows #3172-#3191, SixNG #505/#506, VItoriaBr #132, omonkeyz #395. ACHADOS PARA O PROXIMO DEEP DIVE: (1) em Xbox2Windows 98020080 o teste novo compara guardas com F.SENTINEL e native_f16_alu_check.py nao define SENTINEL nesse commit (conferido por contents); o conserto esta no PR aberto #3190 e a perna de hardware levanta AttributeError ate ele entrar; (2) 8e8b349b e so documento, mas registra tres testes que falham com WARP 1.0.22 app-local (startup_compute_dispatch_native_warp com 288 palavras diferentes, native_startup_request_cache_warp, bvh_wave64_warp) - nenhum corrigido; (3) em victory-fork 2eade68c o portao de bloco de 64 MiB faz a textura esperar e mostrar a view anterior por ate ~4 s, e o diff nao tem teste (D-17 segue aberto); (4) o harness do TuxBox exige build/shader-harness.json fora do Git e nao roda em CI, e o roadmap de 62c7e390 admite 178 de 372 instrucoes usadas sem check de GPU e zero shaders reais executados contra referencia; (5) em SixNG o #503 escolhe um registro de transmissao por material pelo sub-material da maioria dos vertices e render3d_metal4.rs grava glass: None (Metal 4 nao consome o registro).",
-    "runs": 22,
-    "last_error": "2 repositorios inacessiveis (HTTP 404 em repos/ e users/): Belobug/VIctory-Belobug-AMD, avatarmanz/VIctory-7900XTX (quarta hora)"
+    "backlog_note": "A execucao de 2026-11-28 01:00 triou os 14 e documentou 4: 42 commits de 42 atras dos cursores (Xbox2Windows 29, SixNG 6, TuxBox 5, xcl 2) e 36 merges (Xbox2Windows 29, SixNG 6, xcl 1). xcl saiu do backlog (cursor avancou); entraram fxceless/victory-fork e omonkeyz/xbox-emulator, que so tem PR aberto. Os 5 commits do TuxBox sao push direto (commits/<sha>/pulls vazio nos cinco); no xcl o merge 2c717a04 e merge real de dois pais, nao squash, por isso 2 commits para 1 merge. BELOBUG E AVATARMANZ SEGUEM BLOQUEADOS: repos/ devolve HTTP 404 pela quinta hora. last_run gravado no relogio do GitHub com o maior merged_at documentado: 22:07:09Z (Xbox2Windows), 22:03:13Z (SixNG), 21:27:54Z (xcl); TuxBox ficou como estava (sem merge). Proxima hora, na ordem: Marvisak (81 acima do cursor 3.521, com #3611 slots devolvidos ao heap de origem, #3613 gathers do primeiro nivel, #3609 v_exp_f16), xcl (25 abertos, pilha #3045-#3057 e os kernelx #3074/#3075), Xbox2Windows (#3193-#3215, 13 abertos), TuxBox (#329-#339, 9 abertos, quase todos correcao de fixture em Windows fisico), victory-fork (#1499/#1500), VItoriaBr (#132), omonkeyz (#395), SixNG (#510). ACHADOS PARA O PROXIMO DEEP DIVE: (1) Xbox2Windows 23b6f7b6 (#3141) promete no titulo rastrear row-pitch de UI e o diff nao tem pitch: sao full_mips() para MipLevels==0 em xg_xs.cpp (computer_layout e computer_copy_into), um mark_gpu_written na copia de sub-recurso e um teste de 1.402 linhas; a correcao das bandas de #3132 e hipotese do teste, nao provada, e nenhum teste foi executado; (2) o squash 6cc46a3c (#1408) carrega tres correcoes de defeitos que o proprio PR introduziu no review (returns.get sobre ReturnBook, segunda atribuicao de file_log quebrando X2W_LOG_AT, retorno tail-called) - candidato a linha do catalogo sobre defeitos de integracao de PR; (3) o conserto de N1 (afe70bd7, #3190) entrou e fecha o AttributeError de native_cvt_f16_i16_hardware, mas o trio do WARP 1.0.22 registrado em 8e8b349b (startup_compute_dispatch_native_warp, native_startup_request_cache_warp, bvh_wave64_warp) NAO foi tocado; (4) 673a9f2c (#3140) le sampler heap em indice fixo, mas o proprio corpo admite que o runtime nao escreve manifesto e a rota in-process recusa: nada usa o caminho ainda; (5) TuxBox aa1f4028 achou e fechou um defeito vivo na main (toda SMEM que nao fosse buffer load era tratada como s_buffer_load_*, com estouro do calculo de tamanho em s_scratch_* e s_get_waveid_in_workgroup); o inventario agora mede 241 de 372 instrucoes usadas com check de GPU (eram 188) e o roadmap continua admitindo zero shaders reais executados contra referencia (T4/T5 abertos); (6) SixNG 66f606ac (#508) e um defeito real fora do catalogo (speculartex2 e as duas folhas de tile do skin_detail mais wear/primer/dust_mask ficavam nos indices da primeira parte no glb::merge) e 2a605002 (#509) acrescenta adesivo plano que o proprio doc diz que o jogo nao tem, alem de renomear a chave tile_texture_e0548ad3 para surface_map_texture no inland.json; (7) xcl #3053 e #3054 tem corpo identico, entao a proposta do primeiro nao e legivel no repositorio.",
+    "runs": 23,
+    "last_error": "2 repositorios inacessiveis (HTTP 404 em repos/): Belobug/VIctory-Belobug-AMD, avatarmanz/VIctory-7900XTX (quinta hora)"
 }
