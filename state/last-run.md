@@ -122,5 +122,21 @@ os achados e a prioridade de 15:00 estão no `backlog_note`.
 
 ## Push
 
-Pendente no momento em que este arquivo foi escrito; o resultado é registrado no fechamento, em
-commit próprio na `public` e cherry-pick na `main` (para não criar um segundo merge na execução).
+Executado às 14:2xZ e registrado depois das duas publicações.
+
+- Commit na `public`: `7a92e06` — `docs(updates): 2026-11-28 14:00` (9 arquivos: os 4 documentos,
+  `_triagem.md`, `_falhas.md`, `docs/updates/INDEX.md`, `state/watch.json` e `state/last-run.md`).
+- `git push origin public:main`: **sucesso** — `b844482..7a92e06  public -> main` (o git escreve em
+  stderr e o PowerShell reporta como erro; o intervalo de refs confirma).
+- `git switch main` + `git merge --no-ff public`: **conflito em `docs/updates/INDEX.md` e em
+  `state/last-run.md`**. A `main` tinha o cherry-pick da correção `d9f5a84` (que toca `INDEX.md`) e o
+  do registro de push das 13:00 (que toca `last-run.md`), então as duas linhas novas colidiam com
+  conteúdo equivalente. Resolvido tomando a versão da `public` nos dois arquivos
+  (`git checkout --theirs`), conferindo que os outros 7 arquivos entraram sem conflito. Merge
+  `8d07650` — `merge updates 2026-11-28 14:00`.
+- `git push private main`: **sucesso** — `0651003..8d07650  main -> main`.
+- Este fechamento é um segundo commit na `public`, depois do merge. Para não criar um segundo merge
+  na execução, a `main` o recebe por cherry-pick, como nos ciclos anteriores.
+- Nenhum `git reset --hard`, nenhum merge de `main` na `public`.
+- Ficaram fora do commit, intactos: `docs/analises/victory-fork.md` (modificado) e os dois relatórios
+  não rastreados em `docs/relatorios/`, que não são desta rotina.
