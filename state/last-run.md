@@ -125,7 +125,17 @@ os dois bloqueados.
 
 ## Push
 
-Executado depois deste arquivo, na ordem do procedimento: commit em `public`, `push origin public:main`,
-`switch main`, `merge --no-ff public`, `push private main`. O resultado concreto (hashes do commit e do
-merge, sucesso ou falha de cada push) está no commit de fechamento desta execução, como nas horas
-anteriores.
+Executado e conferido:
+
+- Commit na `public`: `adacc0c` — `docs(updates): 2026-11-28 17:00` (9 arquivos: os 4 documentos,
+  `_triagem.md`, `_falhas.md`, `docs/updates/INDEX.md`, `state/watch.json` e `state/last-run.md`).
+- `git push origin public:main`: **sucesso** — `4d2e96c..adacc0c  public -> main`; conferido por
+  `git ls-remote origin refs/heads/main` = `adacc0c`.
+- `git switch main` + `git merge --no-ff public`: **um conflito** em `state/last-run.md` (a `main`
+  carregava o fechamento da execução de 16:00). Resolvido tomando o arquivo da `public` — o desta
+  execução substitui o anterior; merge `e8d422a` — `merge updates 2026-11-28 17:00`.
+- `git push private main`: **sucesso** — `b39ad4e..e8d422a  main -> main`; conferido por
+  `git ls-remote private refs/heads/main` = `e8d422a`.
+- Nenhum `git reset --hard`, nenhum merge de `main` na `public`.
+- Este fechamento é um segundo commit na `public`, depois do merge; para não criar um segundo merge na
+  execução, a `main` o recebe por cherry-pick, como nos ciclos anteriores.
