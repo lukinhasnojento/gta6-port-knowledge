@@ -118,9 +118,22 @@ Os outros 10 mantêm cursor de commit e de merge. `head_at_run` gravado nos trê
 
 ## Push
 
-- Estado no momento da escrita: `docs/updates/2026-11-28/12/` (6 arquivos), `docs/updates/INDEX.md`,
-  `state/watch.json` e este arquivo, a serem commitados na `public` como
-  `docs(updates): 2026-11-28 12:00`, publicados com `git push origin public:main` e mesclados na
-  `main` com `--no-ff`.
-- O resultado do push está registrado no fechamento abaixo, em commit próprio na `public`
-  cherry-pickado para a `main`, como nas execuções anteriores.
+O registro abaixo foi escrito depois das duas publicações, no fechamento de 2026-11-28T12:29Z.
+
+- Commit na `public`: `cff0570` — `docs(updates): 2026-11-28 12:00` (9 arquivos, 827 inserções, 116
+  remoções: os 4 documentos, `_triagem.md`, `_falhas.md`, `docs/updates/INDEX.md`, `state/watch.json`
+  e `state/last-run.md`).
+- `git push origin public:main`: **sucesso** — `763903a..cff0570  public -> main` (a saída do git vai
+  para stderr e o PowerShell a reporta como erro; o intervalo de refs confirma o envio).
+- `git switch main` + `git merge --no-ff public`: **conflito em `state/last-run.md`** (a `main` tinha o
+  registro de push da execução das 01:00, cherry-pickado; a `public` trazia o arquivo novo). Resolvido
+  tomando a versão da `public` (`git checkout --theirs`) e conferindo o resto do merge: os outros 8
+  arquivos entraram sem conflito. Merge `06938b2` — `merge updates 2026-11-28 12:00`.
+- `git push private main`: **sucesso** — `4c0f8cf..06938b2  main -> main`.
+- Este fechamento (registro do push) é um segundo commit na `public`, depois do merge. Para não criar
+  um segundo merge na execução (o passo 5 limita a um), a `main` recebe esse commit por cherry-pick,
+  como nas execuções das 18:00 às 01:00.
+- Nenhum `git reset --hard`, nenhum merge de `main` na `public`: a `public` só recebeu commits próprios
+  e a `main` recebeu a `public`.
+- Ficaram fora do commit, intactos: `docs/analises/victory-fork.md` modificado e os dois relatórios não
+  rastreados em `docs/relatorios/`, que não são desta rotina.
