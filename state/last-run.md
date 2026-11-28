@@ -142,19 +142,21 @@ novo 3783), `NVIDIA` (piso abaixo de #1265), `TuxBox` (#408) e os dois bloqueado
 
 ## Push
 
-A executar logo depois deste arquivo, na ordem do procedimento, com o resultado conferido por
-`git ls-remote` e registrado no commit de fechamento desta execução:
+Executado e conferido (dois commits na `public`, um merge por execução):
 
-```
-git switch public
-git add docs/updates state
-git commit -m "docs(updates): 2026-11-28 19:00"
-git push origin public:main
-git switch main
-git merge --no-ff public -m "merge updates 2026-11-28 19:00"
-git push private main
-```
-
-Nenhum `git reset --hard`, nenhum merge de `main` na `public`. Se o push falhar, o estado **não** avança
-e a próxima execução reprocessa o mesmo delta; nesse caso o cursor de `xcl` volta a `f2c0d36f` e os de
-`Xbox2Windows` e `NVIDIA` voltam aos valores lidos no início da hora.
+- Commit de conteúdo na `public`: `66da876` — `docs(updates): 2026-11-28 19:00` (9 arquivos: os 4
+  documentos, `_triagem.md`, `_falhas.md`, `docs/updates/INDEX.md`, `state/watch.json` e
+  `state/last-run.md`). O diff de `INDEX.md` é `1 insertion(+)` — a linha do 19:00 —, sem reescrita de
+  linha acentuada.
+- `git push origin public:main`: **sucesso** — `cc88f99..66da876  public -> main`; conferido por
+  `git ls-remote origin refs/heads/main` = `66da876165ed96b952e24167dff526ec2a5be529`.
+- `git switch main` + `git merge --no-ff public`: **três conflitos** — `docs/updates/INDEX.md`,
+  `state/last-run.md` e `state/watch.json` —, todos no conteúdo que a `main` já carregava por
+  cherry-pick do fechamento de 18:00. Resolvidos tomando o arquivo da `public` (fonte da rotina), nos
+  três. Merge `8132d9b` — `merge updates 2026-11-28 19:00`. Conferido depois: `state/watch.json` com
+  **15** entradas em `repos` e `runs: 31`, e a linha `| 2026-11-28 | 19:00 |` presente no `INDEX.md`.
+- `git push private main`: **sucesso** — `4de5dfe..8132d9b  main -> main`; conferido por
+  `git ls-remote private refs/heads/main` = `8132d9b64ecaec7c5a93600530b0229c4af6814d`.
+- Nenhum `git reset --hard`, nenhum merge de `main` na `public`, nenhuma escrita nos 15 monitorados.
+- Este parágrafo é o segundo commit na `public` (o de fechamento). Para não criar um segundo merge na
+  execução, a `main` o recebe por cherry-pick, como nos ciclos anteriores.
