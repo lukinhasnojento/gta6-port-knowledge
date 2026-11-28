@@ -145,5 +145,9 @@ O registro abaixo foi escrito depois das duas publicações, no fechamento de 20
   como nas execuções das 18:00 às 01:00.
 - Nenhum `git reset --hard`, nenhum merge de `main` na `public`: a `public` só recebeu commits próprios
   e a `main` recebeu a `public`.
+- **Correção posterior:** a triagem dizia "570 hashes" e a janela tem 631 (269 + 195 + 157 + 10). O
+  commit `d9f5a84` (`docs(updates): corrige a contagem de hashes da triagem das 13:00`) corrige
+  `_triagem.md`, `INDEX.md` e este arquivo na `public`; a `main` o recebeu por cherry-pick
+  (`c52629f`). Refs: `a207574..d9f5a84 public -> main` e `f63ff4d..c52629f main -> main`.
 - Ficaram fora do commit, intactos: `docs/analises/victory-fork.md` modificado e os dois relatórios não
   rastreados em `docs/relatorios/`, que não são desta rotina.
