@@ -24,10 +24,11 @@ relógio do GitHub.
 
 ## Como o sinal foi decidido
 
-**Critério 1 (defeito do catálogo):** nenhum acionado. Os 570 hashes distintos na janela dos quatro
-repositórios com commit (`xcl` 250 na página do `compare` + 19 merges, `TuxBox` 148 + 47, `Xbox2Windows`
-86 + 71, `victory-fork` 8 + 2) foram conferidos contra as 305 linhas de `catalogo/defeitos.csv`,
-colunas `introduzido` e `corrigido` (262 hashes distintos): zero interseção por prefixo. Nenhum
+**Critério 1 (defeito do catálogo):** nenhum acionado. Os hashes de todos os commits e merges da
+janela dos quatro repositórios com commit — 269 no `xcl` (250 na página do `compare` + 19 merges),
+195 no `TuxBox` (148 + 47), 157 no `Xbox2Windows` (86 + 71) e 10 no `victory-fork` (8 + 2) — foram
+conferidos contra as 305 linhas de `catalogo/defeitos.csv`, colunas `introduzido` e `corrigido` (262
+hashes distintos): zero interseção por prefixo. Nenhum
 título de commit cita `D-xx`. O cruzamento por **área** está em cada documento, marcado como hipótese
 onde não há prova no diff.
 

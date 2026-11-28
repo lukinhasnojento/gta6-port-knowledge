@@ -45,9 +45,10 @@ Os 14 foram triados (12 com medição completa); 4 entraram no deep dive. Arquiv
 
 Desempate: cinco repositórios tinham sinal por correção e o limite é 4. Ficou fora o de menor janela,
 `holdmysocks/SixNG` (7 commits, 9 merges), cujo cursor está no head `2b2277a5` e portanto não perde
-nada por esperar. O critério 1 (defeito do catálogo) **não selecionou ninguém**: 570 hashes distintos
-na janela dos quatro escolhidos foram conferidos contra as 305 linhas de `catalogo/defeitos.csv` (262
-hashes distintos) sem interseção. O critério 4 só acionou em `xcl` (338 > 200).
+nada por esperar. O critério 1 (defeito do catálogo) **não selecionou ninguém**: os hashes de todos os
+commits e merges da janela (269 no `xcl`, 195 no `TuxBox`, 157 no `Xbox2Windows`, 10 no
+`victory-fork`) foram conferidos contra as 305 linhas de `catalogo/defeitos.csv` (262 hashes
+distintos) sem interseção. O critério 4 só acionou em `xcl` (338 > 200).
 
 ## Documentos escritos (passo 3)
 
