@@ -125,5 +125,15 @@ dois bloqueados.
 
 ## Push
 
-Executado ao fim desta execução; o resultado fica no commit de fechamento (`state/last-run.md`
-atualizado depois das duas publicações, como nos ciclos anteriores).
+Executado às 16:2xZ e registrado depois das duas publicações.
+
+- Commit na `public`: `d0115e7` — `docs(updates): 2026-11-28 16:00` (9 arquivos: os 4 documentos,
+  `_triagem.md`, `_falhas.md`, `docs/updates/INDEX.md`, `state/watch.json` e `state/last-run.md`;
+  586 inserções, 124 remoções).
+- `git push origin public:main`: **sucesso** — `bc6c64b..d0115e7  public -> main`.
+- `git switch main` + `git merge --no-ff public`: **sem conflito** — merge `98a3e5b` —
+  `merge updates 2026-11-28 16:00`.
+- `git push private main`: **sucesso** — `b74f815..98a3e5b  main -> main`.
+- Este fechamento é um segundo commit na `public`, depois do merge. Para não criar um segundo merge
+  na execução, a `main` o recebe por cherry-pick, como nos ciclos anteriores.
+- Nenhum `git reset --hard`, nenhum merge de `main` na `public`.
