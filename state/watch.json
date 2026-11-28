@@ -1,7 +1,7 @@
 {
-    "updated":  "2026-11-28T16:23:31Z",
+    "updated":  "2026-11-28T17:41:00Z",
     "baselined":  true,
-    "note":  "Estado da rotina horaria. baselined=true significa que a primeira execucao ja gravou os cursores sem documentar nada. last_commit (SHA completo) e o cursor de commits da branch default: so avanca ate o ultimo commit documentado. commit_cursor e head_at_run so aparecem quando o teto de 40 commits corta a faixa; o proximo ciclo comeca em commit_cursor. last_pr_number e o cursor de PRs ABERTOS apenas. last_run e o cursor de PRs MESCLADOS (comparado com mergedAt). DOIS RELOGIOS, medido em 2026-11-27 16:00: o campo updated usa UTC real; os timestamps do GitHub (mergedAt, commit dates) ficaram 3 h atras do UTC real nesta coleta (PR R0Y00/Xbox2Windows#3055 com mergedAt 2026-11-27T13:06:51Z apareceu as 16:06Z reais). Por isso todo last_run tem de ser escrito no relogio do GitHub, nunca no horario da execucao: a execucao de 15:00 gravou 2026-11-27T16:05:00Z em quatro repositorios sem merge (OpenScarlett, VItoriaBr, victory-fork, GTA6-Asset-Info), o que esconderia qualquer merge por tres horas; nesta hora os quatro foram reconferidos contra 2026-11-26T00:00Z (zero merges novos: OpenScarlett so o #50 de 2026-11-26T07:52:24Z, ja documentado; victory-fork 14 merges, todos ate 2026-11-26T23:06:47Z, ja documentados) e normalizados para 2026-11-27T13:05:00Z. COLETA DE MESCLADOS: nao usar gh pr list --state merged --search. Em 2026-11-27 16:00 essa via devolveu lista vazia para ivall/xcl (repositorio transferido) e 49 dos 50 merges do Xbox2Windows, perdendo o #2882. Usar a API REST repos/\u003co\u003e/\u003cr\u003e/pulls?state=closed\u0026sort=updated\u0026direction=desc\u0026per_page=100, paginando ate o updated_at mais antigo da pagina cair abaixo do last_run, e filtrar merged_at \u003e last_run. COLETA DE COMMITS: usar repos/\u003co\u003e/\u003cr\u003e/compare/\u003clast_commit\u003e...\u003chead\u003e e o campo ahead_by; a listagem commits?sha=\u003cbranch\u003e\u0026per_page=100 ordena por data de commit e esconde commits de pre-merge com data anterior ao cursor (medido: 38 contra 47 no TuxBox em 15:00). Janela de PRs abertos: gh pr list --state open --limit 50 traz so os 50 mais novos; quando o menor numero da janela ainda e maior que o cursor, o total real e \u003e= 50 e o cursor nao prova cobertura dos antigos.",
+    "note":  "Estado da rotina horaria. baselined=true significa que a primeira execucao ja gravou os cursores sem documentar nada. last_commit (SHA completo) e o cursor de commits da branch default: so avanca ate o ultimo commit documentado. commit_cursor e head_at_run so aparecem quando o teto de 40 commits corta a faixa; o proximo ciclo comeca em commit_cursor. last_pr_number e o cursor de PRs ABERTOS apenas. last_run e o cursor de PRs MESCLADOS (comparado com mergedAt). DOIS RELOGIOS, medido em 2026-11-27 16:00: o campo updated usa UTC real; os timestamps do GitHub (mergedAt, commit dates) ficaram 3 h atras do UTC real nesta coleta (PR R0Y00/Xbox2Windows#3055 com mergedAt 2026-11-27T13:06:51Z apareceu as 16:06Z reais). Por isso todo last_run tem de ser escrito no relogio do GitHub, nunca no horario da execucao: a execucao de 15:00 gravou 2026-11-27T16:05:00Z em quatro repositorios sem merge (OpenScarlett, VItoriaBr, victory-fork, GTA6-Asset-Info), o que esconderia qualquer merge por tres horas; nesta hora os quatro foram reconferidos contra 2026-11-26T00:00Z (zero merges novos: OpenScarlett so o #50 de 2026-11-26T07:52:24Z, ja documentado; victory-fork 14 merges, todos ate 2026-11-26T23:06:47Z, ja documentados) e normalizados para 2026-11-27T13:05:00Z. COLETA DE MESCLADOS: nao usar gh pr list --state merged --search. Em 2026-11-27 16:00 essa via devolveu lista vazia para ivall/xcl (repositorio transferido) e 49 dos 50 merges do Xbox2Windows, perdendo o #2882. Usar a API REST repos/\u003co\u003e/\u003cr\u003e/pulls?state=closed\u0026sort=updated\u0026direction=desc\u0026per_page=100, paginando ate o updated_at mais antigo da pagina cair abaixo do last_run, e filtrar merged_at \u003e last_run. COLETA DE COMMITS: usar repos/\u003co\u003e/\u003cr\u003e/compare/\u003clast_commit\u003e...\u003chead\u003e e o campo ahead_by; a listagem commits?sha=\u003cbranch\u003e\u0026per_page=100 ordena por data de commit e esconde commits de pre-merge com data anterior ao cursor (medido: 38 contra 47 no TuxBox em 15:00). Janela de PRs abertos: gh pr list --state open --limit 50 traz so os 50 mais novos; quando o menor numero da janela ainda e maior que o cursor, o total real e \u003e= 50 e o cursor nao prova cobertura dos antigos. EXECUCAO 17:00 (2026-11-28): xcl documentou 40 dos 118 sem documento (cursor 4701a874, 78 restantes) e as ordens do compare continuam instaveis: 2dad32e6/abf7e177, documentados as 12:00, voltam a aparecer dentro da faixa e foram pulados por hash, e 2de72223 (conteudo do merge #3100, documentado as 16:00) apareceu na posicao 35 sem entrar nos 40. TuxBox zerou a fila, mas o merge #404 (b8355fa2) chegou DEPOIS do snapshot do compare: quando um PR e mesclado no meio da coleta, o conteudo dele tem de ser lido pelo pulls/<n>/files e o merge gravado como last_commit, senao o proximo ciclo reprocessa. VItoriaBr nao teve commit nem merge e manteve last_run parado em 2026-11-27T13:05:00Z de proposito, para nao mascarar merge futuro. Criterio 1 nao acionou: 132 hashes de commit e 9 de merge conferidos contra os 270 tokens do catalogo, zero intersecao. A tabela de pistas continua ausente de ANALISE_HORARIA.md; as areas do criterio 3 vieram das secoes D do catalogo e do corpo dos PRs.",
     "repos":  {
                   "Marvisak/VIctory":  {
                                            "default_branch":  "main",
@@ -11,17 +11,17 @@
                                        },
                   "ivall/xcl":  {
                                     "default_branch":  "main",
-                                    "last_commit":  "3cde0cc34725f2b162bc4b5e6910753344bba6f8",
-                                    "commit_cursor":  "3cde0cc34725f2b162bc4b5e6910753344bba6f8",
-                                    "head_at_run":  "bb9a6b4bfc7632b09f3a633e983c86cd72b0fa8f",
-                                    "last_pr_number":  3177,
-                                    "last_run":  "2026-11-28T15:37:54Z"
+                                    "last_commit":  "4701a874513631bf20563eb0a93230885dbb5f1e",
+                                    "commit_cursor":  "4701a874513631bf20563eb0a93230885dbb5f1e",
+                                    "head_at_run":  "10d272970f25b02b72ebe3c883d02d74d4d4763b",
+                                    "last_pr_number":  3188,
+                                    "last_run":  "2026-11-28T16:59:49Z"
                                 },
                   "R0Y00/Xbox2Windows":  {
                                              "default_branch":  "main",
-                                             "last_commit":  "f5a6f6baee2abd0730f7f2c78e8b3545646bd421",
-                                             "last_pr_number":  3375,
-                                             "last_run":  "2026-11-28T14:15:27Z"
+                                             "last_commit":  "aec2e08433d5620cddf9a0f72d779d0a3820b08d",
+                                             "last_pr_number":  3378,
+                                             "last_run":  "2026-11-28T16:13:45Z"
                                          },
                   "californiaAlmonds/OpenScarlett":  {
                                                          "default_branch":  "main",
@@ -34,7 +34,7 @@
                                                       "last_commit":  "4eb6cfdf9e61cb112f1f811344ec0dd309eddd6c",
                                                       "last_pr_number":  456,
                                                       "last_run":  "2026-11-27T16:52:39Z",
-                                                      "unreachable":  "404 em 2026-11-27T21:05Z: repos/ e users/ devolvem Not Found (sexta hora em 2026-11-28T12:15Z)"
+                                                      "unreachable":  "404 em 2026-11-27T21:05Z: repos/ e users/ devolvem Not Found (decima primeira hora em 2026-11-28T17:15Z)"
                                                   },
                   "DexNom/VIctory":  {
                                          "default_branch":  "main",
@@ -45,7 +45,7 @@
                   "uiliannn/VItoriaBr":  {
                                              "default_branch":  "main",
                                              "last_commit":  "15779f8197fe846b0cdf4509c15a8ef00433e216",
-                                             "last_pr_number":  126,
+                                             "last_pr_number":  134,
                                              "last_run":  "2026-11-27T13:05:00Z"
                                          },
                   "avatarmanz/VIctory-7900XTX":  {
@@ -53,7 +53,7 @@
                                                      "last_commit":  "014d52dedf837d1ac660a0bd256c4704be9eeb40",
                                                      "last_pr_number":  419,
                                                      "last_run":  "2026-11-26T08:17:50Z",
-                                                     "unreachable":  "404 em 2026-11-27T21:05Z: repos/ e users/ devolvem Not Found (sexta hora em 2026-11-28T12:15Z)"
+                                                     "unreachable":  "404 em 2026-11-27T21:05Z: repos/ e users/ devolvem Not Found (decima primeira hora em 2026-11-28T17:15Z)"
                                                  },
                   "fxceless/victory-fork":  {
                                                 "default_branch":  "main",
@@ -69,9 +69,9 @@
                                              },
                   "brcly/TuxBox":  {
                                        "default_branch":  "main",
-                                       "last_commit":  "2af42c94cdfb5248e537e5a29b7e4d4d0672f93c",
-                                       "last_pr_number":  398,
-                                       "last_run":  "2026-11-28T15:29:35Z"
+                                       "last_commit":  "b8355fa29e4625744dc02851773c0daf6b3ce8a0",
+                                       "last_pr_number":  405,
+                                       "last_run":  "2026-11-28T17:12:17Z"
                                    },
                   "holdmysocks/SixNG":  {
                                             "default_branch":  "master",
@@ -101,13 +101,14 @@
     "backlog":  [
                     "ivall/xcl",
                     "Marvisak/VIctory",
+                    "DexNom/VIctory",
                     "uiliannn/VItoriaBr",
                     "omonkeyz/xbox-emulator",
                     "trustno1-coder/VIctory-NVIDIA",
                     "Belobug/VIctory-Belobug-AMD",
                     "avatarmanz/VIctory-7900XTX"
                 ],
-    "backlog_note":  "A execucao de 2026-11-28 16:00 triou os 15 e documentou 4: xcl, TuxBox, DexNom e Xbox2Windows. Documentados 58 commits (xcl 40 de 128 sem documento, TuxBox 18 de 18), 65 PRs abertos (DexNom 52, xcl 9, Xbox2Windows 4) e 3 merges (xcl #3100, TuxBox #401 e #402). CRITERIO 1 ACIONOU PELA PRIMEIRA VEZ POR HASH: DexNom #183 restaura 274f698, o conserto de D-12 no catalogo (clwb_loop com overflow de u64; o diff devolve clwb_loop_end com checked_mul/checked_add). O publish 570a941 (+49.715/-36.762, 170 arquivos, 25/11) derrubou 42 mudancas da main, e 42 dos 52 PRs abertos do DexNom as restauram por cherry-pick -x; o catalogo aponta 570a941 como introdutor de D-01, D-04, D-05, D-06, D-08, D-09 e D-14. O restante: xcl e 40 commits de bmjask quase toda andaime (fila de candidatos a eviccao, ledger de upload esparso, classificador dormente, bancos sinteticos) mais o merge #3100 (bb9a6b4b) importando PSOs exatos da biblioteca anterior, mesclado como draft; TuxBox fecha a fila com memoria de video (2ea48307 libera pipelines alem dos primeiros 4096 ate o primeiro bind, ce8a7c86/b295769f seguram texturas no orcamento de VRAM e alocam mips parciais, b244f883 divide o view heap, 055adb92 espera por label gravado) e os merges #401/#402; Xbox2Windows so tem PRs (#3373 tela preta multi-plano, #3375 mascara de indice de mesh 1023-\u003e511, #3372 image_store a16 32 bits no compute). Pendente: xcl com 114 commits na fila e o cursor 3cde0cc3 re-incluindo 2dad32e6/abf7e177 ja documentados; Marvisak com piso de 100 abertos; VItoriaBr 3; omonkeyz 1; NVIDIA com 100 lidos e cursor de PRs nulo (primeira triagem, 15:50Z); Belobug e avatarmanz em 404 pela decima hora. Tabela de pistas continua ausente; nenhum 403.",
-    "runs":  28,
-    "last_error":  "2 repositorios inacessiveis (HTTP 404 em repos/): Belobug/VIctory-Belobug-AMD, avatarmanz/VIctory-7900XTX (decima hora)"
+    "backlog_note":  "A execucao de 2026-11-28 16:00 triou os 15 e documentou 4: xcl, TuxBox, DexNom e Xbox2Windows. Documentados 58 commits (xcl 40 de 128 sem documento, TuxBox 18 de 18), 65 PRs abertos (DexNom 52, xcl 9, Xbox2Windows 4) e 3 merges (xcl #3100, TuxBox #401 e #402). CRITERIO 1 ACIONOU PELA PRIMEIRA VEZ POR HASH: DexNom #183 restaura 274f698, o conserto de D-12 no catalogo (clwb_loop com overflow de u64; o diff devolve clwb_loop_end com checked_mul/checked_add). O publish 570a941 (+49.715/-36.762, 170 arquivos, 25/11) derrubou 42 mudancas da main, e 42 dos 52 PRs abertos do DexNom as restauram por cherry-pick -x; o catalogo aponta 570a941 como introdutor de D-01, D-04, D-05, D-06, D-08, D-09 e D-14. O restante: xcl e 40 commits de bmjask quase toda andaime (fila de candidatos a eviccao, ledger de upload esparso, classificador dormente, bancos sinteticos) mais o merge #3100 (bb9a6b4b) importando PSOs exatos da biblioteca anterior, mesclado como draft; TuxBox fecha a fila com memoria de video (2ea48307 libera pipelines alem dos primeiros 4096 ate o primeiro bind, ce8a7c86/b295769f seguram texturas no orcamento de VRAM e alocam mips parciais, b244f883 divide o view heap, 055adb92 espera por label gravado) e os merges #401/#402; Xbox2Windows so tem PRs (#3373 tela preta multi-plano, #3375 mascara de indice de mesh 1023-\u003e511, #3372 image_store a16 32 bits no compute). Pendente: xcl com 78 commits na fila (cursor 4701a874) e o compare re-incluindo 2dad32e6/abf7e177 ja documentados; Marvisak com piso de 100 abertos; DexNom 1 (#201 restaura 45ed8e3+8d67fa5, nenhum hash do catalogo); VItoriaBr 3 (#133/#134 sao crash do amdxc64); omonkeyz 1 (#395); NVIDIA com 200 lidos (max #1299) e cursor de PRs ainda nulo; Belobug e avatarmanz em 404 pela decima primeira hora. Tabela de pistas continua ausente; nenhum 403.",
+    "runs":  29,
+    "last_error":  "2 repositorios inacessiveis (HTTP 404 em repos/): Belobug/VIctory-Belobug-AMD, avatarmanz/VIctory-7900XTX (decima primeira hora)"
 }
